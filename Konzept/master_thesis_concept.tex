@@ -1,0 +1,136 @@
+%! program = pdflatex
+
+%
+%  Konzept zur Master Thesis von Dirk Breuer
+%
+%  Created by Dirk Breuer on 2008-05-22.
+%  Copyright (c) 2008 Dirk Breuer. All rights reserved.
+%
+
+%%% BEGIN OF PREAMBEL
+
+\documentclass[12pt,headsepline,a4paper,bibtotoc,liststotoc,DIV12,BCOR12mm]{scrartcl}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{setspace}
+\onehalfspacing
+\raggedbottom
+
+% Package for Multicolumn output
+\usepackage{multicol}
+
+% Setup for fullpage use
+\usepackage{fullpage}
+
+\usepackage{natbib}
+
+% Uncomment some of the following if you use the features
+%
+% Running Headers and footers
+% \usepackage{fancyheadings}
+
+% Multipart figures
+%\usepackage{subfigure}
+
+% More symbols
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{latexsym}
+
+% Surround parts of graphics with box
+\usepackage{boxedminipage}
+
+% Package for including code in the document
+\usepackage{listings}
+
+% If you want to generate a toc for each chapter (use with book)
+\usepackage{minitoc}
+
+% This is now the recommended way for checking for PDFLaTeX:
+\usepackage{ifpdf}
+
+%\newif\ifpdf
+%\ifx\pdfoutput\undefined
+%\pdffalse % we are not running PDFLaTeX
+%\else
+%\pdfoutput=1 % we are running PDFLaTeX
+%\pdftrue
+%\fi
+
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+
+\pdfpagewidth=\paperwidth
+\pdfpageheight=\paperheight
+\usepackage[pdftex,plainpages=false,pdfpagelabels,
+            pdftitle={Konzept zur Master Thesis von Dirk Breuer},
+            pdfauthor={Dirk Breuer - University of Applied Science, Cologne},
+            pdfsubject={},
+            pdfkeywords={Master Thesis}]{hyperref} % Has to stand at the end of the preamble
+%%% END OF PREAMBEL
+
+%%% BEGIN OF TITLE
+
+\titlehead{
+	{\large Fachhochschule Köln --- Campus Gummersbach\\
+		\hfill }
+	Steinmüllerallee~1\\
+	51643 Gummersbach
+	}
+	\subject{Advanced Seminar}
+	\title{Die Bedeutung von Kontext und dessen Modellierung in adaptiven Hypermedia Systemen}
+	\author{Dirk Breuer\\Medieninformatik Master\\11038920}
+	\publishers{
+		\center
+		\vspace{0.5cm}
+		\large University of Applied Science of Cologne\\\textbf{Dozent:} Prof. Dr. Kristian Fischer\\
+		\vspace{0.5cm}
+    \large \href{mailto:dirk.breuer@gmail.com}{\emph{dirk.breuer@gmail.com}}
+		}
+	\date{\today}
+
+%%% END OF TITLE
+
+\begin{document}
+  
+\dosecttoc
+
+\ifpdf
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+\else
+\DeclareGraphicsExtensions{.eps, .jpg}
+\fi
+
+\maketitle
+
+% \begin{multicols}{2}
+
+\newpage
+
+\begin{abstract}
+  \begin{center}
+    \textbf{Abstract\\}
+    \vspace{.3cm}
+  \end{center}
+  ...
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+\newpage
+\bibliographystyle{natdin}
+% \bibliographystyle{url}
+% \nocite{*}
+\bibliography{bibliography}
+
+% \end{multicols}
+
+\end{document}
