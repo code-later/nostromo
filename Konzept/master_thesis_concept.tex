@@ -9,14 +9,14 @@
 
 %%% BEGIN OF PREAMBEL
 
-\documentclass[12pt,headsepline,a4paper,bibtotoc,liststotoc,DIV12,BCOR12mm]{scrartcl}
+\documentclass[11pt,headsepline,a4paper,bibtotoc,liststotoc,DIV12,BCOR12mm]{scrartcl}
 
 % Use utf-8 encoding for foreign characters
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 
 \usepackage{setspace}
-\onehalfspacing
+% \onehalfspacing
 \raggedbottom
 
 % Package for Multicolumn output
@@ -83,8 +83,8 @@
 	Steinmüllerallee~1\\
 	51643 Gummersbach
 	}
-	\subject{Advanced Seminar}
-	\title{Die Bedeutung von Kontext und dessen Modellierung in adaptiven Hypermedia Systemen}
+  % \subject{Advanced Seminar}
+	\title{Konzept zur Master Thesis von Dirk Breuer}
 	\author{Dirk Breuer\\Medieninformatik Master\\11038920}
 	\publishers{
 		\center
@@ -109,22 +109,21 @@
 
 \maketitle
 
-% \begin{multicols}{2}
-
-\newpage
-
 \begin{abstract}
   \begin{center}
     \textbf{Abstract\\}
     \vspace{.3cm}
   \end{center}
-  In diesem Konzept wird die zentrale Zielformulierung sowie Problemstellung präsentieren, mit der sich meine Master Thesis beschäftigen wird. Neben diesen zentralen Punkten soll auch das grundsätzliche Vorgehen skizziert werden, ebenso wie ein erster Hinweis auf die Literatur, die verwendet werden soll.
-  
+  \emph{In diesem Konzept wird die zentrale Zielformulierung sowie Problemstellung präsentieren, mit der sich meine Master Thesis beschäftigen wird. Neben diesen zentralen Punkten soll auch das grundsätzliche Vorgehen skizziert werden, ebenso wie ein erster Hinweis auf die Literatur, die verwendet werden soll.}
 \end{abstract}
+  
+% \begin{multicols}{2}
+
+% \newpage
 
 \newpage
 \tableofcontents
-\newpage
+% \newpage
 
 \section{Einleitung} % (fold)
 \label{sec:einleitung}
@@ -142,7 +141,16 @@
 \section{Problemstellung} % (fold)
 \label{sec:problemstellung}
 
+  Im bisherigen Projektverlauf ist eine Architektur entworfen worden, die die Anforderungen erfüllen soll, die sich aus der Zieldefinition des MIAV-Frameworks ergeben. Die erstellte Architektur ist bisher jedoch nicht methodisch evaluiert worden. Für die weitere Entwicklung einer Architektur für ein so innovatives Framework, dass sich in vielen Bereichen auf Neuland bewegt, ist das jedoch zwingend notwendig.
   
+  Zu Beginn des Projektes wurde bereits festgestellt, dass sich eine szenariobasiertes Vorgehen zur Entwicklung eines solchen Frameworks am ehesten anbietet. Daher soll auch weiterhin so verfahren werden und die Architektur auf Grundlage eines Szenarios evaluiert werden. Des Weiteren ist eine prototypische Implementierung zumindest der wesentlichen Aspekte der Architektur unabdingbar für eine aussagekräftige Evaluation. Für die Master Thesis ergeben sich daher zwei zentrale Problemstellungen, die es zu bearbeiten gilt:
+  
+  \begin{itemize}
+    \item Die methodische Entwicklung eines geeigneten Szenarios, dass als Akteur den Anwendungsentwickler hat, der wiederum eine Applikation mit Hilfe des MIAV-Frameworks entwickeln muss. Das Szenario muss dabei so gewählt, dass die Fachdomäne, in der die Applikation entwickelt werden soll, hinreichend bekannt ist.
+    \item Die Entwicklung eines Prototypen, der die bisher modellierten Eigenschaften der Architektur funktional umsetzt und sich dazu eignet, gegen das Szenarion evaluiert zu werden. Non-Funktionale Anforderungen können hier zweitrangig betrachtet werden. Unter Umständen ist hier auch eine weitere Modellierung der Architektur im Vorfeld notwendig bevor mit der Implementierung begonnen werden kann.
+    \item Kriterien für die Bewertung der Evaluation
+    \item Methodisches durchführen der Evaluation
+  \end{itemize}
 
 % section problemstellung (end)
 
@@ -161,11 +169,11 @@
 
 % section literatur (end)
 
-\newpage
-\bibliographystyle{natdin}
+% \newpage
+% \bibliographystyle{natdin}
 % \bibliographystyle{url}
 % \nocite{*}
-\bibliography{bibliography}
+% \bibliography{bibliography}
 
 % \end{multicols}
 
