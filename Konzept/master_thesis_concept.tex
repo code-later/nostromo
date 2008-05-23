@@ -200,7 +200,7 @@
 
   Nach der Einführung soll das Szenario erarbeitet werden, dass im weiteren Verlauf der Arbeit die Grundlage des Prototyps und der Evaluation sein wird. Aus diesem Grunde sollen an dieser Stelle auch die Kriterien festgelegt werden, anhand derer die Evaluation stattfinden wird. Ebenso soll das Vorgehen bei der Evaluation vorgestellt und begründet werden.
   
-  Das Szenario selbst sollte nicht zu umfangreich sein und wesentliche Kernaspekte des Frameworks beleuchten\footnote{Diese Kernaspekte müssen dabei dann definiert werden und es sollte herausgestellt werden, warum es sich um Kernaspekte handelt.}. Dabei sollte es in gewissem Maße visionär angelegt sein, jedoch nicht zu weit weg. Im Vordergrund steht bei der Arbeit die Evaluation der Architektur. Die Entwicklung des Szenarios ist dazu ein notwendiges Hilfsmittel und sollte demnach nicht zu sehr an Gewicht erhalten. Bei einem Szenario, was allzu fern ab des umsetzbaren ist, kann der Wahrheitsgehalt des Ergebnis der Evaluation zu gering ausfallen. Bisher ist angedacht ein Thema aus dem Bereich der Hochschule als Grundlage für das Szenario zu wählen. Der Vorteil dabei ist, dass die Fachdomäne bekannt, was Eingangs bereits als ein Kriterium für das Szenario genannt wurde.
+  Das Szenario selbst sollte nicht zu umfangreich sein und wesentliche Kernaspekte des Frameworks beleuchten\footnote{Diese Kernaspekte müssen dabei dann definiert werden und es sollte herausgestellt werden, warum es sich um Kernaspekte handelt. Es sollte hier beispielsweise der Aspekt der Synchronisation außen vorgelassen werden.}. Dabei sollte es in gewissem Maße visionär angelegt sein, jedoch nicht zu weit weg. Im Vordergrund steht bei der Arbeit die Evaluation der Architektur. Die Entwicklung des Szenarios ist dazu ein notwendiges Hilfsmittel und sollte demnach nicht zu sehr an Gewicht erhalten. Bei einem Szenario, was allzu fern ab des umsetzbaren ist, kann der Wahrheitsgehalt des Ergebnis der Evaluation zu gering ausfallen. Bisher ist angedacht ein Thema aus dem Bereich der Hochschule als Grundlage für das Szenario zu wählen. Der Vorteil dabei ist, dass die Fachdomäne bekannt, was Eingangs bereits als ein Kriterium für das Szenario genannt wurde.
   
   Ganz konkret könnte sich das Szenario mit einer Verteilung einer Lehrveranstaltung zwischen der Niederlassung der Fachhochschule Gummersbach und Deutz beschäftigen. Wichtig ist hierbei, dass nicht Aspekte aus den Bereichen CSCW/CSCL oder Lerntheorien zu stark integriert werden. Bei der Entwicklung des Szenario ist dies sicherlich einer der schwierigsten Punkte.
 
@@ -209,9 +209,29 @@
 \paragraph{Architektur und Prototyp} % (fold)
 \label{par:architektur_und_prototyp}
 
-  Im weiteren Schritt soll die Architektur wie sie bis dato existiert noch einmal genauer vorgestellt werden. Hier sollen auch die Teilbereiche aufgezeigt werden, die bei der prototypischen Implementierung von besonderem Interesse sein werden.
-
+  Im weiteren Schritt soll die Architektur wie sie bis dato existiert noch einmal genauer vorgestellt werden. Hier sollen auch die Teilbereiche aufgezeigt werden, die bei der prototypischen Implementierung von besonderem Interesse sein werden. Diese ergeben sich zum Großteil aus dem Szenario, könnten aber auch durch Erkenntnisse aus dem MIAV-Projekt motiviert sein.
+  
+  Die Entwicklung des Prototypen selbst wird sich dabei in zwei Bereiche unterteilen lassen. Auf der einen Seite muss das Framework prototypisch implementiert werden, zum anderen muss mit diesem Framework das Szenario umgesetzt werden. Schon im Vorfeld kann gesagt werden, dass es sich hierbei um eine umfangreiche Aufgabe handeln wird. Daher sollten Möglichkeiten untersucht werden, den Prototypen in einer Programmiersprache zu implementieren, die von sich aus prototypisches Arbeiten begünstigt. Da der Fokus der Evaluation auf den funktionalen Anforderungen liegen soll und die non-funktionalen nur an zweiter Stelle betrachtet werden, kann sich eine solche Sprache auch nur marginal auf die Ergebnisse der Architektur auswirken. Ein weiteres Argument wäre, dass es sich um eine Architektur handelt, die nach SOA Konzepten aufgebaut ist, wodurch eine Unabhängigkeit der Sprache zusätzlich begünstigt wird. Gegen ein solches Vorgehen, spricht, dass so bestehende Frameworks zur Medienverarbeitung aus dem Java Umfeld (wie etwa JMF) schwerer integriert werden können.
+  
+  Während der Prototyp entwickelt wird, soll auch ein Protokoll erstellt werden, dass bei der Evaluation und deren Auswertung verwendet werden soll.
+  
 % paragraph architektur_und_prototyp (end)
+
+\paragraph{Evaluation und Bewertung} % (fold)
+\label{par:evaluation_und_bewertung}
+
+  Nachdem der Prototyp implementiert wurde muss eine Evaluierung gegen das Szenario stattfinden. Diese muss nach den Eingangs definierten Kriterien stattfinden. Zur Evaluation wird das Protokoll aus der Prototypentwicklung verwendet. Bei der Evaluation wird ebenfalls ein Protokoll erzeugt, das die Grundlage für die Bewertung der Architektur und des MIAV-Frameworks sein soll. Aus den Bewertung werden schließlich die Handlungsempfehlungen für die weitere Entwicklung des Frameworks abgeleitet. Stärken und Schwachstellen der Architektur sollen klar benannt werden.
+
+% paragraph evaluation_und_bewertung (end)
+
+\paragraph{Fazit und Ausblick} % (fold)
+\label{par:fazit_und_ausblick}
+
+  Am Ende der Arbeit soll ein Fazit gezogen werden, allerdings soll es ein Fazit auf mehreren Ebenen geben. So soll nicht nur eine Aussage über die Evaluation gegeben werden, sondern auch wie das Vorgehen an sich zu bewerten ist. Schwachstellen bei der Durchführung des szenariobasierten Ansatz sollten benannt werden und Vorschläge zur Verbesserung aufgezeigt. Auch soll ein (sicher mehr subjektive) Aussage über den Aufwand der Implementierung abgeben werden, sowohl der Implementierung des Frameworks als auch der Implementierung einer Anwendung mit dem Framework.
+  
+  Die Arbeit wird mit einem generellen Ausblick des MIAV-Projekts enden und wie sich die gewonnen Erkenntnisse weiter verwenden lassen.
+
+% paragraph fazit_und_ausblick (end)
 
 % section vorgehen (end)
 
