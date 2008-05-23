@@ -69,9 +69,9 @@
 \pdfpagewidth=\paperwidth
 \pdfpageheight=\paperheight
 \usepackage[pdftex,plainpages=false,pdfpagelabels,
-            pdftitle={Konzept zur Master Thesis von Dirk Breuer},
+            pdftitle={Evaluation der MIAV Architektur anhand eines Anwendungszenarios durch prototypische Implementierung},
             pdfauthor={Dirk Breuer - University of Applied Science, Cologne},
-            pdfsubject={},
+            pdfsubject={Konzept zur Master Thesis},
             pdfkeywords={Master Thesis}]{hyperref} % Has to stand at the end of the preamble
 %%% END OF PREAMBEL
 
@@ -83,8 +83,8 @@
 	Steinmüllerallee~1\\
 	51643 Gummersbach
 	}
-  % \subject{Advanced Seminar}
-	\title{Konzept zur Master Thesis von Dirk Breuer}
+  \subject{Konzept zur Master Thesis}
+	\title{Evaluation der MIAV Architektur anhand eines Anwendungszenarios durch prototypische Implementierung (Arbeitstitel)}
 	\author{Dirk Breuer\\Medieninformatik Master\\11038920}
 	\publishers{
 		\center
@@ -121,8 +121,8 @@
 
 % \newpage
 
-\newpage
-\tableofcontents
+% \newpage
+% \tableofcontents
 % \newpage
 
 \section{Einleitung} % (fold)
@@ -148,8 +148,13 @@
   \begin{itemize}
     \item Die methodische Entwicklung eines geeigneten Szenarios, dass als Akteur den Anwendungsentwickler hat, der wiederum eine Applikation mit Hilfe des MIAV-Frameworks entwickeln muss. Das Szenario muss dabei so gewählt, dass die Fachdomäne, in der die Applikation entwickelt werden soll, hinreichend bekannt ist.
     \item Die Entwicklung eines Prototypen, der die bisher modellierten Eigenschaften der Architektur funktional umsetzt und sich dazu eignet, gegen das Szenarion evaluiert zu werden. Non-Funktionale Anforderungen können hier zweitrangig betrachtet werden. Unter Umständen ist hier auch eine weitere Modellierung der Architektur im Vorfeld notwendig bevor mit der Implementierung begonnen werden kann.
-    \item Kriterien für die Bewertung der Evaluation
-    \item Methodisches durchführen der Evaluation
+  \end{itemize}
+
+  Wie eingangs bereits erwähnt, soll die bisherige Architektur anhand des noch zu entwickelnden Szenarios \emph{evaluiert} werden. Neben den beiden zentralen Problemstellungen müssen noch folgende Punkte bezüglich der Evaluation betrachtet werden:
+
+  \begin{itemize}
+    \item Der Evaluation selbst muss ein methodische Vorgehen zu Grunde liegen, dass Rücksicht auf die Verwendung von Szenarien nimmt.
+    \item Es müssen Kriterien festgelegt werden, anhand derer eine Bewertung stattfinden kann. Diese Kriterien werden wahrscheinlich sehr unterschiedlich ausfallen und sowohl qualitativer wie quantitativer Charakteristik sein. Im Vorfeld sollten daher in jedem Fall solche Kriterien gefunden werden von denen die meiste Aussagekraft erwartet wird und die am ehesten zielfördernd sind.
   \end{itemize}
 
 % section problemstellung (end)
@@ -157,10 +162,56 @@
 \section{Zieldefinition} % (fold)
 \label{sec:zieldefinition}
 
+  Ziel der Evaluation der MIAV-Architektur soll es sein, eine grundsätzliche Aussage treffen zu können, inwieweit die Ziele\footnote{Hierunter fällt auch in wie weit sich die Alleinstellungsmerkmale des Frameworks bereits ausgeprägt sind.} des MIAV Projekts bereits erreicht und welche noch nicht erreicht wurden. Im Einzelnen sind diese Ziele:
+  
+  \begin{description}
+  	\item[Verteiltheit] MIAV ist konzeptioniert als ein verteiltes System.
+  	\item[Dienstorientierung] Angelehnt an die \emph{Service-Oriented Architecture}  (SOA), sind die Bausteine in MIAV als Dienste modelliert.
+  	\item[Integration] Bestehende Frameworks können in Form von Diensten angeboten und so ihre Funktionalität eingebunden werden.
+  	\item[Erweiterbarkeit] Die Dienstorientierung erlaubt die Einbindung eigener Komponenten.
+  	% TODO - Die Skalierbarkeit muss hier noch weiter beschrieben werden. Eine reine Verteilung führt noch zu keiner gute Skalierbarkeit eines Systems.
+  	\item[Skalierbarkeit] Als verteiltes System können Dienste auf verschiedene Systeme ausgelagert werden, es gibt kein monolithisches System\footnote{die Verschiebung des Flaschenhalses von einem System hat zur Folge, dass die Verbindung zwischen den Diensten entsprechend angelegt sein muss.}.
+  	\item[Medienobjekt-Modellierung] Modellierung von Medien in ganzheitlicher Betrachtungsweise von Rohdaten und Metadaten in einem Objekt.
+  	\item[Meta-Ebene] MIAV fokussiert nicht auf Datensicht oder Metadatensicht sondern abstrahiert auf höhere Ebene.
+  	\item[Medienverarbeitung] Ganzheitliche Sicht auf Medienverarbeitung: Produktion, Verarbeitung, Transformation, Anreicherung, Wiedergabe, Ausgabe von Daten und Metadaten
+  	\item[Architektur] MIAV stellt eine Architektur für Multimediaanwendungen
+  \end{description}
+  
+  Aber nicht nur soll ein Maß gefunden werden, zu welchem Grad die genannten Ziele und Alleinstellungsmerkmale bereits vorhanden sind, auch soll eine Bewertung abgegeben werden, ob die Architektur des MIAV-Frameworks grundsätzlich "`funktioniert"'. Diese Bewertung kann dann selbst wieder Grundlage für weiter Projekte sein.
+  
+  Es ist davon auszugehen, dass noch nicht alle Ziele erreicht wurden und die Architektur grundsätzlich zwar funktioniert, jedoch sicher noch Fehler aufweisen wird. Daher sollte ein weiteres Ziel der Master Thesis auch sein konkrete Verbesserungsvorschläge zu geben, um die Fehler zu beseitigen und die Zielerreichung voranzutreiben.
+  
 % section zieldefinition (end)
 
 \section{Vorgehen} % (fold)
 \label{sec:vorgehen}
+
+  Nachdem die Problemstellung sowie die Zieldefinitionen geklärt wurden, sollen im folgenden die konkreten Schritte präsentiert werden, um den Problemen zu begegnen und die Ziele zu erreichen.
+
+\paragraph{Einführung und Motivation} % (fold)
+\label{par:einfuehrung}
+  
+  Zu Beginn der Arbeit soll das Thema vorgestellt und kurz in das MIAV Projekt eingeführt werden. Die Motivation einer Evaluation der Architektur soll deutlich werden und warum ein szenariobasierter Ansatz als besonders vorteilhaft bewertet wurde. Die Zieldefinition der Arbeit wird präsentiert und der Rahmen in dem sich die Arbeit bewegen soll abgesteckt. Natürlich wird hier auch der Aufbau der Arbeit vorgestellt.
+  
+% paragraph einfuehrung (end)
+
+\paragraph{Szenario und Evaluationskriterien} % (fold)
+\label{par:szenario_und_evaluationskriterien}
+
+  Nach der Einführung soll das Szenario erarbeitet werden, dass im weiteren Verlauf der Arbeit die Grundlage des Prototyps und der Evaluation sein wird. Aus diesem Grunde sollen an dieser Stelle auch die Kriterien festgelegt werden, anhand derer die Evaluation stattfinden wird. Ebenso soll das Vorgehen bei der Evaluation vorgestellt und begründet werden.
+  
+  Das Szenario selbst sollte nicht zu umfangreich sein und wesentliche Kernaspekte des Frameworks beleuchten\footnote{Diese Kernaspekte müssen dabei dann definiert werden und es sollte herausgestellt werden, warum es sich um Kernaspekte handelt.}. Dabei sollte es in gewissem Maße visionär angelegt sein, jedoch nicht zu weit weg. Im Vordergrund steht bei der Arbeit die Evaluation der Architektur. Die Entwicklung des Szenarios ist dazu ein notwendiges Hilfsmittel und sollte demnach nicht zu sehr an Gewicht erhalten. Bei einem Szenario, was allzu fern ab des umsetzbaren ist, kann der Wahrheitsgehalt des Ergebnis der Evaluation zu gering ausfallen. Bisher ist angedacht ein Thema aus dem Bereich der Hochschule als Grundlage für das Szenario zu wählen. Der Vorteil dabei ist, dass die Fachdomäne bekannt, was Eingangs bereits als ein Kriterium für das Szenario genannt wurde.
+  
+  Ganz konkret könnte sich das Szenario mit einer Verteilung einer Lehrveranstaltung zwischen der Niederlassung der Fachhochschule Gummersbach und Deutz beschäftigen. Wichtig ist hierbei, dass nicht Aspekte aus den Bereichen CSCW/CSCL oder Lerntheorien zu stark integriert werden. Bei der Entwicklung des Szenario ist dies sicherlich einer der schwierigsten Punkte.
+
+% paragraph szenario_und_evaluationskriterien (end)
+
+\paragraph{Architektur und Prototyp} % (fold)
+\label{par:architektur_und_prototyp}
+
+  Im weiteren Schritt soll die Architektur wie sie bis dato existiert noch einmal genauer vorgestellt werden. Hier sollen auch die Teilbereiche aufgezeigt werden, die bei der prototypischen Implementierung von besonderem Interesse sein werden.
+
+% paragraph architektur_und_prototyp (end)
 
 % section vorgehen (end)
 
