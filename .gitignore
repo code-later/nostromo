@@ -1,0 +1,12 @@
+*.aux
+*.bbl
+*.blg
+*.bmt
+*.log
+*.mtc*
+*.old
+*.out
+*.pdf
+*.stc*
+*.tmproj
+*.toc
