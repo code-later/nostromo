@@ -9,7 +9,7 @@
 
 %%% BEGIN OF PREAMBEL
 
-\documentclass[11pt,headsepline,a4paper,bibtotoc,liststotoc,DIV12,BCOR12mm]{scrartcl}
+\documentclass[12pt,headsepline,a4paper,bibtotoc,liststotoc,DIV12,BCOR12mm]{scrartcl}
 
 % Use utf-8 encoding for foreign characters
 \usepackage[utf8]{inputenc}
@@ -162,7 +162,7 @@
 \section{Zieldefinition} % (fold)
 \label{sec:zieldefinition}
 
-  Ziel der Evaluation der MIAV-Architektur soll es sein, eine grundsätzliche Aussage treffen zu können, inwieweit die Ziele\footnote{Hierunter fällt auch in wie weit sich die Alleinstellungsmerkmale des Frameworks bereits ausgeprägt sind.} des MIAV Projekts bereits erreicht und welche noch nicht erreicht wurden. Im Einzelnen sind diese Ziele:
+  Ziel der Evaluation der MIAV-Architektur soll es sein, eine grundsätzliche Aussage treffen zu können, inwieweit die Ziele\footnote{Hierunter fällt auch in wie weit sich die Alleinstellungsmerkmale des Frameworks bereits ausgeprägt sind.} des MIAV Projekts bereits erreicht und welche noch nicht erreicht wurden. Im Einzelnen sind diese Ziele\footnote{Entnommen dem Institutsbericht}:
   
   \begin{description}
   	\item[Verteiltheit] MIAV ist konzeptioniert als ein verteiltes System.
@@ -240,12 +240,42 @@
 
   Die folgende Liste ist das Ergebnis einer ersten Literaturrecherche.
   
-\subsection{Szenarien} % (fold)
-\label{sub:szenarien}
+\subsection{Szenarien und Evaluation} % (fold)
+\label{sub:szenarien_und_evaluation}
 
-  Die Arbeiten von Carroll und Rossen \citep{five_reasons_for_scenario_based_design} und \citep{scenario_based_development} sollen Basis um das szenariobasierte Vorgehen bilden. Zwar kommen diese Arbeiten aus dem Bereich der Mensch-Computer Interaktion, lassen sich methodisch jedoch auch (in Teilen) auf andere Bereiche anwenden.
+  \begin{itemize}
+    \item Als Quelle um unterschiedliche szenariobasierte Vorgehen und deren Evaluation soll \citep{evaluating_software_architectures} und \citep{scenario_based_software_architecture_evaluation_methods} dienen. SAAM (Software Architecture Analysis Method), ATAM (Architecture Trade-off Analysis Method), CBAM (Cost Benefit Analysis Method), ALMA (Architecture Level Modifiability Analysis) und FAAM (Family – Architecture Analysis Method) sind hier Methoden die einer näheren Betrachtung bedürfen.
+    \item Unter \citep{saam} und wird \citep{scenario_based_analysis_of_software_architecture} wird die SAAM Methode genauer vorgestellt. Hierzu finden sich auch Erläuterungen in \citep{handbuch_der_software_architektur}.
+    \item \citep{faam} stellt die FAAM Methode vor.
+    \item \citep{alma} stellt die ALMA Methode vor.
+    \item Als ergänzendes Material können unter Umständen die Arbeiten von Carroll und Rosson zu Szenarien \citep{scenario_based_development,five_reasons_for_scenario_based_design} dienen, wenn diese auch dem Bereich des Usability Engineerings kommen.
+  \end{itemize}
 
-% subsection szenarien (end)
+% subsection szenarien_und_evaluation (end)
+
+\subsection{Architektur} % (fold)
+\label{sub:architektur}
+
+  \begin{itemize}
+    \item Als Grundlage dieser Literaturliste hat schon \citep{effektive_software_architekturen} gedient und wird auch sicher im weiteren Verlauf eine wertvolle Quelle sein, wenn es um die Architektur geht.
+    \item Ebenso viel versprechend klingt \citep{software_architecture_in_practice} und die Sammlung von Arbeiten in \citep{handbuch_der_software_architektur}.
+    \item Als Literatur zur SOA Thematik sollen die Werke von Papazoglou \citep{web_services_principles_and_technology} und Alonso \citep{web_services} als Basiswerke dienen. Vertiefend dann weiter etwa Erl \citep{soa}, Josuttis \citep{soa_in_practice}, Starke \citep{soa_expertenwissen} oder Krafzig et al. \citep{enterprise_soa}.
+  \end{itemize}
+
+% subsection architektur (end)
+
+\subsection{Implementierung} % (fold)
+\label{sub:implementierung}
+
+  \begin{itemize}
+    \item Für die Implementierung wird sicherlich die Verwendung von Pattern eine große Rolle spielen, daher ist \citep{design_patterns} ein muss.
+    \item In \citep{patterns_of_enterprise_application_architecture} werden weiterführende Pattern vorgestellt die unter Umständen Verwendung finden können.
+    \item Literatur zum Thema \emph{Prototyping} wäre sicher notwendig, hier hat die Recherche allerdings bisher noch nichts brauchbares ergeben.
+  \end{itemize}
+
+% subsection implementierung (end)
+
+  Die hier genannte Literatur ist natürlich nur als Ausgangspunkt für weitere Recherchen zu verstehen.
 
 % section literatur (end)
 
