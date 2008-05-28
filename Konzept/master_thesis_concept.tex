@@ -89,7 +89,7 @@
 	\publishers{
 		\center
 		\vspace{0.5cm}
-		\large University of Applied Science of Cologne\\\textbf{Dozent:} Prof. Dr. Kristian Fischer\\
+		\large University of Applied Science of Cologne\\\textbf{Dozent:} Prof. Dr. Mario Winter\\
 		\vspace{0.5cm}
     \large \href{mailto:dirk.breuer@gmail.com}{\emph{dirk.breuer@gmail.com}}
 		}
@@ -134,19 +134,19 @@
     \emph{"`MIAV ist ein integratives, komponentenbasiertes Meta-Framework mit gezielter Ausrichtung auf Multimediaverarbeitung. Es vereinfacht die Entwicklung von verteilten Multimedia-Applikationen durch eine flexible, dienst-orientierte Architektur. Die Wiederverwendbarkeit von Komponenten und bestehenden Frameworks wird dadurch begünstigt."'}\footnote{aus dem Institutsbericht.}
   \end{quote}
   
-  Am Ende dieser Projektarbeit waren immer noch viele Punkte offen und viele Fragen ungeklärt, was reichlich Raum für Folgearbeiten bietet. Ein wichtiger Punkt der nicht mehr im Rahmen der Projektarbeit behandelt werden konnte, ist die Evaluation der bis dato entstanden MIAV Architektur anhand eines umfangreicheren Szenarios durch die prototypische Implementierung wesentlicher Kernkomponenten der MIAV Architektur. Und eben genau dort soll die Master Thesis ansetzen. Dieses Konzept soll zum besseren Verständnis beitragen, wie genau sich die Master Thesis diesen Punkte behandeln wird und welche Ziele gesteckt werden, die es zu erreichen gilt. Auch ein ersten Hinweis auf die Literatur, die verwendet werden kann, soll gegeben werden.
+  Am Ende dieser Projektarbeit waren immer noch viele Punkte offen und viele Fragen ungeklärt, was reichlich Raum für Folgearbeiten bietet. Ein wichtiger Punkt der nicht mehr im Rahmen der Projektarbeit behandelt werden konnte, ist die Evaluation der bis dato entstanden MIAV Architektur anhand eines umfangreicheren Szenarios. Dazu ist allerdings eine prototypische Implementierung wesentlicher Kernkomponenten der MIAV Architektur notwendig. Und eben genau dort soll die Master Thesis ansetzen. Dieses Konzept soll zum besseren Verständnis beitragen, wie genau die Master Thesis diese Punkte behandeln wird und welche Ziele gesteckt werden, die es zu erreichen gilt. Auch ein ersten Hinweis auf die Literatur, die verwendet werden kann, soll gegeben werden.
 
 % section einleitung (end)
 
 \section{Problemstellung} % (fold)
 \label{sec:problemstellung}
 
-  Im bisherigen Projektverlauf ist eine Architektur entworfen worden, die die Anforderungen erfüllen soll, die sich aus der Zieldefinition des MIAV-Frameworks ergeben. Die erstellte Architektur ist bisher jedoch nicht methodisch evaluiert worden. Für die weitere Entwicklung einer Architektur für ein so innovatives Framework, dass sich in vielen Bereichen auf Neuland bewegt, ist das jedoch zwingend notwendig.
+  Im bisherigen Projektverlauf ist eine Architektur entworfen worden, die die Anforderungen erfüllen soll, die sich aus der Zieldefinition des MIAV-Frameworks ergeben. Die erstellte Architektur ist bisher jedoch nicht methodisch evaluiert worden. Für die weitere Entwicklung einer Architektur für ein so innovatives Framework, dass sich in vielen Bereichen auf Neuland bewegt, ist das jedoch zwingend notwendig\footnote{Auch jede andere Architektur sollte methodisch evaluiert werden.}.
   
-  Zu Beginn des Projektes wurde bereits festgestellt, dass sich eine szenariobasiertes Vorgehen zur Entwicklung eines solchen Frameworks am ehesten anbietet. Daher soll auch weiterhin so verfahren werden und die Architektur auf Grundlage eines Szenarios evaluiert werden. Des Weiteren ist eine prototypische Implementierung zumindest der wesentlichen Aspekte der Architektur unabdingbar für eine aussagekräftige Evaluation. Für die Master Thesis ergeben sich daher zwei zentrale Problemstellungen, die es zu bearbeiten gilt:
+  Zu Beginn des Projektes wurde bereits festgestellt, dass sich ein szenariobasiertes Vorgehen zur Entwicklung eines solchen Frameworks am ehesten anbietet. Daher soll auch weiterhin so verfahren werden und die Architektur auf Grundlage eines Szenarios evaluiert werden. Des Weiteren ist eine prototypische Implementierung zumindest der wesentlichen Aspekte der Architektur unabdingbar für eine aussagekräftige Evaluation. Für die Master Thesis ergeben sich daher zwei zentrale Problemstellungen, die es zu bearbeiten gilt:
   
   \begin{itemize}
-    \item Die methodische Entwicklung eines geeigneten Szenarios, dass als Akteur den Anwendungsentwickler hat, der wiederum eine Applikation mit Hilfe des MIAV-Frameworks entwickeln muss. Das Szenario muss dabei so gewählt, dass die Fachdomäne, in der die Applikation entwickelt werden soll, hinreichend bekannt ist.
+    \item Die methodische Entwicklung eines geeigneten Szenarios, dass als Akteur den Anwendungsentwickler hat, der wiederum eine Applikation mit Hilfe des MIAV-Frameworks entwickeln muss. Das Szenario muss dabei so gewählt sein, dass die Fachdomäne, in der die Applikation entwickelt werden soll, hinreichend bekannt ist.
     \item Die Entwicklung eines Prototypen, der die bisher modellierten Eigenschaften der Architektur funktional umsetzt und sich dazu eignet, gegen das Szenarion evaluiert zu werden. Non-Funktionale Anforderungen können hier zweitrangig betrachtet werden. Unter Umständen ist hier auch eine weitere Modellierung der Architektur im Vorfeld notwendig bevor mit der Implementierung begonnen werden kann.
   \end{itemize}
 
@@ -154,7 +154,7 @@
 
   \begin{itemize}
     \item Der Evaluation selbst muss ein methodische Vorgehen zu Grunde liegen, dass Rücksicht auf die Verwendung von Szenarien nimmt.
-    \item Es müssen Kriterien festgelegt werden, anhand derer eine Bewertung stattfinden kann. Diese Kriterien werden wahrscheinlich sehr unterschiedlich ausfallen und sowohl qualitativer wie quantitativer Charakteristik sein. Im Vorfeld sollten daher in jedem Fall solche Kriterien gefunden werden von denen die meiste Aussagekraft erwartet wird und die am ehesten zielfördernd sind.
+    \item Es müssen Kriterien festgelegt werden, anhand derer eine Bewertung stattfinden kann. Diese Kriterien werden wahrscheinlich sehr unterschiedlich ausfallen und sowohl qualitativen wie quantitativen Charakter haben. Im Vorfeld sollten daher in jedem Fall solche Kriterien gefunden werden von denen die meiste Aussagekraft erwartet wird und die am ehesten zielfördernd sind.
   \end{itemize}
 
 % section problemstellung (end)
@@ -162,7 +162,7 @@
 \section{Zieldefinition} % (fold)
 \label{sec:zieldefinition}
 
-  Ziel der Evaluation der MIAV-Architektur soll es sein, eine grundsätzliche Aussage treffen zu können, inwieweit die Ziele\footnote{Hierunter fällt auch in wie weit sich die Alleinstellungsmerkmale des Frameworks bereits ausgeprägt sind.} des MIAV Projekts bereits erreicht und welche noch nicht erreicht wurden. Im Einzelnen sind diese Ziele\footnote{Entnommen dem Institutsbericht}:
+  Ziel der Evaluation der MIAV-Architektur soll es sein, eine grundsätzliche Aussage treffen zu können, inwieweit die Ziele\footnote{Hierunter fällt auch in wie weit die Alleinstellungsmerkmale des Frameworks bereits ausgeprägt sind.} des MIAV Projekts bereits erreicht und welche noch nicht erreicht wurden. Im Einzelnen sind diese Ziele\footnote{Entnommen dem Institutsbericht}:
   
   \begin{description}
   	\item[Verteiltheit] MIAV ist konzeptioniert als ein verteiltes System.
@@ -179,7 +179,7 @@
   
   Aber nicht nur soll ein Maß gefunden werden, zu welchem Grad die genannten Ziele und Alleinstellungsmerkmale bereits vorhanden sind, auch soll eine Bewertung abgegeben werden, ob die Architektur des MIAV-Frameworks grundsätzlich "`funktioniert"'. Diese Bewertung kann dann selbst wieder Grundlage für weiter Projekte sein.
   
-  Es ist davon auszugehen, dass noch nicht alle Ziele erreicht wurden und die Architektur grundsätzlich zwar funktioniert, jedoch sicher noch Fehler aufweisen wird. Daher sollte ein weiteres Ziel der Master Thesis auch sein konkrete Verbesserungsvorschläge zu geben, um die Fehler zu beseitigen und die Zielerreichung voranzutreiben.
+  Es ist davon auszugehen, dass noch nicht alle Ziele erreicht wurden und die Architektur grundsätzlich zwar funktioniert, jedoch sicher noch Fehler aufweisen wird. Daher sollte ein weiteres Ziel der Master Thesis sein, konkrete Verbesserungsvorschläge zu geben, um die Fehler zu beseitigen und die Gesamtentwicklung voranzutreiben.
   
 % section zieldefinition (end)
 
@@ -200,7 +200,7 @@
 
   Nach der Einführung soll das Szenario erarbeitet werden, dass im weiteren Verlauf der Arbeit die Grundlage des Prototyps und der Evaluation sein wird. Aus diesem Grunde sollen an dieser Stelle auch die Kriterien festgelegt werden, anhand derer die Evaluation stattfinden wird. Ebenso soll das Vorgehen bei der Evaluation vorgestellt und begründet werden.
   
-  Das Szenario selbst sollte nicht zu umfangreich sein und wesentliche Kernaspekte des Frameworks beleuchten\footnote{Diese Kernaspekte müssen dabei dann definiert werden und es sollte herausgestellt werden, warum es sich um Kernaspekte handelt. Es sollte hier beispielsweise der Aspekt der Synchronisation außen vorgelassen werden.}. Dabei sollte es in gewissem Maße visionär angelegt sein, jedoch nicht zu weit weg. Im Vordergrund steht bei der Arbeit die Evaluation der Architektur. Die Entwicklung des Szenarios ist dazu ein notwendiges Hilfsmittel und sollte demnach nicht zu sehr an Gewicht erhalten. Bei einem Szenario, was allzu fern ab des umsetzbaren ist, kann der Wahrheitsgehalt des Ergebnis der Evaluation zu gering ausfallen. Bisher ist angedacht ein Thema aus dem Bereich der Hochschule als Grundlage für das Szenario zu wählen. Der Vorteil dabei ist, dass die Fachdomäne bekannt, was Eingangs bereits als ein Kriterium für das Szenario genannt wurde.
+  Das Szenario selbst sollte nicht zu umfangreich sein und wesentliche Kernaspekte des Frameworks beleuchten\footnote{Diese Kernaspekte müssen dabei dann definiert werden und es sollte herausgestellt werden, warum es sich um Kernaspekte handelt. Es sollte hier beispielsweise der Aspekt der Synchronisation außen vorgelassen werden.}. Dabei sollte es in gewissem Maße visionär angelegt sein, jedoch nicht zu weit weg, denn im Vordergrund steht bei der Arbeit die Evaluation der Architektur. Die Entwicklung des Szenarios ist dazu ein notwendiges Hilfsmittel und sollte demnach nicht zu sehr an Gewicht erhalten. Bei einem Szenario, was allzu fern ab des Umsetzbaren ist, kann der Wahrheitsgehalt des Ergebnis der Evaluation zu gering ausfallen. Bisher ist angedacht ein Thema aus dem Bereich der Hochschule als Grundlage für das Szenario zu wählen. Der Vorteil dabei ist, dass die Fachdomäne bekannt ist, was Eingangs bereits als ein Kriterium für das Szenario genannt wurde.
   
   Ganz konkret könnte sich das Szenario mit einer Verteilung einer Lehrveranstaltung zwischen der Niederlassung der Fachhochschule Gummersbach und Deutz beschäftigen. Wichtig ist hierbei, dass nicht Aspekte aus den Bereichen CSCW/CSCL oder Lerntheorien zu stark integriert werden. Bei der Entwicklung des Szenario ist dies sicherlich einer der schwierigsten Punkte.
 
@@ -211,7 +211,7 @@
 
   Im weiteren Schritt soll die Architektur wie sie bis dato existiert noch einmal genauer vorgestellt werden. Hier sollen auch die Teilbereiche aufgezeigt werden, die bei der prototypischen Implementierung von besonderem Interesse sein werden. Diese ergeben sich zum Großteil aus dem Szenario, könnten aber auch durch Erkenntnisse aus dem MIAV-Projekt motiviert sein.
   
-  Die Entwicklung des Prototypen selbst wird sich dabei in zwei Bereiche unterteilen lassen. Auf der einen Seite muss das Framework prototypisch implementiert werden, zum anderen muss mit diesem Framework das Szenario umgesetzt werden. Schon im Vorfeld kann gesagt werden, dass es sich hierbei um eine umfangreiche Aufgabe handeln wird. Daher sollten Möglichkeiten untersucht werden, den Prototypen in einer Programmiersprache zu implementieren, die von sich aus prototypisches Arbeiten begünstigt. Da der Fokus der Evaluation auf den funktionalen Anforderungen liegen soll und die non-funktionalen nur an zweiter Stelle betrachtet werden, kann sich eine solche Sprache auch nur marginal auf die Ergebnisse der Architektur auswirken. Ein weiteres Argument wäre, dass es sich um eine Architektur handelt, die nach SOA Konzepten aufgebaut ist, wodurch eine Unabhängigkeit der Sprache zusätzlich begünstigt wird. Gegen ein solches Vorgehen, spricht, dass so bestehende Frameworks zur Medienverarbeitung aus dem Java Umfeld (wie etwa JMF) schwerer integriert werden können.
+  Die Entwicklung des Prototypen selbst wird sich dabei in zwei Bereiche unterteilen lassen. Auf der einen Seite muss das Framework prototypisch implementiert werden, zum anderen muss mit diesem Framework das Szenario umgesetzt werden. Schon im Vorfeld kann gesagt werden, dass es sich hierbei um eine umfangreiche Aufgabe handeln wird. Daher sollten Möglichkeiten untersucht werden, den Prototypen in einer Programmiersprache zu implementieren, die von sich aus prototypisches Arbeiten begünstigt. Da der Fokus der Evaluation auf den funktionalen Anforderungen liegen soll und die non-funktionalen nur an zweiter Stelle betrachtet werden, wird die Verwendung einer solchen Sprache sich auch nur marginal auf die Ergebnisse der Evaluation auswirken. Ein weiteres Argument wäre, dass es sich um eine Architektur handelt, die nach SOA Konzepten aufgebaut ist, wodurch eine Unabhängigkeit der Sprache zusätzlich begünstigt wird. Gegen ein solches Vorgehen, spricht, dass bestehende Frameworks zur Medienverarbeitung aus dem Java Umfeld (wie etwa JMF) schwerer integriert werden können.
   
   Während der Prototyp entwickelt wird, soll auch ein Protokoll erstellt werden, dass bei der Evaluation und deren Auswertung verwendet werden soll.
   
@@ -220,14 +220,14 @@
 \paragraph{Evaluation und Bewertung} % (fold)
 \label{par:evaluation_und_bewertung}
 
-  Nachdem der Prototyp implementiert wurde muss eine Evaluierung gegen das Szenario stattfinden. Diese muss nach den Eingangs definierten Kriterien stattfinden. Zur Evaluation wird das Protokoll aus der Prototypentwicklung verwendet. Bei der Evaluation wird ebenfalls ein Protokoll erzeugt, das die Grundlage für die Bewertung der Architektur und des MIAV-Frameworks sein soll. Aus den Bewertung werden schließlich die Handlungsempfehlungen für die weitere Entwicklung des Frameworks abgeleitet. Stärken und Schwachstellen der Architektur sollen klar benannt werden.
+  Nachdem der Prototyp implementiert wurde muss eine Evaluierung gegen das Szenario stattfinden. Diese muss nach den Eingangs definierten Kriterien stattfinden. Zur Evaluation wird das Protokoll aus der Prototypentwicklung verwendet. Bei der Evaluation wird ebenfalls ein Protokoll erzeugt, das die Grundlage für die Bewertung der Architektur und des MIAV-Frameworks sein soll. Aus den Bewertungen werden schließlich die Handlungsempfehlungen für die weitere Entwicklung des Frameworks abgeleitet. Stärken und Schwachstellen der Architektur sollen klar benannt werden.
 
 % paragraph evaluation_und_bewertung (end)
 
 \paragraph{Fazit und Ausblick} % (fold)
 \label{par:fazit_und_ausblick}
 
-  Am Ende der Arbeit soll ein Fazit gezogen werden, allerdings soll es ein Fazit auf mehreren Ebenen geben. So soll nicht nur eine Aussage über die Evaluation gegeben werden, sondern auch wie das Vorgehen an sich zu bewerten ist. Schwachstellen bei der Durchführung des szenariobasierten Ansatz sollten benannt werden und Vorschläge zur Verbesserung aufgezeigt. Auch soll ein (sicher mehr subjektive) Aussage über den Aufwand der Implementierung abgeben werden, sowohl der Implementierung des Frameworks als auch der Implementierung einer Anwendung mit dem Framework.
+  Am Ende der Arbeit soll ein Fazit gezogen werden, allerdings soll es ein Fazit auf mehreren Ebenen geben. So soll nicht nur eine Aussage über die Evaluation getroffen werden, sondern auch wie das Vorgehen an sich zu bewerten ist. Schwachstellen bei der Durchführung des szenariobasierten Ansatz\footnote{Soweit vorhanden oder aufgetreten.} sollten benannt und Vorschläge zur Verbesserung aufgezeigt werden. Auch soll eine (sicher eher subjektive) Aussage über den Aufwand der Implementierung abgeben werden. Dabei zu sowohl der Implementierung des Frameworks als auch der Implementierung einer Anwendung mit dem Framework.
   
   Die Arbeit wird mit einem generellen Ausblick des MIAV-Projekts enden und wie sich die gewonnen Erkenntnisse weiter verwenden lassen.
 
@@ -245,10 +245,10 @@
 
   \begin{itemize}
     \item Als Quelle um unterschiedliche szenariobasierte Vorgehen und deren Evaluation soll \citep{evaluating_software_architectures} und \citep{scenario_based_software_architecture_evaluation_methods} dienen. SAAM (Software Architecture Analysis Method), ATAM (Architecture Trade-off Analysis Method), CBAM (Cost Benefit Analysis Method), ALMA (Architecture Level Modifiability Analysis) und FAAM (Family – Architecture Analysis Method) sind hier Methoden die einer näheren Betrachtung bedürfen.
-    \item Unter \citep{saam} und wird \citep{scenario_based_analysis_of_software_architecture} wird die SAAM Methode genauer vorgestellt. Hierzu finden sich auch Erläuterungen in \citep{handbuch_der_software_architektur}.
+    \item Unter \citep{saam} und \citep{scenario_based_analysis_of_software_architecture} wird die SAAM Methode genauer vorgestellt. Hierzu finden sich auch Erläuterungen in \citep{handbuch_der_software_architektur}.
     \item \citep{faam} stellt die FAAM Methode vor.
     \item \citep{alma} stellt die ALMA Methode vor.
-    \item Als ergänzendes Material können unter Umständen die Arbeiten von Carroll und Rosson zu Szenarien \citep{scenario_based_development,five_reasons_for_scenario_based_design} dienen, wenn diese auch dem Bereich des Usability Engineerings kommen.
+    \item Als ergänzendes Material können unter Umständen die Arbeiten von Carroll und Rosson zu Szenarien \citep{scenario_based_development,five_reasons_for_scenario_based_design} dienen, wenn sie auch aus dem Bereich des Usability Engineerings kommen.
   \end{itemize}
 
 % subsection szenarien_und_evaluation (end)
@@ -268,7 +268,7 @@
 \label{sub:implementierung}
 
   \begin{itemize}
-    \item Für die Implementierung wird sicherlich die Verwendung von Pattern eine große Rolle spielen, daher ist \citep{design_patterns} ein muss.
+    \item Für die Implementierung wird sicherlich die Verwendung von Pattern eine große Rolle spielen, daher ist \citep{design_patterns} ein Muss.
     \item In \citep{patterns_of_enterprise_application_architecture} werden weiterführende Pattern vorgestellt die unter Umständen Verwendung finden können.
     \item Literatur zum Thema \emph{Prototyping} wäre sicher notwendig, hier hat die Recherche allerdings bisher noch nichts brauchbares ergeben.
   \end{itemize}
