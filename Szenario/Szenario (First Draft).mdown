@@ -1,0 +1,20 @@
+# Szenario für die Master Thesis (First Draft)
+
+Für die Master Thesis ist es notwendig, dass ein Szenario existiert, anhand dessen eine Anwendung mit dem MIAV Framework entwickelt werden kann. Da das Framework bisher nur als Modell existiert, muss das Szenario sowohl die Anwendung berücksichtigen als auch die Verwendung des Frameworks. Diese erste Version soll dazu als eine Grundlage dienen, die kontinuierlich weiter entwickelt werden muss.
+
+## Rahmen des Szenario
+
+Bei dem Szenario handelt es sich um eine Lehrveranstaltung, die **gleichzeitig** an zwei unterschiedlichen Abteilungen der Fachhochschule Köln stattfindet. Dabei ist aber nicht etwa ein Standort der Sender und der andere entsprechend der Empfänger. Zwischen beiden Standorten herrscht eine bidirektionale Verbindung und Interaktionen sind durch Teilnehmer an beiden Standorten möglich und erwünscht.
+
+## Beschreibung des Szenario
+
+An der Fachhochschule Köln - Abteilung Gummersbach findet seit diesem Semester das erste Mal die Veranstaltung "Medienrezeption" in einer ganz neuen Form statt. Die Idee ist es, verwandte Fachbereiche an der Hochschule auch Standortübergreifend besser zu integrieren. Als Pilotprojekt wurde entschieden, dass die Veranstaltung "Medienrezeption" auch von den Studenten des Studiengangs "Medientechnik" besucht werden kann. Dieser Studiengang wird aber am Standort Deutz angeboten, wohingegen die Veranstaltung "Medienrezeption" zum Studiengang "Medieninformatik" gehört, welcher in Gummersbach ansässig ist. Nun ist die Wahrscheinlichkeit sehr gering, dass die Studenten aus Deutz nach Gummersbach wegen diesem einen Fach fahren, egal wie interessant es auch sein mag. Zudem kommen Koordinationsschwierigkeiten mit dem Stundenplan hinzu. Als Lösung wurde ein einfaches Setup installiert, was eine aktive Teilnahme der Studenten beider Standorte an der Veranstaltung erlaubt:
+
+* In jedem Standort sind zwei hochauflösende Webcams installiert, eine die den Dozenten zeigt, eine die das Auditorium zeigt.
+* In jedem Standort ist zwei Beamer installiert, einen für die Bildinformationen des anderen Standortes und einen für die Folien des Dozenten oder der Studenten.
+* In jedem Standort ist ein Rechner installiert, der die Kommunikation realisiert.
+* Die Laptops der Studenten werden an die Kommunikationsrechner angeschlossen, diese stellen dann sicher, dass das Bild sowohl übertragen und lokal angezeigt wird.
+* Die Dozenten erhalten ein eigenes Mikrofon und es stehen 2-3 Mikrofone für die Aufzeichnung der Studenten bereit.
+* Jeder Standort verfügt über ein Lautsprechersystem.
+
+Die Veranstaltung "Medienrezeption" findet Erfahrungsgemäß im kleinen Kreise statt, da es sich um ein Fach im Masterstudiengang handelt. Etwa 10 Studenten der Medieninformatik besuchen sie. Bei den Medientechnikern wird es sich nicht als Pflichtfach, sondern als Wahlpflichtfach angeboten, daher nehmen in der Pilotphase nur 5 Studenten aus Deutz teil. Es wird keine außergewöhnliche Technik benötigt, was die Umsetzung deutlich vereinfacht. Bei allen Komponenten handelt es sich um "Consumer"-Artikel, wie man sie in jedem Elektronikmarkt erhalten kann. Lediglich die Verwendung von zwei Beamern ist etwas kostspieliger. Die gesamte Steuerung und Kommunikation wird durch die Applikation auf den Kommunikationsrechnern geregelt, die auf dem MIAV-Framework basiert.
