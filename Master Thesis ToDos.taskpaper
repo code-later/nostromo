@@ -1,10 +1,12 @@
 Die To-Do Liste der Master Thesis
 
-Inbox:Allgemein:
+Inbox:
+Allgemein:
 
 - Meilensteile definieren
-- Lighthouseapp benutzen
-- Hooks aus git nach Lighthouseapp erstellen
+- Redmine lokal verwenden
+✓ Lighthouseapp benutzen
+✓ Hooks aus git nach Lighthouseapp erstellen
 ✓ Konzept fertig machen
 ✓ Konzept an Fischer/Winter/Plaßmann schicken
 ✓ Literaturliste für das Konzept machen
