@@ -5,6 +5,7 @@ Allgemein:
 
 - Meilensteile definieren
 - Redmine lokal verwenden
+- System Developer installieren
 ✓ Konzept fertig machen
 ✓ Konzept an Fischer/Winter/Plaßmann schicken
 ✓ Literaturliste für das Konzept machen
@@ -18,9 +19,12 @@ Literatur:
 Szenario:
 
 ✓ Draft Szenario auf einer Seite
+- ein kleines Diagramm der Hardware und Kanäle wäre hilfreich
+- eine kleine exemplarische Ablaufbeschreibung mit Personae etc
 
 Implementierung:
 
 - Next Steps als sinnvolle Todos umformulieren
 - Entwicklungsumgebung aufsetzen
+
 Schreiben:
