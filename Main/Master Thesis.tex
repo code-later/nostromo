@@ -1,0 +1,145 @@
+%! program = pdflatex
+
+%
+%  Master Thesis von Dirk Breuer
+%
+%  Created by Dirk Breuer on 2008-06-02.
+%  Copyright (c) 2008 Dirk Breuer. All rights reserved.
+%
+
+%%% PREAMBLE
+
+\documentclass[12pt,headsepline,DIV12,BCOR12mm,a4paper,oneside,cleardoublestandard,openany,bibtotoc,liststotoc,halfparskip]{scrbook}
+% package for typearea settings
+%\usepackage[DIV15]{typearea}
+
+% package declaration
+\usepackage{setspace}
+% \onehalfspacing
+\raggedbottom
+
+%package for inserting source code
+\usepackage{listings}
+\lstset{numbers=left, numberstyle=\tiny, numbersep=5pt}
+\lstset{language=Java}
+\lstset{breaklines = true}
+\lstset{frame=tlrb}
+\lstset{basicstyle=\small, commentstyle=\small}
+
+\raggedbottom
+%\typearea[current]{calc}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+
+% This is now the recommended way for checking for PDFLaTeX:
+\usepackage{ifpdf}
+
+% \usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage[pdftex]{graphicx} % for graphic handling
+\usepackage[pdftex]{color} % for color handling
+\usepackage{verbatim}
+
+\usepackage{natbib}
+
+% \usepackage[intoc]{nomencl}
+% Befehl umbenennen in abk
+% \let\abk\nomenclature
+% Deutsche Überschrift
+% \renewcommand{\nomname}{Abkürzungsverzeichnis}
+% Punkte zw. Abkürzung und Erklärung
+% \setlength{\nomlabelwidth}{.20\hsize}
+% \renewcommand{\nomlabel}[1]{#1 \dotfill}
+% Zeilenabstände verkleinern
+% \setlength{\nomitemsep}{-\parsep}
+%\makeglossary
+% \makenomenclature
+
+\usepackage{fancyvrb}
+
+%\usepackage{array}
+\usepackage{colortbl}
+\usepackage[ngerman]{babel}
+\usepackage{syntonly}
+\usepackage{makeidx}
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage{amsthm}
+\usepackage{vmargin}
+% \usepackage{mathabx}
+\makeindex
+
+% other commands
+\newcommand{\note}[1]{\textbf{#1}}
+\newcommand{\url}[1]{\emph{#1}}
+\pdfpagewidth=\paperwidth \pdfpageheight=\paperheight
+% \syntaxonly % Comment out for Output
+\definecolor{lightgrey}{gray}{0.95}
+\definecolor{cmd_line}{rgb}{0.4,.8,1}
+\definecolor{comment}{rgb}{0.2,0.7,0.5}
+\usepackage[pdftex,plainpages=false,pdfpagelabels,
+            pdftitle={Evaluation der MIAV Architektur anhand eines Anwendungszenarios durch prototypische Implementierung},
+            pdfauthor={Dirk Breuer - University of Applied Science, Cologne},
+            pdfkeywords={}]{hyperref} % Has to stand at the end of the preamble
+\VerbatimFootnotes
+
+%%% END PREAMBLE
+
+%%% BEGIN DOCUMENT
+\begin{document}
+
+\titlehead{
+	{\large Fachhochschule Köln --- Campus Gummersbach\\
+		\hfill }
+	Steinmüllerallee~1\\
+	51643 Gummersbach
+	}
+	\title{Evaluation der MIAV Architektur anhand eines Anwendungszenarios durch prototypische Implementierung (Arbeitstitel)}
+	\author{Dirk Breuer\\Medieninformatik Master\\11038920}
+	\publishers{
+		\center
+		\vspace{0.5cm}
+		\large University of Applied Science of Cologne\\\textbf{Erstprüfer:} Prof. Dr. Mario Winter\\
+		\large University of Applied Science of Cologne\\\textbf{Zweitprüfer:} Prof. Dr. Mario Winter\\
+		\vspace{0.5cm}
+    \large \href{mailto:dirk.breuer@gmail.com}{\emph{dirk.breuer@gmail.com}}
+		}
+	\date{\today}
+
+% Title Section
+
+\frontmatter
+
+% \maketitle
+\newpage
+% \include{disclaimer}
+\newpage
+% \include{abstract}
+% \printnomenclature
+% \printglossary
+% \tableofcontents
+% \lstlistoflistings
+
+\mainmatter
+
+% \include{chapters/01_einfuehrung}
+% \include{chapters/02_vorgehen}
+\include{chapters/szenario}
+% \include{chapters/04_architektur}
+% \include{chapters/05_Multimedia_Aspekte}
+% \include{chapters/06_ausblick}
+% \include{chapters/07_fazit}
+
+\appendix
+
+% \include{chapters/08_anhang}
+% \newpage
+
+% \listoffigures
+
+\bibliographystyle{natdin}
+% \bibliography{bibliography}
+
+% The Chapters with Appendix stuff goes here.
+
+\end{document}

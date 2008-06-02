@@ -10,3 +10,5 @@
 *.stc*
 *.tmproj
 *.toc
+*.lof
+*.idx
