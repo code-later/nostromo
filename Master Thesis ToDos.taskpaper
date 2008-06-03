@@ -23,6 +23,7 @@ Literatur:
 Szenario:
 
 ✓ Draft Szenario auf einer Seite
+- Fischer Mail beantworten
 - ein kleines Diagramm der Hardware und Kanäle wäre hilfreich
 - eine kleine exemplarische Ablaufbeschreibung mit Personae etc
 
@@ -30,5 +31,6 @@ Implementierung:
 
 - Next Steps als sinnvolle Todos umformulieren
 - Entwicklungsumgebung aufsetzen
+- Timing Profile von UML?!
 
 Schreiben:
