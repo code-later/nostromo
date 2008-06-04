@@ -7,8 +7,8 @@ Inbox:
 Allgemein:
 
 - Meilensteile definieren
-- Redmine lokal verwenden
-- System Developer installieren
+✓ Redmine lokal verwenden
+✓ System Developer installieren
 - Im Bereich Streaming mit Stefan (Antons) kooperieren
 ✓ Konzept fertig machen
 ✓ Konzept an Fischer/Winter/Plaßmann schicken
@@ -16,7 +16,7 @@ Allgemein:
 
 Literatur:
 
-- Papers kaufen
+✓ Papers kaufen
 ✓ bisherige Literatur in Papers integrieren
 - Weitere Recherche von geeigneter Literatur
 
@@ -32,5 +32,6 @@ Implementierung:
 - Next Steps als sinnvolle Todos umformulieren
 - Entwicklungsumgebung aufsetzen
 - Timing Profile von UML?!
+- Remodellierung aller Diagramme in IBM System Developer
 
 Schreiben:
