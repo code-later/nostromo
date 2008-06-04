@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="89" version="2.0">
+<workbenchAdvisor/>
+<window height="748" maximized="true" width="1024" x="87" y="1">
+<fastViewData fastViewLocation="1024">
+<orientation position="512" view="com.ibm.ccl.erf.ui.views.reportexplorer"/>
+</fastViewData>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="98" y="30"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="com.ibm.xtools.common.ui.reduction.modelingViewpointsActionSet" itemType="typeToolBarContribution" x="96" y="30"/>
+<coolItem id="com.ibm.xtools.modeler.ui.actions.ModelingActionSet" itemType="typeToolBarContribution" x="39" y="30"/>
+<coolItem id="com.ibm.xtools.publish.ui.internal.actions.PublishActionSet" itemType="typeToolBarContribution" x="39" y="30"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="132" y="30"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="39" y="30"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="633" y="30"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="ModelerDiagramEditor" itemType="typeToolBarContribution" x="935" y="22"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page focus="true" label="Arbeitsbereich - Modellierung">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="com.ibm.xtools.modeler.ui.editors.internal.ModelEditor" name="COSIMA Komponentendiagramm.emx" partName="COSIMA Komponentendiagramm.emx" path="Y:/COSIMA/COSIMA Komponentendiagramm.emx" title="COSIMA Komponentendiagramm.emx" tooltip="COSIMA/COSIMA Komponentendiagramm.emx" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/COSIMA/COSIMA Komponentendiagramm.emx"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Gliederung">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks">
+<viewState columnWidth0="43" columnWidth1="19" columnWidth2="253" columnWidth3="78" columnWidth4="153" columnWidth5="63" columnWidth6="0" horizontalPosition="0" verticalPosition="0">
+<columnOrder columnOrderIndex="0"/>
+<columnOrder columnOrderIndex="1"/>
+<columnOrder columnOrderIndex="2"/>
+<columnOrder columnOrderIndex="3"/>
+<columnOrder columnOrderIndex="4"/>
+<columnOrder columnOrderIndex="5"/>
+<columnOrder columnOrderIndex="6"/>
+</viewState>
+</view>
+<view id="com.ibm.xtools.modeler.ui.internal.ui.views.InheritanceExplorer" partName="Vererbungsexplorer"/>
+<view id="com.ibm.ccl.erf.ui.views.reportexplorer" partName="Berichtsexplorer"/>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Konsole">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Eigenschaften">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.BookmarkView" partName="Lesezeichen"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Projektexplorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+</views>
+<perspectives activePart="ModelerDiagramEditor" activePerspective="com.ibm.xtools.modeler.internal.ui.perspectives.ModelingPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.ibm.xtools.modeler.ui.internal.ui.perspectives.ModelingPerspective" id="com.ibm.xtools.modeler.internal.ui.perspectives.ModelingPerspective" label="Modellierung"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.WorkingSetActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.update.ui.softwareUpdates"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="com.ibm.xtools.modeler.ui.navigator.actions.ModelingActionSet"/>
+<alwaysOnActionSet id="com.ibm.rational.welcome.core.helpSearchActionSet"/>
+<alwaysOnActionSet id="com.ibm.rational.welcome.core.webResourcesActionSet"/>
+<alwaysOnActionSet id="com.ibm.samplegallery.sampleGalleryActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="com.ibm.cic.licensing.common.ui.actionSet"/>
+<alwaysOnActionSet id="com.ibm.01.tutorialgallery.tutorialGalleryActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.analysisActionSet"/>
+<alwaysOnActionSet id="modelerSearchActionSet"/>
+<alwaysOnActionSet id="com.ibm.xtools.modeler.ui.actions.ModelingActionSet"/>
+<alwaysOnActionSet id="com.ibm.xtools.pluglets.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.gmf.runtime.diagram.ui.DiagramActionSet"/>
+<alwaysOnActionSet id="com.ibm.xtools.common.ui.reduction.modelingViewpointsActionSet"/>
+<alwaysOnActionSet id="com.ibm.xtools.publish.ui.internal.actions.PublishActionSet"/>
+<alwaysOnActionSet id="com.ibm.xtools.transform.ui.actionSet"/>
+<show_view_action id="com.ibm.ccl.erf.ui.views.reportexplorer"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="com.ibm.xtools.modeler.ui.internal.ui.views.InheritanceExplorer"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.gef.ui.palette_view"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="com.ibm.xtools.pluglets.ui.newPluglet"/>
+<new_wizard_action id="com.ibm.xtools.common.ui.wizards.NewModelWizard"/>
+<new_wizard_action id="com.ibm.xtools.common.ui.wizards.NewModelProjectWizard"/>
+<new_wizard_action id="com.ibm.xtools.transform.ui.newTransformationConfigurationWizard"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.pde.ui.PDEPerspective"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="com.ibm.xtools.modeler.ui.internal.ui.views.InheritanceExplorer"/>
+<fastViews>
+<view id="com.ibm.ccl.erf.ui.views.reportexplorer" ratio="0.25"/>
+</fastViews>
+<fastViewBars>
+<fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@6b706b70" orientation="256" selectedTabId="org.eclipse.ui.views.PropertySheet" style="0">
+<fastViews>
+<view id="org.eclipse.ui.views.PropertySheet" ratio="0.3"/>
+<view id="org.eclipse.ui.views.TaskList" ratio="0.3"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.3"/>
+<view id="org.eclipse.ui.views.BookmarkView" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@607c607c">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Projektexplorer"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7c687c68" ratio="0.75" ratioLeft="756" ratioRight="252" relationship="2" relative="org.eclipse.ui.internal.ViewStack@607c607c">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25992063" ratioLeft="262" ratioRight="746" relationship="2" relative="org.eclipse.ui.internal.ViewStack@607c607c"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@6b706b70" ratio="0.6295082" ratioLeft="384" ratioRight="226" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@10b810b8" ratio="0.6586402" ratioLeft="465" ratioRight="241" relationship="4" relative="org.eclipse.ui.internal.ViewStack@607c607c">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Gliederung"/>
+<page content="com.ibm.xtools.modeler.ui.internal.ui.views.InheritanceExplorer" label="Vererbungsexplorer"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory/>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@6b706b70"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.xtools.modeler.ui.editors.internal.ModelEditor" name="COSIMA Komponentendiagramm.emx" tooltip="COSIMA/COSIMA Komponentendiagramm.emx">
+<persistable path="/COSIMA/COSIMA Komponentendiagramm.emx"/>
+</file>
+</mruList>
+</workbench>
