@@ -80,7 +80,7 @@
       <releases>
         <enabled>true</enabled>
       </releases>
-      <snapshots />
+      <snapshots/>
       <id>Maven Snapshots</id>
       <url>http://snapshots.maven.codehaus.org/maven2</url>
     </repository>
@@ -132,7 +132,7 @@
       <releases>
         <enabled>true</enabled>
       </releases>
-      <snapshots />
+      <snapshots/>
       <id>Maven Snapshots</id>
       <url>http://snapshots.maven.codehaus.org/maven2</url>
     </pluginRepository>
@@ -199,6 +199,11 @@
       <groupId>javax.media</groupId>
       <artifactId>jmf</artifactId>
       <version>2.1.1e</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
     </dependency>
   </dependencies>
   
