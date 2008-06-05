@@ -9,7 +9,7 @@ package de.fhkoeln.cosima.media;
  * @author user
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public class CosimaReferenceMetadataImpl implements Metadata {
+public class CosimaMetadataImpl implements Metadata {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -22,6 +22,15 @@ public class CosimaReferenceMetadataImpl implements Metadata {
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
 	private String value;
+	
+  public CosimaMetadataImpl(MetadataKeys key) {
+    this.key = key;
+  }
+  
+  public CosimaMetadataImpl(MetadataKeys key, String value) {
+    this.key = key;
+    this.value = value;
+  }
 
 	/** 
 	 * (non-Javadoc)
@@ -29,10 +38,7 @@ public class CosimaReferenceMetadataImpl implements Metadata {
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
 	public void setValue(Object value) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
+	  this.value = (String) value;
 	}
 
 	/** 
@@ -41,10 +47,7 @@ public class CosimaReferenceMetadataImpl implements Metadata {
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
 	public MetadataKeys getKey() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return null;
-		// end-user-code
+		return this.key;
 	}
 
 	/** 
@@ -53,9 +56,6 @@ public class CosimaReferenceMetadataImpl implements Metadata {
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
 	public Object getValue() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return null;
-		// end-user-code
+		return this.value;
 	}
 }
