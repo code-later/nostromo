@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libraryInfos>
+<libraryInfo home="C:\Programme\IBM\SDP\jdk" version="1.5.0">
+<bootpath>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\vm.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\core.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\charsets.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\graphics.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\security.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmpkcs.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmorb.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmcfw.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmorbapi.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmjcefw.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmjgssprovider.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmjsseprovider2.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmjaaslm.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmjaasactivelm.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmcertpathprovider.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\server.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\xml.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ext"/>
+</extensionDirs>
+</libraryInfo>
+<libraryInfo home="C:\Programme\IBM\SDP\jdk\jre" version="1.5.0">
+<bootpath>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\vm.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\core.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\charsets.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\graphics.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\security.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmpkcs.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmorb.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmcfw.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmorbapi.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmjcefw.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmjgssprovider.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmjsseprovider2.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmjaaslm.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmjaasactivelm.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ibmcertpathprovider.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\server.jar"/>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\xml.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Programme\IBM\SDP\jdk\jre\lib\ext"/>
+</extensionDirs>
+</libraryInfo>
+</libraryInfos>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<strings>
+	<string key="Description.AllElements">Všechny prvky navigačního seznamu</string>
+	
+	<!-- Warning: DON'T translate the word '#name' in the strings below -->
+	<string key="Description.Content">Obsah pro #name</string>
+	<string key="Description.TopPattern">Obsahy #name publikované do HTML</string>
+	
+	<string key="Diagram.Name">Název</string>
+	<string key="Diagram.Type">Typ</string>
+	<string key="Diagram.Diagram"> Diagram</string>
+	
+		
+	<string key="TableHeading.TopLeftFrame">Navigační rámec seznam balíků</string>
+	<string key="TableHeading.BottomLeftFrame">Navigační rámec seznam prvků</string>
+	<string key="TableHeading.RightFrame">Rámec obsahu</string>
+	
+	<string key="Heading.AllDiagrams">Všechny diagramy</string>
+	<string key="Heading.AllElements">Všechny prvky</string>
+	<string key="Heading.Class">Třída </string>
+	<string key="Heading.Enumeration">Výčet </string>
+	<string key="Heading.DataType">Datový typ </string>
+	<string key="Heading.Signal">Signál </string>
+	<string key="Heading.Component">Komponenta </string>
+	<string key="Heading.Interface">Rozhraní </string>
+	<string key="Heading.Node">Uzel </string>
+	<string key="Heading.DeploymentSpecification">Specifikace implementace </string>
+	<string key="Heading.ExecutionEnvironment">Prováděcí prostředí </string>
+	<string key="Heading.Diagram">Diagram </string>
+	<string key="Heading.Packages">Balíky</string>
+	<string key="Heading.Package">Balík </string>
+	<string key="Heading.Model">Model </string>
+	<string key="Heading.Profile">Profil </string>
+	<string key="Heading.Actor">Aktor </string>
+	<string key="Heading.UseCase">UseCase </string>
+	<string key="Heading.Artifact">Artefakt </string>
+	<string key="Heading.Activity">Aktivita </string>
+	<string key="Heading.ActivityNode">Uzel aktivity </string>
+	<string key="Heading.ActivityEdge">Hrana aktivity </string>
+	<string key="Heading.Device">Zařízení </string>
+	<string key="Heading.StateMachine">Stav počítače </string>
+	<string key="Heading.Region">Region </string>
+	<string key="Heading.State">Stav </string>
+	<string key="Heading.Event">Událost </string>
+	<string key="Heading.ExtensionPoint">Bod rozšíření </string>
+
+	<string key="Heading.FinalState">Konečný stav </string>
+	<string key="Heading.CombinedFragment">Sloučený fragment </string>
+	<string key="Heading.Pseudostate">Pseudostav </string>
+	<string key="Heading.Pin">Pin </string>
+	<string key="Heading.InstanceSpecification">Specifikace instance </string>
+	<string key="Heading.Collaboration">Spolupráce </string>	
+    <string key="Heading.CollaborationOccurrence">Výskyt spolupráce </string>
+    <string key="Heading.Port">Port </string>
+    <string key="Heading.Interaction">Interakce </string>	
+    <string key="Heading.Lifeline">Linie </string>
+    <string key="Heading.Message">Zpráva </string>
+    <string key="Heading.CallTrigger">Spouštěč volání </string>
+    <string key="Heading.Stereotype">Stereotyp </string>
+    <!-- Start Class Diagram relationships -->
+    <string key="Heading.Association">Přidružení </string>	
+    <string key="Heading.AssociationClass">Třída přidružení </string>
+    <string key="Heading.Generalization">Generalizace </string>	
+    <string key="Heading.Implementation">Implementace </string>
+    <string key="Heading.Realization">Realizace </string>
+    <string key="Heading.Substitution">Náhrada </string>
+    <string key="Heading.Dependency">Závislost </string>
+    <string key="Heading.Usage">Použití </string>
+    <string key="Heading.Abstraction">Abstrakce </string>
+    <string key="Heading.PackageImport">Import balíku </string>
+    <string key="Heading.ElementImport">Import prvku </string>
+    <!-- End Class Diagram relationships -->
+    <!-- Start Composite Structure Diagram relationships -->
+    <string key="Heading.Connector">Konektor </string>
+    <string key="Heading.ConnectorEnd">Zakončení konektoru </string>		
+    <!-- End Composite Structure Diagram relationships -->
+    <!-- Start State Machine Diagram relationships -->
+    <string key="Heading.Transition">Přechod </string>
+    <!-- End State Machine Diagram relationships -->
+    <!-- Start Usecase Diagram relationships -->
+    <string key="Heading.Include">Zahrnout </string>
+    <string key="Heading.Extend">Rozšířit </string>
+    <!-- End Usecase Diagram relationships -->
+    <!-- Start Deployment Diagram relationships -->
+    <string key="Heading.Manifestation">Manifestace </string>
+    <string key="Heading.Deployment">Implementace </string>
+    <string key="Heading.CommunicationPath">Komunikační cesta </string>
+    <!-- End Deployment Diagram relationships -->
+    <!-- Start Activity Diagram relationships -->
+    <string key="Heading.ControlFlow">Řídící tok </string>
+    <string key="Heading.ObjectFlow">Tok objektů </string>
+    <!-- End Activity Diagram relationships -->
+    <string key="Heading.ExecutionOccurrence">Výskyt provedení </string>	
+    <string key="Heading.OccurrenceSpecification">Výskyt specifikace </string>	
+    <string key="Heading.Stop">Zastavit </string>	
+	<string key="Heading.PrimitiveType">Primitivní typ </string>	
+	
+	<string key="TableHeading.EnumLiterals">Výčtové literály</string>
+	<string key="TableHeading.Attributes">Atributy</string>
+	<string key="TableHeading.Roles">Role</string>
+	<string key="TableHeading.Classes">Klasifikátory</string>
+	<string key="TableHeading.Diagrams">Diagramy</string>
+	<string key="TableHeading.Operations">Operace</string>
+	<string key="TableHeading.ActivityNode">Uzly aktivity</string>
+	<string key="TableHeading.ActivityEdges">Hrany aktivity</string>
+	<!-- start Template Binding and Parameter subs -->	
+	<string key="TableHeading.TemplateBinding">Vazby šablony</string>
+	<string key="TableHeading.TemplateParameterSubstitution">Náhrady parametru šablony</string>	
+	<string key="TableHeading.TemplateBindingDetails">Podrobnosti vazby šablony</string>	
+	<string key="TableHeading.TemplateParameterSubstitutionDetails">Podrobnosti náhrady parametru šablony</string>		
+	<!-- End Template Binding and Parameter subs -->		
+	<string key="TableHeading.TemplateParameters">Parametry šablony</string>
+	<string key="TableHeading.TemplateSignature">Podpis šablony</string>
+	<string key="TableHeading.Interactions">Interakce</string>
+	<string key="TableHeading.Comments">Komentáře</string>
+	<string key="TableHeading.Constraints">Omezení</string>
+	<string key="TableHeading.Lifelines">Linie</string>
+	<string key="TableHeading.Messages">Zprávy</string>
+	<string key="TableHeading.ExecutionOccurrences">Výskyty provádění</string>
+	<string key="TableHeading.InteractionOccurrences">Výskyty interakce</string>
+	<string key="TableHeading.Fragments">Fragmenty</string>
+	<string key="TableHeading.CombinedFragments">Sloučené fragmenty</string>
+	<string key="TableHeading.Stops">Zastavení</string>	
+	<string key="TableHeading.InteractionConstrains">Omezení interakce</string>	
+	<string key="TableHeading.InteractionOperands">Operand interakce</string>	
+	<string key="TableHeading.InteractionOperandExpressions">Výrazy operandů interakce</string>	
+	<string key="TableHeading.States">Stavy</string>	
+	<string key="TableHeading.PseudoStates">Pseudo stavy</string>
+	<string key="TableHeading.URLs">Adresy URL</string>
+	
+	<string key="TableHeading.EnumLiteralDetails">Podrobnosti výčtového literálu</string>
+	<string key="TableHeading.AttributeDetails">Podrobnosti atributu</string>
+	<string key="TableHeading.RolesDetails">Podrobnosti rolí</string>
+	<string key="TableHeading.ClassDetails">Podrobnosti třídy</string>
+	<string key="TableHeading.DiagramDetails">Podrobnosti diagramu</string>
+	<string key="TableHeading.OperationDetails">Podrobnosti operace</string>
+	<string key="TableHeading.ActivityNodeDetails">Podrobnosti uzlu aktivity</string>
+	<string key="TableHeading.ActivityEdgeDetails">Podrobnosti hrany aktivity</string>
+	<string key="TableHeading.TemplateParameterDetails">Podrobnosti parametru šablony</string>
+	<string key="TableHeading.TemplateSignatureDetails">Podrobnosti podpisu šablony</string>
+	<string key="TableHeading.InteractionDetails">Podrobnosti interakce</string>
+	<string key="TableHeading.LifelineDetails">Podrobnosti linie</string>
+	<string key="TableHeading.MessageDetails">Podrobnosti zprávy</string>
+	<string key="TableHeading.ExecutionOccurrenceDetails">Podrobnosti výskytu provádění</string>
+	<string key="TableHeading.InteractionOccurrenceDetails">Podrobnosti výskytu interakce</string>
+	<string key="TableHeading.FragmentDetails">Podrobnosti fragmentu</string>
+	<string key="TableHeading.CombinedFragmentDetails">Podrobnosti sloučeného fragmentu</string>
+	<string key="TableHeading.StopDetails">Podrobnosti zastavení</string>	
+	<string key="TableHeading.InteractionConstrainDetails">Podrobnosti omezení interakce</string>	
+	<string key="TableHeading.InteractionOperandDetails">Podrobnosti operandu interakce</string>	
+	<string key="TableHeading.InteractionOperandExpressionDetails">Podrobnosti výrazu operandu interakce</string>	
+	<string key="TableHeading.StateDetails">Podrobnosti stavu</string>	
+	<string key="TableHeading.PseudoStateDetails">Podrobnosti pseudo stavu</string>
+	
+	
+	<!-- Warning: DON'T translate the word '#name' in the string below -->
+	<string key="Title.TopPattern">#name UML dokumentace</string>
+	
+	<string key="NavigationBar.OverviewLinkText">Přehled</string>
+	<string key="NavigationBar.TopLinkText">Nahoru</string>
+	<string key="NavigationBar.PackageLinkText">Balík</string>
+	<string key="NavigationBar.ElementLinkText">Prvek</string>
+	<string key="NavigationBar.SummaryTitle">Souhrn:</string>
+	<string key="NavigationBar.DetailTitle">Detail:</string>
+	
+	<string key="ContentHeading.Parameters">Parametry:</string>
+	<string key="ContentHeading.Returns">Vrací:</string>
+	<string key="ContentHeading.Constraints">Omezení:</string>
+	<string key="ContentHeading.Properties">Vlastnosti:</string>
+	
+	<string key="Nav.EnumLiterals">Výčtové literály</string>
+	<string key="Nav.Attributes">Atributy</string>
+	<string key="Nav.Roles">Role</string>
+	<string key="Nav.Operations">Operace</string>
+	<string key="Nav.Properties">Vlastnosti</string>
+	<string key="Nav.ActivityNode">Uzel aktivity</string>
+	<string key="Nav.ActivityEdge">Hrana aktivity</string>
+	<string key="Nav.TemplateParameters">Parametry šablony</string>
+	<string key="Nav.URLs">Adresy URL</string>
+	<string key="Nav.NestedActivities">Vnořené aktivity</string>
+	<string key="Nav.NestedClassifiers">Vnořené klasifikátory</string>
+	<string key="Nav.NestedComponents">Vnořené komponenty</string>
+	<string key="Nav.Interactions">Interakce</string>
+	<string key="Nav.Lifelines">Linie</string>
+	<string key="Nav.Messages">Zprávy</string>
+	<string key="Nav.ExecutionOccurrences">Výskyty provádění</string>
+	<string key="Nav.Fragments">Fragmenty</string>
+	<string key="Nav.CombinedFragments">Sloučené fragmenty</string>
+	<string key="Nav.Stops">Zastavení</string>	
+	<string key="Nav.InteractionConstrains">Omezení interakce</string>	
+	<string key="Nav.InteractionOperands">Operand interakce</string>	
+	<string key="Nav.InteractionOperandExpressions">Výrazy operandů interakce</string>	
+	
+	<string key="Hotspot.PolyName">Víceřádkové souřadnice popisující aktivní bod obrazu</string>	
+	
+	<string key="NavTree.Models">Modely</string>
+	<string key="NavTree.Diagrams">Diagramy</string>
+	
+</strings>

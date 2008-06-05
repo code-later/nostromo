@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<strings>
+    <!-- Metrics Report Translatable strings -->
+	<string key="MetricsReport.Title">Пример отчета о показателях UML для #topLevelName</string>
+	<string key="MetricsReport.Introduction">#reportType &apos;#topLevelName&apos; содержит #classCount классов и #packageCount пакетов. </string>
+	<string key="MetricsReport.AverageClassesPerPackage">В среднем пакет содержит #average классов.</string>
+	<string key="MetricsReport.PackagesMostClasses">Пакеты с наибольшим числом классов (#maxClassCount):</string>
+	<string key="MetricsReport.ClassesMostOperations">Классы с наибольшим числом операций (#maxOperationsCount):</string>
+	<string key="MetricsReport.ClassesMostAttributes">Классы с наибольшим числом атрибутов (#maxAttributesCount):</string>
+	<string key="MetricsReport.ErrorUnableToMeasure">нельзя оценить (в модели нет пакетов). </string>
+	
+	<string key="MetricsReport.ModelLabel">Модель</string>>
+	<string key="MetricsReport.PackageLabel">Пакет</string>>
+	
+    <!-- Model Diagram Report Translatable strings -->
+	<string key="ModelDiagramReport.Title">Отчет о диаграмме модели для #topLevelName</string>
+	<string key="ModelDiagramReport.Diagram"> Диаграмма</string>
+</strings>

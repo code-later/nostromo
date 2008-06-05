@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<strings>
+	<string key="Description.AllElements">모든 요소 탐색 목록</string>
+	
+	<!-- Warning: DON'T translate the word '#name' in the strings below -->
+	<string key="Description.Content">#name 컨텐츠</string>
+	<string key="Description.TopPattern">HTML에 공개된 #name 컨텐츠</string>
+	
+	<string key="Diagram.Name">이름</string>
+	<string key="Diagram.Type">유형</string>
+	<string key="Diagram.Diagram"> 다이어그램</string>
+	
+		
+	<string key="TableHeading.TopLeftFrame">패키지 목록 탐색 프레임</string>
+	<string key="TableHeading.BottomLeftFrame">요소 목록 탐색 프레임</string>
+	<string key="TableHeading.RightFrame">컨텐츠 프레임</string>
+	
+	<string key="Heading.AllDiagrams">모든 다이어그램</string>
+	<string key="Heading.AllElements">모든 요소</string>
+	<string key="Heading.Class">클래스 </string>
+	<string key="Heading.Enumeration">열거 </string>
+	<string key="Heading.DataType">데이터 유형 </string>
+	<string key="Heading.Signal">신호 </string>
+	<string key="Heading.Component">컴포넌트 </string>
+	<string key="Heading.Interface">인터페이스 </string>
+	<string key="Heading.Node">노드 </string>
+	<string key="Heading.DeploymentSpecification">배치 스펙 </string>
+	<string key="Heading.ExecutionEnvironment">실행 환경 </string>
+	<string key="Heading.Diagram">다이어그램 </string>
+	<string key="Heading.Packages">패키지</string>
+	<string key="Heading.Package">패키지 </string>
+	<string key="Heading.Model">모델 </string>
+	<string key="Heading.Profile">프로파일 </string>
+	<string key="Heading.Actor">액터 </string>
+	<string key="Heading.UseCase">유스 케이스 </string>
+	<string key="Heading.Artifact">아티팩트 </string>
+	<string key="Heading.Activity">활동 </string>
+	<string key="Heading.ActivityNode">활동 노드 </string>
+	<string key="Heading.ActivityEdge">활동 에지 </string>
+	<string key="Heading.Device">장치 </string>
+	<string key="Heading.StateMachine">상태 머신 </string>
+	<string key="Heading.Region">영역 </string>
+	<string key="Heading.State">상태 </string>
+	<string key="Heading.Event">이벤트 </string>
+	<string key="Heading.ExtensionPoint">확장점 </string>
+
+	<string key="Heading.FinalState">최종 상태 </string>
+	<string key="Heading.CombinedFragment">결합 단편 </string>
+	<string key="Heading.Pseudostate">Pseudo 상태 </string>
+	<string key="Heading.Pin">핀 </string>
+	<string key="Heading.InstanceSpecification">인스턴스 스펙 </string>
+	<string key="Heading.Collaboration">협업 </string>	
+    <string key="Heading.CollaborationOccurrence">협업 발생 </string>
+    <string key="Heading.Port">포트 </string>
+    <string key="Heading.Interaction">상호작용 </string>	
+    <string key="Heading.Lifeline">라이프라인 </string>
+    <string key="Heading.Message">메시지 </string>
+    <string key="Heading.CallTrigger">호출 트리거 </string>
+    <string key="Heading.Stereotype">스테레오타입 </string>
+    <!-- Start Class Diagram relationships -->
+    <string key="Heading.Association">연관 </string>	
+    <string key="Heading.AssociationClass">연관 클래스 </string>
+    <string key="Heading.Generalization">일반화 </string>	
+    <string key="Heading.Implementation">구현 </string>
+    <string key="Heading.Realization">실현(realization) </string>
+    <string key="Heading.Substitution">대체 </string>
+    <string key="Heading.Dependency">종속성 </string>
+    <string key="Heading.Usage">사용 </string>
+    <string key="Heading.Abstraction">추상 </string>
+    <string key="Heading.PackageImport">패키지 가져오기 </string>
+    <string key="Heading.ElementImport">요소 가져오기 </string>
+    <!-- End Class Diagram relationships -->
+    <!-- Start Composite Structure Diagram relationships -->
+    <string key="Heading.Connector">커넥터 </string>
+    <string key="Heading.ConnectorEnd">커넥터 끝점 </string>		
+    <!-- End Composite Structure Diagram relationships -->
+    <!-- Start State Machine Diagram relationships -->
+    <string key="Heading.Transition">상태 전이 </string>
+    <!-- End State Machine Diagram relationships -->
+    <!-- Start Usecase Diagram relationships -->
+    <string key="Heading.Include">포함 </string>
+    <string key="Heading.Extend">확장 </string>
+    <!-- End Usecase Diagram relationships -->
+    <!-- Start Deployment Diagram relationships -->
+    <string key="Heading.Manifestation">Manifestation </string>
+    <string key="Heading.Deployment">배치 </string>
+    <string key="Heading.CommunicationPath">커뮤니케이션 경로 </string>
+    <!-- End Deployment Diagram relationships -->
+    <!-- Start Activity Diagram relationships -->
+    <string key="Heading.ControlFlow">제어 플로우 </string>
+    <string key="Heading.ObjectFlow">오브젝트 플로우 </string>
+    <!-- End Activity Diagram relationships -->
+    <string key="Heading.ExecutionOccurrence">실행 발생 </string>	
+    <string key="Heading.OccurrenceSpecification">발생 스펙 </string>	
+    <string key="Heading.Stop">중지 </string>	
+	<string key="Heading.PrimitiveType">기본 유형 </string>	
+	
+	<string key="TableHeading.EnumLiterals">열거 리터럴</string>
+	<string key="TableHeading.Attributes">속성</string>
+	<string key="TableHeading.Roles">역할</string>
+	<string key="TableHeading.Classes">클래스류</string>
+	<string key="TableHeading.Diagrams">다이어그램</string>
+	<string key="TableHeading.Operations">조작</string>
+	<string key="TableHeading.ActivityNode">활동 노드</string>
+	<string key="TableHeading.ActivityEdges">활동 에지</string>
+	<!-- start Template Binding and Parameter subs -->	
+	<string key="TableHeading.TemplateBinding">템플리트 바인딩</string>
+	<string key="TableHeading.TemplateParameterSubstitution">템플리트 매개변수 대체</string>	
+	<string key="TableHeading.TemplateBindingDetails">템플리트 바인딩 세부사항</string>	
+	<string key="TableHeading.TemplateParameterSubstitutionDetails">템플리트 매개변수 대체 세부사항</string>		
+	<!-- End Template Binding and Parameter subs -->		
+	<string key="TableHeading.TemplateParameters">템플리트 매개변수</string>
+	<string key="TableHeading.TemplateSignature">템플리트 서명</string>
+	<string key="TableHeading.Interactions">상호작용</string>
+	<string key="TableHeading.Comments">주석</string>
+	<string key="TableHeading.Constraints">제한조건</string>
+	<string key="TableHeading.Lifelines">라이프라인</string>
+	<string key="TableHeading.Messages">메시지</string>
+	<string key="TableHeading.ExecutionOccurrences">실행 발생</string>
+	<string key="TableHeading.InteractionOccurrences">상호작용 발생</string>
+	<string key="TableHeading.Fragments">단편</string>
+	<string key="TableHeading.CombinedFragments">결합 단편</string>
+	<string key="TableHeading.Stops">중지</string>	
+	<string key="TableHeading.InteractionConstrains">상호작용 제한조건</string>	
+	<string key="TableHeading.InteractionOperands">상호작용 피연산자</string>	
+	<string key="TableHeading.InteractionOperandExpressions">상호작용 피연산자 표현식</string>	
+	<string key="TableHeading.States">상태</string>	
+	<string key="TableHeading.PseudoStates">Pseudo 상태</string>
+	<string key="TableHeading.URLs">URL</string>
+	
+	<string key="TableHeading.EnumLiteralDetails">열거 리터럴 세부사항</string>
+	<string key="TableHeading.AttributeDetails">속성 세부사항</string>
+	<string key="TableHeading.RolesDetails">역할 세부사항</string>
+	<string key="TableHeading.ClassDetails">클래스 세부사항</string>
+	<string key="TableHeading.DiagramDetails">다이어그램 세부사항</string>
+	<string key="TableHeading.OperationDetails">조작 세부사항</string>
+	<string key="TableHeading.ActivityNodeDetails">활동 노드 세부사항</string>
+	<string key="TableHeading.ActivityEdgeDetails">활동 에지 세부사항</string>
+	<string key="TableHeading.TemplateParameterDetails">템플리트 매개변수 세부사항</string>
+	<string key="TableHeading.TemplateSignatureDetails">템플리트 서명 세부사항</string>
+	<string key="TableHeading.InteractionDetails">상호작용 세부사항</string>
+	<string key="TableHeading.LifelineDetails">라이프라인 세부사항</string>
+	<string key="TableHeading.MessageDetails">메시지 세부사항</string>
+	<string key="TableHeading.ExecutionOccurrenceDetails">실행 발생 세부사항</string>
+	<string key="TableHeading.InteractionOccurrenceDetails">상호작용 발생 세부사항</string>
+	<string key="TableHeading.FragmentDetails">단편 세부사항</string>
+	<string key="TableHeading.CombinedFragmentDetails">결합 단편 세부사항</string>
+	<string key="TableHeading.StopDetails">중지 세부사항</string>	
+	<string key="TableHeading.InteractionConstrainDetails">상호작용 제한조건 세부사항</string>	
+	<string key="TableHeading.InteractionOperandDetails">상호작용 피연산자 세부사항</string>	
+	<string key="TableHeading.InteractionOperandExpressionDetails">상호작용 피연산자 표현식 세부사항</string>	
+	<string key="TableHeading.StateDetails">상태 세부사항</string>	
+	<string key="TableHeading.PseudoStateDetails">Pseudo 상태 세부사항</string>
+	
+	
+	<!-- Warning: DON'T translate the word '#name' in the string below -->
+	<string key="Title.TopPattern">#name UML 문서</string>
+	
+	<string key="NavigationBar.OverviewLinkText">개요</string>
+	<string key="NavigationBar.TopLinkText">맨 위</string>
+	<string key="NavigationBar.PackageLinkText">패키지</string>
+	<string key="NavigationBar.ElementLinkText">요소</string>
+	<string key="NavigationBar.SummaryTitle">요약:</string>
+	<string key="NavigationBar.DetailTitle">세부사항:</string>
+	
+	<string key="ContentHeading.Parameters">매개변수:</string>
+	<string key="ContentHeading.Returns">리턴:</string>
+	<string key="ContentHeading.Constraints">제한조건:</string>
+	<string key="ContentHeading.Properties">특성:</string>
+	
+	<string key="Nav.EnumLiterals">열거 리터럴</string>
+	<string key="Nav.Attributes">속성</string>
+	<string key="Nav.Roles">역할</string>
+	<string key="Nav.Operations">조작</string>
+	<string key="Nav.Properties">특성</string>
+	<string key="Nav.ActivityNode">활동 노드</string>
+	<string key="Nav.ActivityEdge">활동 에지</string>
+	<string key="Nav.TemplateParameters">템플리트 매개변수</string>
+	<string key="Nav.URLs">URL</string>
+	<string key="Nav.NestedActivities">중첩된 활동</string>
+	<string key="Nav.NestedClassifiers">중첩된 클래스류</string>
+	<string key="Nav.NestedComponents">중첩된 컴포넌트</string>
+	<string key="Nav.Interactions">상호작용</string>
+	<string key="Nav.Lifelines">라이프라인</string>
+	<string key="Nav.Messages">메시지</string>
+	<string key="Nav.ExecutionOccurrences">실행 발생</string>
+	<string key="Nav.Fragments">단편</string>
+	<string key="Nav.CombinedFragments">결합 단편</string>
+	<string key="Nav.Stops">중지</string>	
+	<string key="Nav.InteractionConstrains">상호작용 제한조건</string>	
+	<string key="Nav.InteractionOperands">상호작용 피연산자</string>	
+	<string key="Nav.InteractionOperandExpressions">상호작용 피연산자 표현식</string>	
+	
+	<string key="Hotspot.PolyName">이미지로 핫스팟을 설명하는 폴리라인 좌표</string>	
+	
+	<string key="NavTree.Models">모델</string>
+	<string key="NavTree.Diagrams">다이어그램</string>
+	
+</strings>

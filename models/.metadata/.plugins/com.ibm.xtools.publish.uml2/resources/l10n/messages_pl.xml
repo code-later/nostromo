@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<strings>
+	<string key="Description.AllElements">Lista nawigacyjna wszystkich elementów</string>
+	
+	<!-- Warning: DON'T translate the word '#name' in the strings below -->
+	<string key="Description.Content">#name - treść</string>
+	<string key="Description.TopPattern">#name - treść opublikowana w formacie HTML</string>
+	
+	<string key="Diagram.Name">Nazwa</string>
+	<string key="Diagram.Type">Typ</string>
+	<string key="Diagram.Diagram"> Diagram</string>
+	
+		
+	<string key="TableHeading.TopLeftFrame">Ramka nawigacyjna listy pakietów</string>
+	<string key="TableHeading.BottomLeftFrame">Ramka nawigacyjna listy elementów</string>
+	<string key="TableHeading.RightFrame">Ramka treści</string>
+	
+	<string key="Heading.AllDiagrams">Wszystkie diagramy</string>
+	<string key="Heading.AllElements">Wszystkie elementy</string>
+	<string key="Heading.Class">Klasa </string>
+	<string key="Heading.Enumeration">Wyliczenie </string>
+	<string key="Heading.DataType">Typ danych </string>
+	<string key="Heading.Signal">Sygnał </string>
+	<string key="Heading.Component">Komponent </string>
+	<string key="Heading.Interface">Interfejs </string>
+	<string key="Heading.Node">Węzeł </string>
+	<string key="Heading.DeploymentSpecification">Specyfikacja wdrożenia </string>
+	<string key="Heading.ExecutionEnvironment">Środowisko wykonawcze </string>
+	<string key="Heading.Diagram">Diagram </string>
+	<string key="Heading.Packages">Pakiety</string>
+	<string key="Heading.Package">Pakiet </string>
+	<string key="Heading.Model">Model </string>
+	<string key="Heading.Profile">Profil </string>
+	<string key="Heading.Actor">Aktor </string>
+	<string key="Heading.UseCase">Przypadek użycia </string>
+	<string key="Heading.Artifact">Artefakt </string>
+	<string key="Heading.Activity">Działanie </string>
+	<string key="Heading.ActivityNode">Węzeł działania </string>
+	<string key="Heading.ActivityEdge">Krawędź działania </string>
+	<string key="Heading.Device">Urządzenie </string>
+	<string key="Heading.StateMachine">Automat stanów </string>
+	<string key="Heading.Region">Region </string>
+	<string key="Heading.State">Stan </string>
+	<string key="Heading.Event">Zdarzenie </string>
+	<string key="Heading.ExtensionPoint">Punkt rozszerzenia </string>
+
+	<string key="Heading.FinalState">Stan końcowy </string>
+	<string key="Heading.CombinedFragment">Fragment złożony </string>
+	<string key="Heading.Pseudostate">Pseudostan </string>
+	<string key="Heading.Pin">Punkt </string>
+	<string key="Heading.InstanceSpecification">Specyfikacja instancji </string>
+	<string key="Heading.Collaboration">Współpraca </string>	
+    <string key="Heading.CollaborationOccurrence">Wystąpienie współpracy </string>
+    <string key="Heading.Port">Port </string>
+    <string key="Heading.Interaction">Interakcja </string>	
+    <string key="Heading.Lifeline">Linia życia </string>
+    <string key="Heading.Message">Komunikat </string>
+    <string key="Heading.CallTrigger">Wyzwalacz wywołania </string>
+    <string key="Heading.Stereotype">Stereotyp </string>
+    <!-- Start Class Diagram relationships -->
+    <string key="Heading.Association">Powiązanie </string>	
+    <string key="Heading.AssociationClass">Klasa powiązania </string>
+    <string key="Heading.Generalization">Uogólnienie </string>	
+    <string key="Heading.Implementation">Implementacja </string>
+    <string key="Heading.Realization">Realizacja </string>
+    <string key="Heading.Substitution">Podstawienie </string>
+    <string key="Heading.Dependency">Zależność </string>
+    <string key="Heading.Usage">Użycie </string>
+    <string key="Heading.Abstraction">Abstrakcja </string>
+    <string key="Heading.PackageImport">Import pakietu </string>
+    <string key="Heading.ElementImport">Import elementu </string>
+    <!-- End Class Diagram relationships -->
+    <!-- Start Composite Structure Diagram relationships -->
+    <string key="Heading.Connector">Konektor </string>
+    <string key="Heading.ConnectorEnd">Koniec konektora </string>		
+    <!-- End Composite Structure Diagram relationships -->
+    <!-- Start State Machine Diagram relationships -->
+    <string key="Heading.Transition">Przejście </string>
+    <!-- End State Machine Diagram relationships -->
+    <!-- Start Usecase Diagram relationships -->
+    <string key="Heading.Include">Włączanie </string>
+    <string key="Heading.Extend">Rozszerzanie </string>
+    <!-- End Usecase Diagram relationships -->
+    <!-- Start Deployment Diagram relationships -->
+    <string key="Heading.Manifestation">Manifest </string>
+    <string key="Heading.Deployment">Wdrożenie </string>
+    <string key="Heading.CommunicationPath">Ścieżka komunikacji </string>
+    <!-- End Deployment Diagram relationships -->
+    <!-- Start Activity Diagram relationships -->
+    <string key="Heading.ControlFlow">Przepływ sterowania </string>
+    <string key="Heading.ObjectFlow">Przepływ obiektów </string>
+    <!-- End Activity Diagram relationships -->
+    <string key="Heading.ExecutionOccurrence">Wystąpienie wykonania </string>	
+    <string key="Heading.OccurrenceSpecification">Specyfikacja wystąpienia </string>	
+    <string key="Heading.Stop">Zatrzymanie </string>	
+	<string key="Heading.PrimitiveType">Typ podstawowy </string>	
+	
+	<string key="TableHeading.EnumLiterals">Literały wyliczenia</string>
+	<string key="TableHeading.Attributes">Atrybuty</string>
+	<string key="TableHeading.Roles">Role</string>
+	<string key="TableHeading.Classes">Klasyfikatory</string>
+	<string key="TableHeading.Diagrams">Diagramy</string>
+	<string key="TableHeading.Operations">Operacje</string>
+	<string key="TableHeading.ActivityNode">Węzły działania</string>
+	<string key="TableHeading.ActivityEdges">Krawędzie działania</string>
+	<!-- start Template Binding and Parameter subs -->	
+	<string key="TableHeading.TemplateBinding">Powiązania szablonów</string>
+	<string key="TableHeading.TemplateParameterSubstitution">Podstawienia parametrów szablonu</string>	
+	<string key="TableHeading.TemplateBindingDetails">Szczegóły powiązania szablonu</string>	
+	<string key="TableHeading.TemplateParameterSubstitutionDetails">Szczegóły podstawienia parametru szablonu</string>		
+	<!-- End Template Binding and Parameter subs -->		
+	<string key="TableHeading.TemplateParameters">Parametry szablonu</string>
+	<string key="TableHeading.TemplateSignature">Sygnatura szablonu</string>
+	<string key="TableHeading.Interactions">Interakcje</string>
+	<string key="TableHeading.Comments">Komentarze</string>
+	<string key="TableHeading.Constraints">Ograniczenia</string>
+	<string key="TableHeading.Lifelines">Linie życia</string>
+	<string key="TableHeading.Messages">Komunikaty</string>
+	<string key="TableHeading.ExecutionOccurrences">Wystąpienia wykonania</string>
+	<string key="TableHeading.InteractionOccurrences">Wystąpienia interakcji</string>
+	<string key="TableHeading.Fragments">Fragmenty</string>
+	<string key="TableHeading.CombinedFragments">Fragmenty złożone</string>
+	<string key="TableHeading.Stops">Zatrzymania</string>	
+	<string key="TableHeading.InteractionConstrains">Ograniczenia interakcji</string>	
+	<string key="TableHeading.InteractionOperands">Operandy interakcji</string>	
+	<string key="TableHeading.InteractionOperandExpressions">Wyrażenia operandów interakcji</string>	
+	<string key="TableHeading.States">Stany</string>	
+	<string key="TableHeading.PseudoStates">Pseudostany</string>
+	<string key="TableHeading.URLs">Adresy URL</string>
+	
+	<string key="TableHeading.EnumLiteralDetails">Szczegóły literału wyliczenia</string>
+	<string key="TableHeading.AttributeDetails">Szczegóły atrybutu</string>
+	<string key="TableHeading.RolesDetails">Szczegóły ról</string>
+	<string key="TableHeading.ClassDetails">Szczegóły klasy</string>
+	<string key="TableHeading.DiagramDetails">Szczegóły diagramu</string>
+	<string key="TableHeading.OperationDetails">Szczegóły operacji</string>
+	<string key="TableHeading.ActivityNodeDetails">Szczegóły węzła działania</string>
+	<string key="TableHeading.ActivityEdgeDetails">Szczegóły krawędzi działania</string>
+	<string key="TableHeading.TemplateParameterDetails">Szczegóły parametru szablonu</string>
+	<string key="TableHeading.TemplateSignatureDetails">Szczegóły sygnatury szablonu</string>
+	<string key="TableHeading.InteractionDetails">Szczegóły interakcji</string>
+	<string key="TableHeading.LifelineDetails">Szczegóły linii życia</string>
+	<string key="TableHeading.MessageDetails">Szczegóły komunikatu</string>
+	<string key="TableHeading.ExecutionOccurrenceDetails">Szczegóły wystąpienia wykonania</string>
+	<string key="TableHeading.InteractionOccurrenceDetails">Szczegóły wystąpienia interakcji</string>
+	<string key="TableHeading.FragmentDetails">Szczegóły fragmentu</string>
+	<string key="TableHeading.CombinedFragmentDetails">Szczegóły fragmentu złożonego</string>
+	<string key="TableHeading.StopDetails">Szczegóły zatrzymania</string>	
+	<string key="TableHeading.InteractionConstrainDetails">Szczegóły ograniczenia interakcji</string>	
+	<string key="TableHeading.InteractionOperandDetails">Szczegóły operandu interakcji</string>	
+	<string key="TableHeading.InteractionOperandExpressionDetails">Szczegóły wyrażenia operandu interakcji</string>	
+	<string key="TableHeading.StateDetails">Szczegóły stanu</string>	
+	<string key="TableHeading.PseudoStateDetails">Szczegóły pseudostanu</string>
+	
+	
+	<!-- Warning: DON'T translate the word '#name' in the string below -->
+	<string key="Title.TopPattern">#name - dokumentacja UML</string>
+	
+	<string key="NavigationBar.OverviewLinkText">Przegląd</string>
+	<string key="NavigationBar.TopLinkText">Do góry</string>
+	<string key="NavigationBar.PackageLinkText">Pakiet</string>
+	<string key="NavigationBar.ElementLinkText">Element</string>
+	<string key="NavigationBar.SummaryTitle">Podsumowanie:</string>
+	<string key="NavigationBar.DetailTitle">Szczegóły:</string>
+	
+	<string key="ContentHeading.Parameters">Parametry:</string>
+	<string key="ContentHeading.Returns">Wartości zwracane:</string>
+	<string key="ContentHeading.Constraints">Ograniczenia:</string>
+	<string key="ContentHeading.Properties">Właściwości:</string>
+	
+	<string key="Nav.EnumLiterals">Literały wyliczenia</string>
+	<string key="Nav.Attributes">Atrybuty</string>
+	<string key="Nav.Roles">Role</string>
+	<string key="Nav.Operations">Operacje</string>
+	<string key="Nav.Properties">Właściwości</string>
+	<string key="Nav.ActivityNode">Węzeł działania</string>
+	<string key="Nav.ActivityEdge">Krawędź działania</string>
+	<string key="Nav.TemplateParameters">Parametry szablonu</string>
+	<string key="Nav.URLs">Adresy URL</string>
+	<string key="Nav.NestedActivities">Zagnieżdżone działania</string>
+	<string key="Nav.NestedClassifiers">Zagnieżdżone klasyfikatory</string>
+	<string key="Nav.NestedComponents">Zagnieżdżone komponenty</string>
+	<string key="Nav.Interactions">Interakcje</string>
+	<string key="Nav.Lifelines">Linie życia</string>
+	<string key="Nav.Messages">Komunikaty</string>
+	<string key="Nav.ExecutionOccurrences">Wystąpienia wykonania</string>
+	<string key="Nav.Fragments">Fragmenty</string>
+	<string key="Nav.CombinedFragments">Fragmenty złożone</string>
+	<string key="Nav.Stops">Zatrzymania</string>	
+	<string key="Nav.InteractionConstrains">Ograniczenia interakcji</string>	
+	<string key="Nav.InteractionOperands">Operandy interakcji</string>	
+	<string key="Nav.InteractionOperandExpressions">Wyrażenia operandów interakcji</string>	
+	
+	<string key="Hotspot.PolyName">Współrzędne łamanej opisujące obszar aktywny obrazu</string>	
+	
+	<string key="NavTree.Models">Modele</string>
+	<string key="NavTree.Diagrams">Diagramy</string>
+	
+</strings>

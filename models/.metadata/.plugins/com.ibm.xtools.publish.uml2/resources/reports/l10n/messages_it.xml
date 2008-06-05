@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<strings>
+    <!-- Metrics Report Translatable strings -->
+	<string key="MetricsReport.Title">Prospetto Metrica UML di esempio per #topLevelName</string>
+	<string key="MetricsReport.Introduction">#reportType &apos;#topLevelName&apos; contiene le classi #classCount e i pacchetti #packageCount.</string>
+	<string key="MetricsReport.AverageClassesPerPackage">Il numero medio di classe è #average.</string>
+	<string key="MetricsReport.PackagesMostClasses">Pacchetti con il maggior numero di classi (#maxClassCount):</string>
+	<string key="MetricsReport.ClassesMostOperations">Classi con il maggior numero di operazioni (#maxOperationsCount):</string>
+	<string key="MetricsReport.ClassesMostAttributes">Classi con il maggior numero di attributi (#maxAttributesCount):</string>
+	<string key="MetricsReport.ErrorUnableToMeasure">non misurabile (nessun pacchetto nel modello)</string>
+	
+	<string key="MetricsReport.ModelLabel">Il modello</string>>
+	<string key="MetricsReport.PackageLabel">Il pacchetto</string>>
+	
+    <!-- Model Diagram Report Translatable strings -->
+	<string key="ModelDiagramReport.Title">Prospetto diagramma modello per #topLevelName</string>
+	<string key="ModelDiagramReport.Diagram"> Diagramma </string>
+</strings>

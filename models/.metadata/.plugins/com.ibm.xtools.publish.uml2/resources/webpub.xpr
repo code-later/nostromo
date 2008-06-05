@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <meta>
+        <filters directoryPatterns="" filePatterns=""/>
+    </meta>
+    <projectTree name="webpub.xpr">
+        <file name="FileNameGeneration.xsl"/>
+        <file name="GlobalVariables.xsl"/>
+        <file name="uml2content/NamedElementContent.xsl"/>
+        <file
+            name="../../com.ibm.ccl.erf.core/resources/ProjectPublish.xsl"/>
+        <file name="WebPublish.xsl"/>
+    </projectTree>
+</project>

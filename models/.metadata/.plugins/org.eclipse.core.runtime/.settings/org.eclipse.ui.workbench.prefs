@@ -1,3 +1,4 @@
-#Wed Jun 04 11:28:35 CEST 2008
+#Thu Jun 05 15:14:03 CEST 2008
 eclipse.preferences.version=1
 ENABLED_DECORATORS=com.ibm.xtools.modeler.ui.internal.decorators.label.ModelExplorerDecorator\:true,com.ibm.xtools.modeler.ui.properties.internal.views.ElementLabelDecorator\:true,com.ibm.xtools.pluglets.ui.decorator\:true,org.eclipse.datatools.connectivity.sqm.core.internal.ui.explorer.DependencyDecoration\:true,org.eclipse.datatools.connectivity.sqm.core.internal.ui.explorer.ColumnDecoration\:true,org.eclipse.datatools.connectivity.sqm.core.internal.ui.explorer.ForeignKeyDecoration\:true,org.eclipse.datatools.connectivity.sqm.internal.core.ui.bookmarkDecoration\:true,org.eclipse.datatools.connectivity.ui.decorator.contentextension\:false,org.eclipse.hyades.test.ui.internal.navigator.ExecutionHTNDecorator\:true,org.eclipse.jdt.ui.override.decorator\:true,org.eclipse.jdt.ui.interface.decorator\:false,org.eclipse.pde.ui.binaryProjectDecorator\:false,org.eclipse.team.cvs.ui.decorator\:false,org.eclipse.tptp.monitoring.managedagent.views.browser.decorator\:true,org.eclipse.ui.LinkedResourceDecorator\:true,
+UIActivities.com.ibm.xtools.activities.javaVisualizerActivity=true

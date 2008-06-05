@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<strings>
+    <!-- Metrics Report Translatable strings -->
+	<string key="MetricsReport.Title">#topLevelName 範例 UML 測量值報告</string>
+	<string key="MetricsReport.Introduction">#reportType &apos;#topLevelName&apos; 含有 #classCount 類別和 #packageCount 套件。</string>
+	<string key="MetricsReport.AverageClassesPerPackage">每個套件的平均類別為 #average。</string>
+	<string key="MetricsReport.PackagesMostClasses">擁有最多類別的套件 (#maxClassCount):</string>
+	<string key="MetricsReport.ClassesMostOperations">擁有最多作業的類別 (#maxOperationsCount):</string>
+	<string key="MetricsReport.ClassesMostAttributes">擁有最多屬性的類別 (#maxAttributesCount):</string>
+	<string key="MetricsReport.ErrorUnableToMeasure">無法測量的（模型中沒有套件）</string>
+	
+	<string key="MetricsReport.ModelLabel">模型</string>>
+	<string key="MetricsReport.PackageLabel">套件</string>>
+	
+    <!-- Model Diagram Report Translatable strings -->
+	<string key="ModelDiagramReport.Title">#topLevelName 模型圖報告</string>
+	<string key="ModelDiagramReport.Diagram"> 圖型
+</string>
+</strings>

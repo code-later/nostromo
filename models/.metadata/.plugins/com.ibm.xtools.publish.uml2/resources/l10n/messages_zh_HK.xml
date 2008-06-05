@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<strings>
+	<string key="Description.AllElements">所有元素導覽清單</string>
+	
+	<!-- Warning: DON'T translate the word '#name' in the strings below -->
+	<string key="Description.Content">#name 的內容</string>
+	<string key="Description.TopPattern">發佈至 HTML 之 #name 的內容</string>
+	
+	<string key="Diagram.Name">名稱</string>
+	<string key="Diagram.Type">類型</string>
+	<string key="Diagram.Diagram"> 圖型</string>
+	
+		
+	<string key="TableHeading.TopLeftFrame">「套件清單」導覽頁框</string>
+	<string key="TableHeading.BottomLeftFrame">「元素清單」導覽頁框</string>
+	<string key="TableHeading.RightFrame">「內容」頁框</string>
+	
+	<string key="Heading.AllDiagrams">所有圖型</string>
+	<string key="Heading.AllElements">所有元素</string>
+	<string key="Heading.Class">類別
+</string>
+	<string key="Heading.Enumeration">列舉
+</string>
+	<string key="Heading.DataType">資料類型
+</string>
+	<string key="Heading.Signal">信號
+</string>
+	<string key="Heading.Component">元件
+</string>
+	<string key="Heading.Interface">介面
+</string>
+	<string key="Heading.Node">節點
+</string>
+	<string key="Heading.DeploymentSpecification">部署規格
+</string>
+	<string key="Heading.ExecutionEnvironment">執行環境
+</string>
+	<string key="Heading.Diagram">圖型
+</string>
+	<string key="Heading.Packages">套件</string>
+	<string key="Heading.Package">套件
+</string>
+	<string key="Heading.Model">模型
+</string>
+	<string key="Heading.Profile">設定檔
+</string>
+	<string key="Heading.Actor">動作者</string>
+	<string key="Heading.UseCase">UseCase </string>
+	<string key="Heading.Artifact">構件
+</string>
+	<string key="Heading.Activity">活動
+</string>
+	<string key="Heading.ActivityNode">活動節點
+</string>
+	<string key="Heading.ActivityEdge">活動邊緣
+</string>
+	<string key="Heading.Device">裝置
+</string>
+	<string key="Heading.StateMachine">狀態機器</string>
+	<string key="Heading.Region">區域
+</string>
+	<string key="Heading.State">狀態
+</string>
+	<string key="Heading.Event">事件
+</string>
+	<string key="Heading.ExtensionPoint">延伸點
+</string>
+
+	<string key="Heading.FinalState">最終狀態
+</string>
+	<string key="Heading.CombinedFragment">組合的片段
+</string>
+	<string key="Heading.Pseudostate">假狀態
+</string>
+	<string key="Heading.Pin">Pin </string>
+	<string key="Heading.InstanceSpecification">實例規格
+</string>
+	<string key="Heading.Collaboration">協同作業
+</string>	
+    <string key="Heading.CollaborationOccurrence">協同作業事件
+</string>
+    <string key="Heading.Port">埠
+</string>
+    <string key="Heading.Interaction">互動作業
+</string>	
+    <string key="Heading.Lifeline">生命線
+</string>
+    <string key="Heading.Message">訊息
+</string>
+    <string key="Heading.CallTrigger">CallTrigger
+</string>
+    <string key="Heading.Stereotype">模板</string>
+    <!-- Start Class Diagram relationships -->
+    <string key="Heading.Association">關聯
+</string>	
+    <string key="Heading.AssociationClass">關聯類別
+</string>
+    <string key="Heading.Generalization">一般化
+</string>	
+    <string key="Heading.Implementation">實作
+</string>
+    <string key="Heading.Realization">實現
+</string>
+    <string key="Heading.Substitution">替代</string>
+    <string key="Heading.Dependency">相依關係
+</string>
+    <string key="Heading.Usage">用法
+</string>
+    <string key="Heading.Abstraction">抽象</string>
+    <string key="Heading.PackageImport">套件匯入</string>
+    <string key="Heading.ElementImport">元素匯入</string>
+    <!-- End Class Diagram relationships -->
+    <!-- Start Composite Structure Diagram relationships -->
+    <string key="Heading.Connector">連接器
+</string>
+    <string key="Heading.ConnectorEnd">連接器端</string>		
+    <!-- End Composite Structure Diagram relationships -->
+    <!-- Start State Machine Diagram relationships -->
+    <string key="Heading.Transition">轉換
+</string>
+    <!-- End State Machine Diagram relationships -->
+    <!-- Start Usecase Diagram relationships -->
+    <string key="Heading.Include">包含</string>
+    <string key="Heading.Extend">延伸</string>
+    <!-- End Usecase Diagram relationships -->
+    <!-- Start Deployment Diagram relationships -->
+    <string key="Heading.Manifestation">表明</string>
+    <string key="Heading.Deployment">部署
+</string>
+    <string key="Heading.CommunicationPath">通訊路徑
+</string>
+    <!-- End Deployment Diagram relationships -->
+    <!-- Start Activity Diagram relationships -->
+    <string key="Heading.ControlFlow">控制流程
+</string>
+    <string key="Heading.ObjectFlow">物件流程
+</string>
+    <!-- End Activity Diagram relationships -->
+    <string key="Heading.ExecutionOccurrence">執行事件</string>	
+    <string key="Heading.OccurrenceSpecification">事件規格</string>	
+    <string key="Heading.Stop">停止
+</string>	
+	<string key="Heading.PrimitiveType">初始類型
+</string>	
+	
+	<string key="TableHeading.EnumLiterals">列舉文字</string>
+	<string key="TableHeading.Attributes">屬性</string>
+	<string key="TableHeading.Roles">角色</string>
+	<string key="TableHeading.Classes">分類器</string>
+	<string key="TableHeading.Diagrams">圖型</string>
+	<string key="TableHeading.Operations">作業</string>
+	<string key="TableHeading.ActivityNode">活動節點</string>
+	<string key="TableHeading.ActivityEdges">活動邊緣</string>
+	<!-- start Template Binding and Parameter subs -->	
+	<string key="TableHeading.TemplateBinding">範本連結</string>
+	<string key="TableHeading.TemplateParameterSubstitution">範本參數替代</string>	
+	<string key="TableHeading.TemplateBindingDetails">範本連結詳細資料</string>	
+	<string key="TableHeading.TemplateParameterSubstitutionDetails">範本參數替代詳細資料</string>		
+	<!-- End Template Binding and Parameter subs -->		
+	<string key="TableHeading.TemplateParameters">範本參數</string>
+	<string key="TableHeading.TemplateSignature">範本簽章</string>
+	<string key="TableHeading.Interactions">互動作業</string>
+	<string key="TableHeading.Comments">註解</string>
+	<string key="TableHeading.Constraints">限制</string>
+	<string key="TableHeading.Lifelines">生命線</string>
+	<string key="TableHeading.Messages">訊息</string>
+	<string key="TableHeading.ExecutionOccurrences">執行事件</string>
+	<string key="TableHeading.InteractionOccurrences">互動作業事件</string>
+	<string key="TableHeading.Fragments">片段</string>
+	<string key="TableHeading.CombinedFragments">合併片段</string>
+	<string key="TableHeading.Stops">停止</string>	
+	<string key="TableHeading.InteractionConstrains">互動作業限制</string>	
+	<string key="TableHeading.InteractionOperands">互動作業運算元</string>	
+	<string key="TableHeading.InteractionOperandExpressions">互動作業運算元表示式</string>	
+	<string key="TableHeading.States">狀態</string>	
+	<string key="TableHeading.PseudoStates">虛擬狀態</string>
+	<string key="TableHeading.URLs">URL
+</string>
+	
+	<string key="TableHeading.EnumLiteralDetails">列舉文字詳細資料</string>
+	<string key="TableHeading.AttributeDetails">屬性詳細資料</string>
+	<string key="TableHeading.RolesDetails">角色詳細資料</string>
+	<string key="TableHeading.ClassDetails">類別詳細資料</string>
+	<string key="TableHeading.DiagramDetails">圖型詳細資料</string>
+	<string key="TableHeading.OperationDetails">作業詳細資料</string>
+	<string key="TableHeading.ActivityNodeDetails">活動節點詳細資料</string>
+	<string key="TableHeading.ActivityEdgeDetails">活動邊緣詳細資料</string>
+	<string key="TableHeading.TemplateParameterDetails">範本參數詳細資料</string>
+	<string key="TableHeading.TemplateSignatureDetails">範本簽章詳細資料</string>
+	<string key="TableHeading.InteractionDetails">互動作業詳細資料</string>
+	<string key="TableHeading.LifelineDetails">生命線詳細資料</string>
+	<string key="TableHeading.MessageDetails">訊息詳細資料</string>
+	<string key="TableHeading.ExecutionOccurrenceDetails">執行事件詳細資料</string>
+	<string key="TableHeading.InteractionOccurrenceDetails">互動作業事件詳細資料</string>
+	<string key="TableHeading.FragmentDetails">片段詳細資料</string>
+	<string key="TableHeading.CombinedFragmentDetails">合併片段詳細資料</string>
+	<string key="TableHeading.StopDetails">停止詳細資料</string>	
+	<string key="TableHeading.InteractionConstrainDetails">互動作業限制詳細資料</string>	
+	<string key="TableHeading.InteractionOperandDetails">互動作業運算元詳細資料</string>	
+	<string key="TableHeading.InteractionOperandExpressionDetails">互動作業運算元表示式詳細資料</string>	
+	<string key="TableHeading.StateDetails">狀態詳細資料</string>	
+	<string key="TableHeading.PseudoStateDetails">虛擬狀態詳細資料</string>
+	
+	
+	<!-- Warning: DON'T translate the word '#name' in the string below -->
+	<string key="Title.TopPattern">#name UML 文件</string>
+	
+	<string key="NavigationBar.OverviewLinkText">概觀</string>
+	<string key="NavigationBar.TopLinkText">頂端</string>
+	<string key="NavigationBar.PackageLinkText">套件</string>
+	<string key="NavigationBar.ElementLinkText">元素</string>
+	<string key="NavigationBar.SummaryTitle">摘要：</string>
+	<string key="NavigationBar.DetailTitle">詳細資料：</string>
+	
+	<string key="ContentHeading.Parameters">參數：</string>
+	<string key="ContentHeading.Returns">傳回項：</string>
+	<string key="ContentHeading.Constraints">限制項：</string>
+	<string key="ContentHeading.Properties">內容：</string>
+	
+	<string key="Nav.EnumLiterals">列舉文字</string>
+	<string key="Nav.Attributes">屬性</string>
+	<string key="Nav.Roles">角色</string>
+	<string key="Nav.Operations">作業</string>
+	<string key="Nav.Properties">內容</string>
+	<string key="Nav.ActivityNode">活動節點</string>
+	<string key="Nav.ActivityEdge">活動邊緣</string>
+	<string key="Nav.TemplateParameters">範本參數</string>
+	<string key="Nav.URLs">URL
+</string>
+	<string key="Nav.NestedActivities">巢狀活動</string>
+	<string key="Nav.NestedClassifiers">巢狀分類器</string>
+	<string key="Nav.NestedComponents">巢狀元件</string>
+	<string key="Nav.Interactions">互動作業</string>
+	<string key="Nav.Lifelines">生命線</string>
+	<string key="Nav.Messages">訊息</string>
+	<string key="Nav.ExecutionOccurrences">執行事件</string>
+	<string key="Nav.Fragments">片段</string>
+	<string key="Nav.CombinedFragments">合併片段</string>
+	<string key="Nav.Stops">停止</string>	
+	<string key="Nav.InteractionConstrains">互動作業限制</string>	
+	<string key="Nav.InteractionOperands">互動作業運算元</string>	
+	<string key="Nav.InteractionOperandExpressions">互動作業運算元表示式</string>	
+	
+	<string key="Hotspot.PolyName">說明圖形上之熱點的折線座標</string>	
+	
+	<string key="NavTree.Models">模型</string>
+	<string key="NavTree.Diagrams">圖型</string>
+	
+</strings>

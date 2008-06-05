@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SearchDialog.ScopePart">
+		<item key="scope" value="0"/>
+	</section>
+	<section name="TextSearchPage">
+		<item key="HISTORY_SIZE" value="0"/>
+		<item key="SEARCH_DERIVED" value="false"/>
+		<item key="REG_EX_SEARCH" value="false"/>
+		<item key="CASE_SENSITIVE" value="false"/>
+	</section>
+	<section name="Search">
+		<list key="Search.enabledPageIds">
+			<item value="org.eclipse.search.internal.ui.text.TextSearchPage"/>
+			<item value="org.eclipse.jdt.ui.JavaSearchPage"/>
+			<item value="com.ibm.xtools.modeler.ui.search.internal.pages.ModelerSearchPage"/>
+			<item value="org.eclipse.pde.internal.ui.search.SearchPage"/>
+			<item value="com.ibm.xtools.ras.repository.search.ui.RASSearchPage"/>
+			<item value="org.eclipse.hyades.test.ui.search.TestLogSearchPage"/>
+		</list>
+		<list key="Search.processedPageIds">
+			<item value="org.eclipse.search.internal.ui.text.TextSearchPage"/>
+			<item value="org.eclipse.jdt.ui.JavaSearchPage"/>
+			<item value="com.ibm.xtools.modeler.ui.search.internal.pages.ModelerSearchPage"/>
+			<item value="org.eclipse.pde.internal.ui.search.SearchPage"/>
+			<item value="com.ibm.xtools.ras.repository.search.ui.RASSearchPage"/>
+			<item value="org.eclipse.hyades.test.ui.search.TestLogSearchPage"/>
+		</list>
+	</section>
+	<section name="DialogBounds_SearchDialog">
+		<item key="DIALOG_FONT_NAME" value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma"/>
+		<item key="DIALOG_HEIGHT" value="425"/>
+		<item key="DIALOG_X_ORIGIN" value="334"/>
+		<item key="DIALOG_Y_ORIGIN" value="130"/>
+		<item key="DIALOG_WIDTH" value="620"/>
+	</section>
+	<section name="org.eclipse.jdt.ui.JavaSearchResultPage">
+		<item key="org.eclipse.jdt.search.resultpage.limit" value="1000"/>
+		<item key="org.eclipse.jdt.search.resultpage.limit_enabled" value="TRUE"/>
+	</section>
+	<section name="">
+		<item key="org.eclipse.jdt.search.resultpage.limit" value="1000"/>
+		<item key="org.eclipse.jdt.search.resultpage.limit_enabled" value="TRUE"/>
+	</section>
+</section>

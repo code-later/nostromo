@@ -1,0 +1,57 @@
+/**
+ * 
+ */
+package de.fhkoeln.cosima.media;
+
+import java.util.Set;
+
+/** 
+ * <!-- begin-UML-doc -->
+ * <!-- end-UML-doc -->
+ * @author user
+ * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ */
+public class CosimaReferenceMetadataImpl implements Metadata {
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private Set<Object> metadata;
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void getListOfMetadataKeys() {
+		// begin-user-code
+		// TODO Auto-generated method stub
+
+		// end-user-code
+	}
+
+	/** 
+	 * (non-Javadoc)
+	 * @see Metadata#setMetdata(long metadata, String key)
+	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void setMetdata(long metadata, String key) {
+		// begin-user-code
+		// TODO Auto-generated method stub
+
+		// end-user-code
+	}
+
+	/** 
+	 * (non-Javadoc)
+	 * @see Metadata#getMetadata(String key)
+	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public long getMetadata(String key) {
+		// begin-user-code
+		// TODO Auto-generated method stub
+		return 0;
+		// end-user-code
+	}
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CheatSheetCategoryBasedSelectionDialog">
+		<item key="DIALOG_FONT_NAME" value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma"/>
+		<item key="DIALOG_HEIGHT" value="548"/>
+		<item key="DIALOG_X_ORIGIN" value="481"/>
+		<item key="DIALOG_Y_ORIGIN" value="24"/>
+		<item key="DIALOG_WIDTH" value="326"/>
+	</section>
+</section>
