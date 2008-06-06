@@ -3,6 +3,9 @@
  */
 package de.fhkoeln.cosima.media;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 /** 
@@ -12,74 +15,51 @@ import java.util.Set;
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
 public class AbstractMedia {
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public Set<Metadata> metadata;
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	private RawData rawdata;
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	private String uri;
 
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void getListOfMetadataKeys() {
-		// begin-user-code
-		// TODO Auto-generated method stub
+  public Map<MetadataKeys, Metadata> metadata;
 
-		// end-user-code
+  private String uri;
+
+  public AbstractMedia(String uri) {
+    setUri(uri);
+    this.metadata = new HashMap<MetadataKeys, Metadata>();
+  }
+
+	public Set<MetadataKeys> getListOfMetadataKeys() {
+	  return this.metadata.keySet();
 	}
 
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @param value
-	 * @param key
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void addMetadata(Object value, MetadataKeys key) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
+	public void addMetadata(Metadata metadata) {
+	  this.metadata.put(metadata.getKey(), metadata);
 	}
 
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @param key
-	 * @return
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
 	public Metadata getMetadata(MetadataKeys key) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return null;
-		// end-user-code
+	  if(this.metadata.containsKey(key)) {
+	    return this.metadata.get(key);
+	  } else {
+	    throw new NoSuchElementException("This Media Object does not have any metadata for key: '" + key + "'.");
+	  }
 	}
+	
+  /**
+   * @return The URI of this AbstractMedia Object
+   */
+  public String getUri() {
+    return this.uri;
+  }
+  
+  private void setMediaIO(MediaIO mediaIO) {
+  
+  }
+  
+  /**
+   * Private Setter for the URI of this AbstractMedia Object. It is a
+   * setter to allow encapsulation of URI pre-verification.
+   * 
+   * @param uri - The URI to set
+   */
+  private void setUri(String uri) {
+    this.uri = uri;
+  }
 
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @param uri
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public AbstractMedia(String uri) {
-		// begin-user-code
-		// TODO Auto-generated constructor stub
-		// end-user-code
-	}
 }
