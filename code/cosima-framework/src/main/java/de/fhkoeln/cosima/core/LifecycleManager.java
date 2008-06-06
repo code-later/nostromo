@@ -11,7 +11,7 @@
  */
 package de.fhkoeln.cosima.core;
 
-import de.fhkoeln.cosima.registry.ServiceRegistry;
+import de.fhkoeln.cosima.registry.ServiceRepository;
 
 
 /**
@@ -26,7 +26,7 @@ import de.fhkoeln.cosima.registry.ServiceRegistry;
 public class LifecycleManager {
 
   public void start() {
-    ServiceRegistry registry = ServiceRegistry.getInstance();
+    ServiceRepository registry = ServiceRepository.getInstance();
 
     registry.getService("hello_world").run();
 

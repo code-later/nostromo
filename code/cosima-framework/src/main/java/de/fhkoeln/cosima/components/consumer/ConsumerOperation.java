@@ -1,5 +1,5 @@
 /*
- * ProducerFunction.java
+ * ConsumerFunction.java
  *
  * Version 1.0  Mar 4, 2008
  *
@@ -9,13 +9,13 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.cosima.components.producer;
+package de.fhkoeln.cosima.components.consumer;
 
-import de.fhkoeln.cosima.components.AbstractFunction;
+import de.fhkoeln.cosima.components.AbstractOperation;
 
 
 /**
- * Documentation comment without implementation details.
+ * Documentation comment without implementation details. 
  * Use implementation comments to describe details of the implementation.
  * Comment lines should not be longer than 70 characters.
  *
@@ -23,6 +23,6 @@ import de.fhkoeln.cosima.components.AbstractFunction;
  * @version 1.0  Mar 4, 2008
  *
  */
-public abstract class ProducerFunction extends AbstractFunction {
+public abstract class ConsumerOperation extends AbstractOperation {
 
 }

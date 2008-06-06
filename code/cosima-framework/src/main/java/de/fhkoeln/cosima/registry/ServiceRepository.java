@@ -24,19 +24,19 @@ import java.util.Map;
  * @version 1.0  Mar 4, 2008
  *
  */
-public class ServiceRegistry {
+public class ServiceRepository {
 
   private Map<String, CoreService> services;
 
-  private static ServiceRegistry instance = null;
+  private static ServiceRepository instance = null;
 
-  private ServiceRegistry() {
+  private ServiceRepository() {
     services = new HashMap<String, CoreService>();
   }
 
-  public static ServiceRegistry getInstance() {
+  public static ServiceRepository getInstance() {
     if (instance == null) {
-      instance = new ServiceRegistry();
+      instance = new ServiceRepository();
     }
     return instance;
   }

@@ -11,7 +11,7 @@
  */
 package de.fhkoeln.cosima.components.transformer;
 
-import de.fhkoeln.cosima.components.AbstractFunction;
+import de.fhkoeln.cosima.components.AbstractOperation;
 
 
 /**
@@ -23,6 +23,6 @@ import de.fhkoeln.cosima.components.AbstractFunction;
  * @version 1.0  Mar 4, 2008
  *
  */
-public abstract class TransformerFunction extends AbstractFunction {
+public abstract class TransformerOperation extends AbstractOperation {
 
 }

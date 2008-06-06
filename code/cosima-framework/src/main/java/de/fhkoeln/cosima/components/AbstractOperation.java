@@ -23,9 +23,9 @@ import de.fhkoeln.cosima.registry.CoreService;
  * @version 1.0  Mar 4, 2008
  *
  */
-public abstract class AbstractFunction implements CoreService {
+public abstract class AbstractOperation implements CoreService {
 
-  public AbstractFunction() {
+  public AbstractOperation() {
     init();
   }
 

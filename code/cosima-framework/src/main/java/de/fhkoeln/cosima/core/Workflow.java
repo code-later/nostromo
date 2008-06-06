@@ -14,7 +14,7 @@ package de.fhkoeln.cosima.core;
 import java.util.Iterator;
 import java.util.List;
 
-import de.fhkoeln.cosima.registry.ServiceRegistry;
+import de.fhkoeln.cosima.registry.ServiceRepository;
 
 /**
  * Documentation comment without implementation details.
@@ -39,7 +39,7 @@ public class Workflow {
 
   public void readWorkflowDefinition(List<String> workflowDefinition) {
 
-    ServiceRegistry registry = ServiceRegistry.getInstance();
+    ServiceRepository registry = ServiceRepository.getInstance();
 
     Iterator<String> workflowDefIter = workflowDefinition.iterator();
 
