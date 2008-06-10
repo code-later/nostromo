@@ -3,9 +3,7 @@
  *
  * Version 1.0  Jun 5, 2008
  *
- * Copyright notice
- *
- * Brief description
+ * Test Class for the MediaMetadataKeys Enum.
  *
  * (c) 2008 by dbreuer
  */
@@ -17,27 +15,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-
-/**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
- *
- * @author dbreuer
- * @version 1.0  Jun 5, 2008
- *
- */
 public class MediaMetadataKeysTest {
 
-  /**
-   * @throws java.lang.Exception
-   */
   @Before
   public void setUp() throws Exception {}
 
-  /**
-   * @throws java.lang.Exception
-   */
   @After
   public void tearDown() throws Exception {}
 
@@ -50,18 +32,27 @@ public class MediaMetadataKeysTest {
     assertEquals("Video", keyForVideo.getMessage());
   }
 
+  /**
+   * Test method for {@link de.fhkoeln.cosima.media.MediaMetadataKeys#getMessage()}.
+   */
   @Test
   public void testShouldHaveAudioMessageForAudioEnum() {
     MetadataKeys keyForAudio = MediaMetadataKeys.AUDIO;
     assertEquals("Audio", keyForAudio.getMessage());
   }
 
+  /**
+   * Test method for {@link de.fhkoeln.cosima.media.MediaMetadataKeys#getMessage()}.
+   */
   @Test
   public void testShouldHaveImageMessageForImageEnum() {
     MetadataKeys keyForImage = MediaMetadataKeys.IMAGE;
     assertEquals("Image", keyForImage.getMessage());
   }
 
+  /**
+   * Test method for {@link de.fhkoeln.cosima.media.MediaMetadataKeys#getMessage()}.
+   */
   @Test
   public void testShouldHaveTextMessageForTextEnum() {
     MetadataKeys keyForText = MediaMetadataKeys.TEXT;

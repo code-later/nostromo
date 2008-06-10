@@ -3,9 +3,7 @@
  *
  * Version 1.0  Jun 5, 2008
  *
- * Copyright notice
- *
- * Brief description
+ * Test Class for the CreatorMetadataKeys Enum.
  *
  * (c) 2008 by dbreuer
  */
@@ -17,30 +15,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-
-/**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
- *
- * @author dbreuer
- * @version 1.0  Jun 5, 2008
- *
- */
 public class CreatorMetadataKeysTest {
 
-  /**
-   * @throws java.lang.Exception
-   */
   @Before
   public void setUp() throws Exception {}
 
-  /**
-   * @throws java.lang.Exception
-   */
   @After
   public void tearDown() throws Exception {}
   
+  /**
+   * Test method for {@link de.fhkoeln.cosima.media.CreatorMetadataKeys#getMessage()}.
+   */
   @Test
   public void testShouldAuthorMessageForAuthorEnum() {
     MetadataKeys keyForAuthor = CreatorMetadataKeys.AUTHOR;
