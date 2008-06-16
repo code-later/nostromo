@@ -39,18 +39,20 @@ public class CosimaMetadataImplTest {
    */
   @Test
   public void testShouldBeAbleToSetValueInConstructor() throws Exception {
-    Metadata metadata = new CosimaMetadataImpl(MediaMetadataKeys.VIDEO, "mpeg");
-    assertEquals("mpeg", metadata.getValue());
+    AbstractMedia abstractMedia = new AbstractMedia("http://cosima.test.com/media/23");
+    Metadata metadata = new CosimaMetadataImpl(MediaMetadataKeys.VIDEO, abstractMedia);
+    assertEquals(abstractMedia, metadata.getValue());
   }
     
   /**
    * Test method for {@link de.fhkoeln.cosima.media.CosimaMetadataImpl#setValue(java.lang.Object)}.
    */
   @Test
-  public void testShouldSetValue() {
+  public void testShouldSetAndGetValue() {
     Metadata metadata = new CosimaMetadataImpl(MediaMetadataKeys.VIDEO);
-    metadata.setValue("mpeg");
-    assertEquals("mpeg", metadata.getValue());
+    AbstractMedia abstractMedia = new AbstractMedia("http://cosima.test.com/media/23");
+    metadata.setValue(abstractMedia);
+    assertEquals(abstractMedia, metadata.getValue());
   }
 
   /**
@@ -60,16 +62,6 @@ public class CosimaMetadataImplTest {
   public void testShouldGetKey() {
     Metadata metadata = new CosimaMetadataImpl(MediaMetadataKeys.VIDEO);
     assertEquals(MediaMetadataKeys.VIDEO, metadata.getKey());
-  }
-
-  /**
-   * Test method for {@link de.fhkoeln.cosima.media.CosimaMetadataImpl#getValue()}.
-   */
-  @Test
-  public void testShouldGetValue() {
-    Metadata metadata = new CosimaMetadataImpl(MediaMetadataKeys.VIDEO);
-    metadata.setValue("mpeg");
-    assertEquals("mpeg", metadata.getValue());
   }
 
 }

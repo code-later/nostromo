@@ -19,14 +19,17 @@ package de.fhkoeln.cosima.media;
 public interface Metadata {
 
   /**
-   * This method will set the value of the metadata object.
+   * This method will set the value of the metadata object. The
+   * metadata value is itself just another AbstractMedia object. Due
+   * to this the metadata of the media object can be as simple as a
+   * single line of text or as complex as a MPEG-4 video stream.
    * 
    * @param value
    *          The value to be set.
    * @generated "UML to Java
    *            (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
    */
-  public void setValue(Object value);
+  public void setValue(AbstractMedia value);
 
   /**
    * This method will return the key of the metadata object which has
@@ -45,5 +48,5 @@ public interface Metadata {
    * @generated "UML to Java
    *            (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
    */
-  public Object getValue();
+  public AbstractMedia getValue();
 }

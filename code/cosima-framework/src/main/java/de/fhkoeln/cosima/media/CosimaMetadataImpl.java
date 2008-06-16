@@ -26,7 +26,7 @@ public class CosimaMetadataImpl implements Metadata {
   /**
    * The field where the value is stored.
    */
-  private String value;
+  private AbstractMedia value;
 	
   /**
    * One have to specify a Key for this metadata object. The Key
@@ -48,7 +48,7 @@ public class CosimaMetadataImpl implements Metadata {
    * @param value
    *          The value String for this metadata object.
    */
-  public CosimaMetadataImpl(MetadataKeys key, String value) {
+  public CosimaMetadataImpl(MetadataKeys key, AbstractMedia value) {
     this.key = key;
     this.value = value;
   }
@@ -58,8 +58,8 @@ public class CosimaMetadataImpl implements Metadata {
 	 * @see Metadata#setValue(Object value)
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void setValue(Object value) {
-	  this.value = (String) value;
+	public void setValue(AbstractMedia value) {
+	  this.value = value;
 	}
 
 	/** 
@@ -76,7 +76,7 @@ public class CosimaMetadataImpl implements Metadata {
 	 * @see Metadata#getValue()
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public Object getValue() {
+	public AbstractMedia getValue() {
 		return this.value;
 	}
 }

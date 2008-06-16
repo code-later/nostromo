@@ -67,6 +67,12 @@ public class AbstractMediaTest {
     abstractMedia.getMetadata(MediaMetadataKeys.TEXT);
   }
   
+  @Test
+  public void testShouldHaveAMediaStructureObject() {
+    AbstractMedia abstractMedia = mock(AbstractMedia.class);
+    fail("MediaStructure Implmentation still missing");
+  }
+  
   /**
    * Test method for {@link de.fhkoeln.cosima.media.AbstractMedia#}.
    */
@@ -104,10 +110,10 @@ public class AbstractMediaTest {
   /**
    * Test method for {@link de.fhkoeln.cosima.media.AbstractMedia#AbstractMedia(String)}.
    */
- @Test
+  @Test
   public void testShouldSetUriThroughConstructor() {
     AbstractMedia abstractMedia = new AbstractMedia("cosima://test.cosima-framework.com/media/42");
     assertEquals("cosima://test.cosima-framework.com/media/42", abstractMedia.getUri());
   }
-
+ 
 }

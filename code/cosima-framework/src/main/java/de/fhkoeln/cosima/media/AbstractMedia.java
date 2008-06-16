@@ -18,6 +18,16 @@ import java.util.Set;
  * {@link AbstractMedia} object must have a URI which identifies the
  * media object and let it be addressed by other components.
  * 
+ * TODO
+ *  - Ein Medienobjekt kann aus mehreren Medientypen bestehen, die selber wieder
+ *    aus mehreren Medientypen bestehen und so weiter. Daher ist es sinnvoll
+ *    Medienobjekte verschachteln zu können. Es bietet sich dafür das Composite
+ *    Pattern an, da sowohl Container als auch einzelne Medien über Metadatan
+ *    und Steuerfunktionalitäten verfügen sollten.
+ *  - Steuerfunktionalität kann vielleicht als Command Pattern implementiert
+ *    werden. Eine hohe Dynamik wäre dabei sicher wünschenswert (Reflection?!).
+ *  - Die Frage ist was dann mit dem MediaIO passiert!
+ * 
  * @author dbreuer
  * @version $Id: AbstractMedia.java,v1.0 2008/06/10 11:39:15 AM
  *          dbreuer Exp $
