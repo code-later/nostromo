@@ -9,7 +9,7 @@
  *
  * (c) 2007 by samwise
  */
-package de.fhkoeln.santiago;
+package de.fhkoeln.santiago.jmfsamples;
 
 import java.applet.Applet;
 import java.awt.Component;
@@ -68,7 +68,7 @@ public class SimpleVideoPlayer extends Applet implements ControllerListener {
     panel = new Panel();
     panel.setLayout(null);
     add(panel);
-    panel.setBounds(0, 0, 320, 240);
+    panel.setBounds(0, 0, 640, 480);
 
     // input file name from html param
     String mediaFile = null;

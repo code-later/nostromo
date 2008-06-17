@@ -27,7 +27,7 @@
  * facility. Licensee represents and warrants that it will not use or
  * redistribute the Software for such purposes.
  */
-package de.fhkoeln.santiago;
+package de.fhkoeln.santiago.jmfsamples;
 
 import java.io.*;
 import java.awt.*;
