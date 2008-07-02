@@ -168,7 +168,7 @@ public class SimpleVideoPlayer extends Applet implements ControllerListener {
         progressBar = null;
       }
 
-      int width = 320;
+      int width = 640;
       int height = 0;
       if (controlComponent == null)
         if ((controlComponent = player.getControlPanelComponent()) != null) {
@@ -183,6 +183,8 @@ public class SimpleVideoPlayer extends Applet implements ControllerListener {
           Dimension videoSize = visualComponent.getPreferredSize();
           videoWidth = videoSize.width;
           videoHeight = videoSize.height;
+          System.out.println("videoWidth: " + videoWidth);
+          System.out.println("videoHeigth: " + videoHeight);
           width = videoWidth;
           height += videoHeight;
           visualComponent.setBounds(0, 0, videoWidth, videoHeight);

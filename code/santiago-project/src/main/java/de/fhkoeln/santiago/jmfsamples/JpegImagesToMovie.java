@@ -452,11 +452,11 @@ public class JpegImagesToMovie implements ControllerListener, DataSinkListener {
       format = new VideoFormat(VideoFormat.JPEG, new Dimension(width, height),
                                Format.NOT_SPECIFIED, Format.byteArray,
                                (float) frameRate);
-      // format = new RGBFormat(new Dimension(width, height),
-      // Format.NOT_SPECIFIED, Format.byteArray,
-      // (float) frameRate, 24, 3, 2, 1, 3,
-      // Format.NOT_SPECIFIED, Format.TRUE,
-      // Format.NOT_SPECIFIED);
+//       format = new RGBFormat(new Dimension(width, height),
+//       Format.NOT_SPECIFIED, Format.byteArray,
+//       (float) frameRate, 8, 3, 2, 1, 3,
+//       Format.NOT_SPECIFIED, Format.TRUE,
+//       Format.NOT_SPECIFIED);
     }
 
     /**

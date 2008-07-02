@@ -66,7 +66,7 @@ public class RotationEffect implements Effect {
                                                1, 3, Format.NOT_SPECIFIED,
                                                Format.TRUE,
                                                Format.NOT_SPECIFIED),
-                                 new VideoFormat(VideoFormat.RGB, null,
+                                 new VideoFormat(VideoFormat.MPEG, null,
                                                  Format.NOT_SPECIFIED,
                                                  Format.byteArray,
                                                  Format.NOT_SPECIFIED) };
@@ -78,7 +78,7 @@ public class RotationEffect implements Effect {
                                                 1, 3, Format.NOT_SPECIFIED,
                                                 Format.TRUE,
                                                 Format.NOT_SPECIFIED),
-                                  new VideoFormat(VideoFormat.RGB, null,
+                                  new VideoFormat(VideoFormat.MPEG, null,
                                                   Format.NOT_SPECIFIED,
                                                   Format.byteArray,
                                                   Format.NOT_SPECIFIED) };
