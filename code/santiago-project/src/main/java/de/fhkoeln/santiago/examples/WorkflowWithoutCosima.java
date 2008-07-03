@@ -22,13 +22,24 @@ package de.fhkoeln.santiago.examples;
  *
  */
 public class WorkflowWithoutCosima {
+  
+  private final WorkflowDefinition workflowDefinition;
 
   /**
-   * @param args
+   * Constructor documentation comment.
+   *
+   * @param workflowDefinition
    */
-  public static void main(String[] args) {
-  // TODO Auto-generated method stub
+  public WorkflowWithoutCosima(WorkflowDefinition workflowDefinition) {
+    this.workflowDefinition = workflowDefinition;
+  }
 
+  /**
+   * 
+   */
+  public void run() {
+    // TODO Auto-generated method stub
+    
   }
 
 }

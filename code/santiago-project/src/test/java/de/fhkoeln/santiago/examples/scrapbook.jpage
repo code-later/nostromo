@@ -1,0 +1,2 @@
+String tmp = "1,Vier";
+String[] splitted = tmp.split(";");
