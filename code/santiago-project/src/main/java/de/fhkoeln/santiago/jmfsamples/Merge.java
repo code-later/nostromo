@@ -149,7 +149,7 @@ public class Merge implements ControllerListener, DataSinkListener {
 
       if (outputProcessor != null
           && (int) (outputProcessor.getMediaTime().getSeconds()) > count) {
-        System.err.print(".");
+        System.out.print(".");
         count = (int) (outputProcessor.getMediaTime().getSeconds());
       }
 
