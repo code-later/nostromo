@@ -13,7 +13,11 @@ package de.fhkoeln.santiago.examples;
 
 import static org.mockito.Mockito.*;
 
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InOrder;
+
+import de.fhkoeln.cosima.media.AbstractMedia;
 
 /**
  * Documentation comment without implementation details. 
@@ -25,16 +29,20 @@ import org.junit.Test;
  *
  */
 public class WorkflowWithoutCosimaTest {
-
+  
+  WorkflowDefinition workflowDefinition;
+  
+  @Before
+  public void setUp() throws ClassNotFoundException {
+    String abstractDefinition = "1,de.fhkoeln.santiago.examples.CreateMovieFromImages;" +
+    		"2,de.fhkoeln.santiago.examples.AddMusicToMovie;" +
+    		"3,de.fhkoeln.santiago.examples.PlayMovieFile";
+    workflowDefinition = new WorkflowDefinitionImpl(abstractDefinition);
+  }
   
   @Test
   public void testShouldBeCreatedWithWorkflowDefinition() throws Exception {
-    WorkflowDefinition workflowDefinition = mock(WorkflowDefinition.class);
-    
-    verify(workflowDefinition, times(3)).getNextWorkflowElement();
-
     WorkflowWithoutCosima workflow = new WorkflowWithoutCosima(workflowDefinition);
-    
     workflow.run();
   }
 }

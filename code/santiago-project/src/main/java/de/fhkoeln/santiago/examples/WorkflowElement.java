@@ -1,7 +1,7 @@
 /*
- * PlayMovieFile.java
+ * WorkflowElement.java
  *
- * Version 1.0  Jul 3, 2008
+ * Version 1.0  Jul 4, 2008
  *
  * Copyright notice
  *
@@ -18,17 +18,15 @@ package de.fhkoeln.santiago.examples;
  * Comment lines should not be longer than 70 characters.
  *
  * @author dbreuer
- * @version 1.0  Jul 3, 2008
+ * @version 1.0  Jul 4, 2008
  *
  */
-public class PlayMovieFile implements WorkflowElement {
-
-  /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.WorkflowElement#run()
+public interface WorkflowElement {
+  
+  /**
+   * This method has to be called so the WorkflowElement starts doing
+   * what it is supposed to do.
    */
-  @Override
-  public void run() {
-    System.out.println(this.getClass() + " is doing Stuff ...");
-  }
-
+  public void run();
+  
 }

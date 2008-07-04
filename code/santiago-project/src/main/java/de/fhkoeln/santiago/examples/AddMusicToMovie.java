@@ -21,6 +21,14 @@ package de.fhkoeln.santiago.examples;
  * @version 1.0  Jul 3, 2008
  *
  */
-public class AddMusicToMovie {
+public class AddMusicToMovie implements WorkflowElement {
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.examples.WorkflowElement#run()
+   */
+  @Override
+  public void run() {
+    System.out.println(this.getClass() + " is doing Stuff ...");
+  }
 
 }

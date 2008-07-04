@@ -35,11 +35,24 @@ public class WorkflowWithoutCosima {
   }
 
   /**
-   * 
+   * Runs the Workflow according to its definition. 
    */
+  @SuppressWarnings("unchecked")
   public void run() {
-    // TODO Auto-generated method stub
-    
+    while (workflowDefinition.hasNextElement()) {
+      Object[] element = workflowDefinition.getNextWorkflowElement();
+      Class<WorkflowElement> workflowElementClass = (Class<WorkflowElement>) element[1];
+      try {
+        WorkflowElement workflowElement = workflowElementClass.newInstance();
+        workflowElement.run();
+      } catch (InstantiationException e) {
+        System.err.println("Class " + workflowElementClass.getName() + " could not be instantiated.");
+        e.printStackTrace();
+      } catch (IllegalAccessException e) {
+        System.err.println("There was an illigal access with class " + workflowElementClass.getName() + ".");
+        e.printStackTrace();
+      }
+    }
   }
 
 }

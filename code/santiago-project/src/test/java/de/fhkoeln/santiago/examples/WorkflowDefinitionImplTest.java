@@ -66,6 +66,14 @@ public class WorkflowDefinitionImplTest {
   }
   
   @Test
+  public void testShouldBeAskIfAnyElementsLeft() throws Exception {
+    WorkflowDefinition definition = new WorkflowDefinitionImpl(abstractDefinition);
+    assertTrue(definition.hasNextElement());
+    definition.getNextWorkflowElement();
+    assertFalse(definition.hasNextElement());
+  }
+  
+  @Test
   public void testShouldRewindDefinition() throws Exception {
     WorkflowDefinition definition = new WorkflowDefinitionImpl(abstractDefinition);
     assertNotNull(definition.getNextWorkflowElement());

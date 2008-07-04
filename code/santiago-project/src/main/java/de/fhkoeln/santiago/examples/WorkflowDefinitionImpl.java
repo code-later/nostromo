@@ -47,6 +47,9 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
       throw new IllegalArgumentException("The abstract Workflow Definition is not in the right format. Pattern is: " + ABSTRACT_DEFINITION_PATTERN);
     }
     workflowElements = extractInformationFromAbstractDefinition(abstractDefinition);
+    // rewind will also inits the elementsIterator field with the
+    // Iterator of the Vector
+    this.rewind();
   }
 
   /**
@@ -76,10 +79,8 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
    * @see de.fhkoeln.santiago.examples.WorkflowDefinition#getNextWorkflowElement()
    */
   @Override
-  public Object[] getNextWorkflowElement() {
-    if (elementsIterator == null) {
-      elementsIterator = workflowElements.listIterator();
-    } else if(!elementsIterator.hasNext()) {
+  public Object[] getNextWorkflowElement() throws NoSuchElementException {
+    if(!elementsIterator.hasNext()) {
       throw new NoSuchElementException("There are no more Elements in the Workflow Definition.");
     }
     return elementsIterator.next();
@@ -98,7 +99,15 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
    */
   @Override
   public void rewind() {
-    elementsIterator = null;
+    elementsIterator = workflowElements.listIterator();
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.examples.WorkflowDefinition#hasNextElement()
+   */
+  @Override
+  public boolean hasNextElement() {
+    return elementsIterator.hasNext();
   }
 
 }
