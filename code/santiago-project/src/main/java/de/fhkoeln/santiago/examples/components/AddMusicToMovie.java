@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples;
+package de.fhkoeln.santiago.examples.components;
 
 import java.io.IOException;
 import java.util.Vector;
@@ -34,6 +34,9 @@ import javax.media.protocol.ContentDescriptor;
 import javax.media.protocol.DataSource;
 import javax.media.protocol.FileTypeDescriptor;
 
+import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+
+
 /**
  * Documentation comment without implementation details. 
  * Use implementation comments to describe details of the implementation.
@@ -43,7 +46,7 @@ import javax.media.protocol.FileTypeDescriptor;
  * @version 1.0  Jul 3, 2008
  *
  */
-public class AddMusicToMovie implements WorkflowElement {
+public class AddMusicToMovie extends AbstractComponent {
   
   class JMFFunctionWrapper implements ControllerListener, DataSinkListener {
     
@@ -248,15 +251,20 @@ public class AddMusicToMovie implements WorkflowElement {
     }
   }
 
+  public AddMusicToMovie(MessageQueue messageQueue) {
+    super(messageQueue);
+    setOutput(new String[] { "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/with_audio.mov" });
+  }
+
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.examples.WorkflowElement#run()
    */
   @Override
-  public void run() {
-    String pathToVideo = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov";
+  protected void customRun() {
+//    String pathToVideo = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov";
     String pathToAudio = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3";
-    String outputFile = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/with_audio.mov";
-    JMFFunctionWrapper functionWrapper = new JMFFunctionWrapper(pathToVideo, pathToAudio, outputFile);
+//    String outputFile = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/with_audio.mov";
+    JMFFunctionWrapper functionWrapper = new JMFFunctionWrapper(getInput()[0], pathToAudio, getOutput()[0]);
     try {
       functionWrapper.performAction();
     } catch (IOException e) {

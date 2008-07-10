@@ -12,10 +12,16 @@
 package de.fhkoeln.santiago.examples;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
+
 
 import java.util.Arrays;
 
 import org.junit.Test;
+
+import de.fhkoeln.santiago.examples.components.AbstractComponent;
+import de.fhkoeln.santiago.examples.components.PlayMovieFile;
+import de.fhkoeln.santiago.examples.messaging.MessageQueue;
 
 
 
@@ -32,8 +38,10 @@ public class PlayMovieFileTest {
 
   @Test
   public void testShouldImplementWorkflowElementInterface() throws Exception {
-    assertTrue(java.util.Arrays.asList(PlayMovieFile.class.getInterfaces())
-        .contains(WorkflowElement.class));
+    MessageQueue queue = mock(MessageQueue.class);
+    
+    AbstractComponent component = new PlayMovieFile(queue);
+    assertNotNull(component);
   }
   
 }

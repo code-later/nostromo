@@ -1,7 +1,7 @@
 /*
- * WorkflowElement.java
+ * MessageQueue.java
  *
- * Version 1.0  Jul 4, 2008
+ * Version 1.0  Jul 10, 2008
  *
  * Copyright notice
  *
@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples;
+package de.fhkoeln.santiago.examples.messaging;
 
 
 /**
@@ -18,15 +18,19 @@ package de.fhkoeln.santiago.examples;
  * Comment lines should not be longer than 70 characters.
  *
  * @author dbreuer
- * @version 1.0  Jul 4, 2008
+ * @version 1.0  Jul 10, 2008
  *
  */
-public interface WorkflowElement {
-  
+public interface MessageQueue {
+
   /**
-   * This method has to be called so the WorkflowElement starts doing
-   * what it is supposed to do.
+   * @param output
    */
-  public void run();
-  
+  public void pushMessage(String[] output);
+
+  /**
+   * @return
+   */
+  public String[] pullMessage();
+
 }

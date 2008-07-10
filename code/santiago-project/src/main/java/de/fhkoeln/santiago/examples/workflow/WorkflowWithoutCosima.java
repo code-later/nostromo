@@ -9,7 +9,14 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples;
+package de.fhkoeln.santiago.examples.workflow;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
+import de.fhkoeln.santiago.examples.components.AbstractComponent;
+import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+import de.fhkoeln.santiago.examples.messaging.SimpleMessageQueue;
 
 
 /**
@@ -24,14 +31,16 @@ package de.fhkoeln.santiago.examples;
 public class WorkflowWithoutCosima {
   
   private final WorkflowDefinition workflowDefinition;
+  private MessageQueue messageQueue;
 
   /**
    * Constructor documentation comment.
-   *
+   *  
    * @param workflowDefinition
    */
-  public WorkflowWithoutCosima(WorkflowDefinition workflowDefinition) {
+  public WorkflowWithoutCosima(WorkflowDefinition workflowDefinition, MessageQueue messageQueue) {
     this.workflowDefinition = workflowDefinition;
+    this.messageQueue = messageQueue;
   }
 
   /**
@@ -41,15 +50,24 @@ public class WorkflowWithoutCosima {
   public void run() {
     while (workflowDefinition.hasNextElement()) {
       Object[] element = workflowDefinition.getNextWorkflowElement();
-      Class<WorkflowElement> workflowElementClass = (Class<WorkflowElement>) element[1];
+      Class<AbstractComponent> workflowElementClass = (Class<AbstractComponent>) element[1];
       try {
-        WorkflowElement workflowElement = workflowElementClass.newInstance();
-        workflowElement.run();
+        Constructor abstractComponentConstructor = workflowElementClass.getConstructor(MessageQueue.class);
+        AbstractComponent abstractComponent = (AbstractComponent) abstractComponentConstructor.newInstance(this.messageQueue);
+        abstractComponent.run();
       } catch (InstantiationException e) {
         System.err.println("Class " + workflowElementClass.getName() + " could not be instantiated.");
         e.printStackTrace();
       } catch (IllegalAccessException e) {
         System.err.println("There was an illigal access with class " + workflowElementClass.getName() + ".");
+        e.printStackTrace();
+      } catch (SecurityException e) {
+        e.printStackTrace();
+      } catch (NoSuchMethodException e) {
+        e.printStackTrace();
+      } catch (IllegalArgumentException e) {
+        e.printStackTrace();
+      } catch (InvocationTargetException e) {
         e.printStackTrace();
       }
     }

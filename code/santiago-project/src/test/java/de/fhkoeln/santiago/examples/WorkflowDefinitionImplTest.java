@@ -18,6 +18,11 @@ import java.util.NoSuchElementException;
 import org.junit.Before;
 import org.junit.Test;
 
+import de.fhkoeln.santiago.examples.components.AddMusicToMovie;
+import de.fhkoeln.santiago.examples.components.PlayMovieFile;
+import de.fhkoeln.santiago.examples.workflow.WorkflowDefinition;
+import de.fhkoeln.santiago.examples.workflow.WorkflowDefinitionImpl;
+
 
 /**
  * Documentation comment without implementation details. 
@@ -82,7 +87,7 @@ public class WorkflowDefinitionImplTest {
   }
 
   /**
-   * Test method for {@link de.fhkoeln.santiago.examples.WorkflowDefinitionImpl#getNextWorkflowElement()}.
+   * Test method for {@link de.fhkoeln.santiago.examples.workflow.WorkflowDefinitionImpl#getNextWorkflowElement()}.
    */
   @Test
   public void testShouldGetNextWorkflowElement() {

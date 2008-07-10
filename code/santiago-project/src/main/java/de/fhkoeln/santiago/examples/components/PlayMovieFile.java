@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples;
+package de.fhkoeln.santiago.examples.components;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -35,6 +35,9 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.metal.MetalLookAndFeel;
 
+import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+
+
 
 /**
  * Documentation comment without implementation details. 
@@ -45,7 +48,7 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
  * @version 1.0  Jul 3, 2008
  *
  */
-public class PlayMovieFile implements WorkflowElement {
+public class PlayMovieFile extends AbstractComponent {
   
   class JMFWrapperFunction implements ControllerListener {
 
@@ -188,14 +191,18 @@ public class PlayMovieFile implements WorkflowElement {
     
   }
 
+  public PlayMovieFile(MessageQueue messageQueue) {
+    super(messageQueue);
+  }
+
   /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.WorkflowElement#run()
+   * @see de.fhkoeln.santiago.examples.components.AbstractComponent#customRun()
    */
   @Override
-  public void run() {
-    String pathToVideo = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/with_audio.mov";
+  protected void customRun() {
+//    String pathToVideo = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/with_audio.mov";
     try {
-      JMFWrapperFunction wrapperFunction = new JMFWrapperFunction(pathToVideo);
+      JMFWrapperFunction wrapperFunction = new JMFWrapperFunction(getInput()[0]);
       wrapperFunction.startPlayer();
       Thread.currentThread().sleep(18000);
     } catch (FileNotFoundException e) {
@@ -208,5 +215,4 @@ public class PlayMovieFile implements WorkflowElement {
       e.printStackTrace();
     }
   }
-
 }

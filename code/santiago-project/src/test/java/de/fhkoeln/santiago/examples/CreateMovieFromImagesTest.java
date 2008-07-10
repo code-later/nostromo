@@ -11,9 +11,15 @@
  */
 package de.fhkoeln.santiago.examples;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
+
+import de.fhkoeln.santiago.examples.components.AbstractComponent;
+import de.fhkoeln.santiago.examples.components.CreateMovieFromImages;
+import de.fhkoeln.santiago.examples.messaging.MessageQueue;
 
 
 
@@ -30,8 +36,10 @@ public class CreateMovieFromImagesTest {
 
   @Test
   public void testShouldImplementWorkflowElementInterface() throws Exception {
-    assertTrue(java.util.Arrays.asList(CreateMovieFromImages.class.getInterfaces())
-        .contains(WorkflowElement.class));
+    MessageQueue queue = mock(MessageQueue.class);
+    
+    AbstractComponent component = new CreateMovieFromImages(queue);
+    assertNotNull(component);
   }
 
 }

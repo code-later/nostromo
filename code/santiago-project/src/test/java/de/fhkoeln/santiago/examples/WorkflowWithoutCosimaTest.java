@@ -11,13 +11,14 @@
  */
 package de.fhkoeln.santiago.examples;
 
-import static org.mockito.Mockito.*;
-
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.InOrder;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
+import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+import de.fhkoeln.santiago.examples.messaging.SimpleMessageQueue;
+import de.fhkoeln.santiago.examples.workflow.WorkflowDefinition;
+import de.fhkoeln.santiago.examples.workflow.WorkflowDefinitionImpl;
+import de.fhkoeln.santiago.examples.workflow.WorkflowWithoutCosima;
 
 /**
  * Documentation comment without implementation details. 
@@ -31,18 +32,22 @@ import de.fhkoeln.cosima.media.AbstractMedia;
 public class WorkflowWithoutCosimaTest {
   
   WorkflowDefinition workflowDefinition;
+  MessageQueue messageQueue;
   
   @Before
   public void setUp() throws ClassNotFoundException {
-    String abstractDefinition = "1,de.fhkoeln.santiago.examples.CreateMovieFromImages;" +
-    		"2,de.fhkoeln.santiago.examples.AddMusicToMovie;" +
-    		"3,de.fhkoeln.santiago.examples.PlayMovieFile";
+    String abstractDefinition = "1,de.fhkoeln.santiago.examples.components.CreateMovieFromImages;" +
+    		"2,de.fhkoeln.santiago.examples.components.AddMusicToMovie;" +
+    		"3,de.fhkoeln.santiago.examples.components.PlayMovieFile";
     workflowDefinition = new WorkflowDefinitionImpl(abstractDefinition);
+    
+    messageQueue = new SimpleMessageQueue();
+    messageQueue.pushMessage(new String[] { "/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/" } );
   }
   
   @Test
   public void testShouldBeCreatedWithWorkflowDefinition() throws Exception {
-    WorkflowWithoutCosima workflow = new WorkflowWithoutCosima(workflowDefinition);
+    WorkflowWithoutCosima workflow = new WorkflowWithoutCosima(workflowDefinition, messageQueue);
     workflow.run();
   }
 }

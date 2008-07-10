@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples;
+package de.fhkoeln.santiago.examples.components;
 
 import java.awt.Dimension;
 import java.io.File;
@@ -53,6 +53,9 @@ import javax.media.protocol.FileTypeDescriptor;
 import javax.media.protocol.PullBufferDataSource;
 import javax.media.protocol.PullBufferStream;
 
+import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+
+
 /**
  * Documentation comment without implementation details. 
  * Use implementation comments to describe details of the implementation.
@@ -62,7 +65,7 @@ import javax.media.protocol.PullBufferStream;
  * @version 1.0  Jul 3, 2008
  *
  */
-public class CreateMovieFromImages implements WorkflowElement {
+public class CreateMovieFromImages extends AbstractComponent {
   
   
   class JMFFunctionWrapper implements ControllerListener, DataSinkListener {
@@ -466,19 +469,21 @@ public class CreateMovieFromImages implements WorkflowElement {
     }
   }
 
+  public CreateMovieFromImages(MessageQueue messageQueue) {
+    super(messageQueue);
+    setOutput(new String[] { "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov" });
+  }
+
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.examples.WorkflowElement#run()
    */
   @Override
-  public void run() {
-    String pathToImages = "/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res";
-    String pathToTargetMovie = "/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov";
+  protected void customRun() {
     try {
-      JMFFunctionWrapper functionWrapper = new JMFFunctionWrapper(pathToImages, pathToTargetMovie);
+      JMFFunctionWrapper functionWrapper = new JMFFunctionWrapper(getInput()[0], getOutput()[0]);
       functionWrapper.performAction();
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
-
 }
