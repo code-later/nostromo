@@ -9,14 +9,14 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples.workflow;
+package de.fhkoeln.santiago.workflow;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-import de.fhkoeln.santiago.examples.components.AbstractComponent;
-import de.fhkoeln.santiago.examples.messaging.MessageQueue;
-import de.fhkoeln.santiago.examples.messaging.SimpleMessageQueue;
+import de.fhkoeln.santiago.components.AbstractComponent;
+import de.fhkoeln.santiago.messaging.MessageQueue;
+import de.fhkoeln.santiago.messaging.SimpleMessageQueue;
 
 
 /**
@@ -31,7 +31,7 @@ import de.fhkoeln.santiago.examples.messaging.SimpleMessageQueue;
 public class WorkflowWithoutCosima {
   
   private final WorkflowDefinition workflowDefinition;
-  private MessageQueue messageQueue;
+  private final MessageQueue messageQueue;
 
   /**
    * Constructor documentation comment.

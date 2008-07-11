@@ -9,9 +9,9 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples.components;
+package de.fhkoeln.santiago.components;
 
-import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+import de.fhkoeln.santiago.messaging.MessageQueue;
 
 
 /**

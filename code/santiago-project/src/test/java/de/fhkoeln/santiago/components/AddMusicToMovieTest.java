@@ -1,5 +1,5 @@
 /*
- * PlayMovieFileTest.java
+ * AddMusicToMovieTest.java
  *
  * Version 1.0  Jul 4, 2008
  *
@@ -9,19 +9,17 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples;
+package de.fhkoeln.santiago.components;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
-
-
-import java.util.Arrays;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
-import de.fhkoeln.santiago.examples.components.AbstractComponent;
-import de.fhkoeln.santiago.examples.components.PlayMovieFile;
-import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+import de.fhkoeln.santiago.components.AbstractComponent;
+import de.fhkoeln.santiago.components.AddMusicToMovie;
+import de.fhkoeln.santiago.messaging.MessageQueue;
 
 
 
@@ -34,14 +32,14 @@ import de.fhkoeln.santiago.examples.messaging.MessageQueue;
  * @version 1.0  Jul 4, 2008
  *
  */
-public class PlayMovieFileTest {
+public class AddMusicToMovieTest {
 
   @Test
   public void testShouldImplementWorkflowElementInterface() throws Exception {
     MessageQueue queue = mock(MessageQueue.class);
     
-    AbstractComponent component = new PlayMovieFile(queue);
+    AbstractComponent component = new AddMusicToMovie(queue);
     assertNotNull(component);
   }
-  
+
 }

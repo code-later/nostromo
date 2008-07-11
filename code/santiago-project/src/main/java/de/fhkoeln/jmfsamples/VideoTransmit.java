@@ -1,4 +1,4 @@
-package de.fhkoeln.santiago.jmfsamples;
+package de.fhkoeln.jmfsamples;
 
 /*
  * @(#)VideoTransmit.java 1.7 01/03/13

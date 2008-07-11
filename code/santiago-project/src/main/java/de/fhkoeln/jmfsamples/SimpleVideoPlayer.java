@@ -9,7 +9,7 @@
  *
  * (c) 2007 by samwise
  */
-package de.fhkoeln.santiago.jmfsamples;
+package de.fhkoeln.jmfsamples;
 
 import java.applet.Applet;
 import java.awt.Component;

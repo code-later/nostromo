@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples;
+package de.fhkoeln.santiago.components;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -17,9 +17,9 @@ import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
-import de.fhkoeln.santiago.examples.components.AbstractComponent;
-import de.fhkoeln.santiago.examples.components.CreateMovieFromImages;
-import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+import de.fhkoeln.santiago.components.AbstractComponent;
+import de.fhkoeln.santiago.components.CreateMovieFromImages;
+import de.fhkoeln.santiago.messaging.MessageQueue;
 
 
 

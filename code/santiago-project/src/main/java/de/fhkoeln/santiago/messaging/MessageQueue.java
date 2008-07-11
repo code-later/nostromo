@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples.messaging;
+package de.fhkoeln.santiago.messaging;
 
 
 /**

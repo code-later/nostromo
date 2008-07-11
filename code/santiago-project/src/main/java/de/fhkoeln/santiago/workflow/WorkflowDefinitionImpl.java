@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples.workflow;
+package de.fhkoeln.santiago.workflow;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -76,7 +76,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.WorkflowDefinition#getNextWorkflowElement()
+   * @see de.fhkoeln.santiago.WorkflowDefinition#getNextWorkflowElement()
    */
   @Override
   public Object[] getNextWorkflowElement() throws NoSuchElementException {
@@ -87,7 +87,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.WorkflowDefinition#size()
+   * @see de.fhkoeln.santiago.WorkflowDefinition#size()
    */
   @Override
   public int size() {
@@ -95,7 +95,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.WorkflowDefinition#rewind()
+   * @see de.fhkoeln.santiago.WorkflowDefinition#rewind()
    */
   @Override
   public void rewind() {
@@ -103,7 +103,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.WorkflowDefinition#hasNextElement()
+   * @see de.fhkoeln.santiago.WorkflowDefinition#hasNextElement()
    */
   @Override
   public boolean hasNextElement() {

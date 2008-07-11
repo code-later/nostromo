@@ -9,16 +9,16 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples;
+package de.fhkoeln.santiago.workflow;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import de.fhkoeln.santiago.examples.messaging.MessageQueue;
-import de.fhkoeln.santiago.examples.messaging.SimpleMessageQueue;
-import de.fhkoeln.santiago.examples.workflow.WorkflowDefinition;
-import de.fhkoeln.santiago.examples.workflow.WorkflowDefinitionImpl;
-import de.fhkoeln.santiago.examples.workflow.WorkflowWithoutCosima;
+import de.fhkoeln.santiago.messaging.MessageQueue;
+import de.fhkoeln.santiago.messaging.SimpleMessageQueue;
+import de.fhkoeln.santiago.workflow.WorkflowDefinition;
+import de.fhkoeln.santiago.workflow.WorkflowDefinitionImpl;
+import de.fhkoeln.santiago.workflow.WorkflowWithoutCosima;
 
 /**
  * Documentation comment without implementation details. 
@@ -36,9 +36,9 @@ public class WorkflowWithoutCosimaTest {
   
   @Before
   public void setUp() throws ClassNotFoundException {
-    String abstractDefinition = "1,de.fhkoeln.santiago.examples.components.CreateMovieFromImages;" +
-    		"2,de.fhkoeln.santiago.examples.components.AddMusicToMovie;" +
-    		"3,de.fhkoeln.santiago.examples.components.PlayMovieFile";
+    String abstractDefinition = "1,de.fhkoeln.santiago.components.CreateMovieFromImages;" +
+    		"2,de.fhkoeln.santiago.components.AddMusicToMovie;" +
+    		"3,de.fhkoeln.santiago.components.PlayMovieFile";
     workflowDefinition = new WorkflowDefinitionImpl(abstractDefinition);
     
     messageQueue = new SimpleMessageQueue();

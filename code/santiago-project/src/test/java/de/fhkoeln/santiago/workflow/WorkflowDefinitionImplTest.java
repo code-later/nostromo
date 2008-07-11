@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples;
+package de.fhkoeln.santiago.workflow;
 
 import static org.junit.Assert.*;
 
@@ -18,10 +18,10 @@ import java.util.NoSuchElementException;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.fhkoeln.santiago.examples.components.AddMusicToMovie;
-import de.fhkoeln.santiago.examples.components.PlayMovieFile;
-import de.fhkoeln.santiago.examples.workflow.WorkflowDefinition;
-import de.fhkoeln.santiago.examples.workflow.WorkflowDefinitionImpl;
+import de.fhkoeln.santiago.components.AddMusicToMovie;
+import de.fhkoeln.santiago.components.PlayMovieFile;
+import de.fhkoeln.santiago.workflow.WorkflowDefinition;
+import de.fhkoeln.santiago.workflow.WorkflowDefinitionImpl;
 
 
 /**
@@ -39,7 +39,7 @@ public class WorkflowDefinitionImplTest {
   
   @Before
   public void setUp() {
-    abstractDefinition = "1,de.fhkoeln.santiago.examples.PlayMovieFile";
+    abstractDefinition = "1,de.fhkoeln.santiago.PlayMovieFile";
   }
   
   @Test(expected=IllegalArgumentException.class)
@@ -54,7 +54,7 @@ public class WorkflowDefinitionImplTest {
   
   @Test
   public void testShouldAcceptAbstractDefinitionInCorrectFormat() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl("1,de.fhkoeln.santiago.examples.PlayMovieFile");
+    WorkflowDefinition definition = new WorkflowDefinitionImpl("1,de.fhkoeln.santiago.PlayMovieFile");
     assertNotNull(definition);
   }
   
@@ -87,12 +87,12 @@ public class WorkflowDefinitionImplTest {
   }
 
   /**
-   * Test method for {@link de.fhkoeln.santiago.examples.workflow.WorkflowDefinitionImpl#getNextWorkflowElement()}.
+   * Test method for {@link de.fhkoeln.santiago.workflow.WorkflowDefinitionImpl#getNextWorkflowElement()}.
    */
   @Test
   public void testShouldGetNextWorkflowElement() {
     // First we add some more to the abstract definition.   
-    abstractDefinition += ";2,de.fhkoeln.santiago.examples.AddMusicToMovie";
+    abstractDefinition += ";2,de.fhkoeln.santiago.AddMusicToMovie";
     
     WorkflowDefinition definition;
     try {

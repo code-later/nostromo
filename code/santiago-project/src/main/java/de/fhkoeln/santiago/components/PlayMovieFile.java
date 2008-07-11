@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples.components;
+package de.fhkoeln.santiago.components;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -35,7 +35,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.metal.MetalLookAndFeel;
 
-import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+import de.fhkoeln.santiago.messaging.MessageQueue;
 
 
 
@@ -196,7 +196,7 @@ public class PlayMovieFile extends AbstractComponent {
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.components.AbstractComponent#customRun()
+   * @see de.fhkoeln.santiago.components.AbstractComponent#customRun()
    */
   @Override
   protected void customRun() {

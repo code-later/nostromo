@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples.messaging;
+package de.fhkoeln.santiago.messaging;
 
 import java.util.List;
 import java.util.Vector;
@@ -33,7 +33,7 @@ public class SimpleMessageQueue implements MessageQueue {
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.messaging.MessageQueue#pullMessage()
+   * @see de.fhkoeln.santiago.messaging.MessageQueue#pullMessage()
    */
   @Override
   public String[] pullMessage() {
@@ -43,7 +43,7 @@ public class SimpleMessageQueue implements MessageQueue {
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.messaging.MessageQueue#pushMessage(java.lang.String[])
+   * @see de.fhkoeln.santiago.messaging.MessageQueue#pushMessage(java.lang.String[])
    */
   @Override
   public void pushMessage(String[] output) {

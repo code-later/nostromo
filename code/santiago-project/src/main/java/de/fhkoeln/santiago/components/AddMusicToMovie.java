@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples.components;
+package de.fhkoeln.santiago.components;
 
 import java.io.IOException;
 import java.util.Vector;
@@ -34,7 +34,7 @@ import javax.media.protocol.ContentDescriptor;
 import javax.media.protocol.DataSource;
 import javax.media.protocol.FileTypeDescriptor;
 
-import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+import de.fhkoeln.santiago.messaging.MessageQueue;
 
 
 /**
@@ -257,7 +257,7 @@ public class AddMusicToMovie extends AbstractComponent {
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.WorkflowElement#run()
+   * @see de.fhkoeln.santiago.WorkflowElement#run()
    */
   @Override
   protected void customRun() {

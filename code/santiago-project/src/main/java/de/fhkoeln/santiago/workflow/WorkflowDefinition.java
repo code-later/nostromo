@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples.workflow;
+package de.fhkoeln.santiago.workflow;
 
 import java.util.NoSuchElementException;
 

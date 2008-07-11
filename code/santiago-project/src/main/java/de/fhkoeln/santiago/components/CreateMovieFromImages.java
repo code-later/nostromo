@@ -9,7 +9,7 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.examples.components;
+package de.fhkoeln.santiago.components;
 
 import java.awt.Dimension;
 import java.io.File;
@@ -53,7 +53,7 @@ import javax.media.protocol.FileTypeDescriptor;
 import javax.media.protocol.PullBufferDataSource;
 import javax.media.protocol.PullBufferStream;
 
-import de.fhkoeln.santiago.examples.messaging.MessageQueue;
+import de.fhkoeln.santiago.messaging.MessageQueue;
 
 
 /**
@@ -475,7 +475,7 @@ public class CreateMovieFromImages extends AbstractComponent {
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.santiago.examples.WorkflowElement#run()
+   * @see de.fhkoeln.santiago.WorkflowElement#run()
    */
   @Override
   protected void customRun() {
