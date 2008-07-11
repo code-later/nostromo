@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+  <element type="producer">
+    <uri>http://santiago-project.fh-koeln.de/components/CreateMovieFromImages</uri>
+    <class-name>de.fhkoeln.santiago.components.CreateMovieFromImages</class-name>
+    <input type="external">
+      <uri>file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/</uri>
+    </input>
+    <output>
+      <uri>http://santiago-project.fh-koeln.de/components/CreateMovieFromImages/output</uri>
+    </output>
+    <predecessors>
+      <null />
+    </predecessors>
+    <successors>
+      <uri>http://santiago-project.fh-koeln.de/components/AddMusicToMovie</uri>
+    </successors>
+  </element>
+  
+  <element type="producer">
+    <uri>http://santiago-project.fh-koeln.de/components/ProviceMusicFile</uri>
+    <class-name>de.fhkoeln.santiago.components.ProviceMusicFile</class-name>
+    <input type="external">
+      <uri>file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3</uri>
+    </input>
+    <output>
+      <uri>http://santiago-project.fh-koeln.de/components/ProviceMusicFile/output</uri>
+    </output>
+    <predecessors>
+      <null />
+    </predecessors>
+    <successors>
+      <uri>http://santiago-project.fh-koeln.de/components/AddMusicToMovie</uri>
+    </successors>
+  </element>
+
+  <element type="transformer">
+    <uri>http://santiago-project.fh-koeln.de/components/AddMusicToMovie</uri>
+    <class-name>de.fhkoeln.santiago.components.AddMusicToMovie</class-name>
+    <input>
+      <uri>http://santiago-project.fh-koeln.de/components/CreateMovieFromImages/output</uri>
+      <uri>http://santiago-project.fh-koeln.de/components/ProviceMusicFile/output</uri>
+    </input>
+    <output>
+      <uri>http://santiago-project.fh-koeln.de/components/AddMusicToMovie/output</uri>
+    </output>
+    <predecessors>
+      <synchronized>
+        <uri>http://santiago-project.fh-koeln.de/components/CreateMovieFromImages</uri>
+        <uri>http://santiago-project.fh-koeln.de/components/ProviceMusicFile</uri>
+      </synchronized>
+    </predecessors>
+    <successors>
+      <uri>http://santiago-project.fh-koeln.de/components/PlayMovieFile</uri>
+    </successors>
+  </element>
+
+  <element type="consumer">
+    <uri>http://santiago-project.fh-koeln.de/components/PlayMovieFile</uri>
+    <class-name>de.fhkoeln.santiago.components.PlayMovieFile</class-name>
+    <input>
+      <uri>http://santiago-project.fh-koeln.de/components/AddMusicToMovie/output</uri>
+    </input>
+    <output>
+      <null />
+    </output>
+    <predecessors>
+      <uri>http://santiago-project.fh-koeln.de/components/AddMusicToMovie</uri>
+    </predecessors>
+    <successors>
+      <null />
+    </successors>
+  </element>
+  
+</workflow>
