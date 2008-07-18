@@ -11,14 +11,15 @@
  */
 package de.fhkoeln.santiago.workflow;
 
+import static org.junit.Assert.fail;
+
+import java.io.IOException;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import de.fhkoeln.santiago.messaging.MessageQueue;
 import de.fhkoeln.santiago.messaging.SimpleMessageQueue;
-import de.fhkoeln.santiago.workflow.WorkflowDefinition;
-import de.fhkoeln.santiago.workflow.WorkflowDefinitionImpl;
-import de.fhkoeln.santiago.workflow.WorkflowWithoutCosima;
 
 /**
  * Documentation comment without implementation details. 
@@ -35,19 +36,19 @@ public class WorkflowWithoutCosimaTest {
   MessageQueue messageQueue;
   
   @Before
-  public void setUp() throws ClassNotFoundException {
-    String abstractDefinition = "1,de.fhkoeln.santiago.components.CreateMovieFromImages;" +
-    		"2,de.fhkoeln.santiago.components.AddMusicToMovie;" +
-    		"3,de.fhkoeln.santiago.components.PlayMovieFile";
-    workflowDefinition = new WorkflowDefinitionImpl(abstractDefinition);
-    
+  public void setUp() throws ClassNotFoundException, IOException {
+    workflowDefinition = new YamlWorkflowDefinition("res/workflow_definition/abstract_workflow_definition.yml");
     messageQueue = new SimpleMessageQueue();
-    messageQueue.pushMessage(new String[] { "/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/" } );
   }
   
   @Test
   public void testShouldBeCreatedWithWorkflowDefinition() throws Exception {
     WorkflowWithoutCosima workflow = new WorkflowWithoutCosima(workflowDefinition, messageQueue);
-    workflow.run();
+    try {
+      workflow.run();
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("No Exception was expected!");
+    }
   }
 }

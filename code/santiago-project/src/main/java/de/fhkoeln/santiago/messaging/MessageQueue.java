@@ -24,13 +24,15 @@ package de.fhkoeln.santiago.messaging;
 public interface MessageQueue {
 
   /**
-   * @param output
+   * @param messageKey TODO
+   * @param message
    */
-  public void pushMessage(String[] output);
+  public void pushMessage(String messageKey, String message);
 
   /**
+   * @param messageKey TODO
    * @return
    */
-  public String[] pullMessage();
+  public String pullMessage(String messageKey);
 
 }

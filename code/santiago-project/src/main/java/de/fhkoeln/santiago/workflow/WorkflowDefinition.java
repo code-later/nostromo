@@ -12,6 +12,7 @@
 package de.fhkoeln.santiago.workflow;
 
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 
 /**
@@ -36,7 +37,10 @@ public interface WorkflowDefinition {
    *           If there are no more Elements to fetch from the
    *           definition list.
    */
+  @Deprecated
   public Object[] getNextWorkflowElement() throws NoSuchElementException;
+  
+  public Set<WorkflowElement> getNextElements() throws NoSuchElementException;
 
   /**
    * @return The amount of Workflow Elements.
@@ -51,6 +55,6 @@ public interface WorkflowDefinition {
   /**
    * @return If there are any more elements to fetch or not.
    */
-  public boolean hasNextElement();
+  public boolean hasNextElements();
 
 }

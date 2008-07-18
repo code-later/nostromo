@@ -38,7 +38,7 @@ public class AddMusicToMovieTest {
   public void testShouldImplementWorkflowElementInterface() throws Exception {
     MessageQueue queue = mock(MessageQueue.class);
     
-    AbstractComponent component = new AddMusicToMovie(queue);
+    AbstractComponent component = new AddMusicToMovie(queue, new String[] {});
     assertNotNull(component);
   }
 

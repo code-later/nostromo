@@ -38,7 +38,7 @@ public class CreateMovieFromImagesTest {
   public void testShouldImplementWorkflowElementInterface() throws Exception {
     MessageQueue queue = mock(MessageQueue.class);
     
-    AbstractComponent component = new CreateMovieFromImages(queue);
+    AbstractComponent component = new CreateMovieFromImages(queue, new String[] {});
     assertNotNull(component);
   }
 

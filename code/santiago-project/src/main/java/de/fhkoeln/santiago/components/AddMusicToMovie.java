@@ -251,27 +251,51 @@ public class AddMusicToMovie extends AbstractComponent {
     }
   }
 
-  public AddMusicToMovie(MessageQueue messageQueue) {
-    super(messageQueue);
-    setOutput(new String[] { "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/with_audio.mov" });
+  private final String uri = "http://santiago-project.fh-koeln.de/components/AddMusicToMovie";
+  
+  public AddMusicToMovie(MessageQueue messageQueue, String[] inputKeys) {
+    super(messageQueue, inputKeys);
+    setOutput("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/with_audio.mov");
+  }
+  
+  public AddMusicToMovie() {
+    super(null, null);
   }
 
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.WorkflowElement#run()
    */
   @Override
-  protected void customRun() {
-//    String pathToVideo = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov";
-    String pathToAudio = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3";
-//    String outputFile = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/with_audio.mov";
-    JMFFunctionWrapper functionWrapper = new JMFFunctionWrapper(getInput()[0], pathToAudio, getOutput()[0]);
+  protected void customRun() throws MediaException {
+    System.out.println("Input is:");
+    System.out.println(" - " + getInput()[0]);
+    System.out.println(" - " + getInput()[1]);
+    
+    JMFFunctionWrapper functionWrapper = new JMFFunctionWrapper(getInput()[0], getInput()[1], getOutput());
     try {
       functionWrapper.performAction();
     } catch (IOException e) {
       e.printStackTrace();
     } catch (MediaException e) {
       e.printStackTrace();
+      throw e;
     }
   }
 
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.components.AbstractComponent#getOutputKey()
+   */
+  @Override
+  public String getOutputKey() {
+    return uri + "/output";
+  }
+  
+  public static void main(String[] args) throws MediaException {
+    AddMusicToMovie addMusicToMovie = new AddMusicToMovie();
+    addMusicToMovie.setOutput("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/with_audio.mov");
+    addMusicToMovie.addInput("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov");
+//    addMusicToMovie.addInput("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov");
+    addMusicToMovie.addInput("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3");
+    addMusicToMovie.customRun();
+  }
 }

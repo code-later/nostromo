@@ -31,9 +31,6 @@ import javax.media.RealizeCompleteEvent;
 import javax.media.Time;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.metal.MetalLookAndFeel;
 
 import de.fhkoeln.santiago.messaging.MessageQueue;
 
@@ -191,8 +188,10 @@ public class PlayMovieFile extends AbstractComponent {
     
   }
 
-  public PlayMovieFile(MessageQueue messageQueue) {
-    super(messageQueue);
+  private final String uri = "http://santiago-project.fh-koeln.de/components/PlayMovieFile";
+  
+  public PlayMovieFile(MessageQueue messageQueue, String[] inputKeys) {
+    super(messageQueue, inputKeys);
   }
 
   /* (non-Javadoc)
@@ -214,5 +213,9 @@ public class PlayMovieFile extends AbstractComponent {
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
+  }
+  
+  public String getOutputKey() {
+    return this.uri + "/output";
   }
 }

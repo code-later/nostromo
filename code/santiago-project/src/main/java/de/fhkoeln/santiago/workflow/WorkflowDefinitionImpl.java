@@ -11,8 +11,10 @@
  */
 package de.fhkoeln.santiago.workflow;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Set;
 import java.util.Vector;
 
 
@@ -41,7 +43,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
    * @throws ClassNotFoundException 
    */
   public WorkflowDefinitionImpl(String abstractDefinition) throws ClassNotFoundException {
-    if (abstractDefinition.isEmpty()) {
+    if (abstractDefinition == null || abstractDefinition == "") {
       throw new IllegalArgumentException("The abstract Workflow Definition is emtpy.");
     } else if(!abstractDefinition.matches(ABSTRACT_DEFINITION_PATTERN)) {
       throw new IllegalArgumentException("The abstract Workflow Definition is not in the right format. Pattern is: " + ABSTRACT_DEFINITION_PATTERN);
@@ -106,8 +108,23 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
    * @see de.fhkoeln.santiago.WorkflowDefinition#hasNextElement()
    */
   @Override
-  public boolean hasNextElement() {
+  public boolean hasNextElements() {
     return elementsIterator.hasNext();
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.workflow.WorkflowDefinition#getNextElement()
+   */
+  @Override
+  public Set<WorkflowElement> getNextElements() throws NoSuchElementException {
+    WorkflowElement element = new WorkflowElement();
+    Object[] next = this.getNextWorkflowElement();
+    element.setUri(next[0].toString());
+    Class nextClass = (Class) next[1];
+    element.setClassName(nextClass.getCanonicalName());
+    HashSet<WorkflowElement> _set = new HashSet<WorkflowElement>();
+    _set.add(element);
+    return _set;
   }
 
 }

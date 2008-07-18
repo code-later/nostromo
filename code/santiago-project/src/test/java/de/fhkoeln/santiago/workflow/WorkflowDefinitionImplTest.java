@@ -39,7 +39,7 @@ public class WorkflowDefinitionImplTest {
   
   @Before
   public void setUp() {
-    abstractDefinition = "1,de.fhkoeln.santiago.PlayMovieFile";
+    abstractDefinition = "1,de.fhkoeln.santiago.components.PlayMovieFile";
   }
   
   @Test(expected=IllegalArgumentException.class)
@@ -54,7 +54,7 @@ public class WorkflowDefinitionImplTest {
   
   @Test
   public void testShouldAcceptAbstractDefinitionInCorrectFormat() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl("1,de.fhkoeln.santiago.PlayMovieFile");
+    WorkflowDefinition definition = new WorkflowDefinitionImpl("1,de.fhkoeln.santiago.components.PlayMovieFile");
     assertNotNull(definition);
   }
   
@@ -73,9 +73,9 @@ public class WorkflowDefinitionImplTest {
   @Test
   public void testShouldBeAskIfAnyElementsLeft() throws Exception {
     WorkflowDefinition definition = new WorkflowDefinitionImpl(abstractDefinition);
-    assertTrue(definition.hasNextElement());
+    assertTrue(definition.hasNextElements());
     definition.getNextWorkflowElement();
-    assertFalse(definition.hasNextElement());
+    assertFalse(definition.hasNextElements());
   }
   
   @Test
@@ -92,7 +92,7 @@ public class WorkflowDefinitionImplTest {
   @Test
   public void testShouldGetNextWorkflowElement() {
     // First we add some more to the abstract definition.   
-    abstractDefinition += ";2,de.fhkoeln.santiago.AddMusicToMovie";
+    abstractDefinition += ";2,de.fhkoeln.santiago.components.AddMusicToMovie";
     
     WorkflowDefinition definition;
     try {
@@ -115,6 +115,15 @@ public class WorkflowDefinitionImplTest {
   public void testShouldInitializeWithAbstractRepresentationOfWorkflow() throws Exception {
     WorkflowDefinition definition = new WorkflowDefinitionImpl(abstractDefinition);
     assertNotNull(definition.getNextWorkflowElement());
+  }
+  
+  @Test
+  public void testShouldReturnRealWorkflowElementObjectEvenForSimpleWorkflowDefinition() throws Exception {
+    WorkflowDefinition definition = new WorkflowDefinitionImpl(abstractDefinition);
+    WorkflowElement element = definition.getNextElements().iterator().next();
+    assertNotNull(element);
+    assertEquals("1", element.getUri());
+    assertEquals(PlayMovieFile.class, element.getElementClass());
   }
 
 }

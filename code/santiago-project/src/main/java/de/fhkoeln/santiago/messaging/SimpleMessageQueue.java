@@ -11,8 +11,8 @@
  */
 package de.fhkoeln.santiago.messaging;
 
-import java.util.List;
-import java.util.Vector;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -26,28 +26,26 @@ import java.util.Vector;
  */
 public class SimpleMessageQueue implements MessageQueue {
   
-  private List<String[]> queue;
+  private Map<String, String> queue;
   
   public SimpleMessageQueue() {
-    this.queue = new Vector<String[]>();
+    this.queue = new HashMap<String, String>();
   }
 
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.messaging.MessageQueue#pullMessage()
    */
   @Override
-  public String[] pullMessage() {
-    String[] message = this.queue.get(0);
-    this.queue.remove(0);
-    return message;
+  public String pullMessage(String messageKey) {
+    return this.queue.remove(messageKey);
   }
 
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.messaging.MessageQueue#pushMessage(java.lang.String[])
    */
   @Override
-  public void pushMessage(String[] output) {
-    this.queue.add(output);
+  public void pushMessage(String messageKey, String message) {
+    this.queue.put(messageKey, message);
   }
 
 }

@@ -1,2 +1,25 @@
-String tmp = "1,Vier";
-String[] splitted = tmp.split(";");
+java.util.HashMap map = (java.util.HashMap) org.ho.yaml.Yaml.load(new java.io.File("res/workflow_definition/abstract_workflow_definition.yml"));
+java.util.HashMap createMovie = (java.util.HashMap) map.get("create_movie");
+createMovie.get("uri");(java.lang.String) http://santiago-project.fh-koeln.de/components/CreateMovieFromImages
+  
+  
+de.fhkoeln.santiago.workflow.WorkflowElement element = org.ho.yaml.Yaml.loadType(new java.io.File("res/workflow_definition/abstract_workflow_definition.yml"), de.fhkoeln.santiago.workflow.WorkflowElement.class);
+element.getUri();
+element.getClassName();
+
+java.util.ArrayList<de.fhkoeln.santiago.workflow.WorkflowElement> elements = new java.util.ArrayList();
+java.io.FileInputStream stream = new java.io.FileInputStream(new java.io.File("res/workflow_definition/abstract_workflow_definition.yml"));
+org.ho.yaml.YamlDecoder decoder = new org.ho.yaml.YamlDecoder(stream);
+try {
+  while(true) {
+    de.fhkoeln.santiago.workflow.WorkflowElement workflowElement = decoder.readObjectOfType(de.fhkoeln.santiago.workflow.WorkflowElement.class);
+    elements.add(workflowElement);
+    System.out.println(workflowElement.getUri());
+  }
+} catch(java.io.EOFException e) {
+  System.err.println("Finished reading stream.");
+} finally {
+  decoder.close();
+  stream.close();
+}
+elements.size();(int) 4

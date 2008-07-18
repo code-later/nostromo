@@ -67,7 +67,6 @@ import de.fhkoeln.santiago.messaging.MessageQueue;
  */
 public class CreateMovieFromImages extends AbstractComponent {
   
-  
   class JMFFunctionWrapper implements ControllerListener, DataSinkListener {
     
     private static final int DEFAULT_FRAME_RATE = 2;
@@ -469,9 +468,11 @@ public class CreateMovieFromImages extends AbstractComponent {
     }
   }
 
-  public CreateMovieFromImages(MessageQueue messageQueue) {
-    super(messageQueue);
-    setOutput(new String[] { "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov" });
+  private final String uri = "http://santiago-project.fh-koeln.de/components/CreateMovieFromImages";
+  
+  public CreateMovieFromImages(MessageQueue messageQueue, String[] inputKeys) {
+    super(messageQueue, inputKeys);
+    setOutput("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov");
   }
 
   /* (non-Javadoc)
@@ -480,10 +481,18 @@ public class CreateMovieFromImages extends AbstractComponent {
   @Override
   protected void customRun() {
     try {
-      JMFFunctionWrapper functionWrapper = new JMFFunctionWrapper(getInput()[0], getOutput()[0]);
+      JMFFunctionWrapper functionWrapper = new JMFFunctionWrapper(getInput()[0], getOutput());
       functionWrapper.performAction();
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+  
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.components.AbstractComponent#getOutputKey()
+   */
+  @Override
+  public String getOutputKey() {
+    return this.uri + "/output";
   }
 }

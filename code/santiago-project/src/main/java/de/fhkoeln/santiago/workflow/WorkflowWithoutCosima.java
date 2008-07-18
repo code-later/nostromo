@@ -13,10 +13,14 @@ package de.fhkoeln.santiago.workflow;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Iterator;
+
+import javax.media.MediaException;
 
 import de.fhkoeln.santiago.components.AbstractComponent;
 import de.fhkoeln.santiago.messaging.MessageQueue;
 import de.fhkoeln.santiago.messaging.SimpleMessageQueue;
+import de.fhkoeln.santiago.workflow.WorkflowElement.Input;
 
 
 /**
@@ -42,35 +46,80 @@ public class WorkflowWithoutCosima {
     this.workflowDefinition = workflowDefinition;
     this.messageQueue = messageQueue;
   }
+  
+  public void run() throws InterruptedException, MediaException {
+    while (workflowDefinition.hasNextElements()) {
 
-  /**
-   * Runs the Workflow according to its definition. 
-   */
-  @SuppressWarnings("unchecked")
-  public void run() {
-    while (workflowDefinition.hasNextElement()) {
-      Object[] element = workflowDefinition.getNextWorkflowElement();
-      Class<AbstractComponent> workflowElementClass = (Class<AbstractComponent>) element[1];
-      try {
-        Constructor abstractComponentConstructor = workflowElementClass.getConstructor(MessageQueue.class);
-        AbstractComponent abstractComponent = (AbstractComponent) abstractComponentConstructor.newInstance(this.messageQueue);
-        abstractComponent.run();
-      } catch (InstantiationException e) {
-        System.err.println("Class " + workflowElementClass.getName() + " could not be instantiated.");
-        e.printStackTrace();
-      } catch (IllegalAccessException e) {
-        System.err.println("There was an illigal access with class " + workflowElementClass.getName() + ".");
-        e.printStackTrace();
-      } catch (SecurityException e) {
-        e.printStackTrace();
-      } catch (NoSuchMethodException e) {
-        e.printStackTrace();
-      } catch (IllegalArgumentException e) {
-        e.printStackTrace();
-      } catch (InvocationTargetException e) {
-        e.printStackTrace();
+      for (Iterator<WorkflowElement> iterator = workflowDefinition
+          .getNextElements().iterator(); iterator.hasNext();) {
+        WorkflowElement element = iterator.next();
+        System.out.println("Current Workflow item: " + element.getUri());
+
+        Constructor<AbstractComponent> abstractComponentConstructor;
+        AbstractComponent abstractComponent;
+
+        try {
+
+          abstractComponentConstructor = element.getElementClass()
+              .getConstructor(MessageQueue.class, String[].class);
+          abstractComponent = (AbstractComponent) abstractComponentConstructor
+              .newInstance(this.messageQueue, element.getInputKeys());
+          
+          for (Input input : element.getInput()) {
+            if (input.getData() != null)
+              this.messageQueue.pushMessage(input.getUri(), input.getData());
+          }
+          
+          abstractComponent.run();
+        } catch (SecurityException e) {
+          e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+          e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+          e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+          e.printStackTrace();
+        } catch (InstantiationException e) {
+          e.printStackTrace();
+        } catch (IllegalAccessException e) {
+          e.printStackTrace();
+        } catch (InvocationTargetException e) {
+          e.printStackTrace();
+        }
       }
+
     }
   }
 
+  /**
+   * Runs the Workflow according to its definition.
+   * @throws MediaException 
+   */
+//  @SuppressWarnings("unchecked")
+//  public void _run() throws MediaException {
+//    while (workflowDefinition.hasNextElements()) {
+//      Object[] element = workflowDefinition.getNextWorkflowElement();
+//      Class<AbstractComponent> workflowElementClass = (Class<AbstractComponent>) element[1];
+//      try {
+//        Constructor abstractComponentConstructor = workflowElementClass.getConstructor(MessageQueue.class);
+//        AbstractComponent abstractComponent = (AbstractComponent) abstractComponentConstructor.newInstance(this.messageQueue);
+//        abstractComponent.run();
+//      } catch (InstantiationException e) {
+//        System.err.println("Class " + workflowElementClass.getName() + " could not be instantiated.");
+//        e.printStackTrace();
+//      } catch (IllegalAccessException e) {
+//        System.err.println("There was an illigal access with class " + workflowElementClass.getName() + ".");
+//        e.printStackTrace();
+//      } catch (SecurityException e) {
+//        e.printStackTrace();
+//      } catch (NoSuchMethodException e) {
+//        e.printStackTrace();
+//      } catch (IllegalArgumentException e) {
+//        e.printStackTrace();
+//      } catch (InvocationTargetException e) {
+//        e.printStackTrace();
+//      }
+//    }
+//  }
+  
 }

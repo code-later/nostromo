@@ -1,0 +1,55 @@
+---
+type: producer
+uri: http://santiago-project.fh-koeln.de/components/CreateMovieFromImages
+className: de.fhkoeln.santiago.components.CreateMovieFromImages
+input:
+  - type: external
+    uri: /Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/
+output:
+  - uri: http://santiago-project.fh-koeln.de/components/CreateMovieFromImages/output
+predecessors: null
+successors:
+  - uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie
+
+---
+type: producer
+uri: http://santiago-project.fh-koeln.de/components/ProvideMusicFile
+className: de.fhkoeln.santiago.components.ProvideMusicFile
+input:
+  - type: external
+    # uri: file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov
+    uri: file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3
+output:
+  - uri: http://santiago-project.fh-koeln.de/components/ProvideMusicFile/output
+predecessors: null
+successors:
+  - uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie
+
+---
+type: transformer
+uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie
+className: de.fhkoeln.santiago.components.AddMusicToMovie
+input:
+  - type: internal
+    uri: http://santiago-project.fh-koeln.de/components/CreateMovieFromImages/output
+  - type: internal
+    uri: http://santiago-project.fh-koeln.de/components/ProvideMusicFile/output
+output:
+  - uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie/output
+predecessors:
+  - uri: http://santiago-project.fh-koeln.de/components/CreateMovieFromImages
+  - uri: http://santiago-project.fh-koeln.de/components/ProvideMusicFile
+successors:
+  - uri: http://santiago-project.fh-koeln.de/components/PlayMovieFile
+
+---
+type: consumer
+uri: http://santiago-project.fh-koeln.de/components/PlayMovieFile
+className: de.fhkoeln.santiago.components.PlayMovieFile
+input:
+  - type: internal
+    uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie/output
+output: null
+predecessors:
+  - uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie
+successors: null
