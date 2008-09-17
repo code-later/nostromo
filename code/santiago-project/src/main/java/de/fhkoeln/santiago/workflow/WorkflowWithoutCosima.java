@@ -55,71 +55,40 @@ public class WorkflowWithoutCosima {
         WorkflowElement element = iterator.next();
         System.out.println("Current Workflow item: " + element.getUri());
 
-        Constructor<AbstractComponent> abstractComponentConstructor;
-        AbstractComponent abstractComponent;
-
-        try {
-
-          abstractComponentConstructor = element.getElementClass()
-              .getConstructor(MessageQueue.class, String[].class);
-          abstractComponent = (AbstractComponent) abstractComponentConstructor
-              .newInstance(this.messageQueue, element.getInputKeys());
+//        Constructor<AbstractComponent> abstractComponentConstructor;
+//        AbstractComponent abstractComponent;
+//
+//        try {
+//
+//          abstractComponentConstructor = element.getElementClass()
+//              .getConstructor(MessageQueue.class, String[].class);
+//          abstractComponent = (AbstractComponent) abstractComponentConstructor
+//              .newInstance(this.messageQueue, element.getInputKeys());
           
           for (Input input : element.getInput()) {
             if (input.getData() != null)
               this.messageQueue.pushMessage(input.getUri(), input.getData());
           }
           
-          abstractComponent.run();
-        } catch (SecurityException e) {
-          e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-          e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-          e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-          e.printStackTrace();
-        } catch (InstantiationException e) {
-          e.printStackTrace();
-        } catch (IllegalAccessException e) {
-          e.printStackTrace();
-        } catch (InvocationTargetException e) {
-          e.printStackTrace();
-        }
+//          abstractComponent.run();
+//        } catch (SecurityException e) {
+//          e.printStackTrace();
+//        } catch (NoSuchMethodException e) {
+//          e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//          e.printStackTrace();
+//        } catch (IllegalArgumentException e) {
+//          e.printStackTrace();
+//        } catch (InstantiationException e) {
+//          e.printStackTrace();
+//        } catch (IllegalAccessException e) {
+//          e.printStackTrace();
+//        } catch (InvocationTargetException e) {
+//          e.printStackTrace();
+//        }
       }
 
     }
   }
-
-  /**
-   * Runs the Workflow according to its definition.
-   * @throws MediaException 
-   */
-//  @SuppressWarnings("unchecked")
-//  public void _run() throws MediaException {
-//    while (workflowDefinition.hasNextElements()) {
-//      Object[] element = workflowDefinition.getNextWorkflowElement();
-//      Class<AbstractComponent> workflowElementClass = (Class<AbstractComponent>) element[1];
-//      try {
-//        Constructor abstractComponentConstructor = workflowElementClass.getConstructor(MessageQueue.class);
-//        AbstractComponent abstractComponent = (AbstractComponent) abstractComponentConstructor.newInstance(this.messageQueue);
-//        abstractComponent.run();
-//      } catch (InstantiationException e) {
-//        System.err.println("Class " + workflowElementClass.getName() + " could not be instantiated.");
-//        e.printStackTrace();
-//      } catch (IllegalAccessException e) {
-//        System.err.println("There was an illigal access with class " + workflowElementClass.getName() + ".");
-//        e.printStackTrace();
-//      } catch (SecurityException e) {
-//        e.printStackTrace();
-//      } catch (NoSuchMethodException e) {
-//        e.printStackTrace();
-//      } catch (IllegalArgumentException e) {
-//        e.printStackTrace();
-//      } catch (InvocationTargetException e) {
-//        e.printStackTrace();
-//      }
-//    }
-//  }
   
 }

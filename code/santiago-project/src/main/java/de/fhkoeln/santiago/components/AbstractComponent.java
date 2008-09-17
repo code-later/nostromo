@@ -46,11 +46,16 @@ public abstract class AbstractComponent {
    * the communication flow.
    * @throws MediaException 
    */
-  public final void run() throws MediaException {
+  public final void run() {
     for (String inputKey : inputKeys)
       addInput(this.messageQueue.pullMessage(inputKey));
     
-    customRun();
+    try {
+      customRun();
+    } catch (MediaException e) {
+      System.err.println("Media Exception: Something went wrong with this component.");
+      e.printStackTrace();
+    }
     
     this.messageQueue.pushMessage(getOutputKey(), getOutput());
   }

@@ -18,6 +18,7 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
+import de.fhkoeln.santiago.messaging.JMSMessageQueue;
 import de.fhkoeln.santiago.messaging.MessageQueue;
 import de.fhkoeln.santiago.messaging.SimpleMessageQueue;
 
@@ -38,7 +39,7 @@ public class WorkflowWithoutCosimaTest {
   @Before
   public void setUp() throws ClassNotFoundException, IOException {
     workflowDefinition = new YamlWorkflowDefinition("res/workflow_definition/abstract_workflow_definition.yml");
-    messageQueue = new SimpleMessageQueue();
+    messageQueue = new JMSMessageQueue();
   }
   
   @Test
