@@ -29,12 +29,26 @@
  */
 package de.fhkoeln.jmfsamples;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.media.*;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Frame;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.media.Codec;
+import javax.media.ConfigureCompleteEvent;
+import javax.media.ControllerEvent;
+import javax.media.ControllerListener;
+import javax.media.EndOfMediaEvent;
+import javax.media.Manager;
+import javax.media.MediaLocator;
+import javax.media.PrefetchCompleteEvent;
+import javax.media.Processor;
+import javax.media.RealizeCompleteEvent;
+import javax.media.ResourceUnavailableEvent;
+import javax.media.UnsupportedPlugInException;
 import javax.media.control.TrackControl;
-import javax.media.Format;
-import javax.media.format.*;
+import javax.media.format.VideoFormat;
 
 /**
  * Sample program to test the RotationEffect.

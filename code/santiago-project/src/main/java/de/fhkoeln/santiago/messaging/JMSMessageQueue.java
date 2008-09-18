@@ -4,7 +4,7 @@ package de.fhkoeln.santiago.messaging;
  * This class implements the MessageQueue interface and encapsulated
  * messaging through JMS.
  * 
- * TODO: Due to the fact, that we use JMS here, we this is not really
+ * TODO: Due to the fact, that we use JMS here, this is not really
  *       a message queue. It is more a message feature wrapper. This is
  *       only the first step of development. The next steps will involve
  *       heavy refactoring.

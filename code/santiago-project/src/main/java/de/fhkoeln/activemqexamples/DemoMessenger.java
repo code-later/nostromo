@@ -11,7 +11,6 @@
  */
 package de.fhkoeln.activemqexamples;
 
-import javax.jms.Connection;
 import javax.jms.DeliveryMode;
 import javax.jms.Destination;
 import javax.jms.ExceptionListener;

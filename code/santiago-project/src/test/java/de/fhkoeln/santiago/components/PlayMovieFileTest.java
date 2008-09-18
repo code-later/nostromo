@@ -19,9 +19,9 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import de.fhkoeln.santiago.components.AbstractComponent;
 import de.fhkoeln.santiago.components.PlayMovieFile;
 import de.fhkoeln.santiago.messaging.MessageQueue;
+import de.fhkoeln.santiago.services.CoreService;
 
 
 

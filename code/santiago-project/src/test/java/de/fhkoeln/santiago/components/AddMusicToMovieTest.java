@@ -17,9 +17,9 @@ import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
-import de.fhkoeln.santiago.components.AbstractComponent;
 import de.fhkoeln.santiago.components.AddMusicToMovie;
 import de.fhkoeln.santiago.messaging.MessageQueue;
+import de.fhkoeln.santiago.services.CoreService;
 
 
 

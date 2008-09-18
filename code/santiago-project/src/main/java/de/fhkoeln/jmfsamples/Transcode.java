@@ -29,19 +29,41 @@
  */
 package de.fhkoeln.jmfsamples;
 
-import java.awt.*;
-import java.util.Vector;
+import java.awt.Dimension;
 import java.io.File;
-import javax.media.*;
-import javax.media.control.TrackControl;
-import javax.media.control.QualityControl;
-import javax.media.Format;
-import javax.media.format.*;
-import javax.media.datasink.*;
-import javax.media.protocol.*;
-import javax.media.protocol.DataSource;
 import java.io.IOException;
-import com.sun.media.format.WavAudioFormat;
+import java.util.Vector;
+
+import javax.media.Codec;
+import javax.media.ConfigureCompleteEvent;
+import javax.media.Control;
+import javax.media.ControllerEvent;
+import javax.media.ControllerListener;
+import javax.media.DataSink;
+import javax.media.EndOfMediaEvent;
+import javax.media.Format;
+import javax.media.Manager;
+import javax.media.MediaLocator;
+import javax.media.MediaTimeSetEvent;
+import javax.media.Owned;
+import javax.media.Player;
+import javax.media.PrefetchCompleteEvent;
+import javax.media.Processor;
+import javax.media.RealizeCompleteEvent;
+import javax.media.ResourceUnavailableEvent;
+import javax.media.StopAtTimeEvent;
+import javax.media.Time;
+import javax.media.control.QualityControl;
+import javax.media.control.TrackControl;
+import javax.media.datasink.DataSinkErrorEvent;
+import javax.media.datasink.DataSinkEvent;
+import javax.media.datasink.DataSinkListener;
+import javax.media.datasink.EndOfStreamEvent;
+import javax.media.format.AudioFormat;
+import javax.media.format.VideoFormat;
+import javax.media.protocol.ContentDescriptor;
+import javax.media.protocol.DataSource;
+import javax.media.protocol.FileTypeDescriptor;
 
 /**
  * A sample program to transcode an input source to an output location

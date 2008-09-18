@@ -30,14 +30,29 @@ package de.fhkoeln.jmfsamples;
  * redistribute the Software for such purposes.
  */
 
-import java.awt.*;
-import javax.media.*;
-import javax.media.protocol.*;
-import javax.media.protocol.DataSource;
-import javax.media.format.*;
-import javax.media.control.TrackControl;
+import java.awt.Dimension;
+import java.io.IOException;
+
+import javax.media.Codec;
+import javax.media.Control;
+import javax.media.Controller;
+import javax.media.ControllerClosedEvent;
+import javax.media.ControllerEvent;
+import javax.media.ControllerListener;
+import javax.media.DataSink;
+import javax.media.Format;
+import javax.media.Manager;
+import javax.media.MediaException;
+import javax.media.MediaLocator;
+import javax.media.NoProcessorException;
+import javax.media.Owned;
+import javax.media.Player;
+import javax.media.Processor;
 import javax.media.control.QualityControl;
-import java.io.*;
+import javax.media.control.TrackControl;
+import javax.media.format.VideoFormat;
+import javax.media.protocol.ContentDescriptor;
+import javax.media.protocol.DataSource;
 
 public class VideoTransmit {
 

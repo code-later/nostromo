@@ -29,9 +29,13 @@
  */
 package de.fhkoeln.jmfsamples;
 
-import javax.media.*;
-import javax.media.format.*;
-import java.awt.*;
+import java.awt.Dimension;
+
+import javax.media.Buffer;
+import javax.media.Effect;
+import javax.media.Format;
+import javax.media.format.RGBFormat;
+import javax.media.format.VideoFormat;
 
 public class RotationEffect implements Effect {
 

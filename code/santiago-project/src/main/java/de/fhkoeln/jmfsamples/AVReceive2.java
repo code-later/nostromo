@@ -29,23 +29,35 @@
  */
 package de.fhkoeln.jmfsamples;
 
-import java.io.*;
-import java.awt.*;
-import java.net.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Frame;
+import java.awt.Panel;
+import java.net.InetAddress;
 import java.util.Vector;
 
-import javax.media.*;
-import javax.media.rtp.*;
-import javax.media.rtp.event.*;
-import javax.media.rtp.rtcp.*;
-import javax.media.protocol.*;
-import javax.media.protocol.DataSource;
-import javax.media.format.AudioFormat;
-import javax.media.format.VideoFormat;
-import javax.media.Format;
-import javax.media.format.FormatChangeEvent;
+import javax.media.ControllerErrorEvent;
+import javax.media.ControllerEvent;
+import javax.media.ControllerListener;
+import javax.media.Player;
+import javax.media.RealizeCompleteEvent;
 import javax.media.control.BufferControl;
+import javax.media.protocol.DataSource;
+import javax.media.rtp.Participant;
+import javax.media.rtp.RTPControl;
+import javax.media.rtp.RTPManager;
+import javax.media.rtp.ReceiveStream;
+import javax.media.rtp.ReceiveStreamListener;
+import javax.media.rtp.SessionAddress;
+import javax.media.rtp.SessionListener;
+import javax.media.rtp.event.ByeEvent;
+import javax.media.rtp.event.NewParticipantEvent;
+import javax.media.rtp.event.NewReceiveStreamEvent;
+import javax.media.rtp.event.ReceiveStreamEvent;
+import javax.media.rtp.event.RemotePayloadChangeEvent;
+import javax.media.rtp.event.SessionEvent;
+import javax.media.rtp.event.StreamMappedEvent;
 
 
 /**

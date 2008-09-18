@@ -7,8 +7,6 @@ import javax.jms.MessageConsumer;
 import javax.jms.MessageListener;
 import javax.jms.Session;
 import javax.jms.TextMessage;
-import javax.jms.Topic;
-import javax.jms.TopicSubscriber;
 
 
 public class MessageSubscriber extends MessageFunctions implements Runnable, MessageListener {

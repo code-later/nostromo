@@ -11,15 +11,11 @@
  */
 package de.fhkoeln.santiago.workflow;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Iterator;
 
 import javax.media.MediaException;
 
-import de.fhkoeln.santiago.components.AbstractComponent;
 import de.fhkoeln.santiago.messaging.MessageQueue;
-import de.fhkoeln.santiago.messaging.SimpleMessageQueue;
 import de.fhkoeln.santiago.workflow.WorkflowElement.Input;
 
 

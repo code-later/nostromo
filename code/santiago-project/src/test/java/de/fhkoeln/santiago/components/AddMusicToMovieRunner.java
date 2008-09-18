@@ -30,8 +30,8 @@ public class AddMusicToMovieRunner {
         new AddMusicToMovie(
                             new JMSMessageQueue(),
                             new String[] {
-                                          "http://santiago-project.fh-koeln.de/components/ProvideMusicFile/output",
-                                          "http://santiago-project.fh-koeln.de/components/CreateMovieFromImages/output" });
+                                          "http://santiago-project.fh-koeln.de/components/CreateMovieFromImages/output",
+                                          "http://santiago-project.fh-koeln.de/components/ProvideMusicFile/output" });
     component.run();
   }
 

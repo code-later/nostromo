@@ -30,12 +30,26 @@
 package de.fhkoeln.jmfsamples;
 
 import java.io.File;
-import javax.media.*;
-import javax.media.format.*;
-import javax.media.protocol.*;
-import javax.media.protocol.DataSource;
-import javax.media.datasink.*;
 import java.util.Vector;
+
+import javax.media.ControllerEvent;
+import javax.media.ControllerListener;
+import javax.media.DataSink;
+import javax.media.EndOfMediaEvent;
+import javax.media.Format;
+import javax.media.Manager;
+import javax.media.MediaLocator;
+import javax.media.Processor;
+import javax.media.ProcessorModel;
+import javax.media.datasink.DataSinkErrorEvent;
+import javax.media.datasink.DataSinkEvent;
+import javax.media.datasink.DataSinkListener;
+import javax.media.datasink.EndOfStreamEvent;
+import javax.media.format.AudioFormat;
+import javax.media.format.VideoFormat;
+import javax.media.protocol.ContentDescriptor;
+import javax.media.protocol.DataSource;
+import javax.media.protocol.FileTypeDescriptor;
 
 /**
  * Merged the tracks from different inputs and generate a QuickTime
