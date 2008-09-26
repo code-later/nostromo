@@ -53,7 +53,7 @@ import javax.media.protocol.FileTypeDescriptor;
 import javax.media.protocol.PullBufferDataSource;
 import javax.media.protocol.PullBufferStream;
 
-public class JMFImages2Movie implements ControllerListener, DataSinkListener {
+public class JMFImages2Movie implements ControllerListener, DataSinkListener, MediaAction {
   
   private static final int DEFAULT_FRAME_RATE = 2;
   private static final int DEFAULT_MOVIE_HEIGHT = 480;
@@ -80,7 +80,6 @@ public class JMFImages2Movie implements ControllerListener, DataSinkListener {
   /* (non-Javadoc)
    * @see javax.media.ControllerListener#controllerUpdate(javax.media.ControllerEvent)
    */
-  @Override
   public void controllerUpdate(ControllerEvent event) {
     if (event instanceof ConfigureCompleteEvent
         || event instanceof RealizeCompleteEvent
@@ -103,7 +102,6 @@ public class JMFImages2Movie implements ControllerListener, DataSinkListener {
   /* (non-Javadoc)
    * @see javax.media.datasink.DataSinkListener#dataSinkUpdate(javax.media.datasink.DataSinkEvent)
    */
-  @Override
   public void dataSinkUpdate(DataSinkEvent event) {
     if (event instanceof EndOfStreamEvent) {
       synchronized (waitFileSync) {
@@ -133,75 +131,85 @@ public class JMFImages2Movie implements ControllerListener, DataSinkListener {
     return this.uriToOutput;
   }
 
-  public void performAction() throws NoProcessorException, IOException,
-                             UnsupportedFormatException, NoDataSinkException {
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.components.jmf.MediaAction#performAction()
+   */
+  public void performAction() {
     ImageDataSource dataSource = new ImageDataSource(DEFAULT_MOVIE_WIDTH,
                                                      DEFAULT_MOVIE_HEIGHT,
                                                      DEFAULT_FRAME_RATE,
                                                      inputFiles);
 
-    Processor processor;
-
     System.out.println("Trying to create processor ...");
-    processor = Manager.createProcessor(dataSource);
-    System.out.println("Processor was successfully created!");
-
-    processor.addControllerListener(this);
-
-    // Put the Processor into configured state so we can set
-    // some processing options on the processor.
-    processor.configure();
-    if (!waitForState(processor, processor.Configured))
-      throw new NotConfiguredError("Processor could not be configured.");
-
-    // Set the output content descriptor to QuickTime.
-    processor
-        .setContentDescriptor(new ContentDescriptor(
-                                                    FileTypeDescriptor.QUICKTIME));
-
-    // Query for the processor for supported formats.
-    // Then set it on the processor.
-    TrackControl control[] = processor.getTrackControls();
-    Format formats[] = control[0].getSupportedFormats();
-    if (formats == null || formats.length <= 0)
-      throw new UnsupportedFormatException("The mux doesn't support the input format.",
-                                           control[0].getFormat());
-    
-    control[0].setFormat(formats[0]);
-    System.out.println("Setting the track format to: " + formats[0]);
-    
-    // We are done with programming the processor. Let's just
-    // realize it.
-    processor.realize();
-    if (!waitForState(processor, processor.Realized))
-      throw new NotRealizedError("Processor could not be configured.");
-    
-    // Now, we'll need to create a DataSink.
-    DataSink dataSink;
     try {
+      Processor processor = Manager.createProcessor(dataSource);
+      System.out.println("Processor was successfully created!");
+      
+      processor.addControllerListener(this);
+      
+      // Put the Processor into configured state so we can set
+      // some processing options on the processor.
+      processor.configure();
+      if (!waitForState(processor, Processor.Configured))
+        throw new NotConfiguredError("Processor could not be configured.");
+      
+      // Set the output content descriptor to QuickTime.
+      processor
+      .setContentDescriptor(new ContentDescriptor(
+          FileTypeDescriptor.QUICKTIME));
+      
+      // Query for the processor for supported formats.
+      // Then set it on the processor.
+      TrackControl control[] = processor.getTrackControls();
+      Format formats[] = control[0].getSupportedFormats();
+      if (formats == null || formats.length <= 0)
+        throw new UnsupportedFormatException("The mux doesn't support the input format.",
+            control[0].getFormat());
+      
+      control[0].setFormat(formats[0]);
+      System.out.println("Setting the track format to: " + formats[0]);
+      
+      // We are done with programming the processor. Let's just
+      // realize it.
+      processor.realize();
+      if (!waitForState(processor, Processor.Realized))
+        throw new NotRealizedError("Processor could not be configured.");
+      
+      // Now, we'll need to create a DataSink.
+      DataSink dataSink;
       if ((dataSink = createDataSink(processor, getOutputLocator())) == null)
         throw new NoDataSinkException("Failed to create a DataSink for the given output MediaLocator.");
+      
+      dataSink.addDataSinkListener(this);
+      fileDone = false;
+      
+      System.out.println("Start transcoding images into movie ...");
+      
+      // The transcoding process starts here ...
+      processor.start();
+      dataSink.start();
+      
+      // Wait for EndOfStream event.
+      waitForFileDone();
+      
+      // Cleanup.
+      dataSink.close();
+      processor.removeControllerListener(this);
+      
+      System.out.println("Processing done!");
+    } catch (NoProcessorException e) {
+      System.err.println("The processor could not be created!");
+      e.printStackTrace();
+    } catch (IOException e) {
+      System.err.println("While reading the input something went wrong.");
+      e.printStackTrace();
+    } catch (UnsupportedFormatException e) {
+      e.printStackTrace();
+    } catch (NoDataSinkException e) {
+      e.printStackTrace();
     } catch (Exception e) {
-      throw new NoDataSinkException("Failed to create a DataSink for the given output MediaLocator.");
+      e.printStackTrace();
     }
-    
-    dataSink.addDataSinkListener(this);
-    fileDone = false;
-    
-    System.out.println("Start transcoding images into movie ...");
-    
-    // The transcoding process starts here ...
-    processor.start();
-    dataSink.start();
-    
-    // Wait for EndOfStream event.
-    waitForFileDone();
-    
-    // Cleanup.
-    dataSink.close();
-    processor.removeControllerListener(this);
-    
-    System.out.println("Processing done!");
   }
   
   private boolean waitForFileDone() {
@@ -317,41 +325,41 @@ public class JMFImages2Movie implements ControllerListener, DataSinkListener {
       streams[0] = new ImageSourceStream(width, height, frameRate, images);
     }
   
-    @Override
+    
     public PullBufferStream[] getStreams() {
       return streams;
     }
   
-    @Override
+    
     public void connect() throws IOException {}
   
-    @Override
+    
     public void disconnect() {}
   
-    @Override
+    
     public String getContentType() {
       return ContentDescriptor.RAW;
     }
   
-    @Override
+    
     public Object getControl(String type) {
       return null;
     }
   
-    @Override
+    
     public Object[] getControls() {
       return new Object[0];
     }
   
-    @Override
+    
     public Time getDuration() {
       return DURATION_UNKNOWN;
     }
   
-    @Override
+    
     public void start() throws IOException {}
   
-    @Override
+    
     public void stop() throws IOException {}
     
   }
@@ -374,12 +382,12 @@ public class JMFImages2Movie implements ControllerListener, DataSinkListener {
                                (float) frameRate);
     }
 
-    @Override
+    
     public Format getFormat() {
       return format;
     }
 
-    @Override
+    
     public void read(Buffer buffer) throws IOException {
       if (images.hasNext()) {
         String imagePath = (String) images.next();
@@ -408,7 +416,7 @@ public class JMFImages2Movie implements ControllerListener, DataSinkListener {
         buffer.setOffset(0);
         buffer.setLength((int) randomAccessFile.length());
         buffer.setFormat(format);
-        buffer.setFlags(buffer.getFlags() | buffer.FLAG_KEY_FRAME);
+        buffer.setFlags(buffer.getFlags() | Buffer.FLAG_KEY_FRAME);
 
         // Close the random access file.
         randomAccessFile.close();
@@ -421,32 +429,26 @@ public class JMFImages2Movie implements ControllerListener, DataSinkListener {
       }
     }
 
-    @Override
     public boolean willReadBlock() {
       return false;
     }
 
-    @Override
     public boolean endOfStream() {
       return images.hasNext();
     }
 
-    @Override
     public ContentDescriptor getContentDescriptor() {
       return new ContentDescriptor(ContentDescriptor.RAW);
     }
 
-    @Override
     public long getContentLength() {
       return 0;
     }
 
-    @Override
     public Object getControl(String type) {
       return null;
     }
 
-    @Override
     public Object[] getControls() {
       return new Object[0];
     }

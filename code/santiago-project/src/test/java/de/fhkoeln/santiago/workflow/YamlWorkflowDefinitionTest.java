@@ -49,21 +49,21 @@ public class YamlWorkflowDefinitionTest {
     assertEquals(2, elements.size());
     
     for (WorkflowElement element : elements) {
-      assertTrue(element.getUri().equals("http://santiago-project.fh-koeln.de/components/ProvideMusicFile") ||
-          element.getUri().equals("http://santiago-project.fh-koeln.de/components/CreateMovieFromImages"));
+      assertTrue(element.getUri().equals("http://localhost:8080/axis2/services/ProvideMusicFileService") ||
+          element.getUri().equals("http://localhost:8080/axis2/services/CreateMovieFromImagesService"));
     }
 
     assertTrue(definition.hasNextElements());
     elements = definition.getNextElements();
     assertEquals(1, elements.size());
     elementsAsArray = elements.toArray(elementsAsArray);
-    assertEquals("http://santiago-project.fh-koeln.de/components/AddMusicToMovie", elementsAsArray[0].getUri());
+    assertEquals("http://localhost:8080/axis2/services/AddMusicToMovieService", elementsAsArray[0].getUri());
 
     assertTrue(definition.hasNextElements());
     elements = definition.getNextElements();
     assertEquals(1, elements.size());
     elementsAsArray = elements.toArray(elementsAsArray);
-    assertEquals("http://santiago-project.fh-koeln.de/components/PlayMovieFile", elementsAsArray[0].getUri());
+    assertEquals("http://localhost:8080/axis2/services/PlayMovieService", elementsAsArray[0].getUri());
     
     assertFalse(definition.hasNextElements());
   }
@@ -74,8 +74,9 @@ public class YamlWorkflowDefinitionTest {
     Set<WorkflowElement> elements = definition.getNextElements();
     WorkflowElement element = elements.iterator().next();
     
-    assertEquals("http://santiago-project.fh-koeln.de/components/ProvideMusicFile/input", element.getInput().get(0).getUri());
-    assertEquals("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3", element.getInput().get(0).getData());
+    assertEquals("http://localhost:8080/axis2/services/ProvideMusicFileService/input", element.getInput().get(0).getUri());
+    assertEquals("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov", element.getInput().get(0).getData());
+//    assertEquals("/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/", element.getInput().get(0).getData());
   }
 
 }

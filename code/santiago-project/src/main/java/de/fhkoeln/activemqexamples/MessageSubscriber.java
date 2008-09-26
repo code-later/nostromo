@@ -41,7 +41,7 @@ public class MessageSubscriber extends MessageFunctions implements Runnable, Mes
     getConnection().close();
   }
 
-  @Override
+  
   public void run() {
     System.out.println("-- Listening ...");
 //    try {
@@ -60,7 +60,7 @@ public class MessageSubscriber extends MessageFunctions implements Runnable, Mes
 //    }
   }
 
-  @Override
+  
   public void onMessage(Message message) {
       try {
         if (message instanceof TextMessage) {

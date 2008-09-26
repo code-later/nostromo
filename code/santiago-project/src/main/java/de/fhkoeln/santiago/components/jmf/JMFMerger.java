@@ -34,7 +34,7 @@ import javax.media.protocol.ContentDescriptor;
 import javax.media.protocol.DataSource;
 import javax.media.protocol.FileTypeDescriptor;
 
-public class JMFMerger implements ControllerListener, DataSinkListener {
+public class JMFMerger implements ControllerListener, DataSinkListener, MediaAction {
   
   private final Vector sourceURIs = new Vector(1);
   private final String outputPath;
@@ -67,7 +67,7 @@ public class JMFMerger implements ControllerListener, DataSinkListener {
     sourceURIs.add(pathToAudio);
   }
 
-  @Override
+  
   public void controllerUpdate(ControllerEvent event) {
     if (event instanceof EndOfMediaEvent) {
       synchronized (this) {
@@ -77,7 +77,7 @@ public class JMFMerger implements ControllerListener, DataSinkListener {
     }
   }
 
-  @Override
+  
   public void dataSinkUpdate(DataSinkEvent event) {
     if (event instanceof EndOfStreamEvent) {
       done = true;
@@ -86,70 +86,76 @@ public class JMFMerger implements ControllerListener, DataSinkListener {
     }
   }
   
-  public void performAction() throws IOException, MediaException {
-    processors = new Processor[sourceURIs.size()];
-    dataOutputs = new DataSource[sourceURIs.size()];
+  public void performAction() {
+    try {
+      processors = new Processor[sourceURIs.size()];
+      dataOutputs = new DataSource[sourceURIs.size()];
 
-    for (int i = 0; i < sourceURIs.size(); i++) {
-      String sourceURI = (String) sourceURIs.get(i);
-      MediaLocator locator = new MediaLocator(sourceURI);
-      ProcessorModel processorModel = new MergeProcessorModel(locator);
-      processors[i] = Manager.createRealizedProcessor(processorModel);
-      dataOutputs[i] = processors[i].getDataOutput();
-      processors[i].start();
-    }
-
-    merger = Manager.createMergingDataSource(dataOutputs);
-    merger.connect();
-    merger.start();
-
-    if (merger == null)
-      throw new MediaException("Failed to merge data sources.");
-
-    ProcessorModel outputProcessorModel = new OutputProcessorModel(merger);
-
-    outputProcessor = Manager.createRealizedProcessor(outputProcessorModel);
-    outputDataSource = outputProcessor.getDataOutput();
-
-    outputLocator = new MediaLocator(outputPath);
-    outputDataSink = Manager.createDataSink(outputDataSource, outputLocator);
-    outputDataSink.open();
-
-    outputProcessor.addControllerListener(this);
-    outputDataSink.addDataSinkListener(this);
-    System.out.println("Merging...");
-
-    outputDataSink.start();
-    outputProcessor.start();
-
-    int count = 0;
-
-    while (!done) {
-      try {
-        Thread.currentThread().sleep(100);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
+      for (int i = 0; i < sourceURIs.size(); i++) {
+        String sourceURI = (String) sourceURIs.get(i);
+        MediaLocator locator = new MediaLocator(sourceURI);
+        ProcessorModel processorModel = new MergeProcessorModel(locator);
+        processors[i] = Manager.createRealizedProcessor(processorModel);
+        dataOutputs[i] = processors[i].getDataOutput();
+        processors[i].start();
       }
 
-      if (outputProcessor != null
-          && (int) (outputProcessor.getMediaTime().getSeconds()) > count) {
-        System.out.print(".");
-        count = (int) (outputProcessor.getMediaTime().getSeconds());
+      merger = Manager.createMergingDataSource(dataOutputs);
+      merger.connect();
+      merger.start();
+
+      if (merger == null)
+        throw new MediaException("Failed to merge data sources.");
+
+      ProcessorModel outputProcessorModel = new OutputProcessorModel(merger);
+
+      outputProcessor = Manager.createRealizedProcessor(outputProcessorModel);
+      outputDataSource = outputProcessor.getDataOutput();
+
+      outputLocator = new MediaLocator(outputPath);
+      outputDataSink = Manager.createDataSink(outputDataSource, outputLocator);
+      outputDataSink.open();
+
+      outputProcessor.addControllerListener(this);
+      outputDataSink.addDataSinkListener(this);
+      System.out.println("Merging...");
+
+      outputDataSink.start();
+      outputProcessor.start();
+
+      int count = 0;
+
+      while (!done) {
+        try {
+          Thread.currentThread().sleep(100);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+
+        if (outputProcessor != null
+            && (int) (outputProcessor.getMediaTime().getSeconds()) > count) {
+          System.out.print(".");
+          count = (int) (outputProcessor.getMediaTime().getSeconds());
+        }
+
       }
 
-    }
-
-    if (outputDataSink != null) {
-      outputDataSink.close();
-    }
-    
-    synchronized (this) {
-      if (outputProcessor != null) {
-        outputProcessor.close();
+      if (outputDataSink != null) {
+        outputDataSink.close();
       }
-    }
 
-    System.out.println("Added Audio to Movie file!");
+      synchronized (this) {
+        if (outputProcessor != null) {
+          outputProcessor.close();
+        }
+      }
+
+      System.out.println("Added Audio to Movie file!");
+    } catch (MediaException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
   
   class MergeProcessorModel extends ProcessorModel {

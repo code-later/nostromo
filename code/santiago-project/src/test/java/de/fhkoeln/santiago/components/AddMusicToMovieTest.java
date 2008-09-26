@@ -12,14 +12,11 @@
 package de.fhkoeln.santiago.components;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
-import de.fhkoeln.santiago.components.AddMusicToMovie;
 import de.fhkoeln.santiago.messaging.MessageQueue;
-import de.fhkoeln.santiago.services.CoreService;
 
 
 

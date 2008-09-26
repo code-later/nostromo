@@ -53,7 +53,7 @@ MessageFunctions {
       setMessageContent("_no content given_");
     }
 
-    @Override
+    
     public void run() {
       try {
         // start the connection
@@ -128,7 +128,7 @@ MessageFunctions {
       getConnection().close();
     }
 
-    @Override
+    
     public void run() {
       try {
         // create a MessageConsumer from the Session
@@ -162,7 +162,7 @@ MessageFunctions {
       return messagesLeft;
     }
     
-    @Override
+    
     public synchronized void onException(JMSException e) {
       System.err.println("JMSException occured: " + e);
     }

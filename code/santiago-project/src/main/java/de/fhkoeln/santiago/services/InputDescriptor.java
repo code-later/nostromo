@@ -12,6 +12,7 @@
 package de.fhkoeln.santiago.services;
 
 
+
 /**
  * Documentation comment without implementation details. 
  * Use implementation comments to describe details of the implementation.
@@ -21,6 +22,6 @@ package de.fhkoeln.santiago.services;
  * @version 1.0  Sep 18, 2008
  *
  */
-public class InputDescriptor {
+public class InputDescriptor extends IODescriptor {
 
 }

@@ -52,7 +52,7 @@ public class JmsMonitor {
     /* (non-Javadoc)
      * @see de.fhkoeln.santiago.messaging.MessageFeatures#executeFeature()
      */
-    @Override
+    
     protected void executeFeature() {
       try {
         MessageConsumer consumer = getSession().createConsumer(getDestination());
@@ -68,7 +68,7 @@ public class JmsMonitor {
     /* (non-Javadoc)
      * @see javax.jms.MessageListener#onMessage(javax.jms.Message)
      */
-    @Override
+    
     public void onMessage(Message message) {
       TextMessage textMessage = (TextMessage) message;
       System.out.println("");

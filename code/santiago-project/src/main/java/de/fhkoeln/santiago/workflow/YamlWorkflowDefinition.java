@@ -77,7 +77,7 @@ public class YamlWorkflowDefinition implements WorkflowDefinition {
    * @see de.fhkoeln.santiago.workflow.WorkflowDefinition#getNextElement()
    */
   @SuppressWarnings("unchecked")
-  @Override
+  
   public Set<WorkflowElement> getNextElements() throws NoSuchElementException {
     if (currentElements == null) {
       currentElements = new HashSet<WorkflowElement>();
@@ -87,6 +87,9 @@ public class YamlWorkflowDefinition implements WorkflowDefinition {
           currentElements.add(element);
       }
     } else {
+      // This works only because this is a Set, and due to this all
+      // elements at this point with the same successor will store
+      // only once that successor.
       Set<WorkflowElement> nextElements = new HashSet<WorkflowElement>();
       for (Iterator<WorkflowElement> iterator = currentElements.iterator(); iterator
           .hasNext();) {
@@ -111,7 +114,7 @@ public class YamlWorkflowDefinition implements WorkflowDefinition {
    * 
    * @see de.fhkoeln.santiago.workflow.WorkflowDefinition#getNextWorkflowElement()
    */
-  @Override
+  
   public Object[] getNextWorkflowElement() throws NoSuchElementException {
     return null;
   }
@@ -119,7 +122,7 @@ public class YamlWorkflowDefinition implements WorkflowDefinition {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.workflow.WorkflowDefinition#hasNextElement()
    */
-  @Override
+  
   public boolean hasNextElements() {
     if (currentElements == null)
       return true;
@@ -137,7 +140,7 @@ public class YamlWorkflowDefinition implements WorkflowDefinition {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.workflow.WorkflowDefinition#rewind()
    */
-  @Override
+  
   public void rewind() {
   // TODO Auto-generated method stub
 
@@ -146,7 +149,7 @@ public class YamlWorkflowDefinition implements WorkflowDefinition {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.workflow.WorkflowDefinition#size()
    */
-  @Override
+  
   public int size() {
     return elements.size();
   }

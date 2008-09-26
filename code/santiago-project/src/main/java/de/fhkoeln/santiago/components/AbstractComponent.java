@@ -44,19 +44,15 @@ public abstract class AbstractComponent {
   /**
    * This method is run by the Workflow System. This method ensures
    * the communication flow.
-   * @throws MediaException 
+   * 
+   * @throws MediaException
    */
   public final void run() {
     for (String inputKey : inputKeys)
       addInput(this.messageQueue.pullMessage(inputKey));
-    
-    try {
-      customRun();
-    } catch (MediaException e) {
-      System.err.println("Media Exception: Something went wrong with this component.");
-      e.printStackTrace();
-    }
-    
+
+    customRun();
+
     this.messageQueue.pushMessage(getOutputKey(), getOutput());
   }
   
@@ -65,7 +61,7 @@ public abstract class AbstractComponent {
    * Here is defined what should be performed in the component.
    * @throws MediaException 
    */
-  protected abstract void customRun() throws MediaException;
+  protected abstract void customRun();
   
   public abstract String getOutputKey();
 

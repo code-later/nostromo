@@ -41,7 +41,7 @@ public class PlayMovieFile extends AbstractComponent {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.components.AbstractComponent#customRun()
    */
-  @Override
+  
   protected void customRun() {
 //    String pathToVideo = "file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/with_audio.mov";
     try {

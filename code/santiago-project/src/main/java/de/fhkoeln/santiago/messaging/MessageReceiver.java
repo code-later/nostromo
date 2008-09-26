@@ -38,7 +38,7 @@ public class MessageReceiver extends MessageFeatures implements MessageListener 
    * 
    * @see de.fhkoeln.santiago.messaging.MessageFeatures#executeFeature()
    */
-  @Override
+  
   protected void executeFeature() {
 
     try {
@@ -59,7 +59,7 @@ public class MessageReceiver extends MessageFeatures implements MessageListener 
   /* (non-Javadoc)
    * @see javax.jms.MessageListener#onMessage(javax.jms.Message)
    */
-  @Override
+  
   public void onMessage(Message message) {
     try {
       if (message instanceof TextMessage) {

@@ -14,7 +14,7 @@ package de.fhkoeln.santiago.messaging;
  */
 public class JMSMessageQueue implements MessageQueue {
 
-  @Override
+  
   public String pullMessage(String topicName) {
     System.err.println(">> Pulling message from topic: " + topicName);
     MessageFeatures receiver = new MessageReceiver(topicName);
@@ -24,7 +24,7 @@ public class JMSMessageQueue implements MessageQueue {
     return receiver.getMessageContent();
   }
 
-  @Override
+  
   public void pushMessage(String topicName, String message) {
     System.err.println(">> Pushing message to topic: " + topicName);
     MessageFeatures sender = new MessageSender(topicName);

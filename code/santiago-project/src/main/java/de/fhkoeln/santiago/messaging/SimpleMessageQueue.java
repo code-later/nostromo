@@ -35,7 +35,7 @@ public class SimpleMessageQueue implements MessageQueue {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.messaging.MessageQueue#pullMessage()
    */
-  @Override
+  
   public String pullMessage(String messageKey) {
     return this.queue.remove(messageKey);
   }
@@ -43,7 +43,7 @@ public class SimpleMessageQueue implements MessageQueue {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.messaging.MessageQueue#pushMessage(java.lang.String[])
    */
-  @Override
+  
   public void pushMessage(String messageKey, String message) {
     this.queue.put(messageKey, message);
   }

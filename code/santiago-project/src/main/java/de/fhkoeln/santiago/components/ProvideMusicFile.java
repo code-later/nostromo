@@ -40,7 +40,7 @@ public class ProvideMusicFile extends AbstractComponent {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.components.AbstractComponent#customRun()
    */
-  @Override
+  
   protected void customRun() {
     System.out.println("Setting output to: " + getInput()[0]);
     setOutput(getInput()[0]);
@@ -49,7 +49,7 @@ public class ProvideMusicFile extends AbstractComponent {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.components.AbstractComponent#getOutputKey()
    */
-  @Override
+  
   public String getOutputKey() {
     return uri + "/output";
   }

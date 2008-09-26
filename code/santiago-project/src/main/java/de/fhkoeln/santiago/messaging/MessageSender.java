@@ -34,7 +34,7 @@ public class MessageSender extends MessageFeatures {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.messaging.MessageFeatures#executeFeature()
    */
-  @Override
+  
   protected void executeFeature() {
     // Create a message producer for the Destination. This producer will
     // send our messages to that Destination.

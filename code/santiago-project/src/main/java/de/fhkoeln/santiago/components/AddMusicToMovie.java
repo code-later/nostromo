@@ -16,6 +16,7 @@ import java.io.IOException;
 import javax.media.MediaException;
 
 import de.fhkoeln.santiago.components.jmf.JMFMerger;
+import de.fhkoeln.santiago.components.jmf.MediaAction;
 import de.fhkoeln.santiago.messaging.MessageQueue;
 
 
@@ -44,27 +45,20 @@ public class AddMusicToMovie extends AbstractComponent {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.WorkflowElement#run()
    */
-  @Override
-  protected void customRun() throws MediaException {
+  
+  protected void customRun() {
     System.out.println("Input is:");
     System.out.println(" - " + getInput()[0]);
     System.out.println(" - " + getInput()[1]);
     
-    JMFMerger functionWrapper = new JMFMerger(getInput()[0], getInput()[1], getOutput());
-    try {
-      functionWrapper.performAction();
-    } catch (IOException e) {
-      e.printStackTrace();
-    } catch (MediaException e) {
-      e.printStackTrace();
-      throw e;
-    }
+    MediaAction action = new JMFMerger(getInput()[0], getInput()[1], getOutput());
+    action.performAction();
   }
 
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.components.AbstractComponent#getOutputKey()
    */
-  @Override
+  
   public String getOutputKey() {
     return uri + "/output";
   }

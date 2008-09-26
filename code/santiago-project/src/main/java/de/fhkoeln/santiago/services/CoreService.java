@@ -22,6 +22,6 @@ package de.fhkoeln.santiago.services;
  */
 public interface CoreService {
   
-  public OutputDescriptor execute(InputDescriptor inputDescriptor);
+  public IODescriptor execute(IODescriptor inputDescriptor);
 
 }

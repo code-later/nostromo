@@ -1,55 +1,55 @@
 ---
 type: producer
-uri: http://santiago-project.fh-koeln.de/components/CreateMovieFromImages
+uri: http://localhost:8080/axis2/services/CreateMovieFromImagesService
 className: de.fhkoeln.santiago.components.CreateMovieFromImages
 input:
   - type: external
     uri: /Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/
 output:
-  - uri: http://santiago-project.fh-koeln.de/components/CreateMovieFromImages/output
+  - uri: http://localhost:8080/axis2/services/CreateMovieFromImagesService/output
 predecessors: null
 successors:
-  - uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie
+  - uri: http://localhost:8080/axis2/services/AddMusicToMovieService
 
 ---
 type: producer
-uri: http://santiago-project.fh-koeln.de/components/ProvideMusicFile
+uri: http://localhost:8080/axis2/services/ProvideMusicFileService
 className: de.fhkoeln.santiago.components.ProvideMusicFile
 input:
   - type: external
-    # uri: file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/target/output.mov
-    uri: file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3
+    uri: file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov
+    # uri: file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3
 output:
-  - uri: http://santiago-project.fh-koeln.de/components/ProvideMusicFile/output
+  - uri: http://localhost:8080/axis2/services/ProvideMusicFileService/output
 predecessors: null
 successors:
-  - uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie
+  - uri: http://localhost:8080/axis2/services/AddMusicToMovieService
 
 ---
 type: transformer
-uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie
+uri: http://localhost:8080/axis2/services/AddMusicToMovieService
 className: de.fhkoeln.santiago.components.AddMusicToMovie
 input:
   - type: internal
-    uri: http://santiago-project.fh-koeln.de/components/CreateMovieFromImages/output
+    uri: http://localhost:8080/axis2/services/CreateMovieFromImagesService/output
   - type: internal
-    uri: http://santiago-project.fh-koeln.de/components/ProvideMusicFile/output
+    uri: http://localhost:8080/axis2/services/ProvideMusicFileService/output
 output:
-  - uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie/output
+  - uri: http://localhost:8080/axis2/services/AddMusicToMovieService/output
 predecessors:
-  - uri: http://santiago-project.fh-koeln.de/components/CreateMovieFromImages
-  - uri: http://santiago-project.fh-koeln.de/components/ProvideMusicFile
+  - uri: http://localhost:8080/axis2/services/CreateMovieFromImagesService
+  - uri: http://localhost:8080/axis2/services/ProvideMusicFileService
 successors:
-  - uri: http://santiago-project.fh-koeln.de/components/PlayMovieFile
+  - uri: http://localhost:8080/axis2/services/PlayMovieService
 
 ---
 type: consumer
-uri: http://santiago-project.fh-koeln.de/components/PlayMovieFile
+uri: http://localhost:8080/axis2/services/PlayMovieService
 className: de.fhkoeln.santiago.components.PlayMovieFile
 input:
   - type: internal
-    uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie/output
+    uri: http://localhost:8080/axis2/services/AddMusicToMovieService/output
 output: null
 predecessors:
-  - uri: http://santiago-project.fh-koeln.de/components/AddMusicToMovie
+  - uri: http://localhost:8080/axis2/services/AddMusicToMovieService
 successors: null

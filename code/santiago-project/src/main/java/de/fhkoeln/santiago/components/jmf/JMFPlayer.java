@@ -32,7 +32,7 @@ import javax.media.Time;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class JMFPlayer implements ControllerListener {
+public class JMFPlayer implements ControllerListener, MediaAction {
 
   // Media Player
   private Player player = null;
@@ -79,7 +79,7 @@ public class JMFPlayer implements ControllerListener {
    * 
    * @see javax.media.ControllerListener#controllerUpdate(javax.media.ControllerEvent)
    */
-  @Override
+  
   public synchronized void controllerUpdate(ControllerEvent event) {
     if (player == null)
       return;
@@ -169,6 +169,13 @@ public class JMFPlayer implements ControllerListener {
   private void setupPlayer() throws NoPlayerException, IOException {
     player = Manager.createPlayer(videoMRL);
     player.addControllerListener(this);
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.components.jmf.MediaAction#performAction()
+   */
+  public void performAction() {
+    startPlayer();
   }
   
 }

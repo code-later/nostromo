@@ -12,15 +12,14 @@
 package de.fhkoeln.santiago.workflow;
 
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.mock;
 
 import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import de.fhkoeln.santiago.messaging.JMSMessageQueue;
 import de.fhkoeln.santiago.messaging.MessageQueue;
-import de.fhkoeln.santiago.messaging.SimpleMessageQueue;
 
 /**
  * Documentation comment without implementation details. 
@@ -39,7 +38,7 @@ public class WorkflowWithoutCosimaTest {
   @Before
   public void setUp() throws ClassNotFoundException, IOException {
     workflowDefinition = new YamlWorkflowDefinition("res/workflow_definition/abstract_workflow_definition.yml");
-    messageQueue = new JMSMessageQueue();
+    messageQueue = mock(MessageQueue.class);
   }
   
   @Test

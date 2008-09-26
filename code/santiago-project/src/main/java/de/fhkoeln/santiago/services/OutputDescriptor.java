@@ -11,6 +11,9 @@
  */
 package de.fhkoeln.santiago.services;
 
+import java.util.List;
+import java.util.Vector;
+
 
 /**
  * Documentation comment without implementation details. 
@@ -21,6 +24,6 @@ package de.fhkoeln.santiago.services;
  * @version 1.0  Sep 18, 2008
  *
  */
-public class OutputDescriptor {
-
+public class OutputDescriptor extends IODescriptor {
+  
 }

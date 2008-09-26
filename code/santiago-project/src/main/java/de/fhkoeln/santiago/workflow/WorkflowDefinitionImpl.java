@@ -80,7 +80,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.WorkflowDefinition#getNextWorkflowElement()
    */
-  @Override
+  
   public Object[] getNextWorkflowElement() throws NoSuchElementException {
     if(!elementsIterator.hasNext()) {
       throw new NoSuchElementException("There are no more Elements in the Workflow Definition.");
@@ -91,7 +91,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.WorkflowDefinition#size()
    */
-  @Override
+  
   public int size() {
     return workflowElements.size();
   }
@@ -99,7 +99,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.WorkflowDefinition#rewind()
    */
-  @Override
+  
   public void rewind() {
     elementsIterator = workflowElements.listIterator();
   }
@@ -107,7 +107,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.WorkflowDefinition#hasNextElement()
    */
-  @Override
+  
   public boolean hasNextElements() {
     return elementsIterator.hasNext();
   }
@@ -115,7 +115,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.workflow.WorkflowDefinition#getNextElement()
    */
-  @Override
+  
   public Set<WorkflowElement> getNextElements() throws NoSuchElementException {
     WorkflowElement element = new WorkflowElement();
     Object[] next = this.getNextWorkflowElement();

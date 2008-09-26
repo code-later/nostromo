@@ -13,7 +13,10 @@ package de.fhkoeln.santiago.components;
 
 
 
+import java.io.FileNotFoundException;
+
 import de.fhkoeln.santiago.components.jmf.JMFImages2Movie;
+import de.fhkoeln.santiago.components.jmf.MediaAction;
 import de.fhkoeln.santiago.messaging.MessageQueue;
 
 
@@ -38,12 +41,13 @@ public class CreateMovieFromImages extends AbstractComponent {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.WorkflowElement#run()
    */
-  @Override
+  
   protected void customRun() {
+    MediaAction functionWrapper;
     try {
-      JMFImages2Movie functionWrapper = new JMFImages2Movie(getInput()[0], getOutput());
+      functionWrapper = new JMFImages2Movie(getInput()[0], getOutput());
       functionWrapper.performAction();
-    } catch (Exception e) {
+    } catch (FileNotFoundException e) {
       e.printStackTrace();
     }
   }
@@ -51,7 +55,7 @@ public class CreateMovieFromImages extends AbstractComponent {
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.components.AbstractComponent#getOutputKey()
    */
-  @Override
+  
   public String getOutputKey() {
     return this.uri + "/output";
   }

@@ -48,6 +48,24 @@ public class WorkflowElement {
     
     public String getUri() { return this.uri; }
     public String getData() { return this.data; }
+
+    /**
+     * TODO: This should be more explicit!
+     * 
+     * @return If the input is external or not
+     */
+    public boolean isExternal() {
+      return (data != null);
+    }
+    
+    /**
+     * TODO: This should be more explicit!
+     * 
+     * @return If the input is internal or not
+     */
+    public boolean isInternal() {
+      return (data == null);
+    }
   }
   
   private String type;
@@ -158,6 +176,25 @@ public class WorkflowElement {
       throw new ClassNotFoundException("Class " + getClassName() + " could not be found.");
     }
     return this.elementClass;
+  }
+
+  /**
+   * @return Either this element needs input or not.
+   */
+  public boolean needsInput() {
+    return !input.isEmpty();
+  }
+
+  /**
+   * TODO: This is not so nice. Every element can only have one output
+   * port anyway. So we can either
+   *  - store it into the workflow definition file or
+   *  - make this implicit
+   * 
+   * @return The URI of the output of this element
+   */
+  public String getOutputUri() {
+    return output.get(0).get("uri");
   }
 
 }
