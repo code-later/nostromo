@@ -11,9 +11,6 @@
  */
 package de.fhkoeln.santiago.workflow;
 
-import java.util.Iterator;
-import java.util.Set;
-
 import javax.xml.namespace.QName;
 
 import org.apache.axis2.AxisFault;
@@ -21,24 +18,69 @@ import org.apache.axis2.addressing.EndpointReference;
 import org.apache.axis2.client.Options;
 import org.apache.axis2.rpc.client.RPCServiceClient;
 
+import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
 import de.fhkoeln.santiago.services.OutputDescriptor;
 import de.fhkoeln.santiago.workflow.WorkflowElement.Input;
 import de.fhkoeln.santiago.workflow.storage.ProcessStore;
 
 /**
- * A {@link WorkflowRunner} runs a workflow specified by its
- * {@link WorkflowDefinition} against the web service deployed
- * components.
+ * A {@link WorkflowRunner} instance runs a workflow specified by its
+ * {@link WorkflowDefinition}. The single workflow elements are web
+ * services which have to be invoked remotely. Their URI is specified
+ * in the WorkflowDefinition. Every runner instance needs, in addition
+ * to a WorkflowDefinition reference, also a reference to a
+ * ProcessStore. In a ProcessStore the workflow can store the return
+ * values of a component, so it can be assinged later to another
+ * component.
  * 
  * @author dbreuer
  * @version 1.0 Sep 25, 2008
  */
 public class WorkflowRunner {
   
+  /**
+   * The WorkflowDefinition reference of this runner instance.
+   */
   private WorkflowDefinition definition;
+  /**
+   * The ProcessStore reference of this runner instance.
+   */
   private ProcessStore processStore;
-  
+
+  /**
+   * This is the main method of every runner. After successful
+   * initialization of the runner instance the run methods starts the
+   * process. Every element will be invoked as described in the
+   * definition object. While working through the definition elements
+   * certain the following steps are performed by the run method:
+   * 
+   * <ul>
+   *   <li>It is asked if the element needs any input (in most of 
+   *       the cases this is true)</li>
+   *       <ul>
+   *         <li>If yes and the input is external add the reference
+   *             to the external content IODescriptor instance for
+   *             the current element.</li>
+   *         <li>If yes and the input is internal get the reference
+   *             from the {@link ProcessStore} reference and add it
+   *             to the IODescriptor instance.</li>
+   *         <li>If no, which means, there is no more input required
+   *             for this component, proceed with execution</li>
+   *       </ul>
+   *       <li>Setup the WS client.</li>
+   *       <li>Set the IODescriptor instance at the remote service.</li>
+   *       <li>Call the <code>execute()</code> method of the service.</li>
+   *       <li>Retrieve the result which is an {@link IODescriptor}</li>
+   *       <li>If the IODescriptor contains any elements, they represent
+   *           the output of the service. Store the reference of the output
+   *           in the ProcessStore.</li>
+   *       <li>Proceed to the next element in the workflow definition</li>
+   * </ul>
+   * 
+   * (Further information is provided in the 'WorkflowRunner
+   * Flowchart.graffle' Document.
+   */
   public void run() {
     /*
      * go through the definition and load the required data
