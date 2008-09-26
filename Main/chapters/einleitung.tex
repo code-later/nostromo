@@ -1,0 +1,58 @@
+\chapter{Einleitung} % (fold)
+\label{cha:einleitung}
+
+- Einleitung in das gesamte Thema, Motivation für die Arbeit
+- Problemstellung
+- Zieldefinition umreißen
+- Abgrenzung: Was ist diese Arbeit und was ist sie nicht!
+- Validierung vs Evaluation
+- Vorgehen darstellen
+- Warum wurde sich für dieses Vorgehen entschieden
+- Was ist das erwartete Ziel?
+
+\section{Problemstellung} % (fold)
+\label{sec:problemstellung}
+
+  Im bisherigen Projektverlauf ist eine Architektur entworfen worden, die die Anforderungen erfüllen soll, die sich aus der Zieldefinition des COSIMA-Projekts ergeben. Die erstellte Architektur ist bisher jedoch nicht methodisch evaluiert\footnote{Im Zuge dieser Arbeit wird sie auch nicht evaluiert, sondern lediglich validiert. Der Unterschied muss an separater Stelle erläutert werden.} worden. Für die weitere Entwicklung des COSIMA-Projekts, dass sich in vielen Bereichen auf Neuland bewegt, ist das jedoch zwingend notwendig\footnote{Auch jede andere Architektur sollte methodisch evaluiert werden.}.
+  
+  Zu Beginn des Projektes wurde bereits festgestellt, dass sich ein szenariobasiertes Vorgehen zur Entwicklung eines solchen Frameworks am ehesten anbietet. Daher soll auch weiterhin so verfahren werden [\textbf{QUELLEN}] und die Architektur auf Grundlage eines Szenarios evaluiert werden. Des Weiteren ist eine prototypische Implementierung zumindest der wesentlichen Aspekte der Architektur unabdingbar für eine aussagekräftige Validierung. Für die Master Thesis ergeben sich daher zwei zentrale Problemstellungen, die es zu bearbeiten gilt:
+  
+  \begin{itemize}
+    \item Die methodische Entwicklung eines geeigneten Szenarios, dass als Akteur den Anwendungsentwickler hat, der wiederum eine Applikation auf Basis des COSIMA-Projekts entwickeln muss. Das Szenario muss dabei so gewählt sein, dass die Fachdomäne [\textbf{QUELLE}], in der die Applikation entwickelt werden soll, hinreichend bekannt ist.
+    \item Die Entwicklung eines Prototypen, der die bisher modellierten Eigenschaften der Architektur funktional umsetzt und sich dazu eignet, gegen das Szenario evaluiert zu werden. Non-Funktionale Anforderungen können hier zweitrangig betrachtet werden [\textbf{QUELLE}]. Unter Umständen ist hier auch eine weitere Modellierung der Architektur im Vorfeld notwendig bevor mit der Implementierung begonnen werden kann.
+  \end{itemize}
+
+  Wie eingangs bereits erwähnt, soll die bisherige Architektur anhand des noch zu entwickelnden Szenarios \emph{validiert} werden. Neben den beiden zentralen Problemstellungen müssen noch folgende Punkte bezüglich der Validierung betrachtet werden:
+
+  \begin{itemize}
+    \item Der Validierung selbst muss ein methodische Vorgehen zu Grunde liegen, dass Rücksicht auf die Verwendung von Szenarien nimmt.
+    \item Es müssen Kriterien festgelegt werden, anhand derer eine Bewertung stattfinden kann. Diese Kriterien werden wahrscheinlich sehr unterschiedlich ausfallen und sowohl qualitativen wie quantitativen Charakter haben. Im Vorfeld sollten daher in jedem Fall solche Kriterien gefunden werden von denen die meiste Aussagekraft erwartet wird und die am ehesten zielfördernd sind [\textbf{QUELLE}].
+  \end{itemize}
+
+% section problemstellung (end)
+
+\section{Zieldefinition} % (fold)
+\label{sec:zieldefinition}
+
+  Ziel der Validierung von COSIMA soll es sein, eine grundsätzliche Aussage treffen zu können, inwieweit die Ziele\footnote{Hierunter fällt auch in wie weit die Alleinstellungsmerkmale des Projekts bereits ausgeprägt sind.} des COSIMA Projekts bereits erreicht und welche noch nicht erreicht wurden. Im Einzelnen sind diese Ziele wie folgt\footnote{Entnommen dem Institutsbericht}:
+  
+  \begin{description}
+  	\item[Verteiltheit] COSIMA ist konzeptioniert als ein verteiltes System.
+  	\item[Dienstorientierung] Angelehnt an die \emph{Service-Oriented Architecture} (SOA), sind die Bausteine in COSIMA als Dienste modelliert.
+  	\item[Integration] Bestehende Frameworks können in Form von Diensten angeboten und so ihre Funktionalität eingebunden werden.
+  	\item[Erweiterbarkeit] Die Dienstorientierung erlaubt die Einbindung eigener Komponenten.
+  	% TODO - Die Skalierbarkeit muss hier noch weiter beschrieben werden. Eine reine Verteilung führt noch zu keiner gute Skalierbarkeit eines Systems.
+  	\item[Skalierbarkeit] Als verteiltes System können Dienste auf verschiedene Systeme ausgelagert werden, es gibt kein monolithisches System\footnote{die Verschiebung des Flaschenhalses von einem System hat zur Folge, dass die Verbindung zwischen den Diensten entsprechend angelegt sein muss. [\textbf{QUELLE}]}.
+  	\item[Medienobjekt-Modellierung] Modellierung von Medien in ganzheitlicher Betrachtungsweise von Rohdaten und Metadaten in einem Objekt.
+  	\item[Meta-Ebene] COSIMA fokussiert nicht auf Datensicht oder Metadatensicht sondern abstrahiert auf höhere Ebene.
+  	\item[Medienverarbeitung] Ganzheitliche Sicht auf Medienverarbeitung: Produktion, Verarbeitung, Transformation, Anreicherung, Wiedergabe, Ausgabe von Daten und Metadaten
+  	\item[Architektur] COSIMA stellt eine Architektur für Multimediaanwendungen
+  \end{description}
+  
+  Aber nicht nur soll ein Maß gefunden werden, zu welchem Grad die genannten Ziele und Alleinstellungsmerkmale bereits vorhanden sind, auch soll eine Bewertung abgegeben werden, ob die Architektur des COSIMA-Projekts grundsätzlich "`funktioniert"'. Diese Bewertung kann dann selbst wieder Grundlage für weitere Projekte sein.
+  
+  Es ist davon auszugehen, dass noch nicht alle Ziele erreicht wurden und die Architektur grundsätzlich zwar funktioniert, jedoch sicher noch Fehler aufweisen wird. Daher sollte ein weiteres Ziel der Master Thesis sein, konkrete Verbesserungsvorschläge zu geben, um die Fehler zu beseitigen und die Gesamtentwicklung voranzutreiben.
+  
+% section zieldefinition (end)
+
+% chapter einleitung (end)
