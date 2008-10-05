@@ -1,0 +1,115 @@
+%!TEX root = /Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/Main/Master Thesis.tex
+
+%%% PREAMBLE
+
+\documentclass[12pt,headsepline,DIV12,BCOR12mm,a4paper,oneside,cleardoublestandard,openany,bibtotoc,liststotoc,halfparskip]{scrbook}
+
+% package for typearea settings
+%\usepackage[DIV15]{typearea}
+
+% package declaration
+\usepackage{setspace}
+% \onehalfspacing
+\raggedbottom
+
+%package for inserting source code
+\usepackage{listings}
+\lstloadlanguages{Java,XML,Ruby,HTML}
+\newcommand{\listingname}{Listing}
+\lstset{numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=5,
+	lineskip=3pt,
+	numbersep=5pt,
+	language=Java,
+	breaklines=true,
+	breakautoindent=true,
+	postbreak=\space,
+	tabsize=3,
+	frame=single,
+	keywordstyle=\bfseries,
+	numberfirstline=true,
+	commentstyle=\ttfamily\footnotesize,
+	basicstyle=\ttfamily\footnotesize,
+	morekeywords={sequence,while,condition,invoke,receive,assign,pipe}}
+
+\raggedbottom
+%\typearea[current]{calc}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+
+% Paket das die Ausgabefonts definiert
+% \usepackage[T1]{fontenc}
+
+% This is now the recommended way for checking for PDFLaTeX:
+\usepackage{ifpdf}
+
+% Grafiken und Farbe
+\usepackage[pdftex]{graphicx} % for graphic handling
+\usepackage[pdftex]{color} % for color handling
+
+\usepackage{verbatim}
+
+% schoenere Kennzeichnung im Literaturverzeichnis
+\usepackage[square]{natbib}
+% Festlegung Art der Zitierung - Havardmethode: Abkuerzung Autor + Jahr %
+% BibTeX Style nach Norm DIN 1505 %
+\bibliographystyle{natdin}
+
+% Hurenkinder und Schusterjungen verhindern
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+%Paket für die Verwendung von URLs durch den Befehl \url{}
+\usepackage{url}
+
+\usepackage{fancyvrb}
+
+%\usepackage{array}
+\usepackage{colortbl}
+\usepackage[ngerman]{babel}
+\usepackage{syntonly}
+\usepackage{makeidx}
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage{amsthm}
+\usepackage{vmargin}
+% \usepackage{mathabx}
+% \makeindex
+
+% Paket und Einstellungen für das Abkürzungsverzeichnis
+\usepackage[refpage,noprefix,german,intoc]{nomencl}
+% Befehl umbenennen in abk
+\let\abk\nomenclature
+% Deutsche Überschrift
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+% Punkte zw. Abkürzung und Erklärung
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+% Zeilenabstände verkleinern
+\setlength{\nomitemsep}{-\parsep}
+% Definiert die Aufteilung im Glossar zwischen Begriffen und Erläuterung
+\setlength{\nomlabelwidth}{.25\hsize}
+%\makeglossary
+\makenomenclature
+
+%Paket für ein deutsches Literaturverzeichnis
+\usepackage{bibgerm}
+
+\VerbatimFootnotes
+
+% other commands
+\newcommand{\note}[1]{\textbf{#1}}
+% \newcommand{\url}[1]{\emph{#1}}
+\pdfpagewidth=\paperwidth \pdfpageheight=\paperheight
+% \syntaxonly % Comment out for Output
+\definecolor{lightgrey}{gray}{0.95}
+\definecolor{cmd_line}{rgb}{0.4,.8,1}
+\definecolor{comment}{rgb}{0.2,0.7,0.5}
+\usepackage[pdftex,plainpages=false,pdfpagelabels,
+            pdftitle={Evaluation der MIAV Architektur anhand eines Anwendungszenarios durch prototypische Implementierung},
+            pdfauthor={Dirk Breuer - University of Applied Science, Cologne},
+            pdfkeywords={}]{hyperref} % Has to stand at the end of the preamble
+
+%%% END PREAMBLE

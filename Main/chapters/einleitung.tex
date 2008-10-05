@@ -1,3 +1,5 @@
+%!TEX root = /Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/Main/Master Thesis.tex
+
 \chapter{Einleitung} % (fold)
 \label{cha:einleitung}
 
@@ -9,6 +11,8 @@
 - Vorgehen darstellen
 - Warum wurde sich für dieses Vorgehen entschieden
 - Was ist das erwartete Ziel?
+- Aufbau der Arbeit
+- COSIMA\abk{COSIMA}{Cologne Service Oriented Integrated Multimedia Architecture}
 
 \section{Problemstellung} % (fold)
 \label{sec:problemstellung}
@@ -36,18 +40,30 @@
 
   Ziel der Validierung von COSIMA soll es sein, eine grundsätzliche Aussage treffen zu können, inwieweit die Ziele\footnote{Hierunter fällt auch in wie weit die Alleinstellungsmerkmale des Projekts bereits ausgeprägt sind.} des COSIMA Projekts bereits erreicht und welche noch nicht erreicht wurden. Im Einzelnen sind diese Ziele wie folgt\footnote{Entnommen dem Institutsbericht}:
   
-  \begin{description}
-  	\item[Verteiltheit] COSIMA ist konzeptioniert als ein verteiltes System.
-  	\item[Dienstorientierung] Angelehnt an die \emph{Service-Oriented Architecture} (SOA), sind die Bausteine in COSIMA als Dienste modelliert.
-  	\item[Integration] Bestehende Frameworks können in Form von Diensten angeboten und so ihre Funktionalität eingebunden werden.
-  	\item[Erweiterbarkeit] Die Dienstorientierung erlaubt die Einbindung eigener Komponenten.
-  	% TODO - Die Skalierbarkeit muss hier noch weiter beschrieben werden. Eine reine Verteilung führt noch zu keiner gute Skalierbarkeit eines Systems.
-  	\item[Skalierbarkeit] Als verteiltes System können Dienste auf verschiedene Systeme ausgelagert werden, es gibt kein monolithisches System\footnote{die Verschiebung des Flaschenhalses von einem System hat zur Folge, dass die Verbindung zwischen den Diensten entsprechend angelegt sein muss. [\textbf{QUELLE}]}.
-  	\item[Medienobjekt-Modellierung] Modellierung von Medien in ganzheitlicher Betrachtungsweise von Rohdaten und Metadaten in einem Objekt.
-  	\item[Meta-Ebene] COSIMA fokussiert nicht auf Datensicht oder Metadatensicht sondern abstrahiert auf höhere Ebene.
-  	\item[Medienverarbeitung] Ganzheitliche Sicht auf Medienverarbeitung: Produktion, Verarbeitung, Transformation, Anreicherung, Wiedergabe, Ausgabe von Daten und Metadaten
-  	\item[Architektur] COSIMA stellt eine Architektur für Multimediaanwendungen
-  \end{description}
+  \begin{itemize}
+    \item Verteiltheit
+    \item Dienstorientierung
+    \item Integration
+    \item Erweiterbarkeit
+    \item Skalierbarkeit
+    \item Medienobjekt-Modellierung
+    \item Meta-Ebene
+    \item Medienverarbeitung
+    \item Architektur
+  \end{itemize}
+  
+  % \begin{description}
+  %   \item[Verteiltheit] COSIMA ist konzeptioniert als ein verteiltes System.
+  %   \item[Dienstorientierung] Angelehnt an die \emph{Service-Oriented Architecture} (SOA), sind die Bausteine in COSIMA als Dienste modelliert.
+  %   \item[Integration] Bestehende Frameworks können in Form von Diensten angeboten und so ihre Funktionalität eingebunden werden.
+  %   \item[Erweiterbarkeit] Die Dienstorientierung erlaubt die Einbindung eigener Komponenten.
+  %   % TODO - Die Skalierbarkeit muss hier noch weiter beschrieben werden. Eine reine Verteilung führt noch zu keiner gute Skalierbarkeit eines Systems.
+  %   \item[Skalierbarkeit] Als verteiltes System können Dienste auf verschiedene Systeme ausgelagert werden, es gibt kein monolithisches System\footnote{die Verschiebung des Flaschenhalses von einem System hat zur Folge, dass die Verbindung zwischen den Diensten entsprechend angelegt sein muss. [\textbf{QUELLE}]}.
+  %   \item[Medienobjekt-Modellierung] Modellierung von Medien in ganzheitlicher Betrachtungsweise von Rohdaten und Metadaten in einem Objekt.
+  %   \item[Meta-Ebene] COSIMA fokussiert nicht auf Datensicht oder Metadatensicht sondern abstrahiert auf höhere Ebene.
+  %   \item[Medienverarbeitung] Ganzheitliche Sicht auf Medienverarbeitung: Produktion, Verarbeitung, Transformation, Anreicherung, Wiedergabe, Ausgabe von Daten und Metadaten
+  %   \item[Architektur] COSIMA stellt eine Architektur für Multimediaanwendungen
+  % \end{description}
   
   Aber nicht nur soll ein Maß gefunden werden, zu welchem Grad die genannten Ziele und Alleinstellungsmerkmale bereits vorhanden sind, auch soll eine Bewertung abgegeben werden, ob die Architektur des COSIMA-Projekts grundsätzlich "`funktioniert"'. Diese Bewertung kann dann selbst wieder Grundlage für weitere Projekte sein.
   
