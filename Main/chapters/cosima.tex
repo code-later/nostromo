@@ -3,15 +3,137 @@
 \chapter{COSIMA - Eine dienstorientierten Multimediaarchitektur} % (fold)
 \label{cha:eine_dienstorientierten_multimediaarchitektur}
 
-  Die Grundlage dieser Arbeit ist eine dienstorientierte Multimediaarchitektur, die in diesem Kapitel im Detail vorgestellt werden soll. 
+  Die Grundlage dieser Arbeit ist eine dienstorientierte Multimediaarchitektur, die in diesem Kapitel im Detail vorgestellt werden soll.
+  
+\section{Idee und Motivation hinter COSIMA} % (fold)
+\label{sec:idee_und_motivation_hinter_cosima}
 
-- Vorstellen der Architektur
-- Konzept darstellen (kurz), dabei verweisen auf den Bericht
-- Warum handelt es sich um eine Architektur und nicht um ein Framework
-- Entwicklung kurz schildern
-- Kernpunkte der Architektur herausarbeiten
-- Diese Kernpunkte müssen in der Realisierung/Validierung entsprechend besondere Berücksichtigung finden
-- Definitionen von "Workflow" und "Prozess"
-- BPEL/Orchestrierung/Choreographie mit Quellenangaben erläutern
+  - Was ist die Idee hinter COSIMA?
+  - Was war die Motivation der Entwicklung?
+  - Kurze Historie der Architektur und Entwicklung bis jetzt!
+  - Konzept darstellen (kurz), dabei verweisen auf den Bericht
+
+% section idee_und_motivation_hinter_cosima (end)
+
+\section{Ziele} % (fold)
+\label{sec:ziele}
+
+  - Welche Ziele verfolgt das COSIMA-Projekt?
+  - Warum handelt es sich um eine Architektur und nicht um ein Framework!!!! (Im Bericht noch anders, irgendwie muss das hier verwurstet werden!)
+  - Weiterentwicklung der Definition seit dem Bericht
+
+% section ziele (end)
+
+\section{Alleinstellungsmerkmale} % (fold)
+\label{sec:alleinstellungsmerkmale}
+
+  - Was zeichnet COSIMA aus.
+  
+  \begin{description}
+    \item[Verteiltheit] COSIMA ist konzeptioniert als ein verteiltes System.
+    \item[Dienstorientierung] Angelehnt an die \emph{Service-Oriented Architecture} (SOA), sind die Bausteine in COSIMA als Dienste modelliert.
+    \item[Integration] Bestehende Frameworks können in Form von Diensten angeboten und so ihre Funktionalität eingebunden werden.
+    \item[Erweiterbarkeit] Die Dienstorientierung erlaubt die Einbindung eigener Komponenten.
+    % TODO - Die Skalierbarkeit muss hier noch weiter beschrieben werden. Eine reine Verteilung führt noch zu keiner gute Skalierbarkeit eines Systems.
+    \item[Skalierbarkeit] Als verteiltes System können Dienste auf verschiedene Systeme ausgelagert werden, es gibt kein monolithisches System\footnote{die Verschiebung des Flaschenhalses von einem System hat zur Folge, dass die Verbindung zwischen den Diensten entsprechend angelegt sein muss. [\textbf{QUELLE}]}.
+    \item[Medienobjekt-Modellierung] Modellierung von Medien in ganzheitlicher Betrachtungsweise von Rohdaten und Metadaten in einem Objekt.
+    \item[Meta-Ebene] COSIMA fokussiert nicht auf Datensicht oder Metadatensicht sondern abstrahiert auf höhere Ebene.
+    \item[Medienverarbeitung] Ganzheitliche Sicht auf Medienverarbeitung: Produktion, Verarbeitung, Transformation, Anreicherung, Wiedergabe, Ausgabe von Daten und Metadaten
+    \item[Architektur] COSIMA stellt eine Architektur für Multimediaanwendungen
+  \end{description}
+
+% section alleinstellungsmerkmale (end)
+
+\section{Architektur} % (fold)
+\label{sec:architektur}
+
+  - Vorstellen der Architektur
+  
+\subsection{zentrale Komponenten} % (fold)
+\label{sub:zentrale_komponenten}
+
+  - Kernpunkte der Architektur herausarbeiten
+  - Diese Kernpunkte müssen in der Realisierung/Validierung entsprechend besondere Berücksichtigung finden
+  
+\subsubsection{Kernkomponenten} % (fold)
+\label{ssub:kernkomponenten}
+
+   - Zentrale Komponente der Architektur erläutern
+   - Quelle-Komponente-Senke Prinzip
+   - Begrifflichkeit erläutern: Producer-Transformer-Consumer
+
+% subsubsection kernkomponenten (end)
+
+\subsection{Service Registry} % (fold)
+\label{sub:service_registry}
+
+  - Zentrale Stelle zur Registrierung/Auffindung von Services
+  - Definition der allgemeinen Schnittstelle für COSIMA-Services
+
+% subsection service_registry (end)
+
+\subsubsection{Service Komposition} % (fold)
+\label{ssub:service_komposition}
+
+  - Definitionen von "`Workflow"' und "`Prozess"' in Zusammenhang auf die Entwürfe (vielleicht )
+  - BPEL/Orchestrierung/Choreographie mit Quellenangaben erläutern
+  - vielleicht macht dieser Abschnitt überhaupt keinen Sinn!
+  - Die grundsätzliche Möglichkeit der Verwendung einer Prozessbeschreibungssprache diskutieren
+
+% subsubsection service_komposition (end)
+
+\subsubsection{Nachrichtensystem} % (fold)
+\label{ssub:nachrichtensystem}
+
+  - Verwendung
+  - Einfluss auf Komposition
+
+% subsubsection nachrichtensystem (end)
+
+\subsubsection{Infrastruktur} % (fold)
+\label{ssub:infrastruktur}
+
+  - Beschreibung der (abstrakten) Infrastrukturelemente
+  - Eigentlich gehört auch das Medienobjekt grob zur Infrastruktur, ist jedoch so wichtig, dass es eigenen Punkt erhält
+
+\paragraph{Persistenz} % (fold)
+\label{par:persistenz}
+
+  - Persistenzschicht
+  - jetzt nicht wichtig
+
+% paragraph persistenz (end)
+
+\paragraph{Timing} % (fold)
+\label{par:timing}
+
+  - gedacht für Synchronisation
+  - auch nicht im Fokus der Betrachtungen
+
+% paragraph timing (end)
+
+% subsubsection infrastruktur (end)
+
+\subsubsection{Medienobjekt} % (fold)
+\label{ssub:medienobjekt}
+
+  - Begründung warum separat betrachtet von Infrastruktur
+  - Media Broker?!
+  - Bedeutung für COSIMA
+  - Verantwortlichkeiten
+
+% subsubsection medienobjekt (end)
+
+% subsection zentrale_komponenten (end)
+
+\subsection{Offene Fragen} % (fold)
+\label{sub:offene_fragen}
+
+  - Was ist zu diesem Zeitpunkt noch offen?
+  - Was kann auch am Ende dieser Arbeit nicht abschließend geklärt sein?
+
+% subsection offene_fragen (end)
+
+% section architektur (end)
 
 % chapter eine_dienstorientierten_multimediaarchitektur (end)

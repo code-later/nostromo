@@ -4,3 +4,5 @@ Notizen und Gedanken zur Thesis
 - COSIMA ist Projekt im Rahmen der MIAV "Forschung", begrifflich sollte es auch so verwendet werden
 - Weiterhin zwischen dem Austausch der Daten unterscheiden. Dies muss vor allem begründet werden: Im Grunde stellen WS die Möglichkeit bereit Operationen Remote aufzurufen und nicht Daten zu verschicken. Web Services liefern synchron oder asynchron eine Antwort (oder auch nicht). Aber die Masse an Daten wird weiterhin von den Services gehalten und nur an geeigneten Schnittstellen findet ein Datenaustausch statt (und der beschränkt sich auch nur auf ein Minimum). Streaming passt also nicht in dieses Konzept.
 - Einheitlich Verwendung des Begriffs "Process" und "Workflow". Vor allem im Code. Abgrenzung der Begriffe gegeneinander.
+- Die Validierung sollte sich auch schon an einem bestehenden Ansatz für die szenariobasierte Validierung/Evaluation orientieren.
+- Die Erkenntnis, dass es sich nicht mehr um ein Framework handelt, sondern um eine Architektur(-vorlage) muss in geeigneter Form herausgearbeitet werden.
