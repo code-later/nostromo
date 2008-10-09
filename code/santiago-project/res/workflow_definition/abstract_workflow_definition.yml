@@ -1,7 +1,7 @@
 ---
 type: producer
 uri: http://localhost:8080/axis2/services/CreateMovieFromImagesService
-className: de.fhkoeln.santiago.components.CreateMovieFromImages
+namespace: http://services.demo.santiago.fhkoeln.de
 input:
   - type: external
     uri: /Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/
@@ -14,7 +14,7 @@ successors:
 ---
 type: producer
 uri: http://localhost:8080/axis2/services/ProvideMusicFileService
-className: de.fhkoeln.santiago.components.ProvideMusicFile
+namespace: http://services.demo.santiago.fhkoeln.de
 input:
   - type: external
     uri: file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov
@@ -28,7 +28,7 @@ successors:
 ---
 type: transformer
 uri: http://localhost:8080/axis2/services/AddMusicToMovieService
-className: de.fhkoeln.santiago.components.AddMusicToMovie
+namespace: http://services.demo.santiago.fhkoeln.de
 input:
   - type: internal
     uri: http://localhost:8080/axis2/services/CreateMovieFromImagesService/output
@@ -45,7 +45,7 @@ successors:
 ---
 type: consumer
 uri: http://localhost:8080/axis2/services/PlayMovieService
-className: de.fhkoeln.santiago.components.PlayMovieFile
+namespace: http://services.demo.santiago.fhkoeln.de
 input:
   - type: internal
     uri: http://localhost:8080/axis2/services/AddMusicToMovieService/output
