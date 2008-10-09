@@ -3,31 +3,48 @@
 \chapter{COSIMA - Eine dienstorientierten Multimediaarchitektur} % (fold)
 \label{cha:eine_dienstorientierten_multimediaarchitektur}
 
-  Die Grundlage dieser Arbeit ist eine dienstorientierte Multimediaarchitektur, die in diesem Kapitel im Detail vorgestellt werden soll.
+  Im Abschnitt~\ref{sec:motivation} wurde bereits kurz darauf eingegangen, dass die vorliegenden Arbeit vor dem Hintergrund des COSIMA-Projekts entstanden ist. In diesem Kapitel soll dieses Projekt so weit vorgestellt werden, dass für den weiteren Verlauf der Arbeit ein grundlegendes Verständnis über die Ziele, Alleinstellungsmerkmale und Herausforderungen existiert.
   
-\section{Idee und Motivation hinter COSIMA} % (fold)
-\label{sec:idee_und_motivation_hinter_cosima}
+\section{Motivation und Ziele von COSIMA} % (fold)
+\label{sec:motivation_und_ziele_von_cosima}
 
-  - Was ist die Idee hinter COSIMA?
-  - Was war die Motivation der Entwicklung?
-  - Kurze Historie der Architektur und Entwicklung bis jetzt!
-  - Konzept darstellen (kurz), dabei verweisen auf den Bericht
+  Das COSIMA-Projekt ist aus dem Wahlpflichtfach Modellierung in audio-visuellen Medien (MIAV\abk{MIAV}{Modellierung in audio-visuellen Medien}) an der Fachhochschule Köln im Masterstudiengang der Medieninformatik hervorgegangen. Im Rahmen einer Projektarbeit wurde das die Projektidee weiter ausgearbeitet und konzeptioniert. Die Ergebnisse dieser Arbeit wurden als Institutsbericht an Fachhochschule Köln bereitsgestellt und sind dort im Detail einsehbar~\citep{bericht}.
+  
+  Das folgende Kapitel wird daher nur auf die wesentliche Punkte des COSIMA-Projekts eingehen und ihre Relevanz für diese Arbeit herausstellen. Die ursprüngliche Idee hinter COSIMA war es ein Framework zu entwickeln, dass die Entwicklung von Multimediaanwendungen vereinfacht. Im Gegensatz zu anderen Medienframeworks, wie etwa dem \emph{Java Media Framework} (JMF\abk{JMF}{Java Media Framework}), wurde bei dem COSIMA-Projekt ein ganzheitlicher Ansatz verfolgt.
+  
+  Im Institutsbericht wird darauf hingewiesen, "`dass die Entwicklung von Multimediaanwendungen derzeit verhältnismässig aufwendig ist"'~\citep[S. 2]{bericht}. Eine Ursache dieser Problematik, liegt nach Aussage der Autoren darin begründet, dass sich die zur Zeit verfügbaren Rahmenwerke im Bereich der Multimediaverarbeitung auf einen sehr engen Einsatzbereich beschränken. Neben JMF sind hier zusätzlich noch \emph{QuickTime}\footnote{\url{http://www.apple.com/quicktime/}} und \emph{ImageJ}\footnote{\url{http://rsbweb.nih.gov/ij/}} zu nennen. Andere Aspekte von Multimediaanwendungen, wie etwa die Integration von Metadaten, müssten von dem Anwendungsentwickler erst manuell mit diesen Rahmenwerken integriert werden. "`Ein Meta-Framework, welches die bestehenden Ansätze verbinden und integrieren könnte, würde die Wiederverwendbarkeit und generelle Entwicklungsarbeit positiv beeinflussen, beziehungsweise vereinfachen"'~\citep[S. 3]{bericht}, wird von den Autoren des Berichts daher als Bestreben hinter dem COSIMA-Projekt angeführt.
+  
+  Neben der Notwendigkeit ein \emph{Meta-Framework}\footnote{Das ursprüngliche Ziel war tatsächlich ein Framework zu schaffen. Erst während der Validierung im Rahmen dieser Arbeit ist zu Tage gekommen, dass es sich mehr um eine Architektur handelt und weniger um ein Framework. Im weiteren Verlauf wird darauf jedoch noch genauer eingegangen.} zu schaffen, führen die Autoren als weiteren Beweggrund das Fehlen einer Architektur für Multimediaanwendungen an. Innerhalb dieser Architektur könnten sich Anwendungsentwickler wesentlicher effektiver bewegen und müssten nicht erst eine eigene Architektur von Grund auf entwerfen.
+  
+  Da sich mit den meisten bestehenden Multimedia-Rahmenwerke keine verteilten Anwendungen realisieren lassen, lag auch dieser Aspekt von Beginn an im Fokus der Konzeptionierung. Als Grundlage eine geeignete Architektur zu konzeptionieren, die es ermöglicht, verteilte Anwendungen zu realisieren, diente das Konzept der \emph{Service-oriented Architecture} (SOA\abk{SOA}{Service-oriented Architecture}) oder \emph{Dienst-orientierten Architektur}.
+  
+  Die hier aufgeführten Punkte haben initial die Entwicklung eines Rahmenwerkes motiviert, dass später im COSIMA-Projekt aufgehen sollte. Die im Verlauf der Projektarbeit entwickelten Ziele von COSIMA sind im nächsten Abschnitt zusammen gefasst.
+  
+\subsection{Ziele} % (fold)
+\label{sub:ziele}
 
-% section idee_und_motivation_hinter_cosima (end)
+  Das \emph{Mission Statement} des COSIMA-Projekts fasst alle Ziele des Projekts in einer Kernaussage zusammen:
 
-\section{Ziele} % (fold)
-\label{sec:ziele}
+  \begin{quote}
+    \emph{``MIAV ist ein integratives, komponentenbasiertes Meta-Framework mit gezielter Ausrichtung auf Multimediaverarbeitung. Es vereinfacht die Entwicklung von verteilten Multimedia-Applikationen durch eine flexible, dienst-orientierte Architektur. Die Wiederverwendbarkeit von Komponenten und bestehenden Frameworks wird dadurch begünstigt.''} (aus~\citep[S. 2]{bericht})\footnote{Die Bezeichnung "`COSIMA"' hat das Projekt erst nach Fertigstellung des Berichts erhalten, daher findest sich hier noch die zuvor verwandte provisorische Bezeichnung \emph{MIAV-Framework}.}
+  \end{quote}
 
-  - Welche Ziele verfolgt das COSIMA-Projekt?
-  - Warum handelt es sich um eine Architektur und nicht um ein Framework!!!! (Im Bericht noch anders, irgendwie muss das hier verwurstet werden!)
-  - Weiterentwicklung der Definition seit dem Bericht
+  Neben den zentralen Aspekten \emph{dienst-orientierte Architektur}, \emph{Integration} und \emph{Meta-Framework}, die im Abschnitt zuvor bereits dargestellt wurden, nennen die Autoren hier zusätzlich noch die Aspekte der \emph{komponentenbasierten Architektur}, \emph{Wiederverwendbarkeit} und natürlich der \emph{Medienverarbeitung}.
+  
+  Neben den hier genannten Zielen, die das COSIMA-Projekt zu erreichen versucht, zeichnet sich das Projekt durch seine spezifischen Charakteristika in Bezug auf andere Multimedia-Rahmenwerke aus. Diese Alleinstellungsmerkmale werden im nächsten Abschnitt genauer betrachtet.
 
-% section ziele (end)
+  % - Welche Ziele verfolgt das COSIMA-Projekt?
+  % - Warum handelt es sich um eine Architektur und nicht um ein Framework!!!! (Im Bericht noch anders, irgendwie muss das hier verwurstet werden!)
+  % - Weiterentwicklung der Definition seit dem Bericht
+
+% subsection ziele (end)
+  
+% section motivation_und_ziele_von_cosima (end)
 
 \section{Alleinstellungsmerkmale} % (fold)
 \label{sec:alleinstellungsmerkmale}
 
-  - Was zeichnet COSIMA aus.
+  Aus den in Abschnitt~\ref{sub:ziele} dargestellten Zielen des COSIMA-Projekts lassen sich die folgenden Merkmale extrahieren, die COSIMA im Bereich der Multimedia-Rahmenwerke und -Anwendungen einmalig machen~\citep[S. 3f]{bericht}:
   
   \begin{description}
     \item[Verteiltheit] COSIMA ist konzeptioniert als ein verteiltes System.
@@ -48,6 +65,8 @@
 \label{sec:architektur}
 
   - Vorstellen der Architektur
+  - Kurze Historie der Architektur und Entwicklung bis jetzt!
+  - Konzept darstellen (kurz), dabei verweisen auf den Bericht
   
 \subsection{zentrale Komponenten} % (fold)
 \label{sub:zentrale_komponenten}
@@ -131,6 +150,7 @@
 
   - Was ist zu diesem Zeitpunkt noch offen?
   - Was kann auch am Ende dieser Arbeit nicht abschließend geklärt sein?
+  - Kann hier überhaupt noch von einem "`Framework"' gesprochen werden?
 
 % subsection offene_fragen (end)
 
