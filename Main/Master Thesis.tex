@@ -13,20 +13,20 @@
 
 %%% BEGIN DOCUMENT
 \begin{document}
+  
+% Unbeschriftetes Vorblatt
+\include{std/empty}
 
  % Titelseite einbinden
 \include{std/titelseite}
 
 \frontmatter
 
-% Einbinden der Eigenständigkeitserklärung
-\include{std/disclaimer}
+% Einbinden des Inhaltsverzeichnis
+\tableofcontents
 
 % Einbinden des Abstracts bzw. der Kurzfassung
 \include{std/abstract}
-
-% Einbinden des Inhaltsverzeichnis
-\tableofcontents
 
 % Einbinden des Abbildungsverzeichnis %
 \listoffigures
@@ -55,10 +55,17 @@
 
 \appendix
 
-\include{appendix/quelltext}
-\include{appendix/architekturdarstellungen}
-
 \nocite{*}
 \bibliography{std/bibliography}
+
+% Einbinden des Anhangs
+\include{appendix/quelltext}
+% \include{appendix/architekturdarstellungen}
+
+% Einbinden der Eigenständigkeitserklärung
+\include{std/disclaimer}
+
+% Unbeschriftetes Abschlussblatt
+\include{std/empty}
 
 \end{document}
