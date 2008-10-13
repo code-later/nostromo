@@ -2,17 +2,26 @@
 
 %%% PREAMBLE
 
-\documentclass[12pt,headsepline,DIV12,BCOR12mm,a4paper,oneside,cleardoublestandard,openany,bibtotoc,liststotoc,halfparskip]{scrbook}
+\documentclass[12pt,
+               headsepline,
+               DIV14, % Seitenränder festlegen
+               BCOR25mm, % Bindekorrektur
+               a4paper,
+               oneside,
+               cleardoublestandard,
+               openany,
+               bibtotoc,
+               liststotoc,
+               % halfparskip,
+               pointlessnumbers,
+               final
+               ]{scrbook}
 
-% package for typearea settings
-%\usepackage[DIV15]{typearea}
-
-% package declaration
+% Paket für Zeilenabstände
 \usepackage{setspace}
-% \onehalfspacing
 \raggedbottom
 
-%package for inserting source code
+% Paket für Listings
 \usepackage{listings}
 \lstloadlanguages{Java,XML,Ruby,HTML}
 \newcommand{\listingname}{Listing}
@@ -33,9 +42,6 @@
   basicstyle=\ttfamily\footnotesize,
 	morekeywords={sequence,while,condition,invoke,receive,assign,pipe}}
 
-\raggedbottom
-%\typearea[current]{calc}
-
 % Use utf-8 encoding for foreign characters
 \usepackage[utf8]{inputenc}
 
@@ -48,8 +54,16 @@
 % Grafiken und Farbe
 \usepackage[pdftex]{graphicx} % for graphic handling
 \usepackage[pdftex]{color} % for color handling
+% Einige Farben
+\definecolor{lightgrey}{gray}{0.95}
+\definecolor{cmd_line}{rgb}{0.4,.8,1}
+\definecolor{comment}{rgb}{0.2,0.7,0.5}
 
+% Package for verbatim text
 \usepackage{verbatim}
+% Notwendiges Paket, um Verbatim in Fußzeilen zu setzen
+\usepackage{fancyvrb}
+\VerbatimFootnotes
 
 % schoenere Kennzeichnung im Literaturverzeichnis
 \usepackage[square,sort]{natbib}
@@ -62,22 +76,30 @@
 \widowpenalty = 10000
 \displaywidowpenalty = 10000
 
-%Paket für die Verwendung von URLs durch den Befehl \url{}
+% Paket für die Verwendung von URLs durch den Befehl \url{}
 \usepackage{url}
-
-\usepackage{fancyvrb}
 
 %\usepackage{array}
 \usepackage{colortbl}
+
+% Babelpaket für deutsche Bezeichner
 \usepackage[ngerman]{babel}
+
+% For syntax Checking
 \usepackage{syntonly}
+% \syntaxonly % Comment out for Output
+
 \usepackage{makeidx}
+% \makeindex
+
+% Mathepakete
 \usepackage{amssymb} %maths
 \usepackage{amsmath} %maths
 \usepackage{amsthm}
-\usepackage{vmargin}
 % \usepackage{mathabx}
-% \makeindex
+
+% Springt im PDFViewer an die Stelle an der gerade editiert wurde
+\usepackage{pdfsync}
 
 % Paket und Einstellungen für das Abkürzungsverzeichnis
 \usepackage[norefpage,noprefix,german,intoc]{nomencl}
@@ -97,19 +119,13 @@
 %Paket für ein deutsches Literaturverzeichnis
 \usepackage{bibgerm}
 
-\VerbatimFootnotes
-
 % other commands
 \newcommand{\note}[1]{\textbf{#1}}
-% \newcommand{\url}[1]{\emph{#1}}
+
 \pdfpagewidth=\paperwidth \pdfpageheight=\paperheight
-% \syntaxonly % Comment out for Output
-\definecolor{lightgrey}{gray}{0.95}
-\definecolor{cmd_line}{rgb}{0.4,.8,1}
-\definecolor{comment}{rgb}{0.2,0.7,0.5}
 \usepackage[pdftex,plainpages=false,pdfpagelabels,
-            pdftitle={Evaluation der MIAV Architektur anhand eines Anwendungszenarios durch prototypische Implementierung},
+            pdftitle={Konzeption, prototypische Realisierung und szenariobasierte Validierung einer dienstorientierten Multimediaarchitektur},
             pdfauthor={Dirk Breuer - University of Applied Science, Cologne},
-            pdfkeywords={}]{hyperref} % Has to stand at the end of the preamble
+            pdfkeywords={Architektur,SOA,Prototyping,COSIMA,Validierung}]{hyperref} % Has to stand at the end of the preamble
 
 %%% END PREAMBLE

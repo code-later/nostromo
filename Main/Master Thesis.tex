@@ -13,7 +13,11 @@
 
 %%% BEGIN DOCUMENT
 \begin{document}
-  
+
+% Vermeidung von "duplicate page" Fehlern
+% siehe: http://theoval.sys.uea.ac.uk/~nlct/latex/pdfdoc/pdfdoc/pdfdoc.html
+\pagenumbering{alph}
+
 % Unbeschriftetes Vorblatt
 \include{std/empty}
 
@@ -46,6 +50,9 @@
 
 \mainmatter
 
+% 1 1/2-facher Zeilenabstand im Hauptteil
+\onehalfspacing
+
 \include{chapters/einleitung}
 \include{chapters/cosima}
 \include{chapters/szenario}
@@ -60,7 +67,7 @@
 
 % Einbinden des Anhangs
 \include{appendix/quelltext}
-% \include{appendix/architekturdarstellungen}
+\include{appendix/architekturdarstellungen}
 
 % Einbinden der Eigenständigkeitserklärung
 \include{std/disclaimer}
