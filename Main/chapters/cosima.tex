@@ -58,48 +58,73 @@
     \item[Medienverarbeitung] Ganzheitliche Sicht auf Medienverarbeitung: Produktion, Verarbeitung, Transformation, Anreicherung, Wiedergabe, Ausgabe von Daten und Metadaten
     \item[Architektur] COSIMA stellt eine Architektur für Multimediaanwendungen
   \end{description}
+  
+  Basierend auf den vorgestellten Zielen und Alleinstellungsmerkmalen wurde die Architektur entworfen, die in dieser Arbeit validiert und prototypisch realisiert wurde. Im Folgenden Abschnitt wird diese Architektur im Detail vorgestellt werden.
 
 % section alleinstellungsmerkmale (end)
 
 \section{Architektur} % (fold)
 \label{sec:architektur}
 
-  - Vorstellen der Architektur
-  - Kurze Historie der Architektur und Entwicklung bis jetzt!
-  - Konzept darstellen (kurz), dabei verweisen auf den Bericht
+  Die Architektur des COSIMA-Projekts ist iterativ in einem dedizierten Vorgehen\footnote{Dieses Vorgehen wird detailliert im Institutsbericht vorgestellt. Eine Erläuterung in diesem Rahmen ist nicht angemessen und wird daher ausgelassen.} bis zu dem Punkt entwickelt worden, der als Ausgangspunkt für die Betrachtungen in dieser Arbeit dient.
+
+\subsection{Einführung} % (fold)
+\label{sub:einfuehrung}
+
+  Bei der Konzeption und Entwicklung der Architektur sind unterschiedliche Sichten auf diese erstellt worden. Diese Sichten entsprechen denen von Starke in~\citep[S. 83]{effektive_software_architekturen} beschriebenen vier Arten von Sichten auf eine Software-Architektur: \emph{Kontextsichten}, \emph{Bausteinsichten}, \emph{Laufzeitsichten} und \emph{Verteilungssichten}.
+
+  Für das COSIMA-Projekt wurden bisher Darstellungen aus zwei dieser Kategorien erstellt: eine der Kontextsichten und drei der Bausteinsichten. Die Kontextsichten legen laut Starke den "`Fokus auf den Zusammenhang oder das Umfeld des Systems"'~\citep[S. 87]{effektive_software_architekturen}, was auch auf die in Abbildung~\ref{fig:images_Kontextsicht_Architektur_COSIMA} dargestellte Kontextsicht von COSIMA zutrifft. Hier wird lediglich ein abstrakter und vor allem nicht formaler Überblick über die Architektur und beteiligte Systeme gegeben. Die Darstellungen, die sich den Bausteinsichten zuordnen lassen, sind namentlich das \emph{Komponentendiagramm}, das \emph{Kompositionsstrukturdiagramm} und der \emph{Grobentwurf} der Architektur. Diese finden sich jeweils in~\citep{bericht} und sollen an dieser Stelle nicht weiter betrachtet werden\footnote{\textbf{TODO}: Im weiteren Verlauf werden sicher Teile aus diesen Diagrammen benötigt, daher muss dann darauf referenziert werden.}. Für die weitere Vorstellung der Architektur soll an dieser Stelle die Kontextsicht genügen.
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=.9\textwidth]{images/Kontextsicht_Architektur_COSIMA}
+  \caption{Kontextsicht der Architektur des COSIMA-Projekts}
+  \label{fig:images_Kontextsicht_Architektur_COSIMA}
+\end{figure}
+
+  In der späteren prototypischen Realisierung und anschließenden Validierung der Architektur sollen und können nur Fragmente der Architektur umgesetzt werden, daher ist es sehr wichtig, solche Fragmente zu wählen, die für eine Weiterentwicklung von besonderem Interesse sind. Im Folgenden werden daher die zentralen Komponenten des COSIMA-Projekts kurz vorgestellt. \emph{Später soll dann eine Auswahl getroffen werden.}
+
+  % - Kernpunkte der Architektur herausarbeiten
+  % - Diese Kernpunkte müssen in der Realisierung/Validierung entsprechend besondere Berücksichtigung finden
+
+% subsection einfuehrung (end)
+
+\subsection{Medienverarbeitende Komponenten} % (fold)
+\label{sub:medienverarbeitende_komponenten}
+
+  Den Kern von COSIMA machen die medienverarbeitenden Komponenten aus, die vom Anwendungsentwickler in eine entsprechende Abfolge gebracht werden und damit die später Multimediaanwendung selbst darstellen: \emph{Producer}, \emph{Transformer} und \emph{Consumer}. Dem Entwurf der Komponenten liegt das \emph{Quelle-Komponente-Senke} Prinzip zu Grunde. Die innerhalb des COSIMA-Projekts verwendete Bezeichnung ist nach~[\textbf{QUELLE}] ebenso valide wie die geläufigere Bezeichnung "`Quelle-Komponente-Senke"'. Da es sich bei COSIMA jedoch um eine komponentenbasierte Architektur handelt, bot sich die Alternative Bezeichnung weit mehr an.
   
-\subsection{zentrale Komponenten} % (fold)
-\label{sub:zentrale_komponenten}
-
-  - Kernpunkte der Architektur herausarbeiten
-  - Diese Kernpunkte müssen in der Realisierung/Validierung entsprechend besondere Berücksichtigung finden
+  Diese medienverarbeitenden Komponenten sind alle als Dienste ausgeprägt, um dem Anspruch der Dienstorientierung gerecht zu werden. Eine Komponente kann dabei niemals eine andere Komponente direkt aufrufen, diese Aufgabe obliegt der \emph{Service Komposition} (siehe Abschnitt~\ref{sub:service_komposition}). Jede dieser Komponenten muss sich dazu bei seiner Initiierung beim Service Repository registrieren, der in~\ref{sub:service_registry} näher beschrieben wird.
   
-\subsubsection{Kernkomponenten} % (fold)
-\label{ssub:kernkomponenten}
+  Der Austausch der zu verarbeitenden Medien zwischen den einzelnen Komponenten geschieht auschließlich über den \emph{Media Broker}, der unter~\ref{sub:medienobjekt} weiter ausgeführt wird. Ein genereller Nachrichtenaustausch unter den Komponenten im speziellen und mit den restlichen Elementen der Architektur wird über das Nachrichtensystem (\ref{ssub:nachrichtensystem}) realisiert. Persistenz von Daten und die Synchronisation werden von einem \emph{Persistence Data Service} bzw. der \emph{Timing Engine} übernommen. Beide Komponenten werden in~\ref{sub:infrastruktur} näher beschrieben. Teile dieser Architekturelemente sollen einmal in einem Service Bus aufgehen~\citep[S. 18]{bericht}.
 
-   - Zentrale Komponente der Architektur erläutern
-   - Quelle-Komponente-Senke Prinzip
-   - Begrifflichkeit erläutern: Producer-Transformer-Consumer
-
-% subsubsection kernkomponenten (end)
+% subsection medienverarbeitende_komponenten (end)
 
 \subsection{Service Registry} % (fold)
 \label{sub:service_registry}
 
-  - Zentrale Stelle zur Registrierung/Auffindung von Services
-  - Definition der allgemeinen Schnittstelle für COSIMA-Services
+  Die Service Registry ist nach~\citep{service_oriented_computing}, als konstituierendes Element innerhalb einer SOA, selbst wieder ein Dienst, der die Dienstbeschreibungen anderer Dienste vorhält und bereitstellt. Jeder Dienst innerhalb von COSIMA muss daher seine Beschreibung bei der Service Registry bekannt machen. Es kann demnach auch keinen anderen Weg geben als über die Service Registry eine Verbindung zu einem Service aufzunehmen.
+
+  % - Zentrale Stelle zur Registrierung/Auffindung von Services
+  % - Definition der allgemeinen Schnittstelle für COSIMA-Services
 
 % subsection service_registry (end)
 
-\subsubsection{Service Komposition} % (fold)
-\label{ssub:service_komposition}
+\subsection{Service Komposition} % (fold)
+\label{sub:service_komposition}
 
   - Definitionen von "`Workflow"' und "`Prozess"' in Zusammenhang auf die Entwürfe (vielleicht )
   - BPEL/Orchestrierung/Choreographie mit Quellenangaben erläutern
   - vielleicht macht dieser Abschnitt überhaupt keinen Sinn!
   - Die grundsätzliche Möglichkeit der Verwendung einer Prozessbeschreibungssprache diskutieren
 
-% subsubsection service_komposition (end)
+% subsection service_komposition (end)
+
+\subsection{Infrastruktur} % (fold)
+\label{sub:infrastruktur}
+
+  - Beschreibung der (abstrakten) Infrastrukturelemente
+  - Eigentlich gehört auch das Medienobjekt grob zur Infrastruktur, ist jedoch so wichtig, dass es eigenen Punkt erhält
 
 \subsubsection{Nachrichtensystem} % (fold)
 \label{ssub:nachrichtensystem}
@@ -109,41 +134,33 @@
 
 % subsubsection nachrichtensystem (end)
 
-\subsubsection{Infrastruktur} % (fold)
-\label{ssub:infrastruktur}
-
-  - Beschreibung der (abstrakten) Infrastrukturelemente
-  - Eigentlich gehört auch das Medienobjekt grob zur Infrastruktur, ist jedoch so wichtig, dass es eigenen Punkt erhält
-
-\paragraph{Persistenz} % (fold)
-\label{par:persistenz}
+\subsubsection{Persistenz} % (fold)
+\label{ssub:persistenz}
 
   - Persistenzschicht
   - jetzt nicht wichtig
 
-% paragraph persistenz (end)
+% subsubsection persistenz (end)
 
-\paragraph{Timing} % (fold)
-\label{par:timing}
+\subsubsection{Timing} % (fold)
+\label{ssub:timing}
 
   - gedacht für Synchronisation
   - auch nicht im Fokus der Betrachtungen
 
-% paragraph timing (end)
+% subsubsection timing (end)
 
 % subsubsection infrastruktur (end)
 
-\subsubsection{Medienobjekt} % (fold)
-\label{ssub:medienobjekt}
+\subsection{Medienobjekt und Media Broker} % (fold)
+\label{sub:medienobjekt}
 
   - Begründung warum separat betrachtet von Infrastruktur
   - Media Broker?!
   - Bedeutung für COSIMA
   - Verantwortlichkeiten
 
-% subsubsection medienobjekt (end)
-
-% subsection zentrale_komponenten (end)
+% subsection medienobjekt (end)
 
 \subsection{Offene Fragen} % (fold)
 \label{sub:offene_fragen}
