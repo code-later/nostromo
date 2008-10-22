@@ -113,7 +113,18 @@
 \subsection{Servicekomposition} % (fold)
 \label{sub:service_komposition}
 
-  Durch die Servicekomposition kreieren Entwickler Applikationen innerhalb von dienstorientierten Architekturen. Die Servicekomposition setzt dabei auf die grundlegenden Elemente einer SOA auf~\citep[S. 51]{milanovic2004csw}. Sie stellt damit ein zentrales Element dar, um überhaupt aus einer Reihe von einzelnen Diensten eine Applikation zu erstellen.
+  Abbildung \ref{fig:images_Basic_SOA} zeigt die einfachste Form einer dienstorientierten Architektur, wie sie im Rahmen des Paradigmas des \emph{Service Oriented Computing} (SOC\abk{SOC}{Service Oriented Computing}) vorgestellt wurde~\citep{service_oriented_computing}. Wie bereits im Abschnitt \ref{sub:service_registry} gesagt wurde, muss ein Dienst selbstständig bei der Service Registry nach der Beschreibung eines anderen Dienstes fragen, um diesen dann ansprechen zu können. Dieses Vorgehen wirkt sich jedoch negativ auf die Kopplung einzelner Dienste aus; Die Kopplung der Dienste wird also größer.
+  
+\begin{figure}[hb]
+  \centering
+    \includegraphics[width=.9\textwidth]{images/Basic_SOA.png}
+  \caption{Einfachste Form einer dienstorientierten Architektur (nach~\citep{service_oriented_computing})}
+  \label{fig:images_Basic_SOA}
+\end{figure}
+
+  In einer dienstorientierten Architektur wird aber voraus gesetzt, dass die einzelnen Dienste möglichst lose gekoppelt sind~\citep[S. 162]{soa_goes_real}. Um diese Kopplung zwischen den Dienste aufzubrechen, kann die Information welche Dienste miteinander interagieren sollen, in Form der \emph{Servicekomposition} externalisiert werden.
+
+  Durch die Servicekomposition kreieren Entwickler Applikationen innerhalb von dienstorientierten Architekturen. Die Servicekomposition setzt dabei auf die grundlegenden Elemente einer SOA auf~\citep[S. 51]{milanovic2004csw} und stellt damit ein zentrales Element dar, um überhaupt aus einer Reihe von einzelnen Diensten eine Applikation zu aggregieren.
   
   Nach~\citep[S. 104]{masak2007ssb} kann die Servicekomposition dabei aus zwei unterschiedlichen Perspektiven betrachtet werden: der \emph{Geschäftsprozesskomposition} und der \emph{Servicelevelkomposition}. Bei der Geschäftsprozesskomposition werden "`völlig neue Geschäftsprozesse aus bestehenden Teilprozessen oder Services"' (\citep[S. 104]{masak2007ssb}) komponiert. Eine Einbettung in eine Organisation steht hier klar im Vordergrund. Bei der Servicelevelkomposition steht vielmehr "`die Interoperabilität und technische Machbarkeit im Vordergrund"' (\citep[S. 105]{masak2007ssb}) und es wird keine Rücksicht auf eine mögliche Organisationstruktur genommen. Da eines der Ziele von COSIMA die Entwicklung von Multimedia-Applikationen ist (vgl. Abschnitt \ref{sub:ziele}) und nicht die Abbildung von Geschäftsprozessen im Vordergrund steht, wird dieser Aspekt in dieser Arbeit nicht weiter verfolgt.
   
@@ -153,7 +164,7 @@
 % subsubsection kompositionsarten (end)
 
 \subsubsection{Relevanz fuer COSIMA} % (fold)
-\label{ssub:relevanz_fuer_cosima}
+\label{ssub:relevanz_fuer_cosima_komposition}
 
   Es wurde deutlich, dass die Servicekomposition für eine dienstorientierte Architektur von elementarer Bedeutung ist. Jedoch wurde auch klar, dass die Servicekomposition in COSIMA noch nicht so verstanden wird, wie sie in der Literatur verstanden wird; Dort findet eine Betrachtung im Kontext von Geschäftsprozessen statt. Sowohl in der bisherigen Zieldefinition von COSIMA, als auch in dem Szenario für die prototypische Realisierung der Architektur, dass in Kapitel~\ref{cha:szenario} vorgestellt wird, liegt der Fokus jedoch nicht auf Geschäftsprozessen. Daher ist auch eine weitere Betrachtung der genannten Details für diese Arbeit nicht notwendig. Dennoch kann festgehalten werden, dass es sich am ehesten um eine Orchestrierung handelt: Es existiert eine zentrale Komponente über die der Anwendungsentwickler die Möglichkeit erhält, die unterschiedlichen Funktionalitäten der Multimedia-Applikationen zu komponieren und in eine definierte Abfolge zu bringen.
   
@@ -171,26 +182,32 @@
 \subsection{Infrastruktur und ESB} % (fold)
 \label{sub:infrastruktur}
 
-  Die einfachste Form einer dienstorientierten Architektur, ist in Abbildung \ref{fig:images_Basic_SOA} dargestellt. Es wird noch einmal deutlich, was bereits im Abschnitt \ref{sub:service_registry} zur Service Registry gesagt wurde: Damit ein Dienst einen konkreten anderen Dienst verwenden kann, muss dieser zuerst immer über die Service Registry ermittelt werden. Ziel in einer SOA ist aber die einzelnen Bereiche weiter von einander zu entkoppeln und geeignet zu integrieren. Dazu gehört auch die in Abschnitt \ref{sub:service_komposition} vorgestellte Servicekomposition. Sie lässt sich auch dem \emph{Enterprise Service Bus} (ESB\abk{Enterprise Service Bus}) zuordnen~\citep{enterprise_service_bus}. Ein ESB stellt neben der Möglichkeit der Komposition noch weitere Funktionalitäten bereit. Dabei ist zu beachten, dass diese selbst wieder als Dienste ausgeprägt sind, wodurch sich eine verteilte Integrationsplattform schaffen lässt~\citep{enterprise_service_bus,masak2007ssb,papazoglou2007soc}. Nach Masak stellt ein ESB darüber hinaus noch folgende Funktionalitäten bereit~\citep{masak2007ssb}:
+  Innerhalb einer dienstorientierten Architektur besteht der Bedarf nach einer Infrastruktur, die in der Lage ist, die einzelnen Dienste zu verwalten und zu integrieren~\citep[S. 270]{web_services_principles_and_technology}. Neben der bereits separat vorgestellten Servicekomposition gehören auch die in diesem Abschnitt vorgestellten Elemente dieser, in der Literatur als \emph{Enterprise Service Bus} (ESB\abk{ESB}{Enterprise Service Bus}) bezeichneten Infrastruktur an.
+  
+  In~\citep{web_services_principles_and_technology} wird der Enterprise Service Bus wie folgt defniert:
+  
+  \begin{quote}
+    \emph{"`The Enterprise Service Bus is an open standard-based message backbone designed to enable the implementation, deployment, and management of SOA-based solutions with a focus on assembling, deploying, and managing distributed service-oriented architectures."'} (\citep[S. 270]{web_services_principles_and_technology})
+  \end{quote}
+  
+  Nach dieser Definition wird durch den Einsatz eines ESB überhaupt erst die Realisierung und der Betrieb einer dienstorientierten Architektur ermöglicht. Darüber hinaus lässt sich festhalten, dass auch das "`Assembling"' der einzelnen Teile innerhalb der Architektur in den Aufgabenbereich des ESB fallen. Demnach kann die Servicekomposition in einer SOA auch als eine Teilmenge des ESB angesehen werden~\citep[S. 3]{enterprise_service_bus}.
+
+  Neben der Servicekomposition werden von dem ESB noch eine Vielzahl weiterer Aufgaben übernommen, die jeweils die Punkte Implementierung, Deployment\footnote{Für das englische Wort "`Deployment"' kann in diesem Kontext keine adäquate deutsche Entsprechung gefunden werden. Aus diesem Grund wird "`Deployment"' sinngemäß nach der Beschreibung in der Wikipedia verwendet: \emph{"`Software deployment is all of the activities that make a software system available for use."'} (aus Wikipedia: \url{http://en.wikipedia.org/wiki/Software_deployment}, zuletzt abgerufen am 22.10.2008)} und Management unterstützen sollen. Die Aufgaben, die im ESB dabei mindestens implementiert sein müssen, sind in der folgenden Liste nach~\citep[S. 137]{soa_goes_real} und~\citep[S. 146]{masak2007ssb} dargestellt:
   
   \begin{itemize}
-    \item Konnektivität
-    \item Datentransformationssysteme -> Media Broker/Time Enginge?!
-    \item Adaptoren für Applikationen
     \item Routing von Nachrichten
+    \item Kommunikationsbus als Integrationsgrundlage
+    \item Datentransformation und -zuordnung
+    \item Prozess- und Regelausführung
+    \item Überwachung der einzelnen Komponenten
+    \item Adaptoren für Applikationen
+    \item Bereitstellen von standardisierten Schnittstellen
   \end{itemize}
+
+  Historisch gesehen ist ein ESB die Weiterentwicklung von EAI Brokern~\abk{EAI}{Enterprise Application Integration}, die bereits ähnliche oder die gleichen Funktionalitäten bereitstellen können~\citep[S. 146]{masak2007ssb}. Der Enterprise Service Bus verzichtet dabei aber auf den zentralistischen Integrationsansatz von EAI Brokern und etabliert anseinerstatt eine verteilte Integration~\citep[S. 4]{enterprise_service_bus}. Die einzelnen Funktionalitäten werden, um diese Verteiltheit zu erreichen, selbst wieder als Dienste realisiert ~\citep{enterprise_service_bus,masak2007ssb,papazoglou2007soc}. Durch die Aufteilung in einzelne Dienste und deren Verteilung innerhalb des Service Bus, kann dann auch von einer virtuellen Infrastruktur gesprochen werden~\citep[S. 136]{soa_goes_real}.
   
-\begin{figure}[hb]
-  \centering
-    \includegraphics[width=.9\textwidth]{images/Basic_SOA.png}
-  \caption{Einfachste Form einer dienstorientierten Architektur (nach~\citep{service_oriented_computing})}
-  \label{fig:images_Basic_SOA}
-\end{figure}
-
-
-  - Beschreibung der (abstrakten) Infrastrukturelemente
-  - Eigentlich gehört auch das Medienobjekt grob zur Infrastruktur, ist jedoch so wichtig, dass es eigenen Punkt erhält
-
+  Das COSIMA Projekt sieht bis zu diesem Zeitpunkt nur einen sehr rudimentären ESB vor, gemessen an dem Umfang, wie er in der Literatur beschrieben wird und in kommerziellen Systemen vorkommt. Im Folgenden werden die für das COSIMA Projekt relevanten Komponenten des ESBs näher beschrieben.
+  
 \subsubsection{Nachrichtensystem} % (fold)
 \label{ssub:nachrichtensystem}
 
@@ -215,6 +232,8 @@
 
 % subsubsection timing (end)
 
+  Eigentlich gehört auch das Medienobjekt grob zur Infrastruktur, ist jedoch so wichtig, dass es eigenen Punkt erhält
+
 % subsubsection infrastruktur (end)
 
 \subsection{Medienobjekt und Media Broker} % (fold)
@@ -235,7 +254,7 @@
   - Kann hier überhaupt noch von einem "`Framework"' gesprochen werden?
   - Bei einer Weiterentwicklung muss in jedem Fall die Komponenten der Servicekomposition weiter ausdifferenziert werden. Kann es sich überhaupt um Geschäftsprozesse handeln? Was hat das für Auswirkungen? Was ist die Alternative? Kann es dennoch eine SOA sein?
   
-  Nach~\citep{service_oriented_computing} stehen im Kontext des \emph{Service-Oriented Computing} (SOC\abk{Service-Oriented Computing}) komponierte Dienste für weitere Kompositionen zur Verfügung. Diese Möglichkeit ist zur Zeit nicht explizit in COSIMA modelliert, wäre aber ein interessanter Punkt für die weitere Entwicklung. Hierbei müsste aber auch die Geschäftsprozesskomposition erneut betrachtet werden.
+  Nach~\citep{service_oriented_computing} stehen im Kontext des \emph{Service-Oriented Computing} (SOC) komponierte Dienste für weitere Kompositionen zur Verfügung. Diese Möglichkeit ist zur Zeit nicht explizit in COSIMA modelliert, wäre aber ein interessanter Punkt für die weitere Entwicklung. Hierbei müsste aber auch die Geschäftsprozesskomposition erneut betrachtet werden.
   
 
 % subsection offene_fragen (end)
