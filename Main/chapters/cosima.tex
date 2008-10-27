@@ -211,29 +211,59 @@
 \subsubsection{Nachrichtensystem} % (fold)
 \label{ssub:nachrichtensystem}
   
-  Im vorangegangen Kapitel wurde als eine Aufgabe des Enterprise Service Bus, die Vermittlung und Übertragung von Nachrichten zwischen den einzelnen Teilnehmern genannt. Diese Aufgabe wird im COSIMA Projekt von dem Nachrichtensystem übernommen. In COSIMA wurde sich für ein Nachrichtensystem nach dem \emph{Publish/Subscribe}-Pattern entschieden~\citep[S. 106]{enterprise_integration_patterns}. Es ist eine von vielen Formen, um asynchrone und verlässliche Kommunikation zu realisieren, die dabei etwas besser skaliert als andere Lösungen~\citep[S. 69]{web_services_principles_and_technology}. Zusammengefasst lässt sich die Funktionsweise dieser Form der Nachrichtenübermittlung wie folgt beschreiben:
+  Im vorangegangen Kapitel wurde als eine Aufgabe des Enterprise Service Bus, die Vermittlung und Übertragung von Nachrichten zwischen den einzelnen Teilnehmern genannt. Das \emph{Messaging}, also die Nachrichtenvermittlung ist immer das Herzstück eines ESB~\citep[S. 77]{enterprise_service_bus} und daher auch in COSIMA. Die Nachrichtenvermittlung dient dabei dazu eine sehr schnelle, asynchrone und verlässliche Kommunikation zwischen Applikationen zu realisieren. Eine Nachricht selbst ist dabei ein wohl-definiertes, datengetriebenes Textformat~\citep[S. 60f]{web_services_principles_and_technology}.
+  
+  In COSIMA wurde sich für ein Nachrichtensystem nach dem \emph{Publish/Subscribe}-Pattern entschieden~\citep[S. 106]{enterprise_integration_patterns}. Es ist eine von vielen Formen, um asynchrone und verlässliche Kommunikation zu realisieren, die dabei etwas besser skaliert als andere Lösungen~\citep[S. 69]{web_services_principles_and_technology}. Zusammengefasst lässt sich die Funktionsweise dieser Form der Nachrichtenvermittlung wie folgt beschreiben:
   
   \begin{itemize}
     \item Ein \emph{Publisher} veröffentlicht eine Nachricht zu einem bestimmten Thema.
     \item Alle \emph{Subscriber}, die dieses Thema abonniert haben, erhalten genau eine Kopie dieser Nachricht.
   \end{itemize}
   
-  Bei~\citep[S. 127]{soa_goes_real} wird darüber hinaus gesagt, dass es sich bei dieser Form der Nachrichtenübermittlung, um eine nicht-gerichtete Kommunikation handelt.
+  Bei~\citep[S. 127]{soa_goes_real} wird darüber hinaus gesagt, dass es sich bei dieser Form der Nachrichtenvermittlung, um eine nicht-gerichtete Kommunikation handelt.
   
-  In COSIMA selbst sollen über das Nachrichtensystem vor allem Kontroll- und Synchronisationsnachrichten übertragen werden.
-
+  In COSIMA selbst werden über das Nachrichtensystem vor allem Kontroll- und Synchronisationsdaten vermittelt. Die Kontrolldaten werden dabei von der Komponente der Servicekomposition versendet, und beinhalten Informationen wo und wie die medienverarbeitenden Komponenten ihre Daten beziehen können. Das Nachrichtensystem soll nämlich nicht die Medien selbst vermitteln. Für diese Aufgabe wurde eine dedizierte Komponente eingeführt, die in Abschnitt~\ref{sub:medienobjekt} näher beschrieben wird. Auf die Synchronisationsdaten wird in Abschnitt~\ref{ssub:synchronisation} näher eingegangen.
+  
 % subsubsection nachrichtensystem (end)
 
 \subsubsection{Persistenz} % (fold)
 \label{ssub:persistenz}
 
-  - Persistenzschicht
-  - jetzt nicht wichtig
+  Um Daten zu dauerhaft ablegen zu können, ist innerhalb von COSIMA ein weiterer Dienst vorgesehen worden, der \emph{Shared Persistence Service}. Allerdings kann nur eine \emph{Consumer}-Komponente über diesen Dienst ablegen lassen. Umgekehrt kann nur eine \emph{Producer}-Komponente Daten über diesen Dienst wieder einlesen. Eine \emph{Transformer}-Komponente, kann nach dem Quelle-Komponente-Senke Prinzip keinen Zugriff auf dauerhaft abgelegte Daten erhalten.
+  
+  Innerhalb von COSIMA ist dieser Dienst noch sehr rudimentär modelliert. In der Literatur zu SOA findet sich keine dedizierte Komponente, um Daten persistent zu speichern; Diese Funktionalität kann durch jeden beliebigen Dienst bereitgestellt werden. Für COSIMA war es jedoch wichtig, diese Funktionalität explizit zu modellieren~\citep{bericht}\footnote{Nach dem  ursprünglichen Ziel von COSIMA war es tatsächlich noch sinnvoll einen zentralen Dienst bereitzustellen, der die persistente Speicherung von Daten übernimmt. Durch die stärkere Ausrichtung auf SOA und die Umorientierung zu einer Architektur an Stelle eines Rahmenwerks, ist diese Entscheidung jedoch zu überdenken.}.
+  
+  Die Komponente zur persistenten Speicherung von Daten wird in dieser Arbeit nicht weiter behandelt werden.
 
 % subsubsection persistenz (end)
 
+\subsubsection{Synchronisation} % (fold)
+\label{ssub:synchronisation}
+
+  Die bisher vorgestellten Komponenten der Architektur innerhalb des COSIMA-Projekts sind weitestgehend übertragbar auf Komponenten in anderen dienstorientierten Architekturen. Zur Umsetzung von Multimediaanwendungen sind aber noch weitere, medienspezifische Komponenten erforderlich. Die Definition von einem Multimediasystem nach Steinmetz gibt hierzu einen ersten Hinweis:
+  
+  \begin{quote}
+    \emph{"`Ein Multimediasystem ist durch die rechnergesteuerte, integrierte Erzeugung, Manipulation, Darstellung, Speicherung und Kommunikation von unabhängigen Informationen gekennzeichnet, die in mindestens einem kontinuierlichen (zeitabhängigen) und einem diskreten (zeitunabhängigen) Medium kodiert sind."'} (\citep[S. 13]{multimedia_technologie})
+  \end{quote}
+  
+  Multimediasysteme oder -Anwendungen unterscheiden sich von Nicht-Multimediaanwendungen vor allem durch eine zeitliche Komponente~\citep[S. 14]{multimedia_technologie}: Zwischen den Informationen, die in unterschiedlichen Medien kodiert vorliegen kann und muss ein Bezug hergestellt werden können. Dieser Bezug wird als \emph{Synchronisation} bezeichnet. Eine Definition für Synchronisation, die auch für COSIMA Verwendung findet~\citep[S. 27]{bericht} ist:
+  
+  \begin{quote}
+    \emph{"`Synchronization in the context of multimedia refers to the mechanisms used by processes (also specific to multimedia) to coordinate their ordering in the time domain."'} (\citep[S. 401]{steinmetz1990spm})
+  \end{quote}
+  
+  Synchronisation spielt im Kontext von Multimediaanwendungen also eine entscheidende Rolle und muss demnach explizit und prominent modelliert werden. Ein erster Ansatz zur Integration von Synchronisation in das COSIMA-Projekt sieht dazu eine dedizierte Komponenten innerhalb der Servicekomposition vor. Da eine dienstorientierte Architektur ohnehin stark ereignisorientiert sein sollte, um ein Maximum an Flexibilität zu erhalten~\citep[S. 96]{masak2007ssb} wurde im ersten Schritt auch eine ereignisorientierte Integration der Funktionalität zur Synchronisation vorgesehen.
+  
+  Die gesamte Thematik der Synchronisation ist sehr komplex und eine Vielzahl von Aspekten muss betrachtet werden~\citep[S. 27ff]{bericht}. In dieser Arbeit soll das grundsätzliche Konzept der Architektur im COSIMA-Projekt validiert werden, daher kann keine genauere Betrachtung der Synchronisation stattfinden.
+
+% subsubsection synchronisation (end)
+
 \subsubsection{Timing} % (fold)
 \label{ssub:timing}
+
+  \begin{quote}
+    \emph{"`One of the inherent characteristics of multimedia data is of being heavily time-dependent in that they are usually related by temporal relations which have to be maintained during their playout."'} (\citep[S. 612]{bertino1998tsm})
+  \end{quote}
 
   - gedacht für Synchronisation
   - auch nicht im Fokus der Betrachtungen
@@ -241,14 +271,6 @@
 % subsubsection timing (end)
 
   Eigentlich gehört auch das Medienobjekt grob zur Infrastruktur, ist jedoch so wichtig, dass es eigenen Punkt erhält
-  
-\subsubsection{Synchronisation} % (fold)
-\label{ssub:synchronisation}
-
-  - kurz! was zu Synchronisation
-  - Eine SOA muss sehr stark ereignisorientiert sein, damit sie den Anforderungen an Flexibilität und Anpassbarkeit an ungewöhnliche Situationen auch genügen kann. Eine solche Forderung nach Ereignisorientierung muss sich auch in der Architektur widerspiegeln. -> \emph{In Bezug auf das Event-Modul im SyncCore}
-
-% subsubsection synchronisation (end)
 
 % subsection infrastruktur (end)
 
