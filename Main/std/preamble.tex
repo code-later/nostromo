@@ -54,6 +54,9 @@
 % Paket das die Ausgabefonts definiert
 % \usepackage[T1]{fontenc}
 
+% Paket um jede Schriftgröße zuzulassen
+% \usepackage{type1cm}
+
 % This is now the recommended way for checking for PDFLaTeX:
 \usepackage{ifpdf}
 
@@ -76,6 +79,12 @@
 % Festlegung Art der Zitierung - Havardmethode: Abkuerzung Autor + Jahr %
 % BibTeX Style nach Norm DIN 1505 %
 \bibliographystyle{natdin}
+
+% Schriftstile umsetzen
+\setkomafont{sectioning}{\normalfont\normalcolor\bfseries}
+\setkomafont{descriptionlabel}{\normalfont\normalcolor\bfseries}
+\setkomafont{dictumtext}{\normalfont\normalcolor\itshape}
+\setkomafont{dictumauthor}{\scshape}
 
 % Hurenkinder und Schusterjungen verhindern
 \clubpenalty = 10000
