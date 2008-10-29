@@ -8,7 +8,7 @@
 \section{Motivation} % (fold)
 \label{sec:motivation_cosima}
 
-  Das COSIMA-Projekt ist aus dem Wahlpflichtfach Modellierung in audio-visuellen Medien (MIAV\abk{MIAV}{Modellierung in audio-visuellen Medien}) an der Fachhochschule Köln im Masterstudiengang der Medieninformatik hervorgegangen. Im Rahmen einer Projektarbeit wurde das die Projektidee weiter ausgearbeitet und konzeptioniert. Die Ergebnisse dieser Arbeit wurden als Institutsbericht an Fachhochschule Köln bereitsgestellt und sind dort im Detail einsehbar~\citep{bericht}.
+  Das COSIMA-Projekt ist aus dem Wahlpflichtfach Modellierung in audio-visuellen Medien (MIAV\abk{MIAV}{Modellierung in audio-visuellen Medien}) an der Fachhochschule Köln im Masterstudiengang der Medieninformatik hervorgegangen. Im Rahmen einer Projektarbeit wurde das die Projektidee weiter ausgearbeitet und konzipieren. Die Ergebnisse dieser Arbeit wurden als Institutsbericht an Fachhochschule Köln bereitsgestellt und sind dort im Detail einsehbar~\citep{bericht}.
   
   Das folgende Kapitel wird daher nur auf die wesentliche Punkte des COSIMA-Projekts eingehen und ihre Relevanz für diese Arbeit herausstellen. Die ursprüngliche Idee hinter COSIMA war es ein Framework zu entwickeln, dass die Entwicklung von Multimediaanwendungen vereinfacht. Im Gegensatz zu anderen Medienframeworks, wie etwa dem \emph{Java Media Framework} (JMF\abk{JMF}{Java Media Framework}), wurde bei dem COSIMA-Projekt ein ganzheitlicher Ansatz verfolgt.
   
@@ -16,7 +16,7 @@
   
   Neben der Notwendigkeit ein \emph{Meta-Framework}\footnote{Das ursprüngliche Ziel war tatsächlich ein Framework zu schaffen. Erst während der Validierung im Rahmen dieser Arbeit ist zu Tage gekommen, dass es sich mehr um eine Architektur handelt und weniger um ein Framework. Im weiteren Verlauf wird darauf jedoch noch genauer eingegangen.} zu schaffen, führen die Autoren als weiteren Beweggrund das Fehlen einer Architektur für Multimediaanwendungen an. Innerhalb dieser Architektur könnten sich Anwendungsentwickler wesentlicher effektiver bewegen und müssten nicht erst eine eigene Architektur von Grund auf entwerfen.
   
-  Da sich mit den meisten bestehenden Multimedia-Rahmenwerke keine verteilten Anwendungen realisieren lassen, lag auch dieser Aspekt von Beginn an im Fokus der Konzeptionierung. Als Grundlage eine geeignete Architektur zu konzeptionieren, die es ermöglicht, verteilte Anwendungen zu realisieren, diente das Konzept der \emph{Service-oriented Architecture} (SOA\abk{SOA}{Service-oriented Architecture}) oder \emph{Dienst-orientierten Architektur}.
+  Da sich mit den meisten bestehenden Multimedia-Rahmenwerke keine verteilten Anwendungen realisieren lassen, lag auch dieser Aspekt von Beginn an im Fokus der Konzeptionierung. Als Grundlage eine geeignete Architektur zu konzipieren, die es ermöglicht, verteilte Anwendungen zu realisieren, diente das Konzept der \emph{Service-oriented Architecture} (SOA\abk{SOA}{Service-oriented Architecture}) oder \emph{Dienst-orientierten Architektur}.
   
   Die hier aufgeführten Punkte haben initial die Entwicklung eines Rahmenwerkes motiviert, dass später im COSIMA-Projekt aufgehen sollte. Die im Verlauf der Projektarbeit entwickelten Ziele von COSIMA sind im nächsten Abschnitt zusammen gefasst.
 
@@ -47,7 +47,7 @@
   Aus den in Abschnitt~\ref{sec:ziele_cosima} dargestellten Zielen des COSIMA-Projekts lassen sich die folgenden Merkmale extrahieren, die COSIMA im Bereich der Multimedia-Rahmenwerke und -Anwendungen einmalig machen~\citep[S. 3f]{bericht}:
   
   \begin{description}
-    \item[Verteiltheit] COSIMA ist konzeptioniert als ein verteiltes System.
+    \item[Verteiltheit] COSIMA ist konzipiert als ein verteiltes System.
     \item[Dienstorientierung] Angelehnt an die \emph{Service-Oriented Architecture} (SOA), sind die Bausteine in COSIMA als Dienste modelliert.
     \item[Integration] Bestehende Frameworks können in Form von Diensten angeboten und so ihre Funktionalität eingebunden werden.
     \item[Erweiterbarkeit] Die Dienstorientierung erlaubt die Einbindung eigener Komponenten.
@@ -72,13 +72,13 @@
 
   Bei der Konzeption und Entwicklung der Architektur sind unterschiedliche Sichten auf diese erstellt worden. Diese Sichten entsprechen denen von Starke in~\citep[S. 83]{effektive_software_architekturen} beschriebenen vier Arten von Sichten auf eine Software-Architektur: \emph{Kontextsichten}, \emph{Bausteinsichten}, \emph{Laufzeitsichten} und \emph{Verteilungssichten}.
 
-  Für das COSIMA-Projekt wurden bisher Darstellungen aus zwei dieser Kategorien erstellt: eine der Kontextsichten und drei der Bausteinsichten. Die Kontextsichten legen laut Starke den "`Fokus auf den Zusammenhang oder das Umfeld des Systems"'~\citep[S. 87]{effektive_software_architekturen}, was auch auf die in Abbildung~\ref{fig:images_Kontextsicht_Architektur_COSIMA} dargestellte Kontextsicht von COSIMA zutrifft. Hier wird lediglich ein abstrakter und vor allem nicht formaler Überblick über die Architektur und beteiligte Systeme gegeben. Die Darstellungen, die sich den Bausteinsichten zuordnen lassen, sind namentlich das \emph{Komponentendiagramm}, das \emph{Kompositionsstrukturdiagramm} und der \emph{Grobentwurf} der Architektur. Diese finden sich jeweils in~\citep{bericht} und sollen an dieser Stelle nicht weiter betrachtet werden\footnote{\textbf{TODO}: Im weiteren Verlauf werden sicher Teile aus diesen Diagrammen benötigt, daher muss dann darauf referenziert werden.}. Für die weitere Vorstellung der Architektur soll an dieser Stelle die Kontextsicht genügen.
+  Für das COSIMA-Projekt wurden bisher Darstellungen aus zwei dieser Kategorien erstellt: eine der Kontextsichten und drei der Bausteinsichten. Die Kontextsichten legen laut Starke den "`Fokus auf den Zusammenhang oder das Umfeld des Systems"'~\citep[S. 87]{effektive_software_architekturen}, was auch auf die in Abbildung~\ref{fig:Kontextsicht_Architektur_COSIMA} dargestellte Kontextsicht von COSIMA zutrifft. Hier wird lediglich ein abstrakter und vor allem nicht formaler Überblick über die Architektur und beteiligte Systeme gegeben. Die Darstellungen, die sich den Bausteinsichten zuordnen lassen, sind namentlich das \emph{Komponentendiagramm}, das \emph{Kompositionsstrukturdiagramm} und der \emph{Grobentwurf} der Architektur. Diese finden sich jeweils in~\citep{bericht} und sollen an dieser Stelle nicht weiter betrachtet werden\footnote{\textbf{TODO}: Im weiteren Verlauf werden sicher Teile aus diesen Diagrammen benötigt, daher muss dann darauf referenziert werden.}. Für die weitere Vorstellung der Architektur soll an dieser Stelle die Kontextsicht genügen.
 
 \begin{figure}[ht]
   \centering
     \includegraphics[width=.9\textwidth]{images/Kontextsicht_Architektur_COSIMA}
   \caption{Kontextsicht der Architektur des COSIMA-Projekts}
-  \label{fig:images_Kontextsicht_Architektur_COSIMA}
+  \label{fig:Kontextsicht_Architektur_COSIMA}
 \end{figure}
 
   In der späteren prototypischen Realisierung und anschließenden Validierung der Architektur sollen und können nur Fragmente der Architektur umgesetzt werden, daher ist es sehr wichtig, solche Fragmente zu wählen, die für eine Weiterentwicklung von besonderem Interesse sind. Im Folgenden werden daher die zentralen Komponenten des COSIMA-Projekts kurz vorgestellt. \emph{Später soll dann eine Auswahl getroffen werden.}
@@ -95,7 +95,7 @@
   
   Diese medienverarbeitenden Komponenten sind alle als Dienste ausgeprägt, um dem Anspruch der Dienstorientierung gerecht zu werden. Eine Komponente kann dabei niemals eine andere Komponente direkt aufrufen, diese Aufgabe obliegt der \emph{Service Komposition} (siehe Abschnitt~\ref{sub:service_komposition}). Jede dieser Komponenten muss sich dazu bei seiner Initiierung beim Service Repository registrieren, der in~\ref{sub:service_registry} näher beschrieben wird.
   
-  Der Austausch der zu verarbeitenden Medien zwischen den einzelnen Komponenten geschieht auschließlich über den \emph{Media Broker}, der unter~\ref{ssub:medienobjekt} weiter ausgeführt wird. Ein genereller Nachrichtenaustausch unter den Komponenten im speziellen und mit den restlichen Elementen der Architektur wird über das Nachrichtensystem (\ref{ssub:nachrichtensystem}) realisiert. Persistenz von Daten und die Synchronisation werden von einem \emph{Persistence Data Service} bzw. der \emph{Timing Engine} übernommen. Beide Komponenten werden in~\ref{sub:infrastruktur} näher beschrieben. Teile dieser Architekturelemente sollen einmal in einem Service Bus aufgehen~\citep[S. 18]{bericht}.
+  Der Austausch der zu verarbeitenden Medien zwischen den einzelnen Komponenten geschieht auschließlich über den \emph{Media Broker}, der unter~\ref{sub:integration_von_medien} weiter ausgeführt wird. Ein genereller Nachrichtenaustausch unter den Komponenten im speziellen und mit den restlichen Elementen der Architektur wird über das Nachrichtensystem (\ref{ssub:nachrichtensystem}) realisiert. Persistenz von Daten und die Synchronisation werden von einem \emph{Persistence Data Service} bzw. der \emph{Timing Engine} übernommen. Beide Komponenten werden in~\ref{sub:infrastruktur} näher beschrieben. Teile dieser Architekturelemente sollen einmal in einem Service Bus aufgehen~\citep[S. 18]{bericht}.
 
 % subsection medienverarbeitende_komponenten (end)
 
@@ -222,7 +222,7 @@
   
   Bei~\citep[S. 127]{soa_goes_real} wird darüber hinaus gesagt, dass es sich bei dieser Form der Nachrichtenvermittlung, um eine nicht-gerichtete Kommunikation handelt.
   
-  In COSIMA selbst werden über das Nachrichtensystem vor allem Kontroll- und Synchronisationsdaten vermittelt. Die Kontrolldaten werden dabei von der Komponente der Servicekomposition versendet, und beinhalten Informationen wo und wie die medienverarbeitenden Komponenten ihre Daten beziehen können. Das Nachrichtensystem soll nämlich nicht die Medien selbst vermitteln. Für diese Aufgabe wurde eine dedizierte Komponente eingeführt, die in Abschnitt~\ref{ssub:medienobjekt} näher beschrieben wird. Auf die Synchronisationsdaten wird in Abschnitt~\ref{ssub:synchronisation} näher eingegangen.
+  In COSIMA selbst werden über das Nachrichtensystem vor allem Kontroll- und Synchronisationsdaten vermittelt. Die Kontrolldaten werden dabei von der Komponente der Servicekomposition versendet, und beinhalten Informationen wo und wie die medienverarbeitenden Komponenten ihre Daten beziehen können. Das Nachrichtensystem soll nämlich nicht die Medien selbst vermitteln. Für diese Aufgabe wurde eine dedizierte Komponente eingeführt, die in Abschnitt~\ref{sub:integration_von_medien} näher beschrieben wird. Auf die Synchronisationsdaten wird in Abschnitt~\ref{ssub:synchronisation} näher eingegangen.
   
 % subsubsection nachrichtensystem (end)
 
@@ -270,23 +270,27 @@
   Zeit spielt im Umgang mit Medien also eine wesentliche Rolle. Unterschiedliche Medien haben aber zumeist unterschiedliche zeitliche Einheiten\footnote{Ein Video wird zum Beispiel mit Bilder pro Sekunde angegeben}. Dennoch muss eine Synchronisation zwischen diesen Medien möglich sein. In COSIMA soll die \emph{Time Engine} Komponente eine System-inhärente Zeit realisieren, über die die heterogenen zeitlichen Repräsentationen einzelner Medien umgerecht werden können. Auf diesem Wege soll dem Anwendungsentwickler eine einfache Möglichkeit gegeben werden, Synchronisation in seinen Anwendungen zu implementieren.
 
   Auch diese Komponente ist noch wenig spezifiziert und wird daher in dieser Arbeit nicht weiter behandelt.
+  
+  Im Folgenden Abschnitt wird die Integration von Medien, in Form des Medienobjekts und des Medien Brokers, in die Architektur vorgestellt. Obwohl diese Komponenten laut Abbildung~\ref{fig:Kontextsicht_Architektur_COSIMA} Teil des Enterprise Service Bus sind, werden sie auf Grund ihrer Relevanz gesondert davon betrachtet.
 
 % subsubsection time_engine (end)
 
-\subsubsection{Integration von Medien} % (fold)
-\label{ssub:medienobjekt}
+% subsection infrastruktur (end)
+
+\subsection{Integration von Medien} % (fold)
+\label{sub:integration_von_medien}
 
   Innerhalb einer Architektur für Multimediaanwendungen spielen vor allem die Medien selbst eine zentrale Rolle. Demnach war eine besondere Betrachtung dieser Daten notwendig, die dazu geführt hat, das die Mediendaten dediziert modelliert wurden~\citep{bericht}. Ergebnis dieser Modellierung sind das Medienobjekt und der Media Broker, die beide hier näher beschrieben werden sollen.
   
-\paragraph{Medienobjekt} % (fold)
-\label{par:medienobjekt}
+\subsubsection{Medienobjekt} % (fold)
+\label{ssub:medienobjekt}
 
   Es wurde bereits in Abschnitt~\ref{ssub:nachrichtensystem} erläutert, dass in einer dienstorientierten Architektur der Datenfluss durch die Nachrichtenvermittlung realisiert wird. In~\citep[S. 27ff]{bericht} werden aber Eigenschaften von Mediendaten beschrieben, die sich nicht mit dem Verständnis von Daten bei "`klassischen"' dienstorientierten Architekturen decken. Aus diesen Unterschieden wurde die folgende Liste der Anforderungen an das Medienobjekt extrahiert~\citep{bericht}:
   
   \begin{description}
     \item[Erweiterbarkeit] Das COSIMA-Projekt soll Verwendung zur Entwicklung von Multimediaanwendungen in sehr vielen Domänen finden. Daher muss das Medienobjekt sich an diese Domänen leicht adaptieren lassen. Dies könnte durch eine abstrakte Darstellung der Eigenschaften von Medien erreicht werden.
     \item[Metadaten] Dort wo Medien verwendet werden, findet sich in den meisten Fällen auch eine Beschreibung dieser Medien. Diese Metadaten sind daher ebenso als \emph{first-class citizen} zu betrachten und inhärent im Medienobjekt verankert sein.
-    \item[Streaming] Beim Umgang mit Medien, vor allem mit kontinuierlichen Medien spielen fast immer auch Datenströme, oder auch \emph{Streaming} eine wesentliche Rolle~\citep[S. 14ff]{multimedia_technologie}. Aus diesem Grund muss das Medienobjekt Streaming explizit vorsehen. Eng verbunden mit dem Streaming ist auch die \emph{Dienstgüte}~\citep{multimedia_technologie} und muss daher ebenfalls berücksichtigt werden.
+    \item[Streaming] Beim Umgang mit Medien, vor allem mit kontinuierlichen Medien spielen fast immer auch Datenströme, oder auch \emph{Streaming} eine wesentliche Rolle~\citep[S. 14ff]{multimedia_technologie}. Aus diesem Grund muss das Medienobjekt Streaming explizit vorsehen. Eng verbunden mit dem Streaming ist die \emph{Dienstgüte}~\citep{multimedia_technologie} und muss daher ebenfalls berücksichtigt werden.
     \item[Verteilung] In einer dienstorientierten und damit potentiell verteilten Architektur müssen auch die Medien verteilt zu prozessieren sein. Innerhalb des Medienobjektes müssen also dementsprechende Voraussetzungen geschaffen werden.
   \end{description}
 
@@ -297,36 +301,67 @@
   \label{fig:medienobjekt}
 \end{figure}
 
-  Um diese Ziele zu erreichen, wurde das Medienobjekt nach dem \emph{Composite} Design Pattern entworfen~\citep[S. 163]{design_patterns}. Abbildung~\ref{fig:medienobjekt} zeigt das stark vereinfachte Klassendiagramm des Medienobjektes. Viele Punkte sind immer noch offen, jedoch verspricht die jetzige Grundstruktur ein hohes Maß an Flexibilität bei der weiteren Umsetzung.
-
-% paragraph medienobjekt (end)
-
-\paragraph{Media Broker} % (fold)
-\label{par:media_broker}
-
-% paragraph media_broker (end)
-
-  - Media Broker?!
-  - Bedeutung für COSIMA
-  - Verantwortlichkeiten
+  Um diese Ziele zu erreichen, wurde das Medienobjekt nach dem \emph{Composite} Design Pattern entworfen~\citep[S. 163]{design_patterns}. Abbildung~\ref{fig:medienobjekt} zeigt das stark vereinfachte Klassendiagramm des Medienobjektes. Viele Punkte sind immer noch offen\footnote{So zum Beispiel ob die tatsächlichen Medien oder lediglich Referenzen auf Medien übertragen werden sollen.}, jedoch verspricht die jetzige Grundstruktur ein hohes Maß an Flexibilität bei der weiteren Umsetzung.
+  
+  Wie diese Medienobjekte innerhalb des Gesamtsystems vermittelt und übertragen werden sollen, stellt der folgende Abschnitt vor.
 
 % subsubsection medienobjekt (end)
 
-% subsection infrastruktur (end)
+\subsubsection{Medien Broker} % (fold)
+\label{ssub:media_broker}
 
-\subsection{Offene Fragen} % (fold)
-\label{sub:offene_fragen}
-
-  - Was ist zu diesem Zeitpunkt noch offen?
-  - Was kann auch am Ende dieser Arbeit nicht abschließend geklärt sein?
-  - Kann hier überhaupt noch von einem "`Framework"' gesprochen werden?
-  - Bei einer Weiterentwicklung muss in jedem Fall die Komponenten der Servicekomposition weiter ausdifferenziert werden. Kann es sich überhaupt um Geschäftsprozesse handeln? Was hat das für Auswirkungen? Was ist die Alternative? Kann es dennoch eine SOA sein?
+  Ein Broker ist ein Makler oder Vermittler zwischen zwei Parteien, die Informationen oder Waren austauschen wollen\footnote{vgl.: Duden}. Diese Bedeutung lässt sich auch im Umfeld von verteilten Systemen übernehmen\footnote{Hier ist beispielhaft der \emph{Object Request Broker} (ORB\abk{ORB}{Object Request Broker}) bei CORBA\abk{CORBA}{Common Object Request Broker Architecture} zu nennen~\citep{coulouris2001ds,balzert1999lo}.} und im Kontext der dienstorientierten Architekturen lässt sie sich auf den \emph{Message Broker} anwenden. Dieser stellt statt einer Punkt-zu-Punkt Verbindung zwischen Diensten, eine zentrale Vermittlungsstelle zur Verfügung~\citep[S. 71]{web_services}. Dabei muss es sich aber nicht immer um ein zentrales System handeln und wird in modernen Umgebungen zumeist als dezentrale Komponente realisiert~\citep{enterprise_service_bus}. Grundsätzlich kann auch gesagt werden, dass ein Broker dem \emph{Mediator} Pattern~\citep[S. 273]{design_patterns} in einer verteilten Umgebung entspricht~\citep[S. 83]{enterprise_integration_patterns}.
   
-  Nach~\citep[S. 8]{service_oriented_computing} stehen im Kontext des \emph{Service-Oriented Computing} (SOC) komponierte Dienste für weitere Kompositionen zur Verfügung. Diese Möglichkeit ist zur Zeit nicht explizit in COSIMA modelliert, wäre aber ein interessanter Punkt für die weitere Entwicklung. Hierbei müsste aber auch die Geschäftsprozesskomposition erneut betrachtet werden.
-  
+  Der Medien Broker bei COSIMA soll ähnliche Funktionen bei der Vermittlung von Medien zwischen den einzelnen Diensten übernehmen. Zur Zeit ist der Medien Broker so konzeptioniert, dass er die im vorherigen Abschnitt beschriebenen Medienobjekte zwischen den verschiedenen medienverarbeitenden Komponenten vermittelt.
 
-% subsection offene_fragen (end)
+% subsubsection media_broker (end)
+
+% subsection medienobjekt (end)
 
 % section architektur (end)
+
+\section{Offene Fragen} % (fold)
+\label{sec:offene_fragen}
+
+  In diesem Kapitel ist der Status Quo des COSIMA-Projekts vorgestellt worden. Die bereits in~\citep{bericht} konzipierte Architektur wurde im Rahmen dieser Arbeit, vor allem bei der Verwendung der Begriffe aus der SOA-Domäne, weiter gefestigt. Das hier vorgestellte soll des Weiteren als Grundlage für die prototypische Realisierung und szenariobasierte Validierung dienen.
+
+  COSIMA ist ein junges Projekt und daher gilt es noch viele Punkte zu klären. Im Folgenden sollen die wichtigsten dieser Punkte kurz erläutert werden. Nur wenige der Fragen, die dadurch aufgeworfen werden, können in dieser Arbeit beantwortet werden. Abschließend kann wohl auf keine einzige eine hinreichende Antwort gefunden werden.
+  
+\subsection{Framework oder Architektur} % (fold)
+\label{sub:framework_oder_architektur}
+
+  In der Zieldefinition und dem Mission Statement des Projekts, wie sie zu Beginn dieses Kapitels und in~\citep{bericht} genannt wurden, wird noch von der Erstellung eines \emph{Frameworks} gesprochen. Scherp und Boll nennen in~\citep[S. 396f]{scherp2006fe} die folgenden drei Punkte als Eigenschaften von Frameworks:
+  
+  \begin{itemize}
+    \item Umkehrung des Kontrollflusses
+    \item Vorgabe einer konkreten Anwendungsarchitektur
+    \item Anpassbarkeit durch Variationspunkte
+  \end{itemize}
+  
+  Ohne im Detail auf diese Eigenschaften einzugehen, fällt jedoch schnell auf, dass der Punkt zur Umkehrung des Kontrollflusses sich nur schlecht mit den Konzepten einer dienstorientierten Architektur decken lässt: Der Servicekomposition liegt nach~\citep[S. 320]{web_services_principles_and_technology} ein \emph{Flow-Model} zu Grunde, dass, wie bereits in Abschnitt~\ref{sub:service_komposition} detailliert beschrieben, den Ablauf einer Applikation steuert. Und diese unterliegt dem direkten Einfluss des Anwendungsentwicklers, wie in Abbildung~\ref{fig:Kontextsicht_Architektur_COSIMA} deutlich zu erkennen ist. Es ist demnach nicht mehr valide von einem \emph{Framework} zu reden, stattdessen sollte der Begriff \emph{Architektur} verwendet werden.
+
+% subsection framework_oder_architektur (end)
+
+\subsection{Servicekomposition} % (fold)
+\label{sub:servicekomposition_fragen}
+
+  Bei einer Weiterentwicklung muss in jedem Fall die Komponente der Servicekomposition weiter ausdifferenziert werden. Es muss eingehend die Eignung bestehender Sprachen zur Komposition von Diensten im Kontext von Multimediaanwendungen geprüft werden. Auch die Frage, ob eine Orchestrierung oder eine Choreographie vorzuziehen ist, oder eine Mischung aus beiden Ansätzen, wie sie auch bei~\citep{papazoglou2007soc} gefordert wird, muss geklärt werden.
+  
+  Ein weiterer Aspekt, der in den Verantwortungsbereich der Servicekomposition fällt, ist die Beachtung Nicht-Funktionalen Anforderungen einzelner Dienste~\citep[S. 42]{papazoglou2007soc}. Dieser Aspekt wurde bisher bewusst bei der Entwicklung des COSIMA-Projekts völlig ausgeblendet. Bei einer weiteren Entwicklung muss dieser Punkte daher unbedingt Berücksichtigung finden.
+
+  Nach~\citep[S. 8]{service_oriented_computing} stehen im Kontext des \emph{Service-Oriented Computing} (SOC) komponierte Dienste für weitere Kompositionen zur Verfügung. Diese Möglichkeit ist zur Zeit nicht explizit in COSIMA modelliert worden. Auch für die Entwicklung von Multimediaanwendungen kann diese Fähigkeit von Vorteil sein. Welche Konsequenzen eine solche verschachtelte Komposition haben könnte, kann hier nicht abschließend geklärt werden und sollte daher Teil weiterer Forschung sein.
+
+% subsection servicekomposition (end)
+
+\subsection{ESB} % (fold)
+\label{sub:esb_fragen}
+
+  Bei der Realisierung eines Enterprise Service Bus muss die fundamentale Entscheidung getroffen werden, ob er API-getriebene oder Protokoll-getrieben implementiert werden soll~\citep[S. 59]{soa_in_practice}. Ohne diese beiden Ansätze an dieser Stelle weiter zu vertiefen, muss die Weiterentwicklung des Projekts sich für einen der beiden entscheiden.
+  
+  Es existieren eine Vielzahl von kommerziellen und nicht-kommerziellen ESB Lösungen. Deren Eignung für die Verwendung innerhalb des COSIMA-Projekts muss im Einzelnen geprüft werden, denn es ist deutlich geworden, dass die Entwicklung eines ESB komplex und aufwendig ist. Falls sie durch den Einsatz oder Anpassung einer bestehenden Implementierung minimiert werden kann, sollte entsprechend verfahren werden.
+
+% subsection esb_fragen (end)
+
+% section offene_fragen (end)
 
 % chapter eine_dienstorientierten_multimediaarchitektur (end)
