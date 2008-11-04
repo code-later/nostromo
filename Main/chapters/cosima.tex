@@ -65,7 +65,57 @@
 \section{Architektur} % (fold)
 \label{sec:architektur}
 
-  Die Architektur des COSIMA-Projekts ist iterativ in einem dedizierten Vorgehen\footnote{Dieses Vorgehen wird detailliert im Institutsbericht vorgestellt. Eine Erläuterung in diesem Rahmen ist nicht angemessen und wird daher ausgelassen.} bis zu dem Punkt entwickelt worden, der als Ausgangspunkt für die Betrachtungen in dieser Arbeit dient.
+  Die Architektur des COSIMA-Projekts ist iterativ in einem dedizierten Vorgehen\footnote{Dieses Vorgehen wird detailliert im Institutsbericht vorgestellt. Eine Erläuterung in diesem Rahmen ist nicht angemessen und wird daher ausgelassen.} bis zu dem Punkt entwickelt worden, der als Ausgangspunkt für die Betrachtungen in dieser Arbeit dient. Bevor dieser aktuelle Stand jedoch in den folgenden Abschnitten im Detail vorgestellt wird, soll zunächst einmal der Begriff Architektur definiert und eingeordnet werden.
+  
+\subsection{Definition: Software Architekturen} % (fold)
+\label{sub:definition_software_architekturen}
+
+  Der Begriff der Architektur im Kontext der Softwaretechnik und -entwicklung lässt sich sehr breit fassen. Es existieren unzählige Bücher zu dem Thema und allein das Software Engineering Institute (SEI)\abk{SEI}{Software Engineering Institute} der Carnegie Mellon Universität hat online bisher über 80 Definition von Architektur zusammen getragen\footnote{\url{http://www.sei.cmu.edu/architecture/definitions.html}, zuletzt abgerufen am 03. November 2008}. Daher soll an dieser Stelle eine Einordnung des Begriffs der Software Architektur vorgestellt werden, wie er in dieser Arbeit Verwendung findet.
+  
+\subsubsection{Definitionen} % (fold)
+\label{ssub:definitionen}
+
+  Das IEEE definiert in ihrem Glossar zur Softwaretechnik den Begriff Architektur wie folgt:
+  
+  \begin{definition}[Architektur (IEEE)]\label{def:architektur_ieee}
+    "`The organizational structure of a system or component. See also: component; module; subprogram; routine"'~\emph{\citep{ieee90sg}.}
+  \end{definition}
+  
+  Diese sehr einfache Definition von Architektur weist schon auf die Eigenschaft der Strukturierung hin. Die Auswahl der folgenden Definitionen stellen die Eigenschaften von Architektur aber noch einmal klarer heraus.
+  
+  \begin{definition}[Architektur (Crispen)]\label{def:architektur_crispen}
+    "`An architecture [\ldots] consists of (a) a partitioning strategy and (b) a coordination strategy. The partitioning strategy leads to dividing the entire system into discrete, non-overlapping parts or components. The coordination strategy leads to explicitly defined interfaces between those parts."'~\emph{\citep[S. 272]{crispen1994sm}}
+  \end{definition}
+  
+  \begin{definition}[Architektur (Reussner et al.)]\label{def:architektur_reussner_et_al}
+    "`Die Software-Architektur ist die grundlegende Organisation eines Systems, dargestellt durch dessen Komponenten, deren Beziehungen zueinander und zur Umgebung, sowie die Prinzipien, die den Entwurf und die Evolution des Systems bestimmen."'~\emph{\citep[S. 1]{handbuch_der_software_architektur}}
+  \end{definition}
+  
+  \begin{definition}[Architektur (Bass et al.)]\label{def:architektur_bass_et_al}
+    "`The software architecture of a program or computing system is the structure or structures of the system, which comprise software components, the externally visible properties of those components, and the relationship among them."'~\emph{\citep[S. 21]{software_architecture_in_practice}}
+  \end{definition}
+  
+  Darüber hinaus ist noch die Unterscheidung von \emph{Software}- und \emph{System}-Architekturen zu treffen~\citep[S. xix]{evaluating_software_architectures}. Eine System-Architektur berücksichtigt dabei deutlich mehr Komponenten, wie etwa die Hardware und deren Umgebung auf der die Software installiert werden soll. Diese Trennung wird auch in den entsprechenden Definitionen des SEI deutlich:
+  
+  \begin{definition}[Software-Architektur (SEI)]\label{def:software_architektur_sei}
+    "`The structure or structures of a system, which comprise the software elements, the externally visible properties of those elements, and the relationships among them."'~\emph{\citep{sei_glossary}}
+  \end{definition}
+  
+  \begin{definition}[System-Architektur]\label{def:system_architektur}
+    "`A means for describing the elements and interactions of a complete system including its hardware elements and its software elements."'~\emph{\citep{sei_glossary}}
+  \end{definition}
+
+  Bei der Architektur innerhalb des COSIMA-Projekts handelt es sich also um eine Software-Architektur, da ausschließlich die Softwarekomponenten ohne Rücksicht auf mögliche Hardware betrachtet werden. Genauer kann auch gesagt werden, dass es sich um eine Referenzarchitektur nach Reussner et al. handelt:
+  
+  \begin{definition}[Referenzarchitektur]\label{def:referenzarchitektur}
+    "`Eine Referenzarchitektur ist eine abstrakte Software-Architektur, sie definiert Strukturen und Typen von Software-Elementen sowie deren erlaubte Interaktionen und ihre Verantwortlichkeiten speziell für einen Anwendungsbereich. Die Strukturen sind jeweils für alle Systeme innerhalb einer Domäne anwendbar."'~\emph{\citep[S. 358]{handbuch_der_software_architektur}}
+  \end{definition}
+
+% subsubsection definitionen (end)
+
+  Die Architektur einer Software ist also die strukturelle Aufteilung der Software in einzelne, von einander unabhängige Komponenten, deren Eigenschaften und Beziehungen untereinander. Im Folgenden werden nun diese einzelnen Komponenten der COSIMA Architektur vorgestellt werden.
+
+% subsection definition_software_architekturen (end)
 
 \subsection{Einführung} % (fold)
 \label{sub:einfuehrung}
@@ -310,7 +360,13 @@
 \subsubsection{Medien Broker} % (fold)
 \label{ssub:media_broker}
 
-  Ein Broker ist ein Makler oder Vermittler zwischen zwei Parteien, die Informationen oder Waren austauschen wollen\footnote{vgl.: Duden}. Diese Bedeutung lässt sich auch im Umfeld von verteilten Systemen übernehmen\footnote{Hier ist beispielhaft der \emph{Object Request Broker} (ORB\abk{ORB}{Object Request Broker}) bei CORBA\abk{CORBA}{Common Object Request Broker Architecture} zu nennen~\citep{coulouris2001ds,balzert1999lo}.} und im Kontext der dienstorientierten Architekturen lässt sie sich auf den \emph{Message Broker} anwenden. Dieser stellt statt einer Punkt-zu-Punkt Verbindung zwischen Diensten, eine zentrale Vermittlungsstelle zur Verfügung~\citep[S. 71]{web_services}. Dabei muss es sich aber nicht immer um ein zentrales System handeln und wird in modernen Umgebungen zumeist als dezentrale Komponente realisiert~\citep{enterprise_service_bus}. Grundsätzlich kann auch gesagt werden, dass ein Broker dem \emph{Mediator} Pattern~\citep[S. 273]{design_patterns} in einer verteilten Umgebung entspricht~\citep[S. 83]{enterprise_integration_patterns}.
+  \begin{definition}[Broker]\label{def:broker}
+    "`\textbf{1.} [engl. broker, eigtl. = Weinhändler]: Effektenhändler an der englischen und amerikanischen Börse."'\footnote{aus: Duden - Deutsches Universal Wörterbuch A-Z, 3. Aufl., 1996} "`\textbf{2.} One employed as a middleman to transact business or negotiate bargains between different merchants or individuals."'\footnote{aus: The Oxford English Dictionary, 3. Aufl., 1970} "`\textbf{3.} A middleman, intermediary, or agent generally; an interpreter, messanger, comissioner."'\footnote{aus: The Oxford English Dictionary, 3. Aufl., 1970}
+  \end{definition}
+
+  Als einen Broker kann man demnach einen Makler oder Vermittler zwischen zwei Parteien, die Informationen oder Waren austauschen wollen bezeichnen.
+
+  Diese Bedeutung lässt sich auch im Umfeld von verteilten Systemen weitestgehend übernehmen\footnote{Hier ist beispielhaft der \emph{Object Request Broker} (ORB\abk{ORB}{Object Request Broker}) bei CORBA\abk{CORBA}{Common Object Request Broker Architecture} zu nennen~\citep{coulouris2001ds,balzert1999lo}.} und im Kontext der dienstorientierten Architekturen lässt sie sich auf den \emph{Message Broker} anwenden. Dieser stellt statt einer Punkt-zu-Punkt Verbindung zwischen Diensten, eine zentrale Vermittlungsstelle zur Verfügung~\citep[S. 71]{web_services}. Dabei muss es sich aber nicht immer um ein zentrales System handeln und wird in modernen Umgebungen zumeist als dezentrale Komponente realisiert~\citep{enterprise_service_bus}. Grundsätzlich kann auch gesagt werden, dass ein Broker dem \emph{Mediator} Pattern~\citep[S. 273]{design_patterns} in einer verteilten Umgebung entspricht~\citep[S. 83]{enterprise_integration_patterns}.
   
   Der Medien Broker bei COSIMA soll ähnliche Funktionen bei der Vermittlung von Medien zwischen den einzelnen Diensten übernehmen. Zur Zeit ist der Medien Broker so konzeptioniert, dass er die im vorherigen Abschnitt beschriebenen Medienobjekte zwischen den verschiedenen medienverarbeitenden Komponenten vermittelt.
 
