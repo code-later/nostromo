@@ -3,7 +3,28 @@
 \chapter{Szenario} % (fold)
 \label{cha:szenario}
 
+  Wie bereits im vorangegangen Kapitel erwähnt, liegt dem COSIMA-Projekt ein dediziertes Vorgehensmodell zu Grunde, dass speziell für dieses Projekt entwickelt wurde~\citep[S. 7]{bericht}. Die schematische Darstellung dieses Modell findet sich in Abbildung~\ref{fig:vorgehensmodell}. Im Folgenden sind die Kernpunkte dieses Vorgehens zusammengefasst:
+
+  \begin{figure}[!ht]
+    \centering
+      \includegraphics[width=.9\textwidth]{images/Vorgehensmodell}
+    \caption{Schematische Darstellung des Vorgehensmodell hinter dem COSIMA-Projekt (nach~\citep{bericht})}
+    \label{fig:vorgehensmodell}
+  \end{figure}
+
+  \begin{description}
+    \item[Iterativ] Ein Iteratives Vorgehen bei der Entwicklung von Software ist ein etabliertes Verfahren, um der Unvollständigkeit der Anforderungsermittlung gerecht zu werden~\citep{brooks1987nsb,basili2005iea,boehm1986sm,kruchten2003rup}. Da auch im COSIMA-Projekt nicht zu erwarten war, dass alle relevanten Anforderungen von Anfang offensichtlich sind, wurde sich in diesem Kontext ein iterativer Prozess gewählt.
+    \item[Szenario-basiert] Die Verwendung von Szenarien ist in vielen Bereichen der Softwareentwicklung\footnote{Neben der Architekturentwicklung~\citep{software_architecture_in_practice,scenario_based_software_architecture_evaluation_methods}, etwa im Bereich der Mensch-Computer-Interaktion~\cite{five_reasons_for_scenario_based_design}.} ein anerkanntes Verfahren um Anforderungen und Qualitätsmerkmale von Software konkret zu formulieren.
+    \item[Top-Down] Es werden zuerst abstrakte Szenarien definiert, die zum einen sehr informell, zum anderen sowohl funktionale, wie auch nicht-funktionale Anforderungen in sich vereinen\footnote{Nach ~\citep[S. 42f]{weidenhaupt1998ssd} ist dieses Vorgehen auch bei anderen Szenario-basierten Modellen durchaus üblich.}. Im Zuge der Iterationen werden diese Szenarien immer detaillierter und formeller. Die Architektur entwickelt sich entsprechend ebenso weiter. Daher kann man hier von einem \emph{top-down} Vorgehen sprechen.
+  \end{description}
+  
+  \begin{definition}[Szenario]\label{def:szenario}
+    "`\textbf{3.} (Fachspr.) (in der öffentlichen u. industriellen Planung) hypothetische Aufeinanderfolge von Ereignissen, die zur Beachtung kausaler Zusammenhänge konstruiert wird."'\footnote{aus: Duden - Deutsches Universal Wörterbuch A-Z, 3. Aufl., 1996}
+  \end{definition}
+
   - Szenarien allgemein vorstellen und Beschreibung des konkreten Szenarios
+  - Definition von Szenario (Oxford, Duden, Literatur)
+  - Bei Rosson und Carrol: Story (auch definieren), also narrativ
   
 \section{Szenariobasierte Methoden} % (fold)
 \label{sec:szenariobasierte_methoden}

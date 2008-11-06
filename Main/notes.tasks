@@ -7,3 +7,8 @@ Notizen und Gedanken zur Thesis
 - Die Validierung sollte sich auch schon an einem bestehenden Ansatz für die szenariobasierte Validierung/Evaluation orientieren.
 - Die Erkenntnis, dass es sich nicht mehr um ein Framework handelt, sondern um eine Architektur(-vorlage) muss in geeigneter Form herausgearbeitet werden.
 - Im Kapitel "COSIMA" muss noch eine stärkere Verbindung zwischen Abbildung der Architektur und dem Text hergestellt werden
+- Übertragungsbus für die Daten
+- SOA Pyramide nach Papazouglu
+- Medien enthalten den Geschäftsprozess?! -> MPEG-7 oder non-lineares Video
+- Wie kann man Medien sehen? Interne Modellierung der Medien, Geschäftsprozess greift auf diese interne Modellierung zu
+- Dienst und Dienstorientierung definieren
