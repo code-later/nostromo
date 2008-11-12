@@ -31,12 +31,24 @@
 % Bis zu welcher Ebene sollen die Abschnitt nummeriert werden
 \setcounter{secnumdepth}{3}
 
+% Grafiken und Farbe
+\usepackage[pdftex]{graphicx} % for graphic handling
+\usepackage[usenames,dvipsnames,pdftex]{color} % for color handling
+% Einige Farben
+\definecolor{lightgray}{gray}{0.95}
+\definecolor{cmd_line}{rgb}{0.4,.8,1}
+\definecolor{comment}{rgb}{0.2,0.7,0.5}
+
 % Paket für Listings
 \usepackage{listings}
+\usepackage{dvsm} % Use DejaVu Sans Mono as Monospace Font
+% get closed frames on each page for listings
+% \usepackage{framed}
 \lstloadlanguages{Java,XML,Ruby,HTML}
 \newcommand{\listingname}{Listing}
-\lstset{numbers=left, 
-	numberstyle=\tiny, 
+\lstset{
+  numbers=left, 
+	numberstyle=\ttfamily\tiny, 
 	stepnumber=1,
 	lineskip=3pt,
 	numbersep=5pt,
@@ -44,13 +56,39 @@
 	breaklines=true,
 	breakautoindent=true,
 	postbreak=\space,
-	tabsize=3,
+	tabsize=2,
 	frame=single,
-  keywordstyle=\bfseries,
+  keywordstyle=\bfseries\color{blue},
+  stringstyle=\color{ForestGreen},
 	numberfirstline=false,
-  commentstyle=\ttfamily\footnotesize,
+  commentstyle=\slshape\footnotesize\color{Gray},
   basicstyle=\ttfamily\footnotesize,
-	morekeywords={sequence,while,condition,invoke,receive,assign,pipe}}
+  morekeywords={while,condition,invoke,receive,assign,pipe}
+	}
+
+% Listings can be included as following:
+% 
+% include a file (from line n to m): \lstinputlisting[firstline=n,lastline=m]
+% 
+% standard listing: \begin{lstlisting} ... \end{lstlisting}
+% 
+% Inline: \lstinline+code here+
+
+% \lstdefinelanguage{SPARQL}{
+%     morekeywords = {PREFIX, SELECT, DISTINCT, WHERE },
+%   emphstyle=\itshape %\underbar
+%   % emph={[2]mit,sonst},
+%   emphstyle=[2]\color{red},
+%   % moredelim=[is][\color{green}]{/*}{*/}
+% }
+% 
+% \lstdefinelanguage{Turtle}{
+%     morekeywords = {@prefix},
+%   emphstyle=\itshape %\underbar
+%   % emph={[2]mit,sonst},
+%   % emphstyle=[2]\color{red},
+%   % moredelim=[is][\color{green}]{/*}{*/}
+% }
 
 % Use utf-8 encoding for foreign characters
 \usepackage[utf8]{inputenc}
@@ -63,14 +101,6 @@
 
 % This is now the recommended way for checking for PDFLaTeX:
 \usepackage{ifpdf}
-
-% Grafiken und Farbe
-\usepackage[pdftex]{graphicx} % for graphic handling
-\usepackage[pdftex]{color} % for color handling
-% Einige Farben
-\definecolor{lightgrey}{gray}{0.95}
-\definecolor{cmd_line}{rgb}{0.4,.8,1}
-\definecolor{comment}{rgb}{0.2,0.7,0.5}
 
 % Package for verbatim text
 \usepackage{verbatim}

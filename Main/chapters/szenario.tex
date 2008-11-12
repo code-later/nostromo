@@ -1,6 +1,6 @@
 %!TEX root = /Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/Main/Master Thesis.tex
 
-\chapter{Szenario} % (fold)
+\chapter{Das Szenario} % (fold)
 \label{cha:szenario}
 
   Wie bereits im vorangegangen Kapitel erwähnt, liegt dem COSIMA-Projekt ein dediziertes Vorgehensmodell zu Grunde, dass speziell für dieses Projekt entwickelt wurde~\citep[S. 7]{bericht}. Die schematische Darstellung dieses Modell findet sich in Abbildung~\ref{fig:vorgehensmodell}. Im Folgenden sind die Kernpunkte dieses Vorgehens zusammengefasst:
@@ -18,13 +18,42 @@
     \item[Top-Down] Es werden zuerst abstrakte Szenarien definiert, die zum einen sehr informell, zum anderen sowohl funktionale, wie auch nicht-funktionale Anforderungen in sich vereinen\footnote{Nach ~\citep[S. 42f]{weidenhaupt1998ssd} ist dieses Vorgehen auch bei anderen Szenario-basierten Modellen durchaus üblich.}. Im Zuge der Iterationen werden diese Szenarien immer detaillierter und formeller. Die Architektur entwickelt sich entsprechend ebenso weiter. Daher kann man hier von einem \emph{top-down} Vorgehen sprechen.
   \end{description}
   
-  \begin{definition}[Szenario]\label{def:szenario}
+  Ein elementarer Bestandteil dieses Vorgehenmodells ist also die Verwendung von Szenarien. Da diese Arbeit erstens in das Umfeld des COSIMA-Projekts einzuordnen ist und Szenarien eine anerkannte Methodik darstellen, werden sie auch in dieser Arbeit dazu verwendet die bisherige Architektur zu validieren. Im Folgenden Abschnitt wird der Begriff des Szenario genauer definiert und eingeordnet. Bevor dann das eigentliche Szenario dargestellt wird, findet noch eine Abgrenzung zu Szenarien statt, wie sie in der Literatur beschriebenen szenario-basierten Methodiken Verwendung finden.
+  
+\section{Definition: Szenario} % (fold)
+\label{sec:definition_szenario}
+
+  Im Duden findet sich zu "`Szenario"' der folgende Eintrag:
+  
+  \begin{definition}[Szenario (allg.)]\label{def:szenario_allg}
     "`\textbf{3.} (Fachspr.) (in der öffentlichen u. industriellen Planung) hypothetische Aufeinanderfolge von Ereignissen, die zur Beachtung kausaler Zusammenhänge konstruiert wird."'\footnote{aus: Duden - Deutsches Universal Wörterbuch A-Z, 3. Aufl., 1996}
   \end{definition}
+  
+  Eine Beschreibung, die aus der Domäne der Softwareentwicklung stammt, liefern Kazman et al.:
+  
+  \begin{definition}[Szenario (Kazman et al.)]\label{def:szenario_kazman_et_al}
+    "`Scenarios are brief narratives of expected or anticipated use of a system from both development and end-user viewpoints."'~\emph{\citep[S. 2]{scenario_based_analysis_of_software_architecture}}
+  \end{definition}
+  
+  Auch in dieser Definition wird von einer Narration und damit eher etwas Hypothetischem gesprochen. Die Folgende, etwas später formulierte Definition stellt noch einen weiteren wichtigen Punkt heraus:
+  
+  \begin{definition}[Szenario (Clements et al.)]\label{def:szenario_clements_et_al}
+    "`A scenario is short statement describing an interaction of one of the stakeholders with the system."'~\emph{\citep[S. 33]{evaluating_software_architectures}}
+  \end{definition}
+  
+  Betrachtet man zu dieser Definition, die aus der reinen Softwareentwicklung stammt, eine weitere, die ihren Ursprung in der Mensch-Computer-Interaktion hat, so ergibt sich ein, für diese Arbeit verwendbares Gesamtbild:
+  
+  \begin{definition}[Szenario (Carroll & Rosson)]\label{def:szenario_carroll_rosson}
+    "`A [...] scenario is a story about people and their activities. [They] have a plot; they include sequences of actions and events, things that actors do, things that happen to them, changes in the setting and so forth."'~\emph{\citep[S. 16/18]{scenario_based_development}}
+  \end{definition}
+  
+  Im Rahmen dieser Arbeit kann ein Szenario daher so verstanden werden, dass es eine hypothetische Geschichte ist, die unterschiedliche \emph{Stakeholder}\footnote{Ein \emph{Stakeholder} ist ein Aktuer oder Mitglied einer Interessengruppe. Da der Begriff auch in der deutschsprachigen Fachliteratur Verwendung findet, wird er auch in dieser Arbeit weiterhin verwendet.}, ihre Aktivitäten und Interaktionen mit einem Softwaresystem beschreibt.
+  
+  Unter die Stakeholder werden tatsächlich alle Gruppen oder Personen gefasst, die irgendwann mit dem System in Kontakt treten können. So kennt die \emph{ATAM-Methode}~\abk{ATAM}{Architecture Tradeoff Analysis Method} von Softwarearchitekten über den Softwareentwickler und Tester bis hin zum Projektmanager und Endanwender, eine Vielzahl von Stakeholdern. Für das Ergebnis Arbeit ist vor allem der Softwareentwickler von Interesse, da geprüft werden soll, in wie fern er in Lage ist, mit der gegebenen Architektur eine Zielanwendung zu entwickeln.
+  
+  Im Folgenden Abschnitt werden nun einige anerkannte szenariobasierte Methoden skizziert und argumentiert, welche Methode dieser Arbeit zu Grunde liegen wird.
 
-  - Szenarien allgemein vorstellen und Beschreibung des konkreten Szenarios
-  - Definition von Szenario (Oxford, Duden, Literatur)
-  - Bei Rosson und Carrol: Story (auch definieren), also narrativ
+% section definition_szenario (end)
   
 \section{Szenariobasierte Methoden} % (fold)
 \label{sec:szenariobasierte_methoden}
@@ -35,63 +64,26 @@
 - Vor-/Nachtteile gegenüber anderen Ansätzen der Validierung von Architekturen
 - Auf Methoden von G. Starke eingehen
 
-- Definitionen
-  - Szenario
+\subsection{Bekannte Methodiken} % (fold)
+\label{sub:bekannte_methodiken}
 
-\subsection{Methode XY} % (fold)
-\label{sub:methode_xy}
+SAAM:
+- Methode um Architekturen zu evaluieren (hier nur Validierung), siehe auch Kapitel \ref{cha:validierung_der_architektur}
+- Fokus auf User Interface Teile einer Architektur
+- Kein Fokus auf Szenarien: "`Tasks"' dienen dazu um gegen die geforderten Qualitätsmerkmale zu testen~\citep[S. 82]{saam}
+- Ziele aller Methoden vor allem auf nicht-funktionale Anforderungen gerichtet
+- Setzen eine bestehende Architektur vorraus
+- Im Rahmen dieser Arbeit kann nicht geleistet werden, dass eine Methode in ihrer Vollständigkeit angewendet wird -> Pragmatischer Ansatz!
 
- - kurze einführung in die Methode
+% subsection bekannte_methodiken (end)
 
-\subsubsection{Beschreibung} % (fold)
-\label{ssub:beschreibung}
+\subsection{Methode für diese Arbeit} % (fold)
+\label{sub:methode_fuer_diese_arbeit}
 
-  - detaillierte Beschreibung der Methode
+  - Was machen wir also in dieser Arbeit?
+  - Zusammenfassen der Gründe.
 
-% subsubsection beschreibung (end)
-
-\subsubsection{Diskussion} % (fold)
-\label{ssub:diskussion}
-
- - Diskussion der Vor-/Nachteile
-
-% subsubsection diskussion (end)
-
-\subsubsection{Bewertung im Rahmen der Arbeit} % (fold)
-\label{ssub:bewertung_im_rahmen_der_arbeit}
-
- - Wie eignet sich die Methode für die Verwendung in dieser Arbeit.
-
-% subsubsection bewertung_im_rahmen_der_arbeit (end)
-
-% subsection methode_xy (end)
-
-\subsection{Nicht geeignete Methoden} % (fold)
-\label{sub:nicht_geeignete_methoden}
-
-  - Diese Methoden sind nicht geeignet:
-  
-\subsubsection{SAAM} % (fold)
-\label{ssub:saam}
-
-  - Methode um Architekturen zu evaluieren (hier nur Validierung), siehe auch Kapitel \ref{cha:validierung_der_architektur}
-  - Fokus auf User Interface Teile einer Architektur
-  - Kein Fokus auf Szenarien: "`Tasks"' dienen dazu um gegen die geforderten Qualitätsmerkmale zu testen~\citep[S. 82]{saam}
-
-% subsubsection saam (end)
-
-% subsection nicht_geeignete_methoden (end)
-
-\subsection{Entscheidung} % (fold)
-\label{sub:entscheidung}
-
-  - Welche Methode wurde gewählt?
-  - Wie wurde sich überhaupt entschieden?
-  - Wurde ein Mix gewählt?
-
-% subsection entscheidung (end)
-
- -> weitere Methoden skizzieren.
+% subsection methode_fuer_diese_arbeit (end)
 
 % section szenariobasierte_methoden (end)
 
