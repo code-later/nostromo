@@ -1,6 +1,6 @@
 %!TEX root = /Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/Main/Master Thesis.tex
 
-\chapter{Das Szenario} % (fold)
+\chapter{Szenario} % (fold)
 \label{cha:szenario}
 
   Wie bereits im vorangegangen Kapitel erwähnt, liegt dem COSIMA-Projekt ein dediziertes Vorgehensmodell zu Grunde, dass speziell für dieses Projekt entwickelt wurde~\citep[S. 7]{bericht}. Die schematische Darstellung dieses Modell findet sich in Abbildung~\ref{fig:vorgehensmodell}. Im Folgenden sind die Kernpunkte dieses Vorgehens zusammengefasst:
@@ -14,7 +14,7 @@
 
   \begin{description}
     \item[Iterativ] Ein Iteratives Vorgehen bei der Entwicklung von Software ist ein etabliertes Verfahren, um der Unvollständigkeit der Anforderungsermittlung gerecht zu werden~\citep{brooks1987nsb,basili2005iea,boehm1986sm,kruchten2003rup}. Da auch im COSIMA-Projekt nicht zu erwarten war, dass alle relevanten Anforderungen von Anfang offensichtlich sind, wurde sich in diesem Kontext ein iterativer Prozess gewählt.
-    \item[Szenario-basiert] Die Verwendung von Szenarien ist in vielen Bereichen der Softwareentwicklung\footnote{Neben der Architekturentwicklung~\citep{software_architecture_in_practice,scenario_based_software_architecture_evaluation_methods}, etwa im Bereich der Mensch-Computer-Interaktion~\cite{five_reasons_for_scenario_based_design}.} ein anerkanntes Verfahren um Anforderungen und Qualitätsmerkmale von Software konkret zu formulieren.
+    \item[Szenario-basiert] Die Verwendung von Szenarien ist in vielen Bereichen der Softwareentwicklung\footnote{Neben der Architekturentwicklung~\citep{software_architecture_in_practice,scenario_based_software_architecture_evaluation_methods} und der Anforderungsermittlung~\citep{weidenhaupt1998sus}, etwa im Bereich der Mensch-Computer-Interaktion~\cite{five_reasons_for_scenario_based_design}.} ein anerkanntes Verfahren um Anforderungen und Qualitätsmerkmale von Software konkret zu formulieren.
     \item[Top-Down] Es werden zuerst abstrakte Szenarien definiert, die zum einen sehr informell, zum anderen sowohl funktionale, wie auch nicht-funktionale Anforderungen in sich vereinen\footnote{Nach ~\citep[S. 42f]{weidenhaupt1998ssd} ist dieses Vorgehen auch bei anderen Szenario-basierten Modellen durchaus üblich.}. Im Zuge der Iterationen werden diese Szenarien immer detaillierter und formeller. Die Architektur entwickelt sich entsprechend ebenso weiter. Daher kann man hier von einem \emph{top-down} Vorgehen sprechen.
   \end{description}
   
@@ -43,7 +43,7 @@
   
   Betrachtet man zu dieser Definition, die aus der reinen Softwareentwicklung stammt, eine weitere, die ihren Ursprung in der Mensch-Computer-Interaktion hat, so ergibt sich ein, für diese Arbeit verwendbares Gesamtbild:
   
-  \begin{definition}[Szenario (Carroll & Rosson)]\label{def:szenario_carroll_rosson}
+  \begin{definition}[Szenario (Carroll \& Rosson)]\label{def:szenario_carroll_rosson}
     "`A [...] scenario is a story about people and their activities. [They] have a plot; they include sequences of actions and events, things that actors do, things that happen to them, changes in the setting and so forth."'~\emph{\citep[S. 16/18]{scenario_based_development}}
   \end{definition}
   
@@ -57,35 +57,27 @@
   
 \section{Szenariobasierte Methoden} % (fold)
 \label{sec:szenariobasierte_methoden}
+
+  Es existieren eine Vielzahl von szenariobasierten Methoden zur Evaluation von Softwarearchitekturen. Die meisten gehen dabei auf die Methoden SAAM\abk{SAAM}{Software Architecture Analysis Method} und ATAM zurück~\citep[S. 1]{scenario_based_software_architecture_evaluation_methods}, die initial am Carnegie Mellon Institut entwickelt worden sind. All diese Methoden haben jedoch das Ziel, die Qualitätsmerkmale, also die nicht-funktionalen Anforderungen einer Architektur zu evaluieren. In diesem Fall "`operationalisieren [Szenarien die] Qualitätsmerkmale [einer Architektur] und machen sie messbar"'~\citep[S. 61]{effektive_software_architekturen}. Wie aber bereits erwähnt (siehe Abschnitt~\ref{sub:servicekomposition_fragen}), wurden bei der Entwicklung von COSIMA nicht-funktionale Anforderungen ausgeblendet. Daher eignen sich diese Methoden nur bedingt zur Verwendung im Rahmen dieser Arbeit. Dennoch ist es aber durchaus als sinnvoll zu erachten, die Architektur in einem so frühen Stadium bereits zu überprüfen:
   
-- Warum wurde sich für dieses Vorgehen entschieden
-- Szenario-basierte Ansätze vorstellen
-- Warum macht es in diesem Kontext Sinn einen Szenario-basierten Ansatz zu wählen?
-- Vor-/Nachtteile gegenüber anderen Ansätzen der Validierung von Architekturen
-- Auf Methoden von G. Starke eingehen
-
-\subsection{Bekannte Methodiken} % (fold)
-\label{sub:bekannte_methodiken}
-
-SAAM:
-- Methode um Architekturen zu evaluieren (hier nur Validierung), siehe auch Kapitel \ref{cha:validierung_der_architektur}
-- Fokus auf User Interface Teile einer Architektur
-- Kein Fokus auf Szenarien: "`Tasks"' dienen dazu um gegen die geforderten Qualitätsmerkmale zu testen~\citep[S. 82]{saam}
-- Ziele aller Methoden vor allem auf nicht-funktionale Anforderungen gerichtet
-- Setzen eine bestehende Architektur vorraus
-- Im Rahmen dieser Arbeit kann nicht geleistet werden, dass eine Methode in ihrer Vollständigkeit angewendet wird -> Pragmatischer Ansatz!
-
-% subsection bekannte_methodiken (end)
-
-\subsection{Methode für diese Arbeit} % (fold)
-\label{sub:methode_fuer_diese_arbeit}
-
-  - Was machen wir also in dieser Arbeit?
-  - Zusammenfassen der Gründe.
-
-% subsection methode_fuer_diese_arbeit (end)
-
+  \begin{quote}
+    \emph{"`Evaluation need not wait until an architecture is fully specified."'} (\citep[S. 24]{evaluating_software_architectures})
+  \end{quote}
+  
+  Gleichzeitig ist es nicht zu empfehlen, die Evaluation in diesem frühen Stadium in vollem Umfang durchzuführen:
+  
+  \begin{quote}
+    \emph{"`[...] in practice, the expense and logistical burden of convening a full-blown evaluation is seldom undertaken when unwarranted by the state of the architecture."'} (\citep[S. 24]{evaluating_software_architectures})
+  \end{quote}
+  
+  Aus diesen beiden Gründen, Ausblendung der nicht-funktionalen Anforderungen und Unvollständigkeit der Architektur, wird im Rahmen dieser Arbeit darauf verzichtet, eine der etablierten szenariobasierten Methoden anzuwenden\footnote{Hinzu kommt, dass der Umfang einer Master Thesis es nicht erlaubt eine Evaluation durchzuführen, an der methodisch mehrere Personen arbeiten müssen.}. 
+  
+  Dennoch wurde sich dafür entschieden, grundsätzlich Szenarien zu verwenden, da sie sich gut zur Abbildung von Interaktionen zwischen Stakeholdern und dem System eignen. Auf die Durchführung der Validierung selbst wird in Kapitel~\ref{cha:validierung_der_architektur} genauer eingegangen. Im Folgenden wird jetzt das Szenario für die später Validierung vorgestellt.
+  
 % section szenariobasierte_methoden (end)
+
+\section{Das Szenario: Verteilte Lehrveranstaltung} % (fold)
+\label{sec:hochschulszenario}
 
 \section{Zur Fachdomäne des Szenarios} % (fold)
 \label{sec:zur_fachdomaene_des_szenarios}
@@ -99,9 +91,6 @@ SAAM:
   - CampusSource stellt eine ähnliche Architektur bereit (Fokus aber nur auf Lernen) -> dort ist zumindest begründet, dass es grundsätzlich sinnvoll ist eine verteilte, dienstorientierte Architektur zu verwenden (siehe \citep{campus_source})
 
 % section zur_fachdomaene_des_szenarios (end)
-
-\section{Hochschulszenario} % (fold)
-\label{sec:hochschulszenario}
 
   - Das Szenarion für die Durchgeführte Validierung
 
