@@ -3,30 +3,53 @@
 \chapter{Validierung der Architektur} % (fold)
 \label{cha:validierung_der_architektur}
 
-  \begin{definition}[Validierung]\label{def:validierung}
+  Bevor eine Validierung der Architektur gegen das Szenario stattfinden kann, wird zunächst definiert, was Validierung ist und wie es im Kontext dieser Arbeit verstanden wird.
+  
+\section{Definition} % (fold)
+\label{sec:definition_validierung}
+  
+  Eine Definition für Validierung liefert das offizielle Glossar des Software-Engineering der IEEE:
+
+  \begin{definition}[Validierung (IEEE)]\label{def:validierung_ieee}
     "`The process of evaluating a system or component during or at the end of the development process to determine whether it satisfies specified requirements. Contrast with: verification"'~\emph{\citep{ieee90sg}}
   \end{definition}
   
-  \begin{definition}[Verifikation]\label{def:verifikation}
-    "`The process of evaluating a system or component to determine whether the products of a given development phase satisfy the conditions imposed at the start of that phase. Contrast with: validation. (2) Formal proof of program correctness."'~\emph{\citep{ieee90sg}}
-  \end{definition}
-  
-  \begin{definition}[Verifikation und Validierung (V\&V)]\label{def:verifikation_und_validierung_vv}
-    "`The process of determining whether the requirements for a system or component are complete and correct, the products of each development phase fulfill the requirements or conditions imposed by the previous phase, and the final system or component complies with specified requirements. See also: independent verification and validation"'~\emph{\citep{ieee90sg}}
-  \end{definition}
+  In dieser Definition taucht der Begriff Evaluation auf, der wie folgt definiert werden kann:
   
   \begin{definition}[Evaluation]\label{def:evaluation}
     "`[Die] sach- und fachgerechte Bewertung"'\footnote{aus: Duden - Deutsches Universal Wörterbuch A-Z, 3. Aufl., 1996}
   \end{definition}
   
-  Im Kontext dieser Arbeit ist fachgerecht wie folgt zu verstehen ...
-
-  Einführung in die Validierung~\citep{balzert1998lst}
+  Eine "`fachgerechte Bewertung"' ist für den gegebenen Kontext so zu verstehen, dass die prototypische Implementierung der Architektur anhand bestimmter Kriterien bewertet wird. Wie in Kapitel~\ref{cha:szenario} jedoch bereits verdeutlicht wurde, wird im Rahmen dieser Arbeit keine Evaluierung der Architektur vorgenommen, sondern eine Validierung. Aus diesem Grunde wird hier daher die folgende Definition verwendet:
   
-\section{Definition} % (fold)
-\label{sec:definition}
-
-  - Validierung vs Evaluation (ausführlich)
+  \begin{definition}[Validierung (Balzert)]\label{def:validierung_balzert}
+    "`Unter Validation wird die Eignung bzw. der Wert eines Produktes bezogen auf seinen Einsatzzweck verstanden."'~\emph{\citep[S. 101]{balzert1998lst}}
+  \end{definition}
+  
+  Sie drückt wesentlich deutlicher aus, dass es darum geht, zu überprüfen, ob sich die Architektur grundsätzlich für die Konstruktion von verteilten Multimediaanwendungen eignet.
+  
+  Der Begriff der \emph{Validierung} steht in der Regel nicht für sich allein, sondern immer gemeinsam mit dem Begriff der \emph{Verifikation}. Auch wenn dieser für diese Arbeit keine weitere Relevanz hat, soll er der Vollständigkeit halber ebenfalls definiert werden:
+  
+  \begin{definition}[Verifikation (IEEE)]\label{def:verifikation_ieee}
+    "`The process of evaluating a system or component to determine whether the products of a given development phase satisfy the conditions imposed at the start of that phase. Contrast with: validation. (2) Formal proof of program correctness."'~\emph{\citep{ieee90sg}}
+  \end{definition}
+  
+  \begin{definition}[Verifikation (Balzert)]\label{def:verifikation_balzert}
+    "`Unter Verifikation wird die Überprüfung der Übereinstimmung zwischen einem Software-Produkt und seiner Spezifikation verstanden."'~\emph{\citep[S. 101]{balzert1998lst}}
+  \end{definition}
+  
+  Bei~\citep{boehm1984vv} wird die Bedeutungen von Verifikation und Validierung noch einmal auf den Punkt gebracht:
+  
+  \begin{description}
+    \item[Verifikation] "`Am I building the product right?"'~\citep[S. 75]{boehm1984vv}
+    \item[Validierung] "`Am I building the right product?"'~\citep[S. 75]{boehm1984vv}
+  \end{description}
+  
+  Es wird hier auch deutlich, warum zum gegebenen Zeitpunkt nur eine Validierung stattfinden kann und nicht zusätzlich auch eine Verifikation: Es existiert bis dato noch keine formale Spezifikation des Produkts, in diesem Fall der Architektur.
+  
+  % \begin{definition}[Verifikation und Validierung (V\&V)]\label{def:verifikation_und_validierung_vv}
+  %   "`The process of determining whether the requirements for a system or component are complete and correct, the products of each development phase fulfill the requirements or conditions imposed by the previous phase, and the final system or component complies with specified requirements. See also: independent verification and validation"'~\emph{\citep{ieee90sg}}
+  % \end{definition}
 
 % section definition (end)
 
