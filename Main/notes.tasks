@@ -12,3 +12,6 @@ Notizen und Gedanken zur Thesis
 - Medien enthalten den Geschäftsprozess?! -> MPEG-7 oder non-lineares Video
 - Wie kann man Medien sehen? Interne Modellierung der Medien, Geschäftsprozess greift auf diese interne Modellierung zu
 - Dienst und Dienstorientierung definieren
+- Abbildung von hierarchischen Medien (ähnlich wie MPEG-7) kann durch eine Serialisierung in XML geschehen
+- hierarchische Medien werden durch das Composite Pattern im Medien-Objekt ermöglicht.
+- Medienobjekt im Realisierungsteil noch mal aufgreifen

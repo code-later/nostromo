@@ -201,7 +201,7 @@
   In der Definition von~\citep{peltz2003wso} wird der Unterschied zwischen Choreographie und Orchestrierung deutlich:
   
   \begin{quote}
-    \emph{"`[...] choreography, which is more collaborative and allows each involved party to describe its part in the interaction. Choreography tracks the message sequences among multiple parties and sources --- typically the public message exchanges that occur between Web services --- rather than a specific business process that a single party executes."'} (\citep[S. 46]{peltz2003wso})
+    \emph{"`[\ldots] choreography, which is more collaborative and allows each involved party to describe its part in the interaction. Choreography tracks the message sequences among multiple parties and sources --- typically the public message exchanges that occur between Web services --- rather than a specific business process that a single party executes."'} (\citep[S. 46]{peltz2003wso})
   \end{quote}
 
   Choreographie verfolgt also einen dezentralen Ansatz; Es gibt nicht eine Instanz, die den Nachrichtenfluss kontrolliert, vielmehr tritt der Nachrichtenfluss zwischen den einzelnen Diensten in den Vordergrund.
@@ -296,15 +296,17 @@
     \emph{"`Ein Multimediasystem ist durch die rechnergesteuerte, integrierte Erzeugung, Manipulation, Darstellung, Speicherung und Kommunikation von unabhängigen Informationen gekennzeichnet, die in mindestens einem kontinuierlichen (zeitabhängigen) und einem diskreten (zeitunabhängigen) Medium kodiert sind."'} (\citep[S. 13]{multimedia_technologie})
   \end{quote}
   
-  Multimediasysteme oder -Anwendungen unterscheiden sich von Nicht-Multimediaanwendungen vor allem durch eine zeitliche Komponente~\citep[S. 14]{multimedia_technologie}: Zwischen den Informationen, die in unterschiedlichen Medien kodiert vorliegen kann und muss ein Bezug hergestellt werden können. Dieser Bezug wird als \emph{Synchronisation} bezeichnet. Eine Definition für Synchronisation, die auch für COSIMA Verwendung findet~\citep[S. 27]{bericht} ist:
+  Multimediasysteme oder -Anwendungen unterscheiden sich von Nicht-Multimedia\-anwendungen vor allem durch eine zeitliche Komponente~\citep[S. 14]{multimedia_technologie}: Zwischen den Informationen, die in unterschiedlichen Medien kodiert vorliegen kann und muss ein Bezug hergestellt werden können. Dieser Bezug wird als \emph{Synchronisation} bezeichnet. Eine Definition für Synchronisation, die auch für COSIMA Verwendung findet~\citep[S. 27]{bericht} ist:
   
   \begin{quote}
     \emph{"`Synchronization in the context of multimedia refers to the mechanisms used by processes (also specific to multimedia) to coordinate their ordering in the time domain."'} (\citep[S. 401]{steinmetz1990spm})
   \end{quote}
   
-  Synchronisation spielt im Kontext von Multimediaanwendungen also eine entscheidende Rolle und muss demnach explizit und prominent modelliert werden. Ein erster Ansatz zur Integration von Synchronisation in das COSIMA-Projekt sieht dazu eine dedizierte Komponenten innerhalb der Servicekomposition vor. Da eine dienstorientierte Architektur ohnehin stark ereignisorientiert sein sollte, um ein Maximum an Flexibilität zu erhalten~\citep[S. 96]{masak2007ssb} wurde im ersten Schritt auch eine ereignisorientierte Integration der Funktionalität zur Synchronisation vorgesehen.
+  Synchronisation spielt im Kontext von Multimediaanwendungen also eine entscheidende Rolle und muss demnach explizit und prominent modelliert werden. Ein erster Ansatz zur Integration von Synchronisation in das COSIMA-Projekt sieht dazu eine dedizierte Komponenten innerhalb der Servicekomposition vor. 
   
-  Die gesamte Thematik der Synchronisation ist sehr komplex und eine Vielzahl von Aspekten muss betrachtet werden~\citep[S. 27ff]{bericht}. In dieser Arbeit soll das grundsätzliche Konzept der Architektur im COSIMA-Projekt validiert werden, daher kann keine genauere Betrachtung der Synchronisation stattfinden.
+  Diese Komponente unterstützt dabei zwei unterschiedliche Arten von Synchronisation. Zum einen eine Ereigniss-gesteuerte, also nicht-deterministische Synchronisation\footnote{Relevant etwa bei Benutzer-Interaktionen oder Ausnahmebehandlungen}. Diese wird unter anderem bei~\citep{little1991ms} und~\citep{bertino1998tsm} beschrieben. Diese Sychronisationsbehandlung lässt sich sehr gut in COSIMA integrieren, da auch innerhalb einer dienstorientierten Architektur eine stark Ereignisorientierung anzustreben ist, um ein Maximum an Flexibilität zu erhalten~\citep[S. 96]{masak2007ssb}. Zum anderen ist noch eine Synchronisation über sogenannte \emph{Synchronisationsprimitive}, wie sie bei~\citep{gaggi2005msh} beschrieben wird, vorgesehen.
+  
+  Die gesamte Thematik der Synchronisation ist sehr komplex und eine Vielzahl von Aspekten muss betrachtet werden~\citep[S. 27ff]{bericht}. In dieser Arbeit soll das grundsätzliche Konzept der Architektur im COSIMA-Projekt validiert werden, daher kann an dieser Stelle keine genauere Betrachtung der Aspekte der Synchronisation stattfinden. Jedoch wird in Abschnitt~\ref{ssub:medienobjekt} im Zusammenhang mit dem Medienobjekt noch einmal darauf eingegangen.
 
 % subsubsection synchronisation (end)
 
@@ -335,15 +337,18 @@
 \subsubsection{Medienobjekt} % (fold)
 \label{ssub:medienobjekt}
 
-  Es wurde bereits in Abschnitt~\ref{ssub:nachrichtensystem} erläutert, dass in einer dienstorientierten Architektur der Datenfluss durch die Nachrichtenvermittlung realisiert wird. In~\citep[S. 27ff]{bericht} werden aber Eigenschaften von Mediendaten beschrieben, die sich nicht mit dem Verständnis von Daten bei "`klassischen"' dienstorientierten Architekturen decken. Aus diesen Unterschieden wurde die folgende Liste der Anforderungen an das Medienobjekt extrahiert~\citep{bericht}:
+  Es wurde bereits in Abschnitt~\ref{ssub:nachrichtensystem} erläutert, dass in einer dienstorientierten Architektur der Datenfluss durch die Nachrichtenvermittlung realisiert wird. In~\citep[S. 27ff]{bericht} werden aber Eigenschaften von Mediendaten beschrieben, die sich nicht mit dem Verständnis von Daten bei "`klassischen"' dienstorientierten Architekturen decken. Aus diesen Unterschieden wurde die folgende Liste der Anforderungen an das Medienobjekt extrahiert (nach~\citep{bericht}):
   
   \begin{description}
     \item[Erweiterbarkeit] Das COSIMA-Projekt soll Verwendung zur Entwicklung von Multimediaanwendungen in sehr vielen Domänen finden. Daher muss das Medienobjekt sich an diese Domänen leicht adaptieren lassen. Dies könnte durch eine abstrakte Darstellung der Eigenschaften von Medien erreicht werden.
     \item[Metadaten] Dort wo Medien verwendet werden, findet sich in den meisten Fällen auch eine Beschreibung dieser Medien. Diese Metadaten sind daher ebenso als \emph{first-class citizen} zu betrachten und inhärent im Medienobjekt verankert sein.
     \item[Streaming] Beim Umgang mit Medien, vor allem mit kontinuierlichen Medien spielen fast immer auch Datenströme, oder auch \emph{Streaming} eine wesentliche Rolle~\citep[S. 14ff]{multimedia_technologie}. Aus diesem Grund muss das Medienobjekt Streaming explizit vorsehen. Eng verbunden mit dem Streaming ist die \emph{Dienstgüte}~\citep{multimedia_technologie} und muss daher ebenfalls berücksichtigt werden.
     \item[Verteilung] In einer dienstorientierten und damit potentiell verteilten Architektur müssen auch die Medien verteilt zu prozessieren sein. Innerhalb des Medienobjektes müssen also dementsprechende Voraussetzungen geschaffen werden.
+    \item[Synchronisation] Wie bereits in Abschnitt~\ref{ssub:synchronisation} erläutert, ist es für eine Multimediaarchitektur inhärent notwenig die Synchronisation der Medien abzubilden. Neben den bereits beschriebenen Komponenten muss auch das Medienobjekt entsprechend dieser Anforderung modelliert werden.
   \end{description}
 
+  Um vor allem die Anforderungen nach \emph{Synchronisation} und \emph{Verteilung} zu erfüllen, wurde das Medienobjekt nach dem Vorbild des MET++-Frameworks~\citep[S. 75]{ackermann1996doo} mit dem \emph{Composite} Design Pattern modelliert~\citep[S. 163]{design_patterns}. Bei dem MET++-Framework wird durch diese rekursive Komposition vor allem die \emph{intermediale} Synchronisation adressiert~\citep[S. 73]{ackermann1996doo}\footnote{Die \emph{intermediale} oder \emph{interobjekt} Synchronisation steht im Gegensatz zu der \emph{intramedialen} oder \emph{intraobjekt} Synchronisation und wird bei~\citep[S. 613]{bertino1998tsm} näher beschrieben.}.
+  
 \begin{figure}[ht]
   \centering
     \includegraphics[width=.9\textwidth]{images/Medienobjekt.pdf}
@@ -351,13 +356,13 @@
   \label{fig:medienobjekt}
 \end{figure}
 
-  Um diese Ziele zu erreichen, wurde das Medienobjekt nach dem \emph{Composite} Design Pattern entworfen~\citep[S. 163]{design_patterns}. Abbildung~\ref{fig:medienobjekt} zeigt das stark vereinfachte Klassendiagramm des Medienobjektes. Viele Punkte sind immer noch offen\footnote{So zum Beispiel ob die tatsächlichen Medien oder lediglich Referenzen auf Medien übertragen werden sollen.}, jedoch verspricht die jetzige Grundstruktur ein hohes Maß an Flexibilität bei der weiteren Umsetzung.
+   Abbildung~\ref{fig:medienobjekt} zeigt das stark vereinfachte Klassendiagramm des Medienobjektes. Viele Punkte sind immer noch offen\footnote{So zum Beispiel ob die tatsächlichen Medien oder lediglich Referenzen auf Medien übertragen werden sollen.}, jedoch verspricht die jetzige Grundstruktur ein hohes Maß an Flexibilität bei der weiteren Umsetzung.
   
   Wie diese Medienobjekte innerhalb des Gesamtsystems vermittelt und übertragen werden sollen, stellt der folgende Abschnitt vor.
 
 % subsubsection medienobjekt (end)
 
-\subsubsection{Medien Broker} % (fold)
+b\subsubsection{Medien Broker} % (fold)
 \label{ssub:media_broker}
 
   \begin{definition}[Broker]\label{def:broker}
