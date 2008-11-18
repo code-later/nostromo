@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/axis2/services/AddMusicToMovieService?wsdl" uri="src/localhost_8080/axis2/services/AddMusicToMovieService.wsdl"/>
+    <system systemId="http://localhost:8080/axis2/services/ProvideMusicFileService?wsdl" uri="src/localhost_8080/axis2/services/ProvideMusicFileService.wsdl"/>
+</catalog>

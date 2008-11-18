@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProvideMusicFileServiceWrapper" targetNamespace="http://enterprise.netbeans.org/bpel/ProvideMusicFileServiceWrapper" xmlns:tns="http://enterprise.netbeans.org/bpel/ProvideMusicFileServiceWrapper" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns="http://services.demo.santiago.fhkoeln.de">
+    <import location="ProvideMusicFileService.wsdl" namespace="http://services.demo.santiago.fhkoeln.de"/>
+    <plnk:partnerLinkType name="ProvideMusicFileServiceLinkType">
+        <plnk:role name="ProvideMusicFileServiceRole" portType="ns:ProvideMusicFileServicePortType"/>
+    </plnk:partnerLinkType>
+</definitions>

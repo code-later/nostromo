@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ax25="http://services.santiago.fhkoeln.de/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ns="http://services.demo.santiago.fhkoeln.de" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://services.demo.santiago.fhkoeln.de">
+    <wsdl:documentation>AddMusicToMovieService</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.santiago.fhkoeln.de/xsd">
+            <xs:complexType name="IODescriptor">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="descriptorElements" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax26="http://services.santiago.fhkoeln.de/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.demo.santiago.fhkoeln.de">
+            <xs:import namespace="http://services.santiago.fhkoeln.de/xsd"/>
+            <xs:element name="executeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax26:IODescriptor"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getInputResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax26:IODescriptor"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="setInput">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="input" nillable="true" type="ax26:IODescriptor"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="setInputRequest">
+        <wsdl:part name="parameters" element="ns:setInput"/>
+    </wsdl:message>
+    <wsdl:message name="getInputRequest"/>
+    <wsdl:message name="getInputResponse">
+        <wsdl:part name="parameters" element="ns:getInputResponse"/>
+    </wsdl:message>
+    <wsdl:message name="executeRequest"/>
+    <wsdl:message name="executeResponse">
+        <wsdl:part name="parameters" element="ns:executeResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="AddMusicToMovieServicePortType">
+        <wsdl:operation name="setInput">
+            <wsdl:input message="ns:setInputRequest" wsaw:Action="urn:setInput"/>
+        </wsdl:operation>
+        <wsdl:operation name="getInput">
+            <wsdl:input message="ns:getInputRequest" wsaw:Action="urn:getInput"/>
+            <wsdl:output message="ns:getInputResponse" wsaw:Action="urn:getInputResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="execute">
+            <wsdl:input message="ns:executeRequest" wsaw:Action="urn:execute"/>
+            <wsdl:output message="ns:executeResponse" wsaw:Action="urn:executeResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="AddMusicToMovieServiceSoap11Binding" type="ns:AddMusicToMovieServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="setInput">
+            <soap:operation soapAction="urn:setInput" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getInput">
+            <soap:operation soapAction="urn:getInput" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="execute">
+            <soap:operation soapAction="urn:execute" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="AddMusicToMovieServiceSoap12Binding" type="ns:AddMusicToMovieServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="setInput">
+            <soap12:operation soapAction="urn:setInput" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getInput">
+            <soap12:operation soapAction="urn:getInput" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="execute">
+            <soap12:operation soapAction="urn:execute" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="AddMusicToMovieServiceHttpBinding" type="ns:AddMusicToMovieServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="setInput">
+            <http:operation location="AddMusicToMovieService/setInput"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="setInput"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getInput">
+            <http:operation location="AddMusicToMovieService/getInput"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getInput"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getInput"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="execute">
+            <http:operation location="AddMusicToMovieService/execute"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="execute"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="execute"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AddMusicToMovieService">
+        <wsdl:port name="AddMusicToMovieServiceHttpSoap11Endpoint" binding="ns:AddMusicToMovieServiceSoap11Binding">
+            <soap:address location="http://192.168.92.1:8080/axis2/services/AddMusicToMovieService.AddMusicToMovieServiceHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="AddMusicToMovieServiceHttpSoap12Endpoint" binding="ns:AddMusicToMovieServiceSoap12Binding">
+            <soap12:address location="http://192.168.92.1:8080/axis2/services/AddMusicToMovieService.AddMusicToMovieServiceHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="AddMusicToMovieServiceHttpEndpoint" binding="ns:AddMusicToMovieServiceHttpBinding">
+            <http:address location="http://192.168.92.1:8080/axis2/services/AddMusicToMovieService.AddMusicToMovieServiceHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
