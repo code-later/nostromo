@@ -11,9 +11,11 @@
  */
 package de.fhkoeln.santiago.media;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
@@ -57,6 +59,15 @@ public class SimpleMediaBrokerTest {
     MediaBroker mBroker = new SimpleMediaBroker();
     mBroker.store(mock(AbstractMedia.class));
     assertTrue(mBroker.knownElements() > 0);
+  }
+  
+  @Test
+  public void testShouldClearAllElements() {
+    MediaBroker mBroker = new SimpleMediaBroker();
+    mBroker.store(mock(AbstractMedia.class));
+    assertFalse(mBroker.isEmtpy());
+    mBroker.clearAll();
+    assertTrue(mBroker.isEmtpy());
   }
 
 }

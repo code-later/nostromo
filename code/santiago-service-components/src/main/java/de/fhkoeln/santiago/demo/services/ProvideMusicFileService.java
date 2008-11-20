@@ -11,6 +11,10 @@
  */
 package de.fhkoeln.santiago.demo.services;
 
+import de.fhkoeln.santiago.media.AbstractMedia;
+import de.fhkoeln.santiago.media.MediaBroker;
+import de.fhkoeln.santiago.media.MediaData;
+import de.fhkoeln.santiago.media.MemCachedMediaBroker;
 import de.fhkoeln.santiago.services.IODescriptor;
 
 
@@ -27,9 +31,23 @@ public class ProvideMusicFileService {
   
   private IODescriptor input;
   
+  private MediaBroker broker;
+  
+  public ProvideMusicFileService() {
+    broker = new MemCachedMediaBroker();
+  }
+  
   public IODescriptor execute() {
     IODescriptor output = new IODescriptor();
-    output.add(input.first());
+    
+    AbstractMedia outputMedia = new MediaData();
+    outputMedia.setName("MetalMusicFile");
+    outputMedia.setUri(input.first());
+    
+    broker.store(outputMedia);
+    
+    output.add(outputMedia.getName());
+    
     return output;
   }
 

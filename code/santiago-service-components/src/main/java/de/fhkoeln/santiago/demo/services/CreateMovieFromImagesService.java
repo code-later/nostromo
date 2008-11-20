@@ -17,6 +17,10 @@ import java.util.List;
 
 import de.fhkoeln.santiago.components.jmf.JMFImages2Movie;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
+import de.fhkoeln.santiago.media.AbstractMedia;
+import de.fhkoeln.santiago.media.MediaBroker;
+import de.fhkoeln.santiago.media.MediaData;
+import de.fhkoeln.santiago.media.MemCachedMediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
 
@@ -33,13 +37,11 @@ public class CreateMovieFromImagesService {
 
   private IODescriptor input;
   
+  private MediaBroker broker;
   
-//  public CreateMovieFromImagesService() {
-//    this.input = new IODescriptor();
-//    List inputFiles = new ArrayList<String>();
-//    inputFiles.add("/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/");
-//    this.input.setDescriptorElements((String[]) inputFiles.toArray());
-//  }
+  public CreateMovieFromImagesService() {
+    broker = new MemCachedMediaBroker();
+  }
   
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.services.CoreService#execute(de.fhkoeln.santiago.services.InputDescriptor)
@@ -50,11 +52,18 @@ public class CreateMovieFromImagesService {
     
     try {
       output = new IODescriptor();
-      output.add("file:///tmp/output.mov");
-//      output.setDescriptorElements(new String[] { "file:///tmp/output.mov" });
-      mediaAction = new JMFImages2Movie(getInput().first(), output.first());
+      
+      AbstractMedia outputMedia = new MediaData();
+      outputMedia.setName("MovieFromJPEGs");
+      outputMedia.setUri("file:///tmp/output.mov");
+      
+      output.add(outputMedia.getName());
+      
+      mediaAction = new JMFImages2Movie(getInput().first(), outputMedia.getUri());
       mediaAction.performAction();
 
+      broker.store(outputMedia);
+      
       return output;
     } catch (FileNotFoundException e) {
       e.printStackTrace();

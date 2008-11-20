@@ -25,6 +25,12 @@ import java.util.List;
  */
 public class MediaData extends AbstractMedia {
   
+  private static final long serialVersionUID = -7185178004655851316L;
+
+  public MediaData() {
+    super();
+  }
+  
   /**
    * Constructor to set the metadata object on creation.
    *
@@ -32,6 +38,21 @@ public class MediaData extends AbstractMedia {
    */
   public MediaData(List<Metadata> metadatas) {
     super(metadatas);
+  }
+  
+  /* (non-Javadoc)
+   * @see java.lang.Object#equals(java.lang.Object)
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof MediaData))
+      return false;
+    
+    MediaData otherMedia = (MediaData) obj;
+    if ((this.getName().equals(otherMedia.getName())) && (this.getUri().equals(this.getUri())))
+      return true;
+
+    return false;
   }
 
 }

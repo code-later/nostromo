@@ -42,6 +42,12 @@ public class IODescriptorTest {
   }
   
   @Test
+  public void testShouldReturnNullIfDescriptorHasNoElements() {
+    IODescriptor descriptor = new IODescriptor();
+    assertNull(descriptor.first());
+  }
+  
+  @Test
   public void testShouldAddElementsToDescriptor() {
     IODescriptor descriptor = new IODescriptor();
     descriptor.add("an_element_to_add");

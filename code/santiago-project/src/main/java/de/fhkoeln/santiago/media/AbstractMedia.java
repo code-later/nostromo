@@ -11,6 +11,8 @@
  */
 package de.fhkoeln.santiago.media;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,11 +25,18 @@ import java.util.List;
  * @version 1.0  Nov 16, 2008
  *
  */
-public abstract class AbstractMedia {
+public abstract class AbstractMedia implements Serializable {
   
+  private static final long serialVersionUID = -5578809582939403020L;
+
   private List<Metadata> metadatas;
   private String name;
   private String uri;
+  
+  
+  public AbstractMedia() {
+    metadatas = new ArrayList<Metadata>();
+  }
   
   /**
    * Constructor to set the metadata object on creation.

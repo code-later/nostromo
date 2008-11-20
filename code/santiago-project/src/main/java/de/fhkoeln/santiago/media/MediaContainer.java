@@ -28,8 +28,15 @@ import java.util.Set;
  */
 public class MediaContainer extends AbstractMedia {
 
+  private static final long serialVersionUID = -2032949448649491908L;
+
   private Map<String, AbstractMedia> mediaElements;
 
+  public MediaContainer() {
+    super();
+    setMediaElements(new HashMap<String, AbstractMedia>());
+  }
+  
   /**
    * Constructor to set the metadata object on creation.
    *

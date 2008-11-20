@@ -1,0 +1,25 @@
+require 'rake'
+require 'fileutils'
+
+TOMCAT_PATH        = "/Developer/Java-Server/apache-tomcat-6.0.18"
+AXIS2_SERVICE_PATH = "#{TOMCAT_PATH}/webapps/axis2/WEB-INF/services"
+AAR_FILE_NAME      = "santiago-service-components.aar"
+
+desc "Cleans the generated AAR File"
+task "aar:clean" do
+  puts "Deleting AAR-File at: ./target/#{AAR_FILE_NAME}"
+  FileUtils.rm("./target/#{AAR_FILE_NAME}")
+end
+
+desc "Create the AAR File"
+task "aar:build" => "aar:clean" do
+  system "mvn axis2-aar:aar"
+end
+
+desc "Copy AAR File to Tomcat"
+task "aar:install" => "aar:build" do
+  puts "Deleting AAR-File in AXIS2 Serivces at: #{AXIS2_SERVICE_PATH}/#{AAR_FILE_NAME}"
+  FileUtils.rm("#{AXIS2_SERVICE_PATH}/#{AAR_FILE_NAME}")
+  puts "Copying AAR-File to #{AXIS2_SERVICE_PATH}/#{AAR_FILE_NAME} ..."
+  FileUtils.cp("./target/#{AAR_FILE_NAME}", "#{AXIS2_SERVICE_PATH}/#{AAR_FILE_NAME}", :verbose => true)
+end

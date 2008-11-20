@@ -59,10 +59,12 @@ public class IODescriptor {
    * @return The first element in this descriptor.
    */
   public String first() {
-    System.err.println("Current descriptorElements object:");
-    System.err.println("  Class  : " + this.descriptorElements.getClass());
-    System.err.println("  Content: " + this.descriptorElements.toString());
-    return getDescriptorElements()[0];
+    try {
+      return getDescriptorElements()[0];
+    } catch (ArrayIndexOutOfBoundsException e) {
+      // if there are no elements just return null     
+      return null;
+    }
   }
 
   public void setDescriptorElements(String[] strings) {
@@ -76,7 +78,7 @@ public class IODescriptor {
   }
 
   /**
-   * @return
+   * @return If the Descriptor is empty.
    */
   public boolean isEmpty() {
     return descriptorElements.isEmpty();

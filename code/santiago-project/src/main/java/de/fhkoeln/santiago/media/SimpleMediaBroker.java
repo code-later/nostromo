@@ -57,4 +57,18 @@ public class SimpleMediaBroker implements MediaBroker {
     storage.put(media.getName(), media);
   }
 
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.media.MediaBroker#clearAll()
+   */
+  public void clearAll() {
+    storage.clear();
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.media.MediaBroker#emtpy()
+   */
+  public boolean isEmtpy() {
+    return storage.isEmpty();
+  }
+
 }

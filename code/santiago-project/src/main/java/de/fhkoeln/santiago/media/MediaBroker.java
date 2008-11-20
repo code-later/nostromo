@@ -37,4 +37,14 @@ public interface MediaBroker {
    */
   public AbstractMedia retrieve(String mediaId);
 
+  /**
+   * Clears the whole broker
+   */
+  public void clearAll();
+
+  /**
+   * @return true if the Broker knows no elements
+   */
+  public boolean isEmtpy();
+
 }

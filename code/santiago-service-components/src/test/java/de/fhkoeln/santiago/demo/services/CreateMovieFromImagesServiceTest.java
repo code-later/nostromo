@@ -44,7 +44,7 @@ public class CreateMovieFromImagesServiceTest {
     IODescriptor output = service.execute();
     assertNotNull(output);
     assertEquals(1, output.size());
-    assertEquals("file:///tmp/output.mov", output.first());
+    assertEquals("MovieFromJPEGs", output.first());
     assertTrue(new File("/tmp/output.mov").exists());
   }
   

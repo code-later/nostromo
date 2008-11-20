@@ -43,5 +43,18 @@ public class MediaDataTest {
     media.setUri("http://media.santiago.fh-koeln.de/sample.wav");
     assertEquals("http://media.santiago.fh-koeln.de/sample.wav", media.getUri());
   }
+  
+  @Test
+  public void testShouldBeAbleToCheckOnEquality() {
+    AbstractMedia media1 = new MediaData();
+    media1.setName("Foo");
+    media1.setUri("http://media.santiago.fh-koeln.de/foo.mp4");
+
+    AbstractMedia media2 = new MediaData();
+    media2.setName("Foo");
+    media2.setUri("http://media.santiago.fh-koeln.de/foo.mp4");
+    
+    assertEquals(media1, media2);
+  }
 
 }

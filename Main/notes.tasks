@@ -16,3 +16,5 @@ Notizen und Gedanken zur Thesis
 - hierarchische Medien werden durch das Composite Pattern im Medien-Objekt ermöglicht.
 - Medienobjekt im Realisierungsteil noch mal aufgreifen
 - Das Szenario sollte die Anforderungen des Systems für Verteilte Lehrveranstaltungen hergeben und dessen Entwicklung im Architektur-Rahmen von COSIMA motiviere
+- Medienobjekt sollte eine Beschreibung der Medien und Fragmente dieser Medien ermöglichen. Beispielsweise in MPEG-7. Besser jedoch mit einer Web-Technologie wie dem Semantic Web. Hierzu siehe das COMM-Projekt.
+- Streaming Web Service von IBM!
