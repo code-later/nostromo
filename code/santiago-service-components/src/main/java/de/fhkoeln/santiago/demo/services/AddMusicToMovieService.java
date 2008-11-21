@@ -11,6 +11,7 @@
  */
 package de.fhkoeln.santiago.demo.services;
 
+import de.fhkoeln.santiago.components.ffmpeg.FFMpegMerger;
 import de.fhkoeln.santiago.components.jmf.JMFMerger;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 import de.fhkoeln.santiago.media.AbstractMedia;
@@ -52,7 +53,8 @@ public class AddMusicToMovieService {
     AbstractMedia movieFile = broker.retrieve(this.input.getDescriptorElements()[0]); 
     AbstractMedia audioFile = broker.retrieve(this.input.getDescriptorElements()[1]); 
     
-    MediaAction action = new JMFMerger(movieFile.getUri(), audioFile.getUri(), outputMedia.getUri());
+//    MediaAction action = new JMFMerger(movieFile.getUri(), audioFile.getUri(), outputMedia.getUri());
+    MediaAction action = new FFMpegMerger(movieFile, audioFile, outputMedia);
     action.performAction();
     
     broker.store(outputMedia);

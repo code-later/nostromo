@@ -4,7 +4,8 @@ uri: http://localhost:8080/axis2/services/CreateMovieFromImagesService
 namespace: http://services.demo.santiago.fhkoeln.de
 input:
   - type: external
-    uri: /Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/
+    # uri: /Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/
+    uri: /Users/dbreuer/Desktop/Pics/
 output:
   - uri: http://localhost:8080/axis2/services/CreateMovieFromImagesService/output
 predecessors: null
@@ -17,8 +18,7 @@ uri: http://localhost:8080/axis2/services/ProvideMusicFileService
 namespace: http://services.demo.santiago.fhkoeln.de
 input:
   - type: external
-    uri: file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov
-    # uri: file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3
+    uri: file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3
 output:
   - uri: http://localhost:8080/axis2/services/ProvideMusicFileService/output
 predecessors: null

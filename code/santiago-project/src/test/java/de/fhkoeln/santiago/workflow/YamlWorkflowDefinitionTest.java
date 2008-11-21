@@ -75,7 +75,7 @@ public class YamlWorkflowDefinitionTest {
     WorkflowElement element = elements.iterator().next();
     
     assertEquals("http://localhost:8080/axis2/services/ProvideMusicFileService/input", element.getInput().get(0).getUri());
-    assertEquals("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov", element.getInput().get(0).getData());
+    assertEquals("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3", element.getInput().get(0).getData());
 //    assertEquals("/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/", element.getInput().get(0).getData());
   }
 

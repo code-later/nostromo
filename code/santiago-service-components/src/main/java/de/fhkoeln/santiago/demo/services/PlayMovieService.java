@@ -15,6 +15,7 @@ import java.io.IOException;
 
 import javax.media.NoPlayerException;
 
+import de.fhkoeln.santiago.components.ffmpeg.MPlayerPlayer;
 import de.fhkoeln.santiago.components.jmf.JMFPlayer;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 import de.fhkoeln.santiago.media.AbstractMedia;
@@ -45,18 +46,19 @@ public class PlayMovieService {
   public IODescriptor execute() {
     IODescriptor output = new IODescriptor();
     
-    try {
+//    try {
       AbstractMedia videoFile = broker.retrieve(input.first()); 
       
-      MediaAction player = new JMFPlayer(videoFile.getUri());
+//      MediaAction player = new JMFPlayer(videoFile.getUri());
+      MediaAction player = new MPlayerPlayer(videoFile);
       player.performAction();
-    } catch (NoPlayerException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+//    } catch (NoPlayerException e) {
+//      e.printStackTrace();
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
     
-    return output ;
+    return output;
   }
 
   public void setInput(IODescriptor input) {
