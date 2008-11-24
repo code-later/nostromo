@@ -257,7 +257,20 @@
 \section{Das Anwendungsszenario} % (fold)
 \label{sub:das_anwendungsszenario}
 
-  Wie bereits zu Beginn dieses Kapitels erwähnt, ist für die Validierung der Architektur im Rahmen dieser Arbeit der Andwendungsentwickler der Stakeholder von Interesse. Es gilt zu validieren, ob sich die Architektur grundsätzlich dazu eignet eine verteilte Multimediaapplikation zu implementieren. Grundlage für die Validierung soll ein \emph{Anwendungsszenario} sein, dass in diesem Abschnitt definiert wird. Die in den vorherigen Abschnitten vorgestellte Situation einer verteilten Lehrveranstaltung bietet den visionären Rahmen für dieses Szenario. Ein Teilbereich der dort beschriebenen Anwendung soll durch den Softwareentwickler implementiert werden.
+  Wie bereits zu Beginn dieses Kapitels erwähnt, ist für die Validierung der Architektur im Rahmen dieser Arbeit der Anwendungsentwickler der Stakeholder von Interesse. Es gilt zu validieren, ob sich die Architektur grundsätzlich dazu eignet eine verteilte Multimediaapplikation zu implementieren. Grundlage für die Validierung soll ein \emph{Anwendungsszenario} sein, dass in diesem Abschnitt definiert wird. Die in den vorherigen Abschnitten vorgestellte Situation einer verteilten Lehrveranstaltung bietet den visionären Rahmen für dieses Szenario.
+  
+  Als eine zentrale Komponente für die Realisierung der zuvor beschriebenen Situation einer verteilten Lehrveranstaltung kann die Erfassung von Video- und Audiosignalen sowie deren Transport über ein Netzwerk identifiziert werden. Der Anwendungsentwickler soll in diesem Szenario daher genau diese Funktionalität implementieren. In Abbildung~\ref{fig:schema_des_anwendungsszenario} ist dieses Szenario einmal schematisch dargestellt. Im Folgenden wird genauer auf die einzelnen Elemente eingegangen.
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=.9\textwidth]{images/Anwendungsszenario.pdf}
+  \caption{Schematische Darstellung des Anwendungsszenario}
+  \label{fig:schema_des_anwendungsszenario}
+\end{figure}
+
+  In diesem Szenario sind von dem Anwendungsentwickler eine Reihe von Schritten notwendig, um die Funktionalität am Ende liefern zu können. Der erste Schritt ist dabei, dass er den Workflow der Anwendung definieren muss. Dies geschieht in Form einer Beschreibungsdatei (Schritt \emph{a)} in der Abbildung). Anschließend implementiert er die, an dem Workflow beteiligten Services. In diesem Falle also einen \emph{Producer} Service für die Erfassung der Videodaten und einen \emph{Consumer} Service für die Darstellung der Videodaten (Schritte \emph{b)} und \emph{d)} in der Abbildung). Die Vermittlung der Daten wird dabei von dem \emph{Medien Broker} übernommen. Abschließend müssen die beiden Dienste nur noch auf den entsprechenden Systemen an den jeweiligen Standorten installiert werden (Schritte \emph{c)} und \emph{d)} in der Abbildung).
+  
+  Das Ergebnis der Implementierung ist, dass nach Starten des Workflows der \emph{Producer} Service beginnt, Daten von der angeschlossenen Videokamera abzugreifen und diese Daten über den \emph{Medien Broker} bekannt zu geben. Der \emph{Consumer} Service kann anschließend wieder über den \emph{Medien Broker} auf diese Daten zugreifen und sie darstellen. Eine unidirektionale Videoverbindung zwischen zwei Endpunkten ist hergestellt.
 
 % section das_anwendungsszenario (end)
 
