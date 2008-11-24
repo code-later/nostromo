@@ -75,10 +75,7 @@ public class MemCachedMediaBroker implements MediaBroker {
    * @see de.fhkoeln.santiago.media.MediaBroker#isEmtpy()
    */
   public boolean isEmtpy() {
-    int elements =
-        Integer.parseInt(client.getStats().get(
-            new InetSocketAddress("localhost", 11211)).get("curr_items"));
-    return elements > 0 ? false : true;
+    return knownElements() > 0 ? false : true;
   }
 
 }
