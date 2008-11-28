@@ -1,7 +1,7 @@
 /*
- * ProvideMusicFileService.java
+ * AbstractComponent.java
  *
- * Version 1.0  Sep 25, 2008
+ * Version 1.0  Nov 24, 2008
  *
  * Copyright notice
  *
@@ -12,9 +12,7 @@
 package de.fhkoeln.santiago.demo.services;
 
 import de.fhkoeln.santiago.demo.util.Logger;
-import de.fhkoeln.santiago.media.AbstractMedia;
 import de.fhkoeln.santiago.media.MediaBroker;
-import de.fhkoeln.santiago.media.MediaData;
 import de.fhkoeln.santiago.media.MemCachedMediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
@@ -26,48 +24,43 @@ import de.fhkoeln.santiago.services.IODescriptor;
  * Comment lines should not be longer than 70 characters.
  *
  * @author dbreuer
- * @version 1.0  Sep 25, 2008
+ * @version 1.0  Nov 24, 2008
  *
  */
-public class ProvideMusicFileService implements CoreService {
-  
-  private IODescriptor input;
+public abstract class AbstractComponent implements CoreService {
+
   private MediaBroker broker;
+  private IODescriptor input;
   
-  public ProvideMusicFileService() {
+  public AbstractComponent() {
     Logger.info("Booting Service: " + getClass().getName());
-  }
-  
-  public IODescriptor execute() {
-    IODescriptor output = new IODescriptor();
-    
-    AbstractMedia outputMedia = new MediaData();
-    outputMedia.setName("MetalMusicFile");
-    outputMedia.setUri(input.first());
-    
-    getBroker().store(outputMedia);
-    
-    output.add(outputMedia.getName());
-    
-    return output;
+    broker = new MemCachedMediaBroker();
   }
 
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.services.CoreService#execute()
+   */
+  public IODescriptor execute() {
+    Logger.info("Executing Service: " + getClass().getName());
+    IODescriptor output = _execute();
+    return output;
+  }
+  
+  abstract protected IODescriptor _execute();
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.services.CoreService#setInput(de.fhkoeln.santiago.services.IODescriptor)
+   */
   public void setInput(IODescriptor input) {
     this.input = input;
   }
-
+  
   public IODescriptor getInput() {
-    return input;
+    return this.input;
   }
 
-  public void setBroker(MediaBroker broker) {
-    this.broker = broker;
-  }
-
-  public MediaBroker getBroker() {
-    return broker;
+  protected MediaBroker getBroker() {
+    return this.broker;
   }
   
-  
-
 }

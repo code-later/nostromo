@@ -109,6 +109,8 @@ public class WorkflowRunner {
         }
       }
     }
+    
+    System.out.println("-> Workflow successfully executed!");
   }
   
   /**

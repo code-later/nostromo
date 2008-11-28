@@ -12,6 +12,7 @@
 package de.fhkoeln.santiago.demo.services;
 
 import de.fhkoeln.santiago.demo.data.Weather;
+import de.fhkoeln.santiago.demo.util.Logger;
 
 
 /**
@@ -23,16 +24,21 @@ import de.fhkoeln.santiago.demo.data.Weather;
  * @version 1.0  Sep 20, 2008
  *
  */
-public class WeatherService {
+public class WeatherService extends AbstractWeatherService {
   
   Weather weather;
   
   public Weather getWeather() {
+    Logger.info("getWeather Action");
     return this.weather;
   }
   
   public void setWeather(Weather weather) {
     this.weather = weather;
+  }
+  
+  public void say(String msg) {
+    Logger.info("Said: " + msg);
   }
   
 }

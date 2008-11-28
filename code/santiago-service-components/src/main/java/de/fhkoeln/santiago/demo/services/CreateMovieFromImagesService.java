@@ -12,11 +12,10 @@
 package de.fhkoeln.santiago.demo.services;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
 import de.fhkoeln.santiago.components.jmf.JMFImages2Movie;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
+import de.fhkoeln.santiago.demo.util.Logger;
 import de.fhkoeln.santiago.media.AbstractMedia;
 import de.fhkoeln.santiago.media.MediaBroker;
 import de.fhkoeln.santiago.media.MediaData;
@@ -33,21 +32,22 @@ import de.fhkoeln.santiago.services.IODescriptor;
  * @version 1.0  Sep 19, 2008
  *
  */
-public class CreateMovieFromImagesService {
+public class CreateMovieFromImagesService implements CoreService {
 
-  private IODescriptor input;
-  
   private MediaBroker broker;
+  private IODescriptor input;
+  private MediaAction mediaAction;
   
   public CreateMovieFromImagesService() {
-    broker = new MemCachedMediaBroker();
+    Logger.info("Booting Service: " + getClass().getName());
   }
-  
+
   /* (non-Javadoc)
    * @see de.fhkoeln.santiago.services.CoreService#execute(de.fhkoeln.santiago.services.InputDescriptor)
    */
   public IODescriptor execute() {
-    MediaAction mediaAction;
+    Logger.info("Booting Service: " + getClass().getName());
+
     IODescriptor output;
     
     try {
@@ -62,7 +62,7 @@ public class CreateMovieFromImagesService {
       mediaAction = new JMFImages2Movie(getInput().first(), outputMedia.getUri());
       mediaAction.performAction();
 
-      broker.store(outputMedia);
+      getBroker().store(outputMedia);
       
       return output;
     } catch (FileNotFoundException e) {
@@ -72,12 +72,23 @@ public class CreateMovieFromImagesService {
     return null;
   }
 
-  public void setInput(IODescriptor input) {
-    this.input = input;
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.services.CoreService#setInput(de.fhkoeln.santiago.services.IODescriptor)
+   */
+  public void setInput(IODescriptor descriptor) {
+    this.input = descriptor;
+  }
+  
+  public IODescriptor getInput() {
+    return this.input;
   }
 
-  public IODescriptor getInput() {
-    return input;
+  public MediaBroker getBroker() {
+    return this.broker;
+  }
+
+  public void setBroker(MediaBroker broker) {
+    this.broker = broker;
   }
 
 }

@@ -11,6 +11,8 @@
  */
 package de.fhkoeln.santiago.services;
 
+import javax.jws.WebService;
+
 /**
  * This is the service interface which every service component must
  * implement to be available via web service access. Every service
@@ -38,8 +40,8 @@ public interface CoreService {
    */
   public static final String SERVICE_EXECUTE_OPERATION = "execute";
 
-  public void setInput();
+  public void setInput(IODescriptor descriptor);
   
-  public IODescriptor execute(IODescriptor inputDescriptor);
+  public IODescriptor execute();
 
 }
