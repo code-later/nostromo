@@ -15,9 +15,10 @@ import de.fhkoeln.santiago.demo.util.Logger;
 import de.fhkoeln.santiago.media.AbstractMedia;
 import de.fhkoeln.santiago.media.MediaBroker;
 import de.fhkoeln.santiago.media.MediaData;
-import de.fhkoeln.santiago.media.MemCachedMediaBroker;
+import de.fhkoeln.santiago.media.MemcachedMediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
+import de.fhkoeln.santiago.services.registry.ServiceRegistry;
 
 
 /**
@@ -31,11 +32,17 @@ import de.fhkoeln.santiago.services.IODescriptor;
  */
 public class ProvideMusicFileService implements CoreService {
   
+  private final String URI         = "http://localhost:8080/axis2/services/ProvideMusicFileService";
+  private final String DESCRIPTION = "Producer:ProvideMusic";
+  
   private IODescriptor input;
   private MediaBroker broker;
+  private ServiceRegistry registry;
   
-  public ProvideMusicFileService() {
+  public ProvideMusicFileService(ServiceRegistry registry) {
     Logger.info("Booting Service: " + getClass().getName());
+    this.registry = registry;
+    this.registry.publish(this);
   }
   
   public IODescriptor execute() {
@@ -67,7 +74,19 @@ public class ProvideMusicFileService implements CoreService {
   public MediaBroker getBroker() {
     return broker;
   }
-  
-  
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.services.CoreService#getDescription()
+   */
+  public String getDescription() {
+    return this.DESCRIPTION;
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.services.CoreService#getUri()
+   */
+  public String getUri() {
+    return this.URI;
+  }
 
 }

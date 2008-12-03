@@ -24,24 +24,29 @@
 
 	<bean id="createMovieFromImagesService"
 		class="de.fhkoeln.santiago.demo.services.CreateMovieFromImagesService">
+    <constructor-arg index="0" ref="serviceRegistry" />
 		<property name="broker" ref="mediaBroker" />
 	</bean>
 
   <bean id="provideMusicFileService"
     class="de.fhkoeln.santiago.demo.services.ProvideMusicFileService">
+    <constructor-arg index="0" ref="serviceRegistry" />
     <property name="broker" ref="mediaBroker" />
   </bean>
 
   <bean id="addMusicToMovieService"
     class="de.fhkoeln.santiago.demo.services.AddMusicToMovieService">
+    <constructor-arg index="0" ref="serviceRegistry" />
     <property name="broker" ref="mediaBroker" />
   </bean>
 
   <bean id="playMovieService"
     class="de.fhkoeln.santiago.demo.services.PlayMovieService">
+    <constructor-arg index="0" ref="serviceRegistry" />
     <property name="broker" ref="mediaBroker" />
   </bean>
 
-	<bean id="mediaBroker" class="de.fhkoeln.santiago.media.MemCachedMediaBroker" />
+	<bean id="mediaBroker" class="de.fhkoeln.santiago.media.MemcachedMediaBroker" />
+	<bean id="serviceRegistry" class="de.fhkoeln.santiago.services.registry.MemcachedServiceRegistry" />
 
 </beans>

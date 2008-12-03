@@ -17,6 +17,7 @@ import java.io.IOException;
 
 import org.junit.Test;
 
+import de.fhkoeln.santiago.services.registry.MemcachedServiceRegistry;
 import de.fhkoeln.santiago.workflow.storage.MapProcessStoreImpl;
 
 
@@ -46,6 +47,7 @@ public class WorkflowRunnerTest {
       WorkflowRunner runner = new WorkflowRunner();
       runner.setDefinition(workflowDefinition);
       runner.setProcessStore(processStore);
+      runner.setRegistry(new MemcachedServiceRegistry());
       
       runner.run();
     

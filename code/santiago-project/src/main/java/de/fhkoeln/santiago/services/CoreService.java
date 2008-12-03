@@ -11,7 +11,6 @@
  */
 package de.fhkoeln.santiago.services;
 
-import javax.jws.WebService;
 
 /**
  * This is the service interface which every service component must
@@ -43,5 +42,9 @@ public interface CoreService {
   public void setInput(IODescriptor descriptor);
   
   public IODescriptor execute();
+
+  public String getUri();
+
+  public String getDescription();
 
 }

@@ -129,6 +129,7 @@ public class WorkflowElement {
 
   private String type;
   private String uri;
+  private String description;
   private String className;
   private String namespace;
   private Class<AbstractComponent> elementClass;
@@ -271,6 +272,14 @@ public class WorkflowElement {
 
   public String getNamespace() {
     return namespace;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public String getDescription() {
+    return description;
   }
 
 }

@@ -38,7 +38,7 @@ public class MemCachedMediaBrokerTest {
 
   @Before
   public void setup() {
-    broker = new MemCachedMediaBroker();
+    broker = new MemcachedMediaBroker();
     broker.clearAll();
   }
   

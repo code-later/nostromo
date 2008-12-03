@@ -19,9 +19,9 @@ import de.fhkoeln.santiago.demo.util.Logger;
 import de.fhkoeln.santiago.media.AbstractMedia;
 import de.fhkoeln.santiago.media.MediaBroker;
 import de.fhkoeln.santiago.media.MediaData;
-import de.fhkoeln.santiago.media.MemCachedMediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
+import de.fhkoeln.santiago.services.registry.ServiceRegistry;
 
 /**
  * Documentation comment without implementation details. 
@@ -34,12 +34,18 @@ import de.fhkoeln.santiago.services.IODescriptor;
  */
 public class CreateMovieFromImagesService implements CoreService {
 
+  private final String URI         = "http://localhost:8080/axis2/services/CreateMovieFromImagesService";
+  private final String DESCRIPTION = "Producer:CreateSlideshow";
+
   private MediaBroker broker;
   private IODescriptor input;
   private MediaAction mediaAction;
+  private ServiceRegistry registry;
   
-  public CreateMovieFromImagesService() {
+  public CreateMovieFromImagesService(ServiceRegistry registry) {
     Logger.info("Booting Service: " + getClass().getName());
+    this.registry = registry;
+    this.registry.publish(this);
   }
 
   /* (non-Javadoc)
@@ -89,6 +95,20 @@ public class CreateMovieFromImagesService implements CoreService {
 
   public void setBroker(MediaBroker broker) {
     this.broker = broker;
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.services.CoreService#getDescription()
+   */
+  public String getDescription() {
+    return this.DESCRIPTION;
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.services.CoreService#getUri()
+   */
+  public String getUri() {
+    return this.URI;
   }
 
 }

@@ -12,16 +12,14 @@
 package de.fhkoeln.santiago.demo.services;
 
 import de.fhkoeln.santiago.components.ffmpeg.FFMpegMerger;
-import de.fhkoeln.santiago.components.jmf.JMFMerger;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 import de.fhkoeln.santiago.demo.util.Logger;
 import de.fhkoeln.santiago.media.AbstractMedia;
 import de.fhkoeln.santiago.media.MediaBroker;
 import de.fhkoeln.santiago.media.MediaData;
-import de.fhkoeln.santiago.media.MemCachedMediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
-
+import de.fhkoeln.santiago.services.registry.ServiceRegistry;
 
 /**
  * Documentation comment without implementation details. 
@@ -34,11 +32,17 @@ import de.fhkoeln.santiago.services.IODescriptor;
  */
 public class AddMusicToMovieService implements CoreService {
   
+  private final String URI         = "http://localhost:8080/axis2/services/AddMusicToMovieService";
+  private final String DESCRIPTION = "Transformer:MergeMedia";
+  
   private IODescriptor input;
   private MediaBroker broker;
+  private ServiceRegistry registry;
   
-  public AddMusicToMovieService() {
+  public AddMusicToMovieService(ServiceRegistry registry) {
     Logger.info("Booting Service: " + getClass().getName());
+    this.registry = registry;
+    this.registry.publish(this);
   }
 
   public IODescriptor execute() {
@@ -77,6 +81,20 @@ public class AddMusicToMovieService implements CoreService {
 
   public MediaBroker getBroker() {
     return broker;
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.services.CoreService#getDescription()
+   */
+  public String getDescription() {
+    return this.DESCRIPTION;
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.services.CoreService#getUri()
+   */
+  public String getUri() {
+    return this.URI;
   }
 
 }

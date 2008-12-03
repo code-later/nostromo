@@ -1,5 +1,6 @@
 ---
 type: producer
+description: Producer:CreateSlideshow
 uri: http://localhost:8080/axis2/services/CreateMovieFromImagesService
 namespace: http://services.demo.santiago.fhkoeln.de
 input:
@@ -14,6 +15,7 @@ successors:
 
 ---
 type: producer
+description: Producer:ProvideMusic
 uri: http://localhost:8080/axis2/services/ProvideMusicFileService
 namespace: http://services.demo.santiago.fhkoeln.de
 input:
@@ -27,6 +29,7 @@ successors:
 
 ---
 type: transformer
+description: Transformer:MergeMedia
 uri: http://localhost:8080/axis2/services/AddMusicToMovieService
 namespace: http://services.demo.santiago.fhkoeln.de
 input:
@@ -44,6 +47,7 @@ successors:
 
 ---
 type: consumer
+description: Consumer:VideoPlayer
 uri: http://localhost:8080/axis2/services/PlayMovieService
 namespace: http://services.demo.santiago.fhkoeln.de
 input:

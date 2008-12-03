@@ -21,6 +21,7 @@ import org.apache.axis2.rpc.client.RPCServiceClient;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
 import de.fhkoeln.santiago.services.OutputDescriptor;
+import de.fhkoeln.santiago.services.registry.ServiceRegistry;
 import de.fhkoeln.santiago.workflow.WorkflowElement.Input;
 import de.fhkoeln.santiago.workflow.storage.ProcessStore;
 
@@ -47,6 +48,10 @@ public class WorkflowRunner {
    * The ProcessStore reference of this runner instance.
    */
   private ProcessStore processStore;
+  /**
+   * The Service Registry instance to query for service URIs.
+   */
+  private ServiceRegistry registry;
 
   /**
    * This is the main method of every runner. After successful
@@ -145,6 +150,15 @@ public class WorkflowRunner {
   }
 
   /**
+   * Sets the concrete Service Registry implementation. 
+   * 
+   * @param registry A service registry implementation.
+   */
+  public void setRegistry(ServiceRegistry registry) {
+    this.registry = registry;
+  }
+
+  /**
    * This method encapsulated the call of the remote service. So far
    * it only can handle SOAP services. All information of connecting
    * to the service component are encapsulated in the workflow
@@ -167,8 +181,9 @@ public class WorkflowRunner {
       
       Options options = client.getOptions();
       
-      System.out.println("Setting EPR to: " + element.getUri());
-      EndpointReference targetEPR = new EndpointReference(element.getUri());
+      String serviceUri = registry.query(element.getDescription());
+      System.out.println("Setting EPR to: " + serviceUri);
+      EndpointReference targetEPR = new EndpointReference(serviceUri);
       
       options.setTo(targetEPR);
 

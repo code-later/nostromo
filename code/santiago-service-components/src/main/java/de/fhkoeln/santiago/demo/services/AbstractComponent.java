@@ -13,7 +13,7 @@ package de.fhkoeln.santiago.demo.services;
 
 import de.fhkoeln.santiago.demo.util.Logger;
 import de.fhkoeln.santiago.media.MediaBroker;
-import de.fhkoeln.santiago.media.MemCachedMediaBroker;
+import de.fhkoeln.santiago.media.MemcachedMediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
 
@@ -34,7 +34,7 @@ public abstract class AbstractComponent implements CoreService {
   
   public AbstractComponent() {
     Logger.info("Booting Service: " + getClass().getName());
-    broker = new MemCachedMediaBroker();
+    broker = new MemcachedMediaBroker();
   }
 
   /* (non-Javadoc)
