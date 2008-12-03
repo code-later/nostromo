@@ -8,11 +8,11 @@
 \section{Motivation} % (fold)
 \label{sec:motivation_cosima}
 
-  Das COSIMA-Projekt ist aus dem Wahlpflichtfach Modellierung in audio-visuellen Medien (MIAV\abk{MIAV}{Modellierung in audio-visuellen Medien}) an der Fachhochschule Köln im Masterstudiengang der Medieninformatik hervorgegangen. Im Rahmen einer Projektarbeit wurde das die Projektidee weiter ausgearbeitet und konzipieren. Die Ergebnisse dieser Arbeit wurden als Institutsbericht an Fachhochschule Köln bereitsgestellt und sind dort im Detail einsehbar~\citep{bericht}.
+  Das COSIMA-Projekt ist aus dem Wahlpflichtfach Modellierung in audio-visuellen Medien (MIAV\abk{MIAV}{Modellierung in audio-visuellen Medien}) an der Fachhochschule Köln im Masterstudiengang der Medieninformatik hervorgegangen. Im Rahmen einer Projektarbeit wurde die Projektidee weiter ausgearbeitet und konzipiert. Die Ergebnisse dieser Arbeit wurden als Institutsbericht an der Fachhochschule Köln bereitsgestellt und sind dort im Detail einsehbar~\citep{bericht}.
   
-  Das folgende Kapitel wird daher nur auf die wesentliche Punkte des COSIMA-Projekts eingehen und ihre Relevanz für diese Arbeit herausstellen. Die ursprüngliche Idee hinter COSIMA war es ein Framework zu entwickeln, dass die Entwicklung von Multimediaanwendungen vereinfacht. Im Gegensatz zu anderen Medienframeworks, wie etwa dem \emph{Java Media Framework} (JMF\abk{JMF}{Java Media Framework}), wurde bei dem COSIMA-Projekt ein ganzheitlicher Ansatz verfolgt.
+  Das folgende Kapitel wird daher nur auf die wesentliche Punkte des COSIMA-Projekts eingehen und ihre Relevanz für diese Arbeit herausstellen. Die ursprüngliche Idee hinter COSIMA war es ein Framework zu entwickeln, dass die Entwicklung von Multimediaanwendungen vereinfacht. Im Gegensatz zu anderen Medienframeworks, wie etwa dem \emph{Java Media Framework}\footnote{\url{http://java.sun.com/javase/technologies/desktop/media/jmf/}} (JMF\abk{JMF}{Java Media Framework}), wurde bei dem COSIMA-Projekt dabei aber ein ganzheitlicher Ansatz verfolgt\footnote{Laut der offiziellen FAQ von Sun spezifiziert das JMF eine "`einfache, vereinheitlichte Architektur zur Synchronisation und Kontrolle von Audio, Video oder anderen zeitbasierten Daten innerhalb von Java Applikationen oder Applets."' Durch die JMF 2.0 API wird Verhalten zum Abspielen, Aufnehmen, Übertragen und Transkodieren von Daten spezifiziert~\citep{jmf_faq}.}.
   
-  Im Institutsbericht wird darauf hingewiesen, "`dass die Entwicklung von Multimediaanwendungen derzeit verhältnismässig aufwendig ist"'~\citep[S. 2]{bericht}. Eine Ursache dieser Problematik, liegt nach Aussage der Autoren darin begründet, dass sich die zur Zeit verfügbaren Rahmenwerke im Bereich der Multimediaverarbeitung auf einen sehr engen Einsatzbereich beschränken. Neben JMF sind hier zusätzlich noch \emph{QuickTime}\footnote{\url{http://www.apple.com/quicktime/}} und \emph{ImageJ}\footnote{\url{http://rsbweb.nih.gov/ij/}} zu nennen. Andere Aspekte von Multimediaanwendungen, wie etwa die Integration von Metadaten, müssten von dem Anwendungsentwickler erst manuell mit diesen Rahmenwerken integriert werden. "`Ein Meta-Framework, welches die bestehenden Ansätze verbinden und integrieren könnte, würde die Wiederverwendbarkeit und generelle Entwicklungsarbeit positiv beeinflussen, beziehungsweise vereinfachen"'~\citep[S. 3]{bericht}, wird von den Autoren des Berichts daher als Bestreben hinter dem COSIMA-Projekt angeführt.
+  Im Institutsbericht wird darauf hingewiesen, "`dass die Entwicklung von Multimediaanwendungen derzeit verhältnismässig aufwendig ist"'~\citep[S. 2]{bericht}. Eine Ursache dieser Problematik, liegt nach Aussage der Autoren darin begründet, dass sich die zur Zeit verfügbaren Rahmenwerke im Bereich der Multimediaverarbeitung auf einen sehr engen Einsatzbereich beschränken. Neben JMF sind hier zusätzlich noch \emph{QuickTime}\footnote{\url{http://www.apple.com/quicktime/}} und \emph{ImageJ}\footnote{\url{http://rsbweb.nih.gov/ij/}} zu nennen. Andere Aspekte von Multimediaanwendungen, wie etwa die Integration von Metadaten, müssten von dem Anwendungsentwickler erst manuell mit diesen Rahmenwerken integriert werden. "`Ein Meta-Framework, welches die bestehenden Ansätze verbinden und integrieren könnte, würde die Wiederverwendbarkeit und generelle Entwicklungsarbeit positiv beeinflussen, beziehungsweise vereinfachen"'~\citep[S. 3]{bericht}. Daher wird von den Autoren des Berichts die Entwicklung eines solchen Rahmenwerks als Bestreben hinter dem COSIMA-Projekt angeführt.
   
   Neben der Notwendigkeit ein \emph{Meta-Framework}\footnote{Das ursprüngliche Ziel war tatsächlich ein Framework zu schaffen. Erst während der Validierung im Rahmen dieser Arbeit ist zu Tage gekommen, dass es sich mehr um eine Architektur handelt und weniger um ein Framework. Im weiteren Verlauf wird darauf jedoch noch genauer eingegangen.} zu schaffen, führen die Autoren als weiteren Beweggrund das Fehlen einer Architektur für Multimediaanwendungen an. Innerhalb dieser Architektur könnten sich Anwendungsentwickler wesentlicher effektiver bewegen und müssten nicht erst eine eigene Architektur von Grund auf entwerfen.
   
@@ -52,28 +52,28 @@
     \item[Integration] Bestehende Frameworks können in Form von Diensten angeboten und so ihre Funktionalität eingebunden werden.
     \item[Erweiterbarkeit] Die Dienstorientierung erlaubt die Einbindung eigener Komponenten.
     \item[Skalierbarkeit] In einer verteilten, dezentralisierten Umgebung können einzelne Funktionalitäten als Dienste völlig unabhängig voneinander betrieben werden. Die Folge ist die vollständige Flexibilität in Bezug auf die Skalierbarkeit des gesamten Systems~\citep[S. 294]{web_services_principles_and_technology}.
-    \item[Medienobjekt-Modellierung] Modellierung von Medien in ganzheitlicher Betrachtungsweise von Rohdaten und Metadaten in einem Objekt.
+    \item[Medienobjekt-Modellierung] Modellierung von Medien in ganzheitlicher Betrachtungsweise von Rohdaten und Metadaten in einem Objekt oder Container.
     \item[Meta-Ebene] COSIMA fokussiert nicht auf Datensicht oder Metadatensicht sondern abstrahiert auf höhere Ebene.
     \item[Medienverarbeitung] Ganzheitliche Sicht auf Medienverarbeitung: Produktion, Verarbeitung, Transformation, Anreicherung, Wiedergabe, Ausgabe von Daten und Metadaten.
     \item[Architektur] COSIMA stellt eine Architektur für Multimediaanwendungen.
   \end{description}
   
-  Basierend auf den vorgestellten Zielen und Alleinstellungsmerkmalen wurde die Architektur entworfen, die in dieser Arbeit validiert und prototypisch realisiert wurde. Im Folgenden Abschnitt wird diese Architektur im Detail vorgestellt werden.
+  Basierend auf den vorgestellten Zielen und Alleinstellungsmerkmalen wurde die Architektur entworfen, die in dieser Arbeit validiert und prototypisch realisiert wurde. Im Folgenden Abschnitt wird diese Architektur im Detail vorgestellt.
 
 % section alleinstellungsmerkmale (end)
 
 \section{Architektur} % (fold)
 \label{sec:architektur}
 
-  Die Architektur des COSIMA-Projekts ist iterativ nach einem dedizierten Vorgehensmodell\footnote{Dieses Modell wird im Abschnitt~\ref{cha:szenario} kurz vorgestellt und detailliert im Institutsbericht~\citep[S. 7ff]{bericht} beschrieben und diskutiert.} bis zu dem Punkt entwickelt worden, der als Ausgangspunkt für die Betrachtungen in dieser Arbeit dient. Bevor dieser aktuelle Stand jedoch in den folgenden Abschnitten im Detail vorgestellt wird, soll zunächst einmal der Begriff Architektur definiert und eingeordnet werden.
+  Die Architektur des COSIMA-Projekts ist iterativ nach einem dedizierten Vorgehensmodell\footnote{Dieses Modell wird im Abschnitt~\ref{cha:szenario} kurz vorgestellt und detailliert im Institutsbericht~\citep[S. 7ff]{bericht} beschrieben und diskutiert.} bis zu dem Punkt entwickelt worden, der als Ausgangspunkt für die Betrachtungen in dieser Arbeit dient. Bevor dieser aktuelle Stand jedoch in den folgenden Abschnitten im Detail vorgestellt wird, soll zunächst einmal die Begriffe \emph{Architektur}, \emph{Dienstorientierung} und \emph{Dienst} definiert und eingeordnet werden.
   
 \subsection{Definition: Software Architekturen} % (fold)
 \label{sub:definition_software_architekturen}
 
-  Der Begriff der Architektur im Kontext der Softwaretechnik und -entwicklung lässt sich sehr breit fassen. Es existieren unzählige Bücher zu dem Thema und allein das Software Engineering Institute (SEI)\abk{SEI}{Software Engineering Institute} der Carnegie Mellon Universität hat online bisher über 80 Definition von Architektur zusammen getragen\footnote{\url{http://www.sei.cmu.edu/architecture/definitions.html}, zuletzt abgerufen am 03. November 2008}. Daher soll an dieser Stelle eine Einordnung des Begriffs der Software Architektur vorgestellt werden, wie er in dieser Arbeit Verwendung findet.
+  Der Begriff der Architektur im Kontext der Softwaretechnik und -entwicklung lässt sich sehr breit fassen. Es existieren unzählige Bücher zu diesem Thema und allein das Software Engineering Institute (SEI)\abk{SEI}{Software Engineering Institute} der Carnegie Mellon Universität hat auf seiner Webseite bisher über 80 Definitionen von Architektur zusammen getragen\footnote{\url{http://www.sei.cmu.edu/architecture/definitions.html}, zuletzt abgerufen am 03. November 2008}. Daher soll an dieser Stelle eine Einordnung des Begriffs der \emph{Software Architektur} vorgestellt werden, wie er in dieser Arbeit Verwendung findet.
   
 \subsubsection{Definitionen} % (fold)
-\label{ssub:definitionen}
+\label{ssub:definitionen_architektur}
 
   Das IEEE definiert in ihrem Glossar zur Softwaretechnik den Begriff Architektur wie folgt:
   
@@ -95,7 +95,7 @@
     "`The software architecture of a program or computing system is the structure or structures of the system, which comprise software components, the externally visible properties of those components, and the relationship among them."'~\emph{\citep[S. 21]{software_architecture_in_practice}}
   \end{definition}
   
-  Darüber hinaus ist noch die Unterscheidung von \emph{Software}- und \emph{System}-Architekturen zu treffen~\citep[S. xix]{evaluating_software_architectures}. Eine System-Architektur berücksichtigt dabei deutlich mehr Komponenten, wie etwa die Hardware und deren Umgebung auf der die Software installiert werden soll. Diese Trennung wird auch in den entsprechenden Definitionen des SEI deutlich:
+  Darüber hinaus ist noch die Unterscheidung von \emph{Software}- und \emph{System}-Architekturen zu treffen~\citep[S. xix]{evaluating_software_architectures}. Eine System-Architektur berücksichtigt dabei deutlich mehr Komponenten, wie etwa Hardware und Umgebung auf der die Software installiert werden soll. Diese Trennung wird auch in den entsprechenden Definitionen des SEI deutlich:
   
   \begin{definition}[Software-Architektur (SEI)]\label{def:software_architektur_sei}
     "`The structure or structures of a system, which comprise the software elements, the externally visible properties of those elements, and the relationships among them."'~\emph{\citep{sei_glossary}}
@@ -113,23 +113,151 @@
 
 % subsubsection definitionen (end)
 
-  Die Architektur einer Software ist also die strukturelle Aufteilung der Software in einzelne, von einander unabhängige Komponenten, deren Eigenschaften und Beziehungen untereinander. Im Folgenden werden nun diese einzelnen Komponenten der COSIMA Architektur vorgestellt werden.
+  Die Architektur einer Software ist also die strukturelle Aufteilung der Software in einzelne, von einander unabhängige Komponenten, deren Eigenschaften und Beziehungen untereinander. 
 
 % subsection definition_software_architekturen (end)
+
+\subsection{Definition: Dienst und Dienstorientierung} % (fold)
+\label{sub:definition_dienst_und_dienstorientierung}
+
+  Mit dem Begriff der \emph{dienstorientierten Architekturen} oder auch \emph{SOA} beschäftigt sich die Fachliteratur thematisch bereits seit über 10 Jahren\footnote{Die Gartner Group hat sich das erste Mal 1996 mit diesem Begriff beschäftigt: SSA Research Note SPA-401-068, 12 April 1996, "`'Service Oriented' Architectures, Part 1"' und SSA Research Note SPA-401-069, 12 April 1996, "`'Service Oriented' Architectures, Part 2"'~\citep{natis2003soa}}. Während der letzten Jahre hat er immer mehr Prominenz, auch für die Verwendung im industriellen Umfeld erlangen können. Es finden sich unzählige Informationen zu diesem Thema, wie es einen echten Mehrwert für Unternehmen und ihre IT-Landschaft bieten kann\footnote{Eine nicht-repräsentative Suche bei Google.com vom 02.12.2008 hat für den Suchbegriff "`SOA"' 35.900.000 Treffer ergeben.}. Viele dieser Aussagen sind nicht zu letzt mehr durch Marketing-Abteilungen geprägt, als durch einen technischen Hintergrund. Die Gartner Group in einer Pressemitteilung von 2007 zum Thema SOA folgenden Prognose abgegeben:
+  
+  \begin{quote}
+    \emph{"`Service-oriented architecture (SOA) will be used in more than 50 percent of new mission-critical operational applications and business processes designed in 2007 and in more than 80 percent by 2010."'}\footnote{\url{http://www.gartner.com/it/page.jsp?id=503864}, zuletzt abgerufen am 02. Dezember 2008}
+  \end{quote}
+  
+  Es ist somit anzunehmen, dass SOA nicht nur einen kurzweiligen, technologischen Trend beschreibt, sondern vielmehr einen Paradigmenwechsel bei der Konstruktion von komplexen und verteilten Applikationen~\citep[S. 1]{service_oriented_computing}. Gerade dann ist es jedoch notwendig, die relevante Begriffe der dienstorientierten Architektur im Rahmen dieser Arbeit zu definieren. Da es jedoch keine einheitliche und allgemein anerkannte Definition dazu gibt~\citep[S. 6]{soa_goes_real}, werden im Folgenden Definitionen unterschiedlicher Herkunft zur Eingrenzung herangezogen.
+  
+\subsubsection{Definitionen} % (fold)
+\label{ssub:definitionen_soa}
+
+  Die Begriffe \emph{Dienstorientierung} und \emph{dienstorientierte Architektur} beinhalten beide als konstituierendes Element den Begriff \emph{Dienst}, daher soll dieser Begriff vor den anderen beiden definiert werden.
+  
+\paragraph{Definition: Dienst} % (fold)
+\label{par:dienst}
+
+  Eine sehr allgemeine Definition, was ein Dienst ist, liefert Masak. Der Wert dieser Definition liegt vor allem darin, dass durch sie alles als Dienst aufgefasst werden kann:
+
+\begin{definition}[Dienst (allgemein)]\label{def:dienst_allgemein_}
+  "`Alles, was aus- oder durchgeführt werden kann ist ein Service!"'~\emph{\citep[S. 16]{masak2007ssb}}
+\end{definition}
+
+  Im Rahmen dieser Arbeit und für das allgemeine Verständnis ist es jedoch essentiell, welche Eigenschaften einen Dienst am Ende auszeichnen. Die Definition der OASIS nennt hier die Möglichkeit des Zugriff auf bestimmte Funktionalitäten über eine wohl-definierte und formal beschriebene Schnittstelle:
+
+\begin{definition}[Dienst (OASIS)]\label{def:dienst_oasis_}
+  "`A service is a mechanism to enable access to one or more capabilities, where the access is provided using a prescribed interface and is exercised consistent with constraints and policies as specified by the service description."'~\emph{\citep[S. 12]{mackenzie2006rms}}
+\end{definition}
+
+  Die Definition von Papazoglou nennt darüber hinaus drei essentielle Eigenschaften, die ein Dienst erfüllen muss, um als Dienst gelten zu können:
+
+\begin{definition}[Dienst (Papazoglou)]\label{def:dienst_papazoglou_}
+  "`A service in SOA ist an exposed piece of functionality with three essential properties. An SOA-based service is a self-contained [\ldots] and platform-independet [\ldots] service that can be dynamically located and invoked."'~\emph{\citep[S. 258]{web_services_principles_and_technology}}
+\end{definition}
+
+  Für den weiteren Verlauf dieser Arbeit können also folgenden Eigenschaften festgehalten werden, die eine Dienst auszeichnen:
+  
+  \begin{itemize}
+    \item Eine wohl-definierte und formale Schnittstelle
+    \item In sich abgeschlossen
+    \item Plattformunabhängigkeit
+    \item Dynamische Lokalisierung und Ausführung
+  \end{itemize}
+
+% paragraph dienst (end)
+
+\paragraph{Definition: Dienstorientierung} % (fold)
+\label{par:definition_dienstorientierung}
+
+  Bevor auf die dienstorientierte Architektur eingegangen werden kann, soll noch der Begriff der Dienstorientierung für sich definiert werden:
+
+\begin{definition}[Dienstorientierung]\label{def:dienstorientierung}
+  "`Service-orientation is a design paradigm intended for the creation of solution logic units that are individually shaped so that they can be collectively and repeatedly utilized in support of the realization of a specific set of strategic goals and benefits associated with SOA and service-oriented computing."'~\emph{\citep{erl2008soa}}
+\end{definition}
+
+  Es handelt sich bei der Dienstorientierung demnach um das Entwurfsparadigma, dass hinter einer dienstorientierten Architektur steht. Erl nennt in diesem Zusammenhang die folgenden acht Entwurfsprinzipien, die wiederum der Dienstorientierung selbst zu Grunde liegen~\citep{erl2008soa}.
+
+  \begin{itemize}
+    \item Standardized Service Contract 
+    \item Service Loose Coupling 
+    \item Service Abstraction 
+    \item Service Reusability 
+    \item Service Autonomy 
+    \item Service Statelessness 
+    \item Service Discoverability 
+    \item Service Composability
+  \end{itemize}
+  
+  Teile dieser Prinzipien finden sich auch in den Eigenschaften von Diensten selbst wieder, wie im vorherigen Abschnitt deutlich wurde. Erl weisst darüber hinaus darauf hin, dass die Dienstorientierung ihre Wurzeln in vielen unterschiedliche Disziplinen der modernen Softwareentwicklung hat, wie Abbildung~\ref{fig:images_Wurzeln_Dienstorientierung} zeigt.
+  
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=.9\textwidth]{images/Wurzeln_Dienstorientierung.pdf}
+  \caption{Einflüsse auf das Paradigma der Dienstorientierung nach~\citep{erl2008soa}}
+  \label{fig:images_Wurzeln_Dienstorientierung}
+\end{figure}
+
+% paragraph definition_dienstorientierung (end)
+
+\paragraph{Definition: dienstorientierte Architektur} % (fold)
+\label{par:definition_dienstorientierte_architektur}
+
+  Bei der Definition von Natis wird zunächst die Schnittstelle zwischen den Diensten in den Vordergrund gerückt:
+
+\begin{definition}[SOA (Natis)]\label{def:soa_natis_2003_}
+  "`Essentially, SOA is a software architecture that starts with an interface definition and builds the entire application topology as a topology of interfaces, interface implementations and interface calls."'~\emph{\citep[S. 2]{natis2003soa}}
+\end{definition}
+
+  Obwohl die Konstruktion einer Architektur, die rund um definierte Schnittstellen aufgebaut wird, als Teilaspekt auch innerhalb einer SOA von Bedeutung ist, macht das allein noch keine dienstorientierte Architektur aus\footnote{Auch in der objektorientierten Programmierung gilt das Prinzip, dass gegen Interfaces und nicht gegen Implementierungen programmiert werden soll~\citep[S. 18]{design_patterns}.}. Die Definition der OASIS\abk{OASIS}{Organization for the Advancement of Structured Information Standards} fokussiert im Gegensatz dazu stärker auf den Aspekt der Verteiltheit und das einzelne Einheiten unterschiedlichen Domänen und Besitzern zugeordnet sein können:
+
+\begin{definition}[SOA (OASIS Reference Model)]\label{def:soa_oasis_reference_model_}
+  "`Service Oriented Architecture (SOA) is a paradigm for organizing and utilizing distributed capabilities that may be under the control of different ownership domains."'~\emph{\citep[S. 8]{mackenzie2006rms}}
+\end{definition}
+
+  Nach Josuttis ist der Hintergrund der Softwareentwicklung die Abstraktion. Entscheiden ist lediglich nur aus welcher Perspektive die Abstraktion durchgeführt wird. Im Falle der dienstorientierten Architekturen findet diese Abstraktion aus Sicher der Geschäftsaspekte statt~\citep[S. 16]{soa_in_practice}. Darüber hinaus erweitert er die Definition der OASIS noch um die Größe der IT-Landschaft und stellt die Heterogenität der beteiligten Systeme heraus:
+
+\begin{definition}[SOA (Josuttis)]\label{def:soa_josuttis_}
+  "`SOA is an architectural paradigm for dealing with business processes distributed over a large landscape of existing and new heterogeneous systems that are under the control of different owners."'~\emph{\citep[S. 24]{soa_in_practice}}
+\end{definition}
+
+  Ein weiteres wesentliches Merkmal, vor allem auch für das COSIMA-Projekt, ist nach Papazoglou die technologische-agnostische Charakteristik der einzelnen Dienste. Zusätzlich beschreibt er die SOA als eine Meta-Architektur und betont die lose Kopplung der Dienste untereinander:
+
+\begin{definition}[SOA (Papazoglou)]\label{def:soa_papazoglou_}
+  "`[\ldots] SOA is a meta-architectural style that supports loosely coupled services to enable business flexibility in an interoperable, technology-agnostic manner."'~\emph{\citep[S. 257]{web_services_principles_and_technology}}
+\end{definition}
+
+- Eigenschaften einer SOA
+
+% paragraph definition_dienstorientierte_architektur (end)
+
+  - Einordnung in SOC nach Papazoglou
+  - Einfache und erweiterte SOA
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=.9\textwidth]{images/Extended_SOA.pdf}
+  \caption{Erweiterte dienstorientierte Architektur nach Papazoglou~\citep{papazoglou2007soc}}
+  \label{fig:images_Extended_SOA}
+\end{figure}
+
+% subsubsection definitionen_soa (end)
+
+% subsection definition_dienst_und_dienstorientierung (end)
+
+  Nach dieser begrifflichen Einordnung der wesentliche Begriffe, werden im Folgenden nun die einzelnen Komponenten der COSIMA Architektur vorgestellt.
 
 \subsection{Einführung} % (fold)
 \label{sub:einfuehrung}
 
   Bei der Konzeption und Entwicklung der Architektur sind unterschiedliche Sichten auf diese erstellt worden. Diese Sichten entsprechen denen von Starke in~\citep[S. 83]{effektive_software_architekturen} beschriebenen vier Arten von Sichten auf eine Software-Architektur: \emph{Kontextsichten}, \emph{Bausteinsichten}, \emph{Laufzeitsichten} und \emph{Verteilungssichten}.
 
-  Für das COSIMA-Projekt wurden bisher Darstellungen aus zwei dieser Kategorien erstellt: eine der Kontextsichten und drei der Bausteinsichten. Die Kontextsichten legen laut Starke den "`Fokus auf den Zusammenhang oder das Umfeld des Systems"'~\citep[S. 87]{effektive_software_architekturen}, was auch auf die in Abbildung~\ref{fig:Kontextsicht_Architektur_COSIMA} dargestellte Kontextsicht von COSIMA zutrifft. Hier wird lediglich ein abstrakter und vor allem nicht formaler Überblick über die Architektur und beteiligte Systeme gegeben. Die Darstellungen, die sich den Bausteinsichten zuordnen lassen, sind namentlich das \emph{Komponentendiagramm}, das \emph{Kompositionsstrukturdiagramm} und der \emph{Grobentwurf} der Architektur. Diese finden sich jeweils in~\citep{bericht} und sollen an dieser Stelle nicht weiter betrachtet werden\footnote{\textbf{TODO}: Im weiteren Verlauf werden sicher Teile aus diesen Diagrammen benötigt, daher muss dann darauf referenziert werden.}. Für die weitere Vorstellung der Architektur soll an dieser Stelle die Kontextsicht genügen.
+  Für das COSIMA-Projekt wurden bisher Darstellungen aus zwei dieser Kategorien erstellt: eine der Kontextsichten und drei der Bausteinsichten. Die Kontextsichten legen laut Starke den "`Fokus auf den Zusammenhang oder das Umfeld des Systems"'~\citep[S. 87]{effektive_software_architekturen}, was auch auf die in Abbildung~\ref{fig:Kontextsicht_Architektur_COSIMA} dargestellte Kontextsicht von COSIMA zutrifft. Hier wird lediglich ein abstrakter und vor allem nicht formaler Überblick über die Architektur und beteiligte Systeme gegeben. Die Darstellungen, die sich den Bausteinsichten zuordnen lassen, sind namentlich das \emph{Komponentendiagramm}, das \emph{Kompositionsstrukturdiagramm} und der \emph{Grobentwurf} der Architektur. Diese finden sich jeweils in~\citep{bericht} und sollen an dieser Stelle nicht weiter betrachtet werden. Für die weitere Vorstellung der Architektur soll an dieser Stelle die Kontextsicht genügen.
 
-\begin{figure}[ht]
-  \centering
-    \includegraphics[width=.9\textwidth]{images/Kontextsicht_Architektur_COSIMA}
-  \caption{Kontextsicht der Architektur des COSIMA-Projekts}
-  \label{fig:Kontextsicht_Architektur_COSIMA}
-\end{figure}
+  \begin{sidewaysfigure}[hp]
+    \centering
+    \includegraphics[width=\textwidth]{images/Kontextsicht_Architektur_COSIMA}
+    \caption{Kontextsicht der Architektur des COSIMA-Projekts}
+    \label{fig:Kontextsicht_Architektur_COSIMA}
+  \end{sidewaysfigure}
 
   In der späteren prototypischen Realisierung und anschließenden Validierung der Architektur sollen und können nur Fragmente der Architektur umgesetzt werden, daher ist es sehr wichtig, solche Fragmente zu wählen, die für eine Weiterentwicklung von besonderem Interesse sind. Im Folgenden werden daher die zentralen Komponenten des COSIMA-Projekts kurz vorgestellt. \emph{Später soll dann eine Auswahl getroffen werden.}
 
@@ -142,6 +270,8 @@
 \label{sub:medienverarbeitende_komponenten}
 
   Den Kern von COSIMA machen die medienverarbeitenden Komponenten aus, die vom Anwendungsentwickler in eine entsprechende Abfolge gebracht werden und damit die später Multimediaanwendung selbst darstellen: \emph{Producer}, \emph{Transformer} und \emph{Consumer}. Dem Entwurf der Komponenten liegt das \emph{Quelle-Komponente-Senke} Prinzip zu Grunde. Die innerhalb des COSIMA-Projekts verwendete Bezeichnung ist nach~\citep{a_multimedia_component_kit,multimedia_component_frameworks} ebenso valide wie die geläufigere Bezeichnung "`Quelle-Komponente-Senke"'. Da es sich bei COSIMA jedoch um eine komponentenbasierte Architektur handelt, wodurch Benennungsschwierigkeiten aufkamen, die die Verwendung einer alternativen Begrifflichkeit begünstigten.
+  
+  HIER AUCH AUF SAMMA'S ARBEIT VERWEISE~\citep[S. 23]{samma08}.
   
   Diese medienverarbeitenden Komponenten sind alle als Dienste ausgeprägt, um dem Anspruch der Dienstorientierung gerecht zu werden. Eine Komponente kann dabei niemals eine andere Komponente direkt aufrufen, diese Aufgabe obliegt der \emph{Service Komposition} (siehe Abschnitt~\ref{sub:service_komposition}). Jede dieser Komponenten muss sich dazu bei seiner Initiierung beim Service Repository registrieren, der in~\ref{sub:service_registry} näher beschrieben wird.
   
@@ -166,7 +296,7 @@
   
 \begin{figure}[hb]
   \centering
-    \includegraphics[width=.9\textwidth]{images/Basic_SOA.png}
+    \includegraphics[width=.9\textwidth]{images/Basic_SOA.pdf}
   \caption{Einfachste Form einer dienstorientierten Architektur (nach~\citep{service_oriented_computing})}
   \label{fig:images_Basic_SOA}
 \end{figure}
@@ -175,7 +305,7 @@
 
   Durch die Servicekomposition kreieren Entwickler Applikationen innerhalb von dienstorientierten Architekturen. Die Servicekomposition setzt dabei auf die grundlegenden Elemente einer SOA auf~\citep[S. 51]{milanovic2004csw} und stellt damit ein zentrales Element dar, um überhaupt aus einer Reihe von einzelnen Diensten eine Applikation zu aggregieren.
   
-  Nach~\citep[S. 104]{masak2007ssb} kann die Servicekomposition dabei aus zwei unterschiedlichen Perspektiven betrachtet werden: der \emph{Geschäftsprozesskomposition} und der \emph{Servicelevelkomposition}. Bei der Geschäftsprozesskomposition werden "`völlig neue Geschäftsprozesse aus bestehenden Teilprozessen oder Services"' (\citep[S. 104]{masak2007ssb}) komponiert. Eine Einbettung in eine Organisation steht hier klar im Vordergrund. Bei der Servicelevelkomposition steht vielmehr "`die Interoperabilität und technische Machbarkeit im Vordergrund"' (\citep[S. 105]{masak2007ssb}) und es wird keine Rücksicht auf eine mögliche Organisationstruktur genommen. Da eines der Ziele von COSIMA die Entwicklung von Multimedia-Applikationen ist (vgl. Abschnitt \ref{sec:ziele_cosima}) und nicht die Abbildung von Geschäftsprozessen im Vordergrund steht, wird dieser Aspekt in dieser Arbeit nicht weiter verfolgt.
+  Nach~\citep[S. 104]{masak2007ssb} kann die Servicekomposition dabei aus zwei unterschiedlichen Perspektiven betrachtet werden: der \emph{Geschäftsprozesskomposition} und der \emph{Servicelevel-Komposition}. Bei der Geschäftsprozesskomposition werden "`völlig neue Geschäftsprozesse aus bestehenden Teilprozessen oder Services"' (\citep[S. 104]{masak2007ssb}) komponiert. Eine Einbettung in eine Organisation steht hier klar im Vordergrund. Bei der Servicelevelkomposition steht vielmehr "`die Interoperabilität und technische Machbarkeit im Vordergrund"' (\citep[S. 105]{masak2007ssb}) und es wird keine Rücksicht auf eine mögliche Organisationstruktur genommen. Da eines der Ziele von COSIMA die Entwicklung von Multimedia-Applikationen ist (vgl. Abschnitt \ref{sec:ziele_cosima}) und nicht die Abbildung von Geschäftsprozessen im Vordergrund steht, wird dieser Aspekt in dieser Arbeit nicht weiter verfolgt.
   
 \subsubsection{Kompositionsarten} % (fold)
 \label{ssub:kompositionsarten}
@@ -302,7 +432,7 @@
     \emph{"`Synchronization in the context of multimedia refers to the mechanisms used by processes (also specific to multimedia) to coordinate their ordering in the time domain."'} (\citep[S. 401]{steinmetz1990spm})
   \end{quote}
   
-  Synchronisation spielt im Kontext von Multimediaanwendungen also eine entscheidende Rolle und muss demnach explizit und prominent modelliert werden. Ein erster Ansatz zur Integration von Synchronisation in das COSIMA-Projekt sieht dazu eine dedizierte Komponenten innerhalb der Servicekomposition vor. 
+  Synchronisation spielt im Kontext von Multimediaanwendungen also eine entscheidende Rolle und muss demnach explizit und prominent modelliert werden. Ein erster Ansatz zur Integration von Synchronisation in das COSIMA-Projekt sieht dazu eine dedizierte Komponente innerhalb der Servicekomposition vor. 
   
   Diese Komponente unterstützt dabei zwei unterschiedliche Arten von Synchronisation. Zum einen eine Ereigniss-gesteuerte, also nicht-deterministische Synchronisation\footnote{Relevant etwa bei Benutzer-Interaktionen oder Ausnahmebehandlungen}. Diese wird unter anderem bei~\citep{little1991ms} und~\citep{bertino1998tsm} beschrieben. Diese Sychronisationsbehandlung lässt sich sehr gut in COSIMA integrieren, da auch innerhalb einer dienstorientierten Architektur eine stark Ereignisorientierung anzustreben ist, um ein Maximum an Flexibilität zu erhalten~\citep[S. 96]{masak2007ssb}. Zum anderen ist noch eine Synchronisation über sogenannte \emph{Synchronisationsprimitive}, wie sie bei~\citep{gaggi2005msh} beschrieben wird, vorgesehen.
   
@@ -362,7 +492,7 @@
 
 % subsubsection medienobjekt (end)
 
-b\subsubsection{Medien Broker} % (fold)
+\subsubsection{Medien Broker} % (fold)
 \label{ssub:media_broker}
 
   \begin{definition}[Broker]\label{def:broker}
