@@ -21,6 +21,14 @@
 \usepackage{setspace}
 \raggedbottom
 
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\cfoot{\pagemark}
+% \ihead{\headmark}
+\ohead{\headmark}
+% \automark{section}
+
 % include XMP-Metadata
 \usepackage{xmpincl} 
 \includexmp{std/metadata}
@@ -118,8 +126,9 @@
 \bibliographystyle{natdin}
 
 % Schriftstile umsetzen
-\setkomafont{sectioning}{\normalfont\normalcolor\bfseries}
+% \setkomafont{sectioning}{\normalfont\normalcolor\bfseries}
 \setkomafont{descriptionlabel}{\normalfont\normalcolor\bfseries}
+\setkomafont{captionlabel}{\usekomafont{descriptionlabel}}
 \setkomafont{dictumtext}{\normalfont\normalcolor\itshape}
 \setkomafont{dictumauthor}{\scshape}
 

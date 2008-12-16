@@ -95,6 +95,11 @@
     "`The software architecture of a program or computing system is the structure or structures of the system, which comprise software components, the externally visible properties of those components, and the relationship among them."'~\emph{\citep[S. 21]{software_architecture_in_practice}}
   \end{definition}
   
+% subsubsection definitionen (end)
+  
+\subsubsection{Software- und Systemarchitekturen} % (fold)
+\label{ssub:software_und_systemarchitekturen}
+
   Darüber hinaus ist noch die Unterscheidung von \emph{Software}- und \emph{System}-Architekturen zu treffen~\citep[S. xix]{evaluating_software_architectures}. Eine System-Architektur berücksichtigt dabei deutlich mehr Komponenten, wie etwa Hardware und Umgebung auf der die Software installiert werden soll. Diese Trennung wird auch in den entsprechenden Definitionen des SEI deutlich:
   
   \begin{definition}[Software-Architektur (SEI)]\label{def:software_architektur_sei}
@@ -110,10 +115,21 @@
   \begin{definition}[Referenzarchitektur]\label{def:referenzarchitektur}
     "`Eine Referenzarchitektur ist eine abstrakte Software-Architektur, sie definiert Strukturen und Typen von Software-Elementen sowie deren erlaubte Interaktionen und ihre Verantwortlichkeiten speziell für einen Anwendungsbereich. Die Strukturen sind jeweils für alle Systeme innerhalb einer Domäne anwendbar."'~\emph{\citep[S. 358]{handbuch_der_software_architektur}}
   \end{definition}
+  
+  Da mit dem COSIMA-Projekt Multimediaanwendungen realisiert werden sollen, wird an dieser Stelle ergänzend noch der Terminus der \emph{Multimedia-Architektur} definiert:
+  
+  \begin{definition}[Multimedia-Architektur]\label{def:multimedia_architektur}
+    "`Eine Multimedia-Architektur ist eine Software-Architektur, die der Erzeugung, der Speicherung, der Transformation, der Präsentation und / oder dem Transport von multimedialen Daten dient."'~\emph{\citep[S. 423]{handbuch_der_software_architektur}}
+  \end{definition}
 
-% subsubsection definitionen (end)
+% subsubsection software_und_systemarchitekturen (end)
 
-  Die Architektur einer Software ist also die strukturelle Aufteilung der Software in einzelne, von einander unabhängige Komponenten, deren Eigenschaften und Beziehungen untereinander. 
+\subsubsection{Zusammenfassung} % (fold)
+\label{ssub:zusammenfassung}
+
+  Für den weiteren Verlauf dieser Arbeit soll der Begriff der Architektur wie folgt verstanden werden: Die Architektur einer Software ist die strukturelle Aufteilung der Software in einzelne, von einander unabhängige Komponenten, deren Eigenschaften und Beziehungen untereinander. Im Vordergrund stehen dabei multimediale Daten, die erzeugt, gespeichert, transformiert, präsentiert sowie transportiert werden müssen.
+
+% subsubsection zusammenfassung (end)
 
 % subsection definition_software_architekturen (end)
 
@@ -128,14 +144,11 @@
   
   Es ist somit anzunehmen, dass SOA nicht nur einen kurzweiligen, technologischen Trend beschreibt, sondern vielmehr einen Paradigmenwechsel bei der Konstruktion von komplexen und verteilten Applikationen~\citep[S. 1]{service_oriented_computing}. Gerade dann ist es jedoch notwendig, die relevante Begriffe der dienstorientierten Architektur im Rahmen dieser Arbeit zu definieren. Da es jedoch keine einheitliche und allgemein anerkannte Definition dazu gibt~\citep[S. 6]{soa_goes_real}, werden im Folgenden Definitionen unterschiedlicher Herkunft zur Eingrenzung herangezogen.
   
-\subsubsection{Definitionen} % (fold)
-\label{ssub:definitionen_soa}
+\subsubsection{Definition: Dienst} % (fold)
+\label{ssub:definitionen_dienst}
 
   Die Begriffe \emph{Dienstorientierung} und \emph{dienstorientierte Architektur} beinhalten beide als konstituierendes Element den Begriff \emph{Dienst}, daher soll dieser Begriff vor den anderen beiden definiert werden.
   
-\paragraph{Definition: Dienst} % (fold)
-\label{par:dienst}
-
   Eine sehr allgemeine Definition, was ein Dienst ist, liefert Masak. Der Wert dieser Definition liegt vor allem darin, dass durch sie alles als Dienst aufgefasst werden kann:
 
 \begin{definition}[Dienst (allgemein)]\label{def:dienst_allgemein_}
@@ -163,10 +176,10 @@
     \item Dynamische Lokalisierung und Ausführung
   \end{itemize}
 
-% paragraph dienst (end)
+% subsubsection definitionen_dienst (end)
 
-\paragraph{Definition: Dienstorientierung} % (fold)
-\label{par:definition_dienstorientierung}
+\subsubsection{Definition: Dienstorientierung} % (fold)
+\label{ssub:definition_dienstorientierung}
 
   Bevor auf die dienstorientierte Architektur eingegangen werden kann, soll noch der Begriff der Dienstorientierung für sich definiert werden:
 
@@ -177,14 +190,14 @@
   Es handelt sich bei der Dienstorientierung demnach um das Entwurfsparadigma, dass hinter einer dienstorientierten Architektur steht. Erl nennt in diesem Zusammenhang die folgenden acht Entwurfsprinzipien, die wiederum der Dienstorientierung selbst zu Grunde liegen~\citep{erl2008soa}.
 
   \begin{itemize}
-    \item Standardized Service Contract 
-    \item Service Loose Coupling 
-    \item Service Abstraction 
-    \item Service Reusability 
-    \item Service Autonomy 
-    \item Service Statelessness 
-    \item Service Discoverability 
-    \item Service Composability
+    \item Standardisierte Dienstverträge
+    \item Lose Kopplung der Dienste
+    \item Abstraktion der Dienste
+    \item Wiederverwendbarkeit der Dienst
+    \item Autonomie der Diente
+    \item Dienste sind zustandslos
+    \item Dienste sind auffindbar
+    \item Dienste lassen sich komponieren
   \end{itemize}
   
   Teile dieser Prinzipien finden sich auch in den Eigenschaften von Diensten selbst wieder, wie im vorherigen Abschnitt deutlich wurde. Erl weisst darüber hinaus darauf hin, dass die Dienstorientierung ihre Wurzeln in vielen unterschiedliche Disziplinen der modernen Softwareentwicklung hat, wie Abbildung~\ref{fig:images_Wurzeln_Dienstorientierung} zeigt.
@@ -196,10 +209,10 @@
   \label{fig:images_Wurzeln_Dienstorientierung}
 \end{figure}
 
-% paragraph definition_dienstorientierung (end)
+% subsubsection definition_dienstorientierung (end)
 
-\paragraph{Definition: dienstorientierte Architektur} % (fold)
-\label{par:definition_dienstorientierte_architektur}
+\subsubsection{Definition: Dienstorientierte Architektur} % (fold)
+\label{ssub:definition_dienstorientierte_architektur}
 
   Bei der Definition von Natis wird zunächst die Schnittstelle zwischen den Diensten in den Vordergrund gerückt:
 
@@ -225,25 +238,43 @@
   "`[\ldots] SOA is a meta-architectural style that supports loosely coupled services to enable business flexibility in an interoperable, technology-agnostic manner."'~\emph{\citep[S. 257]{web_services_principles_and_technology}}
 \end{definition}
 
-- Eigenschaften einer SOA
+  Papazoglou unterscheidet weiter zwischen zwei Arten dienstorientierter Architekturen, die sich jeweils im Grad ihrer Komplexität unterscheiden. Die einfachste Form einer SOA ist in Abbildung~\ref{fig:images_Basic_SOA} dargestellt.
 
-% paragraph definition_dienstorientierte_architektur (end)
+  \begin{figure}[!ht]
+    \centering
+      \includegraphics[width=.9\textwidth]{images/Basic_SOA.pdf}
+    \caption{Einfachste Form einer dienstorientierten Architektur (nach~\citep{service_oriented_computing})}
+    \label{fig:images_Basic_SOA}
+  \end{figure}
 
-  - Einordnung in SOC nach Papazoglou
-  - Einfache und erweiterte SOA
+  In diesem Modell sind zwar einige Eigenschaften einer SOA, wie sie in den vorangegangen Definitionen herausgestellt wurden, erfasst, jedoch bei weitem nicht alle. Lediglich die lose Kopplung und das sich Dienste auffinden lassen ist explizit modelliert. Alle anderen Eigenschaften lassen sich wenn nur implizit wieder finden. Aus diesem Grunde nennt Papazoglou eine erweiterte dienstorientierte Architektur, die sich in Abbildung~\ref{fig:images_Extended_SOA} darstellt.
 
-\begin{figure}[ht]
-  \centering
-    \includegraphics[width=.9\textwidth]{images/Extended_SOA.pdf}
-  \caption{Erweiterte dienstorientierte Architektur nach Papazoglou~\citep{papazoglou2007soc}}
-  \label{fig:images_Extended_SOA}
-\end{figure}
+  \begin{figure}[!hb]
+    \centering
+      \includegraphics[width=.9\textwidth]{images/Extended_SOA.pdf}
+    \caption{Erweiterte dienstorientierte Architektur nach Papazoglou~\citep{papazoglou2007soc}}
+    \label{fig:images_Extended_SOA}
+  \end{figure}
 
-% subsubsection definitionen_soa (end)
+  - Trennung von Kontroll- und Datenfluss (unterschiedliche Busse), daher grundsätzlich auch weitere Busse für etwa Medien denkbar (siehe auch \ref{ssub:media_broker})
+
+  In diesem, sehr viel umfangreicheren Modell, finden sich fast alle bisher vorgestellten Eigenschaften an eine SOA wieder. Vor allem der Aspekt, dass sich einzelne Dienste zu komplexeren Diensten zusammen fassen, also komponieren lassen, ist in diesem Modell prominent vertreten. Lediglich der Bezug zur (Geschäfts-)Prozessen ist nicht explizit modelliert. Die nachfolgende Liste fasst die wesentlichen Eigenschaften einer dienstorientierten Architektur noch einmal zusammen:
+
+  \begin{itemize}
+    \item Lose Kopplung
+    \item Interoperabilität
+    \item Dienste aus unterschiedlichen Domänen
+    \item Bereitstellung einer Infrastruktur
+    \item Architektur
+    \item Komposition von Diensten zu Prozessen
+    \item Betrachtung von nicht-funktionalen Anforderungen
+  \end{itemize}
+
+% subsubsection definition_dienstorientierte_architektur (end)
+
+  Nach dieser Einordnung der wesentliche Begriffe, werden im Folgenden nun die einzelnen Komponenten der COSIMA Architektur im Detail vorgestellt.
 
 % subsection definition_dienst_und_dienstorientierung (end)
-
-  Nach dieser begrifflichen Einordnung der wesentliche Begriffe, werden im Folgenden nun die einzelnen Komponenten der COSIMA Architektur vorgestellt.
 
 \subsection{Einführung} % (fold)
 \label{sub:einfuehrung}
@@ -269,46 +300,32 @@
 \subsection{Medienverarbeitende Komponenten} % (fold)
 \label{sub:medienverarbeitende_komponenten}
 
-  Den Kern von COSIMA machen die medienverarbeitenden Komponenten aus, die vom Anwendungsentwickler in eine entsprechende Abfolge gebracht werden und damit die später Multimediaanwendung selbst darstellen: \emph{Producer}, \emph{Transformer} und \emph{Consumer}. Dem Entwurf der Komponenten liegt das \emph{Quelle-Komponente-Senke} Prinzip zu Grunde. Die innerhalb des COSIMA-Projekts verwendete Bezeichnung ist nach~\citep{a_multimedia_component_kit,multimedia_component_frameworks} ebenso valide wie die geläufigere Bezeichnung "`Quelle-Komponente-Senke"'. Da es sich bei COSIMA jedoch um eine komponentenbasierte Architektur handelt, wodurch Benennungsschwierigkeiten aufkamen, die die Verwendung einer alternativen Begrifflichkeit begünstigten.
+  Den Kern von COSIMA machen die medienverarbeitenden Komponenten aus, die vom Anwendungsentwickler in eine entsprechende Abfolge gebracht werden und damit die später Multimediaanwendung selbst darstellen: \emph{Producer}, \emph{Transformer} und \emph{Consumer}. Dem Entwurf der Komponenten liegt das \emph{Quelle-Komponente-Senke} Prinzip zu Grunde. Die innerhalb des COSIMA-Projekts verwendete Bezeichnung ist nach~\citep{a_multimedia_component_kit,multimedia_component_frameworks} ebenso valide wie die geläufigere Bezeichnung "`Quelle-Komponente-Senke"'. Da es sich bei COSIMA jedoch um eine komponentenbasierte Architektur handelt, kamen Benennungsschwierigkeiten auf, die die Verwendung einer alternativen Begrifflichkeit begünstigten.
   
-  HIER AUCH AUF SAMMA'S ARBEIT VERWEISE~\citep[S. 23]{samma08}.
+  Diese medienverarbeitenden Komponenten sind dabei alle als Dienste, wie sie in der SOA verstanden werden, ausgeprägt. Zur Entwicklung einer Multimediaanwendung ist demnach eine Komposition dieser Dienste durch die in Abschnitt~\ref{sub:service_komposition} vorgestellten Ansätze notwendig. Eine formale Beschreibung der Dienste selbst wird im Service Registry vorgehalten, welches unter~\ref{sub:service_registry} näher erläutert wird.
   
-  Diese medienverarbeitenden Komponenten sind alle als Dienste ausgeprägt, um dem Anspruch der Dienstorientierung gerecht zu werden. Eine Komponente kann dabei niemals eine andere Komponente direkt aufrufen, diese Aufgabe obliegt der \emph{Service Komposition} (siehe Abschnitt~\ref{sub:service_komposition}). Jede dieser Komponenten muss sich dazu bei seiner Initiierung beim Service Repository registrieren, der in~\ref{sub:service_registry} näher beschrieben wird.
-  
-  Der Austausch der zu verarbeitenden Medien zwischen den einzelnen Komponenten geschieht auschließlich über den \emph{Media Broker}, der unter~\ref{sub:integration_von_medien} weiter ausgeführt wird. Ein genereller Nachrichtenaustausch unter den Komponenten im speziellen und mit den restlichen Elementen der Architektur wird über das Nachrichtensystem (\ref{ssub:nachrichtensystem}) realisiert. Persistenz von Daten und die Synchronisation werden von einem \emph{Persistence Data Service} bzw. der \emph{Timing Engine} übernommen. Beide Komponenten werden in~\ref{sub:infrastruktur} näher beschrieben. Teile dieser Architekturelemente sollen einmal in einem Service Bus aufgehen~\citep[S. 18]{bericht}.
+  Der Austausch der zu verarbeitenden Medien zwischen den einzelnen Diensten geschieht auschließlich über den \emph{Media Broker}, der unter~\ref{sub:integration_von_medien} weiter ausgeführt wird. Ein genereller Nachrichtenaustausch zwischen den Diensten und mit den restlichen Teilen der Architektur wird über das Nachrichtensystem (\ref{ssub:nachrichtensystem}) realisiert. Persistenz von Daten und die Synchronisation werden von einem \emph{Persistence Data Service} bzw. der \emph{Timing Engine} übernommen. Beide Komponenten werden in~\ref{sub:infrastruktur} näher beschrieben. Teile dieser Architekturelemente sollen einmal in einem Service Bus aufgehen~\citep[S. 18]{bericht}.
 
 % subsection medienverarbeitende_komponenten (end)
 
 \subsection{Service Registry} % (fold)
 \label{sub:service_registry}
 
-  Die Service Registry ist nach~\citep{service_oriented_computing}, als konstituierendes Element innerhalb einer SOA, selbst wieder ein Dienst, der die Dienstbeschreibungen anderer Dienste vorhält und bereitstellt. Jeder Dienst innerhalb von COSIMA muss daher seine Beschreibung bei der Service Registry bekannt machen. Es kann demnach auch keinen anderen Weg geben als über die Service Registry eine Verbindung zu einem Service aufzunehmen.
-
-  % - Zentrale Stelle zur Registrierung/Auffindung von Services
-  % - Definition der allgemeinen Schnittstelle für COSIMA-Services
+  Wie bereits in Abschnitt~\ref{ssub:definition_dienstorientierte_architektur} gezeigt wurde, ist die Fähigkeit Dienste entdecken zu können eines der konstituierendes Element innerhalb einer SOA. Demnach ist auch in COSIMA eine solche vorgesehen. Nach~\citep{service_oriented_computing} ist diese selbst wieder als Dienst zu realisieren. Über die Registry lassen sich anhand von abstrakten (formalen) Dienstbeschreibungen konkrete Dienste identifizieren und eine Lokalisierung durchführen. Sie unterstützt damit die Forderung nach loser Kopplung innerhalb einer SOA. Eine Realisierung einer solchen Service Registry wäre beispielsweise durch UDDI\abk{UDDI}{Universal Description Discovery and Integration}\footnote{\url{http://www.oasis-open.org/committees/uddi-spec/}} oder ebXML\abk{ebXML}{Electronic Business using eXtensible Markup Language}\footnote{\url{http://www.ebxml.org/}} möglich.
 
 % subsection service_registry (end)
 
 \subsection{Servicekomposition} % (fold)
 \label{sub:service_komposition}
 
-  Abbildung \ref{fig:images_Basic_SOA} zeigt die einfachste Form einer dienstorientierten Architektur, wie sie im Rahmen des Paradigmas des \emph{Service Oriented Computing} (SOC\abk{SOC}{Service Oriented Computing}) vorgestellt wurde~\citep{service_oriented_computing}. Wie bereits im Abschnitt \ref{sub:service_registry} gesagt wurde, muss ein Dienst selbstständig bei der Service Registry nach der Beschreibung eines anderen Dienstes fragen, um diesen dann ansprechen zu können. Dieses Vorgehen wirkt sich jedoch negativ auf die Kopplung einzelner Dienste aus; Die Kopplung der Dienste wird also größer.
-  
-\begin{figure}[hb]
-  \centering
-    \includegraphics[width=.9\textwidth]{images/Basic_SOA.pdf}
-  \caption{Einfachste Form einer dienstorientierten Architektur (nach~\citep{service_oriented_computing})}
-  \label{fig:images_Basic_SOA}
-\end{figure}
-
-  In einer dienstorientierten Architektur wird aber voraus gesetzt, dass die einzelnen Dienste möglichst lose gekoppelt sind~\citep[S. 162]{soa_goes_real}. Um diese Kopplung zwischen den Dienste aufzubrechen, kann die Information welche Dienste miteinander interagieren sollen, in Form der \emph{Servicekomposition} externalisiert werden.
-
-  Durch die Servicekomposition kreieren Entwickler Applikationen innerhalb von dienstorientierten Architekturen. Die Servicekomposition setzt dabei auf die grundlegenden Elemente einer SOA auf~\citep[S. 51]{milanovic2004csw} und stellt damit ein zentrales Element dar, um überhaupt aus einer Reihe von einzelnen Diensten eine Applikation zu aggregieren.
-  
-  Nach~\citep[S. 104]{masak2007ssb} kann die Servicekomposition dabei aus zwei unterschiedlichen Perspektiven betrachtet werden: der \emph{Geschäftsprozesskomposition} und der \emph{Servicelevel-Komposition}. Bei der Geschäftsprozesskomposition werden "`völlig neue Geschäftsprozesse aus bestehenden Teilprozessen oder Services"' (\citep[S. 104]{masak2007ssb}) komponiert. Eine Einbettung in eine Organisation steht hier klar im Vordergrund. Bei der Servicelevelkomposition steht vielmehr "`die Interoperabilität und technische Machbarkeit im Vordergrund"' (\citep[S. 105]{masak2007ssb}) und es wird keine Rücksicht auf eine mögliche Organisationstruktur genommen. Da eines der Ziele von COSIMA die Entwicklung von Multimedia-Applikationen ist (vgl. Abschnitt \ref{sec:ziele_cosima}) und nicht die Abbildung von Geschäftsprozessen im Vordergrund steht, wird dieser Aspekt in dieser Arbeit nicht weiter verfolgt.
+  Als eine weitere wichtige Eigenschaft einer dienstorientierten Architektur ist die Fähigkeit zur Komposition von Diensten genannt worden. Ähnlich der Service Registry dient auch sie zur Entkopplung der einzelnen Dienste in einer SOA. Wesentlich entscheidender ist jedoch ihr Beitrag Dienste zu Prozessen zu aggregieren und damit neue Applikationen innerhalb einer dienstorientierten Architektur entwickeln zu können. Die Servicekomposition selbst setzt dabei auf die grundlegenden Elemente einer SOA auf~\citep[S. 51]{milanovic2004csw}, wie sie in Abschnitt~\ref{ssub:definition_dienstorientierte_architektur} vorgestellt wurden.
+    
+  Die Servicekomposition selbst kann dabei aus zwei unterschiedlichen Perspektiven betrachtet werden~\citep[S. 104]{masak2007ssb}: der \emph{Geschäftsprozesskomposition} und der \emph{Servicelevel-Komposition}. Bei der Geschäftsprozesskomposition werden "`völlig neue Geschäftsprozesse aus bestehenden Teilprozessen oder Services"' (\citep[S. 104]{masak2007ssb}) komponiert. Eine Einbettung in eine Organisation steht hier klar im Vordergrund. Bei der Servicelevelkomposition steht vielmehr "`die Interoperabilität und technische Machbarkeit im Vordergrund"' (\citep[S. 105]{masak2007ssb}) und es wird keine Rücksicht auf eine mögliche Organisationstruktur genommen.
   
 \subsubsection{Kompositionsarten} % (fold)
 \label{ssub:kompositionsarten}
+
+  \textbf{DIESER TEIL BEDARF MEHR DISKUSSION!}
 
   Bei der Komposition von Diensten werden in der Literatur unterschiedliche Arten unterschieden. Die beiden grundsätzlichen, für COSIMA relevanten, werden bei Papazoglou in~\citep[S. 41]{papazoglou2007soc} genannt: \emph{Orchestrierung} und \emph{Choreographie}. Im Folgenden sollen diese beiden Ansätze genauer betrachtet werden.
   
@@ -321,7 +338,7 @@
     \emph{"`Orchestration describes how services interact at the message level, including the business logic and execution order of interactions under control of a single end point. It is an executable business process that can result in a long-lived, transactional, multistep process model."'} (\citep[S. 41]{papazoglou2007soc})
   \end{quote}
   
-  Wesentlich sind also die Interaktionen verschiedener Dienste, die von einer zentralen Stelle über einen Nachrichtenaustausch koordiniert und kontrolliert werden. Des Weiteren ist das Ergebnis ein ausführbarer Geschäftsprozess.
+  Wesentlich sind also die Interaktionen verschiedener Dienste, die von einer zentralen Stelle (dem \emph{single end point}) über einen Nachrichtenaustausch koordiniert und kontrolliert werden. Des Weiteren ist das Ergebnis ein ausführbarer Geschäftsprozess.
 
 % paragraph orchestrierung (end)
 
@@ -334,20 +351,20 @@
     \emph{"`[\ldots] choreography, which is more collaborative and allows each involved party to describe its part in the interaction. Choreography tracks the message sequences among multiple parties and sources --- typically the public message exchanges that occur between Web services --- rather than a specific business process that a single party executes."'} (\citep[S. 46]{peltz2003wso})
   \end{quote}
 
-  Choreographie verfolgt also einen dezentralen Ansatz; Es gibt nicht eine Instanz, die den Nachrichtenfluss kontrolliert, vielmehr tritt der Nachrichtenfluss zwischen den einzelnen Diensten in den Vordergrund.
+  Choreographie verfolgt also einen dezentralen Ansatz; Es gibt nicht eine Instanz, die den Nachrichtenfluss kontrolliert, vielmehr tritt der Nachrichtenfluss zwischen den einzelnen Diensten in den Vordergrund. Es liegt dadurch auch kein ausführbarer Prozess bei der Choreographie vor~\citep[S. 46]{peltz2003wso}.
   
-  Bei der Betrachtung beider Ansätze wird deutlich, dass die Trennung von Choreographie und Orchestrierung eher künstlich erscheint und man stimmt bereits darüber überein, dass sie beide in einer Sprache und Umgebung\footnote{Zur Umsetzung dieser beiden Kompositionsansätze existieren zahlreiche, unterschiedliche Technologien und (Sprach-)Standards, deren weitere Betrachtung nicht mehr Teil dieser Arbeit sein kann.} vereint werden sollten~\citep[S. 42]{papazoglou2007soc}.
+  Für die konkrete Umsetzung dieser beiden Varianten zur Komposition existieren zahlreiche Technologien und Standards. Dabei fäll jedoch auf, dass eine strikte Trennung beider Ansätze auch auf der technischen Ebene eher künstlich erscheinen und daher in einem technologischen Ansatz vereint werden sollten~\citep[S. 42]{papazoglou2007soc}.
+  
+  Eine detaillierte Auseinandersetzung mit der Thematik der Geschäftsprozesskomposition und -modellierung im Rahmen des COSIMA-Projekts findet sich in der Master Thesis von Matthias Richter~\citep{samma08}.
 
 % paragraph choreographie (end)
 
 % subsubsection kompositionsarten (end)
 
-\subsubsection{Relevanz fuer COSIMA} % (fold)
-\label{ssub:relevanz_fuer_cosima_komposition}
-
-  Es wurde deutlich, dass die Servicekomposition für eine dienstorientierte Architektur von elementarer Bedeutung ist. Jedoch wurde auch klar, dass die Servicekomposition in COSIMA noch nicht so verstanden wird, wie sie in der Literatur verstanden wird; Dort findet eine Betrachtung im Kontext von Geschäftsprozessen statt. Sowohl in der bisherigen Zieldefinition von COSIMA, als auch in dem Szenario für die prototypische Realisierung der Architektur, dass in Kapitel~\ref{cha:szenario} vorgestellt wird, liegt der Fokus jedoch nicht auf Geschäftsprozessen. Daher ist auch eine weitere Betrachtung der genannten Details für diese Arbeit nicht notwendig. Dennoch kann festgehalten werden, dass es sich am ehesten um eine Orchestrierung handelt: Es existiert eine zentrale Komponente über die der Anwendungsentwickler die Möglichkeit erhält, die unterschiedlichen Funktionalitäten der Multimedia-Applikationen zu komponieren und in eine definierte Abfolge zu bringen.
-  
-  Aus den hier genannten Gründen kann auch bei der prototypische Realisierung auf die Verwendung einer existierenden Prozessbeschreibungssprache verzichtet werden.
+% \subsubsection{Relevanz fuer COSIMA} % (fold)
+% \label{ssub:relevanz_fuer_cosima_komposition}
+% 
+%   Es wurde deutlich, dass die Servicekomposition für eine dienstorientierte Architektur von elementarer Bedeutung ist. Jedoch wurde auch klar, dass die Servicekomposition in COSIMA noch nicht so verstanden wird, wie sie in der Literatur verstanden wird; Dort findet eine Betrachtung im Kontext von Geschäftsprozessen statt. Sowohl in der bisherigen Zieldefinition von COSIMA, als auch in dem Szenario für die prototypische Realisierung der Architektur, dass in Kapitel~\ref{cha:szenario} vorgestellt wird, liegt der Fokus jedoch nicht auf Geschäftsprozessen. Daher ist auch eine weitere Betrachtung der genannten Details für diese Arbeit nicht notwendig. Dennoch kann festgehalten werden, dass es sich am ehesten um eine Orchestrierung handelt: Es existiert eine zentrale Komponente über die der Anwendungsentwickler die Möglichkeit erhält, die unterschiedlichen Funktionalitäten der Multimedia-Applikationen zu komponieren und in eine definierte Abfolge zu bringen.
 
 % subsubsection relevanz_fuer_cosima (end)
 
@@ -365,14 +382,13 @@
   
   In~\citep{web_services_principles_and_technology} wird der Enterprise Service Bus wie folgt defniert:
   
-  \begin{quote}
-    \label{def:enterprise_serivce_bus}
-    \emph{"`The Enterprise Service Bus is an open standards-based message backbone designed to enable the implementation, deployment, and management of SOA-based solutions with a focus on assembling, deploying, and managing distributed service-oriented architectures."'} (\citep[S. 270]{web_services_principles_and_technology})
-  \end{quote}
+  \begin{definition}[ESB]\label{def:enterprise_serivce_bus}
+    "`The Enterprise Service Bus is an open standards-based message backbone designed to enable the implementation, deployment, and management of SOA-based solutions with a focus on assembling, deploying, and managing distributed service-oriented architectures."'~\emph{\citep[S. 270]{web_services_principles_and_technology}}
+  \end{definition}
   
   Nach dieser Definition wird durch den Einsatz eines ESB überhaupt erst die Realisierung und der Betrieb einer dienstorientierten Architektur ermöglicht. Darüber hinaus lässt sich festhalten, dass auch das "`Assembling"' der einzelnen Teile innerhalb der Architektur in den Aufgabenbereich des ESB fallen. Demnach kann die Servicekomposition in einer SOA auch als eine Teilmenge des ESB angesehen werden~\citep[S. 3]{enterprise_service_bus}.
 
-  Neben der Servicekomposition werden von dem ESB noch eine Vielzahl weiterer Aufgaben übernommen, die jeweils die Punkte Implementierung, Deployment\footnote{Für das englische Wort "`Deployment"' kann in diesem Kontext keine adäquate deutsche Entsprechung gefunden werden. Aus diesem Grund wird "`Deployment"' sinngemäß nach der Beschreibung in der Wikipedia verwendet: \emph{"`Software deployment is all of the activities that make a software system available for use."'} (aus Wikipedia: \url{http://en.wikipedia.org/wiki/Software_deployment}, zuletzt abgerufen am 22.10.2008)} und Management unterstützen sollen. Die Aufgaben, die im ESB dabei mindestens implementiert sein müssen, sind in der folgenden Liste nach~\citep[S. 137]{soa_goes_real} und~\citep[S. 146]{masak2007ssb} dargestellt:
+  Neben der Servicekomposition werden von dem ESB noch eine Vielzahl weiterer Aufgaben übernommen, die jeweils die Punkte Implementierung, Deployment\footnote{Das englische Wort "`Deployment"' kann in diesem Kontext am ehesten mit "`Inbetriebsetzung"' übersetzt werden. Da sich "`Deployment"' jedoch in der Fachsprache weitestgehend eingeprägt hat, wird es sinngemäß nach der Beschreibung in der Wikipedia verwendet: \emph{"`Software deployment is all of the activities that make a software system available for use."'} (aus Wikipedia: \url{http://en.wikipedia.org/wiki/Software_deployment}, zuletzt abgerufen am 22.10.2008)} und Management unterstützen sollen. Die Aufgaben, die im ESB dabei mindestens implementiert sein müssen, sind in der folgenden Liste nach~\citep[S. 137]{soa_goes_real} und~\citep[S. 146]{masak2007ssb} dargestellt:
   
   \begin{itemize}
     \item Routing von Nachrichten
@@ -384,7 +400,7 @@
     \item Bereitstellen von standardisierten Schnittstellen
   \end{itemize}
 
-  Historisch gesehen ist ein ESB die Weiterentwicklung von EAI Brokern~\abk{EAI}{Enterprise Application Integration}, die bereits ähnliche oder die gleichen Funktionalitäten bereitstellen können~\citep[S. 146]{masak2007ssb}. Der Enterprise Service Bus verzichtet dabei aber auf den zentralistischen Integrationsansatz von EAI Brokern und etabliert anseinerstatt eine verteilte Integration~\citep[S. 4]{enterprise_service_bus}. Die einzelnen Funktionalitäten werden, um diese Verteiltheit zu erreichen, selbst wieder als Dienste realisiert ~\citep{enterprise_service_bus,masak2007ssb,papazoglou2007soc}. Durch die Aufteilung in einzelne Dienste und deren Verteilung innerhalb des Service Bus, kann dann auch von einer virtuellen Infrastruktur gesprochen werden~\citep[S. 136]{soa_goes_real}.
+  Historisch gesehen ist ein ESB die Weiterentwicklung von EAI Brokern\abk{EAI}{Enterprise Application Integration}, die bereits ähnliche oder gleiche Funktionalitäten bereitstellen konnten~\citep[S. 146]{masak2007ssb}. Der Enterprise Service Bus verzichtet dabei aber auf den zentralistischen Integrationsansatz von EAI Brokern und etabliert anseinerstatt eine verteilte Integration~\citep[S. 4]{enterprise_service_bus}. Die einzelnen Funktionalitäten werden, um diese Verteiltheit zu erreichen, selbst wieder als Dienste realisiert ~\citep{enterprise_service_bus,masak2007ssb,papazoglou2007soc}. Durch die Aufteilung in einzelne Dienste und deren Verteilung innerhalb des Service Bus, kann dann auch von einer virtuellen Infrastruktur gesprochen werden~\citep[S. 136]{soa_goes_real}.
   
   Das COSIMA Projekt sieht bis zu diesem Zeitpunkt nur einen sehr rudimentären ESB vor\footnote{Gemessen an dem Umfang, wie er in der Literatur beschrieben wird und in kommerziellen Systemen vorkommt.}. Dennoch übernimmt auch der Enterprise Service Bus in COSIMA die gleichen Verantwortlichkeiten, einige davon sind jedoch für den Einsatz in Multimediaanwendungen adaptiert worden. Im Folgenden werden die für das COSIMA Projekt relevanten Komponenten des ESBs näher beschrieben.
   
@@ -411,58 +427,81 @@
 
   Um Daten zu dauerhaft ablegen zu können, ist innerhalb von COSIMA ein weiterer Dienst vorgesehen worden, der \emph{Shared Persistence Service}. Allerdings kann nur eine \emph{Consumer}-Komponente über diesen Dienst ablegen lassen. Umgekehrt kann nur eine \emph{Producer}-Komponente Daten über diesen Dienst wieder einlesen. Eine \emph{Transformer}-Komponente, kann nach dem Quelle-Komponente-Senke Prinzip keinen Zugriff auf dauerhaft abgelegte Daten erhalten.
   
-  Innerhalb von COSIMA ist dieser Dienst noch sehr rudimentär modelliert. In der Literatur zu SOA findet sich keine dedizierte Komponente, um Daten persistent zu speichern; Diese Funktionalität kann durch jeden beliebigen Dienst bereitgestellt werden. Für COSIMA war es jedoch wichtig, diese Funktionalität explizit zu modellieren~\citep{bericht}\footnote{Nach dem  ursprünglichen Ziel von COSIMA war es tatsächlich noch sinnvoll einen zentralen Dienst bereitzustellen, der die persistente Speicherung von Daten übernimmt. Durch die stärkere Ausrichtung auf SOA und die Umorientierung zu einer Architektur an Stelle eines Rahmenwerks, ist diese Entscheidung jedoch zu überdenken.}.
+  Innerhalb von COSIMA ist dieser Dienst noch sehr rudimentär modelliert. In der Literatur zu SOA findet sich keine dedizierte Komponente, um Daten persistent zu speichern; Diese Funktionalität kann durch jeden beliebigen Dienst bereitgestellt werden. Auf Grund dieser Tatsache und durch die Etablierung eines dedizierten Medien Brokers ($\to$ \ref{ssub:medienobjekt}), der die Vermittlung der Medienobjekte realisiert, ist die weitere Existenzberechtigung dieser Komponente jedoch eher zweifelhaft. Eine weitere Betrachtung dieser Zusammenhänge findet in Abschnitt \ref{sub:integration_von_medien} statt.
   
-  Die Komponente zur persistenten Speicherung von Daten wird in dieser Arbeit nicht weiter behandelt werden.
-
 % subsubsection persistenz (end)
 
-\subsubsection{Synchronisation} % (fold)
-\label{ssub:synchronisation}
-
-  Die bisher vorgestellten Komponenten der Architektur innerhalb des COSIMA-Projekts sind weitestgehend übertragbar auf Komponenten in anderen dienstorientierten Architekturen. Zur Umsetzung von Multimediaanwendungen sind aber noch weitere, medienspezifische Komponenten erforderlich. Die Definition von einem Multimediasystem nach Steinmetz gibt hierzu einen ersten Hinweis:
-  
-  \begin{quote}
-    \emph{"`Ein Multimediasystem ist durch die rechnergesteuerte, integrierte Erzeugung, Manipulation, Darstellung, Speicherung und Kommunikation von unabhängigen Informationen gekennzeichnet, die in mindestens einem kontinuierlichen (zeitabhängigen) und einem diskreten (zeitunabhängigen) Medium kodiert sind."'} (\citep[S. 13]{multimedia_technologie})
-  \end{quote}
-  
-  Multimediasysteme oder -Anwendungen unterscheiden sich von Nicht-Multimedia\-anwendungen vor allem durch eine zeitliche Komponente~\citep[S. 14]{multimedia_technologie}: Zwischen den Informationen, die in unterschiedlichen Medien kodiert vorliegen kann und muss ein Bezug hergestellt werden können. Dieser Bezug wird als \emph{Synchronisation} bezeichnet. Eine Definition für Synchronisation, die auch für COSIMA Verwendung findet~\citep[S. 27]{bericht} ist:
-  
-  \begin{quote}
-    \emph{"`Synchronization in the context of multimedia refers to the mechanisms used by processes (also specific to multimedia) to coordinate their ordering in the time domain."'} (\citep[S. 401]{steinmetz1990spm})
-  \end{quote}
-  
-  Synchronisation spielt im Kontext von Multimediaanwendungen also eine entscheidende Rolle und muss demnach explizit und prominent modelliert werden. Ein erster Ansatz zur Integration von Synchronisation in das COSIMA-Projekt sieht dazu eine dedizierte Komponente innerhalb der Servicekomposition vor. 
-  
-  Diese Komponente unterstützt dabei zwei unterschiedliche Arten von Synchronisation. Zum einen eine Ereigniss-gesteuerte, also nicht-deterministische Synchronisation\footnote{Relevant etwa bei Benutzer-Interaktionen oder Ausnahmebehandlungen}. Diese wird unter anderem bei~\citep{little1991ms} und~\citep{bertino1998tsm} beschrieben. Diese Sychronisationsbehandlung lässt sich sehr gut in COSIMA integrieren, da auch innerhalb einer dienstorientierten Architektur eine stark Ereignisorientierung anzustreben ist, um ein Maximum an Flexibilität zu erhalten~\citep[S. 96]{masak2007ssb}. Zum anderen ist noch eine Synchronisation über sogenannte \emph{Synchronisationsprimitive}, wie sie bei~\citep{gaggi2005msh} beschrieben wird, vorgesehen.
-  
-  Die gesamte Thematik der Synchronisation ist sehr komplex und eine Vielzahl von Aspekten muss betrachtet werden~\citep[S. 27ff]{bericht}. In dieser Arbeit soll das grundsätzliche Konzept der Architektur im COSIMA-Projekt validiert werden, daher kann an dieser Stelle keine genauere Betrachtung der Aspekte der Synchronisation stattfinden. Jedoch wird in Abschnitt~\ref{ssub:medienobjekt} im Zusammenhang mit dem Medienobjekt noch einmal darauf eingegangen.
-
-% subsubsection synchronisation (end)
-
-\subsubsection{Time Engine} % (fold)
-\label{ssub:time_engine}
-
-  Im Zusammenhang mit der Synchronisation von unterschiedlichen Medien innerhalb von Multimediasystemen wurde bereits die Relevanz der Zeit-Domäne erwähnt. Bertino und Ferrari stellen werden noch deutlicher:
-
-  \begin{quote}
-    \emph{"`One of the inherent characteristics of multimedia data is of being heavily time-dependent in that they are usually related by temporal relations which have to be maintained during their playout."'} (\citep[S. 612]{bertino1998tsm})
-  \end{quote}
-  
-  Zeit spielt im Umgang mit Medien also eine wesentliche Rolle. Unterschiedliche Medien haben aber zumeist unterschiedliche zeitliche Einheiten\footnote{Ein Video wird zum Beispiel mit Bilder pro Sekunde angegeben}. Dennoch muss eine Synchronisation zwischen diesen Medien möglich sein. In COSIMA soll die \emph{Time Engine} Komponente eine System-inhärente Zeit realisieren, über die die heterogenen zeitlichen Repräsentationen einzelner Medien umgerecht werden können. Auf diesem Wege soll dem Anwendungsentwickler eine einfache Möglichkeit gegeben werden, Synchronisation in seinen Anwendungen zu implementieren.
-
-  Auch diese Komponente ist noch wenig spezifiziert und wird daher in dieser Arbeit nicht weiter behandelt.
-  
-  Im Folgenden Abschnitt wird die Integration von Medien, in Form des Medienobjekts und des Medien Brokers, in die Architektur vorgestellt. Obwohl diese Komponenten laut Abbildung~\ref{fig:Kontextsicht_Architektur_COSIMA} Teil des Enterprise Service Bus sind, werden sie auf Grund ihrer Relevanz gesondert davon betrachtet.
-
-% subsubsection time_engine (end)
+  Die bis hierher vorgestellten Komponenten der Architektur innerhalb des COSIMA-Projekts sind weitestgehend übertragbar auf Komponenten in anderen dienstorientierten Architekturen. Zur Umsetzung von Multimediaanwendungen sind aber noch weitere, medienspezifische Komponenten erforderlich. Auch wenn sie sich grundsätzlich dem Enterprise Service Bus zuordnen lassen, sollen sie dennoch dediziert im nächsten Abschnitt diskutiert werden.
 
 % subsection infrastruktur (end)
 
 \subsection{Integration von Medien} % (fold)
 \label{sub:integration_von_medien}
 
-  Innerhalb einer Architektur für Multimediaanwendungen spielen vor allem die Medien selbst eine zentrale Rolle. Demnach war eine besondere Betrachtung dieser Daten notwendig, die dazu geführt hat, das die Mediendaten dediziert modelliert wurden~\citep{bericht}. Ergebnis dieser Modellierung sind das Medienobjekt und der Media Broker, die beide hier näher beschrieben werden sollen.
+  - Medien und Multimediasysteme beschreiben
+  - Auf Besonderheiten eingehen
+  - dann zu Synchronisation kommen
+
+  \begin{definition}[Multimedia]\label{def:multimedia}
+    "`Als Multimedia wird der Einsatz von sowohl mindestens einem diskreten und mindestens einem kontinuierlichem Medium verstanden."'~\emph{\citep[S. 14]{multimedia_technologie}}
+  \end{definition}
+
+  \begin{definition}[Multimediasystem]\label{def:multimediasystem}
+    "`Ein Multimediasystem ist durch die rechnergesteuerte, integrierte Erzeugung, Manipulation, Darstellung, Speicherung und Kommunikation von unabhängigen Informationen gekennzeichnet, die in mindestens einem kontinuierlichen (zeitabhängigen) und einem diskreten (zeitunabhängigen) Medium kodiert sind."'~\emph{\citep[S. 13]{multimedia_technologie}}
+  \end{definition}
+
+\subsubsection{Synchronisation} % (fold)
+\label{ssub:synchronisation}
+
+  - unterschiedliche Ebenen der Synchronisation.
+  - Unterschiedliche Modelle zur Synchronisation, wie in~\citep[S. 28ff]{bericht} beschrieben, sollten Beachtung finden
+  - Betrachtung von örtlichen, inhaltlichen sowie zeitlichen Beziehungen
+  - Natürliche und synthetische Synchronisation~\citep{little1991ms, steinmetz1992mst}
+  - intra- und interobjekt Synchronisation\footnote{Die \emph{interobjekt} oder \emph{interstream} Synchronisation steht im Gegensatz zu der \emph{intraobjekt} oder \emph{intrastream} Synchronisation und wird bei~\citep[S. 613]{bertino1998tsm} näher beschrieben.} Nach ~\citep[S. 264]{wu2001svo} ist interobjekt, interstream und intrastream zu unterscheiden. Bei~\citep[S. 613]{bertino1998tsm} werden die Begriffe interstream und intraobjekt bzw. intraobjekt und intraobjekt synonym verwendet. Hierzu unbedingt bei Steinmetz genauer nachsehen~\citep{steinmetz1995mcc}
+  - intramedia (low-level) und intermedia (high-level) auch bei \citep{ackermann1996doo}
+  
+  \begin{figure}[!hb]
+    \centering
+      \includegraphics[width=.9\textwidth]{images/Erweiterte_Synchronisations-Ebenen.pdf}
+    \caption{Erweiterte Ebenen der Synchronisation, nach~\citep[S. 13]{blakowski1996mss}}
+    \label{fig:images_Erweiterte_Synchronisations-Ebenen}
+  \end{figure}
+
+  Multimediasysteme oder -Anwendungen unterscheiden sich von Nicht-Multimediaanwendungen vor allem durch eine zeitliche Komponente~\citep[S. 14]{multimedia_technologie}: Zwischen den Informationen, die in unterschiedlichen Medien kodiert vorliegen kann und muss ein Bezug hergestellt werden können. Dieser Bezug wird als \emph{Synchronisation} bezeichnet. Eine Definition für Synchronisation, die auch für COSIMA Verwendung findet~\citep[S. 27]{bericht} ist:
+  
+  \begin{definition}[Synchronisation]\label{def:synchronisation}
+    "`Synchronization in the context of multimedia refers to the mechanisms used by processes (also specific to multimedia) to coordinate their ordering in the time domain."'~\emph{\citep[S. 401]{steinmetz1990spm}}
+  \end{definition}
+  
+  Synchronisation spielt im Kontext von Multimediaanwendungen also eine entscheidende Rolle und muss demnach explizit und prominent modelliert werden. Ein erster Ansatz zur Integration von Synchronisation in das COSIMA-Projekt sieht dazu eine dedizierte Komponente innerhalb der Servicekomposition vor. 
+
+\minisec{Umsetzung in COSIMA} % (fold)
+\label{msec:umsetzung_in_cosima}
+  
+  Diese Komponente unterstützt dabei zwei unterschiedliche Arten von Synchronisation. Zum einen eine Ereigniss-gesteuerte, also nicht-deterministische Synchronisation\footnote{Relevant etwa bei Benutzer-Interaktionen oder Ausnahmebehandlungen}. Diese wird unter anderem bei~\citep{little1991ms} und~\citep{bertino1998tsm} beschrieben. Diese Sychronisationsbehandlung lässt sich sehr gut in COSIMA integrieren, da auch innerhalb einer dienstorientierten Architektur eine stark Ereignisorientierung anzustreben ist, um ein Maximum an Flexibilität zu erhalten~\citep[S. 96]{masak2007ssb}. Zum anderen ist noch eine Synchronisation über sogenannte \emph{Synchronisationsprimitive}, wie sie bei~\citep{gaggi2005msh} beschrieben wird, vorgesehen.
+
+  Die gesamte Thematik der Synchronisation ist sehr komplex und eine Vielzahl von Aspekten müssen betrachtet werden~\citep[S. 27ff]{bericht}. In dieser Arbeit soll das grundsätzliche Konzept der Architektur im COSIMA-Projekt validiert werden, daher wird im Rahmen des Szenarios eine sehr einfache Betrachtung dieser Thematik durchgeführt und später entsprechend implementiert. Wesentlich umfangreicher wird dieses Thema hingegen bei~\citep{antons09} behandelt. Dort wird eine nachrichtenbasierte Synchronisation im Zusammenhang von Streaming angestrebt, die auf Basis von \emph{Message Exchange Pattern} (MEP\abk{MEP}{Message Exchange Pattern}) realisiert werden soll. Im Abschnitt~\ref{ssub:medienobjekt} wird dann noch einmal auf die Integration von Synchronisation auf der Medienobjektebene eingegangen.
+
+% minisec umsetzung_in_cosima (end)
+
+% subsubsection synchronisation (end)
+
+\subsubsection{Time Engine} % (fold)
+\label{ssub:time_engine}
+
+  Im Zusammenhang mit der Synchronisation von unterschiedlichen Medien innerhalb von Multimediasystemen spielt vor allem die Zeit-Domäne eine besondere Rolle ($\to$ \ref{ssub:synchronisation}), wie auch Bertino und Ferrari feststellen:
+
+  \begin{quote}
+    \emph{"`One of the inherent characteristics of multimedia data is of being heavily time-dependent in that they are usually related by temporal relations which have to be maintained during their playout."'} (\citep[S. 612]{bertino1998tsm})
+  \end{quote}
+  
+  Zeit spielt im Umgang mit Medien also eine wesentliche Rolle. Unterschiedliche Medien weisen jedoch oft unterschiedliche zeitliche Einheitenauf\footnote{Ein Video wird zum Beispiel mit Bilder pro Sekunde angegeben}. Dennoch muss eine Synchronisation zwischen diesen Medien möglich sein. In COSIMA soll der \emph{Time Engine} Dienst eine Transformation zwischen unterschiedlichen zeitlichen Einheiten vornehmen können. Wie diese Transformation konkret implementiert werden soll und wie die Integration mit dem in \ref{ssub:medienobjekt} vorgestelltem Medienobjekt aussehen könnte, ist bis zu diesem Zeitpunkt noch völlig ungeklärt.
+  
+  Im Folgenden Abschnitt wird die Integration von Medien, in Form des Medienobjekts und des Medien Brokers, in die Architektur vorgestellt. Obwohl diese Komponenten laut Abbildung~\ref{fig:Kontextsicht_Architektur_COSIMA} Teil des Enterprise Service Bus sind, werden sie auf Grund ihrer Relevanz gesondert davon betrachtet.
+
+% subsubsection time_engine (end)
+
+  Innerhalb einer Architektur für Multimediaanwendungen spielen vor allem die Medien selbst eine zentrale Rolle. Demnach war eine besondere Betrachtung dieser Daten notwendig, die dazu geführt hat, das die Mediendaten dediziert modelliert wurden~\citep{bericht}. Ergebnis dieser Modellierung ist das Medienobjekt und der Media Broker, die beide an dieser Stelle näher beschrieben werden sollen.
   
 \subsubsection{Medienobjekt} % (fold)
 \label{ssub:medienobjekt}
@@ -477,7 +516,7 @@
     \item[Synchronisation] Wie bereits in Abschnitt~\ref{ssub:synchronisation} erläutert, ist es für eine Multimediaarchitektur inhärent notwenig die Synchronisation der Medien abzubilden. Neben den bereits beschriebenen Komponenten muss auch das Medienobjekt entsprechend dieser Anforderung modelliert werden.
   \end{description}
 
-  Um vor allem die Anforderungen nach \emph{Synchronisation} und \emph{Verteilung} zu erfüllen, wurde das Medienobjekt nach dem Vorbild des MET++-Frameworks~\citep[S. 75]{ackermann1996doo} mit dem \emph{Composite} Design Pattern modelliert~\citep[S. 163]{design_patterns}. Bei dem MET++-Framework wird durch diese rekursive Komposition vor allem die \emph{intermediale} Synchronisation adressiert~\citep[S. 73]{ackermann1996doo}\footnote{Die \emph{intermediale} oder \emph{interobjekt} Synchronisation steht im Gegensatz zu der \emph{intramedialen} oder \emph{intraobjekt} Synchronisation und wird bei~\citep[S. 613]{bertino1998tsm} näher beschrieben.}.
+  Um vor allem die Anforderungen nach \emph{Synchronisation} und \emph{Verteilung} zu erfüllen, wurde das Medienobjekt nach dem Vorbild des MET++-Frameworks~\citep[S. 75]{ackermann1996doo} mit dem \emph{Composite} Design Pattern modelliert~\citep[S. 163]{design_patterns}. Bei dem MET++-Framework wird durch diese rekursive Komposition vor allem die \emph{intermediale} Synchronisation ($\to$ \ref{ssub:synchronisation}) adressiert~\citep[S. 73]{ackermann1996doo}.
   
 \begin{figure}[ht]
   \centering

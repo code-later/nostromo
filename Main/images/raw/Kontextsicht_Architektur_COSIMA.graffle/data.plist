@@ -99,7 +99,7 @@
 		</dict>
 	</array>
 	<key>ModificationDate</key>
-	<string>2008-10-27 16:50:10 +0100</string>
+	<string>2008-12-07 14:42:45 +0100</string>
 	<key>Modifier</key>
 	<string>Dirk Breuer</string>
 	<key>NotesVisible</key>
@@ -128,7 +128,7 @@
 		<key>NSPaperName</key>
 		<array>
 			<string>string</string>
-			<string>8BF632CA-5990-47C0-B1F4-C0541BE51C8F</string>
+			<string>C87955B6-E586-4EF1-AA9A-E40C954C7D16</string>
 		</array>
 		<key>NSPaperSize</key>
 		<array>
@@ -1540,7 +1540,7 @@
 		</dict>
 		<dict>
 			<key>ActiveLayerIndex</key>
-			<integer>3</integer>
+			<integer>1</integer>
 			<key>AutoAdjust</key>
 			<true/>
 			<key>CanvasColor</key>
@@ -1567,7 +1567,7 @@
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{1963.36, 579.333}, {28, 46}}</string>
+							<string>{{1105.32, 107.501}, {28, 42}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -1582,9 +1582,109 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
+							</dict>
+							<key>ID</key>
+							<integer>1712</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>fill</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
+
+\f0\fs72 \cf0 6}</string>
+							</dict>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{1089.29, 99.4738}, {56.6929, 56.6929}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>w</key>
+									<string>0</string>
+								</dict>
+								<key>Font</key>
+								<string>Georgia</string>
+								<key>Size</key>
+								<real>36</real>
+							</dict>
+							<key>ID</key>
+							<integer>1713</integer>
+							<key>Shape</key>
+							<string>Circle</string>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<integer>0</integer>
+							</dict>
+						</dict>
+					</array>
+					<key>ID</key>
+					<integer>1711</integer>
+					<key>Layer</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Group</string>
+					<key>Graphics</key>
+					<array>
+						<dict>
+							<key>Bounds</key>
+							<string>{{1963.36, 579.333}, {28, 42}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Vertical</string>
+							<key>Flow</key>
+							<string>Resize</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>w</key>
+									<string>0</string>
+								</dict>
+								<key>Font</key>
+								<string>Georgia</string>
+								<key>Size</key>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1674</integer>
@@ -1612,7 +1712,7 @@
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 DINMittelschrift;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -1632,9 +1732,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1675</integer>
@@ -1667,7 +1767,7 @@
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{1488.49, 926.633}, {28, 46}}</string>
+							<string>{{1488.49, 926.633}, {28, 42}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -1682,9 +1782,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1671</integer>
@@ -1712,7 +1812,7 @@
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 DINMittelschrift;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -1732,9 +1832,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1672</integer>
@@ -1767,7 +1867,7 @@
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{1069.36, 92.026}, {28, 46}}</string>
+							<string>{{1783.16, 642.694}, {28, 42}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -1782,109 +1882,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
-							</dict>
-							<key>ID</key>
-							<integer>1668</integer>
-							<key>Shape</key>
-							<string>Rectangle</string>
-							<key>Style</key>
-							<dict>
-								<key>fill</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-								<key>shadow</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-								<key>stroke</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-							</dict>
-							<key>Text</key>
-							<dict>
-								<key>Text</key>
-								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 DINMittelschrift;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
-
-\f0\fs72 \cf0 6}</string>
-							</dict>
-						</dict>
-						<dict>
-							<key>Bounds</key>
-							<string>{{1053.33, 84}, {56.6929, 56.6929}}</string>
-							<key>Class</key>
-							<string>ShapedGraphic</string>
-							<key>FontInfo</key>
-							<dict>
-								<key>Color</key>
-								<dict>
-									<key>w</key>
-									<string>0</string>
-								</dict>
-								<key>Font</key>
-								<string>DINMittelschrift</string>
-								<key>Size</key>
-								<real>26</real>
-							</dict>
-							<key>ID</key>
-							<integer>1669</integer>
-							<key>Shape</key>
-							<string>Circle</string>
-							<key>Style</key>
-							<dict>
-								<key>shadow</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-							</dict>
-							<key>Text</key>
-							<dict>
-								<key>Pad</key>
-								<integer>0</integer>
-							</dict>
-						</dict>
-					</array>
-					<key>ID</key>
-					<integer>1667</integer>
-					<key>Layer</key>
-					<integer>0</integer>
-				</dict>
-				<dict>
-					<key>Class</key>
-					<string>Group</string>
-					<key>Graphics</key>
-					<array>
-						<dict>
-							<key>Bounds</key>
-							<string>{{1783.16, 642.694}, {28, 46}}</string>
-							<key>Class</key>
-							<string>ShapedGraphic</string>
-							<key>FitText</key>
-							<string>Vertical</string>
-							<key>Flow</key>
-							<string>Resize</string>
-							<key>FontInfo</key>
-							<dict>
-								<key>Color</key>
-								<dict>
-									<key>w</key>
-									<string>0</string>
-								</dict>
-								<key>Font</key>
-								<string>DINMittelschrift</string>
-								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1665</integer>
@@ -1912,7 +1912,7 @@
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 DINMittelschrift;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -1932,9 +1932,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1666</integer>
@@ -1967,7 +1967,7 @@
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{2042.22, 101.36}, {28, 46}}</string>
+							<string>{{2042.22, 101.36}, {28, 42}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -1982,9 +1982,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1662</integer>
@@ -2012,7 +2012,7 @@
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 DINMittelschrift;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -2032,9 +2032,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1663</integer>
@@ -2067,7 +2067,7 @@
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{1668.13, 76.027}, {28, 46}}</string>
+							<string>{{1668.13, 76.027}, {28, 42}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -2082,9 +2082,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1659</integer>
@@ -2112,7 +2112,7 @@
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 DINMittelschrift;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -2132,9 +2132,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1660</integer>
@@ -2167,7 +2167,7 @@
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{1076.41, 757.36}, {28, 46}}</string>
+							<string>{{1076.41, 757.36}, {28, 42}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -2182,9 +2182,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1656</integer>
@@ -2212,7 +2212,7 @@
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 DINMittelschrift;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -2232,9 +2232,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1657</integer>
@@ -2267,7 +2267,7 @@
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{488.03, 666.58}, {28, 46}}</string>
+							<string>{{488.03, 666.58}, {28, 42}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -2282,9 +2282,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1653</integer>
@@ -2312,7 +2312,7 @@
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 DINMittelschrift;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -2332,9 +2332,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1654</integer>
@@ -2367,7 +2367,7 @@
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{1179.36, 202.161}, {28, 46}}</string>
+							<string>{{1179.36, 202.161}, {28, 42}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -2382,9 +2382,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1650</integer>
@@ -2412,7 +2412,7 @@
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 DINMittelschrift;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -2432,9 +2432,9 @@
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>DINMittelschrift</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>26</real>
+								<real>36</real>
 							</dict>
 							<key>ID</key>
 							<integer>1651</integer>
@@ -2461,43 +2461,13 @@
 					<integer>0</integer>
 				</dict>
 				<dict>
-					<key>Bounds</key>
-					<string>{{113.542, 22.666}, {187, 52}}</string>
-					<key>Class</key>
-					<string>ShapedGraphic</string>
-					<key>FontInfo</key>
-					<dict>
-						<key>Font</key>
-						<string>Helvetica</string>
-						<key>Size</key>
-						<real>12</real>
-					</dict>
-					<key>ID</key>
-					<integer>1622</integer>
-					<key>Layer</key>
-					<integer>1</integer>
-					<key>Shape</key>
-					<string>Rectangle</string>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
-
-\f0\b\fs24 \cf0 Revision: 5\
-Datum: 13.10.2008}</string>
-					</dict>
-				</dict>
-				<dict>
 					<key>Class</key>
 					<string>Group</string>
 					<key>Graphics</key>
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{1764.22, 1401.66}, {330.441, 29}}</string>
+							<string>{{1749.28, 1407.91}, {351.255, 29}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -2512,12 +2482,12 @@ Datum: 13.10.2008}</string>
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>MyriadPro-Semibold</string>
+								<string>Georgia</string>
 								<key>Size</key>
 								<real>24</real>
 							</dict>
 							<key>ID</key>
-							<integer>1626</integer>
+							<integer>1717</integer>
 							<key>Shape</key>
 							<string>Rectangle</string>
 							<key>Style</key>
@@ -2544,179 +2514,11 @@ Datum: 13.10.2008}</string>
 								<integer>0</integer>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 
-\f0\b\fs48 \cf0 Peristent Data / Media Objects}</string>
-							</dict>
-						</dict>
-						<dict>
-							<key>Bounds</key>
-							<string>{{1764.22, 1365.66}, {330.441, 29}}</string>
-							<key>Class</key>
-							<string>ShapedGraphic</string>
-							<key>FitText</key>
-							<string>Vertical</string>
-							<key>Flow</key>
-							<string>Resize</string>
-							<key>FontInfo</key>
-							<dict>
-								<key>Color</key>
-								<dict>
-									<key>w</key>
-									<string>0</string>
-								</dict>
-								<key>Font</key>
-								<string>MyriadPro-Semibold</string>
-								<key>Size</key>
-								<real>24</real>
-							</dict>
-							<key>ID</key>
-							<integer>1627</integer>
-							<key>Shape</key>
-							<string>Rectangle</string>
-							<key>Style</key>
-							<dict>
-								<key>fill</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-								<key>shadow</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-								<key>stroke</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-							</dict>
-							<key>Text</key>
-							<dict>
-								<key>Align</key>
-								<integer>0</integer>
-								<key>Text</key>
-								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
-
-\f0\b\fs48 \cf0 Transient Data / Media Objects}</string>
-							</dict>
-						</dict>
-						<dict>
-							<key>Bounds</key>
-							<string>{{1764.22, 1329.66}, {124.101, 29}}</string>
-							<key>Class</key>
-							<string>ShapedGraphic</string>
-							<key>FitText</key>
-							<string>Vertical</string>
-							<key>Flow</key>
-							<string>Resize</string>
-							<key>FontInfo</key>
-							<dict>
-								<key>Color</key>
-								<dict>
-									<key>w</key>
-									<string>0</string>
-								</dict>
-								<key>Font</key>
-								<string>MyriadPro-Semibold</string>
-								<key>Size</key>
-								<real>24</real>
-							</dict>
-							<key>ID</key>
-							<integer>1628</integer>
-							<key>Shape</key>
-							<string>Rectangle</string>
-							<key>Style</key>
-							<dict>
-								<key>fill</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-								<key>shadow</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-								<key>stroke</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-							</dict>
-							<key>Text</key>
-							<dict>
-								<key>Align</key>
-								<integer>0</integer>
-								<key>Text</key>
-								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
-
-\f0\b\fs48 \cf0 Messaging}</string>
-							</dict>
-						</dict>
-						<dict>
-							<key>Bounds</key>
-							<string>{{1764.22, 1293.66}, {152.583, 29}}</string>
-							<key>Class</key>
-							<string>ShapedGraphic</string>
-							<key>FitText</key>
-							<string>Vertical</string>
-							<key>Flow</key>
-							<string>Resize</string>
-							<key>FontInfo</key>
-							<dict>
-								<key>Color</key>
-								<dict>
-									<key>w</key>
-									<string>0</string>
-								</dict>
-								<key>Font</key>
-								<string>MyriadPro-Semibold</string>
-								<key>Size</key>
-								<real>24</real>
-							</dict>
-							<key>ID</key>
-							<integer>1629</integer>
-							<key>Shape</key>
-							<string>Rectangle</string>
-							<key>Style</key>
-							<dict>
-								<key>fill</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-								<key>shadow</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-								<key>stroke</key>
-								<dict>
-									<key>Draws</key>
-									<string>NO</string>
-								</dict>
-							</dict>
-							<key>Text</key>
-							<dict>
-								<key>Align</key>
-								<integer>0</integer>
-								<key>Text</key>
-								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
-
-\f0\b\fs48 \cf0 External Data}</string>
+\f0\fs48 \cf0 Persistent Data / Media Objects}</string>
 							</dict>
 						</dict>
 						<dict>
@@ -2725,25 +2527,70 @@ Datum: 13.10.2008}</string>
 							<key>FontInfo</key>
 							<dict>
 								<key>Font</key>
-								<string>StoneSansITCTT-Semi</string>
+								<string>Georgia-Bold</string>
 								<key>Size</key>
 								<real>14</real>
 							</dict>
 							<key>ID</key>
-							<integer>1630</integer>
+							<integer>1718</integer>
 							<key>Points</key>
 							<array>
-								<string>{1621.83, 1415.66}</string>
-								<string>{1748.99, 1415.66}</string>
+								<string>{1606.89, 1425.91}</string>
+								<string>{1734.05, 1425.91}</string>
 							</array>
 							<key>Style</key>
 							<dict>
 								<key>stroke</key>
 								<dict>
+									<key>Color</key>
+									<dict>
+										<key>archive</key>
+										<data>
+								YnBsaXN0MDDU
+								AQIDBAUGCQpY
+								JHZlcnNpb25U
+								JHRvcFkkYXJj
+								aGl2ZXJYJG9i
+								amVjdHMSAAGG
+								oNEHCFRyb290
+								gAFfEA9OU0tl
+								eWVkQXJjaGl2
+								ZXKlCwwVGR5V
+								JG51bGzUDQ4P
+								EBESExRWJGNs
+								YXNzXE5TQ29s
+								b3JTcGFjZV8Q
+								Ek5TQ3VzdG9t
+								Q29sb3JTcGFj
+								ZVdOU1doaXRl
+								gAQQA4ACQjAA
+								0g0WFxhUTlNJ
+								RIADEALSGhsc
+								DlgkY2xhc3Nl
+								c1okY2xhc3Nu
+								YW1log4dWE5T
+								T2JqZWN00hob
+								HyCiIB1XTlND
+								b2xvcggRGh8p
+								Mjc6P0FTWV9o
+								b3yRmZudn6Kn
+								rK6wtb7JzNXa
+								3QAAAAAAAAEB
+								AAAAAAAAACEA
+								AAAAAAAAAAAA
+								AAAAAADl
+										</data>
+										<key>b</key>
+										<string>0</string>
+										<key>g</key>
+										<string>0</string>
+										<key>r</key>
+										<string>0</string>
+									</dict>
 									<key>HeadArrow</key>
 									<string>FilledArrow</string>
 									<key>Pattern</key>
-									<integer>4</integer>
+									<integer>1</integer>
 									<key>TailArrow</key>
 									<string>0</string>
 									<key>Width</key>
@@ -2752,21 +2599,189 @@ Datum: 13.10.2008}</string>
 							</dict>
 						</dict>
 						<dict>
+							<key>Bounds</key>
+							<string>{{1749.28, 1371.91}, {347.255, 29}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Vertical</string>
+							<key>Flow</key>
+							<string>Resize</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>w</key>
+									<string>0</string>
+								</dict>
+								<key>Font</key>
+								<string>Georgia</string>
+								<key>Size</key>
+								<real>24</real>
+							</dict>
+							<key>ID</key>
+							<integer>1719</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>fill</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\fs48 \cf0 Transient Data / Media Objects}</string>
+							</dict>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{1749.28, 1335.91}, {175, 29}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Vertical</string>
+							<key>Flow</key>
+							<string>Resize</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>w</key>
+									<string>0</string>
+								</dict>
+								<key>Font</key>
+								<string>Georgia</string>
+								<key>Size</key>
+								<real>24</real>
+							</dict>
+							<key>ID</key>
+							<integer>1720</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>fill</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\fs48 \cf0 Messaging}</string>
+							</dict>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{1749.28, 1299.91}, {191.9, 29}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>Vertical</string>
+							<key>Flow</key>
+							<string>Resize</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>w</key>
+									<string>0</string>
+								</dict>
+								<key>Font</key>
+								<string>Georgia</string>
+								<key>Size</key>
+								<real>24</real>
+							</dict>
+							<key>ID</key>
+							<integer>1721</integer>
+							<key>Shape</key>
+							<string>Rectangle</string>
+							<key>Style</key>
+							<dict>
+								<key>fill</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Align</key>
+								<integer>0</integer>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\fs48 \cf0 External Data}</string>
+							</dict>
+						</dict>
+						<dict>
 							<key>Class</key>
 							<string>LineGraphic</string>
 							<key>FontInfo</key>
 							<dict>
 								<key>Font</key>
-								<string>StoneSansITCTT-Semi</string>
+								<string>Georgia-Bold</string>
 								<key>Size</key>
 								<real>14</real>
 							</dict>
 							<key>ID</key>
-							<integer>1631</integer>
+							<integer>1722</integer>
 							<key>Points</key>
 							<array>
-								<string>{1621.83, 1379.66}</string>
-								<string>{1748.99, 1379.66}</string>
+								<string>{1606.89, 1389.91}</string>
+								<string>{1734.05, 1389.91}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -2796,16 +2811,16 @@ Datum: 13.10.2008}</string>
 							<key>FontInfo</key>
 							<dict>
 								<key>Font</key>
-								<string>StoneSansITCTT-Semi</string>
+								<string>Georgia-Bold</string>
 								<key>Size</key>
 								<real>14</real>
 							</dict>
 							<key>ID</key>
-							<integer>1632</integer>
+							<integer>1723</integer>
 							<key>Points</key>
 							<array>
-								<string>{1621.83, 1343.66}</string>
-								<string>{1748.99, 1343.66}</string>
+								<string>{1606.89, 1353.91}</string>
+								<string>{1734.05, 1353.91}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -2835,16 +2850,16 @@ Datum: 13.10.2008}</string>
 							<key>FontInfo</key>
 							<dict>
 								<key>Font</key>
-								<string>StoneSansITCTT-Semi</string>
+								<string>Georgia-Bold</string>
 								<key>Size</key>
 								<real>14</real>
 							</dict>
 							<key>ID</key>
-							<integer>1633</integer>
+							<integer>1724</integer>
 							<key>Points</key>
 							<array>
-								<string>{1621.83, 1307.66}</string>
-								<string>{1748.99, 1307.66}</string>
+								<string>{1606.89, 1317.91}</string>
+								<string>{1734.05, 1317.91}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -2866,11 +2881,18 @@ Datum: 13.10.2008}</string>
 							<array>
 								<dict>
 									<key>Bounds</key>
-									<string>{{1596.67, 1238.56}, {143.707, 29.6824}}</string>
+									<string>{{1581.73, 1248.81}, {143.707, 29.6824}}</string>
 									<key>Class</key>
 									<string>ShapedGraphic</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Font</key>
+										<string>DINMittelschrift</string>
+										<key>Size</key>
+										<real>36</real>
+									</dict>
 									<key>ID</key>
-									<integer>1635</integer>
+									<integer>1726</integer>
 									<key>Shape</key>
 									<string>Rectangle</string>
 									<key>Text</key>
@@ -2879,7 +2901,7 @@ Datum: 13.10.2008}</string>
 										<integer>0</integer>
 										<key>Text</key>
 										<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 
@@ -2888,23 +2910,60 @@ Datum: 13.10.2008}</string>
 								</dict>
 								<dict>
 									<key>Bounds</key>
-									<string>{{1596.67, 1268.24}, {510, 186.758}}</string>
+									<string>{{1581.73, 1278.49}, {528.138, 176.511}}</string>
 									<key>Class</key>
 									<string>ShapedGraphic</string>
+									<key>FontInfo</key>
+									<dict>
+										<key>Font</key>
+										<string>DINMittelschrift</string>
+										<key>Size</key>
+										<real>36</real>
+									</dict>
 									<key>ID</key>
-									<integer>1636</integer>
+									<integer>1727</integer>
 									<key>Shape</key>
 									<string>Rectangle</string>
 								</dict>
 							</array>
 							<key>ID</key>
-							<integer>1634</integer>
+							<integer>1725</integer>
 						</dict>
 					</array>
 					<key>ID</key>
-					<integer>1625</integer>
+					<integer>1716</integer>
 					<key>Layer</key>
 					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{113.542, 22.666}, {187, 52}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Georgia</string>
+						<key>Size</key>
+						<real>14</real>
+					</dict>
+					<key>ID</key>
+					<integer>1622</integer>
+					<key>Layer</key>
+					<integer>1</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
+
+\f0\fs28 \cf0 Revision: 6\
+Datum: 07.12.2008}</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3162,6 +3221,310 @@ Datum: 13.10.2008}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
+					<string>{{1254.76, 247.666}, {143, 38}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>YES</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>w</key>
+							<string>0</string>
+						</dict>
+						<key>Font</key>
+						<string>Georgia</string>
+						<key>Size</key>
+						<real>16</real>
+					</dict>
+					<key>ID</key>
+					<integer>1710</integer>
+					<key>Layer</key>
+					<integer>3</integer>
+					<key>Line</key>
+					<dict>
+						<key>ID</key>
+						<integer>1707</integer>
+						<key>Position</key>
+						<real>0.22210848331451416</real>
+						<key>RotationType</key>
+						<integer>0</integer>
+					</dict>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.933333</string>
+								<key>g</key>
+								<string>0.933333</string>
+								<key>r</key>
+								<string>0.933333</string>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
+
+\f0\fs32 \cf0 direct call of\
+persistence service}</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{712.857, 137.167}, {139, 19}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>YES</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>w</key>
+							<string>0</string>
+						</dict>
+						<key>Font</key>
+						<string>Helvetica</string>
+						<key>Size</key>
+						<real>12</real>
+					</dict>
+					<key>ID</key>
+					<integer>1708</integer>
+					<key>Layer</key>
+					<integer>3</integer>
+					<key>Line</key>
+					<dict>
+						<key>ID</key>
+						<integer>1706</integer>
+						<key>Position</key>
+						<real>0.43166434764862061</real>
+						<key>RotationType</key>
+						<integer>0</integer>
+					</dict>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
+
+\f0\fs32 \cf0 any persited input}</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>Head</key>
+					<dict>
+						<key>ID</key>
+						<integer>1705</integer>
+						<key>Info</key>
+						<integer>8</integer>
+					</dict>
+					<key>ID</key>
+					<integer>1707</integer>
+					<key>Layer</key>
+					<integer>3</integer>
+					<key>OrthogonalBarAutomatic</key>
+					<true/>
+					<key>OrthogonalBarPosition</key>
+					<real>-1</real>
+					<key>Points</key>
+					<array>
+						<string>{1326.26, 363.139}</string>
+						<string>{1174.88, 80.1667}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>LineType</key>
+							<integer>2</integer>
+							<key>Pattern</key>
+							<integer>1</integer>
+							<key>TailArrow</key>
+							<string>0</string>
+							<key>Width</key>
+							<real>2</real>
+						</dict>
+					</dict>
+					<key>Tail</key>
+					<dict>
+						<key>ID</key>
+						<integer>372</integer>
+						<key>Info</key>
+						<integer>1</integer>
+					</dict>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>Head</key>
+					<dict>
+						<key>ID</key>
+						<integer>10</integer>
+						<key>Info</key>
+						<integer>1</integer>
+					</dict>
+					<key>ID</key>
+					<integer>1706</integer>
+					<key>Layer</key>
+					<integer>3</integer>
+					<key>OrthogonalBarAutomatic</key>
+					<true/>
+					<key>OrthogonalBarPosition</key>
+					<real>-1</real>
+					<key>Points</key>
+					<array>
+						<string>{891.255, 91.149}</string>
+						<string>{782.357, 363.139}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>LineType</key>
+							<integer>2</integer>
+							<key>Pattern</key>
+							<integer>1</integer>
+							<key>TailArrow</key>
+							<string>0</string>
+							<key>Width</key>
+							<real>2</real>
+						</dict>
+					</dict>
+					<key>Tail</key>
+					<dict>
+						<key>ID</key>
+						<integer>1705</integer>
+						<key>Info</key>
+						<integer>17</integer>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{888.893, 46.6667}, {285.989, 67}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>0.152941</string>
+							<key>g</key>
+							<string>0.843137</string>
+							<key>r</key>
+							<string>0.968627</string>
+						</dict>
+						<key>Font</key>
+						<string>Georgia-Bold</string>
+						<key>Size</key>
+						<real>20</real>
+					</dict>
+					<key>ID</key>
+					<integer>1705</integer>
+					<key>Layer</key>
+					<integer>3</integer>
+					<key>Magnets</key>
+					<array>
+						<string>{-0.739601, -1.1094}</string>
+						<string>{-0.421638, -1.26491}</string>
+						<string>{-6.35784e-07, -1.33333}</string>
+						<string>{0.421638, -1.26491}</string>
+						<string>{0.739601, -1.1094}</string>
+						<string>{1.1094, -0.739599}</string>
+						<string>{1.26491, -0.421636}</string>
+						<string>{1.33333, 2.54313e-06}</string>
+						<string>{1.26491, 0.42164}</string>
+						<string>{1.1094, 0.739602}</string>
+						<string>{0.739599, 1.1094}</string>
+						<string>{0.421636, 1.26491}</string>
+						<string>{-6.35782e-07, 1.33333}</string>
+						<string>{-0.421636, 1.26491}</string>
+						<string>{-0.7396, 1.1094}</string>
+						<string>{-1.1094, 0.739603}</string>
+						<string>{-1.26491, 0.421638}</string>
+						<string>{-1.33333, 2.54313e-06}</string>
+						<string>{-1.26491, -0.421636}</string>
+						<string>{-1.1094, -0.739598}</string>
+					</array>
+					<key>Shape</key>
+					<string>RoundRect</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>1</string>
+								<key>g</key>
+								<string>0</string>
+								<key>r</key>
+								<string>0.6</string>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Beneath</key>
+							<string>YES</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
+
+\f0\b\fs40 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Shared Persistence Service}</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
 					<string>{{975.343, 363.139}, {141.732, 54}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
@@ -3173,7 +3536,7 @@ Datum: 13.10.2008}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-It</string>
+						<string>Georgia</string>
 						<key>Size</key>
 						<real>16</real>
 					</dict>
@@ -3210,11 +3573,11 @@ Datum: 13.10.2008}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Regular;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\i\fs32 \cf0 Transformer Service}</string>
+\f0\fs32 \cf0 Transformer Service}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3223,73 +3586,9 @@ Datum: 13.10.2008}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
-					</dict>
-					<key>Head</key>
-					<dict>
-						<key>ID</key>
-						<integer>519</integer>
-						<key>Info</key>
-						<integer>7</integer>
-					</dict>
-					<key>ID</key>
-					<integer>1676</integer>
-					<key>Layer</key>
-					<integer>3</integer>
-					<key>OrthogonalBarAutomatic</key>
-					<true/>
-					<key>OrthogonalBarPosition</key>
-					<real>210.52081298828125</real>
-					<key>Points</key>
-					<array>
-						<string>{1899.61, 572.353}</string>
-						<string>{1462.67, 644}</string>
-						<string>{1017.9, 114.56}</string>
-					</array>
-					<key>Style</key>
-					<dict>
-						<key>stroke</key>
-						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<string>0.6</string>
-								<key>g</key>
-								<string>0.2</string>
-								<key>r</key>
-								<string>0.2</string>
-							</dict>
-							<key>HeadArrow</key>
-							<string>FilledArrow</string>
-							<key>LineType</key>
-							<integer>2</integer>
-							<key>Pattern</key>
-							<integer>2</integer>
-							<key>TailArrow</key>
-							<string>FilledArrow</string>
-							<key>Width</key>
-							<real>2</real>
-						</dict>
-					</dict>
-					<key>Tail</key>
-					<dict>
-						<key>ID</key>
-						<integer>1637</integer>
-						<key>Info</key>
-						<integer>11</integer>
-					</dict>
-				</dict>
-				<dict>
-					<key>Class</key>
-					<string>LineGraphic</string>
-					<key>FontInfo</key>
-					<dict>
-						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
-						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -3308,7 +3607,7 @@ Datum: 13.10.2008}</string>
 					<real>0.0</real>
 					<key>Points</key>
 					<array>
-						<string>{1885.81, 560.489}</string>
+						<string>{1885.81, 560.49}</string>
 						<string>{815.427, 417.139}</string>
 					</array>
 					<key>Style</key>
@@ -3348,9 +3647,9 @@ Datum: 13.10.2008}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -3409,9 +3708,9 @@ Datum: 13.10.2008}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -3466,7 +3765,7 @@ Datum: 13.10.2008}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{414.636, 224.79}, {60, 18}}</string>
+					<string>{{410.461, 224.29}, {63, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3479,9 +3778,9 @@ Datum: 13.10.2008}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansSemITCTTSemi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>1641</integer>
@@ -3527,11 +3826,11 @@ Datum: 13.10.2008}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 StoneSansITCTT-Semi;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 publish}</string>
+\f0\fs32 \cf0 publish}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3540,9 +3839,9 @@ Datum: 13.10.2008}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -3555,7 +3854,7 @@ Datum: 13.10.2008}</string>
 					<integer>3</integer>
 					<key>Points</key>
 					<array>
-						<string>{427.089, 124.601}</string>
+						<string>{423.543, 124.601}</string>
 						<string>{498.5, 568.96}</string>
 					</array>
 					<key>Style</key>
@@ -3580,7 +3879,7 @@ Datum: 13.10.2008}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{284.404, 608.285}, {60, 18}}</string>
+					<string>{{297.12, 609.43}, {63, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3593,9 +3892,9 @@ Datum: 13.10.2008}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansSemITCTTSemi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>1639</integer>
@@ -3606,7 +3905,7 @@ Datum: 13.10.2008}</string>
 						<key>ID</key>
 						<integer>1638</integer>
 						<key>Position</key>
-						<real>0.24572150409221649</real>
+						<real>0.29935964941978455</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -3641,11 +3940,11 @@ Datum: 13.10.2008}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 StoneSansITCTT-Semi;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 publish}</string>
+\f0\fs32 \cf0 publish}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3654,9 +3953,9 @@ Datum: 13.10.2008}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -3671,7 +3970,7 @@ Datum: 13.10.2008}</string>
 					<integer>3</integer>
 					<key>Points</key>
 					<array>
-						<string>{270.679, 609.747}</string>
+						<string>{277.345, 609.747}</string>
 						<string>{448.625, 640.424}</string>
 					</array>
 					<key>Style</key>
@@ -3701,6 +4000,13 @@ Datum: 13.10.2008}</string>
 					<string>{{1872.01, 489.305}, {138, 118.641}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Georgia-Bold</string>
+						<key>Size</key>
+						<real>20</real>
+					</dict>
 					<key>ID</key>
 					<integer>1637</integer>
 					<key>Layer</key>
@@ -3750,17 +4056,17 @@ Datum: 13.10.2008}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Media\
+\f0\b\fs40 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Media\
 Broker}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{545.623, 877.201}, {149, 54}}</string>
+					<string>{{530.29, 859.329}, {177, 57}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3773,9 +4079,9 @@ Broker}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>Helvetica</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>12</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>780</integer>
@@ -3786,9 +4092,9 @@ Broker}</string>
 						<key>ID</key>
 						<integer>779</integer>
 						<key>Offset</key>
-						<real>-9.3336181640625</real>
+						<real>-10.6668701171875</real>
 						<key>Position</key>
-						<real>0.34099286794662476</real>
+						<real>0.24673886597156525</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -3823,11 +4129,11 @@ Broker}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 DINMittelschrift;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\fs28 \cf0 Bind found\
+\f0\fs32 \cf0 Bind found\
 Services according\
 to Process Specification}</string>
 					</dict>
@@ -3835,12 +4141,19 @@ to Process Specification}</string>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Georgia</string>
+						<key>Size</key>
+						<real>16</real>
+					</dict>
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
 						<integer>557</integer>
 						<key>Info</key>
-						<integer>15</integer>
+						<integer>14</integer>
 					</dict>
 					<key>ID</key>
 					<integer>779</integer>
@@ -3854,7 +4167,7 @@ to Process Specification}</string>
 					<array>
 						<string>{657.024, 831.627}</string>
 						<string>{629.457, 934.667}</string>
-						<string>{702.857, 845}</string>
+						<string>{748.691, 845}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -3882,7 +4195,7 @@ to Process Specification}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{323.947, 534.79}, {60, 18}}</string>
+					<string>{{330.495, 533.974}, {63, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3895,9 +4208,9 @@ to Process Specification}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansSemITCTTSemi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>777</integer>
@@ -3945,16 +4258,16 @@ to Process Specification}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 StoneSansITCTT-Semi;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 publish}</string>
+\f0\fs32 \cf0 publish}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{248.434, 397.995}, {60, 18}}</string>
+					<string>{{242.738, 397.495}, {63, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3967,9 +4280,9 @@ to Process Specification}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansSemITCTTSemi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>776</integer>
@@ -4015,16 +4328,16 @@ to Process Specification}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 StoneSansITCTT-Semi;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 publish}</string>
+\f0\fs32 \cf0 publish}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{319.53, 261.633}, {60, 18}}</string>
+					<string>{{318.03, 261.133}, {63, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4037,9 +4350,9 @@ to Process Specification}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansSemITCTTSemi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>775</integer>
@@ -4087,16 +4400,16 @@ to Process Specification}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 StoneSansITCTT-Semi;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 publish}</string>
+\f0\fs32 \cf0 publish}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{882.996, 995.519}, {149, 36}}</string>
+					<string>{{870.255, 995.271}, {159, 38}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4109,9 +4422,9 @@ to Process Specification}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>761</integer>
@@ -4122,7 +4435,7 @@ to Process Specification}</string>
 						<key>ID</key>
 						<integer>760</integer>
 						<key>Position</key>
-						<real>0.25877958536148071</real>
+						<real>0.27368965744972229</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -4157,11 +4470,11 @@ to Process Specification}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 StoneSansITCTT-Semi;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 Process Specification\
+\f0\fs32 \cf0 Process Specification\
 on Media Level}</string>
 					</dict>
 				</dict>
@@ -4171,9 +4484,9 @@ on Media Level}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -4190,7 +4503,7 @@ on Media Level}</string>
 					<real>135.166748046875</real>
 					<key>Points</key>
 					<array>
-						<string>{869.758, 1013.52}</string>
+						<string>{851.857, 1014.27}</string>
 						<string>{1173.36, 978.077}</string>
 					</array>
 					<key>Style</key>
@@ -4219,7 +4532,7 @@ on Media Level}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1217.49, 997.432}, {212, 36}}</string>
+					<string>{{1208.99, 996.432}, {229, 38}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4232,9 +4545,9 @@ on Media Level}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>759</integer>
@@ -4282,17 +4595,17 @@ on Media Level}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 StoneSansITCTT-Semi;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 non-deterministic Interaction\
+\f0\fs32 \cf0 non-deterministic Interaction\
 on Intra- and Intermedia Level}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1037.14, 1239.31}, {121, 18}}</string>
+					<string>{{1028.64, 1238.81}, {138, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4305,9 +4618,9 @@ on Intra- and Intermedia Level}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>757</integer>
@@ -4353,11 +4666,11 @@ on Intra- and Intermedia Level}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 manage Processes}</string>
+\f0\fs32 \cf0 manage Processes}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4366,9 +4679,9 @@ on Intra- and Intermedia Level}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -4416,9 +4729,9 @@ on Intra- and Intermedia Level}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -4470,7 +4783,7 @@ on Intra- and Intermedia Level}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1120.67, 1204.3}, {106, 18}}</string>
+					<string>{{1112.17, 1203.8}, {123, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4483,9 +4796,9 @@ on Intra- and Intermedia Level}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>552</integer>
@@ -4531,11 +4844,11 @@ on Intra- and Intermedia Level}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 Remote Control}</string>
+\f0\fs32 \cf0 Remote Control}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4544,9 +4857,9 @@ on Intra- and Intermedia Level}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -4597,9 +4910,16 @@ on Intra- and Intermedia Level}</string>
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{1324.36, 785.999}, {117, 89.2427}}</string>
+							<string>{{1324.36, 785.999}, {144, 89.2427}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Georgia-Bold</string>
+								<key>Size</key>
+								<real>24</real>
+							</dict>
 							<key>ID</key>
 							<integer>578</integer>
 							<key>Magnets</key>
@@ -4666,7 +4986,7 @@ on Intra- and Intermedia Level}</string>
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -4678,6 +4998,13 @@ on Intra- and Intermedia Level}</string>
 							<string>{{1207.36, 785.999}, {117, 89.2427}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Georgia-Bold</string>
+								<key>Size</key>
+								<real>24</real>
+							</dict>
 							<key>ID</key>
 							<integer>579</integer>
 							<key>Magnets</key>
@@ -4744,7 +5071,7 @@ on Intra- and Intermedia Level}</string>
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -4756,6 +5083,13 @@ on Intra- and Intermedia Level}</string>
 							<string>{{1173.36, 838.42}, {371.377, 209.485}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Georgia-Bold</string>
+								<key>Size</key>
+								<real>24</real>
+							</dict>
 							<key>ID</key>
 							<integer>580</integer>
 							<key>Magnets</key>
@@ -4812,7 +5146,7 @@ on Intra- and Intermedia Level}</string>
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -4828,7 +5162,7 @@ SyncCore}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1110.57, 693.358}, {95, 18}}</string>
+					<string>{{1103.57, 692.858}, {109, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4841,9 +5175,9 @@ SyncCore}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>571</integer>
@@ -4877,11 +5211,11 @@ SyncCore}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 publish status}</string>
+\f0\fs32 \cf0 publish status}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4890,9 +5224,9 @@ SyncCore}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -4951,7 +5285,7 @@ SyncCore}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{564.828, 677.531}, {134, 36}}</string>
+					<string>{{559.828, 676.531}, {144, 38}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4964,9 +5298,9 @@ SyncCore}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansSemITCTTSemi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>564</integer>
@@ -5002,11 +5336,11 @@ SyncCore}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 StoneSansITCTT-Semi;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 find specified\
+\f0\fs32 \cf0 find specified\
 Service Definitions}</string>
 					</dict>
 				</dict>
@@ -5016,9 +5350,9 @@ Service Definitions}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -5060,7 +5394,7 @@ Service Definitions}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{720.024, 874.841}, {149, 36}}</string>
+					<string>{{760.857, 875.669}, {159, 38}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5073,9 +5407,9 @@ Service Definitions}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansSemITCTTSemi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>562</integer>
@@ -5086,7 +5420,7 @@ Service Definitions}</string>
 						<key>ID</key>
 						<integer>561</integer>
 						<key>Position</key>
-						<real>0.57818621397018433</real>
+						<real>0.66718071699142456</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -5121,11 +5455,11 @@ Service Definitions}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 StoneSansITCTT-Semi;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 Process Specification\
+\f0\fs32 \cf0 Process Specification\
 on Service Level}</string>
 					</dict>
 				</dict>
@@ -5135,16 +5469,16 @@ on Service Level}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
 						<integer>557</integer>
 						<key>Info</key>
-						<integer>13</integer>
+						<integer>12</integer>
 					</dict>
 					<key>ID</key>
 					<integer>561</integer>
@@ -5153,11 +5487,11 @@ on Service Level}</string>
 					<key>OrthogonalBarAutomatic</key>
 					<true/>
 					<key>OrthogonalBarPosition</key>
-					<real>34.67474365234375</real>
+					<real>35.30096435546875</real>
 					<key>Points</key>
 					<array>
-						<string>{782.258, 946.15}</string>
-						<string>{794.524, 845}</string>
+						<string>{793.523, 947.402}</string>
+						<string>{840.357, 845}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -5183,7 +5517,7 @@ on Service Level}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{975.973, 918.608}, {129, 36}}</string>
+					<string>{{972.473, 917.608}, {136, 38}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5196,9 +5530,9 @@ on Service Level}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansSemITCTTSemi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>560</integer>
@@ -5244,11 +5578,11 @@ on Service Level}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 StoneSansITCTT-Semi;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 change process\
+\f0\fs32 \cf0 change process\
 details to runtime}</string>
 					</dict>
 				</dict>
@@ -5258,9 +5592,9 @@ details to runtime}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -5308,9 +5642,16 @@ details to runtime}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{694.758, 946.65}, {175, 80.2424}}</string>
+					<string>{{676.857, 947.402}, {175, 80.2424}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Georgia-Bold</string>
+						<key>Size</key>
+						<real>24</real>
+					</dict>
 					<key>ID</key>
 					<integer>558</integer>
 					<key>Layer</key>
@@ -5369,7 +5710,7 @@ details to runtime}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -5381,6 +5722,13 @@ details to runtime}</string>
 					<string>{{657.024, 764.758}, {275, 80.2424}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Georgia-Bold</string>
+						<key>Size</key>
+						<real>24</real>
+					</dict>
 					<key>ID</key>
 					<integer>557</integer>
 					<key>Layer</key>
@@ -5439,7 +5787,7 @@ details to runtime}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -5448,7 +5796,7 @@ details to runtime}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1697.78, 496.251}, {97, 18}}</string>
+					<string>{{1697.78, 486.252}, {97, 38}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5461,9 +5809,9 @@ details to runtime}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>528</integer>
@@ -5509,11 +5857,11 @@ details to runtime}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 get time specs}</string>
+\f0\fs32 \cf0 get time specs}</string>
 					</dict>
 					<key>Wrap</key>
 					<string>YES</string>
@@ -5524,9 +5872,9 @@ details to runtime}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -5585,7 +5933,7 @@ details to runtime}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1181.53, 487.712}, {97, 18}}</string>
+					<string>{{1175.03, 487.212}, {110, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5598,9 +5946,9 @@ details to runtime}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>526</integer>
@@ -5646,11 +5994,11 @@ details to runtime}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 get time specs}</string>
+\f0\fs32 \cf0 get time specs}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5659,9 +6007,9 @@ details to runtime}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -5720,7 +6068,7 @@ details to runtime}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1283.92, 659.485}, {123, 18}}</string>
+					<string>{{1274.92, 658.985}, {141, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5733,9 +6081,9 @@ details to runtime}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>524</integer>
@@ -5769,11 +6117,11 @@ details to runtime}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 publish time specs}</string>
+\f0\fs32 \cf0 publish time specs}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5782,9 +6130,9 @@ details to runtime}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -5858,9 +6206,9 @@ details to runtime}</string>
 							<string>0.968627</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-Bold</string>
+						<string>Georgia-Bold</string>
 						<key>Size</key>
-						<real>24</real>
+						<real>20</real>
 					</dict>
 					<key>ID</key>
 					<integer>522</integer>
@@ -5915,63 +6263,11 @@ details to runtime}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Time Engine}</string>
-					</dict>
-				</dict>
-				<dict>
-					<key>Bounds</key>
-					<string>{{844, 39.5601}, {281.997, 75}}</string>
-					<key>Class</key>
-					<string>ShapedGraphic</string>
-					<key>ID</key>
-					<integer>519</integer>
-					<key>Layer</key>
-					<integer>3</integer>
-					<key>Magnets</key>
-					<array>
-						<string>{-0.302973, -1.29845}</string>
-						<string>{0.302973, -1.29845}</string>
-						<string>{0.927738, -0.957643}</string>
-						<string>{1.17804, -0.62449}</string>
-						<string>{1.16641, 0.645952}</string>
-						<string>{0.912879, 0.971818}</string>
-						<string>{0.302973, 1.29845}</string>
-						<string>{-0.302973, 1.29845}</string>
-						<string>{-0.927738, 0.957643}</string>
-						<string>{-1.17804, 0.62449}</string>
-						<string>{-1.16641, -0.645952}</string>
-						<string>{-0.912879, -0.971818}</string>
-					</array>
-					<key>Shape</key>
-					<string>RoundRect</string>
-					<key>Style</key>
-					<dict>
-						<key>fill</key>
-						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<string>1</string>
-								<key>g</key>
-								<string>0</string>
-								<key>r</key>
-								<string>0.501961</string>
-							</dict>
-						</dict>
-					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
-{\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
-
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Shared Persistence Service}</string>
+\f0\b\fs40 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Time Engine}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5980,9 +6276,9 @@ details to runtime}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -6028,9 +6324,9 @@ details to runtime}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -6045,7 +6341,7 @@ details to runtime}</string>
 					<integer>3</integer>
 					<key>Points</key>
 					<array>
-						<string>{223.863, 351.333}</string>
+						<string>{218.441, 351.333}</string>
 						<string>{465.25, 597.546}</string>
 					</array>
 					<key>Style</key>
@@ -6074,9 +6370,9 @@ details to runtime}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -6091,7 +6387,7 @@ details to runtime}</string>
 					<integer>3</integer>
 					<key>Points</key>
 					<array>
-						<string>{309.267, 482.191}</string>
+						<string>{323.407, 482.55}</string>
 						<string>{448.625, 611.839}</string>
 					</array>
 					<key>Style</key>
@@ -6120,9 +6416,9 @@ details to runtime}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -6142,7 +6438,7 @@ details to runtime}</string>
 					<key>Points</key>
 					<array>
 						<string>{726.703, 1064.39}</string>
-						<string>{782.258, 1026.89}</string>
+						<string>{764.357, 1027.64}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -6171,6 +6467,13 @@ details to runtime}</string>
 					<string>{{432, 554.667}, {166.251, 142.929}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Georgia-Bold</string>
+						<key>Size</key>
+						<real>20</real>
+					</dict>
 					<key>ID</key>
 					<integer>509</integer>
 					<key>Layer</key>
@@ -6220,17 +6523,17 @@ details to runtime}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Service\
+\f0\b\fs40 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Service\
 Registry}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{403.667, 1304.61}, {158, 18}}</string>
+					<string>{{391.167, 1304.11}, {183, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6243,9 +6546,9 @@ Registry}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>506</integer>
@@ -6291,11 +6594,11 @@ Registry}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 create/select any service}</string>
+\f0\fs32 \cf0 create/select any service}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -6304,9 +6607,9 @@ Registry}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -6351,7 +6654,7 @@ Registry}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{143.754, 1215.47}, {130, 18}}</string>
+					<string>{{134.327, 1214.21}, {150, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6364,9 +6667,9 @@ Registry}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>502</integer>
@@ -6412,11 +6715,11 @@ Registry}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 any real-time ouput}</string>
+\f0\fs32 \cf0 any real-time ouput}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -6425,9 +6728,9 @@ Registry}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -6444,8 +6747,8 @@ Registry}</string>
 					<real>324.3349609375</real>
 					<key>Points</key>
 					<array>
-						<string>{209.679, 628.5}</string>
-						<string>{208.754, 1308.97}</string>
+						<string>{216.345, 628.5}</string>
+						<string>{209.327, 1308.97}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -6472,6 +6775,13 @@ Registry}</string>
 					<string>{{144.667, 1308.97}, {128, 128}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Georgia</string>
+						<key>Size</key>
+						<real>16</real>
+					</dict>
 					<key>ID</key>
 					<integer>500</integer>
 					<key>ImageID</key>
@@ -6501,7 +6811,7 @@ Registry}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{107.157, 561}, {166.251, 67}}</string>
+					<string>{{113.824, 561}, {166.251, 67}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -6512,7 +6822,7 @@ Registry}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-Regular</string>
+						<string>Georgia</string>
 						<key>Size</key>
 						<real>16</real>
 					</dict>
@@ -6549,7 +6859,7 @@ Registry}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Regular;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -6559,7 +6869,7 @@ Video out}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{110.875, 448.691}, {198.392, 67}}</string>
+					<string>{{110.875, 448.691}, {212.184, 67}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -6570,7 +6880,7 @@ Video out}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-Regular</string>
+						<string>Georgia</string>
 						<key>Size</key>
 						<real>16</real>
 					</dict>
@@ -6601,7 +6911,7 @@ Video out}</string>
 						<integer>0</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Regular;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -6611,7 +6921,7 @@ MPEG-4 Encoder}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{124.667, 284.333}, {198.392, 67}}</string>
+					<string>{{113.824, 284.333}, {209.235, 67}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -6622,7 +6932,7 @@ MPEG-4 Encoder}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-Regular</string>
+						<string>Georgia</string>
 						<key>Size</key>
 						<real>16</real>
 					</dict>
@@ -6653,7 +6963,7 @@ MPEG-4 Encoder}</string>
 						<integer>0</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Regular;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -6663,7 +6973,7 @@ Annotation}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{148, 182.384}, {198.392, 67}}</string>
+					<string>{{137.157, 182.384}, {209.235, 67}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -6674,7 +6984,7 @@ Annotation}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-Regular</string>
+						<string>Georgia</string>
 						<key>Size</key>
 						<real>16</real>
 					</dict>
@@ -6705,7 +7015,7 @@ Annotation}</string>
 						<integer>0</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Regular;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -6715,7 +7025,7 @@ Segmentation}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{330.272, 57.601}, {157, 67}}</string>
+					<string>{{321.021, 57.601}, {166.251, 67}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -6726,7 +7036,7 @@ Segmentation}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-Regular</string>
+						<string>Georgia</string>
 						<key>Size</key>
 						<real>16</real>
 					</dict>
@@ -6763,7 +7073,7 @@ Segmentation}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Regular;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -6784,7 +7094,7 @@ Video Input}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-It</string>
+						<string>Georgia</string>
 						<key>Size</key>
 						<real>16</real>
 					</dict>
@@ -6821,11 +7131,11 @@ Video Input}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Regular;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\i\fs32 \cf0 Consumer Service}</string>
+\f0\fs32 \cf0 Consumer Service}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -6841,7 +7151,7 @@ Video Input}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-It</string>
+						<string>Georgia</string>
 						<key>Size</key>
 						<real>16</real>
 					</dict>
@@ -6878,16 +7188,16 @@ Video Input}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Regular;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\i\fs32 \cf0 Producer Service}</string>
+\f0\fs32 \cf0 Producer Service}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{713.026, 574.876}, {30, 18}}</string>
+					<string>{{711.026, 578.563}, {34, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6900,9 +7210,9 @@ Video Input}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>499</integer>
@@ -6948,11 +7258,11 @@ Video Input}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-SemiboldIt;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\i\b\fs28 \cf0 is a}</string>
+\f0\fs32 \cf0 is a}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -6961,9 +7271,9 @@ Video Input}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -6977,10 +7287,10 @@ Video Input}</string>
 					<key>OrthogonalBarAutomatic</key>
 					<true/>
 					<key>OrthogonalBarPosition</key>
-					<real>224.85794067382812</real>
+					<real>221.52459716796875</real>
 					<key>Points</key>
 					<array>
-						<string>{262.41, 566.724}</string>
+						<string>{269.077, 566.724}</string>
 						<string>{728.026, 581.333}</string>
 						<string>{1152, 609}</string>
 						<string>{1326.26, 417.639}</string>
@@ -7022,7 +7332,7 @@ Video Input}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{599.456, 446.526}, {30, 18}}</string>
+					<string>{{597.456, 446.026}, {34, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7035,9 +7345,9 @@ Video Input}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>497</integer>
@@ -7083,11 +7393,11 @@ Video Input}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-SemiboldIt;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\i\b\fs28 \cf0 is a}</string>
+\f0\fs32 \cf0 is a}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7096,9 +7406,9 @@ Video Input}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -7117,7 +7427,7 @@ Video Input}</string>
 					<real>263.60751342773438</real>
 					<key>Points</key>
 					<array>
-						<string>{309.267, 482.191}</string>
+						<string>{323.059, 482.191}</string>
 						<string>{563, 455.526}</string>
 					</array>
 					<key>Style</key>
@@ -7161,9 +7471,9 @@ Video Input}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -7224,9 +7534,9 @@ Video Input}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -7242,7 +7552,7 @@ Video Input}</string>
 					<key>OrthogonalBarAutomatic</key>
 					<true/>
 					<key>OrthogonalBarPosition</key>
-					<real>92.40399169921875</real>
+					<real>92.403976440429688</real>
 					<key>Points</key>
 					<array>
 						<string>{346.392, 215.884}</string>
@@ -7287,7 +7597,7 @@ Video Input}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{655.162, 194.068}, {30, 18}}</string>
+					<string>{{653.029, 193.64}, {34, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7300,9 +7610,9 @@ Video Input}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>484</integer>
@@ -7350,16 +7660,16 @@ Video Input}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-SemiboldIt;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\i\b\fs28 \cf0 is a}</string>
+\f0\fs32 \cf0 is a}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{289.084, 1265.65}, {126, 18}}</string>
+					<string>{{278.584, 1265.33}, {147, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7372,9 +7682,9 @@ Video Input}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>483</integer>
@@ -7420,11 +7730,11 @@ Video Input}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 any real-time input}</string>
+\f0\fs32 \cf0 any real-time input}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7433,9 +7743,9 @@ Video Input}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -7454,8 +7764,8 @@ Video Input}</string>
 					<array>
 						<string>{352.084, 1317.98}</string>
 						<string>{314.667, 1249.33}</string>
-						<string>{390.333, 741.333}</string>
-						<string>{390.455, 124.601}</string>
+						<string>{381.03, 744}</string>
+						<string>{384.75, 124.601}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -7482,6 +7792,13 @@ Video Input}</string>
 					<string>{{322.966, 1317.98}, {128, 128}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Georgia</string>
+						<key>Size</key>
+						<real>16</real>
+					</dict>
 					<key>ID</key>
 					<integer>480</integer>
 					<key>ImageID</key>
@@ -7511,7 +7828,7 @@ Video Input}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1625.44, 360.437}, {87, 36}}</string>
+					<string>{{1619.44, 359.437}, {99, 38}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7524,9 +7841,9 @@ Video Input}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>435</integer>
@@ -7572,11 +7889,11 @@ Video Input}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 push start of\
+\f0\fs32 \cf0 push start of\
 next service}</string>
 					</dict>
 				</dict>
@@ -7590,6 +7907,13 @@ next service}</string>
 							<string>{{1748, 143.5}, {139, 48}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Georgia-Bold</string>
+								<key>Size</key>
+								<real>20</real>
+							</dict>
 							<key>ID</key>
 							<integer>350</integer>
 							<key>Magnets</key>
@@ -7629,11 +7953,11 @@ next service}</string>
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Subscriber}</string>
+\f0\b\fs40 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Subscriber}</string>
 							</dict>
 						</dict>
 						<dict>
@@ -7641,6 +7965,13 @@ next service}</string>
 							<string>{{1949, 148}, {139, 48}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Georgia-Bold</string>
+								<key>Size</key>
+								<real>20</real>
+							</dict>
 							<key>ID</key>
 							<integer>351</integer>
 							<key>Magnets</key>
@@ -7688,11 +8019,11 @@ next service}</string>
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Publisher}</string>
+\f0\b\fs40 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Publisher}</string>
 							</dict>
 						</dict>
 						<dict>
@@ -7712,7 +8043,7 @@ next service}</string>
 									<string>0.968627</string>
 								</dict>
 								<key>Font</key>
-								<string>MyriadPro-Bold</string>
+								<string>Georgia-Bold</string>
 								<key>Size</key>
 								<real>24</real>
 							</dict>
@@ -7755,7 +8086,7 @@ next service}</string>
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
@@ -7770,7 +8101,7 @@ next service}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1375.82, 335}, {138, 18}}</string>
+					<string>{{1365.82, 334.5}, {158, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7783,9 +8114,9 @@ next service}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>434</integer>
@@ -7831,11 +8162,11 @@ next service}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 publish defined state}</string>
+\f0\fs32 \cf0 publish defined state}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7844,9 +8175,9 @@ next service}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -7905,7 +8236,7 @@ next service}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{850.91, 287}, {138, 18}}</string>
+					<string>{{840.91, 286.5}, {158, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7918,9 +8249,9 @@ next service}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>431</integer>
@@ -7966,11 +8297,11 @@ next service}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 publish defined state}</string>
+\f0\fs32 \cf0 publish defined state}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7979,9 +8310,9 @@ next service}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -8042,7 +8373,7 @@ next service}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1298.16, 196.973}, {125, 36}}</string>
+					<string>{{1380.7, 131.167}, {99, 38}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8055,82 +8386,9 @@ next service}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
-					</dict>
-					<key>ID</key>
-					<integer>425</integer>
-					<key>Layer</key>
-					<integer>3</integer>
-					<key>Line</key>
-					<dict>
-						<key>ID</key>
-						<integer>406</integer>
-						<key>Offset</key>
-						<real>1.33331298828125</real>
-						<key>Position</key>
-						<real>0.27219933271408081</real>
-						<key>RotationType</key>
-						<integer>0</integer>
-					</dict>
-					<key>Shape</key>
-					<string>Rectangle</string>
-					<key>Style</key>
-					<dict>
-						<key>fill</key>
-						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<string>0.933333</string>
-								<key>g</key>
-								<string>0.933333</string>
-								<key>r</key>
-								<string>0.933333</string>
-							</dict>
-						</dict>
-						<key>shadow</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>stroke</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
-
-\f0\b\fs28 \cf0 direct call of\
-persistence service}</string>
-					</dict>
-				</dict>
-				<dict>
-					<key>Bounds</key>
-					<string>{{1386.7, 132.167}, {87, 36}}</string>
-					<key>Class</key>
-					<string>ShapedGraphic</string>
-					<key>FitText</key>
-					<string>YES</string>
-					<key>FontInfo</key>
-					<dict>
-						<key>Color</key>
-						<dict>
-							<key>w</key>
-							<string>0</string>
-						</dict>
-						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
-						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>423</integer>
@@ -8166,17 +8424,17 @@ persistence service}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 push start of\
+\f0\fs32 \cf0 push start of\
 next service}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1772.3, 901.25}, {162, 18}}</string>
+					<string>{{1759.3, 900.75}, {188, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8189,9 +8447,9 @@ next service}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>422</integer>
@@ -8239,16 +8497,16 @@ next service}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 publish service follow-up}</string>
+\f0\fs32 \cf0 publish service follow-up}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1778.67, 218.794}, {124, 54}}</string>
+					<string>{{1768.67, 217.294}, {144, 57}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8261,9 +8519,9 @@ next service}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>555</integer>
@@ -8309,210 +8567,24 @@ next service}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 push any message\
+\f0\fs32 \cf0 push any message\
 from any workflow\
 defined service}</string>
 					</dict>
 				</dict>
 				<dict>
-					<key>Bounds</key>
-					<string>{{891.266, 200.239}, {127, 18}}</string>
-					<key>Class</key>
-					<string>ShapedGraphic</string>
-					<key>FitText</key>
-					<string>YES</string>
-					<key>FontInfo</key>
-					<dict>
-						<key>Color</key>
-						<dict>
-							<key>w</key>
-							<string>0</string>
-						</dict>
-						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
-						<key>Size</key>
-						<real>14</real>
-					</dict>
-					<key>ID</key>
-					<integer>414</integer>
-					<key>Layer</key>
-					<integer>3</integer>
-					<key>Line</key>
-					<dict>
-						<key>ID</key>
-						<integer>413</integer>
-						<key>Offset</key>
-						<real>2.6666259765625</real>
-						<key>Position</key>
-						<real>0.22540558874607086</real>
-						<key>RotationType</key>
-						<integer>0</integer>
-					</dict>
-					<key>Shape</key>
-					<string>Rectangle</string>
-					<key>Style</key>
-					<dict>
-						<key>fill</key>
-						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<string>0.933333</string>
-								<key>g</key>
-								<string>0.933333</string>
-								<key>r</key>
-								<string>0.933333</string>
-							</dict>
-						</dict>
-						<key>shadow</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>stroke</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
-
-\f0\b\fs28 \cf0 any persisted input}</string>
-					</dict>
-				</dict>
-				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
-					</dict>
-					<key>Head</key>
-					<dict>
-						<key>ID</key>
-						<integer>10</integer>
-						<key>Info</key>
-						<integer>1</integer>
-					</dict>
-					<key>ID</key>
-					<integer>413</integer>
-					<key>Layer</key>
-					<integer>3</integer>
-					<key>OrthogonalBarAutomatic</key>
-					<true/>
-					<key>OrthogonalBarPosition</key>
-					<real>108.13948822021484</real>
-					<key>Points</key>
-					<array>
-						<string>{952.099, 115.06}</string>
-						<string>{782.357, 363.139}</string>
-					</array>
-					<key>Style</key>
-					<dict>
-						<key>stroke</key>
-						<dict>
-							<key>HeadArrow</key>
-							<string>FilledArrow</string>
-							<key>HopLines</key>
-							<true/>
-							<key>HopType</key>
-							<integer>1</integer>
-							<key>LineType</key>
-							<integer>2</integer>
-							<key>Pattern</key>
-							<integer>4</integer>
-							<key>TailArrow</key>
-							<string>0</string>
-							<key>Width</key>
-							<real>2</real>
-						</dict>
-					</dict>
-					<key>Tail</key>
-					<dict>
-						<key>ID</key>
-						<integer>519</integer>
-					</dict>
-				</dict>
-				<dict>
-					<key>Class</key>
-					<string>LineGraphic</string>
-					<key>FontInfo</key>
-					<dict>
-						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
-						<key>Size</key>
-						<real>14</real>
-					</dict>
-					<key>Head</key>
-					<dict>
-						<key>ID</key>
-						<integer>519</integer>
-						<key>Info</key>
-						<integer>4</integer>
-					</dict>
-					<key>ID</key>
-					<integer>406</integer>
-					<key>Layer</key>
-					<integer>3</integer>
-					<key>OrthogonalBarAutomatic</key>
-					<true/>
-					<key>OrthogonalBarPosition</key>
-					<real>-1</real>
-					<key>Points</key>
-					<array>
-						<string>{1359.33, 363.139}</string>
-						<string>{1120.13, 58.0078}</string>
-					</array>
-					<key>Style</key>
-					<dict>
-						<key>stroke</key>
-						<dict>
-							<key>HeadArrow</key>
-							<string>FilledArrow</string>
-							<key>HopLines</key>
-							<true/>
-							<key>HopType</key>
-							<integer>1</integer>
-							<key>LineType</key>
-							<integer>2</integer>
-							<key>Pattern</key>
-							<integer>4</integer>
-							<key>TailArrow</key>
-							<string>0</string>
-							<key>Width</key>
-							<real>2</real>
-						</dict>
-					</dict>
-					<key>Tail</key>
-					<dict>
-						<key>ID</key>
-						<integer>372</integer>
-						<key>Info</key>
-						<integer>2</integer>
-					</dict>
-				</dict>
-				<dict>
-					<key>Class</key>
-					<string>LineGraphic</string>
-					<key>FontInfo</key>
-					<dict>
-						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
-						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -8575,9 +8647,9 @@ defined service}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -8640,9 +8712,9 @@ defined service}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -8705,9 +8777,9 @@ defined service}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -8770,9 +8842,9 @@ defined service}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -8791,7 +8863,7 @@ defined service}</string>
 					<real>168.59747314453125</real>
 					<key>Points</key>
 					<array>
-						<string>{484.428, 107.065}</string>
+						<string>{484.261, 107.065}</string>
 						<string>{730.593, 377.273}</string>
 					</array>
 					<key>Style</key>
@@ -8831,7 +8903,7 @@ defined service}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{779.164, 1319.57}, {177, 18}}</string>
+					<string>{{764.664, 1319.07}, {206, 19}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8844,9 +8916,9 @@ defined service}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>375</integer>
@@ -8892,11 +8964,11 @@ defined service}</string>
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs28 \cf0 create Process Specification}</string>
+\f0\fs32 \cf0 create Process Specification}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -8905,9 +8977,9 @@ defined service}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>StoneSansITCTT-Semi</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>16</real>
 					</dict>
 					<key>Head</key>
 					<dict>
@@ -8958,7 +9030,7 @@ defined service}</string>
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{993.936, 1426}, {243, 29}}</string>
+							<string>{{1031.44, 1426}, {168, 19}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -8973,9 +9045,9 @@ defined service}</string>
 									<string>0</string>
 								</dict>
 								<key>Font</key>
-								<string>MyriadPro-Regular</string>
+								<string>Georgia</string>
 								<key>Size</key>
-								<real>24</real>
+								<real>16</real>
 							</dict>
 							<key>ID</key>
 							<integer>365</integer>
@@ -9003,11 +9075,11 @@ defined service}</string>
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs48 \cf0 Application Developer}</string>
+\f0\fs32 \cf0 Application Developer}</string>
 							</dict>
 							<key>Wrap</key>
 							<string>NO</string>
@@ -9017,6 +9089,13 @@ defined service}</string>
 							<string>{{1051.43, 1308.97}, {128, 128}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Georgia</string>
+								<key>Size</key>
+								<real>16</real>
+							</dict>
 							<key>ID</key>
 							<integer>366</integer>
 							<key>ImageID</key>
@@ -9065,9 +9144,9 @@ defined service}</string>
 							<string>0.968627</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-Bold</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>26</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>576</integer>
@@ -9124,14 +9203,14 @@ defined service}</string>
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red85\green85\blue85;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qr\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Enterprise Service Bus}</string>
+\f0\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado18 \shadc0 Enterprise Service Bus}</string>
 					</dict>
 					<key>TextPlacement</key>
-					<integer>0</integer>
+					<integer>2</integer>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -9143,6 +9222,13 @@ defined service}</string>
 							<string>{{1231.92, 1064.39}, {257.806, 77.8267}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Georgia-Bold</string>
+								<key>Size</key>
+								<real>20</real>
+							</dict>
 							<key>ID</key>
 							<integer>751</integer>
 							<key>Magnets</key>
@@ -9182,11 +9268,11 @@ defined service}</string>
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Remote Control}</string>
+\f0\b\fs40 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Remote Control}</string>
 							</dict>
 						</dict>
 						<dict>
@@ -9194,6 +9280,13 @@ defined service}</string>
 							<string>{{911.57, 1064.39}, {257.806, 77.8267}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Georgia-Bold</string>
+								<key>Size</key>
+								<real>20</real>
+							</dict>
 							<key>ID</key>
 							<integer>752</integer>
 							<key>Magnets</key>
@@ -9233,11 +9326,11 @@ defined service}</string>
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Business Process Management}</string>
+\f0\b\fs40 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Business Process Management}</string>
 							</dict>
 						</dict>
 						<dict>
@@ -9245,6 +9338,13 @@ defined service}</string>
 							<string>{{597.8, 1064.39}, {257.806, 77.8267}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Font</key>
+								<string>Georgia-Bold</string>
+								<key>Size</key>
+								<real>20</real>
+							</dict>
 							<key>ID</key>
 							<integer>753</integer>
 							<key>Magnets</key>
@@ -9284,11 +9384,11 @@ defined service}</string>
 							<dict>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red247\green215\blue39;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Business Process Specification}</string>
+\f0\b\fs40 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Business Process Specification}</string>
 							</dict>
 						</dict>
 						<dict>
@@ -9308,9 +9408,9 @@ defined service}</string>
 									<string>0.968627</string>
 								</dict>
 								<key>Font</key>
-								<string>MyriadPro-Bold</string>
+								<string>Georgia-Bold</string>
 								<key>Size</key>
-								<real>24</real>
+								<real>16</real>
 							</dict>
 							<key>ID</key>
 							<integer>754</integer>
@@ -9365,11 +9465,11 @@ defined service}</string>
 								<integer>2</integer>
 								<key>Text</key>
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red85\green85\blue85;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qr\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Service Composition}</string>
+\f0\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado18 \shadc0 Service Composition}</string>
 							</dict>
 							<key>TextPlacement</key>
 							<integer>0</integer>
@@ -9393,9 +9493,9 @@ defined service}</string>
 							<string>0</string>
 						</dict>
 						<key>Font</key>
-						<string>MyriadPro-Bold</string>
+						<string>Georgia</string>
 						<key>Size</key>
-						<real>36</real>
+						<real>16</real>
 					</dict>
 					<key>ID</key>
 					<integer>782</integer>
@@ -9424,12 +9524,11 @@ defined service}</string>
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;\red85\green85\blue85;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qr\pardirnatural
 
-\f0\b\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado85 \shadc0 Media\
-Components}</string>
+\f0\fs48 \cf2 \shad\shadx42\shady-43\shadr0\shado18 \shadc0 Media Components}</string>
 						<key>VerticalPad</key>
 						<integer>5</integer>
 					</dict>
@@ -9468,18 +9567,18 @@ Components}</string>
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qr\pardirnatural
 
-\f0\b\fs72 \cf0 \shad\shadx21\shady-22\shadr0\shado85 \shadc0 Services}</string>
+\f0\b\fs60 \cf0 \shad\shadx21\shady-22\shadr0\shado85 \shadc0 Services}</string>
 					</dict>
 					<key>TextPlacement</key>
 					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{96, 1177}, {1474.66, 278}}</string>
+					<string>{{96, 1177}, {1462.67, 278}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -9521,11 +9620,11 @@ Components}</string>
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qr\pardirnatural
 
-\f0\b\fs72 \cf0 \shad\shadx21\shady-22\shadr0\shado85 \shadc0 Custom Application}</string>
+\f0\b\fs60 \cf0 \shad\shadx21\shady-22\shadr0\shado85 \shadc0 Custom Application}</string>
 						<key>VerticalPad</key>
 						<integer>5</integer>
 					</dict>
@@ -9561,11 +9660,11 @@ Components}</string>
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
-{\fonttbl\f0\fnil\fcharset0 MyriadPro-Semibold;}
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qr\pardirnatural
 
-\f0\b\fs72 \cf0 \shad\shadx21\shady-22\shadr0\shado85 \shadc0 COSIMA-Projekt}</string>
+\f0\b\fs60 \cf0 \shad\shadx21\shady-22\shadr0\shado85 \shadc0 COSIMA-Projekt}</string>
 						<key>VerticalPad</key>
 						<integer>5</integer>
 					</dict>
@@ -9671,9 +9770,9 @@ Components}</string>
 		<key>DrawerWidth</key>
 		<real>179</real>
 		<key>Frame</key>
-		<string>{{187, 0}, {1092, 746}}</string>
+		<string>{{189, 0}, {1727, 1146}}</string>
 		<key>VisibleRegion</key>
-		<string>{{112, 0}, {1436, 917.333}}</string>
+		<string>{{0, 0}, {2282.67, 1450.67}}</string>
 		<key>Zoom</key>
 		<real>0.75</real>
 	</dict>
