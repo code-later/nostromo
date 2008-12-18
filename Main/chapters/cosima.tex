@@ -144,7 +144,7 @@
   
   Es ist somit anzunehmen, dass SOA nicht nur einen kurzweiligen, technologischen Trend beschreibt, sondern vielmehr einen Paradigmenwechsel bei der Konstruktion von komplexen und verteilten Applikationen~\citep[S. 1]{service_oriented_computing}. Gerade dann ist es jedoch notwendig, die relevante Begriffe der dienstorientierten Architektur im Rahmen dieser Arbeit zu definieren. Da es jedoch keine einheitliche und allgemein anerkannte Definition dazu gibt~\citep[S. 6]{soa_goes_real}, werden im Folgenden Definitionen unterschiedlicher Herkunft zur Eingrenzung herangezogen.
   
-\subsubsection{Definition: Dienst} % (fold)
+\subsubsection{Dienst} % (fold)
 \label{ssub:definitionen_dienst}
 
   Die Begriffe \emph{Dienstorientierung} und \emph{dienstorientierte Architektur} beinhalten beide als konstituierendes Element den Begriff \emph{Dienst}, daher soll dieser Begriff vor den anderen beiden definiert werden.
@@ -178,7 +178,7 @@
 
 % subsubsection definitionen_dienst (end)
 
-\subsubsection{Definition: Dienstorientierung} % (fold)
+\subsubsection{Dienstorientierung} % (fold)
 \label{ssub:definition_dienstorientierung}
 
   Bevor auf die dienstorientierte Architektur eingegangen werden kann, soll noch der Begriff der Dienstorientierung für sich definiert werden:
@@ -211,7 +211,7 @@
 
 % subsubsection definition_dienstorientierung (end)
 
-\subsubsection{Definition: Dienstorientierte Architektur} % (fold)
+\subsubsection{Dienstorientierte Architektur} % (fold)
 \label{ssub:definition_dienstorientierte_architektur}
 
   Bei der Definition von Natis wird zunächst die Schnittstelle zwischen den Diensten in den Vordergrund gerückt:
@@ -438,49 +438,144 @@
 \subsection{Integration von Medien} % (fold)
 \label{sub:integration_von_medien}
 
-  - Medien und Multimediasysteme beschreiben
-  - Auf Besonderheiten eingehen
-  - dann zu Synchronisation kommen
+  Die in diesem Abschnitt vorgestellten Komponenten tragen maßgeblich dazu bei, dass sich mit COSIMA Multimediaanwendungen realisieren lassen. Um jedoch die Relevanz dieser Komponenten im Rahmen von Multimedia begreifen zu können, soll im ersten Schritt eine Definition des Begriffs Multimedia gegeben werden, aus dem sich dann später die Anforderungen an die hier vorgestellten Komponenten ableiten lassen.
+  
+\subsubsection{Definition: Multimedia} % (fold)
+\label{ssub:definition_multimedia}
+  
+  Verbaliter lässt sich Multimedia durch die Bedeutung der beiden Wortteile "`Multi-"' und "`Media"' oder "`Medium"' erschließen:
+
+  \begin{definition}[Multi-]\label{def:multi_}
+    "`vielfach, mehrer\ldots, viel\ldots/Viel\ldots"'\footnote{aus: Duden - Deutsches Universal Wörterbuch A-Z, 3. Aufl., 1996}
+  \end{definition}
+  
+  \begin{definition}[Medium / Medien]\label{def:medium}
+    "`\textbf{Medium} (lat. »Mitte«) \textbf{1.} bildungssprachlich für: vermittelndes Element [\ldots] \textbf{3.} Kommunikationswissenschaften: Vermittlungsinstanz von Informationen [\ldots]. \textbf{Medien} (von engl. »media«), Sg. Medium, Sammel-Bez, für alle techn. Mittel zur Verarbeitung von Information, d.h. für Kommunikationsmittel (z.B. Zeitung, Zeitschrift, Buch, Plakat, Hörfunk, Fernsehen, Internet) [\ldots]"'\footnote{aus: Brockhaus - die Enzyklopädie, 21. Auflage, 2006}
+  \end{definition}
+  
+  Der Begriff \emph{Multimedia} ließe sich daher so definieren, dass es sich um viele vermittelnden Instanzen von Informationen handelt. Diese Definition wäre für den konkreten Kontext jedoch zu unspezifisch und es ist daher eine weitere Einordnung notwendig.
+  
+  Bei Steinmetz wird die genannte Definition dahingehend erweitert, dass ein Medium "`ein Mittel zur Verbreitung und Darstellung von Informationen"'~\citep[S. 7]{multimedia_technologie} ist. Sie wird also explizit um die \emph{Darstellung} von Informationen ergänzt. Noch weiter lässt sich der Begriff \emph{Medium} nach den folgenden Kriterien differenzieren: Perzeptions-, Repräsentations-, Präsentations-, Speicher-, Übertragungs-, und Informationsaustauschmedien. Dabei entsprechen die Perzeptionsmedien am nächsten dem, was in einer Multimediaanwendungen under Medien verstanden wird: Die Informationen, die der Mensch mit seinen fünf Sinnen wahrnehmen kann~\citep[S. 9]{multimedia_technologie}\footnote{Dies bedeutet im Umkehrschluss jedoch nicht, dass die anderen Arten von Medien keine Rolle spielen.}. Jedes Medium definiert dabei einen \emph{Darstellungsraum} mit entsprechenden \emph{Darstellungsdimensionen}. Neben dem räumlichen Dimensionen dient vor allem die zeitlich Dimension dazu, eine weitere Einordnung von Medien vornehmen zu können~\citep[S. 10]{multimedia_technologie}:
+  
+  \begin{description}
+    \item[Diskrete Medien] Medien, deren Informationen zeitunabhängig auftreten, etwa Text oder Grafik. Ihre Verarbeitung ist zeitunkritisch.
+    \item[Kontinuierliche Medien] Medien, deren Informationen sich über die Zeit hinweg ändern, etwa Ton oder Video. Ihre Verarbeitung ist zeitkritisch.
+  \end{description}
+
+  Mit dieser Erkenntnis wäre es nicht angemessen, den Begriff Multimedia rein quantitativ zu beschreiben, sondern viel mehr ist eine qualitative Definition adäquat:
 
   \begin{definition}[Multimedia]\label{def:multimedia}
     "`Als Multimedia wird der Einsatz von sowohl mindestens einem diskreten und mindestens einem kontinuierlichem Medium verstanden."'~\emph{\citep[S. 14]{multimedia_technologie}}
   \end{definition}
+  
+  Aufbauend auf dieser Definition von Multimedia kann abschließend auch der Begriff \emph{Multimediaanwendungen} oder \emph{Multimediasystem} definiert werden:
 
   \begin{definition}[Multimediasystem]\label{def:multimediasystem}
     "`Ein Multimediasystem ist durch die rechnergesteuerte, integrierte Erzeugung, Manipulation, Darstellung, Speicherung und Kommunikation von unabhängigen Informationen gekennzeichnet, die in mindestens einem kontinuierlichen (zeitabhängigen) und einem diskreten (zeitunabhängigen) Medium kodiert sind."'~\emph{\citep[S. 13]{multimedia_technologie}}
   \end{definition}
+  
+% subsubsection definition_multimedia (end) 
+
+  Obwohl die Informationen selbst unabhängig voneinander sind, so muss in der Regel dennoch ein Bezug zwischen den einzelnen Informationen hergestellt werden können. Dieser Bezug wird auch \emph{Synchronisation} genannt und im nächsten Abschnitt näher beschrieben.
 
 \subsubsection{Synchronisation} % (fold)
 \label{ssub:synchronisation}
 
-  - unterschiedliche Ebenen der Synchronisation.
-  - Unterschiedliche Modelle zur Synchronisation, wie in~\citep[S. 28ff]{bericht} beschrieben, sollten Beachtung finden
-  - Betrachtung von örtlichen, inhaltlichen sowie zeitlichen Beziehungen
-  - Natürliche und synthetische Synchronisation~\citep{little1991ms, steinmetz1992mst}
-  - intra- und interobjekt Synchronisation\footnote{Die \emph{interobjekt} oder \emph{interstream} Synchronisation steht im Gegensatz zu der \emph{intraobjekt} oder \emph{intrastream} Synchronisation und wird bei~\citep[S. 613]{bertino1998tsm} näher beschrieben.} Nach ~\citep[S. 264]{wu2001svo} ist interobjekt, interstream und intrastream zu unterscheiden. Bei~\citep[S. 613]{bertino1998tsm} werden die Begriffe interstream und intraobjekt bzw. intraobjekt und intraobjekt synonym verwendet. Hierzu unbedingt bei Steinmetz genauer nachsehen~\citep{steinmetz1995mcc}
-  - intramedia (low-level) und intermedia (high-level) auch bei \citep{ackermann1996doo}
+  An sich unabhängige Medien müssen in der Regel in einer Multimediaanwendungen in einen Zusammenhang gebracht werden; Beispielsweise muss ein Video in einen Zusammenhang mit Untertiteln gebracht werden. Die Etablierung dieses Zusammenhangs wird als \emph{Synchronisation} bezeichnet. Allgemein kann sie als das "`Herstellen des Gleichlaufs von Vorgängen, Maschinen u. a."'\footnote{aus: Der Brockhaus in einem Band. 10. Auflage, 2005} bezeichnet werden. Wie bereits bei der allgemeinen Definition von Multimedia, ist auch diese zu unspezifisch für den gegebenen Einsatz und auch hier muss eine weitere Klassifikation stattfinden. Bereits aus dem Eingangs genannten Beispiel lassen sich separate Eigenschaften extrahieren: Nicht nur müssen die Untertitel zur rechten Zeit angezeigt werden, sondern sie haben auch im Videobild selbst eine räumliche Positionierung. Es existiert also eine \emph{zeitliche} wie \emph{örtliche} Beziehung statt. Neben diesen beiden Arten von Beziehungen existiert noch eine Weitere, die \emph{Inhaltliche}:
   
-  \begin{figure}[!hb]
-    \centering
-      \includegraphics[width=.9\textwidth]{images/Erweiterte_Synchronisations-Ebenen.pdf}
-    \caption{Erweiterte Ebenen der Synchronisation, nach~\citep[S. 13]{blakowski1996mss}}
-    \label{fig:images_Erweiterte_Synchronisations-Ebenen}
-  \end{figure}
-
-  Multimediasysteme oder -Anwendungen unterscheiden sich von Nicht-Multimediaanwendungen vor allem durch eine zeitliche Komponente~\citep[S. 14]{multimedia_technologie}: Zwischen den Informationen, die in unterschiedlichen Medien kodiert vorliegen kann und muss ein Bezug hergestellt werden können. Dieser Bezug wird als \emph{Synchronisation} bezeichnet. Eine Definition für Synchronisation, die auch für COSIMA Verwendung findet~\citep[S. 27]{bericht} ist:
+  \begin{description}
+    \item[Inhaltliche Beziehung] Definiert die Abhängigkeit einzelner Medien von bestimmten Daten.
+    \item[Örtliche Beziehung] Ist auch bekannt als \emph{Layout} Beziehung und definiert die Beziehung von unterschiedlichen Medien im Raum, bezogen auf ein Ausgabegerät zu einem bestimmten Zeitpunkt.
+    \item[Zeitliche Beziehung] Definiert die zeitlichen Abhängigkeiten von Medien und ist immer dann von Bedeutung, wenn mit kontinuierlichen Medien umgegangen wird.
+  \end{description}
+  
+  Alle drei Arten müssen in einer Multimediaanwendungen betrachtet werden und müssen daher auch im COSIMA-Projekt berücksichtigt werden. Synchronisation wird eigentlichen Sinne jedoch auf die zeitliche Beziehung von unterschiedlichen Medien~\citep[S. 572]{steinmetz1995mcc} angewandt und daher soll im Rahmen dieser Arbeit die folgende Definition von Synchronisation Geltung besitzen: 
   
   \begin{definition}[Synchronisation]\label{def:synchronisation}
     "`Synchronization in the context of multimedia refers to the mechanisms used by processes (also specific to multimedia) to coordinate their ordering in the time domain."'~\emph{\citep[S. 401]{steinmetz1990spm}}
   \end{definition}
   
-  Synchronisation spielt im Kontext von Multimediaanwendungen also eine entscheidende Rolle und muss demnach explizit und prominent modelliert werden. Ein erster Ansatz zur Integration von Synchronisation in das COSIMA-Projekt sieht dazu eine dedizierte Komponente innerhalb der Servicekomposition vor. 
+  Nach dem eine Definition für Synchronisation gefunden wurde, sollen im weiteren Verlauf unterschiedliche Ansätze zur Modellierung von zeitlicher Synchronisation in Multimediaanwendungen vorgestellt werden.
+  
+\minisec{Modelle zur Beschreibung zeitlicher Synchronisation} % (fold)
+\label{msec:modelle_zur_beschreibung_zeitlicher_synchronisation}
 
+  Um zeitliche Synchronisation zu beschreiben und in einer Multimediaanwendungen abbilden zu können, existieren unterschiedliche Modelle und Klassifikationen, von denen eine für diesen Kontext relevante Auswahl hier näher beschrieben werden soll.
+  
+\paragraph{Natürliche und Synthetische Synchronisation} % (fold)
+\label{par:natuerliche_und_synthetische_synchronisation}
+
+  Eine erste Klassifikation kann über eine Unterscheidung in \emph{natürliche} (oder \emph{live}) und \emph{synthetische} Synchronisation~\citep{little1991ms,little1991msp,steinmetz1992mst} erstellt werden. Bei der natürlichen Synchronisation wird die zeitliche Beziehung zwischen den einzelnen Medien implizit während der Aufnahme erfasst. In der Regel tritt eine natürliche Synchronisation nur bei kontinuierlichen Medien auf. Im Gegensatz dazu definiert die synthetische Synchronisation die zeitlichen Beziehung explizit über eine Spezifikation. Bei der natürlichen Synchronisation besteht das Ziel darin, dass die zeitlichen Beziehung, die während der Aufnahme der Medien implizit mit erfasst wurden, bei der Präsentation immer noch Geltung besitzen. Die synthetische Synchronisation wird die Möglichkeit gegeben möglichst flexibel zeitliche Abhängigkeiten zu modellieren, die dann auch wieder bei der Präsentation Geltung haben müssen~\citep[S. 613]{bertino1998tsm}. Im COSIMA-Projekt müssen in jedem Fall beide Variante Berücksichtigung finden.
+  
+% paragraph nat_rliche_und_synthetische_synchronisation (end)
+
+\paragraph{Granularität von Synchronisation} % (fold)
+\label{par:granularitaet_von_synchronisation}
+
+  Neben der Klassifikation, ob eine Synchronisation implizit oder explizit erfasst wurde, lassen sich ebenfalls unterschiedliche Granularitäten von zeitlichen Beziehungen unterscheiden, die in Abbildung \ref{fig:granularitaetsebenen} exemplarisch dargestellt und im Anschluss beschrieben sind.
+  
+  \begin{figure}[!ht]
+    \centering
+      \includegraphics[width=.9\textwidth]{images/Granularitaetsebenen.pdf}
+    \caption{Die drei Granularitätsebenen auf denen Synchronisation stattfinden kann (nach~\citep{antons09})}
+    \label{fig:granularitaetsebenen}
+  \end{figure}
+  
+  \begin{description}
+    \item[Intrastream] Die Intrastream-Synchronisation bezieht auf die einzelnen \mbox{(Präsentations-)} Einheiten innerhalb eines Objekts. Diese Einheiten werden auch als Logische Dateneinheiten (\emph{Logical Data Units} (LDU\abk{LDU}{Logical Data Units})) bezeichnet~\citep{steinmetz1990spm}.
+    \item[Interstream] Die Interstream-Synchronisation bezieht sich auf verschiedene Ströme innerhalb einer Stromgruppe~\citep{multimedia_technologie}, etwa die zeitliche Beziehung von einer Ton- und Videospur in einem A/V-Strom\footnote{Im MET++-Rahmenwerk werden für Intrastream und Interstream die Begriffe \emph{Intramedia (low-level)} und \emph{Intermedia (high-level)} verwendet~\citep[S. 73]{ackermann1996doo}.}.
+    \item[Interobjekt] Im Zusammenhang mit der Referenzarchitektur nach Meyer und Steinmetz ($\to$ \ref{par:referenzmodelle}) ist es in Betracht zu ziehen, diese zusätzliche Granularitätsebene einzuführen~\citep[S. 264]{wu2001svo}, die zwischen verschiedenen Medienobjekten zeitliche Beziehungen herstellt. In der Literatur lässt sich dazu jedoch keine einheitliche Aussage finden, aber auch in Bezug auf eine verteilte Architektur kann diese Unterscheidung von Vorteil sein. Eine abschließende Betrachtung kann im Rahmen dieser Arbeit jedoch nicht erfolgen.
+  \end{description}
+  
+  Im Folgenden Abschnitt werden diese Ebenen in ein Referenzmodell zur Multimedia-Synchronisation eingeordnet.
+
+% paragraph granularität_von_synchronisation (end)
+
+\paragraph{Referenzmodelle} % (fold)
+\label{par:referenzmodelle}
+
+  Um ein besseres Verständnis über die Anforderungen an eine Multimedia-Synchronisation bilden zu können und verschiedene Multimedia-Synchronisationsysteme miteinander zu vergleichen, ist ein Referenzmodell notwendig~\citep[S. 601]{multimedia_technologie}. In der Fachliteratur existieren eine Reihe von potentiell geeigneten Modellen~\citep[S. 601]{multimedia_technologie}. Eines davon ist das Referenzmodell nach Little und Ghafoor~\citep{little1991ms}. Es unterscheidet zwischen einer \emph{physikalischen Ebene}, \emph{Systemebene} und einer \emph{menschlichen Ebene}, lässt dabei aber eine detaillierte Beschreibung von Klassifikationskriterien vermissen~\citep[S. 601]{multimedia_technologie}. Auch andere Modelle verfolgen nach Steinmetz einen eher orthogonalen Ansatz~\citep[S. 601]{multimedia_technologie}. Wesentlich besser, auch für die Zwecke von COSIMA lässt sich das Referenzmodell nach Meyer et al.~\citep{meyer1993tms} verwenden, dass in seiner durch Steinmetz weiterentwickelt Form~\citep{steinmetz1995mcc} in Abbildung \ref{fig:images_Erweiterte_Synchronisations-Ebenen} dargestellt ist. Zu seinem Vorgänger unterscheidet es sich dabei vor allem in der zusätzlichen Spezifikationsschicht\footnote{In diesem Referenzmodell bietet jede höhere Ebene neben einer stärkeren Abstraktion in der Programmierung zusätzlich auch eine stärkere Abstraktion bei der Behandlung der \emph{Dienstgüte} (\emph{Quality of Service} (QoS\abk{QoS}{Quality of Service}))~\citep[S. 601]{steinmetz1995mcc}.}.
+
+  \begin{figure}[!ht]
+    \centering
+      \includegraphics[width=.9\textwidth]{images/Erweiterte_Synchronisations-Ebenen.pdf}
+    \caption{Erweiterte Ebenen der Synchronisation, nach~\citep[S. 601]{steinmetz1995mcc}}
+    \label{fig:images_Erweiterte_Synchronisations-Ebenen}
+  \end{figure}
+  
+  Die Eigenschaften und Aufgaben, die die einzelnen Schichten dabei erfüllen, sind im Folgenden kurz zusammengefasst:
+  
+  \begin{description}
+    \item[Medienschicht] Sie stellt eine geräteunabhängige Schnittstelle auf einzelne kontinuierliche Medienströme bereit. Dieser Medienstrom wird dabei als eine sequentielle Abfolge von LDUs behandelt~\citep[S. 603]{multimedia_technologie}.
+    \item[Stromschicht] In dieser Schicht sind alle Medienströme aus der Medienschicht verfügbar und die LDUs sind dabei bereits nicht mehr sichtbar. Gleichzeitig wird eine Intrastream-Synchronisation garantiert und eine Interstream-Synchronisation zwischen allen Medienströmen realisiert. Die Stromschicht verarbeitet die einzelnen Ströme dabei in einer Echtzeitumgebung~\citep[S. 604]{multimedia_technologie}.
+    \item[Objektschicht] Diese Schicht kapselt die Unterschiede zwischen diskreten und kontinuierlichen Medien, wodurch sich \emph{playout sequences} exakt spezifizieren lassen~\citep[S. 99]{meyer1993tms}. Darüber hinaus realisiert sie die konkrete Ausführung einer Spezifikation auf der Stromschicht~\citep[S. 605]{multimedia_technologie}.
+    \item[Spezifikationsschicht] Hier wird eine offene Schnittstelle bereitgestellt, um deklarative Synchronisations-Spezifikationen für komplexe multistrom Multimediapräsentationen zu erstellen~\citep[S. 13]{blakowski1996mss}. Diese können dann von der Objektschicht ausgeführt werden. Zu diesem Zweck stellt diese Schicht auch Editoren und andere Werkzeuge bereit. Des Weiteren werden in dieser Schicht Anforderungen an die Dienstgüte aus Sicht des Benutzers auf die Objektschicht abgebildet~\citep[S. 607]{multimedia_technologie}.
+  \end{description}
+  
+  > Auf die einzelnen Schichten kann von der Applikation entweder direkt oder durch die anderen Schichten zugegriffen werden. Das ist in der COSIMA-Architektur allerdings nicht mehr möglich. Aus Sicht der Servicekomposition kann nur auf die Spezifikationsschicht und vielleicht noch die Objektschicht zugegriffen werden. Aus Sich der medienverarbeitenden Komponenten ist nur die Objektschicht sichtbar, die gekapselt die anderen Schichten bereitstellt. Ein direkter Zugriff ist dabei jedoch nicht vorgesehen.
+  
+  > Irgendwie sehr Präsentationslastig. Berücksichtigung von Benutzerinteraktionen kommt zu kurz.
+
+% paragraph referenzmodelle (end)
+
+  Sowohl die unterschiedlichen Klassifikationsansätze, als auch die einzelnen Referenzmodelle haben jeweils ihre Vor- und Nachteile für die Umsetzung von zeitlicher Synchronisation in einer Multimediaanwendungen. Bereits in~\citep[S. 28ff]{bericht} wurde festgestellt, dass zu diesem Zeitpunkt kein Ansatz vollständig ausgeschlossen werden kann. Daher ist es notwendig, dass bei der Integration von Funktionalität zur Synchronisation von Medien im COSIMA-Projekt alle Ansätze betrachtet werden. Dabei müssen auch Aspekte zur inhaltlichen und örtlichen Synchronisation mit einbezogen werden. Wie eine mögliche Integration in COSIMA aussehen könnte, wird im nächste Abschnitt ausgeführt.
+
+% minisec modelle_zur_beschreibung_zeitlicher_synchronisation (end)
+  
 \minisec{Umsetzung in COSIMA} % (fold)
 \label{msec:umsetzung_in_cosima}
   
   Diese Komponente unterstützt dabei zwei unterschiedliche Arten von Synchronisation. Zum einen eine Ereigniss-gesteuerte, also nicht-deterministische Synchronisation\footnote{Relevant etwa bei Benutzer-Interaktionen oder Ausnahmebehandlungen}. Diese wird unter anderem bei~\citep{little1991ms} und~\citep{bertino1998tsm} beschrieben. Diese Sychronisationsbehandlung lässt sich sehr gut in COSIMA integrieren, da auch innerhalb einer dienstorientierten Architektur eine stark Ereignisorientierung anzustreben ist, um ein Maximum an Flexibilität zu erhalten~\citep[S. 96]{masak2007ssb}. Zum anderen ist noch eine Synchronisation über sogenannte \emph{Synchronisationsprimitive}, wie sie bei~\citep{gaggi2005msh} beschrieben wird, vorgesehen.
+  
+  > Spezifikationsschicht entspricht in COSIMA der Komponente der Servicekomposition mit dem Subelement SyncCore
+  
+  > Objektschicht entspricht dem Medienobjekt ($\to$ \ref{ssub:medienobjekt}) und dem Media Broker ($\to$ \ref{ssub:media_broker}) innerhalb von COSIMA
+  
+  > Stromschicht und Medienschicht sind bisher nicht explizit in COSIMA modelliert und sollten auch vollständig über das Medienobjekt für die Architektur abstrahiert werden. Eine Auseinandersetzung mit diesen Schichten sollte ausschließlich innerhalb der medienverarbeitenden Komponenten ($\to$ \ref{sub:medienverarbeitende_komponenten}) geschehen.
 
-  Die gesamte Thematik der Synchronisation ist sehr komplex und eine Vielzahl von Aspekten müssen betrachtet werden~\citep[S. 27ff]{bericht}. In dieser Arbeit soll das grundsätzliche Konzept der Architektur im COSIMA-Projekt validiert werden, daher wird im Rahmen des Szenarios eine sehr einfache Betrachtung dieser Thematik durchgeführt und später entsprechend implementiert. Wesentlich umfangreicher wird dieses Thema hingegen bei~\citep{antons09} behandelt. Dort wird eine nachrichtenbasierte Synchronisation im Zusammenhang von Streaming angestrebt, die auf Basis von \emph{Message Exchange Pattern} (MEP\abk{MEP}{Message Exchange Pattern}) realisiert werden soll. Im Abschnitt~\ref{ssub:medienobjekt} wird dann noch einmal auf die Integration von Synchronisation auf der Medienobjektebene eingegangen.
+  > Echtzeit-Anweundungen? - Die Stromschicht befindet sich nach Steinmetz in einer Echtzeitumgebung, die Schichten darüber jedoch nicht mehr.
+
+  Die gesamte Thematik der Synchronisation ist sehr komplex und eine Vielzahl von Aspekten müssen betrachtet werden~\citep[S. 27ff]{bericht}. In dieser Arbeit soll das grundsätzliche Konzept der Architektur im COSIMA-Projekt validiert werden, daher wird im Rahmen des Szenarios eine sehr einfache Betrachtung dieser Thematik durchgeführt und später entsprechend implementiert. Wesentlich umfangreicher wird dieses Thema hingegen bei~\citep{antons09} behandelt. Dort wird eine nachrichtenbasierte Synchronisation im Zusammenhang von Streaming angestrebt, die auf Basis von \emph{Message Exchange Pattern} (MEP\abk{MEP}{Message Exchange Pattern}) realisiert werden soll. Auch der Frage, ob drei Granularitätsstufen bei der Betrachtung von Synchronisation von Vorteil sind, wird sich dort eingehender gestellt. Im Abschnitt~\ref{ssub:medienobjekt} wird dann noch einmal auf die Integration von Synchronisation auf der Objektschicht eingegangen.
 
 % minisec umsetzung_in_cosima (end)
 
@@ -498,9 +593,13 @@
   Zeit spielt im Umgang mit Medien also eine wesentliche Rolle. Unterschiedliche Medien weisen jedoch oft unterschiedliche zeitliche Einheitenauf\footnote{Ein Video wird zum Beispiel mit Bilder pro Sekunde angegeben}. Dennoch muss eine Synchronisation zwischen diesen Medien möglich sein. In COSIMA soll der \emph{Time Engine} Dienst eine Transformation zwischen unterschiedlichen zeitlichen Einheiten vornehmen können. Wie diese Transformation konkret implementiert werden soll und wie die Integration mit dem in \ref{ssub:medienobjekt} vorgestelltem Medienobjekt aussehen könnte, ist bis zu diesem Zeitpunkt noch völlig ungeklärt.
   
   Im Folgenden Abschnitt wird die Integration von Medien, in Form des Medienobjekts und des Medien Brokers, in die Architektur vorgestellt. Obwohl diese Komponenten laut Abbildung~\ref{fig:Kontextsicht_Architektur_COSIMA} Teil des Enterprise Service Bus sind, werden sie auf Grund ihrer Relevanz gesondert davon betrachtet.
+  
+  > vgl. Uhren-Synchronisation~\citep[S. 610]{multimedia_technologie}
 
 % subsubsection time_engine (end)
 
+  > Auch im Zusammenhang von Synchronisation findet sich in der Literatur immer wieder der Begriff des \emph{Medienobjekts} auch in MET++ wird Medienobjekt modelliert, ist daher auch im Rahmen von COSIMA sinnvoll gewesen, ein Medienobjekt zu modellieren!
+  
   Innerhalb einer Architektur für Multimediaanwendungen spielen vor allem die Medien selbst eine zentrale Rolle. Demnach war eine besondere Betrachtung dieser Daten notwendig, die dazu geführt hat, das die Mediendaten dediziert modelliert wurden~\citep{bericht}. Ergebnis dieser Modellierung ist das Medienobjekt und der Media Broker, die beide an dieser Stelle näher beschrieben werden sollen.
   
 \subsubsection{Medienobjekt} % (fold)
@@ -528,6 +627,10 @@
    Abbildung~\ref{fig:medienobjekt} zeigt das stark vereinfachte Klassendiagramm des Medienobjektes. Viele Punkte sind immer noch offen\footnote{So zum Beispiel ob die tatsächlichen Medien oder lediglich Referenzen auf Medien übertragen werden sollen.}, jedoch verspricht die jetzige Grundstruktur ein hohes Maß an Flexibilität bei der weiteren Umsetzung.
   
   Wie diese Medienobjekte innerhalb des Gesamtsystems vermittelt und übertragen werden sollen, stellt der folgende Abschnitt vor.
+  
+  > COMM+
+  > MET++ Schnittstellen
+  > Abstraktion der Stromschicht notwendig?!
 
 % subsubsection medienobjekt (end)
 
@@ -545,8 +648,6 @@
   Der Medien Broker bei COSIMA soll ähnliche Funktionen bei der Vermittlung von Medien zwischen den einzelnen Diensten übernehmen. Zur Zeit ist der Medien Broker so konzeptioniert, dass er die im vorherigen Abschnitt beschriebenen Medienobjekte zwischen den verschiedenen medienverarbeitenden Komponenten vermittelt.
 
 % subsubsection media_broker (end)
-
-% subsection medienobjekt (end)
 
 % section architektur (end)
 
