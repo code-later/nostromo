@@ -325,9 +325,9 @@
 \subsubsection{Kompositionsarten} % (fold)
 \label{ssub:kompositionsarten}
 
-  \textbf{DIESER TEIL BEDARF MEHR DISKUSSION!}
+  \textbf{BEDARF DIESER TEIL MEHR DISKUSSION!?}
 
-  Bei der Komposition von Diensten werden in der Literatur unterschiedliche Arten unterschieden. Die beiden grundsätzlichen, für COSIMA relevanten, werden bei Papazoglou in~\citep[S. 41]{papazoglou2007soc} genannt: \emph{Orchestrierung} und \emph{Choreographie}. Im Folgenden sollen diese beiden Ansätze genauer betrachtet werden.
+  Bei der Komposition von Diensten werden in der Literatur verschiedene Vorgehen unterschieden. Die beiden grundsätzlichen, für COSIMA relevanten, werden bei Papazoglou in~\citep[S. 41]{papazoglou2007soc} genannt: \emph{Orchestrierung} und \emph{Choreographie}. Im Folgenden sollen diese beiden Ansätze genauer betrachtet werden.
   
 \paragraph{Orchestrierung} % (fold)
 \label{par:orchestrierung}
@@ -348,12 +348,12 @@
   In der Definition von~\citep{peltz2003wso} wird der Unterschied zwischen Choreographie und Orchestrierung deutlich:
   
   \begin{quote}
-    \emph{"`[\ldots] choreography, which is more collaborative and allows each involved party to describe its part in the interaction. Choreography tracks the message sequences among multiple parties and sources --- typically the public message exchanges that occur between Web services --- rather than a specific business process that a single party executes."'} (\citep[S. 46]{peltz2003wso})
+    \emph{"`[\ldots] choreography, which is more collaborative and allows each involved party to describe its part in the interaction. Choreography tracks the message sequences among multiple parties and sources -- typically the public message exchanges that occur between Web services -- rather than a specific business process that a single party executes."'} (\citep[S. 46]{peltz2003wso})
   \end{quote}
 
   Choreographie verfolgt also einen dezentralen Ansatz; Es gibt nicht eine Instanz, die den Nachrichtenfluss kontrolliert, vielmehr tritt der Nachrichtenfluss zwischen den einzelnen Diensten in den Vordergrund. Es liegt dadurch auch kein ausführbarer Prozess bei der Choreographie vor~\citep[S. 46]{peltz2003wso}.
   
-  Für die konkrete Umsetzung dieser beiden Varianten zur Komposition existieren zahlreiche Technologien und Standards. Dabei fäll jedoch auf, dass eine strikte Trennung beider Ansätze auch auf der technischen Ebene eher künstlich erscheinen und daher in einem technologischen Ansatz vereint werden sollten~\citep[S. 42]{papazoglou2007soc}.
+  Für die konkrete Umsetzung dieser beiden Varianten zur Komposition existieren zahlreiche Technologien und Standards. Dabei fäll jedoch auf, dass eine strikte Trennung beider Ansätze auf der technischen Ebene eher künstlich erscheinen und daher in einem technologischen Ansatz vereint werden sollten~\citep[S. 42]{papazoglou2007soc}.
   
   Eine detaillierte Auseinandersetzung mit der Thematik der Geschäftsprozesskomposition und -modellierung im Rahmen des COSIMA-Projekts findet sich in der Master Thesis von Matthias Richter~\citep{samma08}.
 
@@ -696,7 +696,13 @@
     \item Anpassbarkeit durch Variationspunkte
   \end{itemize}
   
-  Ohne im Detail auf diese Eigenschaften einzugehen, fällt jedoch schnell auf, dass der Punkt zur Umkehrung des Kontrollflusses sich nur schlecht mit den Konzepten einer dienstorientierten Architektur decken lässt: Der Servicekomposition liegt nach~\citep[S. 320]{web_services_principles_and_technology} ein \emph{Flow-Model} zu Grunde, dass, wie bereits in Abschnitt~\ref{sub:service_komposition} detailliert beschrieben, den Ablauf einer Applikation steuert. Und diese unterliegt dem direkten Einfluss des Anwendungsentwicklers, wie in Abbildung~\ref{fig:Kontextsicht_Architektur_COSIMA} deutlich zu erkennen ist. Es ist demnach nicht mehr valide von einem \emph{Framework} zu reden, stattdessen sollte der Begriff \emph{Architektur} verwendet werden.
+  Ohne im Detail auf diese Eigenschaften einzugehen, fällt jedoch schnell auf, dass der Punkt zur Umkehrung des Kontrollflusses sich nur schlecht mit den Konzepten einer dienstorientierten Architektur decken lässt: Der Servicekomposition liegt nach~\citep[S. 320]{web_services_principles_and_technology} ein \emph{Flow-Model} zu Grunde, dass, wie bereits in Abschnitt~\ref{sub:service_komposition} detailliert beschrieben, den Ablauf einer Applikation steuert. Und diese unterliegt dem direkten Einfluss des Anwendungsentwicklers, wie in Abbildung~\ref{fig:Kontextsicht_Architektur_COSIMA} deutlich zu erkennen ist. Aus Sicht des Anwendungsentwicklers handelt es sich demnach nicht um ein Rahmenwerk.
+  
+  Wird die Perspektive jedoch zu einem Dienstanbieter jedoch gewechselt, erfüllt COSIMA durchaus alle Kriterien, um als Rahmenwerk bezeichnet zu werden: Ihm wird eine konkrete Anwendungsarchitektur vorgegeben, er kann einige Eigenschaften gezielt beeinflussen und hat keinen Einfluss auf den Kontrollfluss.
+  
+  Diese Divergenz wird noch verstärkt, wenn die Spezifikation der Dienstkomposition, genauer betrachtet wird. Die Spezifikation wird lediglich deklarativ angegeben, ihre konkrete Ausführung selbst obliegt einer Komponente, auf die der Anwendungsentwickler nur wenig Einfluss nehmen kann. Ähnlich dem Optimieren von Anweisungen bei Compilern oder Datenbanken, kann auch in diesem Fall die eigentlich Ausführung deutlich anders aussehen, als sie von dem Anwendungsentwickler spezifiziert wurde. Demnach gibt tatsächlich auch der Anwendungsentwickler einen Teil des Kontrollflusses wieder an COSIMA ab.
+  
+  Es lässt sich demnach nicht eindeutig feststellen, ob es sich um ein Rahmenwerk oder eine reine Architektur handelt. Abhängig von der Sichtweise sind beide Charakterisierungen valide und können demnach so verwand werden. In weiteren Arbeiten muss dieser Januskopf jedoch weiterhin bedacht werden.
 
 % subsection framework_oder_architektur (end)
 
@@ -708,6 +714,8 @@
   Ein weiterer Aspekt, der in den Verantwortungsbereich der Servicekomposition fällt, ist die Beachtung Nicht-Funktionalen Anforderungen einzelner Dienste~\citep[S. 42]{papazoglou2007soc}. Dieser Aspekt wurde bisher bewusst bei der Entwicklung des COSIMA-Projekts völlig ausgeblendet. Bei einer weiteren Entwicklung muss dieser Punkte daher unbedingt Berücksichtigung finden.
 
   Nach~\citep[S. 8]{service_oriented_computing} stehen im Kontext des \emph{Service-Oriented Computing} (SOC) komponierte Dienste für weitere Kompositionen zur Verfügung. Diese Möglichkeit ist zur Zeit nicht explizit in COSIMA modelliert worden. Auch für die Entwicklung von Multimediaanwendungen kann diese Fähigkeit von Vorteil sein. Welche Konsequenzen eine solche verschachtelte Komposition haben könnte, kann hier nicht abschließend geklärt werden und sollte daher Teil weiterer Forschung sein.
+  
+  Ebenfalls sollte evaluiert werden, inwiefern sich die Ergebnisse aus~\citep{samma08} in Bezug auf die Verwendung von BPEL\abk{BPEL}{Business Process Execution Language} und der dort vorgestellten Erweiterung von BPEL, \emph{BPEL for Multimedia} (BPEL-MM) in die jetzige Dienstkomposition integrieren lassen.
 
 % subsection servicekomposition (end)
 
@@ -725,7 +733,7 @@
 
   Bei der Realisierung eines Enterprise Service Bus muss die fundamentale Entscheidung getroffen werden, ob er API-getriebene oder Protokoll-getrieben implementiert werden soll~\citep[S. 59]{soa_in_practice}. Ohne diese beiden Ansätze an dieser Stelle weiter zu vertiefen, muss die Weiterentwicklung des Projekts sich für einen der beiden entscheiden.
   
-  Es existieren eine Vielzahl von kommerziellen und nicht-kommerziellen ESB Lösungen. Deren Eignung für die Verwendung innerhalb des COSIMA-Projekts muss im Einzelnen geprüft werden, denn es ist deutlich geworden, dass die Entwicklung eines ESB komplex und aufwendig ist. Falls sie durch den Einsatz oder Anpassung einer bestehenden Implementierung minimiert werden kann, sollte entsprechend verfahren werden.
+  Es existieren eine Vielzahl von kommerziellen und nicht-kommerziellen ESB Lösungen. Deren Eignung für die Verwendung innerhalb des COSIMA-Projekts muss im Einzelnen geprüft werden. Bei dieser Integration ist jedoch zu beachten, dass COSIMA selbst bereits als ESB charakterisiert werden kann. Viele der genannten Eigenschaften lassen sich in der Architektur von COSIMA wieder finden. Es könnten demnach entweder Teile eines bestehenden ESB in COSIMA integriert werden, oder ein bestehender ESB um die Multimedia Charakteristika von COSIMA erweitert werden.
 
 % subsection esb_fragen (end)
 
