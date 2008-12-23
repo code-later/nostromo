@@ -247,17 +247,17 @@
     \label{fig:images_Basic_SOA}
   \end{figure}
 
-  In diesem Modell sind zwar einige Eigenschaften einer SOA, wie sie in den vorangegangen Definitionen herausgestellt wurden, erfasst, jedoch bei weitem nicht alle. Lediglich die lose Kopplung und das sich Dienste auffinden lassen ist explizit modelliert. Alle anderen Eigenschaften lassen sich wenn nur implizit wieder finden. Aus diesem Grunde nennt Papazoglou eine erweiterte dienstorientierte Architektur, die sich in Abbildung~\ref{fig:images_Extended_SOA} darstellt.
+  In diesem Modell sind zwar einige Eigenschaften einer SOA, wie sie in den vorangegangen Definitionen herausgestellt wurden, erfasst, jedoch bei weitem nicht alle. Lediglich die lose Kopplung und das sich Dienste auffinden lassen ist explizit modelliert. Alle anderen Eigenschaften, wie etwa Management, Dienstkomposition, Transaktionen zwischen und Koordination von Diensten oder Sicherheitsaspekte~\cite[S. 8]{service_oriented_computing} lassen sich wenn nur implizit wieder finden. Aus diesem Grunde stellt Papazoglou eine \emph{erweiterte} dienstorientierte Architektur (siehe Abbildung~\ref{fig:images_Extended_SOA}) vor, die diese Punkte explizit modelliert.
 
-  \begin{figure}[!hb]
+  \begin{figure}[!ht]
     \centering
       \includegraphics[width=.9\textwidth]{images/Extended_SOA.pdf}
     \caption{Erweiterte dienstorientierte Architektur nach Papazoglou~\citep{papazoglou2007soc}}
     \label{fig:images_Extended_SOA}
   \end{figure}
 
-  - Trennung von Kontroll- und Datenfluss (unterschiedliche Busse), daher grundsätzlich auch weitere Busse für etwa Medien denkbar (siehe auch \ref{ssub:media_broker})
-
+  Von besonderem Interesse im Kontext von COSIMA ist die Ebene der \emph{komponierten Dienste}. Auf dieser Ebene wird die Ausführung der einzelnen Dienste, sowie die Datenübertragung koordiniert~\cite[S. 8]{service_oriented_computing}. Auf dieser Ebene lassen sich müssen sich demnach die Mechanismen zur Synchronisation ($\to$ \ref{sub:synchronisation}) und Medienvermittlung ($\to$ \ref{ssub:media_broker}) befinden.
+  
   In diesem, sehr viel umfangreicheren Modell, finden sich fast alle bisher vorgestellten Eigenschaften an eine SOA wieder. Vor allem der Aspekt, dass sich einzelne Dienste zu komplexeren Diensten zusammen fassen, also komponieren lassen, ist in diesem Modell prominent vertreten. Lediglich der Bezug zur (Geschäfts-)Prozessen ist nicht explizit modelliert. Die nachfolgende Liste fasst die wesentlichen Eigenschaften einer dienstorientierten Architektur noch einmal zusammen:
 
   \begin{itemize}
@@ -276,7 +276,7 @@
 
 % subsection definition_dienst_und_dienstorientierung (end)
 
-\subsection{Einführung} % (fold)
+\subsection{Einführung in COSIMA} % (fold)
 \label{sub:einfuehrung}
 
   Bei der Konzeption und Entwicklung der Architektur sind unterschiedliche Sichten auf diese erstellt worden. Diese Sichten entsprechen denen von Starke in~\citep[S. 83]{effektive_software_architekturen} beschriebenen vier Arten von Sichten auf eine Software-Architektur: \emph{Kontextsichten}, \emph{Bausteinsichten}, \emph{Laufzeitsichten} und \emph{Verteilungssichten}.
@@ -579,7 +579,7 @@
 \paragraph{Besonderheiten bei verteilten Umgebungen} % (fold)
 \label{par:besonderheiten_bei_verteilten_umgebungen}
 
-  Das Problem, dass es in verteilten Umgebungen zu lösen gilt, besteht darin, dass Medienobjekte und Synchronisationsinformationen an unterschiedlichen Stellen vorgehalten werden~\citep[S. 607]{multimedia_technologie}. Eine Möglichkeit dieses Problem zu lösen, ist die Etablierung eines separaten Kanals, über den die Synchronisationsinformationen übertragen werden können~\citep[S. 608]{multimedia_technologie}. Die Synchronisation unterschiedlicher Medienobjekte wird in diesem Fall von einer Consumer-Komponente übernommen~\citep[S. 608]{multimedia_technologie}. Eine Alternative dazu wäre die Synchronisation in der Producer (oder Transformer) Komponente. Dazu werden die zu synchronisierenden Medien in einem \emph{Multiplex}-Datenstrom zusammengefasst und erst anschließend übertragen.
+  Das Problem, dass es in verteilten Umgebungen zu lösen gilt, besteht darin, dass Medienobjekte und Synchronisationsinformationen an unterschiedlichen Stellen vorgehalten werden~\citep[S. 607]{multimedia_technologie}. Eine Möglichkeit dieses Problem zu lösen, ist die Etablierung eines separaten Kanals\footnote{Dieser Kanal ist in der erweitere SOA nach Papazoglou auf Ebene der komponierten Dienste einzuordnen (siehe auch \ref{ssub:definition_dienstorientierte_architektur}).}, über den die Synchronisationsinformationen übertragen werden können~\citep[S. 608]{multimedia_technologie}. Die Synchronisation unterschiedlicher Medienobjekte wird in diesem Fall von einer Consumer-Komponente übernommen~\citep[S. 608]{multimedia_technologie}. Eine Alternative dazu wäre die Synchronisation in der Producer (oder Transformer) Komponente. Dazu werden die zu synchronisierenden Medien in einem \emph{Multiplex}-Datenstrom zusammengefasst und erst anschließend übertragen.
   
   Des Weiteren ist es notwendig einen globalen Zeitgeber einzuführen, um eine zeitliche Koordination der unterschiedlichen Komponenten zu erreichen~\citep[S. 610]{multimedia_technologie}. Diese Aufgabe wird im COSIMA-Projekt von der \emph{Time-Engine} Komponente realisiert.
 
@@ -672,7 +672,7 @@
   
   Der Medien Broker bei COSIMA soll ähnliche Funktionen bei der Vermittlung von Medien zwischen den einzelnen Diensten übernehmen. Zur Zeit ist der Medien Broker so konzeptioniert, dass er die im vorherigen Abschnitt beschriebenen Medienobjekte zwischen den verschiedenen medienverarbeitenden Komponenten vermittelt. Obwohl er dadurch selbst auch nur Referenzen auf die eigentlichen Daten vermittelt, stellt er dennoch Adaptoren bereit, die einen konkreten Datenzugriff in einer verteilten Umgebung erlauben. Vorraussetzung dazu ist jedoch, die Verwendung eines Backends, dass eine verteilten Zugriff erlaubt. Ein sehr rudimentäres Backend würde ein NFS\abk{NFS}{Network File System} darstellen. Eine deutlich mächtigere Lösung stellt hingegen das \emph{MultiMonster}-Projekt\footnote{\url{http://www6.informatik.uni-erlangen.de/research/projects/retavic/multimonster/index.html}} dar. Dieser, von der Universität Erlangen entwickelte Multimediaserver kann Medien in einer Echtzeitumgebung bereitstellen und dabei unterschiedliche Dienstgüten gerecht werden. Zusätzlich ist er in der Lage Mediendaten in unterschiedliche Formate zu konvertieren, ist dabei plattformunabhängig und lässt sich leicht erweitern~\citep{suchomski2004oar}\footnote{Das M.e.T.t. Projekt hat sich bereits im Rahmen des COSIMA-Projekts prototypisch mit einer möglichen Integration beschäftigt: \url{https://mims01.gm.fh-koeln.de/twiki/bin/view/MIMaster/MeT}}.
   
-  Der Medien Broker lässt sich in die erweiterte SOA nach Papazoglou (siehe Abbildung \ref{fig:images_Extended_SOA} auf Seite \pageref{fig:images_Extended_SOA}) als einen weiteren Kanal, neben dem Daten- und Kontrollkanal sowie Synchronisationskanal einordnen.
+  Der Medien Broker lässt sich in die erweiterte SOA nach Papazoglou (siehe Abbildung \ref{fig:images_Extended_SOA} auf Seite \pageref{fig:images_Extended_SOA}) als einen weiteren Kanal, neben dem Daten- und Kontrollkanal sowie Synchronisationskanal auf der Ebene der komponierten Dienste einordnen.
   
 % subsubsection media_broker (end)
 
