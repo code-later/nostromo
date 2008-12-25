@@ -12,9 +12,12 @@
 package de.fhkoeln.santiago.media;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import de.fhkoeln.santiago.media.mediabroker.storage.MediaStore;
 
 
 /**
@@ -86,6 +89,15 @@ public class MediaContainer extends AbstractMedia {
 
   private Map<String, AbstractMedia> getMediaElements() {
     return mediaElements;
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.media.AbstractMedia#getPlayableData()
+   */
+  @Override
+  public Object getPlayableData() {
+    // TODO Auto-generated method stub
+    return null;
   }
 
 }

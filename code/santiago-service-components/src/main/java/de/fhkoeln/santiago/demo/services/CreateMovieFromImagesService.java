@@ -12,13 +12,14 @@
 package de.fhkoeln.santiago.demo.services;
 
 import java.io.FileNotFoundException;
+import java.net.URI;
 
 import de.fhkoeln.santiago.components.jmf.JMFImages2Movie;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 import de.fhkoeln.santiago.demo.util.Logger;
 import de.fhkoeln.santiago.media.AbstractMedia;
-import de.fhkoeln.santiago.media.MediaBroker;
 import de.fhkoeln.santiago.media.MediaData;
+import de.fhkoeln.santiago.media.mediabroker.MediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
 import de.fhkoeln.santiago.services.registry.ServiceRegistry;
@@ -57,18 +58,20 @@ public class CreateMovieFromImagesService implements CoreService {
     IODescriptor output;
     
     try {
+      String outputFileName = "file:///tmp/output.mov";
+      
       output = new IODescriptor();
       
       AbstractMedia outputMedia = new MediaData();
       outputMedia.setName("MovieFromJPEGs");
-      outputMedia.setUri("file:///tmp/output.mov");
       
-      output.add(outputMedia.getName());
-      
-      mediaAction = new JMFImages2Movie(getInput().first(), outputMedia.getUri());
+      mediaAction = new JMFImages2Movie(getInput().first(), outputFileName);
       mediaAction.performAction();
 
-      getBroker().store(outputMedia);
+      outputMedia.setReferenceToRealData("/tmp/output.mov");
+      
+      URI mediaUri = getBroker().store(outputMedia);
+      output.add(mediaUri.toString());
       
       return output;
     } catch (FileNotFoundException e) {

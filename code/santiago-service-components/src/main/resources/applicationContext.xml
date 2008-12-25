@@ -46,7 +46,12 @@
     <property name="broker" ref="mediaBroker" />
   </bean>
 
-	<bean id="mediaBroker" class="de.fhkoeln.santiago.media.MemcachedMediaBroker" />
+	<bean id="mediaBroker"
+	  class="de.fhkoeln.santiago.media.mediabroker.MemcachedMediaBroker">
+    <property name="mediaStore" ref="mediaStore" />
+	</bean>
+	
 	<bean id="serviceRegistry" class="de.fhkoeln.santiago.services.registry.MemcachedServiceRegistry" />
+	<bean id="mediaStore" class="de.fhkoeln.santiago.media.mediabroker.storage.FileSystemStore" />
 
 </beans>

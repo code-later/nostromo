@@ -50,5 +50,34 @@ public class AbstractMediaTest {
     media.setName("Foo Media");
     assertEquals("Foo Media", media.getName());
   }
+  
+  @Test
+  public void testShouldHaveAbilityToAddNamespaces() {
+    AbstractMedia media = new MediaData();
+    media.setNamespace("Test::Media::Video");
+    assertArrayEquals(new String[] {"Test", "Media", "Video"}, media.getNamespace());
+  }
+  
+  @Test
+  public void testShouldCreateUriPartOutOfNameAndNamespace() {
+    AbstractMedia media = new MediaData();
+    media.setName("bar.mp4");
+    media.setNamespace("Test::Media::Video");
+    assertEquals("/Test/Media/Video/bar.mp4", media.getUri());
+  }
 
+  @Test
+  public void testShouldCreateUriPartJustOutOfNameAndWithoutNamespace() {
+    AbstractMedia media = new MediaData();
+    media.setName("bar.mp4");
+    assertEquals("/bar.mp4", media.getUri());
+  }
+  
+  @Test
+  public void testShouldUrlEncodeUri() {
+    AbstractMedia media = new MediaData();
+    media.setName("my media.mp4");
+    media.setNamespace("Test::Media Storage::Video");
+    assertEquals("/Test/Media+Storage/Video/my+media.mp4", media.getUri());
+  }
 }

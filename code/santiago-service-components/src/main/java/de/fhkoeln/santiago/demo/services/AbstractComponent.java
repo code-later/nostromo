@@ -12,8 +12,8 @@
 package de.fhkoeln.santiago.demo.services;
 
 import de.fhkoeln.santiago.demo.util.Logger;
-import de.fhkoeln.santiago.media.MediaBroker;
-import de.fhkoeln.santiago.media.MemcachedMediaBroker;
+import de.fhkoeln.santiago.media.mediabroker.MediaBroker;
+import de.fhkoeln.santiago.media.mediabroker.MemcachedMediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
 

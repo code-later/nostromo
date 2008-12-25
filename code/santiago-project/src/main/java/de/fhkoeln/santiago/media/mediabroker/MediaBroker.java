@@ -9,7 +9,12 @@
  *
  * (c) 2008 by dbreuer
  */
-package de.fhkoeln.santiago.media;
+package de.fhkoeln.santiago.media.mediabroker;
+
+import java.net.URI;
+
+import de.fhkoeln.santiago.media.AbstractMedia;
+import de.fhkoeln.santiago.media.mediabroker.storage.MediaStore;
 
 /**
  * Interface for a Media Broker. It defines methods to store and
@@ -24,7 +29,7 @@ public interface MediaBroker {
   /**
    * @param media
    */
-  public void store(AbstractMedia media);
+  public URI store(AbstractMedia media);
 
   /**
    * @return
@@ -46,5 +51,10 @@ public interface MediaBroker {
    * @return true if the Broker knows no elements
    */
   public boolean isEmtpy();
+
+  /**
+   * @param The media store instance to use
+   */
+  public void setMediaStore(MediaStore store);
 
 }

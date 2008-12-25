@@ -12,8 +12,16 @@
 package de.fhkoeln.santiago.media;
 
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URLEncoder;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
+
+import sun.security.provider.SHA;
+
+import de.fhkoeln.santiago.media.mediabroker.storage.MediaStore;
 
 
 /**
@@ -30,9 +38,10 @@ public abstract class AbstractMedia implements Serializable {
   private static final long serialVersionUID = -5578809582939403020L;
 
   private List<Metadata> metadatas;
+  private MediaStore store;
+
   private String name;
-  private String uri;
-  
+  private String namespace;
   
   public AbstractMedia() {
     metadatas = new ArrayList<Metadata>();
@@ -64,11 +73,86 @@ public abstract class AbstractMedia implements Serializable {
   }
 
   public String getUri() {
-    return this.uri;
+    String uri = "/";
+    
+    try {
+      if (getNamespace() != null) {
+        for (int i = 0; i < getNamespace().length; i++) {
+          uri += URLEncoder.encode(getNamespace()[i], "UTF-8");
+          uri += "/";
+        }
+      }
+      uri += URLEncoder.encode(getName(), "UTF-8");
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();
+    }
+    
+    return uri;
   }
 
-  public void setUri(String uri) {
-    this.uri = uri;
+  public void setStore(MediaStore store) {
+    this.store = store;
+  }
+
+  public MediaStore getStore() {
+    return store;
+  }
+  
+  public void setReferenceToRealData(Object realMediaData) throws UnsupportedOperationException {
+    throw new UnsupportedOperationException();
+  }
+
+  public URI getReferenceToRealData() throws UnsupportedOperationException {
+    throw new UnsupportedOperationException();
+  }
+
+  /**
+   * @return The namespace as String Array
+   */
+  public String[] getNamespace() {
+    return namespace == null ? null : namespace.split("::");
+  }
+
+  /**
+   * Lets on set a namespace in the form "Foo::Bar".
+   * 
+   * @param Namespace of this Media Object.
+   */
+  public void setNamespace(String namespace) {
+    this.namespace = namespace;
+  }
+
+  public int size() throws UnsupportedOperationException {
+    throw new UnsupportedOperationException();
+  }
+  
+  public AbstractMedia getChild(int atIndex) throws UnsupportedOperationException {
+    throw new UnsupportedOperationException();
+  }
+  
+  public void removeMedia(AbstractMedia media) throws UnsupportedOperationException {
+    throw new UnsupportedOperationException();
+  }
+  
+  public void addMedia(AbstractMedia media) throws UnsupportedOperationException {
+    throw new UnsupportedOperationException();
+  }
+  
+  public final String storageKey() {
+    return new Integer(Math.abs(hashCode())).toString();
+  }
+  
+  public abstract Object getPlayableData();
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
+    result =
+        prime * result
+            + ((this.namespace == null) ? 0 : this.namespace.hashCode());
+    return result;
   }
 
 }

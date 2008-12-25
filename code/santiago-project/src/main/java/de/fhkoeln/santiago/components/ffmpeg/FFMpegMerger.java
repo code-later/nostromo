@@ -35,7 +35,6 @@ import de.fhkoeln.santiago.media.AbstractMedia;
  */
 public class FFMpegMerger implements MediaAction {
 
-  
   private final AbstractMedia outputMedia;
   private final AbstractMedia mediaOne;
   private final AbstractMedia mediaTwo;
@@ -52,12 +51,14 @@ public class FFMpegMerger implements MediaAction {
    * @see de.fhkoeln.santiago.components.jmf.MediaAction#performAction()
    */
   public void performAction() {
+    String outFileName = "/tmp/" + System.currentTimeMillis() + "-merged.mov";
+    
     List<String> command = new ArrayList<String>();
     command.add("ffmpeg");
     command.add("-i");
-    command.add(mediaOne.getUri());
+    command.add((String) mediaOne.getPlayableData().toString());
     command.add("-i");
-    command.add(mediaTwo.getUri());
+    command.add((String) mediaTwo.getPlayableData().toString());
     command.add("-s");
     command.add("vga");
     command.add("-aspect");
@@ -67,10 +68,7 @@ public class FFMpegMerger implements MediaAction {
     command.add("-acodec");
     command.add("pcm_alaw");
     command.add("-y");
-    command.add(outputMedia.getUri());
-    
-//    command.add("mplayer");
-//    command.add("/tmp/Merged_movie.mov");
+    command.add(outFileName);
 
     try {
       ProcessBuilder pBuilder = new ProcessBuilder(command);
@@ -89,6 +87,7 @@ public class FFMpegMerger implements MediaAction {
         
       ffmpeg.waitFor();
       System.out.printf("\nCommand %s exited with status: %d\n\n", command.get(0), ffmpeg.exitValue());
+      outputMedia.setReferenceToRealData(outFileName);
     } catch (IOException e) {
       e.printStackTrace();
     } catch (InterruptedException e) {

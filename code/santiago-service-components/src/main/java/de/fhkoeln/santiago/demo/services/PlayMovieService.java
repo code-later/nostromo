@@ -15,7 +15,7 @@ import de.fhkoeln.santiago.components.ffmpeg.MPlayerPlayer;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 import de.fhkoeln.santiago.demo.util.Logger;
 import de.fhkoeln.santiago.media.AbstractMedia;
-import de.fhkoeln.santiago.media.MediaBroker;
+import de.fhkoeln.santiago.media.mediabroker.MediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
 import de.fhkoeln.santiago.services.registry.ServiceRegistry;
@@ -48,17 +48,10 @@ public class PlayMovieService implements CoreService {
   public IODescriptor execute() {
     IODescriptor output = new IODescriptor();
     
-//    try {
-      AbstractMedia videoFile = getBroker().retrieve(input.first()); 
-      
-//      MediaAction player = new JMFPlayer(videoFile.getUri());
-      MediaAction player = new MPlayerPlayer(videoFile);
-      player.performAction();
-//    } catch (NoPlayerException e) {
-//      e.printStackTrace();
-//    } catch (IOException e) {
-//      e.printStackTrace();
-//    }
+    AbstractMedia videoFile = getBroker().retrieve(input.first()); 
+    
+    MediaAction player = new MPlayerPlayer(videoFile);
+    player.performAction();
     
     return output;
   }

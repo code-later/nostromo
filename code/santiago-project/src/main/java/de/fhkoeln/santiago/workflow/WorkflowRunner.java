@@ -186,6 +186,13 @@ public class WorkflowRunner {
       EndpointReference targetEPR = new EndpointReference(serviceUri);
       
       options.setTo(targetEPR);
+      // TODO: Wenn die Operationen auf der Service Seite zu lange
+      // dauern, dann gibt es einen Timeout! Asynchrone Prozessierung
+      // notwendig. Dabei tritt allerdings das Problem auf, dass man
+      // nicht weiss, wann die Gegenseite fertig ist. Messagaging
+      // System FTW!
+      System.out.println("--- Service Timeout: " + options.getTimeOutInMilliSeconds());
+      options.setTimeOutInMilliSeconds(500000);
 
       // Setting Input Params first
       QName setInputOperation = new QName(element.getNamespace(), CoreService.SERVICE_SET_INPUT_OPERATION);

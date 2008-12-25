@@ -11,7 +11,10 @@
  */
 package de.fhkoeln.santiago.components.ffmpeg;
 
+import static org.mockito.Mockito.*;
 import static org.junit.Assert.assertTrue;
+
+import java.io.File;
 
 import org.junit.Test;
 
@@ -34,9 +37,10 @@ public class MPlayerPlayerTest {
 
   @Test
   public void testShouldPlayVideoViaMPlayer() {
-    AbstractMedia video = new MediaData();
+    AbstractMedia video = spy(new MediaData());
     video.setName("2nd_movie.mov");
-    video.setUri("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov");
+    
+    doReturn(new File("/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov")).when(video).getPlayableData();
     
     MediaAction player = new MPlayerPlayer(video);
     player.performAction();

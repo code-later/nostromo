@@ -11,12 +11,14 @@
  */
 package de.fhkoeln.santiago.demo.services;
 
+import java.net.URI;
+
 import de.fhkoeln.santiago.components.ffmpeg.FFMpegMerger;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 import de.fhkoeln.santiago.demo.util.Logger;
 import de.fhkoeln.santiago.media.AbstractMedia;
-import de.fhkoeln.santiago.media.MediaBroker;
 import de.fhkoeln.santiago.media.MediaData;
+import de.fhkoeln.santiago.media.mediabroker.MediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
 import de.fhkoeln.santiago.services.registry.ServiceRegistry;
@@ -50,19 +52,21 @@ public class AddMusicToMovieService implements CoreService {
     
     AbstractMedia outputMedia = new MediaData();
     outputMedia.setName("MovieWithMusic");
-    outputMedia.setUri("file:///tmp/merged.mov");
     
-    // TODO: Path should be abstract enough for all components
-    output.add(outputMedia.getName());
+    Logger.info("--- Movie File @ " + this.input.getDescriptorElements()[0]);
+    Logger.info("--- Audio File @ " + this.input.getDescriptorElements()[1]);
     
-    AbstractMedia movieFile = getBroker().retrieve(this.input.getDescriptorElements()[0]); 
-    AbstractMedia audioFile = getBroker().retrieve(this.input.getDescriptorElements()[1]); 
+    AbstractMedia movieFile = getBroker().retrieve(this.input.getDescriptorElements()[0]);
+    AbstractMedia audioFile = getBroker().retrieve(this.input.getDescriptorElements()[1]);
     
-//    MediaAction action = new JMFMerger(movieFile.getUri(), audioFile.getUri(), outputMedia.getUri());
+    Logger.info("--- MediaObject for Movie File: " + movieFile.getPlayableData());
+    Logger.info("--- MediaObject for Audio File: " + audioFile.getPlayableData());
+    
     MediaAction action = new FFMpegMerger(movieFile, audioFile, outputMedia);
     action.performAction();
     
-    getBroker().store(outputMedia);
+    URI mediaUri = getBroker().store(outputMedia);
+    output.add(mediaUri.toString());
     
     return output;
   }

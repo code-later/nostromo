@@ -11,9 +11,10 @@
  */
 package de.fhkoeln.santiago.workflow;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import java.util.Iterator;
 import java.util.Set;
 
 import org.junit.Before;

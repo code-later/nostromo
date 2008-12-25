@@ -11,6 +11,8 @@
  */
 package de.fhkoeln.santiago.components.ffmpeg;
 
+import static org.mockito.Mockito.*;
+
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -36,21 +38,24 @@ public class FFMpegMergerTest {
 
   @Test
   public void testShouldMergeAudioAndVideo() {
-    AbstractMedia audio = new MediaData();
+    AbstractMedia audio = spy(new MediaData());
     audio.setName("L70ECT.mp3");
-    audio.setUri("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3");
+    doReturn(new File("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3")).when(audio).getPlayableData();
     
-    AbstractMedia video = new MediaData();
+    AbstractMedia video = spy(new MediaData());
     video.setName("2nd_movie.mov");
-    video.setUri("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov");
+    doReturn(new File("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov")).when(video).getPlayableData();
     
-    AbstractMedia output = new MediaData();
+    AbstractMedia output = spy(new MediaData());
     output.setName("Merged_movie.mov");
-    output.setUri("file:///tmp/Merged_movie.mov");
     
     MediaAction merger = new FFMpegMerger(audio, video, output);
+    long currentMillesecs = System.currentTimeMillis();
     merger.performAction();
-    assertTrue(new File("/tmp/Merged_movie.mov").exists());
+    
+    verify(output).setReferenceToRealData("/tmp/" + currentMillesecs + "-merged.mov");
+    
+    assertTrue(new File("/tmp/" + currentMillesecs + "-merged.mov").exists());
   }
   
 }

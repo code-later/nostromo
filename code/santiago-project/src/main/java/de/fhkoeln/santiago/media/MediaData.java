@@ -11,8 +11,8 @@
  */
 package de.fhkoeln.santiago.media;
 
+import java.net.URI;
 import java.util.List;
-
 
 /**
  * Documentation comment without implementation details. 
@@ -26,7 +26,9 @@ import java.util.List;
 public class MediaData extends AbstractMedia {
   
   private static final long serialVersionUID = -7185178004655851316L;
-
+  
+  private Object realMediaData;
+  
   public MediaData() {
     super();
   }
@@ -40,19 +42,45 @@ public class MediaData extends AbstractMedia {
     super(metadatas);
   }
   
-  /* (non-Javadoc)
-   * @see java.lang.Object#equals(java.lang.Object)
-   */
   @Override
   public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
     if (!(obj instanceof MediaData))
       return false;
-    
-    MediaData otherMedia = (MediaData) obj;
-    if ((this.getName().equals(otherMedia.getName())) && (this.getUri().equals(this.getUri())))
-      return true;
+    MediaData other = (MediaData) obj;
+    if (this.getUri() == null) {
+      if (other.getUri() != null)
+        return false;
+    } else if (!this.getUri().equals(other.getUri()))
+      return false;
+    return true;
+  }
 
-    return false;
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.media.AbstractMedia#getReferenceToRealData()
+   */
+  @Override
+  public URI getReferenceToRealData() throws UnsupportedOperationException {
+    return URI.create((String) realMediaData);
+  }
+  
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.media.AbstractMedia#setReferenceToRealData(java.lang.Object)
+   */
+  @Override
+  public void setReferenceToRealData(Object realMediaData) throws UnsupportedOperationException {
+    this.realMediaData = realMediaData;
+  }
+  
+  /* (non-Javadoc)
+   * @see de.fhkoeln.santiago.media.AbstractMedia#getPlayableData()
+   */
+  @Override
+  public Object getPlayableData() {
+    return getStore().read(storageKey());
   }
 
 }

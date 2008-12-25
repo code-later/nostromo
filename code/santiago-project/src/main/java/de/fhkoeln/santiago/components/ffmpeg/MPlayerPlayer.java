@@ -47,7 +47,7 @@ public class MPlayerPlayer implements MediaAction {
   public void performAction() {
     List<String> command = new ArrayList<String>();
     command.add("mplayer");
-    command.add(video.getUri());
+    command.add((String) video.getPlayableData().toString());
     
     try {
       ProcessBuilder pBuilder = new ProcessBuilder(command);

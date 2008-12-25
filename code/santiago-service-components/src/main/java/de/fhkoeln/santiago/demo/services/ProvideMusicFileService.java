@@ -11,11 +11,13 @@
  */
 package de.fhkoeln.santiago.demo.services;
 
+import java.net.URI;
+
 import de.fhkoeln.santiago.demo.util.Logger;
 import de.fhkoeln.santiago.media.AbstractMedia;
-import de.fhkoeln.santiago.media.MediaBroker;
 import de.fhkoeln.santiago.media.MediaData;
-import de.fhkoeln.santiago.media.MemcachedMediaBroker;
+import de.fhkoeln.santiago.media.mediabroker.MediaBroker;
+import de.fhkoeln.santiago.media.mediabroker.MemcachedMediaBroker;
 import de.fhkoeln.santiago.services.CoreService;
 import de.fhkoeln.santiago.services.IODescriptor;
 import de.fhkoeln.santiago.services.registry.ServiceRegistry;
@@ -50,11 +52,10 @@ public class ProvideMusicFileService implements CoreService {
     
     AbstractMedia outputMedia = new MediaData();
     outputMedia.setName("MetalMusicFile");
-    outputMedia.setUri(input.first());
+    outputMedia.setReferenceToRealData(input.first());
     
-    getBroker().store(outputMedia);
-    
-    output.add(outputMedia.getName());
+    URI mediaUri = getBroker().store(outputMedia);
+    output.add(mediaUri.toString());
     
     return output;
   }

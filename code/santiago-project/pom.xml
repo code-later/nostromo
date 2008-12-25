@@ -51,6 +51,19 @@
     <name>Cologne University of Applied Science</name>
     <url>http://www.gm.fh-koeln.de</url>
   </organization>
+  
+  <!-- ============ -->
+  <!-- Reporting -->
+  <!-- ============ -->
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.4.2</version>
+      </plugin>
+    </plugins>
+  </reporting>
 
   <!-- ============ -->
   <!-- Repositories -->
