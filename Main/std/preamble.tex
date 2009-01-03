@@ -74,8 +74,16 @@
 	numberfirstline=false,
   commentstyle=\slshape\footnotesize\color{Gray},
   basicstyle=\ttfamily\footnotesize,
-  morekeywords={while,condition,invoke,receive,assign,pipe}
-	}
+  % morekeywords={while,condition,invoke,receive,assign,pipe},
+  keywordstyle=[2]\ttfamily\redhighlight,
+  keywordstyle=[3]\ttfamily\yellowhighlight,
+  keywordstyle=[4]\ttfamily\slshape
+}
+
+% bg colored text for highlighting
+
+\newcommand{\redhighlight}[1]{\colorbox{red}{\textcolor{white}{#1}}}
+\newcommand{\yellowhighlight}[1]{\colorbox{yellow}{\textcolor{black}{#1}}}
 
 % Listings can be included as following:
 % 

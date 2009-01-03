@@ -1,0 +1,5 @@
+Integer[] a = new Integer[] {new Integer(1), new Integer(2)};
+
+java.util.Arrays.asList(a).contains(new Integer(1));(boolean) true
+
+de.fhkoeln.cosima.examples.PlayMovieFile.class.isInstance(de.fhkoeln.cosima.examples.WorkflowElement.class)

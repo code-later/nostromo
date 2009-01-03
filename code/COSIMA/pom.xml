@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.fhkoeln.cosima</groupId>
+  <artifactId>cosima</artifactId>
+  <packaging>jar</packaging>
+  <version>0.3-SNAPSHOT</version>
+  <name>COSIMA</name>
+  <url>http://cosima.gm.fh-koeln.de</url>
+
+  <!-- ================ -->
+  <!--  Build Settings  -->
+  <!-- ================ -->
+   <build>
+     <plugins>
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>2.0.2</version>
+         <configuration>
+           <source>1.5</source>
+           <target>1.5</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.activemq.tooling</groupId>
+        <artifactId>maven-activemq-plugin</artifactId>
+        <version>5.1.0</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- ============ -->
+  <!-- Developers   -->
+  <!-- ============ -->
+  <developers>
+    <developer>
+      <name>Dirk Breuer</name>
+      <email>dirk.breuer@smail.fh-koeln.de</email>
+      <url>http://www.gm.fh-koeln.de/~mim096</url>
+      <organization>Cologne University of Applied Science</organization>
+      <organizationUrl>http://www.gm.fh-koeln.de</organizationUrl>
+      <roles>
+        <role>Software Developer</role>
+        <role>Ruby Hacker, Rails Rider and Java Boy</role>
+      </roles>
+      <timezone>+2</timezone>
+    </developer>
+  </developers>
+  <organization>
+    <name>Cologne University of Applied Science</name>
+    <url>http://www.gm.fh-koeln.de</url>
+  </organization>
+  
+  <!-- ============ -->
+  <!-- Reporting -->
+  <!-- ============ -->
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.4.2</version>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <!-- ============ -->
+  <!-- Repositories -->
+  <!-- ============ -->
+  <repositories>
+		<repository>
+			<id>dustin</id>
+			<name>dustin</name>
+			<url>http://bleu.west.spy.net/~dustin/repo</url>
+			<layout>legacy</layout>
+		</repository>
+    <repository>
+      <id>maven2-repository.dev.java.net</id>
+      <name>Java.net Repository for Maven 2</name>
+      <url>http://download.java.net/maven/2</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>apache.incubating.releases</id>
+      <name>
+        Apache Incubating Release Distribution Repository
+      </name>
+      <url>
+        http://people.apache.org/repo/m2-incubating-repository
+      </url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>java.net</id>
+      <url>
+        https://maven-repository.dev.java.net/nonav/repository
+      </url>
+      <layout>legacy</layout>
+    </repository>
+    <repository>
+      <id>Codehaus Snapshots</id>
+      <url>http://snapshots.repository.codehaus.org</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>JBoss Snapshots</id>
+      <url>http://snapshots.jboss.org/maven2</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+
+    <repository>
+      <id>Maven Snapshots</id>
+      <url>http://snapshots.maven.codehaus.org/maven2</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>Ibiblio</id>
+      <name>Ibiblio</name>
+      <url>http://www.ibiblio.org/maven2</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+
+    <repository>
+      <id>MavenOrg</id>
+      <name>MavenOrg</name>
+      <url>http://repo1.maven.org/maven2</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>Codehaus Snapshots</id>
+      <url>http://snapshots.repository.codehaus.org</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+
+  </repositories>
+
+  <!-- ============ -->
+  <!-- Plugin Repos -->
+  <!-- ============ -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>Java.Net</id>
+      <name>JavaNet</name>
+      <url>https://maven2-repository.dev.java.net</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>MavenOrg</id>
+      <name>MavenOrg</name>
+      <url>http://repo1.maven.org/maven2</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>Ibiblio</id>
+      <name>Ibiblio</name>
+      <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+    </pluginRepository>
+
+    <pluginRepository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots />
+      <id>Maven Snapshots</id>
+      <url>http://snapshots.maven.codehaus.org/maven2</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>codehaus-plugins</id>
+      <name>codehaus</name>
+      <url>http://snapshots.repository.codehaus.org</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </pluginRepository>
+    <pluginRepository>
+      <id>mortbay-snapshot-repo</id>
+      <name>MortBay Snapshot Repo</name>
+      <url>http://jetty.mortbay.org/maven2/snapshot</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>Codehaus Snapshots</id>
+      <url>http://snapshots.repository.codehaus.org</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </pluginRepository>
+    <pluginRepository>
+      <id>JBoss Snapshots</id>
+      <url>http://snapshots.jboss.org/maven2</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </pluginRepository>
+  </pluginRepositories>
+  
+  <!-- ============ -->
+  <!-- Dependencies -->
+  <!-- ============ -->
+  <dependencies>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.14</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.media</groupId>
+      <artifactId>jmf</artifactId>
+      <version>2.1.1e</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.6</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- <dependency>
+      <groupId>de.fhkoeln.cosima</groupId>
+      <artifactId>cosima-framework</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency> -->
+    <dependency>
+      <groupId>org.jyaml</groupId>
+      <artifactId>jyaml</artifactId>
+      <version>1.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-core</artifactId>
+      <version>5.1.0</version>
+    </dependency>
+    
+    <!-- AXIS2 Dependencies BEGIN -->
+    
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-codegen</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>wsdl4j</groupId>
+      <artifactId>wsdl4j</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-saaj</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-jaxws</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-jaxws-api</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-kernel</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-metadata</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-saaj-api</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-jws-api</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-integration</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ws.commons.axiom</groupId>
+      <artifactId>axiom-api</artifactId>
+      <version>1.2.7</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ws.commons.axiom</groupId>
+      <artifactId>axiom-c14n</artifactId>
+      <version>SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ws.commons.axiom</groupId>
+      <artifactId>axiom-dom</artifactId>
+      <version>1.2.7</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ws.commons.axiom</groupId>
+      <artifactId>axiom-impl</artifactId>
+      <version>1.2.7</version>
+    </dependency>
+    
+    <!-- AXIS2 Dependencies END -->
+    
+    <dependency>
+      <groupId>com.sun.xml.ws</groupId>
+      <artifactId>jaxws-rt</artifactId>
+      <version>2.1EA1</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>spy</groupId>
+      <artifactId>memcached</artifactId>
+      <version>2.2</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>spy</groupId>
+      <artifactId>spy</artifactId>
+      <version>2.4</version>
+    </dependency>
+    
+  </dependencies>
+</project>

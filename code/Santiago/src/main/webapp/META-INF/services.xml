@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceGroup>
+
+  <service name="SpringInit" class="de.fhkoeln.santiago.util.SpringInit">
+    <description>
+      This web service initializes Spring.
+    </description>
+    <parameter name="ServiceClass">de.fhkoeln.santiago.util.SpringInit
+    </parameter>
+    <parameter name="ServiceTCCL">composite</parameter>
+    <parameter name="load-on-startup">true</parameter>
+    <operation name="springInit">
+      <messageReceiver
+        class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver" />
+    </operation>
+  </service>
+  
+  <service name="CreateMovieFromImagesService" scope="application">
+    <description>
+      Create a Movie from a bunch of images.
+    </description>
+    <messageReceivers>
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+        class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+        class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </messageReceivers>
+    <parameter name="ServiceClass">
+      de.fhkoeln.santiago.services.CreateMovieFromImagesService
+    </parameter>
+    <parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier</parameter>
+    <parameter name="SpringBeanName">createMovieFromImagesService</parameter>
+  </service>
+  
+  <service name="ProvideMusicFileService" scope="application">
+    <description>
+      Provides a Music File.
+  </description>
+    <messageReceivers>
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+        class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+        class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </messageReceivers>
+    <parameter name="ServiceClass">
+      de.fhkoeln.santiago.services.ProvideMusicFileService
+    </parameter>
+    <parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier</parameter>
+    <parameter name="SpringBeanName">provideMusicFileService</parameter>
+  </service>
+  
+  <service name="AddMusicToMovieService" scope="application">
+    <description>
+      Merges a movie and an audio file together.
+  </description>
+    <messageReceivers>
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+        class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+        class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </messageReceivers>
+    <parameter name="ServiceClass">
+      de.fhkoeln.santiago.services.AddMusicToMovieService
+    </parameter>
+    <parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier</parameter>
+    <parameter name="SpringBeanName">addMusicToMovieService</parameter>
+  </service>
+  
+  <service name="PlayMovieService" scope="application">
+    <description>
+      Plays a movie file via Swing.
+  </description>
+    <messageReceivers>
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+        class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+        class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </messageReceivers>
+    <parameter name="ServiceClass">
+      de.fhkoeln.santiago.services.PlayMovieService
+    </parameter>
+    <parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier</parameter>
+    <parameter name="SpringBeanName">playMovieService</parameter>
+  </service>
+  
+</serviceGroup>

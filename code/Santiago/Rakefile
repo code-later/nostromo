@@ -1,0 +1,46 @@
+require 'rake'
+require 'fileutils'
+
+TOMCAT_PATH      = "/Developer/Java-Server/apache-tomcat-6.0.18"
+AXIS2_JAXWS_PATH = "#{TOMCAT_PATH}/webapps/axis2/WEB-INF/servicejars"
+AXIS2_AAR_PATH   = "#{TOMCAT_PATH}/webapps/axis2/WEB-INF/services"
+AAR_FILE_NAME    = "santiago.aar"
+JAR_FILE_NAME    = "santiago.jar"
+
+desc "Cleans the generated AAR File"
+task "aar:clean" do
+  puts "Deleting AAR-File at: ./target/#{AAR_FILE_NAME}"
+  FileUtils.rm("./target/#{AAR_FILE_NAME}", :force => true)
+end
+
+desc "Create the AAR File"
+task "aar:build" => "aar:clean" do
+  system "mvn compile axis2-aar:aar"
+end
+
+desc "Copy AAR File to Tomcat"
+task "aar:install" => "aar:build" do
+  puts "Deleting AAR-File in AXIS2 Serivces at: #{AXIS2_AAR_PATH}/#{AAR_FILE_NAME}"
+  FileUtils.rm("#{AXIS2_AAR_PATH}/#{AAR_FILE_NAME}", :force => true)
+  puts "Copying AAR-File to #{AXIS2_AAR_PATH}/#{AAR_FILE_NAME} ..."
+  FileUtils.cp("./target/#{AAR_FILE_NAME}", "#{AXIS2_AAR_PATH}/#{AAR_FILE_NAME}", :verbose => true)
+end
+
+desc "Cleans the generated AAR File"
+task "jar:clean" do
+  puts "Deleting AAR-File at: ./target/#{JAR_FILE_NAME}"
+  FileUtils.rm("./target/#{JAR_FILE_NAME}", :force => true)
+end
+
+desc "Create the AAR File"
+task "jar:build" => "jar:clean" do
+  system "mvn package"
+end
+
+desc "Copy AAR File to Tomcat"
+task "jar:install" => "jar:build" do
+  puts "Deleting JAR-File in AXIS2 Serivces at: #{AXIS2_JAXWS_PATH}/#{JAR_FILE_NAME}"
+  FileUtils.rm("#{AXIS2_JAXWS_PATH}/#{JAR_FILE_NAME}", :force => true)
+  puts "Copying JAR-File to #{AXIS2_JAXWS_PATH}/#{JAR_FILE_NAME} ..."
+  FileUtils.cp("./target/#{JAR_FILE_NAME}", "#{AXIS2_JAXWS_PATH}/#{JAR_FILE_NAME}", :verbose => true)
+end
