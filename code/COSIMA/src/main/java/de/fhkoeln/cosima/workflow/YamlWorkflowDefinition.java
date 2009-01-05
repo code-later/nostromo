@@ -16,15 +16,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.ho.yaml.YamlDecoder;
-
-import de.fhkoeln.cosima.workflow.WorkflowElement.Successor;
 
 
 /**
@@ -39,7 +35,6 @@ import de.fhkoeln.cosima.workflow.WorkflowElement.Successor;
 public class YamlWorkflowDefinition implements WorkflowDefinition {
   
   private Map<String, WorkflowElement> elements;
-  private Set<WorkflowElement> currentElements;
 
   /**
    * Build a new YamlWorkflowDefinition object which generates
@@ -71,85 +66,18 @@ public class YamlWorkflowDefinition implements WorkflowDefinition {
     }
   }
 
-  /*
-   * (non-Javadoc)
-   * 
-   * @see de.fhkoeln.cosima.workflow.WorkflowDefinition#getNextElement()
-   */
-  @SuppressWarnings("unchecked")
-  
-  public Set<WorkflowElement> getNextElements() throws NoSuchElementException {
-    if (currentElements == null) {
-      currentElements = new HashSet<WorkflowElement>();
-      for (Iterator iterator = elements.values().iterator(); iterator.hasNext();) {
-        WorkflowElement element = (WorkflowElement) iterator.next();
-        if (element.getPredecessors() == null)
-          currentElements.add(element);
-      }
-    } else {
-      // This works only because this is a Set, and due to this all
-      // elements at this point with the same successor will store
-      // only once that successor.
-      Set<WorkflowElement> nextElements = new HashSet<WorkflowElement>();
-      for (Iterator<WorkflowElement> iterator = currentElements.iterator(); iterator
-          .hasNext();) {
-        WorkflowElement nextElement = iterator.next();
-        if (nextElement.getSuccessors() != null)
-          for (Iterator<Successor> iter = nextElement.getSuccessors()
-              .iterator(); iter.hasNext();) {
-            WorkflowElement workflowElement = elements
-                .get(iter.next().getUri());
-            nextElements.add(workflowElement);
-          }
-      }
-      currentElements = nextElements;
-      if (currentElements.isEmpty())
-        throw new NoSuchElementException("There are no more Elements");
-    }
-    return currentElements;
-  }
-
-  /*
-   * (non-Javadoc)
-   * 
-   * @see de.fhkoeln.cosima.workflow.WorkflowDefinition#getNextWorkflowElement()
-   */
-  
-  public Object[] getNextWorkflowElement() throws NoSuchElementException {
-    return null;
-  }
-
-  /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.workflow.WorkflowDefinition#hasNextElement()
-   */
-  
-  public boolean hasNextElements() {
-    if (currentElements == null)
-      return true;
-    if (currentElements.isEmpty())
-      return false;
-
-    for (Iterator<WorkflowElement> iterator = currentElements.iterator(); iterator.hasNext();) {
-      WorkflowElement element = iterator.next();
-      if (element.hasSuccessors())
-        return true;
-    }
-    return false;
-  }
-
-  /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.workflow.WorkflowDefinition#rewind()
-   */
-  
-  public void rewind() {
-    this.currentElements = null;
-  }
-
   /* (non-Javadoc)
    * @see de.fhkoeln.cosima.workflow.WorkflowDefinition#size()
    */
   public int size() {
     return elements.size();
+  }
+
+  /* (non-Javadoc)
+   * @see de.fhkoeln.cosima.workflow.WorkflowDefinition#elementsIterator()
+   */
+  public Iterator<Set<WorkflowElement>> elementsIterator() {
+    return new WorkflowDefinitionIterator(elements);
   }
 
 }

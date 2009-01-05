@@ -11,6 +11,9 @@
  */
 package de.fhkoeln.cosima.workflow;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import javax.xml.namespace.QName;
 
 import org.apache.axis2.AxisFault;
@@ -89,8 +92,10 @@ public class WorkflowRunner {
   public void run() {
     
     // iterate through the workflow definition elements
-    while (definition.hasNextElements()) {
-       for (WorkflowElement element : definition.getNextElements()) {
+    Iterator<Set<WorkflowElement>> elementsIterator = definition.elementsIterator();
+    
+    while (elementsIterator.hasNext()) {
+       for (WorkflowElement element : elementsIterator.next()) {
         // define a default inputDescriptor
         IODescriptor inputDescriptor = new IODescriptor();
 

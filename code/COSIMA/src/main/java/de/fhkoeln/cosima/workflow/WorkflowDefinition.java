@@ -11,12 +11,11 @@
  */
 package de.fhkoeln.cosima.workflow;
 
-import java.util.NoSuchElementException;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
- * The Interface for accessing a workflow definition from an executing
- * instance.
+ * The Interface for accessing a WorkflowDefinition instance from a client.
  * 
  * @author Dirk Breuer
  * @version 1.0 Jul 3, 2008
@@ -24,34 +23,20 @@ import java.util.Set;
 public interface WorkflowDefinition {
 
   /**
-   * Returns the next Element in this Workflow Definition which should
-   * be processed.
-   * 
-   * @return An Array with two elements. The first Element is the
-   *         number of the workflow item. The second is the Class of
-   *         the item which needs to be run.
-   * @throws NoSuchElementException
-   *           If there are no more Elements to fetch from the
-   *           definition list.
-   */
-  @Deprecated
-  public Object[] getNextWorkflowElement() throws NoSuchElementException;
-
-  public Set<WorkflowElement> getNextElements() throws NoSuchElementException;
-
-  /**
-   * @return The amount of Workflow Elements.
+   * @return The amount of containing Workflow Elements.
    */
   public int size();
 
   /**
-   * Rewinds the definition list, so it can be read again.
+   * Every workflow consists of a certain number of elements, which must be
+   * processed in a certain order. In addition to this on every step in that
+   * processing chain there could be elements which do not depend on each other
+   * and so are not required to be run in a certain order, but must be run
+   * within that very step. This method will return an iterator of the type
+   * {@link WorkflowDefinitionIterator} to provide the described functionality
+   * to the using client.
+   * 
+   * @return The Iterator for all the containing elements.
    */
-  public void rewind();
-
-  /**
-   * @return If there are any more elements to fetch or not.
-   */
-  public boolean hasNextElements();
-
+  public Iterator<Set<WorkflowElement>> elementsIterator();
 }

@@ -15,14 +15,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Iterator;
 import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import de.fhkoeln.cosima.workflow.WorkflowDefinition;
-import de.fhkoeln.cosima.workflow.WorkflowElement;
-import de.fhkoeln.cosima.workflow.YamlWorkflowDefinition;
 
 /**
  * Documentation comment without implementation details. 
@@ -49,8 +46,10 @@ public class YamlWorkflowDefinitionTest {
     Set<WorkflowElement> elements;
     WorkflowElement[] elementsAsArray = new WorkflowElement[] {};
 
-    assertTrue(definition.hasNextElements());
-    elements = definition.getNextElements();
+    Iterator<Set<WorkflowElement>> iterator = definition.elementsIterator();
+    
+    assertTrue(iterator.hasNext());
+    elements = iterator.next();
     assertEquals(2, elements.size());
     
     for (WorkflowElement element : elements) {
@@ -58,30 +57,38 @@ public class YamlWorkflowDefinitionTest {
           element.getUri().equals("http://localhost:8080/axis2/services/CreateMovieFromImagesService"));
     }
 
-    assertTrue(definition.hasNextElements());
-    elements = definition.getNextElements();
+    assertTrue(iterator.hasNext());
+    elements = iterator.next();
     assertEquals(1, elements.size());
     elementsAsArray = elements.toArray(elementsAsArray);
     assertEquals("http://localhost:8080/axis2/services/AddMusicToMovieService", elementsAsArray[0].getUri());
 
-    assertTrue(definition.hasNextElements());
-    elements = definition.getNextElements();
+    assertTrue(iterator.hasNext());
+    elements = iterator.next();
     assertEquals(1, elements.size());
     elementsAsArray = elements.toArray(elementsAsArray);
     assertEquals("http://localhost:8080/axis2/services/PlayMovieService", elementsAsArray[0].getUri());
     
-    assertFalse(definition.hasNextElements());
+    assertFalse(iterator.hasNext());
   }
   
   @Test
   public void testElementsShouldHaveInputAfterCreation() throws Exception {
     WorkflowDefinition definition = new YamlWorkflowDefinition(pathToYamlDefinition);
-    Set<WorkflowElement> elements = definition.getNextElements();
+    Set<WorkflowElement> elements = definition.elementsIterator().next();
     WorkflowElement element = elements.iterator().next();
     
     assertEquals("http://localhost:8080/axis2/services/ProvideMusicFileService/input", element.getInput().get(0).getUri());
     assertEquals("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3", element.getInput().get(0).getData());
 //    assertEquals("/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/", element.getInput().get(0).getData());
+  }
+  
+  @SuppressWarnings("unchecked")
+  @Test
+  public void testShouldProvideDedicatedIteratorForElements() throws Exception {
+    WorkflowDefinition definition = new YamlWorkflowDefinition(pathToYamlDefinition);
+    Iterator elementsIterator = definition.elementsIterator();
+    assertTrue(elementsIterator.hasNext());
   }
 
 }

@@ -30,7 +30,7 @@ import de.fhkoeln.cosima.workflow.WorkflowElement.Input;
  */
 public class WorkflowWithoutCosima {
   
-  private final WorkflowDefinition workflowDefinition;
+  private final SimpleWorkflowDefinition workflowDefinition;
   private final MessageQueue messageQueue;
 
   /**
@@ -38,7 +38,7 @@ public class WorkflowWithoutCosima {
    *  
    * @param workflowDefinition
    */
-  public WorkflowWithoutCosima(WorkflowDefinition workflowDefinition, MessageQueue messageQueue) {
+  public WorkflowWithoutCosima(SimpleWorkflowDefinition workflowDefinition, MessageQueue messageQueue) {
     this.workflowDefinition = workflowDefinition;
     this.messageQueue = messageQueue;
   }

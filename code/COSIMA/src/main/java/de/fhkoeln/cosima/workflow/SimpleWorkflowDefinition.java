@@ -1,5 +1,5 @@
 /*
- * WorkflowDefinitionImpl.java
+ * SimpleWorkflowDefinition.java
  *
  * Version 1.0  Jul 3, 2008
  *
@@ -27,7 +27,7 @@ import java.util.Vector;
  * @version 1.0  Jul 3, 2008
  *
  */
-public class WorkflowDefinitionImpl implements WorkflowDefinition {
+public class SimpleWorkflowDefinition {
 
   /**
    * ABSTRACT_DEFINITION_FORMAT documentation comment.
@@ -42,7 +42,7 @@ public class WorkflowDefinitionImpl implements WorkflowDefinition {
    * @param abstractDefinition
    * @throws ClassNotFoundException 
    */
-  public WorkflowDefinitionImpl(String abstractDefinition) throws ClassNotFoundException {
+  public SimpleWorkflowDefinition(String abstractDefinition) throws ClassNotFoundException {
     if (abstractDefinition == null || abstractDefinition == "") {
       throw new IllegalArgumentException("The abstract Workflow Definition is emtpy.");
     } else if(!abstractDefinition.matches(ABSTRACT_DEFINITION_PATTERN)) {

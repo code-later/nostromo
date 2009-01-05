@@ -16,7 +16,7 @@
   
   Neben der Notwendigkeit ein \emph{Meta-Framework}\footnote{Das ursprüngliche Ziel war tatsächlich ein Framework zu schaffen. Erst während der Validierung im Rahmen dieser Arbeit ist zu Tage gekommen, dass es sich mehr um eine Architektur handelt und weniger um ein Framework. Im weiteren Verlauf wird darauf jedoch noch genauer eingegangen.} zu schaffen, führen die Autoren als weiteren Beweggrund das Fehlen einer Architektur für Multimediaanwendungen an. Innerhalb dieser Architektur könnten sich Anwendungsentwickler wesentlicher effektiver bewegen und müssten nicht erst eine eigene Architektur von Grund auf entwerfen.
   
-  Da sich mit den meisten bestehenden Multimedia-Rahmenwerke keine verteilten Anwendungen realisieren lassen, lag auch dieser Aspekt von Beginn an im Fokus der Konzeptionierung. Als Grundlage eine geeignete Architektur zu konzipieren, die es ermöglicht, verteilte Anwendungen zu realisieren, diente das Konzept der \emph{Service-oriented Architecture} (SOA\abk{SOA}{Service-oriented Architecture}) oder \emph{Dienst-orientierten Architektur}.
+  Da sich mit den meisten bestehenden Multimedia-Rahmenwerke keine verteilten Anwendungen realisieren lassen, lag auch dieser Aspekt von Beginn an im Fokus der Konzeptionierung. Als Grundlage eine geeignete Architektur zu konzipieren, die es ermöglicht, verteilte Anwendungen zu realisieren, diente das Konzept der \emph{Service-oriented Architecture} (SOA\abk{SOA}{Service-oriented Architecture}) oder \emph{dienstorientierten Architektur}.
   
   Die hier aufgeführten Punkte haben initial die Entwicklung eines Rahmenwerkes motiviert, dass später im COSIMA-Projekt aufgehen sollte. Die im Verlauf der Projektarbeit entwickelten Ziele von COSIMA sind im nächsten Abschnitt zusammen gefasst.
 
@@ -28,10 +28,10 @@
   Das \emph{Mission Statement} des COSIMA-Projekts fasst bereits alle Ziele des Projekts in einer Kernaussage zusammen:
 
   \begin{quote}
-    \emph{``MIAV ist ein integratives, komponentenbasiertes Meta-Framework mit gezielter Ausrichtung auf Multimediaverarbeitung. Es vereinfacht die Entwicklung von verteilten Multimedia-Applikationen durch eine flexible, dienst-orientierte Architektur. Die Wiederverwendbarkeit von Komponenten und bestehenden Frameworks wird dadurch begünstigt.''} (aus~\citep[S. 2]{bericht})\footnote{Die Bezeichnung "`COSIMA"' hat das Projekt erst nach Fertigstellung des Berichts erhalten, daher findest sich hier noch die zuvor verwandte provisorische Bezeichnung \emph{MIAV-Framework}.}
+    \emph{``MIAV ist ein integratives, komponentenbasiertes Meta-Framework mit gezielter Ausrichtung auf Multimediaverarbeitung. Es vereinfacht die Entwicklung von verteilten Multimedia-Applikationen durch eine flexible, dienstorientierte Architektur. Die Wiederverwendbarkeit von Komponenten und bestehenden Frameworks wird dadurch begünstigt.''} (aus~\citep[S. 2]{bericht})\footnote{Die Bezeichnung "`COSIMA"' hat das Projekt erst nach Fertigstellung des Berichts erhalten, daher findest sich hier noch die zuvor verwandte provisorische Bezeichnung \emph{MIAV-Framework}.}
   \end{quote}
 
-  Neben den zentralen Aspekten \emph{dienst-orientierte Architektur}, \emph{Integration} und \emph{Meta-Framework}, die im Abschnitt zuvor bereits dargestellt wurden, nennen die Autoren hier zusätzlich noch die Aspekte der \emph{komponentenbasierten Architektur}, \emph{Wiederverwendbarkeit} und natürlich der \emph{Medienverarbeitung}.
+  Neben den zentralen Aspekten \emph{dienstorientierte Architektur}, \emph{Integration} und \emph{Meta-Framework}, die im Abschnitt zuvor bereits dargestellt wurden, nennen die Autoren hier zusätzlich noch die Aspekte der \emph{komponentenbasierten Architektur}, \emph{Wiederverwendbarkeit} und natürlich der \emph{Medienverarbeitung}.
   
   Neben den hier genannten Zielen, die das COSIMA-Projekt zu erreichen versucht, zeichnet sich das Projekt durch seine spezifischen Charakteristika in Bezug auf andere Multimedia-Rahmenwerke aus. Diese Alleinstellungsmerkmale werden im nächsten Abschnitt genauer betrachtet.
 
@@ -62,7 +62,7 @@
 
 % section alleinstellungsmerkmale (end)
 
-\section{Architektur} % (fold)
+\section{Konzeption einer Architektur} % (fold)
 \label{sec:architektur}
 
   Die Architektur des COSIMA-Projekts ist iterativ nach einem dedizierten Vorgehensmodell\footnote{Dieses Modell wird im Abschnitt~\ref{cha:szenario} kurz vorgestellt und detailliert im Institutsbericht~\citep[S. 7ff]{bericht} beschrieben und diskutiert.} bis zu dem Punkt entwickelt worden, der als Ausgangspunkt für die Betrachtungen in dieser Arbeit dient. Bevor dieser aktuelle Stand jedoch in den folgenden Abschnitten im Detail vorgestellt wird, soll zunächst einmal die Begriffe \emph{Architektur}, \emph{Dienstorientierung} und \emph{Dienst} definiert und eingeordnet werden.
@@ -136,7 +136,7 @@
 \subsection{Definition: Dienst und Dienstorientierung} % (fold)
 \label{sub:definition_dienst_und_dienstorientierung}
 
-  Mit dem Begriff der \emph{dienstorientierten Architekturen} oder auch \emph{SOA} beschäftigt sich die Fachliteratur thematisch bereits seit über 10 Jahren\footnote{Die Gartner Group hat sich das erste Mal 1996 mit diesem Begriff beschäftigt: SSA Research Note SPA-401-068, 12 April 1996, "`'Service Oriented' Architectures, Part 1"' und SSA Research Note SPA-401-069, 12 April 1996, "`'Service Oriented' Architectures, Part 2"'~\citep{natis2003soa}}. Während der letzten Jahre hat er immer mehr Prominenz, auch für die Verwendung im industriellen Umfeld erlangen können. Es finden sich unzählige Informationen zu diesem Thema, wie es einen echten Mehrwert für Unternehmen und ihre IT-Landschaft bieten kann\footnote{Eine nicht-repräsentative Suche bei Google.com vom 02.12.2008 hat für den Suchbegriff "`SOA"' 35.900.000 Treffer ergeben.}. Viele dieser Aussagen sind nicht zu letzt mehr durch Marketing-Abteilungen geprägt, als durch einen technischen Hintergrund. Die Gartner Group in einer Pressemitteilung von 2007 zum Thema SOA folgenden Prognose abgegeben:
+  Mit dem Begriff der \emph{dienstorientierten Architekturen} oder auch \emph{SOA} beschäftigt sich die Fachliteratur thematisch bereits seit über 10 Jahren\footnote{Die Gartner Group hat sich das erste Mal 1996 mit diesem Begriff beschäftigt: SSA Research Note SPA-401-068, 12 April 1996, "`'Service-Oriented' Architectures, Part 1"' und SSA Research Note SPA-401-069, 12 April 1996, "`'Service-Oriented' Architectures, Part 2"'~\citep{natis2003soa}}. Während der letzten Jahre hat er immer mehr Prominenz, auch für die Verwendung im industriellen Umfeld erlangen können. Es finden sich unzählige Informationen zu diesem Thema, wie es einen echten Mehrwert für Unternehmen und ihre IT-Landschaft bieten kann\footnote{Eine nicht-repräsentative Suche bei Google.com vom 02.12.2008 hat für den Suchbegriff "`SOA"' 35.900.000 Treffer ergeben.}. Viele dieser Aussagen sind nicht zu letzt mehr durch Marketing-Abteilungen geprägt, als durch einen technischen Hintergrund. Die Gartner Group in einer Pressemitteilung von 2007 zum Thema SOA folgenden Prognose abgegeben:
   
   \begin{quote}
     \emph{"`Service-oriented architecture (SOA) will be used in more than 50 percent of new mission-critical operational applications and business processes designed in 2007 and in more than 80 percent by 2010."'}\footnote{\url{http://www.gartner.com/it/page.jsp?id=503864}, zuletzt abgerufen am 02. Dezember 2008}
@@ -223,7 +223,7 @@
   Obwohl die Konstruktion einer Architektur, die rund um definierte Schnittstellen aufgebaut wird, als Teilaspekt auch innerhalb einer SOA von Bedeutung ist, macht das allein noch keine dienstorientierte Architektur aus\footnote{Auch in der objektorientierten Programmierung gilt das Prinzip, dass gegen Interfaces und nicht gegen Implementierungen programmiert werden soll~\citep[S. 18]{design_patterns}.}. Die Definition der OASIS\abk{OASIS}{Organization for the Advancement of Structured Information Standards} fokussiert im Gegensatz dazu stärker auf den Aspekt der Verteiltheit und das einzelne Einheiten unterschiedlichen Domänen und Besitzern zugeordnet sein können:
 
 \begin{definition}[SOA (OASIS Reference Model)]\label{def:soa_oasis_reference_model_}
-  "`Service Oriented Architecture (SOA) is a paradigm for organizing and utilizing distributed capabilities that may be under the control of different ownership domains."'~\emph{\citep[S. 8]{mackenzie2006rms}}
+  "`Service-Oriented Architecture (SOA) is a paradigm for organizing and utilizing distributed capabilities that may be under the control of different ownership domains."'~\emph{\citep[S. 8]{mackenzie2006rms}}
 \end{definition}
 
   Nach Josuttis ist der Hintergrund der Softwareentwicklung die Abstraktion. Entscheiden ist lediglich nur aus welcher Perspektive die Abstraktion durchgeführt wird. Im Falle der dienstorientierten Architekturen findet diese Abstraktion aus Sicher der Geschäftsaspekte statt~\citep[S. 16]{soa_in_practice}. Darüber hinaus erweitert er die Definition der OASIS noch um die Größe der IT-Landschaft und stellt die Heterogenität der beteiligten Systeme heraus:

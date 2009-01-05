@@ -11,29 +11,20 @@
  */
 package de.fhkoeln.cosima.workflow;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.NoSuchElementException;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import de.fhkoeln.cosima.workflow.WorkflowDefinition;
-import de.fhkoeln.cosima.workflow.WorkflowDefinitionImpl;
-import de.fhkoeln.cosima.workflow.WorkflowElement;
-import de.fhkoeln.cosima.components.PlayMovieFile;
 import de.fhkoeln.cosima.components.AddMusicToMovie;
+import de.fhkoeln.cosima.components.PlayMovieFile;
 
 
-/**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
- *
- * @author dbreuer
- * @version 1.0  Jul 3, 2008
- *
- */
 public class WorkflowDefinitionImplTest {
   
   String abstractDefinition;
@@ -45,35 +36,35 @@ public class WorkflowDefinitionImplTest {
   
   @Test(expected=IllegalArgumentException.class)
   public void testShouldNotAcceptEmptyAbstractDefinition() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl("");
+    SimpleWorkflowDefinition definition = new SimpleWorkflowDefinition("");
   }
   
   @Test(expected=IllegalArgumentException.class)
   public void testShouldVerifyFormatOfAbstractDefinition() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl("t,34");
+    SimpleWorkflowDefinition definition = new SimpleWorkflowDefinition("t,34");
   }
   
   @Test
   public void testShouldAcceptAbstractDefinitionInCorrectFormat() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl("1,de.fhkoeln.cosima.components.PlayMovieFile");
+    SimpleWorkflowDefinition definition = new SimpleWorkflowDefinition("1,de.fhkoeln.cosima.components.PlayMovieFile");
     assertNotNull(definition);
   }
   
   @Test(expected=ClassNotFoundException.class)
   public void testShouldThrowExceptionIfClassInDefinitionWasNotFound() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl("1,de.fhkoeln.cosima.NonExistingClass");
+    SimpleWorkflowDefinition definition = new SimpleWorkflowDefinition("1,de.fhkoeln.cosima.NonExistingClass");
   }
   
   @Test(expected=NoSuchElementException.class)
   public void testShouldRaiseNoSuchElementExceptionIfAllElementsHaveBeenRead() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl(abstractDefinition);
+    SimpleWorkflowDefinition definition = new SimpleWorkflowDefinition(abstractDefinition);
     definition.getNextWorkflowElement();
     definition.getNextWorkflowElement();
   }
   
   @Test
   public void testShouldBeAskIfAnyElementsLeft() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl(abstractDefinition);
+    SimpleWorkflowDefinition definition = new SimpleWorkflowDefinition(abstractDefinition);
     assertTrue(definition.hasNextElements());
     definition.getNextWorkflowElement();
     assertFalse(definition.hasNextElements());
@@ -81,23 +72,23 @@ public class WorkflowDefinitionImplTest {
   
   @Test
   public void testShouldRewindDefinition() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl(abstractDefinition);
+    SimpleWorkflowDefinition definition = new SimpleWorkflowDefinition(abstractDefinition);
     assertNotNull(definition.getNextWorkflowElement());
     definition.rewind();
     assertNotNull(definition.getNextWorkflowElement());
   }
 
   /**
-   * Test method for {@link de.fhkoeln.cosima.workflow.WorkflowDefinitionImpl#getNextWorkflowElement()}.
+   * Test method for {@link de.fhkoeln.cosima.workflow.SimpleWorkflowDefinition#getNextWorkflowElement()}.
    */
   @Test
   public void testShouldGetNextWorkflowElement() {
     // First we add some more to the abstract definition.   
     abstractDefinition += ";2,de.fhkoeln.cosima.components.AddMusicToMovie";
     
-    WorkflowDefinition definition;
+    SimpleWorkflowDefinition definition;
     try {
-      definition = new WorkflowDefinitionImpl(abstractDefinition);
+      definition = new SimpleWorkflowDefinition(abstractDefinition);
       assertEquals(2, definition.size());
       Object[] workflowElement = definition.getNextWorkflowElement();
       assertNotNull(workflowElement);
@@ -114,13 +105,13 @@ public class WorkflowDefinitionImplTest {
   
   @Test
   public void testShouldInitializeWithAbstractRepresentationOfWorkflow() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl(abstractDefinition);
+    SimpleWorkflowDefinition definition = new SimpleWorkflowDefinition(abstractDefinition);
     assertNotNull(definition.getNextWorkflowElement());
   }
   
   @Test
   public void testShouldReturnRealWorkflowElementObjectEvenForSimpleWorkflowDefinition() throws Exception {
-    WorkflowDefinition definition = new WorkflowDefinitionImpl(abstractDefinition);
+    SimpleWorkflowDefinition definition = new SimpleWorkflowDefinition(abstractDefinition);
     WorkflowElement element = definition.getNextElements().iterator().next();
     assertNotNull(element);
     assertEquals("1", element.getUri());
