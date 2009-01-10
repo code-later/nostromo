@@ -16,26 +16,19 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * An implementation of the Value-Object-Pattern for encapsulating the
+ * input and output parameters of a service.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Sep 21, 2008
  *
  */
 public class IODescriptor {
   
   private List<String> descriptorElements;
-//  private String[] descriptorElements;
 
-  /**
-   * Constructor documentation comment.
-   *
-   */
   public IODescriptor() {
     this.descriptorElements = new ArrayList<String>();
-//    this.setDescriptorElements(new String[10]);
   }
 
   /**
@@ -44,8 +37,6 @@ public class IODescriptor {
    */
   public void add(String element) {
     this.descriptorElements.add(element);
-//    getDescriptorElements().add(element);
-//    Arrays.asList(descriptorElements).add(element);
   }
 
   /**
@@ -89,10 +80,7 @@ public class IODescriptor {
     final int prime = 31;
     int result = 1;
     result =
-        prime
-            * result
-            + ((this.descriptorElements == null) ? 0 : this.descriptorElements
-                .hashCode());
+        prime * result + ((this.descriptorElements == null) ? 0 : this.descriptorElements.hashCode());
     return result;
   }
 
@@ -112,5 +100,4 @@ public class IODescriptor {
       return false;
     return true;
   }
-
 }

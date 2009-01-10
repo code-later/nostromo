@@ -22,13 +22,13 @@ import java.util.Set;
 
 import org.ho.yaml.YamlDecoder;
 
-
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * Implementation of the WorkflowDefinition interface which reads the abstract
+ * workflow definition from a file in the YAML format. This format is very
+ * easy to write and to read. Furthermore the single elements in the definition
+ * are directly serialized within the file.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Jul 17, 2008
  *
  */
@@ -38,7 +38,7 @@ public class YamlWorkflowDefinition implements WorkflowDefinition {
 
   /**
    * Build a new YamlWorkflowDefinition object which generates
-   * WorkflowElements from the YAML Definition file.
+   * WorkflowElements from a definition file in the YAML format.
    * 
    * @param pathToYamlDefinition
    *          The path to the YAML definition file which holds all
@@ -66,16 +66,10 @@ public class YamlWorkflowDefinition implements WorkflowDefinition {
     }
   }
 
-  /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.workflow.WorkflowDefinition#size()
-   */
   public int size() {
     return elements.size();
   }
 
-  /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.workflow.WorkflowDefinition#elementsIterator()
-   */
   public Iterator<Set<WorkflowElement>> elementsIterator() {
     return new WorkflowDefinitionIterator(elements);
   }

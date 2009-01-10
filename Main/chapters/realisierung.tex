@@ -89,17 +89,146 @@
 \subsection{Einführung einer deklarativen Ablaufbeschreibung} % (fold)
 \label{sub:einfuehrung_einer_deklarativen_ablaufbeschreibung}
 
-  Dafür folgende Schritte notwendig:
- 
- - Definition einer Schnittstelle für Ausführung der Funktionalität\\
- - Einführung eines Value-Objects, zum Handling der Ein- und Ausgabedaten
- 
-  Anschließend Möglichkeit zur abstrakten (deklarativen) Definition der Ausführung notwendig (Workflow-Definition). Für den Prototypen wurde eine einfache Lösung selbst implementiert. Ermöglicht einen besseren Einblick in die Anforderungen und besseres Verständnis im Rahmen der Validierung. Verwendung einer etablierten Lösung wie BPEL hätte eine zusätzliche Komplexität eingeführt, die nicht zur Zielerreichung beigesteuert hätte (vgl. Umfang bei~\citep{samma08}). Auch ist keine zustandbasierte Lösung implementiert worden, wie sie bei~\citep{biornstad2006cfs} vorgeschlagen (und auch von BPEL implementiert). Grund: Ohnehin nur Prototyp, Inhalt weiterer Arbeiten.
+  Nachdem die einzelnen Komponenten über eine einheitliche Schnittstelle ausführbar gemacht worden sind, war der nächste Schritt, eine Komposition der einzelnen Komponenten zu realisieren. Im Rahmen der prototypischen Implementierung wurde sich für eine Orchestrierung ($\to$ \ref{par:orchestrierung}) entschieden, dass bedeutete, es musste eine zentrale ausführenden Einheit umgesetzt werden, die eine deklarative Ablaufbeschreibung interpretiert und ausführt. Um im Rahmen der prototypischen Umsetzung ein möglichst gutes Verständnis dieser Komponente entwickeln zu können, wurde bewusst darauf verzichtet, bestehende Lösungen wie etwa BPEL einzusetzen. Ein weiterer Grund dafür ist, dass nicht geklärt inwieweit sich BPEL überhaupt für den Einsatz in einem Multimediakontext eignet, wie auch schon bei~\citep{samma08} ausgeführt. Dort wird der Einsatz von BPEL für Multimediaanwendungen erst nach einer umfangreichen Erweiterung empfohlen.
   
+  Daher wurde eine properitäre und vor allem rudimentäre Kompositionseinheit implementiert. Durch die Minimierung der Abhängigkeiten von komplexen externen Anwendungen konnte die Gesamtkomplexität minimal gehalten werden und gleichzeitig dem Ziel die Architektur an sich zu validieren mehr Rechnung getragen werden. 
+  
+\begin{center}
+  \fcolorbox{black}{lightgray}{
+  \begin{minipage}[b]{.9\textwidth}
+    \paragraph{Der Begriff Workflow} % (fold)
+    \label{par:der_begriff_workflow}
+
+      Bevor sich der Implementierung dieser Komponente zugewandt wird, muss noch eine Abgrenzung der Begriffe \emph{Workflow} und \emph{Prozess} erfolgen. Im Rahmen der Implementierung ist die Verwendung dieser beiden Begriffe nicht im Kontext von Geschäftsprozessen zu verstehen, wie sie bei \citep{samma08} ebenfalls im Zusammenhang mit dem COSIMA-Projekt behandelt werden. Im Kontext dieser Arbeit hat die folgende Definition von Workflow Gültigkeit:\\
+      
+      \begin{definition}[Workflow]\label{def:workflow}
+        "`The computerised facilitation or automation of a process, in whole or part."'~\emph{\citep[S. 54]{hollingsworth1998wmc}}
+      \end{definition}
+      
+      Wesentlich dabei ist die computergestützte Automatisierung eines Prozesses, es fehlen demnach also manuelle Aktivitäten. Ein Prozess ist in diesem Kontext wie folgt definiert:
+      
+      \begin{definition}[Prozess]\label{def:prozess}
+        "`A co-ordinated (parallel and/or serial) set of process activity(s) that are connected in order to achieve a common goal. Such activities may consist of manual activity(s) and/or workflow activity(s)."'~\emph{\citep[S. 52]{hollingsworth1998wmc}}
+      \end{definition}
+      
+      Der Prozess beinhaltet demnach eine Reihe von definierten Aktivitäten, die der Erreichung eines bestimmten Ziels dienen. Diese Aktivitäten können dabei entweder manueller oder automatisierter Natur sein. Die Definition der Aktivitäten geschieht dabei in Form einer \emph{Prozessdefinition}. Da innerhalb der Santiago-Anwendung als auch in dem Anwendungsszenario aus \ref{sub:das_anwendungsszenario} keine manuellen Aktivitäten enthalten sind, kann im weiteren Verlauf daher ausschließlich von Workflow gesprochen werden. Demnach ist auch nur der Teil der Prozessdefinition relevant, der die automatisierten Aspekte des Prozesses beinhaltet. Diesen Teil bezeichnet man als \emph{Workflowdefinition}~\citep[S. 52]{hollingsworth1998wmc}.
+      
+      Diese sehr vereinfachte Begriffliche Verwendung ist für eine weitere Bearbeitung im Rahmen des COSIMA-Projekts in jedem Fall zu erweitern. Die Erweiterungen müssen sich dabei dann auch in der Implementierung der Architektur wieder finden lassen. Als Ausgangspunkt für die weiteren Betrachtungen sollte die Arbeit von Matthias Richter genommen werden~\citep{samma08}.
+      
+    % paragraph einschub_der_begriff_workflow (end)
+  \end{minipage}
+  }
+\end{center}
+
+  Die Implementierung der Komposition innerhalb der Santiago-Anwendung besteht im wesentlichen aus vier Komponenten:
+  
+  \begin{enumerate}
+    \item Eine Schnittstelle, die die Ablaufbeschreibung in der Anwendung darstellt;
+    \item Eine deklarative Ablaufbeschreibung in einem gegebenen Format;
+    \item Eine Klasse, die die einzelnen Elemente in dieser Beschreibung repräsentiert;
+    \item Eine ausführende Komponente.
+  \end{enumerate}
+  
+  Das \verb!WorkflowDefinition!-Interface stellt die Schnittstelle für die Abbildung und den Zugriff auf die Ablaufbeschreibung dar und ist in Listing \ref{lst:workflow_definition_interface} zu sehen.
+
 \lstinputlisting[caption=\texttt{WorkflowDefinition}-Schnittstelle,label=lst:workflow_definition_interface,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/WorkflowDefinition.java}
 
+  Diese einfache Schnittstelle bietet dem Client zum einen an, über die \verb!size()!-Methode die Größe aller auszuführenden Elemente nachzufragen und über die Implementierung des \emph{Iterator}-Pattern~\citep[S. 257]{design_patterns} alle Elemente in ihrer jeweils definierten Sequenz. Die entsprechende Realisierung des \verb!WorkflowDefinitionIterator! ist in Listing \ref{lst:workflow_definition_iterator} zu sehen. Die next()-Methode liefert dabei immer ein \verb!java.util.Set! von Elementen zurück, die als nächstes ausgeführt werden müssen, allerdings ohne die Notwendigkeit sie in einer definierten Reihenfolge auszuführen\footnote{Für die erfolgreiche Ausführung der Santiago-Anwendung ist es irrelevant, ob zuerst die Diashow erstellt wird und dann das Musikstück bereitgestellt wird oder vice versa.}.
+
 \lstinputlisting[caption=Implementierung der \texttt{WorkflowDefinitionIterator}-Klasse,label=lst:workflow_definition_iterator,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/WorkflowDefinitionIterator.java}
+
+  Die Ablaufbeschreibung selbst wurde für Santiago im YAML\abk{YAML}{YAML Ain't Markup Language}-Format angebeben\footnote{YAML ist eine datenzentierter Serialisierungsstandard für alle Programmiersprachen, der sehr menschenlesbar ist (siehe \url{http://www.yaml.org}).}. Es wurde sich bewusst für ein datenzentiertes Format und nicht für ein dokumentenzentriertes Format wie XML\abk{XML}{eXtended Markup Language} entschieden, um die bereits erwähnte Abgrenzung zu BPEL und Geschäftsprozessen\footnote{Bei der Beschreibung von Geschäftsprozessen lässt sich sehr viel eher von einem Dokument sprechen, dass entsprechend in einem System modelliert werden sollte.} auch in der Implementierung herauszustellen. Die Ablaufbeschreibung, die den Anwendungsfall in Santiago darstellt ist in Listing \ref{lst:abstract_workflow_definition_in_yaml} zu sehen.
+
+\lstinputlisting[caption=Einfache deklarative Ablaufbeschreibung für Santiago im YAML-Format,label=lst:abstract_workflow_definition_in_yaml,language=YAML]{../code/Santiago/src/main/resources/workflow_definition.yml}
+
+  Neben der eigentlichen Ablaufbeschreibung im YAML-Format ist darüber hinaus noch eine Klasse notwendig, die das \verb!WorkflowDefinition!-Interface implementiert und die in der Lage ist die angegebene Ablaufbeschreibung einzulesen. Die einzelnen Abschnitte der abstrakten Ablaufbeschreibung werden auf Programmebene dabei durch Instanzen der Klasse \verb!WorkflowElement! repräsentiert. Die Klasse implementiert dabei die die einzelnen YAML-\emph{Tags} als Attribute, die über \emph{Getter}-Methoden nach außen verfügbar gemacht werden. Die \verb!YamlWorkflowDefinition!-Klasse setzt dafür auf jeder Instanz eines \verb!WorkflowElement! dabei die entsprechenden Werte über die gleichnamigen \emph{Setter}-Methoden automatisch. Die \verb!YamlWorkflowDefinition!-Implementierung findet sich in Listing \ref{lst:yaml_workflow_definition} und Das vollständige Listing \ref{lst:workflow_element} zu der \verb!WorkflowElement!-Klasse findet sich im Anhang.
+
+\lstinputlisting[caption=Implementierung der \texttt{WorkflowDefinition}-Schnittstelle auf YAML-Basis,label=lst:yaml_workflow_definition,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/YamlWorkflowDefinition.java}
+  
+  Die Ausführung einer \verb!WorkflowDefinition! wurde in dem bereits bekannten \verb!SantiagoPlain!-Programm implementiert, welches mit den dazu notwendigen Anpassungen in Listing \ref{lst:santiago_plain_with_workflow_definition} dargestellt ist.
+  
+\lstinputlisting[caption=Santiago Programm mit deklarativer Ablaufbeschreibung,label=lst:santiago_plain_with_workflow_definition,language=Java,firstline=26,lastline=69,morekeywords={[3]WorkflowDefinition,workflowStore}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SantiagoPlainWithWorkflowDefinition.java}
+
+  Die Instanziierung der einzelnen Komponenten geschieht dabei unter zu Hilfenahme der Java Reflection API\abk{API}{Application Programming Interface} (Zeile 54 und 55 im Listing). Dies gelingt, da in der Ablaufbeschreibung als URI jeder Komponente der vollständig klassifizierende Java-Klassenname angegeben ist. Für den Einsatz in einer verteilten Umgebung ist diese Implementierung jedoch völlig ungeeignet. Später werden die einzelnen Komponenten daher als \emph{Web Services} implementiert ($\to$ \ref{sub:extraktion_der_komponenten_als_dienste}). Ein weiterer Punkt von Interesse in dieser Implementierung ist die Notwendigkeit den aktuellen Fortschritt der Ausführung nachzuhalten. Hier wird dies über die Einführung des lokalen \verb!workflowStore!-Objekts erreicht. Für die Umsetzung komplexerer Abläufe scheint es jedoch sinnvoll zu sein, dass der ausführenden Komponente ein Zustandsautomat zu Grunde gelegt wird, wie es bei~\citep{biornstad2006cfs} propagiert und unter anderem auch von BPEL umgesetzt wird.
+  
+  Nachdem eine deklarative Ablaufbeschreibung eingeführt wurde und die grundsätzliche Möglichkeit geboten war, diese Beschreibung auszuführen, war der nächste Schritt die Umsetzung der Medienobjekte-Modellierung. Ihre Umsetzung und Integration wird im folgenden Abschnitt behandelt.
+
 % subsection einfuewhrung_einer_deklarativen_ablaufbeschreibung (end)
+
+\subsection{Explizite Umsetzung des Datenfluss} % (fold)
+\label{sub:explizite_umsetzung_des_datenfluss}
+
+  In Abschnitt \ref{ssub:medienobjekt} wurde bereits darauf hingewiesen, dass zwischen Kontrollfluss und Datenfluss innerhalb einer SOA unterschieden werden muss. Im vorherigen Abschnitt wurden entsprechend die Komponenten realisiert, die dem Kontrollfluss zuzuordnen sind. In diesem Abschnitt werden solche Komponenten implementiert, die zur Umsetzung des Datenfluss notwendig sind.
+  
+  Im ersten Schritt soll zunächst ein \emph{Value-Objekt} eingeführt werden, wie in Abschnitt \ref{sub:erste_schritte} bereits angekündigt. Dieses soll dazu dienen die notwendigen Ein- und Ausgabewerte einzelner \verb!AbstractComponent!-Instanzen zu kapseln und leichter übertragbar zu machen. Die Implementierung dieses Objekt in Form der IODescriptor-Klasse ist in Listing \ref{lst:io_descriptor} dargestellt.
+
+  \lstinputlisting[caption=\texttt{IODescriptor} als Implementierung des \emph{Value-Object} Pattern,label=lst:io_descriptor,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/services/IODescriptor.java}
+  
+  Nach der Einführung dieses Objekt stellt sich das Santiago Programm nur leicht verändert wie in Listing \ref{lst:santiago_plain_with_data_flow} dar. Die entsprechenden Anpassungen der \verb!execute()! und \verb!setInput()!-Methoden in der \verb!AbstractComponent!-Klasse eine IODescriptor Instanz zurückzugeben beziehungsweise entgegenzunehmen, werden an dieser Stelle ausgespart.
+  
+  \lstinputlisting[caption=Santiago Programm mit explizitem Datenfluss,label=lst:santiago_plain_with_data_flow,language=Java,firstline=26,lastline=69,morekeywords={[3]IODescriptor}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SantiagoPlainWithDataflow.java}
+  
+  Wesentlich entscheidender für die Realisierung des Datenfluss ist jedoch die Implementierung des Medienobjekts, wie es in \ref{ssub:medienobjekt} konzeptioniert ist. Im Vorfeld kann gesagt werden, dass sich das Santiago Programm aus Listing \ref{lst:santiago_plain_with_data_flow} auch nach Einführung des Medienobjekts nicht verändern wird. Sie hat ausschließlich Auswirkungen auf die \verb!AbstractComponent!-Unterklassen.
+  
+  Das Medienobjekt selbst ist wie bereits ausgeführt nach dem \emph{Composite}-Pattern implementiert. Bei der Umsetzung des Composite-Pattern sind in der Regel drei Klassen zu implementieren:
+  
+  \begin{description}
+  	\item[Component]   Die Klasse von der die anderen beiden jeweils vererben (hier die \verb!AbstractMedia!-Klasse).
+  	\item[Composite]   Die Klasse, in der mehrere Component-Objekte zusammenfasst (hier die \verb!MediaContainer!-Klasse)
+  	\item[Leaf]   Die Klasse, die einen Endpunkt in der Hierarchie repräsentiert (hier die \verb!MediaData!-Klasse)
+  \end{description}
+  
+  Zur Realisierung der Santiago-Anwendung ist die Verwendung von \verb!MediaContainer!-Instanzen nicht notwendig, daher wird darauf auch nicht weiter eingegangen. Die Implementierungen der anderen beiden Klassen sind in Listing \ref{lst:abstract_media} und \ref{lst:media_data} zu sehen.
+
+  \lstinputlisting[caption=\texttt{AbstractMedia}-Klasse als \emph{Component} im Composite-Pattern,label=lst:abstract_media,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/AbstractMedia.java}
+
+  \lstinputlisting[caption=\texttt{MediaData}-Klasse als \emph{Leaf} im Composite-Pattern,label=lst:media_data,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/MediaData.java}
+  
+  $>$ über das Medienobjekt und seine Eigenheiten: \verb!name!, \verb!namespace! daraus wird \verb!getUri()! berechnet die eigentliche URI aus beiden Angaben.
+  
+  $>$ hat Metadaten assoziiert
+  
+  $>$ \verb!serialVersionUID! muss implementiert werden um Objekte in \verb!MediaBroker!-Implementierungen zu serialisieren, obwohl z.Zt. nicht klar ist, ob andere Implementierungen außer dem \verb!MemcachedMediaBroker! tatsächlich eine Objekteserialisierung durchführen
+  
+  $>$ überschreibt \verb!equals()! und \verb!hash()! Methoden
+  
+  $>$ \verb!getPlayableData()! ist implementiert als \emph{Lazy-Loading}. Eigentliche Daten werden nur aus der assoziierten \verb!MediaStore!-Instanz angefordert, wenn diese wirklich benötigt werden. Die \verb!MediaStore!-Instanz wird über den \verb!MediaBroker! bekannt gemacht (dazu später mehr)
+ 
+  Die einzelnen Medienobjekte werden über Medienbroker vermittelt. Eigenes \verb!cosima://!-Protokoll für den Zugriff auf Medienbroker etablieren.
+  \lstinputlisting[caption=\texttt{MediaBroker}-Schnittstelle,label=lst:media_broker,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MediaBroker.java}
+
+  \lstinputlisting[caption=Implementierung der \texttt{store}-Methode im  \texttt{MemcachedMediaBroker},label=lst:store_method_in_memcached_media_broker,language=Java,firstline=74,lastline=89]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MemcachedMediaBroker.java}
+
+  \lstinputlisting[caption=Implementierung der \texttt{retrieve}-Methode im  \texttt{MemcachedMediaBroker},label=lst:retrieve_method_in_memcached_media_broker,language=Java,firstline=62,lastline=66]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MemcachedMediaBroker.java}
+
+  \lstinputlisting[caption=\texttt{MediaStore}-Schnittstelle zur Persistierung von Medien,label=lst:media_store_interface,language=Java,firstline=12,lastline=66]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/storage/MediaStore.java}
+
+  \lstinputlisting[caption=\texttt{SlideshowGenerator}-Klasse unter Verwendung von dem Medienobjekt,label=lst:slideshow_generator_with_media_object,language=Java,firstline=26,lastline=51,morekeywords={[3]AbstractMedia,getBroker,MediaData,IODescriptor}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SlideshowGeneratorWithMediaObject.java}
+
+  \begin{sidewaysfigure}[ht]
+    \centering
+      \includegraphics[width=\textwidth]{images/Handling_of_Media_Objects_write.pdf}
+    \caption{Sequenzdiagramm über das Speichern von Medienobjekten}
+    \label{fig:images_Handling_of_Media_Objects}
+  \end{sidewaysfigure}
+
+  \begin{figure}[ht]
+    \centering
+      \includegraphics[width=.9\textwidth]{images/Handling_of_Media_Objects_read.pdf}
+    \caption{Sequenzdiagramm über das Lesen von Medienobjekten}
+    \label{fig:images_Handling_of_Media_Objects_read}
+  \end{figure}
+  
+% subsection explizite_umsetzung_des_datenfluss (end)
+
+\subsection{Extraktion der Komponenten als Dienste} % (fold)
+\label{sub:extraktion_der_komponenten_als_dienste}
+
+  Möglichkeit Komponenten auf unterschiedlichen Plattformen und physikalischen Umgebungen lauf zu lassen. Dazu Realisierung als Web Services. Eignet sich dadurch auch gut für die Verwendung von BPEL. Umsetzung muss aber nicht als Web Service erfolgen. Definition der Schnittstellenbeschreibung unabhängig von Web Service Technologie. Alternativ wäre auch eine Umsetzung über REST möglich~\citep{fielding00rest}, wobei REST-Architekturen nicht vollständig die  Eigenschaften von Diensten nach~\citep{service_oriented_computing} umsetzen können. Wichtig hier: Komponenten und Schnittstellen Definition sind agnostisch gegenüber der konkreten Technologie sie in verteilten Umgebungen bereitzustellen. 
+  
+  Integration einer Datenbank um Dienste wieder finden zu können, daher \verb!ServiceRegistry!.
+
+% subsection extraktion_der_komponenten_als_dienste (end)
   
 \subsection{Probleme und Lösungen} % (fold)
 \label{sub:probleme_und_loesungen_architektur}
@@ -108,6 +237,16 @@
   - Wie wurden diese gelöst?
   - Auswirkungen auf die Architektur!
   - Workflow ohne externes Messaging System möglich!?
+  
+  Keine adäquate Fehlerbehandlung.
+  
+  Verteilte Ausführung der Komposition setzt ebenfalls eine verteilte Hinterlegung des aktuell Fortschritts der Ausführung voraus.
+  
+  Keine Möglichkeit zur asynchronen Ausführung von einzelnen Diensten bis jetzt implementiert. Ist nicht immer angemessen abhängig vom Art des Dienstes, doch mit unter notwendig (\textbf{Stichwort}: \emph{Streaming-Dienste}).
+  
+  Die bisherige Umsetzung der Komposition der einzelnen Dienste ist nur wenig flexibel und eignet sich wahrscheinlich nicht für Realisierung von komplexeren Szenarien. Dafür wäre im jeden Fall die Umsetzung auf Basis eines Zustandsautomaten notwenig, viel eher sollte aber die Verwendung einer etablierten Prozessbeschreibungssprache in Betracht gezogen werden. Dazu sind jedoch weitere Betrachtungen notwendig, wie sie unter anderem in~\citep{samma08} gemacht wurden.
+
+  Bereits bei dieser einfachen Anwendung besteht auch ein Bedarf nach Synchronisation. Die Tranformer-Komponente, die die Diashow und das Musikstück verarbeitet muss dabei beide Medien synchronisieren. Es findet hier allerdings nur eine implizite Synchronisation statt, da sie in keiner Weise spezifiziert wurde. Des Weiteren wird sie auf Tranformer-Seite durchgeführt, was der Synchronisation durch Multiplex-Datenströme nach Steinmetz entspricht~\citep[S. 609]{multimedia_technologie} (siehe auch Abschnitt \ref{par:besonderheiten_bei_verteilten_umgebungen}).
 
 % subsection probleme_und_loesungen_architektur (end)
 

@@ -27,12 +27,12 @@ import de.fhkoeln.cosima.media.mediabroker.storage.MediaStore;
 public interface MediaBroker {
 
   /**
-   * @param media
+   * @param media The media object to store within the broker.
    */
   public URI store(AbstractMedia media);
 
   /**
-   * @return
+   * @return The amount of stored media objects
    */
   public int knownElements();
 
@@ -43,7 +43,7 @@ public interface MediaBroker {
   public AbstractMedia retrieve(String mediaId);
 
   /**
-   * Clears the whole broker
+   * Clears all the media objects stored in the broker.
    */
   public void clearAll();
 

@@ -65,6 +65,8 @@ public class FileSystemStore implements MediaStore {
     FileInputStream in = null;
     FileOutputStream out = null;
     try {
+      // If the sourceFile is null we get a FileNotFoundException. This is
+      // useful, if the data instance has no reference data.
       in = new FileInputStream(sourceFile);
       out = new FileOutputStream(outputFile.getAbsolutePath());
       int currentByte;

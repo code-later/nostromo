@@ -15,19 +15,27 @@ import java.io.IOException;
 
 import de.fhkoeln.cosima.media.AbstractMedia;
 
-
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * This interface defines an abstracht way of reading and writing media objects
+ * from any persistance solution that implements this interface.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Dec 23, 2008
  *
  */
 public interface MediaStore {
   
+  /**
+   * @param data The media object which should be persisted.
+   * @return The key to find the persisted data again.
+   * @throws IOException If there was an error while writing the media to the persistance layer.
+   */
   public String write(AbstractMedia data) throws IOException;
+  
+  /**
+   * @param key The key to find the persisted data.
+   * @return The Reference to the persisted data.
+   */
   public Object read(String key);
   
   /**
@@ -36,5 +44,4 @@ public interface MediaStore {
    * @param Store specific location value.
    */
   public void setStoreLocation(String location);
-
 }

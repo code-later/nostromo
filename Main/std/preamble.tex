@@ -43,7 +43,7 @@
 \usepackage[pdftex]{graphicx} % for graphic handling
 \usepackage[usenames,dvipsnames,pdftex]{color} % for color handling
 % Einige Farben
-\definecolor{lightgray}{gray}{0.95}
+\definecolor{lightgray}{gray}{0.9}
 \definecolor{cmd_line}{rgb}{0.4,.8,1}
 \definecolor{comment}{rgb}{0.2,0.7,0.5}
 
@@ -55,6 +55,7 @@
 \usepackage{dvsm} % Use DejaVu Sans Mono as Monospace Font
 % get closed frames on each page for listings
 \usepackage{framed}
+
 \lstloadlanguages{Java,XML,Ruby,HTML}
 \newcommand{\listingname}{Listing}
 \lstset{
@@ -93,13 +94,14 @@
 % 
 % Inline: \lstinline+code here+
 
-% \lstdefinelanguage{SPARQL}{
-%     morekeywords = {PREFIX, SELECT, DISTINCT, WHERE },
-%   emphstyle=\itshape %\underbar
-%   % emph={[2]mit,sonst},
-%   emphstyle=[2]\color{red},
-%   % moredelim=[is][\color{green}]{/*}{*/}
-% }
+\lstdefinelanguage{YAML}{
+  morekeywords = {uri, successors, type, output, namespace, description, predecessors, input},
+  % moredelim=[is][\color{green}]{"},
+  emph={[2]null},
+  emphstyle=[2]\bfseries\color{red},
+  moredelim=[l][\color{OliveGreen}]{"},
+  morecomment=[l][commentstyle]{\#},
+}
 % 
 % \lstdefinelanguage{Turtle}{
 %     morekeywords = {@prefix},

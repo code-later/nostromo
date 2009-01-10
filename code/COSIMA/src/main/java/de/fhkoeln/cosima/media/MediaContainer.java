@@ -18,9 +18,7 @@ import java.util.Set;
 
 
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * This class implements the Composite part within the Composite-Pattern.
  *
  * @author dbreuer
  * @version 1.0  Nov 16, 2008

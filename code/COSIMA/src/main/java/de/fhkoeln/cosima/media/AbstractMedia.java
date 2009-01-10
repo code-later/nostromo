@@ -20,13 +20,11 @@ import java.util.List;
 
 import de.fhkoeln.cosima.media.mediabroker.storage.MediaStore;
 
-
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * The media object is implemented after the Composite-Pattern. This class
+ * implements the Component part of the pattern.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Nov 16, 2008
  *
  */
@@ -111,7 +109,7 @@ public abstract class AbstractMedia implements Serializable {
   }
 
   /**
-   * Lets on set a namespace in the form "Foo::Bar".
+   * Let's a client set a namespace in the form "Foo::Bar".
    * 
    * @param Namespace of this Media Object.
    */
@@ -139,6 +137,12 @@ public abstract class AbstractMedia implements Serializable {
     return new Integer(Math.abs(hashCode())).toString();
   }
   
+  /**
+   * Returns the data which could be processed or played. This is although the
+   * place to put synchronisation logic based on the associated AbstractSync instance.
+   * 
+   * @return Something that could be processed or played by an instance of AbstractComponent.
+   */
   public abstract Object getPlayableData();
 
   @Override
@@ -151,5 +155,4 @@ public abstract class AbstractMedia implements Serializable {
             + ((this.namespace == null) ? 0 : this.namespace.hashCode());
     return result;
   }
-
 }

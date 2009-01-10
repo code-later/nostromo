@@ -1,0 +1,54 @@
+---
+type: "producer"
+description: "Producer:SlideshowGenerator"
+uri: "de.fhkoeln.santiago.codesamples.SlideshowGenerator"
+input:
+  - type: "external"
+    uri: "/Users/dbreuer/santiago/slideshow_images/"
+output:
+  - uri: "de.fhkoeln.santiago.codesamples.SlideshowGenerator:output"
+predecessors: null
+successors:
+  - uri: "de.fhkoeln.santiago.codesamples.MusicOMat"
+
+---
+type: "producer"
+description: "Producer:MusicProvider"
+uri: "de.fhkoeln.santiago.codesamples.MusicProvider"
+input:
+  - type: "external"
+    uri: "file:///Users/dbreuer/santiago/music_track.mp3"
+output:
+  - uri: "de.fhkoeln.santiago.codesamples.MusicProvider:output"
+predecessors: null
+successors:
+  - uri: "de.fhkoeln.santiago.codesamples.MusicOMat"
+
+---
+type: "transformer"
+description: "Transformer:MergeMedia"
+uri: "de.fhkoeln.santiago.codesamples.MusicOMat"
+input:
+  - type: "internal"
+    uri: "de.fhkoeln.santiago.codesamples.SlideshowGenerator:output"
+  - type: "internal"
+    uri: "de.fhkoeln.santiago.codesamples.MusicProvider:output"
+output:
+  - uri: "de.fhkoeln.santiago.codesamples.MusicOMat:output"
+predecessors:
+  - uri: "de.fhkoeln.santiago.codesamples.SlideshowGenerator"
+  - uri: "de.fhkoeln.santiago.codesamples.MusicProvider"
+successors:
+  - uri: "de.fhkoeln.santiago.codesamples.VideoPlayer"
+
+---
+type: "consumer"
+description: "Consumer:VideoPlayer"
+uri: "de.fhkoeln.santiago.codesamples.VideoPlayer"
+input:
+  - type: "internal"
+    uri: "de.fhkoeln.santiago.codesamples.MusicOMat:output"
+output: null
+predecessors:
+  - uri: "de.fhkoeln.santiago.codesamples.MusicOMat"
+successors: null

@@ -12,12 +12,9 @@
 package de.fhkoeln.cosima.media;
 
 import java.net.URI;
-import java.util.List;
 
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * This class implements the Leaf part within the Composite-Pattern.
  *
  * @author dbreuer
  * @version 1.0  Nov 16, 2008
@@ -28,19 +25,6 @@ public class MediaData extends AbstractMedia {
   private static final long serialVersionUID = -7185178004655851316L;
   
   private Object realMediaData;
-  
-  public MediaData() {
-    super();
-  }
-  
-  /**
-   * Constructor to set the metadata object on creation.
-   *
-   * @param metadata
-   */
-  public MediaData(List<Metadata> metadatas) {
-    super(metadatas);
-  }
   
   @Override
   public boolean equals(Object obj) {
@@ -59,28 +43,19 @@ public class MediaData extends AbstractMedia {
     return true;
   }
 
-  /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.media.AbstractMedia#getReferenceToRealData()
-   */
   @Override
   public URI getReferenceToRealData() throws UnsupportedOperationException {
     return URI.create((String) realMediaData);
   }
   
-  /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.media.AbstractMedia#setReferenceToRealData(java.lang.Object)
-   */
   @Override
   public void setReferenceToRealData(Object realMediaData) throws UnsupportedOperationException {
     this.realMediaData = realMediaData;
   }
   
-  /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.media.AbstractMedia#getPlayableData()
-   */
   @Override
   public Object getPlayableData() {
+    // Lazy loading of data. Real data is only requested if it is really needed.
     return getStore().read(storageKey());
   }
-
 }

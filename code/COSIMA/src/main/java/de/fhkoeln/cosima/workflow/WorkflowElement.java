@@ -87,7 +87,7 @@ public class WorkflowElement {
    * @version 1.0  Sep 29, 2008
    *
    */
-  class Input {
+  public class Input {
 
     /**
      * uri The URI of the input. 
