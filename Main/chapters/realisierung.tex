@@ -102,16 +102,16 @@
       Bevor sich der Implementierung dieser Komponente zugewandt wird, muss noch eine Abgrenzung der Begriffe \emph{Workflow} und \emph{Prozess} erfolgen. Im Rahmen der Implementierung ist die Verwendung dieser beiden Begriffe nicht im Kontext von Geschäftsprozessen zu verstehen, wie sie bei \citep{samma08} ebenfalls im Zusammenhang mit dem COSIMA-Projekt behandelt werden. Im Kontext dieser Arbeit hat die folgende Definition von Workflow Gültigkeit:\\
       
       \begin{definition}[Workflow]\label{def:workflow}
-        "`The computerised facilitation or automation of a process, in whole or part."'~\emph{\citep[S. 54]{hollingsworth1998wmc}}
+        "`The computerised facilitation or automation of a process, in whole or part."'~\emph{\citep[S. 54]{hollingsworth1995wmc}}
       \end{definition}
       
       Wesentlich dabei ist die computergestützte Automatisierung eines Prozesses, es fehlen demnach also manuelle Aktivitäten. Ein Prozess ist in diesem Kontext wie folgt definiert:
       
       \begin{definition}[Prozess]\label{def:prozess}
-        "`A co-ordinated (parallel and/or serial) set of process activity(s) that are connected in order to achieve a common goal. Such activities may consist of manual activity(s) and/or workflow activity(s)."'~\emph{\citep[S. 52]{hollingsworth1998wmc}}
+        "`A co-ordinated (parallel and/or serial) set of process activity(s) that are connected in order to achieve a common goal. Such activities may consist of manual activity(s) and/or workflow activity(s)."'~\emph{\citep[S. 52]{hollingsworth1995wmc}}
       \end{definition}
       
-      Der Prozess beinhaltet demnach eine Reihe von definierten Aktivitäten, die der Erreichung eines bestimmten Ziels dienen. Diese Aktivitäten können dabei entweder manueller oder automatisierter Natur sein. Die Definition der Aktivitäten geschieht dabei in Form einer \emph{Prozessdefinition}. Da innerhalb der Santiago-Anwendung als auch in dem Anwendungsszenario aus \ref{sub:das_anwendungsszenario} keine manuellen Aktivitäten enthalten sind, kann im weiteren Verlauf daher ausschließlich von Workflow gesprochen werden. Demnach ist auch nur der Teil der Prozessdefinition relevant, der die automatisierten Aspekte des Prozesses beinhaltet. Diesen Teil bezeichnet man als \emph{Workflowdefinition}~\citep[S. 52]{hollingsworth1998wmc}.
+      Der Prozess beinhaltet demnach eine Reihe von definierten Aktivitäten, die der Erreichung eines bestimmten Ziels dienen. Diese Aktivitäten können dabei entweder manueller oder automatisierter Natur sein. Die Definition der Aktivitäten geschieht dabei in Form einer \emph{Prozessdefinition}. Da innerhalb der Santiago-Anwendung als auch in dem Anwendungsszenario aus \ref{sub:das_anwendungsszenario} keine manuellen Aktivitäten enthalten sind, kann im weiteren Verlauf daher ausschließlich von Workflow gesprochen werden. Demnach ist auch nur der Teil der Prozessdefinition relevant, der die automatisierten Aspekte des Prozesses beinhaltet. Diesen Teil bezeichnet man als \emph{Workflowdefinition}~\citep[S. 52]{hollingsworth1995wmc}.
       
       Diese sehr vereinfachte Begriffliche Verwendung ist für eine weitere Bearbeitung im Rahmen des COSIMA-Projekts in jedem Fall zu erweitern. Die Erweiterungen müssen sich dabei dann auch in der Implementierung der Architektur wieder finden lassen. Als Ausgangspunkt für die weiteren Betrachtungen sollte die Arbeit von Matthias Richter genommen werden~\citep{samma08}.
       
@@ -143,16 +143,24 @@
 
   Neben der eigentlichen Ablaufbeschreibung im YAML-Format ist darüber hinaus noch eine Klasse notwendig, die das \verb!WorkflowDefinition!-Interface implementiert und die in der Lage ist die angegebene Ablaufbeschreibung einzulesen. Die einzelnen Abschnitte der abstrakten Ablaufbeschreibung werden auf Programmebene dabei durch Instanzen der Klasse \verb!WorkflowElement! repräsentiert. Die Klasse implementiert dabei die die einzelnen YAML-\emph{Tags} als Attribute, die über \emph{Getter}-Methoden nach außen verfügbar gemacht werden. Die \verb!YamlWorkflowDefinition!-Klasse setzt dafür auf jeder Instanz eines \verb!WorkflowElement! dabei die entsprechenden Werte über die gleichnamigen \emph{Setter}-Methoden automatisch. Die \verb!YamlWorkflowDefinition!-Implementierung findet sich in Listing \ref{lst:yaml_workflow_definition} und Das vollständige Listing \ref{lst:workflow_element} zu der \verb!WorkflowElement!-Klasse findet sich im Anhang.
 
-\lstinputlisting[caption=Implementierung der \texttt{WorkflowDefinition}-Schnittstelle auf YAML-Basis,label=lst:yaml_workflow_definition,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/YamlWorkflowDefinition.java}
-  
-  Die Ausführung einer \verb!WorkflowDefinition! wurde in dem bereits bekannten \verb!SantiagoPlain!-Programm implementiert, welches mit den dazu notwendigen Anpassungen in Listing \ref{lst:santiago_plain_with_workflow_definition} dargestellt ist.
-  
-\lstinputlisting[caption=Santiago Programm mit deklarativer Ablaufbeschreibung,label=lst:santiago_plain_with_workflow_definition,language=Java,firstline=26,lastline=69,morekeywords={[3]WorkflowDefinition,workflowStore}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SantiagoPlainWithWorkflowDefinition.java}
+  \lstinputlisting[caption=Implementierung der \texttt{WorkflowDefinition}-Schnittstelle auf YAML-Basis,label=lst:yaml_workflow_definition,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/YamlWorkflowDefinition.java}
 
-  Die Instanziierung der einzelnen Komponenten geschieht dabei unter zu Hilfenahme der Java Reflection API\abk{API}{Application Programming Interface} (Zeile 54 und 55 im Listing). Dies gelingt, da in der Ablaufbeschreibung als URI jeder Komponente der vollständig klassifizierende Java-Klassenname angegeben ist. Für den Einsatz in einer verteilten Umgebung ist diese Implementierung jedoch völlig ungeeignet. Später werden die einzelnen Komponenten daher als \emph{Web Services} implementiert ($\to$ \ref{sub:extraktion_der_komponenten_als_dienste}). Ein weiterer Punkt von Interesse in dieser Implementierung ist die Notwendigkeit den aktuellen Fortschritt der Ausführung nachzuhalten. Hier wird dies über die Einführung des lokalen \verb!workflowStore!-Objekts erreicht. Für die Umsetzung komplexerer Abläufe scheint es jedoch sinnvoll zu sein, dass der ausführenden Komponente ein Zustandsautomat zu Grunde gelegt wird, wie es bei~\citep{biornstad2006cfs} propagiert und unter anderem auch von BPEL umgesetzt wird.
+  Die \verb!WorkflowDefinition! ist jedoch lediglich die programmatische Repräsentation der deklarativen Beschreibung, um diese auszuführen bedarf es einer weiteren Komponente, eine \emph{Workflow Engine}~\citep[S. 53]{hollingsworth1995wmc}. Sie wird in COSIMA durch die abstrakte \verb!WorkflowEngine!-Klasse, wie in Listing \ref{lst:workflow_engine} dargestellt, realisiert. Die jeweiligen Unterklassen müssen dabei entsprechend die \verb!execute()!-Methode überschreiben.
+  
+  \lstinputlisting[caption=Abstrakte \texttt{WorkflowEngine}-Klasse,label=lst:workflow_engine,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/WorkflowEngine.java}
+  
+  Eine erste einfache Implementierung der abstrakten \verb!WorkflowEngine!-Klasse ist in Listing \ref{lst:simple_workflow_engine} dargestellt.
+
+  \lstinputlisting[caption=Implementierung einer einfachen Workflow Engine,label=lst:simple_workflow_engine,language=Java,firstline=12,lastline=67,morekeywords={[3]WorkflowDefinition,workflowStore,WorkflowElement}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/SimpleWorkflowEngine.java}
+
+  Die Instanziierung der einzelnen Komponenten innerhalb der \verb!SimpleWorkflowEngine! geschieht dabei unter zu Hilfenahme der Java Reflection API\abk{API}{Application Programming Interface} (Zeile 54 und 55 im Listing). Dies gelingt, da in der Ablaufbeschreibung als URI jeder Komponente der vollständig klassifizierende Java-Klassenname angegeben ist. Für den Einsatz in einer verteilten Umgebung ist diese Implementierung jedoch völlig ungeeignet. Später werden die einzelnen Komponenten daher als \emph{Web Services} implementiert ($\to$ \ref{sub:extraktion_der_komponenten_als_dienste}). Ein weiterer Punkt von Interesse in dieser Implementierung ist die Notwendigkeit den aktuellen Fortschritt der Ausführung nachzuhalten. Hier wird dies über die Einführung des lokalen \verb!workflowStore!-Objekts erreicht. Für die Umsetzung komplexerer Abläufe scheint es jedoch sinnvoll zu sein, dass der ausführenden Komponente ein Zustandsautomat zu Grunde gelegt wird, wie es bei~\citep{biornstad2006cfs} propagiert und unter anderem auch von BPEL umgesetzt wird.
+  
+  Das Santiago Programm aus den bisherigen Listings lässt sich durch die in diesem Abschnitt eingeführten Erweiterungen allein auf die Instanziierung einer \verb!WorkflowDefinition! und die Ausführung der \verb!SimpleWorkflowEngine! mit dieser Definition reduzieren (Listing \ref{lst:santiago_plain_with_workflow_definition}).
+  
+  \lstinputlisting[caption=Santiago Programm mit deklarativer Ablaufbeschreibung,label=lst:santiago_plain_with_workflow_definition,language=Java,firstline=18,lastline=33,morekeywords={[3]WorkflowDefinition,SimpleWorkflowEngine}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SantiagoPlainWithWorkflowDefinition.java}
   
   Nachdem eine deklarative Ablaufbeschreibung eingeführt wurde und die grundsätzliche Möglichkeit geboten war, diese Beschreibung auszuführen, war der nächste Schritt die Umsetzung der Medienobjekte-Modellierung. Ihre Umsetzung und Integration wird im folgenden Abschnitt behandelt.
-
+  
 % subsection einfuewhrung_einer_deklarativen_ablaufbeschreibung (end)
 
 \subsection{Explizite Umsetzung des Datenfluss} % (fold)
@@ -164,18 +172,18 @@
 
   \lstinputlisting[caption=\texttt{IODescriptor} als Implementierung des \emph{Value-Object} Pattern,label=lst:io_descriptor,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/services/IODescriptor.java}
   
-  Nach der Einführung dieses Objekt stellt sich das Santiago Programm nur leicht verändert wie in Listing \ref{lst:santiago_plain_with_data_flow} dar. Die entsprechenden Anpassungen der \verb!execute()! und \verb!setInput()!-Methoden in der \verb!AbstractComponent!-Klasse eine IODescriptor Instanz zurückzugeben beziehungsweise entgegenzunehmen, werden an dieser Stelle ausgespart.
+  Diese Änderungen haben dabei keinerlei Auswirkungen auf das Santiago Programm selbst. Dieses stellt sich immer noch genauso dar wir in Listing \ref{lst:santiago_plain_with_workflow_definition}. Änderungen müssen nur, wie in Listing \ref{lst:simple_workflow_engine_with_io_descriptor} dargestellt, an der \verb!SimpleWorkflowEngine!-Klasse vorgenommen werden. Die Anpassungen an der \verb!AbstractComponent!-Klasse, dass die Methoden \verb!execute()! und \verb!setInput()! je eine \verb!IODescriptor!-Instanz zurückgeben beziehungsweise entgegennehmen, werden an dieser Stelle ausgespart.
   
-  \lstinputlisting[caption=Santiago Programm mit explizitem Datenfluss,label=lst:santiago_plain_with_data_flow,language=Java,firstline=26,lastline=69,morekeywords={[3]IODescriptor}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SantiagoPlainWithDataflow.java}
+  \lstinputlisting[caption=Erweiterung der einfachen Workflow-Engine um den \texttt{IODescriptor},label=lst:simple_workflow_engine_with_io_descriptor,language=Java,firstline=12,lastline=66,morekeywords={[3]IODescriptor}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/SimpleWorkflowEngineWithIO.java}
   
-  Wesentlich entscheidender für die Realisierung des Datenfluss ist jedoch die Implementierung des Medienobjekts, wie es in \ref{ssub:medienobjekt} konzeptioniert ist. Im Vorfeld kann gesagt werden, dass sich das Santiago Programm aus Listing \ref{lst:santiago_plain_with_data_flow} auch nach Einführung des Medienobjekts nicht verändern wird. Sie hat ausschließlich Auswirkungen auf die \verb!AbstractComponent!-Unterklassen.
+  Wesentlich entscheidender für die Realisierung des Datenfluss ist jedoch die Implementierung des Medienobjekts, wie es in \ref{ssub:medienobjekt} konzeptioniert ist. Diese Erweiterung hat jedoch nur Auswirkungen auf die \verb!AbstractComponent!-Klasse und ihre Unterklassen, nicht jedoch auf die jeweiligen \verb!WorkflowEngine!-Implementierungen.
   
   Das Medienobjekt selbst ist wie bereits ausgeführt nach dem \emph{Composite}-Pattern implementiert. Bei der Umsetzung des Composite-Pattern sind in der Regel drei Klassen zu implementieren:
   
   \begin{description}
-  	\item[Component]   Die Klasse von der die anderen beiden jeweils vererben (hier die \verb!AbstractMedia!-Klasse).
-  	\item[Composite]   Die Klasse, in der mehrere Component-Objekte zusammenfasst (hier die \verb!MediaContainer!-Klasse)
-  	\item[Leaf]   Die Klasse, die einen Endpunkt in der Hierarchie repräsentiert (hier die \verb!MediaData!-Klasse)
+    \item[Component]   Die Klasse von der die anderen beiden jeweils vererben (hier die \verb!AbstractMedia!-Klasse).
+    \item[Composite]   Die Klasse, in der mehrere Component-Objekte zusammenfasst (hier die \verb!MediaContainer!-Klasse)
+    \item[Leaf]   Die Klasse, die einen Endpunkt in der Hierarchie repräsentiert (hier die \verb!MediaData!-Klasse)
   \end{description}
   
   Zur Realisierung der Santiago-Anwendung ist die Verwendung von \verb!MediaContainer!-Instanzen nicht notwendig, daher wird darauf auch nicht weiter eingegangen. Die Implementierungen der anderen beiden Klassen sind in Listing \ref{lst:abstract_media} und \ref{lst:media_data} zu sehen.

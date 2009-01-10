@@ -78,7 +78,7 @@ public class MediaContainerTest {
   @Test
   public void testShouldGetMediaObjectsFromContainerByName() {
     MediaContainer container = new MediaContainer(metadataList);
-    AbstractMedia data = new MediaData(metadataList);
+    AbstractMedia data = new MediaData();
     data.setName("Foo Media");
     container.addMedia(data);
     

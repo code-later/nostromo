@@ -1,5 +1,5 @@
 /*
- * WorkflowRunnerTest.java
+ * RemoteWorkflowEngineTest.java
  *
  * Version 1.0  Sep 25, 2008
  *
@@ -18,7 +18,7 @@ import java.io.IOException;
 import org.junit.Test;
 
 import de.fhkoeln.cosima.services.registry.MemcachedServiceRegistry;
-import de.fhkoeln.cosima.workflow.WorkflowRunner;
+import de.fhkoeln.cosima.workflow.RemoteWorkflowEngine;
 import de.fhkoeln.cosima.workflow.YamlWorkflowDefinition;
 import de.fhkoeln.cosima.workflow.storage.MapProcessStoreImpl;
 
@@ -32,26 +32,27 @@ import de.fhkoeln.cosima.workflow.storage.MapProcessStoreImpl;
  * @version 1.0  Sep 25, 2008
  *
  */
-public class WorkflowRunnerTest {
+public class RemoteWorkflowEngineTest {
   
   private YamlWorkflowDefinition workflowDefinition;
   private MapProcessStoreImpl processStore;
 
   /**
-   * Test method for {@link de.fhkoeln.cosima.workflow.WorkflowRunner#run()}.
+   * Test method for {@link de.fhkoeln.cosima.workflow.RemoteWorkflowEngine#execute()}.
+   * @throws Exception 
    */
   @Test
-  public void testRun() {
+  public void testExecute() throws Exception {
     try {
       workflowDefinition = new YamlWorkflowDefinition("res/workflow_definition/abstract_workflow_definition.yml");
       processStore = new MapProcessStoreImpl();
     
-      WorkflowRunner runner = new WorkflowRunner();
-      runner.setDefinition(workflowDefinition);
-      runner.setProcessStore(processStore);
-      runner.setRegistry(new MemcachedServiceRegistry());
+      RemoteWorkflowEngine engine = new RemoteWorkflowEngine();
+      engine.setWorkflowDefinition(workflowDefinition);
+      engine.setProcessStore(processStore);
+      engine.setRegistry(new MemcachedServiceRegistry());
       
-      runner.run();
+      engine.execute();
     
     } catch (IOException e) {
       e.printStackTrace();

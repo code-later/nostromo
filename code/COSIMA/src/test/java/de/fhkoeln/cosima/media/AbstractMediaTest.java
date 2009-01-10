@@ -11,17 +11,12 @@
  */
 package de.fhkoeln.cosima.media;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
-
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
-import de.fhkoeln.cosima.media.Metadata;
 
 
 
@@ -38,19 +33,14 @@ public class AbstractMediaTest {
   
   @Test
   public void testShouldHaveMetadata() throws Exception {
-    List<Metadata> metadatas = new ArrayList<Metadata>();
-    metadatas.add(mock(Metadata.class));
-    
-    AbstractMedia media = new MediaData(metadatas);
+    AbstractMedia media = new MediaData();
+    media.addMetadata(mock(Metadata.class));
     assertNotNull(media.getMetadata());
   }
   
   @Test
   public void testShouldHaveName() {
-    List<Metadata> metadatas = new ArrayList<Metadata>();
-    metadatas.add(mock(Metadata.class));
-    
-    AbstractMedia media = new MediaData(metadatas);
+    AbstractMedia media = new MediaData();
     media.setName("Foo Media");
     assertEquals("Foo Media", media.getName());
   }

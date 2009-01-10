@@ -1,5 +1,5 @@
 /*
- * WorkflowRunner.java
+ * RemoteWorkflowEngine.java
  *
  * Version 1.0  Sep 25, 2008
  *
@@ -29,7 +29,7 @@ import de.fhkoeln.cosima.workflow.WorkflowElement.Input;
 import de.fhkoeln.cosima.workflow.storage.ProcessStore;
 
 /**
- * A {@link WorkflowRunner} instance runs a workflow specified by its
+ * A {@link RemoteWorkflowEngine} instance runs a workflow specified by its
  * {@link WorkflowDefinition}. The single workflow elements are web
  * services which have to be invoked remotely. Their URI is specified
  * in the WorkflowDefinition. Every runner instance needs, in addition
@@ -41,12 +41,8 @@ import de.fhkoeln.cosima.workflow.storage.ProcessStore;
  * @author dbreuer
  * @version 1.0 Sep 25, 2008
  */
-public class WorkflowRunner {
+public class RemoteWorkflowEngine extends WorkflowEngine {
   
-  /**
-   * The WorkflowDefinition reference of this runner instance.
-   */
-  private WorkflowDefinition definition;
   /**
    * The ProcessStore reference of this runner instance.
    */
@@ -86,13 +82,13 @@ public class WorkflowRunner {
    *       <li>Proceed to the next element in the workflow definition</li>
    * </ul>
    * 
-   * (Further information is provided in the 'WorkflowRunner
+   * (Further information is provided in the 'RemoteWorkflowEngine
    * Flowchart.graffle' Document.
    */
-  public void run() {
+  public void execute() {
     
     // iterate through the workflow definition elements
-    Iterator<Set<WorkflowElement>> elementsIterator = definition.elementsIterator();
+    Iterator<Set<WorkflowElement>> elementsIterator = getWorkflowDefinition().elementsIterator();
     
     while (elementsIterator.hasNext()) {
        for (WorkflowElement element : elementsIterator.next()) {
@@ -140,21 +136,6 @@ public class WorkflowRunner {
   }
 
   /**
-   * @param definition
-   *          The definition which describes this workflow.
-   */
-  public void setDefinition(WorkflowDefinition definition) {
-    this.definition = definition;
-  }
-  
-  /**
-   * @return The actual workflow definition object.
-   */
-  public WorkflowDefinition getDefinition() {
-    return definition;
-  }
-
-  /**
    * Sets the concrete Service Registry implementation. 
    * 
    * @param registry A service registry implementation.
@@ -176,6 +157,7 @@ public class WorkflowRunner {
    * @return An OutputDescriptor which holds the result of the service
    *         invocation.
    */
+  @SuppressWarnings("unchecked")
   private IODescriptor invokeServiceForElementWithInputDescriptor(
       WorkflowElement element, IODescriptor inputDescriptor) {
 
