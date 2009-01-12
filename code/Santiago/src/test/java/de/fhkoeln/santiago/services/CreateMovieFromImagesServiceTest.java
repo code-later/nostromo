@@ -26,7 +26,7 @@ import de.fhkoeln.cosima.media.mediabroker.MemcachedMediaBroker;
 import de.fhkoeln.cosima.media.mediabroker.storage.FileSystemStore;
 import de.fhkoeln.cosima.services.IODescriptor;
 import de.fhkoeln.cosima.services.registry.ServiceRegistry;
-import de.fhkoeln.santiago.services.CreateMovieFromImagesService;
+import de.fhkoeln.santiago.services.SlideshowGeneratorService;
 
 /**
  * Documentation comment without implementation details. 
@@ -45,7 +45,7 @@ public class CreateMovieFromImagesServiceTest {
 //    input.add("/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/");
     input.setDescriptorElements(new String[] {"/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/"});
     
-    CreateMovieFromImagesService service = new CreateMovieFromImagesService(mock(ServiceRegistry.class));
+    SlideshowGeneratorService service = new SlideshowGeneratorService(mock(ServiceRegistry.class));
     
     MediaBroker mBroker = new MemcachedMediaBroker();
     mBroker.setMediaStore(new FileSystemStore());

@@ -11,6 +11,8 @@
  */
 package de.fhkoeln.santiago.codesamples;
 
+import de.fhkoeln.cosima.codesamples.AbstractComponent;
+
 
 /**
  * Documentation comment without implementation details. 

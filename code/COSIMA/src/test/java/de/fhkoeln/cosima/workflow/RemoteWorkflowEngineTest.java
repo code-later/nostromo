@@ -44,7 +44,7 @@ public class RemoteWorkflowEngineTest {
   @Test
   public void testExecute() throws Exception {
     try {
-      workflowDefinition = new YamlWorkflowDefinition("res/workflow_definition/abstract_workflow_definition.yml");
+      workflowDefinition = new YamlWorkflowDefinition("../Santiago/src/main/resources/final_workflow_definition.yml");
       processStore = new MapProcessStoreImpl();
     
       RemoteWorkflowEngine engine = new RemoteWorkflowEngine();

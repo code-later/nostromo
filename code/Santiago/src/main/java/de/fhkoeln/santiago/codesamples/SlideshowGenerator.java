@@ -13,6 +13,7 @@ package de.fhkoeln.santiago.codesamples;
 
 import java.io.FileNotFoundException;
 
+import de.fhkoeln.cosima.codesamples.AbstractComponent;
 import de.fhkoeln.santiago.components.jmf.JMFImages2Movie;
 
 public class SlideshowGenerator extends AbstractComponent {

@@ -35,7 +35,7 @@ import de.fhkoeln.cosima.services.IODescriptor;
 public class CreateMovieFromImagesClient {
   
   public static final String VERSION_URI = "http://localhost:8080/axis2/services/Version";
-  public static final String SERVICE_URI = "http://localhost:8080/axis2/services/CreateMovieFromImagesService";
+  public static final String SERVICE_URI = "http://localhost:8080/axis2/services/SlideshowGeneratorService";
 
   public static void main(String[] args) {
     

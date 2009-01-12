@@ -13,14 +13,15 @@ package de.fhkoeln.santiago.codesamples;
 
 import java.net.URI;
 
-import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.Media;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
+import de.fhkoeln.cosima.media.mediabroker.MemcachedMediaBroker;
 import de.fhkoeln.cosima.services.IODescriptor;
-import de.fhkoeln.cosima.util.Logger;
 import de.fhkoeln.santiago.components.ffmpeg.FFMpegMerger;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 
-public class MusicOMatWithMediaObject extends AbstractComponent {
+public class MusicOMatWithMediaObject {
   
   public IODescriptor _execute() {
     IODescriptor output = new IODescriptor();
@@ -28,8 +29,8 @@ public class MusicOMatWithMediaObject extends AbstractComponent {
     MediaComponent outputMedia = new Media();
     outputMedia.setName("SlideshowWithMusic");
     
-    MediaComponent movieFile = getBroker().retrieve(getInput.getDescriptorElements()[0]);
-    MediaComponent audioFile = getBroker().retrieve(getInput.getDescriptorElements()[1]);
+    MediaComponent movieFile = getBroker().retrieve(getInput().getDescriptorElements()[0]);
+    MediaComponent audioFile = getBroker().retrieve(getInput().getDescriptorElements()[1]);
     
     MediaAction action = new FFMpegMerger(movieFile, audioFile, outputMedia);
     action.performAction();
@@ -40,4 +41,13 @@ public class MusicOMatWithMediaObject extends AbstractComponent {
     return output;
   }
 
+  // Dummy method for compiler compliance
+  private MediaBroker getBroker() {
+    return new MemcachedMediaBroker();
+  }
+
+  // Dummy method for compiler compliance
+  private IODescriptor getInput() {
+    return new IODescriptor();
+  }
 }

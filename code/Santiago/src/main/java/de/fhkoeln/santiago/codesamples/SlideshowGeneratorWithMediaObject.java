@@ -14,15 +14,16 @@ package de.fhkoeln.santiago.codesamples;
 import java.io.FileNotFoundException;
 import java.net.URI;
 
-import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.Media;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
+import de.fhkoeln.cosima.media.mediabroker.MemcachedMediaBroker;
 import de.fhkoeln.cosima.services.IODescriptor;
-import de.fhkoeln.cosima.util.Logger;
 import de.fhkoeln.santiago.components.jmf.JMFImages2Movie;
+import de.fhkoeln.santiago.components.jmf.MediaAction;
 
-public class SlideshowGeneratorWithMediaObject extends AbstractComponent {
+public class SlideshowGeneratorWithMediaObject {
 
-  @Override
   protected IODescriptor _execute() {
     IODescriptor output;
     
@@ -34,7 +35,7 @@ public class SlideshowGeneratorWithMediaObject extends AbstractComponent {
       MediaComponent outputMedia = new Media();
       outputMedia.setName("Slidehow");
       
-      mediaAction = new JMFImages2Movie(getInput().first(), tempOutputFileName);
+      MediaAction mediaAction = new JMFImages2Movie(getInput().first(), tempOutputFileName);
       mediaAction.performAction();
 
       outputMedia.setReferenceToRealData(tempOutputFileName);
@@ -48,5 +49,13 @@ public class SlideshowGeneratorWithMediaObject extends AbstractComponent {
     }
     
     return null;
+  }
+
+  private MediaBroker getBroker() {
+    return new MemcachedMediaBroker();
+  }
+
+  private IODescriptor getInput() {
+    return new IODescriptor();
   }
 }

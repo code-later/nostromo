@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import de.fhkoeln.cosima.components.AbstractComponent;
+import de.fhkoeln.cosima.codesamples.AbstractComponent;
 import de.fhkoeln.cosima.workflow.WorkflowElement.Input;
 
 public class SimpleWorkflowEngine extends WorkflowEngine {

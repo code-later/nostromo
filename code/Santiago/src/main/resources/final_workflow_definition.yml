@@ -1,0 +1,58 @@
+---
+type: "producer"
+description: "Producer:SlideshowGenerator"
+uri: "http://localhost:8080/axis2/services/SildeshowGeneratorService"
+namespace: "http://services.santiago.fhkoeln.de"
+input:
+  - type: "external"
+    uri: "/Users/dbreuer/santiago/slideshow_images/"
+output:
+  - uri: "http://localhost:8080/axis2/services/SildeshowGeneratorService/output"
+predecessors: null
+successors:
+  - uri: "http://localhost:8080/axis2/services/MusicOMatService"
+
+---
+type: "producer"
+description: "Producer:MusicProvider"
+uri: "http://localhost:8080/axis2/services/MusicProviderService"
+namespace: "http://services.santiago.fhkoeln.de"
+input:
+  - type: "external"
+    uri: "file:///Users/dbreuer/santiago/music_track.mp3"
+output:
+  - uri: "http://localhost:8080/axis2/services/MusicProviderService/output"
+predecessors: null
+successors:
+  - uri: "http://localhost:8080/axis2/services/MusicOMatService"
+
+---
+type: "transformer"
+description: "Transformer:MusicOMatService"
+uri: "http://localhost:8080/axis2/services/MusicOMatService"
+namespace: "http://services.santiago.fhkoeln.de"
+input:
+  - type: "internal"
+    uri: "http://localhost:8080/axis2/services/SildeshowGeneratorService/output"
+  - type: "internal"
+    uri: "http://localhost:8080/axis2/services/MusicProviderService/output"
+output:
+  - uri: "http://localhost:8080/axis2/services/MusicOMatService/output"
+predecessors:
+  - uri: "http://localhost:8080/axis2/services/SildeshowGeneratorService"
+  - uri: "http://localhost:8080/axis2/services/MusicProviderService"
+successors:
+  - uri: "http://localhost:8080/axis2/services/VideoPlayerService"
+
+---
+type: "consumer"
+description: "Consumer:VideoPlayer"
+uri: "http://localhost:8080/axis2/services/VideoPlayerService"
+namespace: "http://services.santiago.fhkoeln.de"
+input:
+  - type: "internal"
+    uri: "http://localhost:8080/axis2/services/MusicOMatService/output"
+output: null
+predecessors:
+  - uri: "http://localhost:8080/axis2/services/MusicOMatService"
+successors: null

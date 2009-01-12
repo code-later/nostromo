@@ -13,11 +13,9 @@ package de.fhkoeln.cosima.util;
 
 
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * Logger singleton could be used by any application that uses COSIMA.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Nov 24, 2008
  *
  */

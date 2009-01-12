@@ -5,7 +5,7 @@
  *
  * (c) 2009 by Dirk Breuer
  */
-package de.fhkoeln.santiago.codesamples;
+package de.fhkoeln.cosima.codesamples;
 
 public abstract class AbstractComponent {
 

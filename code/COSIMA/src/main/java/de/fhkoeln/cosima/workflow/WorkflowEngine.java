@@ -35,5 +35,4 @@ public abstract class WorkflowEngine {
   public Map<String, String> getWorkflowStore() {
     return workflowStore;
   }
-
 }

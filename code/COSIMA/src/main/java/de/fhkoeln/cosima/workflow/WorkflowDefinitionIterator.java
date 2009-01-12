@@ -35,8 +35,6 @@ public class WorkflowDefinitionIterator implements
   private Set<WorkflowElement> currentElements;
 
   /**
-   * The constructor of this certain Iterator implementation.
-   * 
    * @param A Map with the {@link WorkflowElement} objects to iterate through.
    */
   public WorkflowDefinitionIterator(Map<String, WorkflowElement> elements) {

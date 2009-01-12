@@ -22,26 +22,26 @@
 	<bean id="applicationContext"
 		class="org.apache.axis2.extensions.spring.receivers.ApplicationContextHolder" />
 
-	<bean id="createMovieFromImagesService"
-		class="de.fhkoeln.santiago.services.CreateMovieFromImagesService">
+	<bean id="slideshowGeneratorService"
+		class="de.fhkoeln.santiago.services.SlideshowGeneratorService">
     <constructor-arg index="0" ref="serviceRegistry" />
 		<property name="broker" ref="mediaBroker" />
 	</bean>
 
-  <bean id="provideMusicFileService"
-    class="de.fhkoeln.santiago.services.ProvideMusicFileService">
+  <bean id="musicProviderService"
+    class="de.fhkoeln.santiago.services.MusicProviderService">
     <constructor-arg index="0" ref="serviceRegistry" />
     <property name="broker" ref="mediaBroker" />
   </bean>
 
-  <bean id="addMusicToMovieService"
-    class="de.fhkoeln.santiago.services.AddMusicToMovieService">
+  <bean id="musicOMatService"
+    class="de.fhkoeln.santiago.services.MusicOMatService">
     <constructor-arg index="0" ref="serviceRegistry" />
     <property name="broker" ref="mediaBroker" />
   </bean>
 
-  <bean id="playMovieService"
-    class="de.fhkoeln.santiago.services.PlayMovieService">
+  <bean id="videoPlayerService"
+    class="de.fhkoeln.santiago.services.VideoPlayerService">
     <constructor-arg index="0" ref="serviceRegistry" />
     <property name="broker" ref="mediaBroker" />
   </bean>

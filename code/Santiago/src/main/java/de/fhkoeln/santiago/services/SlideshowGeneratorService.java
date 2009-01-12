@@ -1,5 +1,5 @@
 /*
- * CreateMovieFromImagesService.java
+ * SlideshowGeneratorService.java
  *
  * Version 1.0  Sep 19, 2008
  *
@@ -33,15 +33,15 @@ import de.fhkoeln.santiago.components.jmf.MediaAction;
  * @version 1.0  Sep 19, 2008
  *
  */
-public class CreateMovieFromImagesService extends AbstractComponent {
+public class SlideshowGeneratorService extends AbstractComponent {
 
   // TODO: Should be externalized into config file!
-  private static final String URI         = "http://localhost:8080/axis2/services/CreateMovieFromImagesService";
-  private static final String DESCRIPTION = "Producer:CreateSlideshow";
+  private static final String URI         = "http://localhost:8080/axis2/services/SlideshowGeneratorService";
+  private static final String DESCRIPTION = "Producer:SlideshowGenerator";
 
   private MediaAction mediaAction;
   
-  public CreateMovieFromImagesService(ServiceRegistry registry) {
+  public SlideshowGeneratorService(ServiceRegistry registry) {
     super(registry, URI, DESCRIPTION);
   }
 

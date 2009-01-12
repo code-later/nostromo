@@ -1,5 +1,5 @@
 /*
- * PlayMovieService.java
+ * VideoPlayerService.java
  *
  * Version 1.0  Sep 25, 2008
  *
@@ -30,16 +30,16 @@ import de.fhkoeln.santiago.components.jmf.MediaAction;
  * @version 1.0  Sep 25, 2008
  *
  */
-public class PlayMovieService implements CoreService {
+public class VideoPlayerService implements CoreService {
   
-  private final String URI         = "http://localhost:8080/axis2/services/PlayMovieService";
+  private final String URI         = "http://localhost:8080/axis2/services/VideoPlayerService";
   private final String DESCRIPTION = "Consumer:VideoPlayer";
   
   private IODescriptor input;
   private MediaBroker broker;
   private ServiceRegistry registry;
   
-  public PlayMovieService(ServiceRegistry registry) {
+  public VideoPlayerService(ServiceRegistry registry) {
     Logger.info("Booting Service: " + getClass().getName());
     this.registry = registry;
     this.registry.publish(this);

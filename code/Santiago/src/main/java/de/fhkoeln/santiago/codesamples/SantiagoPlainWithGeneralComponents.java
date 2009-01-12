@@ -8,6 +8,8 @@
  */
 package de.fhkoeln.santiago.codesamples;
 
+import de.fhkoeln.cosima.codesamples.AbstractComponent;
+
 public class SantiagoPlainWithGeneralComponents {
   
   public static void main(String[] args) {

@@ -70,7 +70,7 @@
 
   Die rot markierten Klassen implementieren dabei die jeweiligen Operationen in geeigneter Weise\footnote{Ein Einblick in die Implementierung der einzelnen Klassen ist an dieser Stelle nicht weiter relevant. Der vollständige Quellcode findet sich auf der Begleit-CD zu dieser Arbeit.}. Den Zugriff auf diese Operationen über Klassenmethoden zu realisieren eignet sich jedoch nicht für den Einsatz in verteilten Umgebungen: Eine parallele Verwendung ein und der selben Komponente wäre so nur schwer umsetzbar. In der nächsten Iteration war es daher notwendig, den Zugriff auf die Operationen über einzelne Instanzen zu implementieren. Gleichzeitig sollte die Benennung der Methoden unabhängig von der eigentlichen Funktionalität erfolgen. Dadurch wird zwar ein gewisser Grad an Lesbarkeit des Codes eingebüßt, jedoch gewinnt man ein deutliches höhres Maß an Austauschbarkeit. Die Umsetzung dieser beiden Anforderungen erfolgte über die Etablierung der abstrakten Oberklasse \verb!AbstractComponent! (siehe Listing \ref{lst:abstract_component_simple_class}), da alle Komponenten zwei wesentliche Gemeinsamkeiten aufweisen, \emph{a)} Die Übergabe von Eingabeparametern und \emph{b)} Die Ausführung der Operation unter Berücksichtigung dieser Parameter. Die Oberklasse definiert dabei drei Methoden: Die Methode \verb!setInput(String [] inputs)!, um die notwendigen Parameter zu setzen; Die Methode \verb!execute()! als nach außen sichtbare Schnittstelle, um die Operation zu starten und die Methode \verb!_execute()! in der die eigentliche Operation intern implementiert ist.
   
-  \lstinputlisting[caption=Einfache \texttt{AbstractComponent}-Klasse,label=lst:abstract_component_simple_class,language=Java,firstline=8,morekeywords={[3]execute,getInput,setInput}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/AbstractComponent.java}
+  \lstinputlisting[caption=Einfache \texttt{AbstractComponent}-Klasse,label=lst:abstract_component_simple_class,language=Java,firstline=8,morekeywords={[3]execute,getInput,setInput}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/codesamples/AbstractComponent.java}
   
   Das ausführende Programm aus Listing \ref{lst:santiago_plain} kann nun die generalisierten Komponenten mit ihren homogenen Schnittstellen verwenden um die einzelnen Operationen anzustoßen. Die Änderungen der Anwendung sind dabei in Listing \ref{lst:santiago_plain_with_general_components} dargestellt. Als eine erste Abstraktion der Parameter dient in diesem Fall noch ein primitives String-Array, im weiteren Verlauf wird daraus ein vollständiges \emph{Value-Object}~\citep[S. 486]{fowler03peaa} entstehen. Die Implementierung der \verb!execute()!-Methode ist nach dem \emph{Template Method} Entwurfsmuster vorgenommen worden~\citep[325]{design_patterns}\footnote{In späteren Iterationen lassen sich so leicht Funktionalitäten hinzufügen, die vor oder nach der eigentlichen Operation durchgeführt werden müssen.}.
 
@@ -135,7 +135,7 @@
 
   Diese einfache Schnittstelle bietet dem Client zum einen an, über die \verb!size()!-Methode die Größe aller auszuführenden Elemente nachzufragen und über die Implementierung des \emph{Iterator}-Pattern~\citep[S. 257]{design_patterns} alle Elemente in ihrer jeweils definierten Sequenz. Die entsprechende Realisierung des \verb!WorkflowDefinitionIterator! ist in Listing \ref{lst:workflow_definition_iterator} zu sehen. Die next()-Methode liefert dabei immer ein \verb!java.util.Set! von Elementen zurück, die als nächstes ausgeführt werden müssen, allerdings ohne die Notwendigkeit sie in einer definierten Reihenfolge auszuführen\footnote{Für die erfolgreiche Ausführung der Santiago-Anwendung ist es irrelevant, ob zuerst die Diashow erstellt wird und dann das Musikstück bereitgestellt wird oder vice versa.}.
 
-\lstinputlisting[caption=Implementierung der \texttt{WorkflowDefinitionIterator}-Klasse,label=lst:workflow_definition_iterator,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/WorkflowDefinitionIterator.java}
+\lstinputlisting[caption=Implementierung der \texttt{WorkflowDefinitionIterator}-Klasse,label=lst:workflow_definition_iterator,language=Java,linerange={12-13,31-92}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/WorkflowDefinitionIterator.java}
 
   Die Ablaufbeschreibung selbst wurde für Santiago im YAML\abk{YAML}{YAML Ain't Markup Language}-Format angebeben\footnote{YAML ist eine datenzentierter Serialisierungsstandard für alle Programmiersprachen, der sehr menschenlesbar ist (siehe \url{http://www.yaml.org}).}. Es wurde sich bewusst für ein datenzentiertes Format und nicht für ein dokumentenzentriertes Format wie XML\abk{XML}{eXtended Markup Language} entschieden, um die bereits erwähnte Abgrenzung zu BPEL und Geschäftsprozessen\footnote{Bei der Beschreibung von Geschäftsprozessen lässt sich sehr viel eher von einem Dokument sprechen, dass entsprechend in einem System modelliert werden sollte.} auch in der Implementierung herauszustellen. Die Ablaufbeschreibung, die den Anwendungsfall in Santiago darstellt ist in Listing \ref{lst:abstract_workflow_definition_in_yaml} zu sehen.
 
@@ -143,21 +143,21 @@
 
   Neben der eigentlichen Ablaufbeschreibung im YAML-Format ist darüber hinaus noch eine Klasse notwendig, die das \verb!WorkflowDefinition!-Interface implementiert und die in der Lage ist die angegebene Ablaufbeschreibung einzulesen. Die einzelnen Abschnitte der abstrakten Ablaufbeschreibung werden auf Programmebene dabei durch Instanzen der Klasse \verb!WorkflowElement! repräsentiert. Die Klasse implementiert dabei die die einzelnen YAML-\emph{Tags} als Attribute, die über \emph{Getter}-Methoden nach außen verfügbar gemacht werden. Die \verb!YamlWorkflowDefinition!-Klasse setzt dafür auf jeder Instanz eines \verb!WorkflowElement! dabei die entsprechenden Werte über die gleichnamigen \emph{Setter}-Methoden automatisch. Die \verb!YamlWorkflowDefinition!-Implementierung findet sich in Listing \ref{lst:yaml_workflow_definition} und Das vollständige Listing \ref{lst:workflow_element} zu der \verb!WorkflowElement!-Klasse findet sich im Anhang.
 
-  \lstinputlisting[caption=Implementierung der \texttt{WorkflowDefinition}-Schnittstelle auf YAML-Basis,label=lst:yaml_workflow_definition,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/YamlWorkflowDefinition.java}
+  \lstinputlisting[caption=Implementierung der \texttt{WorkflowDefinition}-Schnittstelle auf YAML-Basis,label=lst:yaml_workflow_definition,language=Java,linerange={12-13,35-76}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/YamlWorkflowDefinition.java}
 
   Die \verb!WorkflowDefinition! ist jedoch lediglich die programmatische Repräsentation der deklarativen Beschreibung, um diese auszuführen bedarf es einer weiteren Komponente, eine \emph{Workflow Engine}~\citep[S. 53]{hollingsworth1995wmc}. Sie wird in COSIMA durch die abstrakte \verb!WorkflowEngine!-Klasse, wie in Listing \ref{lst:workflow_engine} dargestellt, realisiert. Die jeweiligen Unterklassen müssen dabei entsprechend die \verb!execute()!-Methode überschreiben.
   
-  \lstinputlisting[caption=Abstrakte \texttt{WorkflowEngine}-Klasse,label=lst:workflow_engine,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/WorkflowEngine.java}
+  \lstinputlisting[caption=Abstrakte \texttt{WorkflowEngine}-Klasse,label=lst:workflow_engine,language=Java,linerange={12-13,16-38}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/WorkflowEngine.java}
   
   Eine erste einfache Implementierung der abstrakten \verb!WorkflowEngine!-Klasse ist in Listing \ref{lst:simple_workflow_engine} dargestellt.
 
-  \lstinputlisting[caption=Implementierung einer einfachen Workflow Engine,label=lst:simple_workflow_engine,language=Java,firstline=12,lastline=67,morekeywords={[3]WorkflowDefinition,workflowStore,WorkflowElement}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/SimpleWorkflowEngine.java}
+  \lstinputlisting[caption=Implementierung einer einfachen Workflow Engine,label=lst:simple_workflow_engine,language=Java,linerange={12-13,23-60},morekeywords={[3]WorkflowDefinition,workflowStore,WorkflowElement}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/SimpleWorkflowEngine.java}
 
   Die Instanziierung der einzelnen Komponenten innerhalb der \verb!SimpleWorkflowEngine! geschieht dabei unter zu Hilfenahme der Java Reflection API\abk{API}{Application Programming Interface} (Zeile 54 und 55 im Listing). Dies gelingt, da in der Ablaufbeschreibung als URI jeder Komponente der vollständig klassifizierende Java-Klassenname angegeben ist. Für den Einsatz in einer verteilten Umgebung ist diese Implementierung jedoch völlig ungeeignet. Später werden die einzelnen Komponenten daher als \emph{Web Services} implementiert ($\to$ \ref{sub:extraktion_der_komponenten_als_dienste}). Ein weiterer Punkt von Interesse in dieser Implementierung ist die Notwendigkeit den aktuellen Fortschritt der Ausführung nachzuhalten. Hier wird dies über die Einführung des lokalen \verb!workflowStore!-Objekts erreicht. Für die Umsetzung komplexerer Abläufe scheint es jedoch sinnvoll zu sein, dass der ausführenden Komponente ein Zustandsautomat zu Grunde gelegt wird, wie es bei~\citep{biornstad2006cfs} propagiert und unter anderem auch von BPEL umgesetzt wird.
   
   Das Santiago Programm aus den bisherigen Listings lässt sich durch die in diesem Abschnitt eingeführten Erweiterungen allein auf die Instanziierung einer \verb!WorkflowDefinition! und die Ausführung der \verb!SimpleWorkflowEngine! mit dieser Definition reduzieren (Listing \ref{lst:santiago_plain_with_workflow_definition}).
   
-  \lstinputlisting[caption=Santiago Programm mit deklarativer Ablaufbeschreibung,label=lst:santiago_plain_with_workflow_definition,language=Java,firstline=18,lastline=33,morekeywords={[3]WorkflowDefinition,SimpleWorkflowEngine}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SantiagoPlainWithWorkflowDefinition.java}
+  \lstinputlisting[caption=Santiago Programm mit deklarativer Ablaufbeschreibung,label=lst:santiago_plain_with_workflow_definition,language=Java,firstline=19,lastline=34,morekeywords={[3]WorkflowDefinition,SimpleWorkflowEngine}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SantiagoPlainWithWorkflowDefinition.java}
   
   Nachdem eine deklarative Ablaufbeschreibung eingeführt wurde und die grundsätzliche Möglichkeit geboten war, diese Beschreibung auszuführen, war der nächste Schritt die Umsetzung der Medienobjekte-Modellierung. Ihre Umsetzung und Integration wird im folgenden Abschnitt behandelt.
   
@@ -251,7 +251,7 @@ Die Persistierung der eigentlichen Daten übernimmt die \verb!MediaStore!-Kompon
 
   Stellvertretend für die anderen medienverarbeitenden Komponenten der Santiago-Anwendung sind in Listing \ref{lst:music_o_mat_with_media_object} die notwenigen Änderungen zur Integration des Medienobjekts an der \verb!MusicOMat!-Klasse dargestellt.
 
-  \lstinputlisting[caption=\texttt{MusicOMat}-Klasse unter Verwendung von dem Medienobjekt,label=lst:music_o_mat_with_media_object,language=Java,firstline=25,lastline=41,morekeywords={[3]MediaComponent,getBroker,Media}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/MusicOMatWithMediaObject.java}
+  \lstinputlisting[caption=\texttt{MusicOMat}-Klasse unter Verwendung von dem Medienobjekt,label=lst:music_o_mat_with_media_object,language=Java,firstline=26,lastline=42,morekeywords={[3]MediaComponent,getBroker,Media}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/MusicOMatWithMediaObject.java}
   
   Nachdem sowohl der explizite Kontrollfluss als auch der Datenfluss etabliert worden sind, bleibt als letzter Schritt nur noch die Umsetzung der einzelnen Komponenten als Dienste und ihre Verwendung in einer verteilten Umgebung. Dies wird im nächsten Abschnitt vorgestellt.
   
@@ -287,6 +287,8 @@ Die Persistierung der eigentlichen Daten übernimmt die \verb!MediaStore!-Kompon
     
   Keine adäquate Fehlerbehandlung.
   
+  Keine hochwertige Fehlerrobustheit. Nur rudimentäres Logging.
+  
   Verteilte Ausführung der Komposition setzt ebenfalls eine verteilte Hinterlegung des aktuell Fortschritts der Ausführung voraus.
   
   Keine Möglichkeit zur asynchronen Ausführung von einzelnen Diensten bis jetzt implementiert. Ist nicht immer angemessen abhängig vom Art des Dienstes, doch mit unter notwendig (\textbf{Stichwort}: \emph{Streaming-Dienste}).
@@ -294,6 +296,8 @@ Die Persistierung der eigentlichen Daten übernimmt die \verb!MediaStore!-Kompon
   Die bisherige Umsetzung der Komposition der einzelnen Dienste ist nur wenig flexibel und eignet sich wahrscheinlich nicht für Realisierung von komplexeren Szenarien. Dafür wäre im jeden Fall die Umsetzung auf Basis eines Zustandsautomaten notwenig, viel eher sollte aber die Verwendung einer etablierten Prozessbeschreibungssprache in Betracht gezogen werden. Dazu sind jedoch weitere Betrachtungen notwendig, wie sie unter anderem in~\citep{samma08} gemacht wurden.
 
   Bereits bei dieser einfachen Anwendung besteht auch ein Bedarf nach Synchronisation. Die Tranformer-Komponente, die die Diashow und das Musikstück verarbeitet muss dabei beide Medien synchronisieren. Es findet hier allerdings nur eine implizite Synchronisation statt, da sie in keiner Weise spezifiziert wurde. Des Weiteren wird sie auf Tranformer-Seite durchgeführt, was der Synchronisation durch Multiplex-Datenströme nach Steinmetz entspricht~\citep[S. 609]{multimedia_technologie} (siehe auch Abschnitt \ref{par:besonderheiten_bei_verteilten_umgebungen}).
+  
+  Etablierung eines Logging Service. Zur Zeit nur ein Logging Singleton. Nur bedingt für verteilte Anwendung geeignet, da kein zentrales Log der Gesamtapplikation verfügbar ist.
 
 % subsection probleme_und_loesungen_architektur (end)
 

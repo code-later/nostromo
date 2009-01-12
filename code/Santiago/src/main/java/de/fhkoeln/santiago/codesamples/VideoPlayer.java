@@ -2,6 +2,7 @@ package de.fhkoeln.santiago.codesamples;
 
 import static org.mockito.Mockito.*;
 
+import de.fhkoeln.cosima.codesamples.AbstractComponent;
 import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.santiago.components.ffmpeg.MPlayerPlayer;

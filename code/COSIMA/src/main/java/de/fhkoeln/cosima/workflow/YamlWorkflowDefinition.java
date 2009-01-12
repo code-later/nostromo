@@ -73,5 +73,4 @@ public class YamlWorkflowDefinition implements WorkflowDefinition {
   public Iterator<Set<WorkflowElement>> elementsIterator() {
     return new WorkflowDefinitionIterator(elements);
   }
-
 }

@@ -1,5 +1,5 @@
 /*
- * ProvideMusicFileService.java
+ * MusicProviderService.java
  *
  * Version 1.0  Sep 25, 2008
  *
@@ -32,16 +32,16 @@ import de.fhkoeln.cosima.util.Logger;
  * @version 1.0  Sep 25, 2008
  *
  */
-public class ProvideMusicFileService implements CoreService {
+public class MusicProviderService implements CoreService {
   
-  private final String URI         = "http://localhost:8080/axis2/services/ProvideMusicFileService";
-  private final String DESCRIPTION = "Producer:ProvideMusic";
+  private final String URI         = "http://localhost:8080/axis2/services/MusicProviderService";
+  private final String DESCRIPTION = "Producer:MusicProvider";
   
   private IODescriptor input;
   private MediaBroker broker;
   private ServiceRegistry registry;
   
-  public ProvideMusicFileService(ServiceRegistry registry) {
+  public MusicProviderService(ServiceRegistry registry) {
     Logger.info("Booting Service: " + getClass().getName());
     this.registry = registry;
     this.registry.publish(this);
