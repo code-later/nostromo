@@ -18,7 +18,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
+import de.fhkoeln.cosima.media.MediaComponent;
 
 
 /**
@@ -47,9 +47,9 @@ public class FileSystemStore implements MediaStore {
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.media.mediabroker.storage.MediaStore#write(java.lang.String, de.fhkoeln.cosima.media.AbstractMedia)
+   * @see de.fhkoeln.cosima.media.mediabroker.storage.MediaStore#write(java.lang.String, de.fhkoeln.cosima.media.MediaComponent)
    */
-  public String write(AbstractMedia data) throws IOException {
+  public String write(MediaComponent data) throws IOException {
     File outputFile = new File(this.location.getAbsolutePath(), data.storageKey());
 
     System.out.println("--- Start writing to path " + outputFile.getAbsolutePath() + " ...");

@@ -15,8 +15,8 @@ import java.io.FileNotFoundException;
 import java.net.URI;
 
 import de.fhkoeln.cosima.components.AbstractComponent;
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
 import de.fhkoeln.cosima.services.IODescriptor;
 import de.fhkoeln.cosima.services.registry.ServiceRegistry;
@@ -59,7 +59,7 @@ public class CreateMovieFromImagesService extends AbstractComponent {
       
       output = new IODescriptor();
       
-      AbstractMedia outputMedia = new MediaData();
+      MediaComponent outputMedia = new Media();
       outputMedia.setName("MovieFromJPEGs");
       
       mediaAction = new JMFImages2Movie(getInput().first(), outputFileName);

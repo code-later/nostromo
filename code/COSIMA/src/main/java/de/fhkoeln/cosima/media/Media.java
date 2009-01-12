@@ -1,5 +1,5 @@
 /*
- * MediaData.java
+ * Media.java
  *
  * Version 1.0  Nov 16, 2008
  *
@@ -20,29 +20,12 @@ import java.net.URI;
  * @version 1.0  Nov 16, 2008
  *
  */
-public class MediaData extends AbstractMedia {
+public class Media extends MediaComponent {
   
   private static final long serialVersionUID = -7185178004655851316L;
   
   private Object realMediaData;
   
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (!(obj instanceof MediaData))
-      return false;
-    MediaData other = (MediaData) obj;
-    if (this.getUri() == null) {
-      if (other.getUri() != null)
-        return false;
-    } else if (!this.getUri().equals(other.getUri()))
-      return false;
-    return true;
-  }
-
   @Override
   public URI getReferenceToRealData() throws UnsupportedOperationException {
     return URI.create((String) realMediaData);
@@ -57,5 +40,22 @@ public class MediaData extends AbstractMedia {
   public Object getPlayableData() {
     // Lazy loading of data. Real data is only requested if it is really needed.
     return getStore().read(storageKey());
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (!(obj instanceof Media))
+      return false;
+    Media other = (Media) obj;
+    if (this.getUri() == null) {
+      if (other.getUri() != null)
+        return false;
+    } else if (!this.getUri().equals(other.getUri()))
+      return false;
+    return true;
   }
 }

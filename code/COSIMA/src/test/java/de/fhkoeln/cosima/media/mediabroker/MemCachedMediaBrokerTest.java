@@ -23,8 +23,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
 import de.fhkoeln.cosima.media.mediabroker.MemcachedMediaBroker;
 import de.fhkoeln.cosima.media.mediabroker.storage.MediaStore;
@@ -59,19 +59,19 @@ public class MemCachedMediaBrokerTest {
 
   @Test
   public void testShouldStoreMediaObjectsInMemcacheAndReturnUriToMediaObject() {
-    AbstractMedia media = new MediaData();
+    MediaComponent media = new Media();
     media.setName("Test Media");
     
     URI uriOfMedia = broker.store(media);
     assertEquals(URI.create("cosima://santiago.fh-koeln.de/media/Test+Media"), uriOfMedia);
-    AbstractMedia storedMedia = spy(broker.retrieve("cosima://santiago.fh-koeln.de/media/Test+Media"));
+    MediaComponent storedMedia = spy(broker.retrieve("cosima://santiago.fh-koeln.de/media/Test+Media"));
     assertEquals(media, storedMedia);
     assertEquals(store, storedMedia.getStore());
   }
   
   @Test
   public void testShouldKnowHowManyElementsThereAre() {
-    AbstractMedia media = new MediaData();
+    MediaComponent media = new Media();
     media.setName("Test Media");
     
     broker.store(media);
@@ -85,7 +85,7 @@ public class MemCachedMediaBrokerTest {
   
   @Test
   public void testShouldHaveMediaStoreAssociatedAndUseItToStoreRealMediaData() throws IOException {
-    AbstractMedia media = new MediaData();
+    MediaComponent media = new Media();
     media.setName("Test Media");
     
     broker.store(media);

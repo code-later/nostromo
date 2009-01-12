@@ -163,78 +163,115 @@
   
 % subsection einfuewhrung_einer_deklarativen_ablaufbeschreibung (end)
 
-\subsection{Explizite Umsetzung des Datenfluss} % (fold)
+\subsection{Explizite Umsetzung des Datenfluss und Einführung des Medienobjekts} % (fold)
 \label{sub:explizite_umsetzung_des_datenfluss}
 
   In Abschnitt \ref{ssub:medienobjekt} wurde bereits darauf hingewiesen, dass zwischen Kontrollfluss und Datenfluss innerhalb einer SOA unterschieden werden muss. Im vorherigen Abschnitt wurden entsprechend die Komponenten realisiert, die dem Kontrollfluss zuzuordnen sind. In diesem Abschnitt werden solche Komponenten implementiert, die zur Umsetzung des Datenfluss notwendig sind.
   
-  Im ersten Schritt soll zunächst ein \emph{Value-Objekt} eingeführt werden, wie in Abschnitt \ref{sub:erste_schritte} bereits angekündigt. Dieses soll dazu dienen die notwendigen Ein- und Ausgabewerte einzelner \verb!AbstractComponent!-Instanzen zu kapseln und leichter übertragbar zu machen. Die Implementierung dieses Objekt in Form der IODescriptor-Klasse ist in Listing \ref{lst:io_descriptor} dargestellt.
+  Im ersten Schritt soll zunächst ein \emph{Value-Objekt} eingeführt werden, wie in Abschnitt \ref{sub:erste_schritte} bereits angekündigt. Dieses soll dazu dienen die notwendigen Ein- und Ausgabewerte einzelner \verb!AbstractComponent!-Instanzen zu kapseln und leichter übertragbar zu machen. Die Implementierung dieses Objekt in Form der IODescriptor-Klasse ist in Listing \ref{lst:io_descriptor} dargestellt\footnote{Die Implementierung der \lstinline[basicstyle=\ttfamily\footnotesize]!equals()! und \lstinline[basicstyle=\ttfamily\footnotesize]!hash()!-Methoden sind zur Erfüllung des Value-Object-Pattern notwending~\citep[S. 486]{fowler03peaa}.}.
 
-  \lstinputlisting[caption=\texttt{IODescriptor} als Implementierung des \emph{Value-Object} Pattern,label=lst:io_descriptor,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/services/IODescriptor.java}
+  \lstinputlisting[caption=\texttt{IODescriptor} als Implementierung des \emph{Value-Object} Pattern,label=lst:io_descriptor,language=Java,linerange={12-13,26-79,85-88,102-103}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/services/IODescriptor.java}
   
-  Diese Änderungen haben dabei keinerlei Auswirkungen auf das Santiago Programm selbst. Dieses stellt sich immer noch genauso dar wir in Listing \ref{lst:santiago_plain_with_workflow_definition}. Änderungen müssen nur, wie in Listing \ref{lst:simple_workflow_engine_with_io_descriptor} dargestellt, an der \verb!SimpleWorkflowEngine!-Klasse vorgenommen werden. Die Anpassungen an der \verb!AbstractComponent!-Klasse, dass die Methoden \verb!execute()! und \verb!setInput()! je eine \verb!IODescriptor!-Instanz zurückgeben beziehungsweise entgegennehmen, werden an dieser Stelle ausgespart.
+  Diese Änderungen haben dabei keinerlei Auswirkungen auf das Santiago Programm selbst. Dieses stellt sich immer noch genauso dar wie in Listing \ref{lst:santiago_plain_with_workflow_definition}. Änderungen müssen nur, wie in Listing \ref{lst:simple_workflow_engine_with_io_descriptor} dargestellt, an der \verb!SimpleWorkflowEngine!-Klasse vorgenommen werden. Die Anpassungen an der \verb!AbstractComponent!-Klasse, dass die Methoden \verb!execute()! und \verb!setInput()! je eine \verb!IODescriptor!-Instanz zurückgeben beziehungsweise entgegennehmen, werden an dieser Stelle ausgespart.
   
-  \lstinputlisting[caption=Erweiterung der einfachen Workflow-Engine um den \texttt{IODescriptor},label=lst:simple_workflow_engine_with_io_descriptor,language=Java,firstline=12,lastline=66,morekeywords={[3]IODescriptor}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/SimpleWorkflowEngineWithIO.java}
+  \lstinputlisting[caption=Erweiterung der einfachen Workflow-Engine um den \texttt{IODescriptor},label=lst:simple_workflow_engine_with_io_descriptor,language=Java,firstline=28,lastline=57,morekeywords={[3]IODescriptor}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/SimpleWorkflowEngineWithIO.java}
   
   Wesentlich entscheidender für die Realisierung des Datenfluss ist jedoch die Implementierung des Medienobjekts, wie es in \ref{ssub:medienobjekt} konzeptioniert ist. Diese Erweiterung hat jedoch nur Auswirkungen auf die \verb!AbstractComponent!-Klasse und ihre Unterklassen, nicht jedoch auf die jeweiligen \verb!WorkflowEngine!-Implementierungen.
   
-  Das Medienobjekt selbst ist wie bereits ausgeführt nach dem \emph{Composite}-Pattern implementiert. Bei der Umsetzung des Composite-Pattern sind in der Regel drei Klassen zu implementieren:
+  Das Medienobjekt selbst ist wie bereits ausgeführt und in Abbildung \ref{fig:medienobjekt} zu erkennen, nach dem \emph{Composite}-Pattern implementiert. Bei der Umsetzung des Composite-Pattern sind in der Regel\footnote{Alternativ ließe sich die polymorphische Verwendung von \lstinline[basicstyle=\ttfamily\footnotesize]!Composite! und \lstinline[basicstyle=\ttfamily\footnotesize]!Leaf!-Objekten über die Einführung einer \lstinline[basicstyle=\ttfamily\footnotesize]!Component!-Schnittstelle erreichen.} drei Klassen zu implementieren:
   
   \begin{description}
-    \item[Component]   Die Klasse von der die anderen beiden jeweils vererben (hier die \verb!AbstractMedia!-Klasse).
+    \item[Component]   Die Klasse von der die anderen beiden jeweils vererben (hier die \verb!MediaComponent!-Klasse).
     \item[Composite]   Die Klasse, in der mehrere Component-Objekte zusammenfasst (hier die \verb!MediaContainer!-Klasse)
-    \item[Leaf]   Die Klasse, die einen Endpunkt in der Hierarchie repräsentiert (hier die \verb!MediaData!-Klasse)
+    \item[Leaf]   Die Klasse, die einen Endpunkt in der Hierarchie repräsentiert (hier die \verb!Media!-Klasse)
   \end{description}
   
   Zur Realisierung der Santiago-Anwendung ist die Verwendung von \verb!MediaContainer!-Instanzen nicht notwendig, daher wird darauf auch nicht weiter eingegangen. Die Implementierungen der anderen beiden Klassen sind in Listing \ref{lst:abstract_media} und \ref{lst:media_data} zu sehen.
 
-  \lstinputlisting[caption=\texttt{AbstractMedia}-Klasse als \emph{Component} im Composite-Pattern,label=lst:abstract_media,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/AbstractMedia.java}
+  \lstinputlisting[caption=\texttt{MediaComponent}-Klasse als \emph{Component} im Composite-Pattern,label=lst:abstract_media,language=Java,linerange={12-13,31-149,157-158}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/MediaComponent.java}
 
-  \lstinputlisting[caption=\texttt{MediaData}-Klasse als \emph{Leaf} im Composite-Pattern,label=lst:media_data,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/MediaData.java}
+  \lstinputlisting[caption=\texttt{Media}-Klasse als \emph{Leaf} im Composite-Pattern,label=lst:media_data,language=Java,linerange={12-13,23-46,60-61}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/Media.java}
   
-  $>$ über das Medienobjekt und seine Eigenheiten: \verb!name!, \verb!namespace! daraus wird \verb!getUri()! berechnet die eigentliche URI aus beiden Angaben.
+  Jedes Medienobjekt, unabhängig davon ob es \emph{Leaf} oder \emph{Composite} ist, verfügt über einen Namen und einen Namensraum. Aus diesen beiden Angaben lässt sich die URI über die \verb!getUri()!-Methode ermitteln. Später wird gezeigt werden, dass mit der URI eines Medienobjekts ein Medienobjekt eindeutig im Kontext eines Medienbroker wiedergefunden werden kann.
   
-  $>$ hat Metadaten assoziiert
+  Zur Speicherung der Medienobjekte über den Medienbroker implementiert die \verb!MediaComponent!-Klasse das \verb!java.lang.Serializable!-Interface. Zusätzlich muss jede Unterklasse das Feld \verb!serialVersionUID! definieren.
   
-  $>$ \verb!serialVersionUID! muss implementiert werden um Objekte in \verb!MediaBroker!-Implementierungen zu serialisieren, obwohl z.Zt. nicht klar ist, ob andere Implementierungen außer dem \verb!MemcachedMediaBroker! tatsächlich eine Objekteserialisierung durchführen
+  Zur Persistierung der eigentlichen Mediendaten sowie um Medienobjekte vergleichbar zu machen wurden zusätzlich die Methoden \verb!equals()! und \verb!hash()! überschrieben.
   
-  $>$ überschreibt \verb!equals()! und \verb!hash()! Methoden
+  Des Weiteren hat jedes Medienobjekt eine Reihe von Metadaten assoziiert. Jede Metadata muss dabei das \verb!Metadata!-Interface implementieren. Es definiert dabei lediglich die Funktionalität, dass einem Schlüssel in einem definierten Namensraum ein beliebiger Wert zugewiesen wird (siehe Listing \ref{lst:metadata_interface}). Zu diesem Zeitpunkt existiert jedoch noch keine Implementierung dieser Schnittstelle, denkbar wäre aber zu Beginn eine Implementierung auf Basis des Dublin Core Metadaten Standards\footnote{Die \emph{Dublin Core Metadata Initiative} ist eine offene Organisation mit dem Ziel einen flexiblen und austauschbaren online Standard für Metadaten zu schaffen, der die unterschiedlichsten Anwendungen erlaubt (\url{http://dublincore.org/}).}.
   
-  $>$ \verb!getPlayableData()! ist implementiert als \emph{Lazy-Loading}. Eigentliche Daten werden nur aus der assoziierten \verb!MediaStore!-Instanz angefordert, wenn diese wirklich benötigt werden. Die \verb!MediaStore!-Instanz wird über den \verb!MediaBroker! bekannt gemacht (dazu später mehr)
+  \lstinputlisting[caption=\texttt{Metadata}-Interface als abstrakte Repräsentation von Metadaten,label=lst:metadata_interface,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/Metadata.java}
+  
+  Medienobjekte sind nicht "`abspielbar"' noch lassen sich auf ihnen medienverarbeitende Operationen durchführen, sie sind wie schon in Abschnitt \ref{ssub:medienobjekt} erwähnt lediglich reichhaltige Referenzen auf die eigentlichen Daten. Der Zugriff auf eben diese Daten erfolgt über die \verb!getPlayableData()!-Methode. Die Methode ist nach dem \emph{Lazy-Load}-Pattern~\citep[S. 200]{fowler03peaa} implementiert, so dass die potentiell sehr großen Mediendaten erst dann geladen werden, wenn sie tatsächlich benötigt werden. Wie das Laden uns Speichern von Medienobjekten an sich implementiert ist, stellt der nachfolgende Abschnitt im Detail vor.
  
-  Die einzelnen Medienobjekte werden über Medienbroker vermittelt. Eigenes \verb!cosima://!-Protokoll für den Zugriff auf Medienbroker etablieren.
-  \lstinputlisting[caption=\texttt{MediaBroker}-Schnittstelle,label=lst:media_broker,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MediaBroker.java}
+\subsubsection{Speichern und Laden von Medienobjekten} % (fold)
+\label{ssub:speichern_und_laden_von_medienobjekten}
 
-  \lstinputlisting[caption=Implementierung der \texttt{store}-Methode im  \texttt{MemcachedMediaBroker},label=lst:store_method_in_memcached_media_broker,language=Java,firstline=74,lastline=89]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MemcachedMediaBroker.java}
+  Bei dem Umgang mit Medienobjekten müssen zwei unterschiedliche Aspekte betrachtet werden:
+  
+  \begin{itemize}
+    \item Die Vermittlung der Medienobjekte
+    \item Die Persistierung der Mediendaten
+  \end{itemize}
+  
+  Die Trennung ist bereits auf Modellebene umgesetzt worden, wie in Abbildung \ref{fig:medienobjekt} dargestellt ist. Nun geht es daran, diese Trennung auch im Code umzusetzen. Die Vermittlung der Medienobjekte übernimmt ein Medienbroker. Der wesentliche Teil dieser Schnittstelle ist in Listing \ref{lst:media_broker} zu sehen. Im Rahmen dieser Arbeit wird die \verb!MemcachedMediaBroker!-Implementierung des \verb!MediaBroker!-Interface verwendet. Die Speicherung der einzelnen Medienobjekte wird dabei über eine Objektserialisierung und deren Hinterlegung in einem \texttt{\slshape{memcached}}\emph{-Server}\footnote{\lstinline[basicstyle=\ttfamily\footnotesize]!memcached! ist ein hochperformanter verteilter Objektspeicher (siehe \url{http://www.danga.com/memcached/})} realisiert. Der memcached-Server erlaubte die leichte Vermittlung und Speicherung von Medienobjekten in einem verteilten System und war daher optimal für den Einsatz in einem Prototypen geeignet.
+    \lstinputlisting[caption=\texttt{MediaBroker}-Schnittstelle,label=lst:media_broker,language=Java,linerange={12-13,27-40,60-61},morekeywords={[3]store,retrieve}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MediaBroker.java}
 
-  \lstinputlisting[caption=Implementierung der \texttt{retrieve}-Methode im  \texttt{MemcachedMediaBroker},label=lst:retrieve_method_in_memcached_media_broker,language=Java,firstline=62,lastline=66]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MemcachedMediaBroker.java}
+Die Persistierung der eigentlichen Daten übernimmt die \verb!MediaStore!-Komponente, deren Schnittstelle in Listing \ref{lst:media_store_interface} zu sehen ist. Die Implementierung innerhalb dieser Arbeit speichert die Mediendaten lediglich auf dem Dateisystem\footnote{Für den Einsatz in einer verteilten Umgebung lässt sich einfach ein NFS-Mount verwenden.}. Für eine weitere Entwicklung würde sich hier die Integration eines verteilten Dateisystems oder des, in Abschnitt \ref{ssub:media_broker} erwähnten, MultiMonster-Medienservers anbieten.
 
-  \lstinputlisting[caption=\texttt{MediaStore}-Schnittstelle zur Persistierung von Medien,label=lst:media_store_interface,language=Java,firstline=12,lastline=66]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/storage/MediaStore.java}
+\lstinputlisting[caption=\texttt{MediaStore}-Schnittstelle zur Persistierung von Medien,label=lst:media_store_interface,language=Java,linerange={12-13,26-47}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/storage/MediaStore.java}
 
-  \lstinputlisting[caption=\texttt{SlideshowGenerator}-Klasse unter Verwendung von dem Medienobjekt,label=lst:slideshow_generator_with_media_object,language=Java,firstline=26,lastline=51,morekeywords={[3]AbstractMedia,getBroker,MediaData,IODescriptor}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SlideshowGeneratorWithMediaObject.java}
+  Die wesentlichen Methoden des \verb!MediaBroker!-Interface sind die beiden markierten Methoden \verb!store()! und \verb!retrieve()!. Die \verb!store()!-Methode nimmt dabei ein Medienobjekt entgegen, legt es in der Speicherlösung der jeweiligen \verb!MediaBroker!-Implementierung ab und übergibt die Referenz an die assoziierte \verb!MediaStore!-Instanz. Am Ende wird die Referenz im übergebenen Medienobjekt noch auf \verb!null! gesetzt. Die Realisierung dieser Methode in der \verb!MemcachedMediaBroker!-Implementierung ist in Listing \ref{lst:store_method_in_memcached_media_broker} zu sehen.
 
-  \begin{sidewaysfigure}[ht]
+  \lstinputlisting[caption=Implementierung der \texttt{store()}-Methode im  \texttt{MemcachedMediaBroker},label=lst:store_method_in_memcached_media_broker,language=Java,firstline=74,lastline=89]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MemcachedMediaBroker.java}
+  
+  Zur besseren Veranschaulichung, wie die Speicherung von Medienobjekt abläuft, dient das in Abbildung \ref{fig:speichern_von_medienobjekten} dargestellte Sequenzdiagramm.
+
+  \begin{figure}[!ht]
     \centering
       \includegraphics[width=\textwidth]{images/Handling_of_Media_Objects_write.pdf}
     \caption{Sequenzdiagramm über das Speichern von Medienobjekten}
-    \label{fig:images_Handling_of_Media_Objects}
-  \end{sidewaysfigure}
-
-  \begin{figure}[ht]
-    \centering
-      \includegraphics[width=.9\textwidth]{images/Handling_of_Media_Objects_read.pdf}
-    \caption{Sequenzdiagramm über das Lesen von Medienobjekten}
-    \label{fig:images_Handling_of_Media_Objects_read}
+    \label{fig:speichern_von_medienobjekten}
   \end{figure}
+  
+  Das Laden eines Medienobjekts wird durch die \verb!retrieve()!-Methode umgesetzt. Es wird ihr die URI zu einem Medienobjekt übergeben, anhand derer das entsprechende Objekt aus der implementierten Speicherlösung geholt wird. Um später über dieses Medienobjekt die eigentlichen Mediendaten über die die \verb!getPlayableData()!-Methode abrufen zu können, wird dem Medienobjekt noch die Referenz auf die \verb!MediaStore!-Instanz des Medienbrokers übergeben. Die Implementierung dieser Methode in der \verb!MemcachedMediaBroker!-Implementierung ist in Listing \ref{lst:retrieve_method_in_memcached_media_broker} zu sehen.
+
+  \lstinputlisting[caption=Implementierung der \texttt{retrieve()}-Methode im  \texttt{MemcachedMediaBroker},label=lst:retrieve_method_in_memcached_media_broker,language=Java,firstline=62,lastline=66]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MemcachedMediaBroker.java}
+
+  Das Sequenzdiagramm aus Abbildung \ref{fig:lesen_von_medienobjekten} verdeutlicht noch einmal die notwendigen Schritte, die beim lesen eines Medienobjekts notwendig sind.
+
+  \begin{figure}[!ht]
+    \centering
+      \includegraphics[width=\textwidth]{images/Handling_of_Media_Objects_read.pdf}
+    \caption{Sequenzdiagramm über das Lesen von Medienobjekten}
+    \label{fig:lesen_von_medienobjekten}
+  \end{figure}
+
+% subsubsection speichern_und_laden_von_medienobjekten (end)
+
+  Stellvertretend für die anderen medienverarbeitenden Komponenten der Santiago-Anwendung sind in Listing \ref{lst:music_o_mat_with_media_object} die notwenigen Änderungen zur Integration des Medienobjekts an der \verb!MusicOMat!-Klasse dargestellt.
+
+  \lstinputlisting[caption=\texttt{MusicOMat}-Klasse unter Verwendung von dem Medienobjekt,label=lst:music_o_mat_with_media_object,language=Java,firstline=25,lastline=41,morekeywords={[3]MediaComponent,getBroker,Media}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/MusicOMatWithMediaObject.java}
+  
+  Nachdem sowohl der explizite Kontrollfluss als auch der Datenfluss etabliert worden sind, bleibt als letzter Schritt nur noch die Umsetzung der einzelnen Komponenten als Dienste und ihre Verwendung in einer verteilten Umgebung. Dies wird im nächsten Abschnitt vorgestellt.
   
 % subsection explizite_umsetzung_des_datenfluss (end)
 
 \subsection{Extraktion der Komponenten als Dienste} % (fold)
 \label{sub:extraktion_der_komponenten_als_dienste}
 
-  Möglichkeit Komponenten auf unterschiedlichen Plattformen und physikalischen Umgebungen lauf zu lassen. Dazu Realisierung als Web Services. Eignet sich dadurch auch gut für die Verwendung von BPEL. Umsetzung muss aber nicht als Web Service erfolgen. Definition der Schnittstellenbeschreibung unabhängig von Web Service Technologie. Alternativ wäre auch eine Umsetzung über REST möglich~\citep{fielding00rest}, wobei REST-Architekturen nicht vollständig die  Eigenschaften von Diensten nach~\citep{service_oriented_computing} umsetzen können. Wichtig hier: Komponenten und Schnittstellen Definition sind agnostisch gegenüber der konkreten Technologie sie in verteilten Umgebungen bereitzustellen. 
+  Möglichkeit Komponenten auf unterschiedlichen Plattformen und physikalischen Umgebungen lauf zu lassen. Dazu Realisierung als Web Services. Eignet sich dadurch auch gut für die Verwendung von BPEL. Umsetzung muss aber nicht als Web Service erfolgen. Definition der Schnittstellenbeschreibung unabhängig von Web Service Technologie. Alternativ wäre auch eine Umsetzung über REST möglich~\citep{fielding00rest}, wobei REST-Architekturen nicht vollständig die  Eigenschaften von Diensten nach~\citep{service_oriented_computing} umsetzen können. Wichtig hier: Komponenten und Schnittstellen Definition sind agnostisch gegenüber der konkreten Technologie sie in verteilten Umgebungen bereitzustellen.
   
   Integration einer Datenbank um Dienste wieder finden zu können, daher \verb!ServiceRegistry!.
+  
+  Nachrichtensystem ist zwar vorhanden, wird zur Zeit jedoch nicht verwendet, da das gewählte Nachrichtensystem auf dem Publish-Subscribe-Verfahren aufsetzt und daher nur für asynchrone Kommunikation sinnvoll einsetzbar ist. Eine Kommunikation mit den einzelnen medienverarbeitenden Diensten von Seiten der Servicekomposition ist daher nicht sinnvoll. Selbst für die Fälle, in denen Dienste asynchron aufgerufen werden müssen, beispielsweise Streamingdienste, lässt sich das ebenso direkt in der Kompositionskomponente umsetzen. Das Nachrichtensystem ließe sich aber für die Übermittlung von Synchronisationsspezifikationen verwenden.
+  
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=.7\textwidth]{images/WorkflowEngine_Flowchart.pdf}
+  \caption{Abalaufdiagramm für die \texttt{RemoteWorkflowEngine}}
+  \label{fig:images_WorkflowEngine_Flowchart}
+\end{figure}
 
 % subsection extraktion_der_komponenten_als_dienste (end)
   
@@ -246,6 +283,8 @@
   - Auswirkungen auf die Architektur!
   - Workflow ohne externes Messaging System möglich!?
   
+  Die einzelnen Medienobjekte werden über Medienbroker vermittelt. Eigenes \verb!cosima://!-Protokoll für den Zugriff auf Medienbroker etablieren.
+    
   Keine adäquate Fehlerbehandlung.
   
   Verteilte Ausführung der Komposition setzt ebenfalls eine verteilte Hinterlegung des aktuell Fortschritts der Ausführung voraus.

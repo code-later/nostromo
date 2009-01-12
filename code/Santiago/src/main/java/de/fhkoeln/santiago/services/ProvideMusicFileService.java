@@ -13,8 +13,8 @@ package de.fhkoeln.santiago.services;
 
 import java.net.URI;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
 import de.fhkoeln.cosima.media.mediabroker.MemcachedMediaBroker;
 import de.fhkoeln.cosima.services.CoreService;
@@ -50,7 +50,7 @@ public class ProvideMusicFileService implements CoreService {
   public IODescriptor execute() {
     IODescriptor output = new IODescriptor();
     
-    AbstractMedia outputMedia = new MediaData();
+    MediaComponent outputMedia = new Media();
     outputMedia.setName("MetalMusicFile");
     outputMedia.setReferenceToRealData(input.first());
     

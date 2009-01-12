@@ -13,7 +13,7 @@ package de.fhkoeln.cosima.media.mediabroker.storage;
 
 import java.io.IOException;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
+import de.fhkoeln.cosima.media.MediaComponent;
 
 /**
  * This interface defines an abstracht way of reading and writing media objects
@@ -30,7 +30,7 @@ public interface MediaStore {
    * @return The key to find the persisted data again.
    * @throws IOException If there was an error while writing the media to the persistance layer.
    */
-  public String write(AbstractMedia data) throws IOException;
+  public String write(MediaComponent data) throws IOException;
   
   /**
    * @param key The key to find the persisted data.

@@ -24,9 +24,9 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
+import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.MediaContainer;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.cosima.media.Metadata;
 
 
@@ -42,13 +42,13 @@ import de.fhkoeln.cosima.media.Metadata;
  */
 public class MediaContainerTest {
   
-  private AbstractMedia data;
-  private AbstractMedia subContainer;
+  private MediaComponent data;
+  private MediaComponent subContainer;
   private List<Metadata> metadataList;
   
   @Before
   public void setup() {
-    this.data = mock(MediaData.class);
+    this.data = mock(Media.class);
     this.subContainer = mock(MediaContainer.class);
     this.metadataList = mock(List.class);
 
@@ -78,7 +78,7 @@ public class MediaContainerTest {
   @Test
   public void testShouldGetMediaObjectsFromContainerByName() {
     MediaContainer container = new MediaContainer(metadataList);
-    AbstractMedia data = new MediaData();
+    MediaComponent data = new Media();
     data.setName("Foo Media");
     container.addMedia(data);
     

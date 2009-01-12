@@ -13,8 +13,8 @@ package de.fhkoeln.santiago.services;
 
 import java.net.URI;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
 import de.fhkoeln.cosima.services.CoreService;
 import de.fhkoeln.cosima.services.IODescriptor;
@@ -50,14 +50,14 @@ public class AddMusicToMovieService implements CoreService {
   public IODescriptor execute() {
     IODescriptor output = new IODescriptor();
     
-    AbstractMedia outputMedia = new MediaData();
+    MediaComponent outputMedia = new Media();
     outputMedia.setName("MovieWithMusic");
     
     Logger.info("--- Movie File @ " + this.input.getDescriptorElements()[0]);
     Logger.info("--- Audio File @ " + this.input.getDescriptorElements()[1]);
     
-    AbstractMedia movieFile = getBroker().retrieve(this.input.getDescriptorElements()[0]);
-    AbstractMedia audioFile = getBroker().retrieve(this.input.getDescriptorElements()[1]);
+    MediaComponent movieFile = getBroker().retrieve(this.input.getDescriptorElements()[0]);
+    MediaComponent audioFile = getBroker().retrieve(this.input.getDescriptorElements()[1]);
     
     Logger.info("--- MediaObject for Movie File: " + movieFile.getPlayableData());
     Logger.info("--- MediaObject for Audio File: " + audioFile.getPlayableData());

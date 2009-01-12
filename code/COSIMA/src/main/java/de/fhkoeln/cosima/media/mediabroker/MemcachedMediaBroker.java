@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.URI;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
+import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.mediabroker.storage.MediaStore;
 
 import net.spy.memcached.MemcachedClient;
@@ -59,8 +59,8 @@ public class MemcachedMediaBroker implements MediaBroker {
   /* (non-Javadoc)
    * @see de.fhkoeln.cosima.media.MediaBroker#retrieve(java.lang.String)
    */
-  public AbstractMedia retrieve(String mediaUri) {
-    AbstractMedia storedMedia = (AbstractMedia) client.get(mediaUri);
+  public MediaComponent retrieve(String mediaUri) {
+    MediaComponent storedMedia = (MediaComponent) client.get(mediaUri);
     storedMedia.setStore(mediaStore);
     return storedMedia;
   }
@@ -71,7 +71,7 @@ public class MemcachedMediaBroker implements MediaBroker {
    * de.fhkoeln.cosima.media.MediaBroker#store(de.fhkoeln.cosima
    * .media.AbstractMedia)
    */
-  public URI store(AbstractMedia media) {
+  public URI store(MediaComponent media) {
     URI realUri = URI.create(BROKER_URI + media.getUri());
 
     try {

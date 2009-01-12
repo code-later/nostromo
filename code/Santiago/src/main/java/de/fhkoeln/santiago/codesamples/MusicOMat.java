@@ -13,16 +13,16 @@ package de.fhkoeln.santiago.codesamples;
 
 import static org.mockito.Mockito.*;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.santiago.components.ffmpeg.FFMpegMerger;
 
 public class MusicOMat extends AbstractComponent {
 
   public static String addMusicTrackToSlideshow(String audioPath, String videoPath) {
-    AbstractMedia video    = mock(MediaData.class);
-    AbstractMedia audio    = mock(MediaData.class);
-    AbstractMedia outMedia = new MediaData();
+    MediaComponent video    = mock(Media.class);
+    MediaComponent audio    = mock(Media.class);
+    MediaComponent outMedia = new Media();
     
     when(video.getPlayableData()).thenReturn(videoPath);    
     when(audio.getPlayableData()).thenReturn(audioPath);    

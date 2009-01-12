@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
+import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 
 
@@ -35,13 +35,13 @@ import de.fhkoeln.santiago.components.jmf.MediaAction;
  */
 public class FFMpegMerger implements MediaAction {
 
-  private final AbstractMedia outputMedia;
-  private final AbstractMedia mediaOne;
-  private final AbstractMedia mediaTwo;
+  private final MediaComponent outputMedia;
+  private final MediaComponent mediaOne;
+  private final MediaComponent mediaTwo;
   
   private Process ffmpeg;
 
-  public FFMpegMerger(AbstractMedia mediaOne, AbstractMedia mediaTwo, AbstractMedia outputMedia) {
+  public FFMpegMerger(MediaComponent mediaOne, MediaComponent mediaTwo, MediaComponent outputMedia) {
     this.mediaOne = mediaOne;
     this.mediaTwo = mediaTwo;
     this.outputMedia = outputMedia;

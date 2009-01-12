@@ -11,16 +11,15 @@
  */
 package de.fhkoeln.cosima.media;
 
-
-/**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
- *
- * @author dbreuer
- * @version 1.0  Nov 16, 2008
- *
- */
 public interface Metadata {
+  
+  public String getNamespace();
+  public void setNamespace(String namespace);
+  
+  public String getKey();
+  public void setKey(String key);
+  
+  public String getValue();
+  public void setValue(String value);
 
 }

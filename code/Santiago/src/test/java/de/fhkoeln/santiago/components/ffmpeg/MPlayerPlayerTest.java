@@ -18,8 +18,8 @@ import java.io.File;
 
 import org.junit.Test;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.santiago.components.ffmpeg.MPlayerPlayer;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 
@@ -38,7 +38,7 @@ public class MPlayerPlayerTest {
 
   @Test
   public void testShouldPlayVideoViaMPlayer() {
-    AbstractMedia video = spy(new MediaData());
+    MediaComponent video = spy(new Media());
     video.setName("2nd_movie.mov");
     
     doReturn(new File("/Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov")).when(video).getPlayableData();

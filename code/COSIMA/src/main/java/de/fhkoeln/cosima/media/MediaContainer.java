@@ -24,15 +24,15 @@ import java.util.Set;
  * @version 1.0  Nov 16, 2008
  *
  */
-public class MediaContainer extends AbstractMedia {
+public class MediaContainer extends MediaComponent {
 
   private static final long serialVersionUID = -2032949448649491908L;
 
-  private Map<String, AbstractMedia> mediaElements;
+  private Map<String, MediaComponent> mediaElements;
 
   public MediaContainer() {
     super();
-    setMediaElements(new HashMap<String, AbstractMedia>());
+    setMediaElements(new HashMap<String, MediaComponent>());
   }
   
   /**
@@ -42,7 +42,7 @@ public class MediaContainer extends AbstractMedia {
    */
   public MediaContainer(List<Metadata> metadatas) {
     super(metadatas);
-    setMediaElements(new HashMap<String, AbstractMedia>());
+    setMediaElements(new HashMap<String, MediaComponent>());
   }
 
   /**
@@ -57,7 +57,7 @@ public class MediaContainer extends AbstractMedia {
    *          The Media Object which should be added to the collection
    *          of containing elements.
    */
-  public void addMedia(AbstractMedia media) {
+  public void addMedia(MediaComponent media) {
     this.getMediaElements().put(media.getName(), media);
   }
 
@@ -67,7 +67,7 @@ public class MediaContainer extends AbstractMedia {
    *          from the Collection of containing elements.
    * @return The Media Object with the given name
    */
-  public AbstractMedia getMedia(String name) {
+  public MediaComponent getMedia(String name) {
     return getMediaElements().get(name);
   }
 
@@ -78,16 +78,16 @@ public class MediaContainer extends AbstractMedia {
     return getMediaElements().keySet();
   }
 
-  private void setMediaElements(Map<String, AbstractMedia> mediaElements) {
+  private void setMediaElements(Map<String, MediaComponent> mediaElements) {
     this.mediaElements = mediaElements;
   }
 
-  private Map<String, AbstractMedia> getMediaElements() {
+  private Map<String, MediaComponent> getMediaElements() {
     return mediaElements;
   }
 
   /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.media.AbstractMedia#getPlayableData()
+   * @see de.fhkoeln.cosima.media.MediaComponent#getPlayableData()
    */
   @Override
   public Object getPlayableData() {

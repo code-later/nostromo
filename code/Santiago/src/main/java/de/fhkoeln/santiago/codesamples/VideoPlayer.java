@@ -2,14 +2,14 @@ package de.fhkoeln.santiago.codesamples;
 
 import static org.mockito.Mockito.*;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.santiago.components.ffmpeg.MPlayerPlayer;
 
 public class VideoPlayer extends AbstractComponent {
 
   public static void playMovieFile(String pathToVideo) {
-    AbstractMedia video    = mock(MediaData.class);
+    MediaComponent video    = mock(Media.class);
     when(video.getPlayableData()).thenReturn(pathToVideo);
     
     MPlayerPlayer player = new MPlayerPlayer(video);

@@ -19,8 +19,8 @@ import java.io.File;
 
 import org.junit.Test;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.santiago.components.ffmpeg.FFMpegMerger;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 
@@ -39,15 +39,15 @@ public class FFMpegMergerTest {
 
   @Test
   public void testShouldMergeAudioAndVideo() {
-    AbstractMedia audio = spy(new MediaData());
+    MediaComponent audio = spy(new Media());
     audio.setName("L70ECT.mp3");
     doReturn(new File("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/L70ETC.mp3")).when(audio).getPlayableData();
     
-    AbstractMedia video = spy(new MediaData());
+    MediaComponent video = spy(new Media());
     video.setName("2nd_movie.mov");
     doReturn(new File("file:///Users/dbreuer/Documents/Work/_FH/_Master/master_thesis/code/santiago-project/res/2nd_movie.mov")).when(video).getPlayableData();
     
-    AbstractMedia output = spy(new MediaData());
+    MediaComponent output = spy(new Media());
     output.setName("Merged_movie.mov");
     
     MediaAction merger = new FFMpegMerger(audio, video, output);

@@ -14,8 +14,8 @@ package de.fhkoeln.santiago.codesamples;
 import java.io.FileNotFoundException;
 import java.net.URI;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.Media;
 import de.fhkoeln.cosima.services.IODescriptor;
 import de.fhkoeln.cosima.util.Logger;
 import de.fhkoeln.santiago.components.jmf.JMFImages2Movie;
@@ -31,7 +31,7 @@ public class SlideshowGeneratorWithMediaObject extends AbstractComponent {
       
       output = new IODescriptor();
       
-      AbstractMedia outputMedia = new MediaData();
+      MediaComponent outputMedia = new Media();
       outputMedia.setName("Slidehow");
       
       mediaAction = new JMFImages2Movie(getInput().first(), tempOutputFileName);

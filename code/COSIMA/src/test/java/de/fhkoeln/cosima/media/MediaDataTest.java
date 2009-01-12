@@ -19,8 +19,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
-import de.fhkoeln.cosima.media.MediaData;
+import de.fhkoeln.cosima.media.MediaComponent;
+import de.fhkoeln.cosima.media.Media;
 
 
 /**
@@ -36,11 +36,11 @@ public class MediaDataTest {
 
   @Test
   public void testShouldBeAbleToCheckOnEquality() {
-    AbstractMedia media1 = new MediaData();
+    MediaComponent media1 = new Media();
     media1.setName("Foo");
     media1.setNamespace("Test::Media");
 
-    AbstractMedia media2 = new MediaData();
+    MediaComponent media2 = new Media();
     media2.setName("Foo");
     media2.setNamespace("Test::Media");
 

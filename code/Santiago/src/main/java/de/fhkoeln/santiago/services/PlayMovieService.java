@@ -11,7 +11,7 @@
  */
 package de.fhkoeln.santiago.services;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
+import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
 import de.fhkoeln.cosima.services.CoreService;
 import de.fhkoeln.cosima.services.IODescriptor;
@@ -48,7 +48,7 @@ public class PlayMovieService implements CoreService {
   public IODescriptor execute() {
     IODescriptor output = new IODescriptor();
     
-    AbstractMedia videoFile = getBroker().retrieve(input.first()); 
+    MediaComponent videoFile = getBroker().retrieve(input.first()); 
     
     MediaAction player = new MPlayerPlayer(videoFile);
     player.performAction();

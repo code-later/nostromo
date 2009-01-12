@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
+import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 
 
@@ -33,11 +33,11 @@ import de.fhkoeln.santiago.components.jmf.MediaAction;
  */
 public class MPlayerPlayer implements MediaAction {
 
-  private final AbstractMedia video;
+  private final MediaComponent video;
   
   private Process mplayer;
 
-  public MPlayerPlayer(AbstractMedia video) {
+  public MPlayerPlayer(MediaComponent video) {
     this.video = video;
   }
 

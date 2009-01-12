@@ -1,5 +1,5 @@
 /*
- * AbstractMedia.java
+ * MediaComponent.java
  *
  * Version 1.0  Nov 16, 2008
  *
@@ -28,7 +28,7 @@ import de.fhkoeln.cosima.media.mediabroker.storage.MediaStore;
  * @version 1.0  Nov 16, 2008
  *
  */
-public abstract class AbstractMedia implements Serializable {
+public abstract class MediaComponent implements Serializable {
   
   private static final long serialVersionUID = -5578809582939403020L;
 
@@ -38,7 +38,7 @@ public abstract class AbstractMedia implements Serializable {
   private String name;
   private String namespace;
   
-  public AbstractMedia() {
+  public MediaComponent() {
     metadatas = new ArrayList<Metadata>();
   }
   
@@ -47,7 +47,7 @@ public abstract class AbstractMedia implements Serializable {
    * 
    * @param metadata The Metadata object to set.
    */
-  public AbstractMedia(List<Metadata> metadatas) {
+  public MediaComponent(List<Metadata> metadatas) {
     this.metadatas = metadatas;
   }
   
@@ -121,15 +121,15 @@ public abstract class AbstractMedia implements Serializable {
     throw new UnsupportedOperationException();
   }
   
-  public AbstractMedia getChild(int atIndex) throws UnsupportedOperationException {
+  public MediaComponent getChild(int atIndex) throws UnsupportedOperationException {
     throw new UnsupportedOperationException();
   }
   
-  public void removeMedia(AbstractMedia media) throws UnsupportedOperationException {
+  public void removeMedia(MediaComponent media) throws UnsupportedOperationException {
     throw new UnsupportedOperationException();
   }
   
-  public void addMedia(AbstractMedia media) throws UnsupportedOperationException {
+  public void addMedia(MediaComponent media) throws UnsupportedOperationException {
     throw new UnsupportedOperationException();
   }
   

@@ -22,7 +22,7 @@ import java.net.URI;
 
 import org.junit.Test;
 
-import de.fhkoeln.cosima.media.AbstractMedia;
+import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.mediabroker.storage.FileSystemStore;
 import de.fhkoeln.cosima.media.mediabroker.storage.MediaStore;
 
@@ -46,7 +46,7 @@ public class FileSystemStoreTest {
     MediaStore fsStore = new FileSystemStore();
     fsStore.setStoreLocation("/tmp");
 
-    AbstractMedia media = mock(AbstractMedia.class);
+    MediaComponent media = mock(MediaComponent.class);
     System.out.println("--- current path: " + new File("res").getAbsolutePath());
     when(media.getReferenceToRealData()).thenReturn(URI.create("file:///tmp/1297336464"));
     
