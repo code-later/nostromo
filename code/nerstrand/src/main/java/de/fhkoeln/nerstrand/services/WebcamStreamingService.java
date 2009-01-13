@@ -11,13 +11,8 @@
  */
 package de.fhkoeln.nerstrand.services;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.File;
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
 
 import de.fhkoeln.cosima.components.AbstractComponent;
 import de.fhkoeln.cosima.media.Media;
@@ -25,13 +20,15 @@ import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
 import de.fhkoeln.cosima.services.IODescriptor;
 import de.fhkoeln.cosima.services.registry.ServiceRegistry;
+import de.fhkoeln.nerstrand.operations.MediaOperation;
+import de.fhkoeln.nerstrand.operations.VLCStreamingOperation;
 
 public class WebcamStreamingService extends AbstractComponent {
 
   private static final String URI         = "http://localhost:8080/axis2/services/WebcamStreamingService";
   private static final String DESCRIPTION = "Producer:WebcamStreamingService";
 
-  public WebcamStreamingService(ServiceRegistry registry, String uri, String description) {
+  public WebcamStreamingService(ServiceRegistry registry) {
     super(registry, URI, DESCRIPTION);
   }
 
@@ -43,42 +40,18 @@ public class WebcamStreamingService extends AbstractComponent {
   protected IODescriptor _execute() {
     
     IODescriptor output = new IODescriptor();
-    
-    // Building the VLC command
-    String targetHost = "192.168.178.195";
-    String targetPort = "1234";
-
-    List<String> command = new ArrayList<String>();
-    command.add("vlc");
-    command.add("qtcapture://");
-    command.add("--sout='#transcode{vcodec=mp4v,acodec=mpga,vb=800,ab=128,deinterlace}:standard{access=http,dst=" + targetHost + ",port=" + targetPort + "}'");
 
     MediaComponent stream = new Media();
     stream.setName("Webcam Stream");
     stream.setNamespace("Nerstrand::StreamingService");
     
-    try {
-      ProcessBuilder pBuilder = new ProcessBuilder(command);
-      Process mplayer = pBuilder.start();
-
-      // Output
-      InputStream is = mplayer.getErrorStream();
-      InputStreamReader isr = new InputStreamReader(is);
-      BufferedReader br = new BufferedReader(isr);
-      String line;
-
-      System.out.printf("Output of running %s is:\n\n", command.get(0)); 
-
-      while ((line = br.readLine()) != null)
-        System.out.println(line);
-        
-      mplayer.waitFor();
-      System.out.printf("\nCommand %s exited with status: %d\n\n", command.get(0), mplayer.exitValue());
-    } catch (IOException e) {
-      e.printStackTrace();
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
+    MediaOperation streamingOp = new VLCStreamingOperation(getInput().first(), stream);
+//    streamingOp.perform();
+    thread(streamingOp, false);
+    
+    boolean wait = true;
+    while(wait)
+      wait = new File(stream.getReferenceToRealData().toString()).exists() ? true : false;
     
     URI mediaUri = getBroker().store(stream);
     output.add(mediaUri.toString());
@@ -108,6 +81,13 @@ public class WebcamStreamingService extends AbstractComponent {
 
   public String getUri() {
     return super.getUri();
+  }
+  
+  private static Thread thread(Runnable runnable, boolean daemonize) {
+    Thread brokerThread = new Thread(runnable);
+    brokerThread.setDaemon(daemonize);
+    brokerThread.start();
+    return brokerThread;
   }
 
 }

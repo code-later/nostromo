@@ -1,0 +1,26 @@
+---
+type: "producer"
+description: "Producer:WebcamStreamingService"
+uri: "http://localhost:8080/axis2/services/WebcamStreamingService"
+namespace: "http://services.nerstrand.fhkoeln.de"
+input:
+  - type: "external"
+    uri: "qtcapture://"
+output:
+  - uri: "http://localhost:8080/axis2/services/WebcamStreamingService/output"
+predecessors: null
+successors:
+  - uri: "http://localhost:8080/axis2/services/StreamingPlayerService"
+
+---
+type: "consumer"
+description: "Consumer:StreamingPlayerService"
+uri: "http://localhost:8080/axis2/services/StreamingPlayerService"
+namespace: "http://services.nerstrand.fhkoeln.de"
+input:
+  - type: "internal"
+    uri: "http://localhost:8080/axis2/services/WebcamStreamingService/output"
+output: null
+predecessors:
+  - uri: "http://localhost:8080/axis2/services/WebcamStreamingService"
+successors: null

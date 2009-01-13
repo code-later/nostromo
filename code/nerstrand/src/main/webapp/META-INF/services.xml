@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceGroup>
+
+  <service name="SpringInit" class="de.fhkoeln.nerstrand.util.SpringInit">
+    <description>
+      This web service initializes Spring.
+    </description>
+    <parameter name="ServiceClass">de.fhkoeln.nerstrand.util.SpringInit
+    </parameter>
+    <parameter name="ServiceTCCL">composite</parameter>
+    <parameter name="load-on-startup">true</parameter>
+    <operation name="springInit">
+      <messageReceiver
+        class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver" />
+    </operation>
+  </service>
+  
+  <service name="WebcamStreamingService" scope="application">
+    <description>
+      Create a Movie from a bunch of images using JMF.
+    </description>
+    <messageReceivers>
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+        class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+        class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </messageReceivers>
+    <parameter name="ServiceClass">
+      de.fhkoeln.nerstrand.services.WebcamStreamingService
+    </parameter>
+    <parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier</parameter>
+    <parameter name="SpringBeanName">webcamStreamingService</parameter>
+  </service>
+  
+  <service name="StreamingPlayerService" scope="application">
+    <description>
+      Plays a stream via QuickTime.app.
+  </description>
+    <messageReceivers>
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+        class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+      <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+        class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </messageReceivers>
+    <parameter name="ServiceClass">
+      de.fhkoeln.nerstrand.services.StreamingPlayerService
+    </parameter>
+    <parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier</parameter>
+    <parameter name="SpringBeanName">streamingPlayerService</parameter>
+  </service>
+  
+</serviceGroup>
