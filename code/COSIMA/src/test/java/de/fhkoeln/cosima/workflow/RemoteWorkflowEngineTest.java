@@ -11,15 +11,11 @@
  */
 package de.fhkoeln.cosima.workflow;
 
-import static org.junit.Assert.*;
-
 import java.io.IOException;
 
 import org.junit.Test;
 
 import de.fhkoeln.cosima.services.registry.MemcachedServiceRegistry;
-import de.fhkoeln.cosima.workflow.RemoteWorkflowEngine;
-import de.fhkoeln.cosima.workflow.YamlWorkflowDefinition;
 import de.fhkoeln.cosima.workflow.storage.MapProcessStoreImpl;
 
 

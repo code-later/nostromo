@@ -13,13 +13,10 @@ package de.fhkoeln.cosima.services.registry;
 
 import de.fhkoeln.cosima.services.CoreService;
 
-
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * The service registry interface for accessing and publishing {@link CoreService} instances.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Nov 30, 2008
  *
  */

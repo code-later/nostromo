@@ -1,0 +1,7 @@
+.project
+.classpath
+.settings
+target
+src/main/webapp/WEB-INF/lib/*
+src/main/webapp/WEB-INF/modules/*
+src/main/webapp/WEB-INF/services/*.aar

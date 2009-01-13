@@ -20,16 +20,6 @@ import de.fhkoeln.cosima.util.Logger;
 import de.fhkoeln.santiago.components.ffmpeg.MPlayerPlayer;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 
-
-/**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
- *
- * @author dbreuer
- * @version 1.0  Sep 25, 2008
- *
- */
 public class VideoPlayerService implements CoreService {
   
   private final String URI         = "http://localhost:8080/axis2/services/VideoPlayerService";

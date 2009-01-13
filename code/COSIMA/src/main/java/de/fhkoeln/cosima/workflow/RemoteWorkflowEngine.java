@@ -38,7 +38,7 @@ import de.fhkoeln.cosima.workflow.storage.ProcessStore;
  * values of a component, so it can be assinged later to another
  * component.
  * 
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0 Sep 25, 2008
  */
 public class RemoteWorkflowEngine extends WorkflowEngine {
@@ -53,7 +53,7 @@ public class RemoteWorkflowEngine extends WorkflowEngine {
   private ServiceRegistry registry;
 
   /**
-   * This is the main method of every runner. After successful
+   * This is the main method of every enigne. After successful
    * initialization of the runner instance the run methods starts the
    * process. Every element will be invoked as described in the
    * definition object. While working through the definition elements

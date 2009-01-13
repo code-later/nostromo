@@ -24,15 +24,6 @@ import de.fhkoeln.cosima.util.Logger;
 import de.fhkoeln.santiago.components.jmf.JMFImages2Movie;
 import de.fhkoeln.santiago.components.jmf.MediaAction;
 
-/**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
- *
- * @author dbreuer
- * @version 1.0  Sep 19, 2008
- *
- */
 public class SlideshowGeneratorService extends AbstractComponent {
 
   // TODO: Should be externalized into config file!

@@ -23,16 +23,6 @@
   
   Im ersten Abschnitt dieses Kapitel wird daher zunächst detailliert auf die Umsetzung der Architektur eingegangen. Im Anschluss daran findet sich eine Erläuterung zur Implementierung des Szenario. Die Validierung und deren Ergebnisse werden dann im Anschluss in Kapitel \ref{cha:validierung_der_architektur} dargelegt.
 
-% - Vorgehen bei der Realisierung erläutern
-% - Kurz (!!) auf das Santiago Projekt eingehen (da es im allerersten Schritt dazu gedient hat, eine erste funktionierende Grundlage der Architektur zu schaffen)
-% - Wichtige Punkte herausarbeiten
-% - Auf Implementierungsdetails nur an grundlegenden Stellen eingehen
-% - Schwierigkeiten und vor allem deren Problemlösungen darstellen
-% - Auswirkungen dieser Probleme/Lösungen für die Architektur
-% - Fokus vor allem im Text auf das Vorgehen und Wendepunkte
-% - Hauptteil der Quellcode
-% - Funktionierenden Code mit Build Tool und Dokumentation ausliefern (!!)
-
 \section{Realisierung der Architektur} % (fold)
 \label{sec:realisierung_der_architektur}
 
@@ -53,14 +43,6 @@
   
   Trotz ihrer offensichtlichen Einfachheit konnte iterativ um diese Anwendung eine Architektur entwickelt werden, die alle notwendigen Charakteristika von COSIMA aufweist. Wie diese Entwicklung in den einzelnen Schritten im Detail aussah, beschreiben die folgenden Abschnitte.
 
-  % TODO: Klären ob diese Punkte noch eingearbeitet werden müssen.
-  % 
-  % Beschreibung der Workflow Komponente. Vor allem Begründung warum selber gebaut -> Handelt es sich um Geschäftsprozesse? Dafür Prozess und Workflow definieren und auch auf Samma's Arbeit verweisen. Möglichkeiten zur Verwendung von BPEL aufzeigen.
-  % 
-  % Während der iterativen Entwicklung dieser Anwendung wurde sie sukzessive um die einzelnen Elemente und deren Funktionalitäten der COSIMA-Architektur ergänzt.
-  % 
-  % ZUR SERVICEKOMPOSITION: Aus den in~\ref{sub:service_komposition} genannten Gründen kann auch bei der prototypische Realisierung auf die Verwendung einer existierenden Prozessbeschreibungssprache verzichtet werden.
-  
 \subsection{Erste Schritte} % (fold)
 \label{sub:erste_schritte}
 
@@ -219,7 +201,7 @@
 
 Die Persistierung der eigentlichen Daten übernimmt die \verb!MediaStore!-Komponente, deren Schnittstelle in Listing \ref{lst:media_store_interface} zu sehen ist. Die Implementierung innerhalb dieser Arbeit speichert die Mediendaten lediglich auf dem Dateisystem\footnote{Für den Einsatz in einer verteilten Umgebung lässt sich einfach ein NFS-Mount verwenden.}. Für eine weitere Entwicklung würde sich hier die Integration eines verteilten Dateisystems oder des, in Abschnitt \ref{ssub:media_broker} erwähnten, MultiMonster-Medienservers anbieten.
 
-\lstinputlisting[caption=\texttt{MediaStore}-Schnittstelle zur Persistierung von Medien,label=lst:media_store_interface,language=Java,linerange={12-13,26-47}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/storage/MediaStore.java}
+\lstinputlisting[caption=Die \texttt{MediaStore}-Schnittstelle zur Persistierung von Medien,label=lst:media_store_interface,language=Java,linerange={12-13,26-47}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/storage/MediaStore.java}
 
   Die wesentlichen Methoden des \verb!MediaBroker!-Interface sind die beiden markierten Methoden \verb!store()! und \verb!retrieve()!. Die \verb!store()!-Methode nimmt dabei ein Medienobjekt entgegen, legt es in der Speicherlösung der jeweiligen \verb!MediaBroker!-Implementierung ab und übergibt die Referenz an die assoziierte \verb!MediaStore!-Instanz. Am Ende wird die Referenz im übergebenen Medienobjekt noch auf \verb!null! gesetzt. Die Realisierung dieser Methode in der \verb!MemcachedMediaBroker!-Implementierung ist in Listing \ref{lst:store_method_in_memcached_media_broker} zu sehen.
 
@@ -251,7 +233,7 @@ Die Persistierung der eigentlichen Daten übernimmt die \verb!MediaStore!-Kompon
 
   Stellvertretend für die anderen medienverarbeitenden Komponenten der Santiago-Anwendung sind in Listing \ref{lst:music_o_mat_with_media_object} die notwenigen Änderungen zur Integration des Medienobjekts an der \verb!MusicOMat!-Klasse dargestellt.
 
-  \lstinputlisting[caption=\texttt{MusicOMat}-Klasse unter Verwendung von dem Medienobjekt,label=lst:music_o_mat_with_media_object,language=Java,firstline=26,lastline=42,morekeywords={[3]MediaComponent,getBroker,Media}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/MusicOMatWithMediaObject.java}
+  \lstinputlisting[caption=Die \texttt{MusicOMat}-Klasse unter Verwendung von dem Medienobjekt,label=lst:music_o_mat_with_media_object,language=Java,firstline=26,lastline=42,morekeywords={[3]MediaComponent,getBroker,Media}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/MusicOMatWithMediaObject.java}
   
   Nachdem sowohl der explizite Kontrollfluss als auch der Datenfluss etabliert worden sind, bleibt als letzter Schritt nur noch die Umsetzung der einzelnen Komponenten als Dienste und ihre Verwendung in einer verteilten Umgebung. Dies wird im nächsten Abschnitt vorgestellt.
   
@@ -260,18 +242,73 @@ Die Persistierung der eigentlichen Daten übernimmt die \verb!MediaStore!-Kompon
 \subsection{Extraktion der Komponenten als Dienste} % (fold)
 \label{sub:extraktion_der_komponenten_als_dienste}
 
-  Möglichkeit Komponenten auf unterschiedlichen Plattformen und physikalischen Umgebungen lauf zu lassen. Dazu Realisierung als Web Services. Eignet sich dadurch auch gut für die Verwendung von BPEL. Umsetzung muss aber nicht als Web Service erfolgen. Definition der Schnittstellenbeschreibung unabhängig von Web Service Technologie. Alternativ wäre auch eine Umsetzung über REST möglich~\citep{fielding00rest}, wobei REST-Architekturen nicht vollständig die  Eigenschaften von Diensten nach~\citep{service_oriented_computing} umsetzen können. Wichtig hier: Komponenten und Schnittstellen Definition sind agnostisch gegenüber der konkreten Technologie sie in verteilten Umgebungen bereitzustellen.
+  Der letzte Schritt in der Umsetzung der Architektur war, Komponenten dazu ermöglichen, dass sie auf unterschiedlichen Plattformen zum Einsatz kommen können. Im Rahmen dieser Arbeit wurde dieses Ziel durch die Realisierung der Komponenten als Web Services unter Verwendung von SOAP\abk{SOAP}{Simple Object Access Protocol} als Übertragungsprotokoll erreicht. Für die konkrete Implementierung der Web Service Kommunikation und SOAP wurde auf die \emph{Axis2 Web Service Engine}\footnote{\url{http://ws.apache.org/axis2/}} der Apache Group zurück gegriffen. Axis2 ist eine sehr mächtige Engine zum Betrieb von Web Services und wird in vielen Projekten eingesetzt. Da die Einbindung von Axis2 aber sehr transparent geschehen ist, kann leicht eine andere Lösung verwendet werden, wie etwa JAX-WS\footnote{\url{https://jax-ws.dev.java.net/}} oder Apache CXF\footnote{\url{http://cxf.apache.org/}}. Eine andere Alternative, die zur Auswahl stand war die Umsetzung einer REST\abk{REST}{Representational State Transfer}-Architektur. Da in einer REST-Architektur aber bestimmte Konventionen gelten\footnote{Wie etwa die Übertragung der HTTP\abk{HTTP}{Hypertext Transfer Protocol}-Verben (\lstinline[basicstyle=\ttfamily\footnotesize]{post}, \lstinline[basicstyle=\ttfamily\footnotesize]{get}, \lstinline[basicstyle=\ttfamily\footnotesize]{put}, \lstinline[basicstyle=\ttfamily\footnotesize]{delete}) auf die entsprechenden CRUD\abk{CRUD}{Create, Read, Update, Delete}-Operationen.} was nach~\citep{service_oriented_computing} jedoch nicht eine Eigenschaft eines Dienstes sein sollte, weil sie eine lose Kopplung erschwert, wurde sich gegen diese Alternative entschieden.
   
-  Integration einer Datenbank um Dienste wieder finden zu können, daher \verb!ServiceRegistry!.
+\subsubsection{Definition einer Dienstschnittstelle} % (fold)
+\label{ssub:definition_einer_dienstschnittstelle}
+
+  Der erste Schritt bei der Umsetzung der Komponenten als Dienste war die Etablierung einer Schnittstelle, die die wesentlichen Methoden eines Dienstes definiert. Bei genauerer Betrachtung lässt sich schnell feststellen, dass nur die Methoden \verb!execute()! und \verb!setInput()! der \verb!AbstractComponent!-Klasse auch für die Veröffentlichung als Dienst von Relevanz sind. Die so entstandene \verb!CoreService!-Schnittstelle ist in Listing \ref{lst:core_service_interface} dargestellt.
+
+  \lstinputlisting[caption=Das \texttt{CoreService}-Interface von COSIMA,label=lst:core_service_interface,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/services/CoreService.java}
+
+% subsubsection definition_einer_dienstschnittstelle (end)
   
-  Nachrichtensystem ist zwar vorhanden, wird zur Zeit jedoch nicht verwendet, da das gewählte Nachrichtensystem auf dem Publish-Subscribe-Verfahren aufsetzt und daher nur für asynchrone Kommunikation sinnvoll einsetzbar ist. Eine Kommunikation mit den einzelnen medienverarbeitenden Diensten von Seiten der Servicekomposition ist daher nicht sinnvoll. Selbst für die Fälle, in denen Dienste asynchron aufgerufen werden müssen, beispielsweise Streamingdienste, lässt sich das ebenso direkt in der Kompositionskomponente umsetzen. Das Nachrichtensystem ließe sich aber für die Übermittlung von Synchronisationsspezifikationen verwenden.
+\subsubsection{Umsetzung der Service Registry} % (fold)
+\label{ssub:umsetzung_der_service_registry}
+
+  Nachdem die einzelnen Komponenten über eine Schnittstelle verfügten, die sie als Dienste identifiziert, war der nächste Schritt, die Umsetzung der in Abschnitt \ref{ssub:definitionen_dienst} definierten Eigenschaft nach \emph{location transparency}~\citep{service_oriented_computing}. Der Ort eines Dienstes soll demnach an einer zentralen Stelle hinterlegt werden. Im Prototypen wird diese Funktionalität durch die eine Implementierung der \verb!ServiceRegistry!-Schnittstelle aus Listing \ref{lst:service_registry_interface} bereitgestellt. Alternativ dazu hätte auch auf die bereits erwähnten Technologien UDDI oder ebXML zurückgegriffen werden können. Wie bereits in Bezug auf den Verzicht von BPEL ist auch hier anzuführen, dass eine Verwendung von UDDI oder ebXML nicht zielführend gewesen wäre. Nichtfunktionale Aspekte wie QoS hätten in diesem Zusammenhang betrachtet werden müssen und daher wurde für den Prototypen eine \verb!ServiceRegistry!-Implementierung auf \verb!memcached!-Basis gewählt, ähnlich der des Medienbrokers. Dadurch ist die Service Registry selbst nicht als echter Dienst wie bei~\citep{service_oriented_computing} gefordert implementiert, eignet sich aber dennoch für den Einsatz in einer verteilten Umgebung. Die Verwendung von JNDI\abk{JNDI}{Java Naming and Directory Interface} war darüber hinaus keine Option, da es an die Java Plattform gebunden ist, was jedoch mit den Forderungen nach Plattformunabhängigkeit~\citep{service_oriented_computing} im Konflikt steht.
+
+  \lstinputlisting[caption=Das \texttt{ServiceRegistry}-Interface von COSIMA,label=lst:service_registry_interface,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/services/registry/ServiceRegistry.java}
+
+  Durch die Einführung einer Service Registry ist es auch nicht länger notwendig die tatsächliche URI zu einer Komponente in der deklarativen Ablaufbeschreibung zu definieren. Es muss aber eine Beschreibung angegebenen werden anhand sich ein passender Dienst in der Registry finden lässt.
   
-\begin{figure}[ht]
-  \centering
-    \includegraphics[width=.7\textwidth]{images/WorkflowEngine_Flowchart.pdf}
-  \caption{Abalaufdiagramm für die \texttt{RemoteWorkflowEngine}}
-  \label{fig:images_WorkflowEngine_Flowchart}
-\end{figure}
+% subsubsection umsetzung_der_service_registry (end)
+
+\subsubsection{Web Service-fähige Workflow Engine} % (fold)
+\label{ssub:web_service_faehige_workflow_engine}
+
+  Bevor der Inbetriebsetzung der Komponenten als Dienste zugewandt werden kann, muss zuvor eine \verb!WorkflowEngine!-Implementierung umgesetzt werden, die in der Lage ist die Komponenten via SOAP aufzurufen und nicht länger über die Reflection API. Zu diesem Zwecke ist die \verb!RemoteWorkflowEngine! implementiert worden, deren vollständiges Listing \ref{lst:remote_workflow_engine} sich im Anhang findet. Die hier wesentliche Funktionalität für das Aufrufen eines Web Services findet sich in Listing \ref{lst:invoke_service} wieder.
+  
+  \lstinputlisting[caption=Aufruf eines Web Service aus der \texttt{RemoteWorkflowEngine}-Klasse heraus,label=lst:invoke_service,language=Java,linerange={161-171,173-175,185-205}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/RemoteWorkflowEngine.java}
+  
+  Im Zuge dessen wurde auch das \verb!ProcessStore!-Interface aus Listing \ref{lst:process_store_interface} eingeführt, dass die Speicherung des Workflow-Fortschritts kapselt. Über dieses Interface lassen in späteren Versionen leicht verteilte Speicherstrategien verwenden, die somit auch eine verteilte Implementierung der \verb!WorkflowEngine! ermöglichen würden.
+  
+  \lstinputlisting[caption=Das \texttt{ProcessStore}-Interface,label=lst:process_store_interface,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/storage/ProcessStore.java}
+  
+  Zum Abschluss ist der Prozess der Ausführung in Abbildung \ref{fig:images_WorkflowEngine_Flowchart} noch einmal schematisch dargestellt.
+  
+  \begin{figure}[!ht]
+    \centering
+      \includegraphics[width=.7\textwidth]{images/WorkflowEngine_Flowchart.pdf}
+    \caption{Abalaufdiagramm für die \texttt{RemoteWorkflowEngine}}
+    \label{fig:images_WorkflowEngine_Flowchart}
+  \end{figure}
+
+% subsubsection web_service_faehige_workflow_engine (end)
+
+\subsubsection{Anpassung an den Komponenten} % (fold)
+\label{ssub:anpassung_an_den_komponenten}
+
+  Als letzter Schritt musste die \verb!AbstractComponent!-Klasse angepasst werden sowie die einzelnen Komponenten. Die \verb!AbstractComponent!-Klasse implementiert nun das \verb!CoreService!-Interface und registriert bei Instanziierung sich selbst bei der Service Registry. Das vollständige Listing \ref{lst:abstract_component_final} der finalen Version der \verb!AbstractComponent!-Klasse mit allen Anpassungen findet sich im Anhang.
+  
+  Die Implementierung des \verb!MusicOMatService! in Listing \ref{lst:music_o_mat_service} steht exemplarisch für die Umsetzung der anderen Komponenten als Dienste. Zu beachten ist, dass die Klasse selbst die Adresse und Beschreibung des Dienstes definiert. Diese Informationen werden über den \verb!super!-Konstruktor in der Service Registry veröffentlicht, so dass sich später der Dienst darüber wieder finden lässt.
+
+  \lstinputlisting[caption=\texttt{MusicOMatService}-Klasse in der finalen Version,label=lst:music_o_mat_service,language=Java,linerange={12-13,26-61,86-87}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/services/MusicOMatService.java}
+
+  Die Dienste werden anschließen auf einem Tomcat Servlet Container\footnote{\url{http://tomcat.apache.org/}} über ein dort befindliches Axis2-Servlet verfügbar gemacht. Die Instanziierung der Dienste und die Auflösung der notwendigen Abhängigkeiten werden im Prototypen durch das Spring Framework\footnote{\url{http://www.springsource.org/}} auf Basis des \emph{Dependency Injection}-Pattern realisiert~\citep[S. 130]{johnson2004eoo} und~\citep{fowler04di}. In Listing \ref{lst:application_context} ist dabei die entsprechende Spring Konfigurationsdatei zu sehen.
+
+  \lstinputlisting[caption=\texttt{applicationContext.xml}-zur Definition der Abhängigkeiten,label=lst:application_context,language=XML,linerange={1-2,18-57}]{../code/Santiago/src/main/resources/applicationContext.xml}
+  
+% subsubsection anpassung_an_den_komponenten (end)
+
+\subsubsection{Die fertige Anwendung} % (fold)
+\label{ssub:die_fertige_anwendung}
+
+  Nachdem nun auch die Komponenten als Dienste realisiert wurden und über Web Services auf einem Server zur Ausführung bereitstehen, muss nur noch das Santiago-Hauptprogramm wie in Listing \ref{lst:santiago_final_app} angepasst werden, so dass die \verb!RemoteWorkflowEngine! verwendet wird. Das Ergebnis ist die Erstellung und Wiedergabe einer Diashow mit Hintergrundmusik in einer verteilten und dienstorientierten Umgebung unter Verwendung des COSIMA-Projekts, wie es im vorherigen Kapitel beschrieben wurde.
+
+  \lstinputlisting[caption=Die finale Version der Santiago Anwendung,label=lst:santiago_final_app,language=Java]{../code/Santiago/src/main/java/de/fhkoeln/santiago/SantiagoApp.java}
+  
+% subsubsection die_fertige_anwendung (end)
 
 % subsection extraktion_der_komponenten_als_dienste (end)
   
@@ -289,7 +326,7 @@ Die Persistierung der eigentlichen Daten übernimmt die \verb!MediaStore!-Kompon
   
   Keine hochwertige Fehlerrobustheit. Nur rudimentäres Logging.
   
-  Verteilte Ausführung der Komposition setzt ebenfalls eine verteilte Hinterlegung des aktuell Fortschritts der Ausführung voraus.
+  Verteilte Ausführung der Komposition setzt ebenfalls eine verteilte Hinterlegung des aktuell Fortschritts der Ausführung voraus, Möglichkeit besteht über das \verb!ProcessStore!-Interface.
   
   Keine Möglichkeit zur asynchronen Ausführung von einzelnen Diensten bis jetzt implementiert. Ist nicht immer angemessen abhängig vom Art des Dienstes, doch mit unter notwendig (\textbf{Stichwort}: \emph{Streaming-Dienste}).
   
@@ -298,6 +335,10 @@ Die Persistierung der eigentlichen Daten übernimmt die \verb!MediaStore!-Kompon
   Bereits bei dieser einfachen Anwendung besteht auch ein Bedarf nach Synchronisation. Die Tranformer-Komponente, die die Diashow und das Musikstück verarbeitet muss dabei beide Medien synchronisieren. Es findet hier allerdings nur eine implizite Synchronisation statt, da sie in keiner Weise spezifiziert wurde. Des Weiteren wird sie auf Tranformer-Seite durchgeführt, was der Synchronisation durch Multiplex-Datenströme nach Steinmetz entspricht~\citep[S. 609]{multimedia_technologie} (siehe auch Abschnitt \ref{par:besonderheiten_bei_verteilten_umgebungen}).
   
   Etablierung eines Logging Service. Zur Zeit nur ein Logging Singleton. Nur bedingt für verteilte Anwendung geeignet, da kein zentrales Log der Gesamtapplikation verfügbar ist.
+  
+  Dienste, die einmal gestartet immer laufen sollten wieder gestoppt werden können (als Beispiel Streaming).
+  
+  Nachrichtensystem ist zwar vorhanden, wird zur Zeit jedoch nicht verwendet, da das gewählte Nachrichtensystem auf dem Publish-Subscribe-Verfahren aufsetzt und daher nur für asynchrone Kommunikation sinnvoll einsetzbar ist. Eine Kommunikation mit den einzelnen medienverarbeitenden Diensten von Seiten der Servicekomposition ist daher nicht sinnvoll. Selbst für die Fälle, in denen Dienste asynchron aufgerufen werden müssen, beispielsweise Streamingdienste, lässt sich das ebenso direkt in der Kompositionskomponente umsetzen (Streamingdienste müssen dabei noch nicht mal asynchron aufgerufen werden. Der Aufruf kann auch synchron erfolgen und die Antwort ist in diesem Fall irrelevant.). Das Nachrichtensystem ließe sich aber für die Übermittlung von Synchronisationsspezifikationen verwenden.
 
 % subsection probleme_und_loesungen_architektur (end)
 

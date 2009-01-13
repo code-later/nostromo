@@ -11,7 +11,6 @@
  */
 package de.fhkoeln.cosima.services;
 
-
 /**
  * This is the service interface which every service component must
  * implement to be available via web service access. Every service
@@ -22,7 +21,7 @@ package de.fhkoeln.cosima.services;
  * the operation to set the {@link IODescriptor} and to execute
  * the service.
  * 
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0 Sep 18, 2008
  */
 public interface CoreService {
