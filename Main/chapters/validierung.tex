@@ -53,6 +53,48 @@
 
 % section definition (end)
 
+\section{Ergebnisse aus der Santiago Anwendung} % (fold)
+\label{sec:ergebnisse_aus_der_santiago_anwendung}
+
+% section ergebnisse_aus_der_santiago_anwendung (end)
+
+\section{Ergebnisse aus der Nerstrand Anwendung} % (fold)
+\label{sec:ergebnisse_aus_der_nerstrand_anwendung}
+
+% section ergebnisse_aus_der_nerstrand_anwendung (end)
+
+\section{Probleme und Lösungen} % (fold)
+\label{sec:probleme_und_loesungen_architektur}
+
+  - Welche Probleme sind aufgetaucht?
+  - Wie wurden diese gelöst?
+  - Auswirkungen auf die Architektur!
+  - Workflow ohne externes Messaging System möglich!?
+  
+  Die einzelnen Medienobjekte werden über Medienbroker vermittelt. Eigenes \verb!cosima://!-Protokoll für den Zugriff auf Medienbroker etablieren.
+    
+  Keine adäquate Fehlerbehandlung.
+  
+  Keine hochwertige Fehlerrobustheit. Nur rudimentäres Logging.
+  
+  Verteilte Ausführung der Komposition setzt ebenfalls eine verteilte Hinterlegung des aktuell Fortschritts der Ausführung voraus, Möglichkeit besteht über das \verb!ProcessStore!-Interface.
+  
+  Keine Möglichkeit zur asynchronen Ausführung von einzelnen Diensten bis jetzt implementiert. Ist nicht immer angemessen abhängig vom Art des Dienstes, doch mit unter notwendig (\textbf{Stichwort}: \emph{Streaming-Dienste}).
+  
+  Die bisherige Umsetzung der Komposition der einzelnen Dienste ist nur wenig flexibel und eignet sich wahrscheinlich nicht für Realisierung von komplexeren Szenarien. Dafür wäre im jeden Fall die Umsetzung auf Basis eines Zustandsautomaten notwenig, viel eher sollte aber die Verwendung einer etablierten Prozessbeschreibungssprache in Betracht gezogen werden. Dazu sind jedoch weitere Betrachtungen notwendig, wie sie unter anderem in~\citep{samma08} gemacht wurden.
+
+  Bereits bei dieser einfachen Anwendung besteht auch ein Bedarf nach Synchronisation. Die Tranformer-Komponente, die die Diashow und das Musikstück verarbeitet muss dabei beide Medien synchronisieren. Es findet hier allerdings nur eine implizite Synchronisation statt, da sie in keiner Weise spezifiziert wurde. Des Weiteren wird sie auf Tranformer-Seite durchgeführt, was der Synchronisation durch Multiplex-Datenströme nach Steinmetz entspricht~\citep[S. 609]{multimedia_technologie} (siehe auch Abschnitt \ref{par:besonderheiten_bei_verteilten_umgebungen}).
+  
+  Etablierung eines Logging Service. Zur Zeit nur ein Logging Singleton. Nur bedingt für verteilte Anwendung geeignet, da kein zentrales Log der Gesamtapplikation verfügbar ist.
+  
+  Dienste, die einmal gestartet immer laufen sollten wieder gestoppt werden können (als Beispiel Streaming).
+  
+  \verb!MediaStoreFactory! zur dynamischen Ermittlung der optimalen Speicherstrategie für die jeweiligen Mediendaten. Dazu auch Einsatz von Metadaten notwendig. MultiMonster Medienserver hier wieder anbringen.
+  
+  Nachrichtensystem ist zwar vorhanden, wird zur Zeit jedoch nicht verwendet, da das gewählte Nachrichtensystem auf dem Publish-Subscribe-Verfahren aufsetzt und daher nur für asynchrone Kommunikation sinnvoll einsetzbar ist. Eine Kommunikation mit den einzelnen medienverarbeitenden Diensten von Seiten der Servicekomposition ist daher nicht sinnvoll. Selbst für die Fälle, in denen Dienste asynchron aufgerufen werden müssen, beispielsweise Streamingdienste, lässt sich das ebenso direkt in der Kompositionskomponente umsetzen (Streamingdienste müssen dabei noch nicht mal asynchron aufgerufen werden. Der Aufruf kann auch synchron erfolgen und die Antwort ist in diesem Fall irrelevant.). Das Nachrichtensystem ließe sich aber für die Übermittlung von Synchronisationsspezifikationen verwenden.
+
+% section probleme_und_loesungen_architektur (end)
+
 \section{Vorgehen} % (fold)
 \label{sec:vorgehen}
 

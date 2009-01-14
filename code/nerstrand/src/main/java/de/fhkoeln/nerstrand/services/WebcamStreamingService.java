@@ -46,7 +46,6 @@ public class WebcamStreamingService extends AbstractComponent {
     stream.setNamespace("Nerstrand::StreamingService");
     
     MediaOperation streamingOp = new VLCStreamingOperation(getInput().first(), stream);
-//    streamingOp.perform();
     thread(streamingOp, false);
     
     boolean wait = true;

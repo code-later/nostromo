@@ -312,65 +312,28 @@ Die Persistierung der eigentlichen Daten übernimmt die \verb!MediaStore!-Kompon
 
 % subsection extraktion_der_komponenten_als_dienste (end)
   
-\subsection{Probleme und Lösungen} % (fold)
-\label{sub:probleme_und_loesungen_architektur}
-
-  - Welche Probleme sind aufgetaucht?
-  - Wie wurden diese gelöst?
-  - Auswirkungen auf die Architektur!
-  - Workflow ohne externes Messaging System möglich!?
-  
-  Die einzelnen Medienobjekte werden über Medienbroker vermittelt. Eigenes \verb!cosima://!-Protokoll für den Zugriff auf Medienbroker etablieren.
-    
-  Keine adäquate Fehlerbehandlung.
-  
-  Keine hochwertige Fehlerrobustheit. Nur rudimentäres Logging.
-  
-  Verteilte Ausführung der Komposition setzt ebenfalls eine verteilte Hinterlegung des aktuell Fortschritts der Ausführung voraus, Möglichkeit besteht über das \verb!ProcessStore!-Interface.
-  
-  Keine Möglichkeit zur asynchronen Ausführung von einzelnen Diensten bis jetzt implementiert. Ist nicht immer angemessen abhängig vom Art des Dienstes, doch mit unter notwendig (\textbf{Stichwort}: \emph{Streaming-Dienste}).
-  
-  Die bisherige Umsetzung der Komposition der einzelnen Dienste ist nur wenig flexibel und eignet sich wahrscheinlich nicht für Realisierung von komplexeren Szenarien. Dafür wäre im jeden Fall die Umsetzung auf Basis eines Zustandsautomaten notwenig, viel eher sollte aber die Verwendung einer etablierten Prozessbeschreibungssprache in Betracht gezogen werden. Dazu sind jedoch weitere Betrachtungen notwendig, wie sie unter anderem in~\citep{samma08} gemacht wurden.
-
-  Bereits bei dieser einfachen Anwendung besteht auch ein Bedarf nach Synchronisation. Die Tranformer-Komponente, die die Diashow und das Musikstück verarbeitet muss dabei beide Medien synchronisieren. Es findet hier allerdings nur eine implizite Synchronisation statt, da sie in keiner Weise spezifiziert wurde. Des Weiteren wird sie auf Tranformer-Seite durchgeführt, was der Synchronisation durch Multiplex-Datenströme nach Steinmetz entspricht~\citep[S. 609]{multimedia_technologie} (siehe auch Abschnitt \ref{par:besonderheiten_bei_verteilten_umgebungen}).
-  
-  Etablierung eines Logging Service. Zur Zeit nur ein Logging Singleton. Nur bedingt für verteilte Anwendung geeignet, da kein zentrales Log der Gesamtapplikation verfügbar ist.
-  
-  Dienste, die einmal gestartet immer laufen sollten wieder gestoppt werden können (als Beispiel Streaming).
-  
-  Nachrichtensystem ist zwar vorhanden, wird zur Zeit jedoch nicht verwendet, da das gewählte Nachrichtensystem auf dem Publish-Subscribe-Verfahren aufsetzt und daher nur für asynchrone Kommunikation sinnvoll einsetzbar ist. Eine Kommunikation mit den einzelnen medienverarbeitenden Diensten von Seiten der Servicekomposition ist daher nicht sinnvoll. Selbst für die Fälle, in denen Dienste asynchron aufgerufen werden müssen, beispielsweise Streamingdienste, lässt sich das ebenso direkt in der Kompositionskomponente umsetzen (Streamingdienste müssen dabei noch nicht mal asynchron aufgerufen werden. Der Aufruf kann auch synchron erfolgen und die Antwort ist in diesem Fall irrelevant.). Das Nachrichtensystem ließe sich aber für die Übermittlung von Synchronisationsspezifikationen verwenden.
-
-% subsection probleme_und_loesungen_architektur (end)
-
 % section realisierung_der_architektur (end)
 
 \section{Realisierung des Szenario} % (fold)
 \label{sec:realisierung_des_szenario}
 
-  - Nerstrand Projekt
-  - wichtige Punkte beschreiben
-  - top-down Ansatz
+  Nachdem im vorherigen Abschnitt erfolgreich die COSIMA-Architektur realisiert wurde kann nun das eigentliche Szenario aus \ref{sub:das_anwendungsszenario} auf Basis dieser Architektur implementiert werden. Zur Entwicklung und zur besseren Kommunikation hat diese Anwendung den Codenamen \emph{Nerstrand} erhalten. Bevor die wesentlichen Komponenten, die es umzusetzen galt, vorgestellt werden, soll zunächst das eigentliche Anwendungsprogramm aus Listing \ref{lst:nerstrand_app} diskutiert werden.
+  
+  \lstinputlisting[caption=Die Nerstrand Anwendung als Umsetzung des Szenario,label=lst:nerstrand_app,language=Java]{../code/nerstrand/src/main/java/de/fhkoeln/nerstrand/NerstrandApp.java}
+  
+  Wie sich leicht erkennen lässt bestehen keinerlei Unterschiede zum Anwendungsprogramm von Santiago aus Listing \ref{lst:santiago_final_app}. Auch sonst ist Nerstrand ähnlich umgesetzt worden wie Santiago: Die Dienste werden auch über einen Tomcat Servlet Container verfügbar gemacht und die Auflösung der Abhängigkeiten geschieht ebenso über Dependency Injection und das Spring Framework. Und genau das was das erwartete Ergebnis, denn eine Anwendung, die sich des COSIMA-Projekts bedient, wird über eine Ablaufbeschreibung definiert sowie über die Implementierung spezifischer Dienste realisiert, sollten auch nur diese beiden Elemente angepasst werden müssen. Die angepasste Ablaufbeschreibung in Listing \ref{lst:nerstrand_workflow_definition} für die Nerstrand Anwendung ist sogar noch einfacher geworden, als die der Santiago Anwendung, da nur ein Producer- sowie ein Consumer-Dienst benötigt werden.
 
-\subsection{Extrahierte Anforderungen} % (fold)
-\label{sub:extrahierte_anforderungen}
+  \lstinputlisting[caption=Die Ablaufbeschreibung für die Nerstrand Anwendung,label=lst:nerstrand_workflow_definition,language=YAML]{../code/nerstrand/src/main/resources/workflow_definition.yml}
+  
+  Selbst der Consumer-Dienst unterscheidet sich nicht sehr von der Consumer-Dienst in Santiago. Daher soll an dieser Stelle vor allem die Producer-Dienst vorgestellt werden, die das Webcam Signal abgreift und als Stream bereitstellt. Die Implementierung der wesentlichen Funktionalitäten dieses Dienst lässt Listing \ref{lst:webcam_streaming_service} entnehmen.
+  
+  \lstinputlisting[caption=Der \texttt{WebcamStreamingService} der Nerstrand Anwendung,label=lst:webcam_streaming_service,language=Java,linerange={12-13,26-33,39-59,92-93},morekeywords={[3]thread,while,VLCStreamingOperation,streamingOp}]{../code/nerstrand/src/main/java/de/fhkoeln/nerstrand/services/WebcamStreamingService.java}
+  
+  Der Eigentliche Streamingprozess wurde aus zwei Gründen durch die \verb!VLCStreamingOperation! gekapselt. Zum einen ist die Funktionalität dadurch isoliert leichter testbar, zum anderen, und das ist der entscheidende Grunde, lässt sich die Operation in einem Thread starten. Dies ist notwendig, da die Operation kein definiertes Ende hat, wie etwa die Operationen in der Santiago Anwendung. Als Lösung wird der Streamingvorgang über die \verb!thread()!-Methode aus Zeile 49 in einem Thread ausgeführt und die \verb!execute()!-Methode kann dadurch regulär beendet werden. Das bedeutet, dass überhaupt erst das \verb!stream!-Medienobjekt im Medienbroker gespeichert werden kann und die \verb!output!-Instanz mit den notwendigen Informationen an den Dienstnutzer zurückgegeben werden kann. Wäre das nicht der Fall würde der gesamte Workflow zum erliegen kommen, da die Eingabe für den folgenden Dienst nicht gefunden werden kann.
+  
+  Eine andere Besonderheit bestand bei der Implementierung der \verb!VLCStreamingOperation!. Da der verwendete \verb!MediaStore! nur in der Lage ist Dateien abzulegen, war es notwendig die Informationen als Datei zu repräsentieren. Als Lösung dieses Problems werden die Informationen über den Stream in einer SDP\abk{SDP}{Session Description Protocol}-Datei abgelegt. SDP steht für \emph{Session Description Protocol} und dient dazu Informationen wie die Kodierung Daten, Transportprotokoll, Ziel- und Ursprungsadresse des Streams und verwendeten Port in einer standardisierten Form zu repräsentieren\footnote{\url{http://tools.ietf.org/html/rfc4566}}. Diese Datei kann dann von der \verb!MediaStore!-Instanz gespeichert werden und von dem Consumer-Dienst später dazu verwendet werden den eigentlichen Stream wiederzugeben.
 
-% subsection extrahierte_anforderungen (end)
-
-\subsection{Vorgehen} % (fold)
-\label{sub:vorgehen_szenario}
-
-  - wie wurde bei der Umsetzung des Anwendungsszenario vorgegangen?
-
-% subsection vorgehen_szenario (end)
-
-\subsection{Probleme und Lösungen} % (fold)
-\label{sub:probleme_und_loesungen_szenario}
-
-  - Welche Probleme sind aufgetaucht?
-  - Wie wurden diese gelöst?
-  - Auswirkungen auf die Architektur!
-
-% subsection probleme_und_loesungen_szenario (end)
+  Mehr als das hier beschriebene war dann auch nicht notwendig, um das Anwendungsszenario prototypisch zu implementieren. Die wenigen Schritte sind auf den ersten Blick bereits ein gutes Zeichen dafür, dass die Architektur geeignet ist Multimediaanwendungen mit ihr zu realisieren. Eine genauere Betrachtung und vor allem eine Validierung der Implementierung und deren Ergebnisse erfolgt dann im folgenden Kapitel.
 
 % section realisierung_des_szenario (end)
 

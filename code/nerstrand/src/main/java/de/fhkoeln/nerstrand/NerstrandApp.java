@@ -1,14 +1,3 @@
-/*
- * NerstrandApp.java
- *
- * Version 1.0  Jan 13, 2009
- *
- * Copyright notice
- *
- * Brief description
- *
- * (c) 2009 by dbreuer
- */
 package de.fhkoeln.nerstrand;
 
 import java.io.IOException;
@@ -47,5 +36,4 @@ public class NerstrandApp {
     }
     
   }
-
 }
