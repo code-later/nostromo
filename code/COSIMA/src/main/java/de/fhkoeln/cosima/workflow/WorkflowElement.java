@@ -281,5 +281,4 @@ public class WorkflowElement {
   public String getDescription() {
     return description;
   }
-
 }

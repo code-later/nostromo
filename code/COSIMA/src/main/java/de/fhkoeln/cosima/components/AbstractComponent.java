@@ -47,7 +47,7 @@ public abstract class AbstractComponent implements CoreService {
   }
 
   /*
-   * This method should be final. Due to issues with Axis at the time of coding
+   * This method should be final. Due to issues with Axis2 at the time of coding
    * it was not able that this method was cleanly inherited and so could be
    * final.
    */
@@ -81,5 +81,4 @@ public abstract class AbstractComponent implements CoreService {
   public String getUri() {
     return this.uri;
   }
-
 }
