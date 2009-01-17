@@ -11,7 +11,6 @@
 package de.fhkoeln.santiago.codesamples;
 
 public class SantiagoPlain {
-
   public static void main(String[] args) {
     String imagePath, musicPath;
     String slideshow, slideshowWithMusic;
@@ -22,9 +21,7 @@ public class SantiagoPlain {
 
       slideshow = SlideshowGenerator.generateSlideshowForImagesInPath(imagePath);
       slideshowWithMusic = MusicOMat.addMusicTrackToSlideshow(musicPath, slideshow);
-      
       VideoPlayer.playMovieFile(slideshowWithMusic);
-
     } else {
       System.err.println("Paths to the images and the music track are needed!");
       System.exit(-1);

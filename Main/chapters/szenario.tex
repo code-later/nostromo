@@ -3,24 +3,24 @@
 \chapter{Szenario} % (fold)
 \label{cha:szenario}
 
-  Wie bereits im vorangegangen Kapitel erwähnt, liegt dem COSIMA-Projekt ein dediziertes Vorgehensmodell zu Grunde, dass speziell für dieses Projekt entwickelt wurde~\citep[S. 7]{bericht}. Die schematische Darstellung dieses Modell findet sich in Abbildung~\ref{fig:vorgehensmodell}. Im Folgenden sind die Kernpunkte dieses Vorgehens zusammengefasst:
+  Wie bereits im vorangegangen Kapitel erwähnt, liegt dem COSIMA-Projekt ein dediziertes Vorgehensmodell zu Grunde, dass speziell für dieses Projekt entwickelt wurde \citep[S. 7]{bericht}. Die schematische Darstellung dieses Modell findet sich in Abbildung~\ref{fig:vorgehensmodell}. Im Folgenden werden die Kernpunkte dieses Vorgehens noch einmal zusammengefasst:
 
   \begin{figure}[!ht]
     \centering
       \includegraphics[width=.9\textwidth]{images/Vorgehensmodell}
-    \caption{Schematische Darstellung des Vorgehensmodell hinter dem COSIMA-Projekt nach~\citep{bericht}}
+    \caption{Schematische Darstellung des Vorgehensmodell hinter dem COSIMA-Projekt nach \citep{bericht}}
     \label{fig:vorgehensmodell}
   \end{figure}
 
   \begin{description}
-    \item[Iterativ] Ein Iteratives Vorgehen bei der Entwicklung von Software ist ein etabliertes Verfahren, um der Unvollständigkeit der Anforderungsermittlung gerecht zu werden~\citep{brooks1987nsb,basili2005iea,boehm1986sm,kruchten2003rup}. Da auch im COSIMA-Projekt nicht zu erwarten war, dass alle relevanten Anforderungen von Anfang an offensichtlich sind, wurde in diesem Kontext ein iterativer Prozess gewählt.
-    \item[Szenario-basiert] Die Verwendung von Szenarien ist in vielen Bereichen der Softwareentwicklung\footnote{Neben der Architekturentwicklung~\citep{software_architecture_in_practice,scenario_based_software_architecture_evaluation_methods} und der Anforderungsermittlung~\citep{weidenhaupt1998sus}, etwa im Bereich der Mensch-Computer-Interaktion~\citep{five_reasons_for_scenario_based_design}.} ein anerkanntes Verfahren um Anforderungen und Qualitätsmerkmale von Software konkret zu formulieren.
-    \item[Top-Down] Es werden zuerst abstrakte Szenarien definiert, die zum einen sehr informell, zum anderen sowohl funktionale, wie auch nicht-funktionale Anforderungen in sich vereinen\footnote{Nach ~\citep[S. 42f]{weidenhaupt1998ssd} ist dieses Vorgehen auch bei anderen szenariobasierten Modellen durchaus üblich.}. Im Zuge der Iterationen werden diese Szenarien immer detaillierter und formeller. Die Architektur entwickelt sich entsprechend ebenso weiter. Daher kann man hier von einem \emph{top-down} Vorgehen sprechen.
+    \item[Iterativ] Ein Iteratives Vorgehen bei der Entwicklung von Software ist ein etabliertes Verfahren, um der Unvollständigkeit der Anforderungsermittlung gerecht zu werden \citep{brooks1987nsb,basili2005iea,boehm1986sm,kruchten2003rup}. Da auch im COSIMA-Projekt nicht zu erwarten war, dass alle relevanten Anforderungen von Anfang an offensichtlich sind, wurde in diesem Kontext ein iterativer Prozess gewählt.
+    \item[Szenario-basiert] Die Verwendung von Szenarien ist in vielen Bereichen der Softwareentwicklung\footnote{Neben der Architekturentwicklung \citep{software_architecture_in_practice,scenario_based_software_architecture_evaluation_methods} und der Anforderungsermittlung \citep{weidenhaupt1998sus}, etwa im Bereich der Mensch-Computer-Interaktion \citep{five_reasons_for_scenario_based_design}.} ein anerkanntes Verfahren um Anforderungen und Qualitätsmerkmale von Software konkret zu formulieren.
+    \item[Top-Down] Es werden zuerst abstrakte Szenarien definiert, die zum einen sehr informell, zum anderen sowohl funktionale, wie auch nicht-funktionale Anforderungen in sich vereinen\footnote{Nach  \citep[S. 42f]{weidenhaupt1998ssd} ist dieses Vorgehen auch bei anderen szenariobasierten Modellen durchaus üblich.}. Im Zuge der Iterationen werden diese Szenarien immer detaillierter und formeller. Die Architektur entwickelt sich entsprechend ebenso weiter. Daher kann man hier von einem \emph{top-down} Vorgehen sprechen.
   \end{description}
   
-  Ein elementarer Bestandteil dieses Vorgehenmodells ist also die Verwendung von Szenarien. Da diese Arbeit erstens in das Umfeld des COSIMA-Projekts einzuordnen ist und Szenarien eine anerkannte Methodik darstellen, werden sie auch in dieser Arbeit dazu verwendet die bisherige Architektur zu validieren. Im Folgenden Abschnitt wird der Begriff des Szenario genauer definiert und eingeordnet. Bevor dann das eigentliche Szenario dargestellt wird, findet noch eine Abgrenzung zu Szenarien statt, wie sie in der Literatur beschriebenen szenariobasierten Methodiken Verwendung finden.
+  Ein elementarer Bestandteil dieses Vorgehenmodells ist also die Verwendung von Szenarien. Da diese Arbeit erstens in das Umfeld des COSIMA-Projekts einzuordnen ist und Szenarien eine anerkannte Methodik darstellen, werden sie auch in dieser Arbeit dazu verwendet die bisherige Architektur zu validieren. Im Folgenden Abschnitt wird der Begriff des Szenario genauer definiert und eingeordnet. Bevor dann das eigentliche Szenario dargestellt wird, findet noch eine Abgrenzung zu Szenarien statt, wie sie den, in der Literatur beschriebenen szenariobasierten Methodiken Verwendung finden.
   
-\section{Definition} % (fold)
+\section{Definitionen} % (fold)
 \label{sec:definition_szenario}
 
   Im Duden findet sich zu "`Szenario"' der folgende Eintrag:
@@ -47,9 +47,9 @@
     "`A [\ldots] scenario is a story about people and their activities. [They] have a plot; they include sequences of actions and events, things that actors do, things that happen to them, changes in the setting and so forth."'~\emph{\citep[S. 16/18]{scenario_based_development}}
   \end{definition}
   
-  Im Rahmen dieser Arbeit soll ein Szenario daher als eine hypothetische "`Geschichte"' verstanden werden, die unterschiedliche \emph{Stakeholder}\footnote{Ein \emph{Stakeholder} ist ein Aktuer oder Mitglied einer Interessengruppe. Da der Begriff auch in der deutschsprachigen Fachliteratur Verwendung findet, wird er auch in dieser Arbeit weiterhin verwendet.}, ihre Aktivitäten und Interaktionen mit einem Softwaresystem beschreibt.
+  Im Rahmen dieser Arbeit soll ein Szenario daher als eine hypothetische "`Geschichte"' verstanden werden, die unterschiedliche \emph{Stakeholder}\footnote{Ein \emph{Stakeholder} ist ein Aktuer oder Mitglied einer Interessengruppe. Da der Begriff auch in der deutschsprachigen Fachliteratur Verwendung findet, wird er auch in dieser Arbeit weiterhin so angewandt.}, ihre Aktivitäten und Interaktionen mit einem Softwaresystem beschreibt.
   
-  Unter die Stakeholder werden alle Gruppen oder Personen gefasst, die irgendwann mit dem System in Kontakt treten können. So kennt die \emph{ATAM-Methode}\abk{ATAM}{Architecture Tradeoff Analysis Method} von Softwarearchitekten über den Softwareentwickler und Tester bis hin zum Projektmanager und Endanwender, eine Vielzahl von Stakeholdern~\citep[S. 63ff]{evaluating_software_architectures}. Im Rahmen dieser Arbeit ist vor allem der Softwareentwickler von Interesse, da geprüft werden soll, in wie weit er in Lage ist, mit der gegebenen Architektur eine Zielanwendung zu entwickeln.
+  Als Stakeholder werden dabei alle Gruppen oder Personen aufgefasst, die irgendwann mit dem System in Kontakt treten können. So kennt die \emph{ATAM-Methode}\abk{ATAM}{Architecture Tradeoff Analysis Method} von Softwarearchitekten über den Softwareentwickler und Tester bis hin zum Projektmanager und Endanwender, eine Vielzahl von Stakeholdern \citep[S. 63ff]{evaluating_software_architectures}. Im Rahmen dieser Arbeit ist vor allem der Softwareentwickler von Interesse, da geprüft werden soll, in wie weit er in der Lage ist, mit der gegebenen Architektur eine Zielanwendung zu implementieren.
   
   Im Folgenden Abschnitt werden nun einige anerkannte szenariobasierte Methoden skizziert und argumentiert, welche Methode dieser Arbeit zu Grunde liegen wird.
 
@@ -58,7 +58,7 @@
 \section{Szenariobasierte Methoden} % (fold)
 \label{sec:szenariobasierte_methoden}
 
-  Es existieren eine Vielzahl von szenariobasierten Methoden zur Evaluation von Softwarearchitekturen. Die meisten gehen dabei auf die Methoden SAAM\abk{SAAM}{Software Architecture Analysis Method} und ATAM zurück~\citep[S. 1]{scenario_based_software_architecture_evaluation_methods}, die initial am Carnegie Mellon Institut entwickelt worden sind. All diese Methoden haben jedoch das Ziel, die Qualitätsmerkmale, also die nicht-funktionalen Anforderungen einer Architektur zu evaluieren. In diesem Fall "`operationalisieren [Szenarien die] Qualitätsmerkmale [einer Architektur] und machen sie messbar"'~\citep[S. 61]{effektive_software_architekturen}. Wie aber bereits erwähnt (siehe Abschnitt~\ref{sub:servicekomposition_fragen}), wurden bei der Entwicklung von COSIMA nicht-funktionale Anforderungen ausgeblendet. Daher eignen sich diese Methoden nur bedingt zur Verwendung im Rahmen dieser Arbeit. Dennoch ist es aber durchaus als sinnvoll zu erachten, die Architektur in einem so frühen Stadium bereits zu überprüfen:
+  Es existieren eine Vielzahl von szenariobasierten Methoden zur Evaluation von Softwarearchitekturen. Die meisten gehen dabei auf die Methoden SAAM\abk{SAAM}{Software Architecture Analysis Method} und ATAM zurück \citep[S. 1]{scenario_based_software_architecture_evaluation_methods}, die initial am Carnegie Mellon Institut entwickelt worden sind. All diese Methoden haben dabei das Ziel, die Qualitätsmerkmale, also die nicht-funktionalen Anforderungen einer Architektur zu evaluieren. In diesem Fall "`operationalisieren [Szenarien die] Qualitätsmerkmale [einer Architektur] und machen sie messbar"' \citep[S. 61]{effektive_software_architekturen}. Wie aber bereits erwähnt ($\to$ Abschnitt \ref{sub:servicekomposition_fragen}), wurden bei der Entwicklung von COSIMA nicht-funktionale Anforderungen ausgeblendet. Daher eignen sich diese Methoden nur bedingt zur Verwendung im Rahmen dieser Arbeit. Dennoch ist es aber durchaus als sinnvoll zu erachten, die Architektur in einem so frühen Stadium bereits zu überprüfen:
   
   \begin{quote}
     \emph{"`Evaluation need not wait until an architecture is fully specified."'} (\citep[S. 24]{evaluating_software_architectures})
@@ -70,14 +70,14 @@
     \emph{"`[\ldots] in practice, the expense and logistical burden of convening a full-blown evaluation is seldom undertaken when unwarranted by the state of the architecture."'} (\citep[S. 24]{evaluating_software_architectures})
   \end{quote}
   
-  Aus diesen beiden Gründen, Ausblendung der nicht-funktionalen Anforderungen und Unvollständigkeit der Architektur, wird im Rahmen dieser Arbeit darauf verzichtet, eine der etablierten szenariobasierten Methoden anzuwenden\footnote{Hinzu kommt, dass der Umfang einer Master Thesis es nicht erlaubt eine Evaluation durchzuführen, an der methodisch mehrere Personen arbeiten müssen.}.
+  Aus diesen beiden Gründen, \emph{Ausblendung der nicht-funktionalen Anforderungen} und \emph{Unvollständigkeit der Architektur}, wird im Rahmen dieser Arbeit darauf verzichtet, eine der etablierten szenariobasierten Methoden anzuwenden\footnote{Hinzu kommt, dass der Umfang einer Master Thesis es nicht erlaubt eine Evaluation durchzuführen, an der methodisch mehrere Personen arbeiten müssen, wie es etwa bei der ATAM oder SAAM Methode der Fall ist.}.
   
-  Dennoch wurde entschieden, Szenarien zu verwenden, da sie sich gut zur Abbildung von Interaktionen zwischen Stakeholdern und dem System eignen. Daher soll das Szenario dieser Arbeit die Grundstrukturen etablierter Vorgehen adaptieren. Im Folgenden werden diese Strukturen kurz skizziert.
+  Dennoch ist es weiterhin empfehlenswert, Szenarien zu verwenden, da sie sich gut zur Abbildung von Interaktionen zwischen Stakeholdern und dem System eignen. Daher soll das Szenario dieser Arbeit die Grundstrukturen etablierter Vorgehen adaptieren. Im Folgenden werden diese Strukturen kurz skizziert.
   
 \subsection{Arten von Szenarien} % (fold)
 \label{sub:arten_von_szenarien}
 
-  Es existieren unterschiedliche Arten oder Typen von Szenarien, abhängig von der Domäne in der sie Verwendung finden. Da für die Domäne der Softwarearchitekturen die ATAM-Methode der Carnegie Mellon University~\citep{kazman2000ama} ein etablierter Vertreter ist, wird hier die Einteilung nach dieser Methode als Grundlage genommen:
+  Es existieren unterschiedliche Arten oder Typen von Szenarien, abhängig von der Domäne in der sie Verwendung finden. Da für die Domäne der Softwarearchitekturen die ATAM-Methode der Carnegie Mellon University \citep{kazman2000ama} ein etablierter Vertreter ist, wird hier die Einteilung nach dieser Methode als Grundlage genommen:
   
   \begin{description}
     \item[Anwendungsszenarien] Anwendungsszenarien beschreiben die intendierte Interaktion zwischen dem System und einem Benutzer. Dabei ist das System als vollständig und lauffähig zu erachten~\cite[S. 14]{kazman2000ama}.
@@ -94,7 +94,7 @@
 \subsection{Aufbau von Szenarien} % (fold)
 \label{sub:aufbau_von_szenarien}
 
-  Nach~\citep[S. 75]{software_architecture_in_practice} konstituieren folgenden Elemente ein Szenario\footnote{Übersetzungen nach~\citep[S. 63]{effektive_software_architekturen}}:
+  Nach \citep[S. 75]{software_architecture_in_practice} konstituieren folgenden Elemente ein Szenario\footnote{Übersetzungen nach \citep[S. 63]{effektive_software_architekturen}}:
   
   \begin{description}
     \item[Quelle des Auslösers] Der Stakeholder, der den Stimulus generiert. Die Quelle kann dabei sowohl ein Mensch, als auch ein anderes System sein.
@@ -105,7 +105,7 @@
     \item[Antwortmetrik] Beschreibt wie das Verhalten erfasst und gemessen werden kann.
   \end{description}
   
-  Die ATAM-Methode im speziellen konzentriert sich auf das Tripple von \emph{stimulus-environ\-ment-response}. Dabei sind idealerweise alle Szenarien in dieser Form zu formulieren. In der praktischen Durchführung lässt sich dieser Idealzustand jedoch nur selten in seiner Vollständigkeit erreichen~\citep[S. 53]{evaluating_software_architectures}. Da der Fokus dieser Methode auf der Evaluierung von nicht-funktionalen Anforderungen liegt, ist eine vollständige Übertragbarkeit auf die Bedürfnisse in diesem Rahmen ohnehin nicht gegeben. Dennoch soll versucht werden, eine Gliederung des Szenario in ähnlicher Art und Weise vorzunehmen.
+  Die ATAM-Methode im speziellen konzentriert sich auf das Tripple von \emph{stimulus-environ\-ment-response}. Dabei sind idealerweise alle Szenarien in dieser Form zu formulieren. In der praktischen Durchführung lässt sich dieser Idealzustand jedoch nur selten in seiner Vollständigkeit erreichen \citep[S. 53]{evaluating_software_architectures}. Da der Fokus dieser Methode auf der Evaluierung von nicht-funktionalen Anforderungen liegt, ist eine vollständige Übertragbarkeit auf die Bedürfnisse in diesem Rahmen ohnehin nicht gegeben. Dennoch soll versucht werden, eine Gliederung des Szenario in ähnlicher Art und Weise vorzunehmen.
 
 % subsection aufbau_von_szenarien (end)
   
@@ -121,7 +121,7 @@
 \subsection{Zur Fachdomäne des Szenarios} % (fold)
 \label{sub:zur_fachdomaene_des_szenarios}
 
-  Grundlegend für den Erfolg der Durchführung einer szenariobasierten Methode ist die Qualität der Szenarien selbst. Diese wiederum werden aber aus Workshops oder Interviews mit den unterschiedlichen Stakeholdern gebildet. Das Endergebnis ist also im hohen Maße abhängig von der richtigen Auswahl der Stakeholder~\citep[S. 187]{evaluating_software_architectures}. Da für das Szenario für die spätere Validierung der Architektur jedoch nur der Autor selbst als Stakeholder zur Verfügung stand, war es notwendig eine Domäne für das Szenario zu wählen, mit der der Autor hinreichend vertraut ist. Ein Szenario angesiedelt in der Hochschullehre lag daher nahe. Da es sich um eine verteilte Anwendung handeln muss, wird ein Szenario gewählt, dass sich grob dem Umfeld von CSCW\abk{CSCW}{Computer Supported Cooperative Work} beziehungsweise CSCL\abk{CSCL}{Computer Supported Collaborative Learning} zuordnen lässt. Darüber hinaus wurde bereits erkannt, dass sich der Einsatz einer dienstorientierten Architektur für den Einsatz einer Lernplattform durchaus als sinnvoll zu erachten ist~\citep{campus_source}.
+  Grundlegend für den Erfolg der Durchführung einer szenariobasierten Methode ist die Qualität der Szenarien selbst. Diese wiederum werden aus Workshops oder Interviews mit den unterschiedlichen Stakeholdern gebildet. Das Endergebnis ist also im hohen Maße abhängig von der richtigen Auswahl der Stakeholder \citep[S. 187]{evaluating_software_architectures}. Da für das Szenario für die spätere Validierung der Architektur jedoch nur der Autor selbst als Stakeholder zur Verfügung stand, war es notwendig eine Domäne für das Szenario zu wählen, mit der der Autor hinreichend vertraut ist. Ein Szenario angesiedelt in der Hochschullehre lag daher nahe. Da es sich um eine verteilte Anwendung handeln muss, wird ein Szenario gewählt, dass sich grob dem Umfeld von CSCW\abk{CSCW}{Computer Supported Cooperative Work} beziehungsweise CSCL\abk{CSCL}{Computer Supported Collaborative Learning} zuordnen lässt. Darüber hinaus wurde bereits erkannt, dass sich der Einsatz einer dienstorientierten Architektur für den Einsatz einer Lernplattform durchaus als sinnvoll zu erachten ist \citep{campus_source}.
   
   Im Vordergrund dieser Arbeit steht aber nicht die Anwendung selbst, sondern die Validierung der Architektur des COSIMA-Projekts. Daher wird auf eine genauere Vorstellung der Domäne an dieser Stelle verzichtet. Im Folgenden wird nun zuerst die Situation hinter dem eigentlichen Anwendungsszenario beschrieben.
 
@@ -132,35 +132,34 @@
 
   Die Fachhochschule Köln unterhält mehrere Standorte innerhalb und rund um Köln, deren angeschlossene Institute jeweils thematische Überschneidungen aufweisen. Dadurch aber, dass immer mehr interdisziplinäre Studiengänge angeboten werden, hemmen diese geographischen Grenzen mitunter die Entfaltung des vollen Potentials dieser interdisziplinären Studiengänge. Abhilfe soll hier die Integration unterschiedlicher Studiengänge und Fachbereiche auf Ebene einzelner Veranstaltungen schaffen. Eine Zusammenlegung der Standorte ist dabei aber als unrealistisch einzustufen und so haben sich die Verantwortlichen für eine \emph{virtuelle} Lösung des Problems entschieden: Durch den Einsatz eines verteilten, virtuellen Klassenraums sollen Dozenten und Studenten unterschiedlicher Fachbereiche und Standorte an einer gemeinsamen Lehrveranstaltung teilnehmen und diese aktiv mitgestalten können.
 
-  Als Pilotprojekt wurde die Veranstaltung "`Medienrezeption"' im Studiengang "`Medieninformatik Master"', am Standort Gummersbach ausgewählt. Diese soll zusammen mit den Studenten des Studiengangs "`Medientechnik"', am Standort Deutz durchgeführt werden. Auf Basis des COSIMA-Projekts wurde ein System entwickelt, dass diesen verteilten Klassenraum bereitstellen soll. Bevor das System und seine Komponenten genauer vorgestellt wird, soll die im Folgenden beschriebene Situation die Anwendung des Systems verdeutlichen.
+  Als Pilotprojekt wurde die Veranstaltung "`Medienrezeption"' im Studiengang "`Medieninformatik Master"', am Standort Gummersbach ausgewählt. Diese soll zusammen mit den Studenten des Studiengangs "`Medientechnik"', am Standort Deutz durchgeführt werden. Auf Basis des COSIMA-Projekts wurde ein System entwickelt, dass diesen verteilten Klassenraum bereitstellen soll. Eine narrative Beschreibung dieser Situation findet sich in dem Kasten "`Narrative Beschreibung der Situation"'.
   
+  \begin{kasten}
+    \minisec{Narrative Beschreibung der Situation} % (fold)
+    \label{msec:narrative_beschreibung_der_situation}
+    
+      Es ist ein sonniger Mittwoch Vormittag und die Studenten des Masterstudiengangs der Medieninformatik finden sich pünktlich um 09:10 Uhr vor dem Raum 3324 an der Fachhochschule Gummersbach ein. Heute steht "`Medienrezeption"' auf dem Plan. Prof. Dr. Hugo Klebb ist bereits anwesend, da er noch einige technische Vorbereitungen treffen musste. Die Veranstaltung  findet zusammen mit Studenten des Studiengangs Medientechnik aus Deutz stattfinden. Das Besondere dabei ist, dass die Studenten nicht vor Ort sein werden, sondern durch ein neues System virtuell an der Veranstaltung teilnehmen.
+
+      Kurz nachdem sich alle gesetzt haben, steht auch schon die Videoverbindung nach Deutz. Über die zwei im Raum befindlichen Beamer sehen die Gummersbacher Studenten neben den Folien von Professor Klebb auch die Folien von Prof. Dr. Julius Largo aus Deutz. Des Weiteren ist sowohl ein Bild vom Professor Largo selbst, sowie ein Bild der versammelten Deutzer Studenten zu sehen.
+  
+      Nachdem nun alle Studenten anwesend sind und die Daten- und Videoverbindungen zwischen den Standorten Gummersbach und Deutz steht, beginnt die Veranstaltung. Aufgabe für heute war die Vorbereitung eines wissenschaftlichen Artikels zum Thema "`Agenda-Setting"'. Jeder Student sollte eine Textanalyse dieses Artikels durchführen. Die Ergebnisse wurden im Vorfeld, über das interne Wiki-System der Medieninformatik, online den anderen Studenten zur Verfügung gestellt, so dass jeder bereits über das Material des anderen verfügt. Die Veranstaltung ist als seminaristischer Unterricht ausgelegt, es findet also kein klassischer Frontalunterich statt, sondern mehr eine Diskussion zwischen Dozenten und Studenten auf Augenhöhe. Ziel der Veranstaltung ist es bei der gemeinsamen Diskussion über den Artikel ein tieferes Verständnis der Thematik zu erhalten.
+
+      Die Studenten, die Laptops dabei haben, melden sich zusätzlich noch im internen Netz der Fachhochschule an. Jeder kann dadurch einem speziellen Chat-Raum beitreten, der nur für diese Veranstaltung gedacht ist. Sie können so parallel zu dem Geschehen in den beiden Klassenräumen, weitere Punkte diskutieren, dokumentieren oder anmerken. Außerdem steht ihnen über eine spezielle Applikation auf dem eigenen Laptop die Möglichkeit zur Verfügung die aktuelle sowie vergangenen Veranstaltungen Revue passieren lassen. Von dieser Möglichkeit macht denn auch gleich Vanessa gebrauch, die etwa 15 Minuten zu spät erscheint. Sie stand noch im Stau auf dem Weg nach Gummersbach. Sie meldet sich nachträglich am System an und scannt über das bisherige Chat Log. Sie kann so die bisher wesentlichen Punkte leicht erfassen und kommt schnell wieder in die Veranstaltung rein.
+
+      Während der Veranstaltung haben die Studenten den Text über den gesprochen wird ebenfalls auf ihren lokalen Systemen im PDF-Format verfügbar. Sie können dabei das PDF annotieren und diese Annotationen den anderen Studenten direkt wieder zur Verfügung stellen. Auch die Textanalysen der anderen Studenten stehen ihnen über den selben Kanal zur Verfügung. Im Laufe der Veranstaltung reichern alle Studenten und Dozenten über ihre textuellen Annotationen und das Gesprochene den Text immer weiter mit Informationen an. Das System stellt dabei selbstständig Querverweise zwischen den Informationen und dem Text her. Der Autor jeder Information wird dabei ebenfalls gespeichert. Zusätzlich zur reinen Speicherung der Informationen und ihrer Beziehungen untereinander, bewertet das System auch die Relevanz der Informationen im Kontext der Veranstaltung.
+
+      Am Ende ist so eine stark angereicherte Version des ursprünglichen Textes entstanden, der mit unterschiedlichen Medien in Bezug gesetzt wurde, die allesamt dokumentieren, wie sich das Verständnis über den Text im Verlauf der Veranstaltung verändert hat. Im Nachhinein steht diese Version an einer zentralen Stelle zur Verfügung und kann zum Beispiel später zur Prüfungsvorbereitung genutzt werden.
+
+    % minisec narrative_beschreibung_der_situation (end)
+
+  \end{kasten}
+
 % subsection beschreibung_des_szenario (end)
-
-\subsection{Narrative Beschreibung der Situation} % (fold)
-\label{sub:ablaufbeschreibung}
-
-\begin{framed}
-
-  Es ist ein sonniger Mittwoch Vormittag und die Studenten des Masterstudiengangs der Medieninformatik finden sich pünktlich um 09:10 Uhr vor dem Raum 3324 an der Fachhochschule Gummersbach ein. Heute steht "`Medienrezeption"' auf dem Plan. Prof. Dr. Hugo Klebb ist bereits anwesend, da er noch einige technische Vorbereitungen treffen musste. Die Veranstaltung  findet zusammen mit Studenten des Studiengangs Medientechnik aus Deutz stattfinden. Das Besondere dabei ist, dass die Studenten nicht vor Ort sein werden, sondern durch ein neues System virtuell an der Veranstaltung teilnehmen.
-
-  Kurz nachdem sich alle gesetzt haben, steht auch schon die Videoverbindung nach Deutz. Über die zwei im Raum befindlichen Beamer sehen die Gummersbacher Studenten neben den Folien von Professor Klebb auch die Folien von Prof. Dr. Julius Largo aus Deutz. Des Weiteren ist sowohl ein Bild vom Professor Largo selbst, sowie ein Bild der versammelten Deutzer Studenten zu sehen.
-  
-  Nachdem nun alle Studenten anwesend sind und die Daten- und Videoverbindung zwischen den Standorten Gummersbach und Deutz steht, beginnt die Veranstaltung. Aufgabe für heute war die Vorbereitung eines wissenschaftlichen Artikels zum Thema "`Agenda-Setting"'. Jeder Student sollte eine Textanalyse dieses Artikels durchführen. Die Ergebnisse wurden im Vorfeld, über das interne Wiki-System der Medieninformatik, online den anderen Studenten zur Verfügung gestellt, so dass jeder bereits über das Material des anderen verfügt. Die Veranstaltung ist als seminaristischer Unterricht ausgelegt, es findet also kein klassischer Frontalunterich statt, sondern mehr eine Diskussion zwischen Dozenten und Studenten auf Augenhöhe. Ziel der Veranstaltung ist es bei der gemeinsamen Diskussion über den Artikel ein tieferes Verständnis der Thematik zu erhalten.
-
-  Die Studenten, die Laptops dabei haben, melden sich zusätzlich noch im internen Netz der Fachhochschule an. Jeder kann dadurch einem speziellen Chat-Raum beitreten, der nur für diese Veranstaltung gedacht ist. Sie können so parallel zu dem Geschehen in den beiden Klassenräumen, weitere Punkte diskutieren, dokumentieren oder anmerken. Außerdem steht ihnen über eine spezielle Applikation auf dem eigenen Laptop die Möglichkeit zur Verfügung die aktuelle und vergangene Veranstaltungen noch einmal durch zu sehen. Von dieser Möglichkeit macht denn auch gleich Vanessa gebrauch, die etwa 15 Minuten zu spät erscheint. Sie stand noch im Stau auf dem Weg nach Gummersbach. Sie meldet sich nachträglich am System an und scannt schnell über das bisherige Chat Log. Sie kann so die bisher wesentlichen Punkte schnell erfassen und kommt schnell wieder in die Veranstaltung rein.
-
-  Während der Veranstaltung haben die Studenten den Text über den gesprochen wird ebenfalls auf ihre lokalen System im PDF-Format verfügbar. Sie können dabei das PDF annotieren und diese Annotationen den anderen Studenten direkt wieder zur Verfügung stellen. Auch die Textanalysen der anderen Studenten stehen ihnen über den selben Kanal zur Verfügung. Im Laufe der Veranstaltung reichern alle Studenten und Dozenten über ihre textuellen Annotationen und das Gesagte den Text immer weiter mit Informationen an. Das System stellt dabei selbstständig Querverweise zwischen den Informationen und dem Text her. Der Autor jeder Information wird dabei ebenfalls gespeichert. Zusätzlich zur reinen Speicherung der Informationen und ihrer Beziehungen untereinander, bewertet das System auch die Relevanz der Informationen im Kontext der Veranstaltung.
-
-  Am Ende ist so eine stark angereicherte Version des ursprünglichen Textes entstanden, der mit unterschiedlichen Medien angereichert wurde, die allesamt dokumentieren, wie sich das Verständnis über den Text im Verlauf der Veranstaltung verändert hat. Im Nachhinein steht diese Version an einer zentralen Stelle zur Verfügung und kann zum Beispiel zur Prüfungsvorbereitung genutzt werden.
-
-\end{framed}
-
-% subsection ablaufbeschreibung (end)
 
 \subsection{Systemkomponenten} % (fold)
 \label{sub:systemkomponenten}
 
-  Die im vorherigen Abschnitt beschriebene Situation, beschreibt sehr visionär, welche Applikationen das COSIMA-Projekt einmal ermöglichen soll. Auch wenn im Rahmen dieser Arbeit sicher nur ein kleiner Teil dieser Vision prototypisch umgesetzt werden kann, sollen hier dennoch die wesentlichen Systemkomponenten beschrieben werden, die zur Realisierung dieser Anwendung nötig sind. In Abbildung~\ref{fig:images_Hardware_und_Kanaele} sind diese Komponenten und ihre Kommunikationskanäle schematisch dargestellt\footnote{Die lokalen Rechner mit der COSIMA-basierten Applikation entsprechen in etwa einer MCU\abk{MCU}{Multipoint Control Unit} in einem Telekonferenzsystem. Wobei neben dem Controller auch ein Prozessor vorhanden ist, da verschiedene Medientypen gemuxt werden müssen.\citep[S. 224]{schwabe2001ckl}}. Im Folgenden werde sind die Komponenten im einzelnen beschrieben.
+  Die im vorherigen Abschnitt beschriebene Situation, beschreibt sehr visionär, welche Applikationen das COSIMA-Projekt einmal ermöglichen soll. Auch wenn im Rahmen dieser Arbeit sicher nur ein kleiner Teil dieser Vision prototypisch umgesetzt werden kann, sollen hier dennoch die wesentlichen Systemkomponenten beschrieben werden, die zur Realisierung dieser Anwendung nötig sind. In Abbildung~\ref{fig:images_Hardware_und_Kanaele} sind diese und ihre jeweiligen Kommunikationskanäle schematisch dargestellt\footnote{Die lokalen Rechner mit der COSIMA-basierten Applikation entsprechen in etwa einer MCU\abk{MCU}{Multipoint Control Unit} in einem Telekonferenzsystem. Wobei neben dem Controller auch ein Prozessor vorhanden ist, da verschiedene Medientypen gemuxt werden müssen \citep[S. 224]{schwabe2001ckl}.}. Im Folgenden sind die Komponenten im Einzelnen beschrieben.
 
   \begin{figure}[ht]
     \centering
@@ -172,9 +171,9 @@
   \begin{itemize}
     \item An jedem Standort sind zwei hochauflösende Kameras installiert. Eine davon filmt den Dozenten, die andere das Auditorium.
     \item An jedem Standort sind zwei Projektoren installiert. Einer zeigt beide Videobilder der Gegenseite, der andere Folien oder andere Informationen des jeweils nicht-entfernten Standortes.
-    \item Jeder Standort verfügt über einen PC, an die alle Ein- und Ausgabegeräte angeschlossen sind, und die Kommunikation zwischen beiden Standorten zu verwaltet.
+    \item Jeder Standort verfügt über einen PC, an dem alle Ein- und Ausgabegeräte angeschlossen sind, und der die Kommunikation zwischen beiden Standorten verwaltet.
     \item Mobile Computersysteme der Studenten oder Dozenten können bei Bedarf über den Kommunikations-PC in das System integriert werden.
-    \item Über ein Dozentenmikrofon sowie Raummikrofone werden die Gespräche erfasst und an die Gegenseite übermittelt.
+    \item Über ein Dozentenmikrofon sowie zusätzliche Raummikrofone werden die Gespräche erfasst und an die Gegenseite übermittelt.
     \item Jeder Standort verfügt zur Wiedergabe der Audiodaten über ein Lautsprechersystem.
   \end{itemize}
   
@@ -191,16 +190,6 @@
 
 % subsection zusätzliche_informationen (end)
 
-% Weitere Punkte die möglich wären:
-% \begin{itemize}
-% 
-%   \item Hinzufügen der Möglichkeit den Diskurs zu dokumentieren und dann auch mglw. zu persistieren. (Dokumentation/Kommentare via XMPP denkbar?). Nachrichten können dann mit dem Video-/Audiosignal synchronisiert werden.
-%   \item Es könnten auch weitere Dokumente live bereitgestellt werden. Oder es kann auf Web-Ressourcen verwiesen werden (am einfachsten auch via XMPP).
-%   \item Der Datenkanal der Laptops könnte statt dem VGA-Signal wirklich die Daten transportieren. Statt also ein Videosignal eines PDF-Dokuments zu schicken, könnte das PDF selbst geschickt werden. Eine Beschränkung auf PDF würde im ersten Schritt reichen. Allerdings muss dann auch die Frage gestellt werden in wie weit die Kontrolle über das PDF geregelt wird: Wer darf scrollen? Wer darf kommentieren? Können die Studenten unabhängig scrollen und kommentieren? Werden diese Kommentare dann live wieder bereit gestellt? Wie sieht die Persistierung dieser Kommentare aus?
-%   \item Wenn diese reichhaltigen Informationen abgelegt werden, muss es auch eine Möglichkeit geben sie wieder zu finden.
-% 
-% \end{itemize}
-
 % subsection systemkomponenten (end)
 
 % section hochschulszenario (end)
@@ -208,7 +197,7 @@
 \section{Das Anwendungsszenario} % (fold)
 \label{sub:das_anwendungsszenario}
 
-  Wie bereits zu Beginn dieses Kapitels erwähnt, ist für die Validierung der Architektur im Rahmen dieser Arbeit der Anwendungsentwickler der Stakeholder von Interesse. Es gilt zu validieren, ob sich die Architektur grundsätzlich dazu eignet eine verteilte Multimediaapplikation zu implementieren. Grundlage für die Validierung soll ein \emph{Anwendungsszenario} sein, dass in diesem Abschnitt definiert wird. Die in den vorherigen Abschnitten vorgestellte Situation einer verteilten Lehrveranstaltung bietet den visionären Rahmen für dieses Szenario.
+  Wie bereits zu Beginn dieses Kapitels erwähnt, ist für die Validierung der Architektur im Rahmen dieser Arbeit der Anwendungsentwickler als Stakeholder von Interesse. Es gilt zu validieren, ob sich die Architektur grundsätzlich dazu eignet eine verteilte Multimediaapplikation zu implementieren. Grundlage für die Validierung soll ein \emph{Anwendungsszenario} sein, dass in diesem Abschnitt definiert wird. Die in den vorherigen Abschnitten vorgestellte Situation einer verteilten Lehrveranstaltung bietet den visionären Rahmen für dieses Szenario.
   
   Als eine zentrale Komponente für die Realisierung der zuvor beschriebenen Situation einer verteilten Lehrveranstaltung kann die Erfassung von Video- und Audiosignalen sowie deren Transport über ein Netzwerk identifiziert werden. Der Anwendungsentwickler soll in diesem Szenario daher genau diese Funktionalität implementieren. In Abbildung~\ref{fig:schema_des_anwendungsszenario} ist dieses Szenario einmal schematisch dargestellt. Im Folgenden wird genauer auf die einzelnen Elemente eingegangen.
 

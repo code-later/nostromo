@@ -55,6 +55,10 @@
 \usepackage{dvsm} % Use DejaVu Sans Mono as Monospace Font
 % get closed frames on each page for listings
 \usepackage{framed}
+\newenvironment{kasten}{%
+  \def\FrameCommand{\fboxsep=\FrameSep \colorbox{lightgray}}%
+  \MakeFramed {\hsize=0.9\textwidth \FrameRestore}}%
+ {\endMakeFramed}
 
 \lstloadlanguages{Java,XML,Ruby,HTML}
 \newcommand{\listingname}{Listing}

@@ -40,11 +40,11 @@
     "`Unter Verifikation wird die Überprüfung der Übereinstimmung zwischen einem Software-Produkt und seiner Spezifikation verstanden."'~\emph{\citep[S. 101]{balzert1998lst}}
   \end{definition}
   
-  Bei~\citep{boehm1984vv} wird der Zusammenhang von Verifikation und Validierung noch einmal auf den Punkt gebracht:
+  Bei \citep{boehm1984vv} wird der Zusammenhang von Verifikation und Validierung noch einmal auf den Punkt gebracht:
   
   \begin{description}
-    \item[Verifikation] "`Am I building the product right?"'~\citep[S. 75]{boehm1984vv}
-    \item[Validierung] "`Am I building the right product?"'~\citep[S. 75]{boehm1984vv}
+    \item[Verifikation] "`Am I building the product right?"' \citep[S. 75]{boehm1984vv}
+    \item[Validierung] "`Am I building the right product?"' \citep[S. 75]{boehm1984vv}
   \end{description}
   
   Durch die gegebenen Definition wird auch deutlich, warum zum gegebenen Zeitpunkt nur eine Validierung stattfinden kann und nicht zusätzlich auch eine Verifikation: Es existiert bis dato keine formale Spezifikation des Produkts, in diesem Fall der Architektur, gegen die eine Verifikation durchgeführt werden könnte.
@@ -76,7 +76,7 @@
 
   Die jetzige Implementierung der Servicekomposition erfüllt sowohl die Anforderungen der Santiago als auch der Nerstrand Anwendung. Dennoch sind einige Punkte, die sich für die weitere Verwendung abzeichnen.
   
-  Für komplexere Kompositionen, die etwa Schleifen oder eine variable Abfolge beinhalten ist die jetzige Umsetzung nicht geeignet. Sowohl die Möglichkeiten der verwendeten Ablaufbeschreibung als auch die zur Verfügung stehenden \verb!WorkflowEngine!-Implementierungen sehen solche Fälle nicht vor. Für deren Verwendung wäre zumindest eine \verb!WorkflowEngine! auf Basis eines Zustandsautomaten, wie bei~\citep{biornstad2006cfs} beschrieben, zu realisieren. Darüber hinaus sollte der Einsatz einer etablierten Prozessbeschreibungssprache evaluiert werden. Eine erste Prüfung von BPEL für den Einsatz in Multimediaanwendungen ist in diesem Zusammenhang in~\citep{samma08} durchgeführt worden.
+  Für komplexere Kompositionen, die etwa Schleifen oder eine variable Abfolge beinhalten ist die jetzige Umsetzung nicht geeignet. Sowohl die Möglichkeiten der verwendeten Ablaufbeschreibung als auch die zur Verfügung stehenden \verb!WorkflowEngine!-Implementierungen sehen solche Fälle nicht vor. Für deren Verwendung wäre zumindest eine \verb!WorkflowEngine! auf Basis eines Zustandsautomaten, wie bei \citep{biornstad2006cfs} beschrieben, zu realisieren. Darüber hinaus sollte der Einsatz einer etablierten Prozessbeschreibungssprache evaluiert werden. Eine erste Prüfung von BPEL für den Einsatz in Multimediaanwendungen ist in diesem Zusammenhang in \citep{samma08} durchgeführt worden.
 
   Ebenfalls Inhalt einer Weiterentwicklung sollte Möglichkeit sein, die Servicekomposition verteilt ausführen zu können. In der jetzigen Implementierungen ist die auch ohne Anpassungen möglich. Zu diesem Zwecke müsste in jedem Fall ein verteilter \verb!ProcessStore! realisiert werden.
 
@@ -85,7 +85,7 @@
 \subsection{Integration von Synchronisation} % (fold)
 \label{sub:integration_von_synchronisation}
 
-  Bereits bei dieser einfachen Anwendung bestand bereits der Bedarf nach Synchronisation von Medien. Die Tranformer-Komponente, die die Diashow und das Musikstück verarbeitet, muss dazu beide Medien synchronisieren. Es findet in diesem Fall jedoch lediglich eine implizite Synchronisation statt. Eine formale Spezifikation dieses Synchronisationsprozess ist nicht vorgesehen worden. Es handelt sich aber dennoch um eine valide und empfohlene Umsetzung von Synchronisation in einer verteilten Umgebung nach~\citep[S. 609]{multimedia_technologie}. Wie bereits in Abschnitt \ref{par:besonderheiten_bei_verteilten_umgebungen} beschrieben werden hier zwei synchronisierte Medien als Multiplex-Daten an den Consumer weitergeleitet.
+  Bereits bei dieser einfachen Anwendung bestand bereits der Bedarf nach Synchronisation von Medien. Die Tranformer-Komponente, die die Diashow und das Musikstück verarbeitet, muss dazu beide Medien synchronisieren. Es findet in diesem Fall jedoch lediglich eine implizite Synchronisation statt. Eine formale Spezifikation dieses Synchronisationsprozess ist nicht vorgesehen worden. Es handelt sich aber dennoch um eine valide und empfohlene Umsetzung von Synchronisation in einer verteilten Umgebung nach \citep[S. 609]{multimedia_technologie}. Wie bereits in Abschnitt \ref{par:besonderheiten_bei_verteilten_umgebungen} beschrieben werden hier zwei synchronisierte Medien als Multiplex-Daten an den Consumer weitergeleitet.
   
   Ohne die Umsetzung einer expliziten Synchronisationsspezifikationen bestand auch nicht die Notwendigkeit der Implementierungen des Synchronisation-Composite, wie es im Klassendiagramm des Medienobjekts in Abbildung \ref{fig:medienobjekt} dargestellt ist. In wie weit sich diese Modellierung daher tatsächlich zur Realisierung von Synchronisationsanforderungen in einer verteilten Umgebung eignet werden weitere Arbeiten zeigen müssen.
 
@@ -120,7 +120,7 @@
 
   Nachdem im vorherigen Teil die Ergebnisse der Umsetzung von Santiago vorgestellt wurden, liegt der Fokus in diesem Abschnitt auf die Umsetzbarkeit des Anwendungsszenario.
   
-  Wie bereits in Abschnitt \ref{sec:realisierung_des_szenario} festgehalten wurde, ließ sich die Nerstrand Anwendung sehr leicht innerhalb der Architektur implementieren. Einzig die momentane Realisierung der \verb!MediaStore!-Funktionalität hat zu einer Erschwerung geführt. Die Etablierung einer \verb!MediaStoreFactory!, die zur Laufzeit die für die jeweiligen Daten optimale Speicherstrategie wählt würde hier bereits Abhilfe schaffen. In diesem Zusammenhang sollte auch eine weitere Betrachtung des bereits erwähnten MultiMonster Medienservers erfolgen. Zur Bewertung der einzelnen Daten können darüber hinaus umfangreiche Metadaten notwendig sein, daher muss auch dieser Teil des Medienobjekts weiter ausgearbeitet werden, hierzu sei auch auf~\citep{lehmann09} verwiesen.
+  Wie bereits in Abschnitt \ref{sec:realisierung_des_szenario} festgehalten wurde, ließ sich die Nerstrand Anwendung sehr leicht innerhalb der Architektur implementieren. Einzig die momentane Realisierung der \verb!MediaStore!-Funktionalität hat zu einer Erschwerung geführt. Die Etablierung einer \verb!MediaStoreFactory!, die zur Laufzeit die für die jeweiligen Daten optimale Speicherstrategie wählt würde hier bereits Abhilfe schaffen. In diesem Zusammenhang sollte auch eine weitere Betrachtung des bereits erwähnten MultiMonster Medienservers erfolgen. Zur Bewertung der einzelnen Daten können darüber hinaus umfangreiche Metadaten notwendig sein, daher muss auch dieser Teil des Medienobjekts weiter ausgearbeitet werden, hierzu sei auch auf \citep{lehmann09} verwiesen.
   
   Ein letzter Punkt der bei der Umsetzung des Anwendungsszenario auffiel, war dass es durchaus sinnvoll wäre, wenn sich die Operation eines einzelnen Dienstes wieder stoppen ließe. In der Nerstrand Anwendung stellt der \verb!WebcamStreamingService! solange den Stream bereit bis der Thread in dem die eigentliche Operation ausgeführt wird, unterbrochen wird.
 
