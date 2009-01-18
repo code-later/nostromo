@@ -3,7 +3,7 @@
 \chapter{Validierung der Architektur} % (fold)
 \label{cha:validierung_der_architektur}
 
-  Neben der Konzeption und prototypischen Realisierung von COSIMA ist der dritte Pfeiler dieser Arbeit die Validierung von COSIMA. Im vorherigen Kapitel wurde sowohl die Architektur selbst als auch ein Prototyp für ein Anwendungsszenario implementiert. In diesem Kapitel steht folglich die Validierung dieser Implementierung im Fokus. Bevor aber die Ergebnisse dieser im Detail präsentiert werden können, soll zunächst eine Einordnung und Definition des Begriffs der \emph{Validierung} erfolgen.
+  Neben der Konzeption und prototypischen Realisierung von COSIMA ist der dritte Pfeiler dieser Arbeit die Validierung von COSIMA. Im vorherigen Kapitel wurde sowohl die Architektur selbst als auch ein Prototyp für ein Anwendungsszenario implementiert. In diesem Kapitel steht die Validierung dieser Implementierung im Fokus. Bevor aber die Ergebnisse im Detail präsentiert werden können, soll zunächst eine Einordnung und Definition des Begriffs der \emph{Validierung} erfolgen.
 
 \section{Definition} % (fold)
 \label{sec:definition_validierung}
@@ -11,7 +11,7 @@
   Als erster Hinweis eine Definition für Validierung zu finden, die in dieser Arbeit Gültigkeit besitzt, soll das offizielle Glossar über Software-Engineering des IEEE liefern:
 
   \begin{definition}[Validierung (IEEE)]\label{def:validierung_ieee}
-    "`The process of evaluating a system or component during or at the end of the development process to determine whether it satisfies specified requirements. Contrast with: verification."'~\emph{\citep{ieee90sg}}
+    "`The process of evaluating a system or component during or at the end of the development process to determine whether it satisfies specified requirements. Contrast with: verification."' \emph{\citep{ieee90sg}}
   \end{definition}
   
   In dieser Definition wird Validierung mit dem Begriff Evaluation erklärt, was die Notwendigkeit aufbringt auch diesen zu definieren:
@@ -20,27 +20,27 @@
     "`[Die] sach- und fachgerechte Bewertung"'\footnote{aus: Duden - Deutsches Universal Wörterbuch A-Z, 3. Aufl., 1996}
   \end{definition}
   
-  Eine "`fachgerechte Bewertung"' ist für den gegebenen Kontext zu verstehen, als dass die prototypische Implementierung der Architektur und des Szenario anhand bestimmter Kriterien bewertet wird. Wie in Kapitel~\ref{cha:szenario} jedoch bereits verdeutlicht wurde, wird im Rahmen dieser Arbeit keine Evaluierung der Architektur vorgenommen, sondern eine Validierung. Aus diesem Grunde wird in diesem Rahmen die folgende Definition verwendet:
+  Eine "`fachgerechte Bewertung"' ist für den gegebenen Kontext zu verstehen, als dass die prototypische Implementierung der Architektur und des Szenario anhand bestimmter Kriterien bewertet wird. Wie in Kapitel~\ref{cha:szenario} jedoch bereits verdeutlicht wurde, wird im Rahmen dieser Arbeit keine Evaluierung der Architektur vorgenommen, sondern eine Validierung. Aus diesem Grunde wird hier die folgende Definition verwendet:
   
   \begin{definition}[Validierung (Balzert)]\label{def:validierung_balzert}
-    "`Unter Validation wird die Eignung bzw. der Wert eines Produktes bezogen auf seinen Einsatzzweck verstanden."'~\emph{\citep[S. 101]{balzert1998lst}}
+    "`Unter Validation wird die Eignung bzw. der Wert eines Produktes bezogen auf seinen Einsatzzweck verstanden."' \emph{\citep[S. 101]{balzert1998lst}}
   \end{definition}
   
-  Sie drückt wesentlich deutlicher aus, dass Inhalt einer Validierung ist, zu überprüfen, ob sich die vorgestellte Architektur grundsätzlich für die Konstruktion von verteilten Multimediaanwendungen eignet.
+  Sie drückt wesentlich deutlicher aus, dass Inhalt einer Validierung ist, zu überprüfen, ob sich die konzipierte Architektur grundsätzlich für die Konstruktion von verteilten Multimediaanwendungen eignet.
   
-  Wie bereits in der Definition des IEEE deutlich wird, steht der Begriff der \emph{Validierung} in der Regel nicht für sich allein, sondern immer gemeinsam mit dem Begriff der \emph{Verifikation}. Auch wenn dieser für diese Arbeit keine weitere Relevanz hat, soll er der Vollständigkeit halber ebenfalls definiert werden:
+  Wie bereits in der Definition des IEEE deutlich wurde, steht der Begriff der \emph{Validierung} in der Regel nicht für sich allein, sondern gemeinsam mit dem Begriff der \emph{Verifikation}:
   
   \begin{definition}[Verifikation (IEEE)]\label{def:verifikation_ieee}
-    "`The process of evaluating a system or component to determine whether the products of a given development phase satisfy the conditions imposed at the start of that phase. Contrast with: validation."'~\emph{\citep{ieee90sg}}
+    "`The process of evaluating a system or component to determine whether the products of a given development phase satisfy the conditions imposed at the start of that phase. Contrast with: validation."' \emph{\citep{ieee90sg}}
   \end{definition}
   
   Hier ebenfalls zu der Definition des IEEE ergänzend die Definition von Balzert, ohne die Verwendung des Begriffs der Evaluation:
   
   \begin{definition}[Verifikation (Balzert)]\label{def:verifikation_balzert}
-    "`Unter Verifikation wird die Überprüfung der Übereinstimmung zwischen einem Software-Produkt und seiner Spezifikation verstanden."'~\emph{\citep[S. 101]{balzert1998lst}}
+    "`Unter Verifikation wird die Überprüfung der Übereinstimmung zwischen einem Software-Produkt und seiner Spezifikation verstanden."' \emph{\citep[S. 101]{balzert1998lst}}
   \end{definition}
   
-  Bei \citep{boehm1984vv} wird der Zusammenhang von Verifikation und Validierung noch einmal auf den Punkt gebracht:
+  Bei \citep{boehm1984vv} wird der Zusammenhang von Verifikation und Validierung noch einmal deutlicher gemacht:
   
   \begin{description}
     \item[Verifikation] "`Am I building the product right?"' \citep[S. 75]{boehm1984vv}
@@ -49,23 +49,23 @@
   
   Durch die gegebenen Definition wird auch deutlich, warum zum gegebenen Zeitpunkt nur eine Validierung stattfinden kann und nicht zusätzlich auch eine Verifikation: Es existiert bis dato keine formale Spezifikation des Produkts, in diesem Fall der Architektur, gegen die eine Verifikation durchgeführt werden könnte.
   
-  Nachdem nun die Begrifflichkeiten geklärt wurden, werden im nächste Schritt zunächst die Ergebnisse der Validierung der Implementierung auf Basis der Santiago Anwendung vorgestellt. Anschließend werden jene Ergebnisse betrachtet, die sich aus der prototypischen Umsetzung des Anwendungsszenario ergeben haben.
+  Nachdem die Begrifflichkeiten geklärt sind, werden im nächste Schritt zunächst die Ergebnisse der Validierung der Implementierung der Architektur auf Basis der Santiago Anwendung vorgestellt. Anschließend werden jene Ergebnisse betrachtet, die sich aus der prototypischen Umsetzung des Anwendungsszenario ergeben haben.
   
-  Zum verwendeten Vorgehen bei der Validierung kann sei an dieser Stelle noch erwähnt, dass sich an dem Grad der Umsetzbarkeit sowohl der Santiago als auch der Nerstrand Anwendung auf Grundlage der Architektur orientiert wurde. Da beide Anwendung einen Anwendungsfall repräsentieren, der mit COSIMA realisierbar sein soll, beantwortet der Grad der Umsetzbarkeit die Frage, ob das richtige Produkt gebaut wird.
+  Zum verwendeten Vorgehen bei der Validierung sei an dieser Stelle noch erwähnt, dass sich an dem Grad der Umsetzbarkeit sowohl der Santiago als auch der Nerstrand Anwendung auf Grundlage der Architektur orientiert wurde. Da beide Anwendung einen Anwendungsfall repräsentieren, der mit COSIMA realisierbar sein soll, beantwortet der Grad der Umsetzbarkeit die Frage, ob das richtige Produkt gebaut wird.
   
 % section definition (end)
 
 \section{Ergebnisse aus der Santiago Anwendung} % (fold)
 \label{sec:ergebnisse_aus_der_santiago_anwendung}
 
-  Grundsätzlich lässt sich festhalten, dass die Umsetzung der Architektur so gelang, wie sie vorgesehen war. Dennoch kam es bei einigen Punkten zu Abweichungen, welche das waren wird im Folgenden genauer beschrieben.
+  Grundsätzlich lässt sich festhalten, dass die Umsetzung der Architektur so gelang, wie sie vorgesehen war. Dennoch kam es bei einigen Punkten zu Abweichungen, welche im Folgenden genauer beschrieben werden sollen.
   
 \subsection{Verwendung des Nachrichtensystems} % (fold)
 \label{sub:verwendung_des_nachrichtensystems}
 
-  Die einzige gravierende Änderung an der ursprünglichen Architektur ist bei der Verwendung des Nachrichtensystems vorgenommen worden. Zwar ist ein Nachrichtensystem mit einer entsprechenden Schnittstelle und deren Implementierung auf JMS\abk{JMS}{Java Message Service} Basis über ActiveMQ\footnote{\url{http://activemq.apache.org}} vorgenommen worden, am Ende jedoch nicht verwendet worden. Im Konzept ist Nachrichtensystem als Schnittstelle zwischen der Servicekomposition und den medienverarbeitenden Diensten vorgesehen: Die Servicekomposition sollte die Dienste immer nur über das Nachrichtensystem aufrufen können. Entsprechend dem Konzept wurde das Nachrichtensystem nach dem \emph{Publish-Subscribe}-Pattern realisiert und zusätzlich als \emph{Queue}. Beide Varianten haben zu Problemen beim Aufruf der Dienste geführt. Ein Dienst gibt nach Durchführung seiner Funktionalität eine \verb!IODescriptor!-Instanz an den Dienstnutzer zurück, in ihr ist hinterlegt wo der nächste Dienst die entsprechenden Medienobjekte finden kann. Die ausführende Komponente in der Servicekomposition kann also den nächsten Dienst nicht ohne diese Information aufrufen. Demnach handelt es sich um einen \emph{synchronen} Aufruf. Ein Nachrichtensystem wird aber vor allem eingesetzt um eine \emph{asynchrone} Kommunikation zu erreichen. Zwar ließe sich eine funktionierende Funktionsweise der Servicekomposition auf einer asynchronen Kommunikation über das Nachrichtensystem umsetzen, diese wäre aber ungleich komplexer und damit auch fehleranfälliger als eine synchrone Kommunikation. Zumal es sich ohnehin um synchrone Aufrufe handelt.
+  Die einzige gravierende Änderung an der ursprünglichen Architektur ist bei der Verwendung des Nachrichtensystems vorgenommen worden. Zwar ist ein Nachrichtensystem mit einer entsprechenden Schnittstelle und deren Implementierung auf JMS\abk{JMS}{Java Message Service} Basis über \mbox{ActiveMQ}\footnote{\url{http://activemq.apache.org}} vorgenommen, am Ende jedoch nicht verwendet worden. Im Konzept ist das Nachrichtensystem als Schnittstelle zwischen der Servicekomposition und den medienverarbeitenden Diensten vorgesehen: Die Servicekomposition sollte die Dienste immer nur über das Nachrichtensystem aufrufen können. Entsprechend dem Konzept wurde das Nachrichtensystem nach dem \emph{Publish-Subscribe}-Pattern realisiert. Dies hat jedoch zu Problemen beim Aufruf der Dienste geführt. Ein Dienst gibt nach Durchführung seiner Funktionalität eine \verb!IODescriptor!-Instanz an den Dienstnutzer zurück, in ihr ist hinterlegt wo der nächste Dienst die entsprechenden Medienobjekte finden kann. Die ausführende Komponente in der Servicekomposition kann also den nächsten Dienst nicht ohne diese Information aufrufen. Es handelt es sich somit um einen \emph{synchronen} Aufruf. Ein Nachrichtensystem wird aber vor allem eingesetzt um eine \emph{asynchrone} Kommunikation zu realisieren. Zwar ließe sich eine funktionierende Funktionsweise der Servicekomposition auf einer asynchronen Kommunikation über das Nachrichtensystem umsetzen, diese wäre aber ungleich komplexer und damit auch fehleranfälliger als eine synchrone Kommunikation.
   
-  Die zur Zeit gewählte Implementierung, dass die Servicekomposition die Dienste direkt über eine Web Service Schnittstelle aufruft, entspricht dabei der Vorgehensweise von BPEL und ist demnach als verwendbar einzustufen. Die durch die Verwendung eines Nachrichtensystems erhoffte Entkopplung der Servicekomposition und der einzelnen Dienste wird dabei nicht verworfen, sondern durch den Einsatz der Service Registry erreicht.
+  Die zur Zeit gewählte Implementierung, dass die Servicekomposition die Dienste direkt über eine Web Service Schnittstelle aufruft, entspricht dabei auch der Vorgehensweise von BPEL und ist demnach als verwendbar einzustufen. Die durch die Verwendung eines Nachrichtensystems erhoffte Entkopplung der Servicekomposition und der einzelnen Dienste wird dabei nicht verworfen, sondern durch den Einsatz der Service Registry erreicht.
   
   Dennoch ist die Implementierung des Nachrichtensystems nicht obsolet, so ließe es sich etwa zur Vermittlung von Synchronisationsspezifikationen verwenden.
 
@@ -74,27 +74,27 @@
 \subsection{Verwendung der Servicekomposition} % (fold)
 \label{sub:verwendung_der_servicekomposition}
 
-  Die jetzige Implementierung der Servicekomposition erfüllt sowohl die Anforderungen der Santiago als auch der Nerstrand Anwendung. Dennoch sind einige Punkte, die sich für die weitere Verwendung abzeichnen.
+  Die jetzige Implementierung der Servicekomposition erfüllt sowohl die Anforderungen der Santiago als auch der Nerstrand Anwendung. Dennoch zeichnen sich einige Probleme für die weitere Verwendung ab.
   
-  Für komplexere Kompositionen, die etwa Schleifen oder eine variable Abfolge beinhalten ist die jetzige Umsetzung nicht geeignet. Sowohl die Möglichkeiten der verwendeten Ablaufbeschreibung als auch die zur Verfügung stehenden \verb!WorkflowEngine!-Implementierungen sehen solche Fälle nicht vor. Für deren Verwendung wäre zumindest eine \verb!WorkflowEngine! auf Basis eines Zustandsautomaten, wie bei \citep{biornstad2006cfs} beschrieben, zu realisieren. Darüber hinaus sollte der Einsatz einer etablierten Prozessbeschreibungssprache evaluiert werden. Eine erste Prüfung von BPEL für den Einsatz in Multimediaanwendungen ist in diesem Zusammenhang in \citep{samma08} durchgeführt worden.
+  Für komplexere Kompositionen, die etwa Schleifen oder eine variable Abfolge beinhalten, ist die jetzige Umsetzung nicht geeignet. Sowohl die Möglichkeiten der verwendeten Ablaufbeschreibung als auch die zur Verfügung stehenden \verb!WorkflowEngine!-Implementierungen sehen solche Fälle nicht vor. Für deren Verwendung wäre zumindest eine \verb!WorkflowEngine! auf Basis eines Zustandsautomaten, wie bei \citep{biornstad2006cfs} beschrieben, zu realisieren. Darüber hinaus sollte der Einsatz einer etablierten Prozessbeschreibungssprache evaluiert werden. Eine erste Prüfung von BPEL für den Einsatz in Multimediaanwendungen ist in diesem Zusammenhang bei \citep{samma08} durchgeführt worden.
 
-  Ebenfalls Inhalt einer Weiterentwicklung sollte Möglichkeit sein, die Servicekomposition verteilt ausführen zu können. In der jetzigen Implementierungen ist die auch ohne Anpassungen möglich. Zu diesem Zwecke müsste in jedem Fall ein verteilter \verb!ProcessStore! realisiert werden.
+  Ebenfalls Inhalt einer Weiterentwicklung sollte die Möglichkeit sein, die Servicekomposition verteilt ausführen zu können. In der jetzigen Implementierungen ist dies auch ohne größere Anpassungen in der \verb!RemoteWorkflowEngine! möglich. Es muss lediglich ein verteilter \verb!ProcessStore! realisiert werden.
 
 % subsection verwendung_der_servicekomposition (end)
 
 \subsection{Integration von Synchronisation} % (fold)
 \label{sub:integration_von_synchronisation}
 
-  Bereits bei dieser einfachen Anwendung bestand bereits der Bedarf nach Synchronisation von Medien. Die Tranformer-Komponente, die die Diashow und das Musikstück verarbeitet, muss dazu beide Medien synchronisieren. Es findet in diesem Fall jedoch lediglich eine implizite Synchronisation statt. Eine formale Spezifikation dieses Synchronisationsprozess ist nicht vorgesehen worden. Es handelt sich aber dennoch um eine valide und empfohlene Umsetzung von Synchronisation in einer verteilten Umgebung nach \citep[S. 609]{multimedia_technologie}. Wie bereits in Abschnitt \ref{par:besonderheiten_bei_verteilten_umgebungen} beschrieben werden hier zwei synchronisierte Medien als Multiplex-Daten an den Consumer weitergeleitet.
+  Bereits bei dieser einfachen Anwendung bestand bereits der Bedarf nach Synchronisation von Medien. Die Tranformer-Komponente, die die Diashow und das Musikstück verarbeitet, muss dazu beide Medien synchronisieren. Es findet in diesem Fall eine implizite Synchronisation statt. Eine formale Spezifikation dieses Synchronisationsprozess ist nicht vorgesehen worden. Es handelt sich aber dennoch um eine valide und empfohlene Umsetzung von Synchronisation in einer verteilten Umgebung nach \citep[S. 609]{multimedia_technologie}. Wie bereits in Abschnitt \ref{par:besonderheiten_bei_verteilten_umgebungen} beschrieben, werden hier zwei synchronisierte Medien als Multiplex-Daten an den Consumer weitergereicht.
   
-  Ohne die Umsetzung einer expliziten Synchronisationsspezifikationen bestand auch nicht die Notwendigkeit der Implementierungen des Synchronisation-Composite, wie es im Klassendiagramm des Medienobjekts in Abbildung \ref{fig:medienobjekt} dargestellt ist. In wie weit sich diese Modellierung daher tatsächlich zur Realisierung von Synchronisationsanforderungen in einer verteilten Umgebung eignet werden weitere Arbeiten zeigen müssen.
+  Ohne die Umsetzung einer expliziten Synchronisationsspezifikationen bestand auch nicht die Notwendigkeit der Implementierungen des Synchronisation-Composite, wie es im Klassendiagramm des Medienobjekts in Abbildung \ref{fig:medienobjekt} dargestellt ist. In wie weit sich diese Modellierung daher tatsächlich zur Realisierung von Synchronisationsanforderungen in einer verteilten Umgebung eignet, werden weitere Arbeiten zeigen müssen.
 
 % subsection integration_von_synchronisation (end)
 
 \subsection{Verwendung des Medienbroker} % (fold)
 \label{sub:verwendung_des_medienbroker}
 
-  Die Implementierungen des Medienbroker sowie der Medienobjekte ist zu diesem Zeitpunkt als ausreichend zu betrachten. Alle Anforderungen ließen sich damit leicht umsetzen. Jedoch wurde bisher nicht von der \verb!MediaContainer!-Klasse Gebrauch gemacht. Jedoch sind zur Zeit keine Anzeichen erkennbar, dass die Implementierungen des Medienobjekts nicht ausreichend ist.
+  Die Implementierungen des Medienbroker sowie der Medienobjekte ist zu diesem Zeitpunkt als ausreichend zu betrachten. Alle Anforderungen ließen sich damit leicht umsetzen. Jedoch wurde bisher nicht von der \verb!MediaContainer!-Klasse Gebrauch gemacht. Zur Zeit sind aber keine Anzeichen erkennbar, dass die Implementierungen des Medienobjekts nicht ausreichend ist.
   
   Für eine weitere Entwicklung des Medienbroker ist es erstrebenswert ihn stärker als eigene Anwendung herausarbeiten. Dienste sollten die Möglichkeit erhalten mit dem Medienbroker über ein eigenes Protokoll zu kommunizieren. Aufrufe von Medienobjekten sollten sich dabei an ein URI-Schema der Form \verb!cosima://santiago.fh-koeln.de/media/Slideshow! halten.
 
@@ -105,11 +105,11 @@
 
   Obwohl nicht-funktionale Anforderungen nicht Bestandteil der eigentlichen Validierung sind, sollen an dieser Stelle dennoch einige Punkte genannt werden, die während der Implementierungen bereits aufgefallen sind.
   
-  Vor allem durch die prototypische Charakteristik der Implementierungen der Architektur werden Fehler nicht immer adäquat behandelt. Exceptions werden zwar geworfen doch nicht in einem konsistenten Rahmen. Für die weitere Entwicklung sollte demnach in jedem Fall eine vollständigere Fehlerbehandlung implementiert werden.
+  Vor allem durch die prototypische Charakteristik der Implementierungen der Architektur werden Fehler nicht immer adäquat behandelt. \emph{Exceptions} werden zwar geworfen doch nicht in einem konsistenten Rahmen. Für die weitere Entwicklung sollte demnach in jedem Fall eine vollständigere Fehlerbehandlung implementiert werden.
 
-  Eng mit der unzureichenden Fehlerbehandlung ist die geringe Fehlerrobustheit zu nennen. Bei nicht vollständig konformer Verwendung der Architektur kann nicht mit hoher Sicherheit bestimmt werden, ob die Anwendung korrekt ablaufen wird.
+  Eng mit der unzureichenden Fehlerbehandlung ist die geringe Fehlerrobustheit zu nennen. Bei nicht vollständig konformer Verwendung der Architektur kann nicht mit Sicherheit bestimmt werden, ob die Anwendung korrekt ablaufen wird oder nicht.
 
-  Vor allem für Wartung und Entwicklung ist es notwendig das momentane Logging Singleton durch einen robusten Logging-Service zu ersetzen. Trotz einer verteilten Umgebung ist dennoch notwendig ein zentrales Log der Gesamtapplikation zur Verfügung zu haben.
+  Vor allem für die Wartung und Entwicklung ist es notwendig das momentan verwendete \emph{Logging-Singleton} durch einen robusten \emph{Logging-Dienst} zu ersetzen. Denn auch in einer verteilten Umgebung ist es notwendig ein zentrales Log der Gesamtapplikation zur Verfügung zu haben.
 
 % subsection fehlerrobustheit (end)
 
@@ -120,7 +120,7 @@
 
   Nachdem im vorherigen Teil die Ergebnisse der Umsetzung von Santiago vorgestellt wurden, liegt der Fokus in diesem Abschnitt auf die Umsetzbarkeit des Anwendungsszenario.
   
-  Wie bereits in Abschnitt \ref{sec:realisierung_des_szenario} festgehalten wurde, ließ sich die Nerstrand Anwendung sehr leicht innerhalb der Architektur implementieren. Einzig die momentane Realisierung der \verb!MediaStore!-Funktionalität hat zu einer Erschwerung geführt. Die Etablierung einer \verb!MediaStoreFactory!, die zur Laufzeit die für die jeweiligen Daten optimale Speicherstrategie wählt würde hier bereits Abhilfe schaffen. In diesem Zusammenhang sollte auch eine weitere Betrachtung des bereits erwähnten MultiMonster Medienservers erfolgen. Zur Bewertung der einzelnen Daten können darüber hinaus umfangreiche Metadaten notwendig sein, daher muss auch dieser Teil des Medienobjekts weiter ausgearbeitet werden, hierzu sei auch auf \citep{lehmann09} verwiesen.
+  Wie bereits in Abschnitt \ref{sec:realisierung_des_szenario} festgehalten wurde, ließ sich die Nerstrand Anwendung sehr leicht innerhalb der Architektur implementieren. Einzig die momentane Realisierung der \verb!MediaStore!-Funktionalität hat zu einer Erschwerung geführt. Die Etablierung einer \verb!MediaStoreFactory!, die zur Laufzeit die für die jeweiligen Daten optimale Speicherstrategie wählt würde hier bereits Abhilfe schaffen. In diesem Zusammenhang sollte auch eine weitere Betrachtung des bereits erwähnten MultiMonster-Medienservers erfolgen. Zur Bewertung der einzelnen Daten können darüber hinaus umfangreiche Metadaten notwendig sein, daher muss auch dieser Teil des Medienobjekts weiter ausgearbeitet werden, hierzu sei auch auf \citep{lehmann09} verwiesen.
   
   Ein letzter Punkt der bei der Umsetzung des Anwendungsszenario auffiel, war dass es durchaus sinnvoll wäre, wenn sich die Operation eines einzelnen Dienstes wieder stoppen ließe. In der Nerstrand Anwendung stellt der \verb!WebcamStreamingService! solange den Stream bereit bis der Thread in dem die eigentliche Operation ausgeführt wird, unterbrochen wird.
 

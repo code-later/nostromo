@@ -74,21 +74,21 @@
   Das IEEE definiert in ihrem Glossar zur Softwaretechnik den Begriff Architektur wie folgt:
   
   \begin{definition}[Architektur (IEEE)]\label{def:architektur_ieee}
-    "`The organizational structure of a system or component."'~\emph{\citep{ieee90sg}.}
+    "`The organizational structure of a system or component."' \emph{\citep{ieee90sg}.}
   \end{definition}
   
   Diese sehr einfache Definition von Architektur weist schon auf die Eigenschaft der Strukturierung hin. Die Auswahl der folgenden Definitionen stellen die Eigenschaften von Architektur aber noch einmal deutlicher heraus.
   
   \begin{definition}[Architektur (Crispen)]\label{def:architektur_crispen}
-    "`An architecture [\ldots] consists of (a) a partitioning strategy and (b) a coordination strategy. The partitioning strategy leads to dividing the entire system into discrete, non-overlapping parts or components. The coordination strategy leads to explicitly defined interfaces between those parts."'~\emph{\citep[S. 272]{crispen1994sm}}
+    "`An architecture [\ldots] consists of (a) a partitioning strategy and (b) a coordination strategy. The partitioning strategy leads to dividing the entire system into discrete, non-overlapping parts or components. The coordination strategy leads to explicitly defined interfaces between those parts."' \emph{\citep[S. 272]{crispen1994sm}}
   \end{definition}
   
   \begin{definition}[Architektur (Reussner et al.)]\label{def:architektur_reussner_et_al}
-    "`Die Software-Architektur ist die grundlegende Organisation eines Systems, dargestellt durch dessen Komponenten, deren Beziehungen zueinander und zur Umgebung, sowie die Prinzipien, die den Entwurf und die Evolution des Systems bestimmen."'~\emph{\citep[S. 1]{handbuch_der_software_architektur}}
+    "`Die Software-Architektur ist die grundlegende Organisation eines Systems, dargestellt durch dessen Komponenten, deren Beziehungen zueinander und zur Umgebung, sowie die Prinzipien, die den Entwurf und die Evolution des Systems bestimmen."' \emph{\citep[S. 1]{handbuch_der_software_architektur}}
   \end{definition}
   
   \begin{definition}[Architektur (Bass et al.)]\label{def:architektur_bass_et_al}
-    "`The software architecture of a program or computing system is the structure or structures of the system, which comprise software components, the externally visible properties of those components, and the relationship among them."'~\emph{\citep[S. 21]{software_architecture_in_practice}}
+    "`The software architecture of a program or computing system is the structure or structures of the system, which comprise software components, the externally visible properties of those components, and the relationship among them."' \emph{\citep[S. 21]{software_architecture_in_practice}}
   \end{definition}
   
 % subsubsection definitionen (end)
@@ -99,23 +99,23 @@
   Darüber hinaus ist noch die Unterscheidung von \emph{Software}- und \emph{System}-Architekturen zu treffen \citep[S. xix]{evaluating_software_architectures}. Eine System-Architektur berücksichtigt dabei deutlich mehr Komponenten, wie etwa Hardware und Umgebung auf der die Software installiert werden soll. Diese Trennung wird auch in den entsprechenden Definitionen des SEI deutlich:
   
   \begin{definition}[Software-Architektur (SEI)]\label{def:software_architektur_sei}
-    "`The structure or structures of a system, which comprise the software elements, the externally visible properties of those elements, and the relationships among them."'~\emph{\citep{sei_glossary}}
+    "`The structure or structures of a system, which comprise the software elements, the externally visible properties of those elements, and the relationships among them."' \emph{\citep{sei_glossary}}
   \end{definition}
   
   \begin{definition}[System-Architektur]\label{def:system_architektur}
-    "`A means for describing the elements and interactions of a complete system including its hardware elements and its software elements."'~\emph{\citep{sei_glossary}}
+    "`A means for describing the elements and interactions of a complete system including its hardware elements and its software elements."' \emph{\citep{sei_glossary}}
   \end{definition}
 
   Bei der Architektur innerhalb des COSIMA-Projekts handelt es sich also um eine Software-Architektur, da ausschließlich die Softwarekomponenten ohne Rücksicht auf mögliche Hardware betrachtet werden. Genauer kann auch gesagt werden, dass es sich um eine Referenzarchitektur nach Reussner et al. handelt:
   
   \begin{definition}[Referenzarchitektur]\label{def:referenzarchitektur}
-    "`Eine Referenzarchitektur ist eine abstrakte Software-Architektur, sie definiert Strukturen und Typen von Software-Elementen sowie deren erlaubte Interaktionen und ihre Verantwortlichkeiten speziell für einen Anwendungsbereich. Die Strukturen sind jeweils für alle Systeme innerhalb einer Domäne anwendbar."'~\emph{\citep[S. 358]{handbuch_der_software_architektur}}
+    "`Eine Referenzarchitektur ist eine abstrakte Software-Architektur, sie definiert Strukturen und Typen von Software-Elementen sowie deren erlaubte Interaktionen und ihre Verantwortlichkeiten speziell für einen Anwendungsbereich. Die Strukturen sind jeweils für alle Systeme innerhalb einer Domäne anwendbar."' \emph{\citep[S. 358]{handbuch_der_software_architektur}}
   \end{definition}
   
   Da mit dem COSIMA-Projekt Multimediaanwendungen realisiert werden sollen, wird an dieser Stelle ergänzend noch der Terminus der \emph{Multimedia-Architektur} definiert:
   
   \begin{definition}[Multimedia-Architektur]\label{def:multimedia_architektur}
-    "`Eine Multimedia-Architektur ist eine Software-Architektur, die der Erzeugung, der Speicherung, der Transformation, der Präsentation und / oder dem Transport von multimedialen Daten dient."'~\emph{\citep[S. 423]{handbuch_der_software_architektur}}
+    "`Eine Multimedia-Architektur ist eine Software-Architektur, die der Erzeugung, der Speicherung, der Transformation, der Präsentation und / oder dem Transport von multimedialen Daten dient."' \emph{\citep[S. 423]{handbuch_der_software_architektur}}
   \end{definition}
 
 % subsubsection software_und_systemarchitekturen (end)
@@ -148,19 +148,19 @@
   Eine sehr allgemeine Definition, was ein Dienst ist, liefert Masak. Der Wert dieser Definition liegt vor allem darin, dass durch sie "`alles"' als Dienst aufgefasst werden kann:
 
 \begin{definition}[Dienst (allgemein)]\label{def:dienst_allgemein_}
-  "`Alles, was aus- oder durchgeführt werden kann ist ein Service!"'~\emph{\citep[S. 16]{masak2007ssb}}\footnote{Die Begriffe "`Dienst"' und "`Service"' können synonym verwendet werden.}
+  "`Alles, was aus- oder durchgeführt werden kann ist ein Service!"' \emph{\citep[S. 16]{masak2007ssb}}\footnote{Die Begriffe "`Dienst"' und "`Service"' können synonym verwendet werden.}
 \end{definition}
 
   Im Rahmen dieser Arbeit und für das allgemeine Verständnis ist es jedoch essentiell, welche Eigenschaften einen Dienst am Ende auszeichnen. Die Definition der OASIS nennt hier die Möglichkeit des Zugriff auf bestimmte Funktionalitäten über eine wohl-definierte und formal beschriebene Schnittstelle:
 
 \begin{definition}[Dienst (OASIS)]\label{def:dienst_oasis_}
-  "`A service is a mechanism to enable access to one or more capabilities, where the access is provided using a prescribed interface and is exercised consistent with constraints and policies as specified by the service description."'~\emph{\citep[S. 12]{mackenzie2006rms}}
+  "`A service is a mechanism to enable access to one or more capabilities, where the access is provided using a prescribed interface and is exercised consistent with constraints and policies as specified by the service description."' \emph{\citep[S. 12]{mackenzie2006rms}}
 \end{definition}
 
   Die Definition von Papazoglou nennt darüber hinaus drei essentielle Eigenschaften, die ein Dienst erfüllen muss, um als Dienst gelten zu können:
 
 \begin{definition}[Dienst (Papazoglou)]\label{def:dienst_papazoglou_}
-  "`A service in SOA is an exposed piece of functionality with three essential properties. An SOA-based service is a self-contained [\ldots] and platform-independet [\ldots] service that can be dynamically located and invoked."'~\emph{\citep[S. 258]{web_services_principles_and_technology}}
+  "`A service in SOA is an exposed piece of functionality with three essential properties. An SOA-based service is a self-contained [\ldots] and platform-independet [\ldots] service that can be dynamically located and invoked."' \emph{\citep[S. 258]{web_services_principles_and_technology}}
 \end{definition}
 
   Für den weiteren Verlauf dieser Arbeit können also folgenden Eigenschaften festgehalten werden, die eine Dienst auszeichnen:
@@ -180,7 +180,7 @@
   Bevor auf die dienstorientierte Architektur eingegangen werden kann, soll noch der Begriff der Dienstorientierung für sich definiert werden:
 
 \begin{definition}[Dienstorientierung]\label{def:dienstorientierung}
-  "`Service-orientation is a design paradigm intended for the creation of solution logic units that are individually shaped so that they can be collectively and repeatedly utilized in support of the realization of a specific set of strategic goals and benefits associated with SOA and service-oriented computing."'~\emph{\citep{erl2008soa}}
+  "`Service-orientation is a design paradigm intended for the creation of solution logic units that are individually shaped so that they can be collectively and repeatedly utilized in support of the realization of a specific set of strategic goals and benefits associated with SOA and service-oriented computing."' \emph{\citep{erl2008soa}}
 \end{definition}
 
   Es handelt sich bei der Dienstorientierung demnach um das Entwurfsparadigma, dass hinter einer dienstorientierten Architektur steht. Erl nennt in diesem Zusammenhang die folgenden acht Entwurfsprinzipien, die wiederum der Dienstorientierung selbst zu Grunde liegen \citep{erl2008soa}.
@@ -220,25 +220,25 @@
   Bei der Definition von Natis wird zunächst die Schnittstelle zwischen den Diensten in den Vordergrund gerückt:
 
 \begin{definition}[SOA (Natis)]\label{def:soa_natis_2003_}
-  "`Essentially, SOA is a software architecture that starts with an interface definition and builds the entire application topology as a topology of interfaces, interface implementations and interface calls."'~\emph{\citep[S. 2]{natis2003soa}}
+  "`Essentially, SOA is a software architecture that starts with an interface definition and builds the entire application topology as a topology of interfaces, interface implementations and interface calls."' \emph{\citep[S. 2]{natis2003soa}}
 \end{definition}
 
   Obwohl die Konstruktion einer Architektur, die rund um definierte Schnittstellen aufgebaut wird, als Teilaspekt auch innerhalb einer SOA von Bedeutung ist, macht das allein noch keine dienstorientierte Architektur aus\footnote{Auch in der objektorientierten Programmierung gilt das Prinzip, dass gegen Interfaces und nicht gegen Implementierungen programmiert werden soll \citep[S. 18]{design_patterns}.}. Die Definition der OASIS\abk{OASIS}{Organization for the Advancement of Structured Information Standards} fokussiert im Gegensatz dazu stärker auf den Aspekt der Verteiltheit und das einzelne Einheiten unterschiedlichen Domänen und Besitzern zugeordnet sein können:
 
 \begin{definition}[SOA (OASIS Reference Model)]\label{def:soa_oasis_reference_model_}
-  "`Service-Oriented Architecture (SOA) is a paradigm for organizing and utilizing distributed capabilities that may be under the control of different ownership domains."'~\emph{\citep[S. 8]{mackenzie2006rms}}
+  "`Service-Oriented Architecture (SOA) is a paradigm for organizing and utilizing distributed capabilities that may be under the control of different ownership domains."' \emph{\citep[S. 8]{mackenzie2006rms}}
 \end{definition}
 
   Nach Josuttis ist der Hintergrund der Softwareentwicklung die Abstraktion. Entscheidend ist lediglich nur aus welcher Perspektive die Abstraktion durchgeführt wird. Im Falle der dienstorientierten Architekturen findet diese Abstraktion aus Sicher der Geschäftsaspekte statt \citep[S. 16]{soa_in_practice}. Darüber hinaus erweitert er die Definition der OASIS noch um die Größe der IT-Landschaft und stellt die Heterogenität der beteiligten Systeme heraus:
 
 \begin{definition}[SOA (Josuttis)]\label{def:soa_josuttis_}
-  "`SOA is an architectural paradigm for dealing with business processes distributed over a large landscape of existing and new heterogeneous systems that are under the control of different owners."'~\emph{\citep[S. 24]{soa_in_practice}}
+  "`SOA is an architectural paradigm for dealing with business processes distributed over a large landscape of existing and new heterogeneous systems that are under the control of different owners."' \emph{\citep[S. 24]{soa_in_practice}}
 \end{definition}
 
   Ein weiteres wesentliches Merkmal, vor allem auch für das COSIMA-Projekt, ist nach Papazoglou die technologie-agnostische Charakteristik der einzelnen Dienste. Zusätzlich beschreibt er die SOA als eine Meta-Architektur und betont die lose Kopplung der Dienste untereinander:
 
 \begin{definition}[SOA (Papazoglou)]\label{def:soa_papazoglou_}
-  "`[\ldots] SOA is a meta-architectural style that supports loosely coupled services to enable business flexibility in an interoperable, technology-agnostic manner."'~\emph{\citep[S. 257]{web_services_principles_and_technology}}
+  "`[\ldots] SOA is a meta-architectural style that supports loosely coupled services to enable business flexibility in an interoperable, technology-agnostic manner."' \emph{\citep[S. 257]{web_services_principles_and_technology}}
 \end{definition}
 
   Papazoglou unterscheidet weiter zwischen zwei Arten dienstorientierter Architekturen, die sich jeweils im Grad ihrer Komplexität unterscheiden. Die einfachste Form einer SOA ist in Abbildung~\ref{fig:images_Basic_SOA} dargestellt.
@@ -330,7 +330,7 @@
   Die Orchestrierung wird von Papazoglou wie folgt definiert:
   
   \begin{definition}[Orchestrierung]\label{def:orchestrierung}
-    "`Orchestration describes how services interact at the message level, including the business logic and execution order of interactions under control of a single end point. It is an executable business process that can result in a long-lived, transactional, multistep process model."'~\emph{\citep[S. 41]{papazoglou2007soc}}
+    "`Orchestration describes how services interact at the message level, including the business logic and execution order of interactions under control of a single end point. It is an executable business process that can result in a long-lived, transactional, multistep process model."' \emph{\citep[S. 41]{papazoglou2007soc}}
   \end{definition}
   
   Wesentlich sind also die Interaktionen verschiedener Dienste, die von einer zentralen Stelle (dem \emph{single end point}) über einen Nachrichtenaustausch koordiniert und kontrolliert werden. Des Weiteren ist das Ergebnis ein ausführbarer Geschäftsprozess.
@@ -338,7 +338,7 @@
   Eine geeignete Definition für die Choreographie findet sich bei Peltz:
 
   \begin{definition}[Choreographie]\label{def:choreographie}
-    "`[\ldots] choreography, which is more collaborative and allows each involved party to describe its part in the interaction. Choreography tracks the message sequences among multiple parties and sources -- typically the public message exchanges that occur between Web services -- rather than a specific business process that a single party executes."'~\emph{\citep[S. 46]{peltz2003wso}}
+    "`[\ldots] choreography, which is more collaborative and allows each involved party to describe its part in the interaction. Choreography tracks the message sequences among multiple parties and sources -- typically the public message exchanges that occur between Web services -- rather than a specific business process that a single party executes."' \emph{\citep[S. 46]{peltz2003wso}}
   \end{definition}
 
   Der Unterschied zwischen beiden Ansätzen wird durch die Definitionen sehr deutlich: Choreographie verfolgt eher einen dezentralen Ansatz; Es gibt nicht eine Instanz, die den Nachrichtenfluss kontrolliert, vielmehr tritt der Nachrichtenfluss zwischen den einzelnen Diensten in den Vordergrund. Es liegt dadurch auch kein ausführbarer Prozess bei der Choreographie vor \citep[S. 46]{peltz2003wso}.
@@ -359,7 +359,7 @@
   Ein Enterprise Service Bus lässt sich dabei wie folgt definieren:
   
   \begin{definition}[ESB]\label{def:enterprise_serivce_bus}
-    "`The Enterprise Service Bus is an open standards-based message backbone designed to enable the implementation, deployment, and management of SOA-based solutions with a focus on assembling, deploying, and managing distributed service-oriented architectures."'~\emph{\citep[S. 270]{web_services_principles_and_technology}}
+    "`The Enterprise Service Bus is an open standards-based message backbone designed to enable the implementation, deployment, and management of SOA-based solutions with a focus on assembling, deploying, and managing distributed service-oriented architectures."' \emph{\citep[S. 270]{web_services_principles_and_technology}}
   \end{definition}
   
   Nach dieser Definition wird durch den Einsatz eines ESB überhaupt erst die Realisierung und der Betrieb einer dienstorientierten Architektur ermöglicht. Darüber hinaus lässt sich festhalten, dass auch das "`Assembling"', also das Zusammenführen, der einzelnen Teile innerhalb der Architektur in den Aufgabenbereich des ESB fallen. Demnach kann die Servicekomposition in einer SOA auch als eine Teilmenge des ESB angesehen werden \citep[S. 3]{enterprise_service_bus}.
@@ -441,13 +441,13 @@
   Mit dieser Erkenntnis wäre es nicht angemessen, den Begriff Multimedia rein quantitativ zu beschreiben, sondern viel mehr ist eine qualitative Definition adäquat:
 
   \begin{definition}[Multimedia]\label{def:multimedia}
-    "`Als Multimedia wird der Einsatz von sowohl mindestens einem diskreten und mindestens einem kontinuierlichem Medium verstanden."'~\emph{\citep[S. 14]{multimedia_technologie}}
+    "`Als Multimedia wird der Einsatz von sowohl mindestens einem diskreten und mindestens einem kontinuierlichem Medium verstanden."' \emph{\citep[S. 14]{multimedia_technologie}}
   \end{definition}
   
   Aufbauend auf dieser Definition von Multimedia kann abschließend auch der Begriff \emph{Multimediaanwendungen} respektive \emph{Multimediasystem} definiert werden:
 
   \begin{definition}[Multimediasystem]\label{def:multimediasystem}
-    "`Ein Multimediasystem ist durch die rechnergesteuerte, integrierte Erzeugung, Manipulation, Darstellung, Speicherung und Kommunikation von unabhängigen Informationen gekennzeichnet, die in mindestens einem kontinuierlichen (zeitabhängigen) und einem diskreten (zeitunabhängigen) Medium kodiert sind."'~\emph{\citep[S. 13]{multimedia_technologie}}
+    "`Ein Multimediasystem ist durch die rechnergesteuerte, integrierte Erzeugung, Manipulation, Darstellung, Speicherung und Kommunikation von unabhängigen Informationen gekennzeichnet, die in mindestens einem kontinuierlichen (zeitabhängigen) und einem diskreten (zeitunabhängigen) Medium kodiert sind."' \emph{\citep[S. 13]{multimedia_technologie}}
   \end{definition}
   
 % subsubsection definition_multimedia (end) 
@@ -474,7 +474,7 @@
    Auf Grund der besonderen Relevanz der Zeitdomäne soll im Rahmen dieser Arbeit die folgende Definition von Synchronisation Geltung besitzen: 
   
   \begin{definition}[Synchronisation]\label{def:synchronisation}
-    "`Synchronization in the context of multimedia refers to the mechanisms used by processes (also specific to multimedia) to coordinate their ordering in the time domain."'~\emph{\citep[S. 401]{steinmetz1990spm}}
+    "`Synchronization in the context of multimedia refers to the mechanisms used by processes (also specific to multimedia) to coordinate their ordering in the time domain."' \emph{\citep[S. 401]{steinmetz1990spm}}
   \end{definition}
   
   Nach dem eine Definition für Synchronisation gefunden wurde, sollen im weiteren Verlauf unterschiedliche Ansätze zur Modellierung von zeitlicher Synchronisation in Multimediaanwendungen vorgestellt werden.
