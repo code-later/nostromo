@@ -5,21 +5,21 @@
 
   Im Titel der vorliegenden Arbeit wird bereits herausgestellt, dass eine Architektur von der Konzeption über die prototypische Implementierung bis hin zu einer ersten Validierung betrachtet wird. Die Architektur soll dabei dienstorientiert aufgebaut sein und sich für die Realisierung von Multimediaanwendungen eignen.
   
-  In dieser Arbeit wird dazu zunächst allgemein in die Thematik der Dienstorientierung eingeführt und die jeweiligen Besonderheiten im Zusammenhang mit Multimediaanwendungen herausgestellt. Im weiteren Verlauf wird die Architektur prototypisch umgesetzt und auf Grund der Implementierung eines Anwendungsszenarios validiert.
+  In dieser Arbeit wird dazu zunächst allgemein in die Thematik der Dienstorientierung eingeführt und die jeweiligen Besonderheiten im Zusammenhang mit Multimediaanwendungen dargelegt. Im weiteren Verlauf wird die Architektur prototypisch umgesetzt und auf Grund der Implementierung eines Anwendungsszenarios validiert.
 
 \section{Motivation} % (fold)
 \label{sec:motivation}
 
   Die Motivation zu dieser Arbeit ist durch das COSIMA\abk{COSIMA}{Cologne Service-Oriented Integrated Multimedia Architecture}-Projekt begründet, welches im Rahmen des Wahlpflichtfaches \emph{Modellierung in audio-visuellen Medien} an der Fachhochschule Köln entstanden ist. Das COSIMA-Projekt soll eine verteilte, dienstorientierte Architektur zur Realisierung von Multimediaanwendungen bereitstellen.
   
-  Da bis zu diesem Zeitpunkt ausschließlich konzeptionell an diesem Projekt gearbeitet wurde, bestand der dringende Bedarf einer ersten prototypischen Implementierung und eine anschließende Validierung des bis dato Konzipierten durchzuführen. Da COSIMA als langfristiges Projekt ausgelegt ist, ist es zu diesem Zeitpunkt notwendig eine erste Überprüfung durchzuführen, bevor weitere konzeptionelle Arbeiten vorgenommen werden.
+  Da bis zu diesem Zeitpunkt ausschließlich konzeptionell an diesem Projekt gearbeitet wurde, bestand der dringende Bedarf einer ersten prototypischen Implementierung und eine anschließende Validierung des bis dato Konzipierten durchzuführen. Da COSIMA als langfristiges Projekt ausgelegt ist, ist es zu diesem Zeitpunkt notwendig, eine erste Überprüfung durchzuführen, bevor weitere konzeptionelle Arbeiten vorgenommen werden.
 
 % section motivation (end)
 
 \section{Zielsetzung und Aufgabenstellung} % (fold)
 \label{sec:zielsetzung_und_aufgabenstellung}
 
-  Diese Arbeit verfolgt zwei wesentliche Ziele, von denen sich eines direkt aus Titel ableiten lässt, dass andere ergibt sich aus dem COSIMA-Projekt selbst:
+  Diese Arbeit verfolgt zwei wesentliche Ziele, von denen sich eines direkt aus dem Titel ableiten lässt, das andere ergibt sich aus dem COSIMA-Projekt selbst:
 
   \begin{enumerate}
     \item Es soll überprüft werden inwiefern sich die bis zu diesem Zeitpunkt konzipierte Architektur von COSIMA für den Einsatz als dienstorientierte Architektur für Multimediaanwendungen eignet. 
@@ -28,11 +28,11 @@
   
   Diese Ziele werden operationalisiert und ergeben damit konkrete Aufgaben, die es im Rahmen dieser Arbeit zu erfüllen gilt. Die Erledigung der einzelnen Aufgaben hat dementsprechend die Zielerreichung zur Folge. Dabei ist zu beachten, dass obwohl die Arbeit einen gewissen explorativen Charakter aufweist, am Ende eine Implementierung stehen wird, die entweder wie erwartet funktioniert oder nicht.
   
-  Zunächst ist es also notwendig die konzipierte Architektur und ihre wesentlichen Elemente im einzelnen vorzustellen und zu diskutieren. Daraus lassen sich die einzelnen Elemente ableiten, die später implementiert werden müssen.
+  Zunächst ist es also notwendig die konzipierte Architektur und ihre wesentlichen Elemente im Einzelnen vorzustellen und zu diskutieren. Daraus lassen sich die einzelnen Elemente ableiten, die später implementiert werden müssen.
   
   Um überhaupt eine Aussage über die Eignung der Architektur für die Umsetzung von Multimediaanwendungen treffen zu können, muss eine entsprechende Anwendung realisiert werden. Zu diesem Zwecke wird zunächst ein Szenario entwickelt, in dem diese Anwendung eingebettet wird.
   
-  Eingangs wurde bereits darauf hingewiesen, dass die Architektur bis hier nur auf dem Papier existiert. Daher muss die Architektur im Vorfeld zunächst implementiert wird, bevor eine entsprechende Anwendung mit ihr umgesetzt werden kann.
+  Eingangs wurde bereits darauf hingewiesen, dass die Architektur bis hier nur auf dem Papier existiert. Daher muss die Architektur im Vorfeld zunächst implementiert werden, bevor eine entsprechende Anwendung mit ihr umgesetzt werden kann.
   
   Am Ende wird somit ein Prototyp der Architektur entstanden und das Szenario entsprechend umgesetzt sein. An diesem Punkt lässt sich feststellen, ob sich die Architektur für den geplanten Einsatz eignet oder nicht.
   
@@ -43,7 +43,7 @@
 \section{Abgrenzung} % (fold)
 \label{sec:abgrenzung}
 
-  In der vorliegenden Arbeit soll das COSIMA-Projekt und dessen Architektur horizontal betrachtet und implementiert werden. Es fand daher keine detaillierte Einzelbetrachtung bestimmter Charakteristika, wie etwa \emph{Synchronisation} oder \emph{Streaming} statt. Daher ist das Ergebnis auch nicht eine vollständige Umsetzung der Gesamtarchitektur, wohl wurde aber eine solide Implementierung geschaffen, die es weiterführenden Projekten erlaubt bestimmte Bereiche vertikal zu implementieren.
+  In der vorliegenden Arbeit soll das COSIMA-Projekt und dessen Architektur horizontal betrachtet und implementiert werden. Es fand keine detaillierte Einzelbetrachtung bestimmter Charakteristika, wie etwa \emph{Synchronisation} oder \emph{Streaming} statt. Aus diesem Grund ist das Ergebnis auch nicht eine vollständige Umsetzung der Gesamtarchitektur, wohl wurde aber eine solide Implementierung geschaffen, die es weiterführenden Projekten erlaubt, bestimmte Bereiche vertikal zu implementieren.
 
 % section abgrenzung (end)
 
@@ -52,13 +52,13 @@
 
   Zunächst wird in das COSIMA-Projekt eingeführt und die Konzeption der zugrunde liegenden Architektur vorgestellt ($\to$ Kapitel \ref{cha:eine_dienstorientierten_multimediaarchitektur}). In diesem Zuge werden ebenfalls die zentralen Begriffe \emph{Architektur}, \emph{Dienstorientierung} und \emph{Multimedia} definiert.
   
-  Im Anschluss daran wird eine Einführung in szenarienbasierte Vorgehen im allgemeinen gegeben und im speziellen welche Methode in dieser Arbeit verwendet wurden. Des Weiteren wird das Szenario vorgestellt, gegen dass die prototypische Realisierung validiert werden soll ($\to$ Kapitel \ref{cha:szenario}).
+  Im Anschluss daran wird eine Einführung in szenarienbasierte Vorgehen im Allgemeinen gegeben und im Speziellen welche Methode in dieser Arbeit verwendet wurden. Des Weiteren wird das Szenario vorgestellt, gegen das die prototypische Realisierung validiert werden soll ($\to$ Kapitel \ref{cha:szenario}).
   
   Im nachfolgenden Kapitel werden sowohl die prototypische Implementierung der Architektur von COSIMA selbst, als auch die Umsetzung des zuvor beschriebenen Szenario auf Basis dieser Architektur ($\to$ Kapitel \ref{cha:prototypische_realisierung}) diskutiert.
   
-  Die Ergebnisse und Erkenntnisse die sich aus der Validierung der beiden Implementierungen ergeben haben, finden sich in Kapitel \ref{cha:validierung_der_architektur}. Hier findet zudem eine Einordnung des Begriffs \emph{Validierung} statt.
+  Die Ergebnisse und Erkenntnisse, die sich aus der Validierung der beiden Implementierungen ergeben haben, finden sich in Kapitel \ref{cha:validierung_der_architektur}. Hier findet zudem eine Einordnung des Begriffs \emph{Validierung} statt.
   
-  Am Ende steht ein Fazit, in dem die Arbeit zusammengefasst und kritisch betrachtet wird. Ebenso wird an dieser Stelle ein Ausblick gegeben, welche nächsten Schritte als sinnvoll erscheinen, um das COSIMA-Projekt voranzutreiben ($\to$ Kapitel \ref{cha:fazit}).
+  Die Arbeit schließt mit einer Zusammenfassung und kritischen Bewertung der wesentlichen Aspekte. Ebenso wird an dieser Stelle ein Ausblick gegeben, welche nächsten Schritte als sinnvoll zu erachten sind, um das COSIMA-Projekt voranzutreiben ($\to$ Kapitel \ref{cha:fazit}).
   
 % section aufbau_der_arbeit (end)
 
