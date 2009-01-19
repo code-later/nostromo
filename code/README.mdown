@@ -1,0 +1,127 @@
+# Readme zum Master Thesis Code
+
+Im Folgenden werden einige kurze Erklärungen zum Code gegeben, bzgl. auf
+Installation und Ausführung. Dabei wird unterteilt in COSIMA, Santiago und
+Nerstrand.
+
+## Allgemeine Voraussetzungen
+  
+Um die Software vollständig auszuführen, ohne Anpassungen an einzelnen 
+Programmteilen vornehmen zu müssen, sind folgende Abhängigkeiten zu erfüllen:
+  
+  * Java 5
+  * Maven 2
+  * Mitgeliefertes Maven 2 Repository
+  * memcached Server
+  * Tomcat Servlet Container Version 6
+  * ffmpeg
+  * mplayer
+  * QuickTime
+  * VLC
+  * Ruby und Rake (optional)
+  
+**Hinweise:** Die Software ist auf Mac OS X 10.5.6 entwickelt worden und auch 
+nur dort getestet. Es kann nicht garantiert werden, dass die Software auf 
+einem anderen System ohne weitere Anpassungen funktioniert.
+
+### Installation der abhängigen Software
+
+#### Java 5
+
+Die entsprechende Java Version kann
+[hier](http://java.sun.com/javase/downloads/index_jdk5.jsp "hier")
+heruntergeladen werden. Zur Installation sollte den Anweisungen für die
+entsprechende Plattform gefolgt werden.
+
+#### Maven 2
+
+Die aktuelle Version von Maven 2 kann
+[hier](http://maven.apache.org/download.html "hier") runtergeladen werden.
+Anschließend den entsprechenden Installationsanweisungen folgen.
+
+#### Mitgeliefertes Maven 2 Repository
+
+Der Inhalt des mitgelieferten Maven 2 Repository's sollte an die entsprechende
+Stelle auf dem lokalen System kopiert werden (Bsp.:
+<code>$HOME/.m2/repository</code>), um die Ausführung deutlich zu
+beschleunigen, ansonsten kann das Herunterladen aller Abhängigkeiten einige
+Zeit in Anspruch nehmen.
+
+#### memcached Server
+
+Die aktuellste Version des memcached Servers findet sich
+[hier](http://www.danga.com/memcached/download.bml "hier"). Der memcached
+Server muss aus den Sources gebaut werden. Dazu muss ein GCC-Compiler
+installiert sein. Für weitere Anleitungen sollte sich an die entsprechende
+Installationsanweisung gehalten werden. Der Server lässt sich über die Kommandozeile durch den folgenden Befehl starten:
+
+    $> memcached -vv
+
+#### Tomcat Servlet Container Version 6
+
+Die aktuellste Version des Tomcat Servlet Containers kann von
+[hier](http://tomcat.apache.org/download-60.cgi "hier") bezogen werden. In der
+Regel ist es ausreichend, das heruntergeladene Archiv einfach zu entpacken und
+in diesem Verzeichnis über den Befehl <code>./bin/catalina.sh start</code>
+gestartet werden. Ausführung muss das beiliegende <code>axis2.war</code> in
+das Tomcat <code>webapps</code> Verzeichnis kopiert werden.
+
+#### Multimediaanwendungen und -bibliotheken
+
+Für die Realisierung der medienverarbeitenden Komponenten wurden neben JMF
+auch einige plattformabhängige Anwendungen und Bibliotheken verwendet. Diese
+müssen entsprechend auf dem System installiert sein, auf dem die einzelnen
+Dienste betrieben werden sollen. Für die Verwendung von VLC besteht noch eine 
+weitere Besonderheit, es wird dazu das beigefügte Skript 
+<code>vlc_runner.rb</code> verwendet.
+
+Die Anwendungen und Bibliotheken lassen sich dabei unter den folgenden URLs 
+beziehen. Zur Installation sei jeweils auf die entsprechenden 
+Installationsanweisungen verwiesen:
+
+  * [ffmpeg](http://ffmpeg.org/download.html "ffmpeg")
+  * [mplayer](http://www.mplayerhq.hu/design7/dload.html "mplayer")
+  * [QuickTime](http://www.apple.com/quicktime/download/ "QuickTime")
+  * [VLC](http://www.videolan.org/vlc/ "VLC")
+
+## COSIMA
+
+Das COSIMA-Projekt lässt sich sehr leicht installieren. Einfach in dem 
+entsprechenden Verzeichnis folgenden Befehl über die Kommandozeile ausführen:
+
+    $> mvn install -Dmaven.test.skip=true
+    
+Nachdem COSIMA installiert wurde können die beiden Anwendungen Santiago und 
+Nerstrand ausgeführt werden.
+
+## Santiago & Nerstrand
+
+Santiago und Nerstrand lassen sich auf die gleiche Art und Weise installieren.
+Die Befehle müssen dabei im Hauptverzeichnis der beiden Projekt über die
+Kommandozeile ausgeführt werden:
+
+    $> mvn package -Dmaven.test.skip=true
+
+    $> mvn compile axis2-aar:aar
+  
+    $> cp target/santiago.aar $CATALINA_HOME/webapps/axis2/WEB-INF/services
+  
+Alternativ lässt sich auch vereinfacht der folgende Befehl verwenden, fall 
+Ruby und Rake installiert wurden:
+  
+    $> rake aar:install (Falls Ruby installiert ist)
+  
+Die Ausführung beider Applikationen geschieht wieder aus dem jeweiligen 
+Hauptverzeichnis über die folgenden Befehle (für  Nerstrand muss jedoch nur 
+die <code>workflow_definition.yml</code> angegeben werden):
+
+    $> mvn package -Dmaven.test.skip=true
+
+    $> java -jar target/santiago.jar src/main/resources/final_workflow_definition.yml  
+
+Für die Ausführung der beiden Anwendungen muss natürlich der Tomcat Server gestartet sein und auf dem Standard-Port 8080 und unter dem Host <code>localhost</code> erreichbar sein. Zusätzlich muss auch der memcached Server gestartet sein.
+
+
+
+
+Copyright (c) 2009 Dirk Breuer
