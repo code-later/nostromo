@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serviceGroup>
 
-  <service name="SpringInit" class="de.fhkoeln.santiago.util.SpringInit">
+  <service name="SantiagoInit" class="de.fhkoeln.santiago.util.SantiagoInit">
     <description>
       This web service initializes Spring.
     </description>
-    <parameter name="ServiceClass">de.fhkoeln.santiago.util.SpringInit
+    <parameter name="ServiceClass">de.fhkoeln.santiago.util.SantiagoInit
     </parameter>
     <parameter name="ServiceTCCL">composite</parameter>
     <parameter name="load-on-startup">true</parameter>

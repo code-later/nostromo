@@ -1,6 +1,8 @@
 require 'rake'
 require 'fileutils'
 
+APP_NAME         = "Nerstrand"
+
 TOMCAT_PATH      = "/Developer/Java-Server/apache-tomcat-6.0.18"
 AXIS2_JAXWS_PATH = "#{TOMCAT_PATH}/webapps/axis2/WEB-INF/servicejars"
 AXIS2_AAR_PATH   = "#{TOMCAT_PATH}/webapps/axis2/WEB-INF/services"
@@ -28,13 +30,13 @@ end
 
 desc "Cleans the generated AAR File"
 task "jar:clean" do
-  puts "Deleting AAR-File at: ./target/#{JAR_FILE_NAME}"
+  puts "Deleting JAR-File at: ./target/#{JAR_FILE_NAME}"
   FileUtils.rm("./target/#{JAR_FILE_NAME}", :force => true)
 end
 
 desc "Create the AAR File"
 task "jar:build" => "jar:clean" do
-  system "mvn package"
+  system "mvn package -Dmaven.test.skip=true"
 end
 
 desc "Copy AAR File to Tomcat"

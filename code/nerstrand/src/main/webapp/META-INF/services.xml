@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serviceGroup>
 
-  <service name="SpringInit" class="de.fhkoeln.nerstrand.util.SpringInit">
+  <service name="NerstrandInit" class="de.fhkoeln.nerstrand.util.NerstrandInit">
     <description>
       This web service initializes Spring.
     </description>
-    <parameter name="ServiceClass">de.fhkoeln.nerstrand.util.SpringInit
+    <parameter name="ServiceClass">de.fhkoeln.nerstrand.util.NerstrandInit
     </parameter>
     <parameter name="ServiceTCCL">composite</parameter>
     <parameter name="load-on-startup">true</parameter>

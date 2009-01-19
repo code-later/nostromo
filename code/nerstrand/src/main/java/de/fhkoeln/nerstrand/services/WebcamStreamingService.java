@@ -20,6 +20,7 @@ import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
 import de.fhkoeln.cosima.services.IODescriptor;
 import de.fhkoeln.cosima.services.registry.ServiceRegistry;
+import de.fhkoeln.cosima.util.Logger;
 import de.fhkoeln.nerstrand.operations.MediaOperation;
 import de.fhkoeln.nerstrand.operations.VLCStreamingOperation;
 
@@ -38,7 +39,6 @@ public class WebcamStreamingService extends AbstractComponent {
 
   @Override
   protected IODescriptor _execute() {
-    
     IODescriptor output = new IODescriptor();
 
     MediaComponent stream = new Media();
@@ -49,8 +49,9 @@ public class WebcamStreamingService extends AbstractComponent {
     thread(streamingOp, false);
     
     boolean wait = true;
+    File sdp_file = new File(stream.getReferenceToRealData());
     while(wait)
-      wait = new File(stream.getReferenceToRealData().toString()).exists() ? true : false;
+      wait = sdp_file.exists() ? false : true;
     
     URI mediaUri = getBroker().store(stream);
     output.add(mediaUri.toString());
@@ -83,10 +84,10 @@ public class WebcamStreamingService extends AbstractComponent {
   }
   
   private static Thread thread(Runnable runnable, boolean daemonize) {
-    Thread brokerThread = new Thread(runnable);
-    brokerThread.setDaemon(daemonize);
-    brokerThread.start();
-    return brokerThread;
+    Thread streamingThread = new Thread(runnable);
+    streamingThread.setDaemon(daemonize);
+    streamingThread.start();
+    return streamingThread;
   }
 
 }

@@ -1,5 +1,5 @@
 /*
- * SpringInit.java
+ * NerstrandInit.java
  *
  * Version 1.0  Nov 28, 2008
  *
@@ -21,7 +21,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import de.fhkoeln.cosima.util.Logger;
 
-public class SpringInit implements ServiceLifeCycle {
+public class NerstrandInit implements ServiceLifeCycle {
 
   public OMElement springInit(OMElement ignore) {
     return null;

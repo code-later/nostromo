@@ -24,7 +24,7 @@
               <addClasspath>true</addClasspath>
               <classpathMavenRepositoryLayout>true</classpathMavenRepositoryLayout>
               <classpathPrefix>${settings.localRepository}</classpathPrefix>
-              <mainClass>de.fhkoeln.cosima.demo.clients.CreateMovieFromImagesClient</mainClass>
+              <mainClass>de.fhkoeln.nerstrand.NerstrandApp</mainClass>
             </manifest>
             <manifestEntries>
               <mode>development</mode>
