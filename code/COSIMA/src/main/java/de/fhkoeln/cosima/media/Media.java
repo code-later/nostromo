@@ -16,7 +16,7 @@ import java.net.URI;
 /**
  * This class implements the Leaf part within the Composite-Pattern.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Nov 16, 2008
  *
  */

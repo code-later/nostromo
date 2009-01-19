@@ -17,11 +17,9 @@ import javax.jms.MessageProducer;
 import javax.jms.TextMessage;
 
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * Implements the functionality of sending a message based on the {@link MessageFeatures} class.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Sep 14, 2008
  *
  */
@@ -34,7 +32,6 @@ public class MessageSender extends MessageFeatures {
   /* (non-Javadoc)
    * @see de.fhkoeln.cosima.messaging.MessageFeatures#executeFeature()
    */
-  
   protected void executeFeature() {
     // Create a message producer for the Destination. This producer will
     // send our messages to that Destination.

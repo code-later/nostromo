@@ -20,6 +20,13 @@ import java.util.Set;
 import de.fhkoeln.cosima.codesamples.AbstractComponent;
 import de.fhkoeln.cosima.workflow.WorkflowElement.Input;
 
+/**
+ * A simple implementation of a {@link WorkflowEngine}. This is only used for demonstration.
+ *
+ * @author Dirk Breuer
+ * @version 1.0  Jan 19, 2009
+ *
+ */
 public class SimpleWorkflowEngine extends WorkflowEngine {
 
   public SimpleWorkflowEngine() {

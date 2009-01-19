@@ -19,6 +19,14 @@ import de.fhkoeln.cosima.components.AbstractComponent;
 import de.fhkoeln.cosima.services.IODescriptor;
 import de.fhkoeln.cosima.workflow.WorkflowElement.Input;
 
+/**
+ * A simple implementation of a {@link WorkflowEngine} which uses {@link IODescriptor} objects.
+ * This is only used for demonstration.
+ *
+ * @author Dirk Breuer
+ * @version 1.0  Jan 19, 2009
+ *
+ */
 public class SimpleWorkflowEngineWithIO extends WorkflowEngine {
   
   public SimpleWorkflowEngineWithIO() {

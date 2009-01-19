@@ -9,7 +9,7 @@ package de.fhkoeln.cosima.messaging;
  *       only the first step of development. The next steps will involve
  *       heavy refactoring.
  * 
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0 Sep 12, 2008
  */
 public class JMSMessageQueue implements MessageQueue {

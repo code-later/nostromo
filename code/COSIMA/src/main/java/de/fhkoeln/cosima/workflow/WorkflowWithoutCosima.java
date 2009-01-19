@@ -18,16 +18,14 @@ import javax.media.MediaException;
 import de.fhkoeln.cosima.messaging.MessageQueue;
 import de.fhkoeln.cosima.workflow.WorkflowElement.Input;
 
-
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * This a first try {@link WorkflowEngine} implementation. It shouldn't be used any more.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Jun 17, 2008
  *
  */
+@Deprecated
 public class WorkflowWithoutCosima {
   
   private final SimpleWorkflowDefinition workflowDefinition;

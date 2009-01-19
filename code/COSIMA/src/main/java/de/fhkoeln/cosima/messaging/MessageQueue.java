@@ -13,26 +13,16 @@ package de.fhkoeln.cosima.messaging;
 
 
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * Defines two simple methods for pushing and pulling semantics from a message queue.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Jul 10, 2008
  *
  */
 public interface MessageQueue {
 
-  /**
-   * @param messageKey TODO
-   * @param message
-   */
   public void pushMessage(String messageKey, String message);
 
-  /**
-   * @param messageKey TODO
-   * @return
-   */
   public String pullMessage(String messageKey);
 
 }

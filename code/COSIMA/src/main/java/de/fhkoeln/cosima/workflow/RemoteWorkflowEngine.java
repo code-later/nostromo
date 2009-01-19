@@ -82,8 +82,7 @@ public class RemoteWorkflowEngine extends WorkflowEngine {
    *       <li>Proceed to the next element in the workflow definition</li>
    * </ul>
    * 
-   * (Further information is provided in the 'RemoteWorkflowEngine
-   * Flowchart.graffle' Document.
+   * (Further information is provided in the 'WorkflowEngine_Flowchart.graffle' Document.
    */
   public void execute() {
     
@@ -145,10 +144,12 @@ public class RemoteWorkflowEngine extends WorkflowEngine {
   }
 
   /**
-   * This method encapsulated the call of the remote service. So far
-   * it only can handle SOAP services. All information of connecting
-   * to the service component are encapsulated in the workflow
-   * element.
+   * This method encapsulated the call of the remote service. So far it only can handle SOAP services.
+   * All information of connecting to the service component are encapsulated in the workflow element.
+   * 
+   * FIXME: If we receive a timeout from the remote service we do not get the {@link IODescriptor} instance
+   * we were expecting. Due to this follow up operations can fail. This should be handled in a reasonable way.
+   * At the moment we just set a higher timeout value to handle this effects.
    * 
    * @param element
    *          The WorkflowElement of which we call its service
@@ -162,45 +163,46 @@ public class RemoteWorkflowEngine extends WorkflowEngine {
       WorkflowElement element, IODescriptor inputDescriptor) {
 
     IODescriptor output = new OutputDescriptor();
-    
+
     try {
       RPCServiceClient client = new RPCServiceClient();
-      
+
       Options options = client.getOptions();
-      
+
       String serviceUri = registry.query(element.getDescription());
       System.out.println("Setting EPR to: " + serviceUri);
       EndpointReference targetEPR = new EndpointReference(serviceUri);
-      
+
       options.setTo(targetEPR);
-      // TODO: Wenn die Operationen auf der Service Seite zu lange
-      // dauern, dann gibt es einen Timeout! Asynchrone Prozessierung
-      // notwendig. Dabei tritt allerdings das Problem auf, dass man
-      // nicht weiss, wann die Gegenseite fertig ist. Messagaging
-      // System FTW!
-      System.out.println("--- Service Timeout: " + options.getTimeOutInMilliSeconds());
+      // We want to set the timeout a bit higher to handle long running remote services.
       options.setTimeOutInMilliSeconds(500000);
 
-      // Setting Input Params first
-      QName setInputOperation = new QName(element.getNamespace(), CoreService.SERVICE_SET_INPUT_OPERATION);
-      
+      // Setting input arguments first
+      QName setInputOperation =
+          new QName(element.getNamespace(),
+                    CoreService.SERVICE_SET_INPUT_OPERATION);
+
       Object[] setInputOperationArgs = new Object[] { inputDescriptor };
-      
+
       client.invokeRobust(setInputOperation, setInputOperationArgs);
-      
-      // Run the service action and get back the output params
-      QName executeOperation = new QName(element.getNamespace(), CoreService.SERVICE_EXECUTE_OPERATION);
-      
+
+      // Run the service action and get back the output value
+      QName executeOperation =
+          new QName(element.getNamespace(),
+                    CoreService.SERVICE_EXECUTE_OPERATION);
+
       Object[] executeOperationArgs = new Object[] {};
       Class[] returnTypes = new Class[] { IODescriptor.class };
-      
-      Object[] response = client.invokeBlocking(executeOperation, executeOperationArgs, returnTypes);
-      
+
+      Object[] response =
+          client.invokeBlocking(executeOperation, executeOperationArgs,
+              returnTypes);
+
       output = (IODescriptor) response[0];
     } catch (AxisFault e) {
       e.printStackTrace();
     }
-    
+
     return output;
   }
 }

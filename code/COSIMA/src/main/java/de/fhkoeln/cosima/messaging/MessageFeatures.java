@@ -18,13 +18,12 @@ import javax.jms.Session;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-
 /**
- * Documentation comment without implementation details. Use
- * implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * Encapsulated the logic of connection to a JMS broker. It implements the
+ * {@link Runnable} interface to provide threading functionality of messaging
+ * to using classes.
  * 
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0 Sep 14, 2008
  */
 public abstract class MessageFeatures implements Runnable {
@@ -88,7 +87,7 @@ public abstract class MessageFeatures implements Runnable {
         new ActiveMQConnectionFactory(BROKER_URL);
     try {
       this.connection = connectionFactory.createConnection();
-//      this.connection.setClientID("client");
+      // this.connection.setClientID("client");
     } catch (JMSException e) {
       System.err
           .println("JMS Error occured during the creation of the connection.");

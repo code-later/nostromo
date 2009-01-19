@@ -28,7 +28,7 @@ import de.fhkoeln.cosima.components.AbstractComponent;
  * service component. Furthermore it has information about what its
  * position is in the overall workflow.
  * 
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0 Jul 11, 2008
  */
 public class WorkflowElement {
@@ -37,10 +37,6 @@ public class WorkflowElement {
    * A simple inner class to represent a successor of the current
    * element. The Successor class just wraps the URI of the successing
    * element to have a better semantic.
-   *
-   * @author dbreuer
-   * @version 1.0  Sep 29, 2008
-   *
    */
   class Successor {
 
@@ -82,16 +78,9 @@ public class WorkflowElement {
    *     This type of input is only acceptable for "producer" components.
    *   </li>
    * </ul>
-   *
-   * @author dbreuer
-   * @version 1.0  Sep 29, 2008
-   *
    */
   public class Input {
 
-    /**
-     * uri The URI of the input. 
-     */
     private final String uri;
     private final String data;
 
@@ -228,8 +217,8 @@ public class WorkflowElement {
   }
 
   /**
-   * @return
-   * @throws ClassNotFoundException
+   * @return The AbstractComponent subclass representing this WorkflowElement instance.
+   * @throws ClassNotFoundException If the class could be found.
    */
   @SuppressWarnings("unchecked")
   @Deprecated

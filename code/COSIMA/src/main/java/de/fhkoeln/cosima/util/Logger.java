@@ -13,7 +13,7 @@ package de.fhkoeln.cosima.util;
 
 
 /**
- * Logger singleton could be used by any application that uses COSIMA.
+ * This logging singleton could be used by any application that uses COSIMA.
  *
  * @author Dirk Breuer
  * @version 1.0  Nov 24, 2008

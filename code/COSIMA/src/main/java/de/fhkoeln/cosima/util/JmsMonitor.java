@@ -23,11 +23,9 @@ import de.fhkoeln.cosima.messaging.MessageFeatures;
 
 
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
+ * A primitive JMS monitoring class. The monitoring results will be printed to STDOUT.
  *
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0  Sep 14, 2008
  *
  */
@@ -35,11 +33,6 @@ public class JmsMonitor {
   
   static class ReceiverMonitor extends MessageFeatures implements MessageListener {
 
-    /**
-     * Constructor documentation comment.
-     *
-     * @param topicName
-     */
     public ReceiverMonitor(String topicName) {
       super(topicName);
     }
@@ -52,7 +45,6 @@ public class JmsMonitor {
     /* (non-Javadoc)
      * @see de.fhkoeln.cosima.messaging.MessageFeatures#executeFeature()
      */
-    
     protected void executeFeature() {
       try {
         MessageConsumer consumer = getSession().createConsumer(getDestination());
@@ -68,7 +60,6 @@ public class JmsMonitor {
     /* (non-Javadoc)
      * @see javax.jms.MessageListener#onMessage(javax.jms.Message)
      */
-    
     public void onMessage(Message message) {
       TextMessage textMessage = (TextMessage) message;
       System.out.println("");

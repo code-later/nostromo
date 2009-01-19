@@ -86,9 +86,6 @@ public class MediaContainer extends MediaComponent {
     return mediaElements;
   }
 
-  /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.media.MediaComponent#getPlayableData()
-   */
   @Override
   public Object getPlayableData() {
     // TODO Auto-generated method stub

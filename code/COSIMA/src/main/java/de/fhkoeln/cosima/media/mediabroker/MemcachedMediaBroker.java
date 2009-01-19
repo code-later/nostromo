@@ -21,23 +21,21 @@ import de.fhkoeln.cosima.media.mediabroker.storage.MediaStore;
 import net.spy.memcached.MemcachedClient;
 import net.spy.memcached.transcoders.SerializingTranscoder;
 
-
 /**
- * Documentation comment without implementation details. 
- * Use implementation comments to describe details of the implementation.
- * Comment lines should not be longer than 70 characters.
- *
- * @author dbreuer
- * @version 1.0  Nov 20, 2008
- *
+ * An implementation of the {@link MediaBroker} interface based on a memcached
+ * storage solution. The connection to the memcached server is build statically
+ * in the constructor.
+ * 
+ * @author Dirk Breuer
+ * @version 1.0 Nov 20, 2008
  */
 public class MemcachedMediaBroker implements MediaBroker {
 
   public final static String BROKER_URI = "cosima://santiago.fh-koeln.de/media";
-  
+
   private MemcachedClient client;
   private MediaStore mediaStore;
-  
+
   public MemcachedMediaBroker() {
     try {
       client = new MemcachedClient(new InetSocketAddress("localhost", 11211));
@@ -46,7 +44,7 @@ public class MemcachedMediaBroker implements MediaBroker {
       e.printStackTrace();
     }
   }
-  
+
   /*
    * (non-Javadoc)
    * @see de.fhkoeln.cosima.media.MediaBroker#knownElements()
@@ -56,7 +54,8 @@ public class MemcachedMediaBroker implements MediaBroker {
         new InetSocketAddress("localhost", 11211)).get("curr_items"));
   }
 
-  /* (non-Javadoc)
+  /*
+   * (non-Javadoc)
    * @see de.fhkoeln.cosima.media.MediaBroker#retrieve(java.lang.String)
    */
   public MediaComponent retrieve(String mediaUri) {
@@ -67,8 +66,7 @@ public class MemcachedMediaBroker implements MediaBroker {
 
   /*
    * (non-Javadoc)
-   * @see
-   * de.fhkoeln.cosima.media.MediaBroker#store(de.fhkoeln.cosima
+   * @see de.fhkoeln.cosima.media.MediaBroker#store(de.fhkoeln.cosima
    * .media.AbstractMedia)
    */
   public URI store(MediaComponent media) {
@@ -77,7 +75,8 @@ public class MemcachedMediaBroker implements MediaBroker {
     try {
       client.set(realUri.toString(), 0, media);
       mediaStore.write(media);
-      // Ensure that the reference is no longer available, because it is not intended to be
+      // Ensure that the reference is no longer available, because it is not
+      // intended to be
       // used by some one else then the MediaStore instances
       media.setReferenceToRealData(null);
     } catch (IOException e) {
@@ -86,7 +85,8 @@ public class MemcachedMediaBroker implements MediaBroker {
     return realUri;
   }
 
-  /* (non-Javadoc)
+  /*
+   * (non-Javadoc)
    * @see de.fhkoeln.cosima.media.MediaBroker#clearAll()
    */
   public void clearAll() {
@@ -101,8 +101,11 @@ public class MemcachedMediaBroker implements MediaBroker {
     return knownElements() > 0 ? false : true;
   }
 
-  /* (non-Javadoc)
-   * @see de.fhkoeln.cosima.media.mediabroker.MediaBroker#setMediaStore(de.fhkoeln.cosima.media.mediabroker.storage.MediaStore)
+  /*
+   * (non-Javadoc)
+   * @see
+   * de.fhkoeln.cosima.media.mediabroker.MediaBroker#setMediaStore(de.fhkoeln
+   * .cosima.media.mediabroker.storage.MediaStore)
    */
   public void setMediaStore(MediaStore store) {
     this.mediaStore = store;

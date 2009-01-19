@@ -36,6 +36,15 @@ public abstract class AbstractComponent implements CoreService {
   private final String description;
   private final String uri;
 
+  /**
+   * The constructor which should be used to instantiate any component. It
+   * ensures the publication of the service's relevant information to the given
+   * {@link ServiceRegistry} instance.
+   * 
+   * @param registry The {@link ServiceRegistry} instance to publish the information.
+   * @param uri The URI of this service.
+   * @param description The description of this service.
+   */
   public AbstractComponent(ServiceRegistry registry, String uri,
       String description) {
     Logger.info("Booting Service: " + getClass().getName());
@@ -47,7 +56,7 @@ public abstract class AbstractComponent implements CoreService {
   }
 
   /*
-   * This method should be final. Due to issues with Axis2 at the time of coding
+   * TODO: This method should be final. Due to issues with Axis2 at the time of coding
    * it was not able that this method was cleanly inherited and so could be
    * final.
    */

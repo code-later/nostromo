@@ -21,7 +21,7 @@ import de.fhkoeln.cosima.media.mediabroker.storage.MediaStore;
  * receive MediaComponent Objects. Furthermore a method is provided to
  * query the overall objects known by the broker.
  * 
- * @author dbreuer
+ * @author Dirk Breuer
  * @version 1.0 Nov 16, 2008
  */
 public interface MediaBroker {
