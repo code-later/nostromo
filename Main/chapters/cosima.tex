@@ -14,7 +14,7 @@
   
   Im Institutsbericht wird darauf hingewiesen, "`dass die Entwicklung von Multimediaanwendungen derzeit verhältnismässig aufwendig ist"' \citep[S. 2]{bericht}. Eine Ursache dieser Problematik liegt nach Aussage der Autoren darin begründet, dass sich die zur Zeit verfügbaren Rahmenwerke im Bereich der Multimediaverarbeitung auf einen sehr engen Einsatzbereich\footnote{JMF beispielsweise bleibt auf der Protokollebene und stellt keine Integration von Metadaten bereit.} beschränken. Neben JMF sind hier zusätzlich noch \emph{QuickTime}\footnote{\url{http://www.apple.com/quicktime/}} und \emph{ImageJ}\footnote{\url{http://rsbweb.nih.gov/ij/}} zu nennen. Andere Aspekte von Multimediaanwendungen, wie etwa die Integration von Metadaten, müssten von dem Anwendungsentwickler erst manuell mit diesen Rahmenwerken integriert werden. "`Ein Meta-Framework, welches die bestehenden Ansätze verbinden und integrieren könnte, würde die Wiederverwendbarkeit und generelle Entwicklungsarbeit positiv beeinflussen, beziehungsweise vereinfachen"' \citep[S. 3]{bericht}. Daher wird von den Autoren des Berichts die Entwicklung eines solchen Rahmenwerks als Bestreben hinter dem COSIMA-Projekt angeführt.
   
-  Neben der Notwendigkeit ein \emph{Meta-Framework}\footnote{Das ursprüngliche Ziel war tatsächlich ein reines Framework zu schaffen. Im Verlauf der Arbeit hat sich diese Wahrnehmung jedoch etwas geändert, was in Abschnitt \ref{sub:framework_oder_architektur} noch weiter diskutiert wird.} zu schaffen, führen die Autoren als weiteren Beweggrund das Fehlen einer Architektur für Multimediaanwendungen an. Innerhalb dieser Architektur könnten sich Anwendungsentwickler wesentlich effektiver bewegen und müssten nicht erst eine eigene Architektur von Grund auf entwerfen.
+  Neben der Notwendigkeit ein \emph{Meta-Framework}\footnote{Das ursprüngliche Ziel war tatsächlich ein reines Framework zu schaffen. Im Verlauf dieser Arbeit\linebreak hat sich diese Wahrnehmung jedoch verschoben, was in Abschnitt \ref{sub:framework_oder_architektur} noch weiter diskutiert wird.} zu schaffen, führen die Autoren als weiteren Beweggrund das Fehlen einer Architektur für Multimediaanwendungen an. Innerhalb dieser Architektur könnten sich Anwendungsentwickler wesentlich effektiver bewegen und müssten nicht erst eine eigene Architektur von Grund auf entwerfen.
   
   Da sich mit bestehenden Multimedia-Rahmenwerken keine verteilten Anwendungen realisieren lassen, lag auch dieser Aspekt von Beginn an im Fokus der Konzeptionierung. Als Grundlage eine geeignete Architektur zu konzipieren, die es ermöglicht, verteilte Anwendungen zu realisieren, diente das Konzept der \emph{Service-oriented Architecture} (SOA\abk{SOA}{Service-Oriented Architecture}) oder \emph{dienstorientierten Architektur}.
   
@@ -31,7 +31,7 @@
     \emph{``[COSIMA] ist ein integratives, komponentenbasiertes Meta-Framework mit gezielter Ausrichtung auf Multimediaverarbeitung. Es vereinfacht die Entwicklung von verteilten Multimedia-Applikationen durch eine flexible, dienstorientierte Architektur. Die Wiederverwendbarkeit von Komponenten und bestehenden Frameworks wird dadurch begünstigt.''} (aus \citep[S. 2]{bericht})
   \end{quote}
 
-  Neben den zentralen Aspekten \emph{dienstorientierte Architektur}, \emph{Integration} und \emph{Meta-Framework}, die im Abschnitt zuvor bereits dargestellt wurden, nennen die Autoren hier zusätzlich noch die Aspekte der \emph{komponentenbasierten Architektur}, \emph{Wiederverwendbarkeit} und natürlich der \emph{Medienverarbeitung}.
+  Neben den zentralen Aspekten \emph{dienstorientierte Architektur}, \emph{Integration} und \emph{Meta"~Frame\-work}, die im Abschnitt zuvor bereits dargestellt wurden, nennen die Autoren hier zusätzlich noch die Aspekte der \emph{komponentenbasierten Architektur}, \emph{Wiederverwendbarkeit} und natür\-lich der \emph{Medienverarbeitung}.
   
   Neben den hier genannten Zielen, die das COSIMA-Projekt zu erreichen versucht, zeichnet sich das Projekt durch seine spezifischen Charakteristika in Bezug auf andere Multimedia-Rahmenwerke aus. Diese Alleinstellungsmerkmale werden im nächsten Abschnitt genauer betrachtet.
 
@@ -61,7 +61,7 @@
 \section{Konzeption einer Architektur} % (fold)
 \label{sec:architektur}
 
-  Die Architektur des COSIMA-Projekts ist iterativ nach einem dedizierten Vorgehensmodell\footnote{Dieses Modell wird im Abschnitt~\ref{cha:szenario} kurz vorgestellt und detailliert im Institutsbericht \citep[S. 7ff]{bericht} beschrieben und diskutiert.} bis zu dem Punkt entwickelt worden, der als Ausgangspunkt für die Betrachtungen in dieser Arbeit dient. Bevor dieser aktuelle Stand jedoch in den folgenden Abschnitten im Detail vorgestellt wird, sollen zunächst einmal die Begriffe \emph{Architektur}, \emph{Dienstorientierung} und \emph{Dienst} definiert und eingeordnet werden.
+  Die Architektur des COSIMA-Projekts ist iterativ nach einem dedizierten Vorgehensmodell\footnote{Dieses Modell wird in Kapitel \ref{cha:szenario} kurz vorgestellt und detailliert im Institutsbericht \citep[S. 7ff]{bericht} beschrieben und diskutiert.} bis zu dem Punkt entwickelt worden, der als Ausgangspunkt für die Betrachtungen in dieser Arbeit dient. Bevor dieser aktuelle Stand jedoch in den folgenden Abschnitten im Detail vorgestellt wird, sollen zunächst einmal die Begriffe \emph{Architektur}, \emph{Dienstorientierung} und \emph{Dienst} definiert und eingeordnet werden.
   
 \subsection{Software Architekturen} % (fold)
 \label{sub:definition_software_architekturen}
@@ -109,7 +109,7 @@
   Bei der Architektur innerhalb des COSIMA-Projekts handelt es sich also um eine Software-Architektur, da ausschließlich die Softwarekomponenten ohne Rücksicht auf mögliche Hardware betrachtet werden. Genauer kann auch gesagt werden, dass es sich um eine Referenzarchitektur nach Reussner et al. handelt:
   
   \begin{definition}[Referenzarchitektur]\label{def:referenzarchitektur}
-    "`Eine Referenzarchitektur ist eine abstrakte Software-Architektur, sie definiert Strukturen und Typen von Software-Elementen sowie deren erlaubte Interaktionen und ihre Verantwortlichkeiten speziell für einen Anwendungsbereich. Die Strukturen sind jeweils für alle Systeme innerhalb einer Domäne anwendbar."' \emph{\citep[S. 358]{handbuch_der_software_architektur}}
+    "`Eine Referenzarchitektur ist eine abstrakte Software-Architektur, sie definiert Strukturen und Typen von Software-Elementen sowie deren erlaubte Interaktionen und ihre Verantwortlichkeiten speziell für einen Anwendungsbereich. Die Strukturen sind jeweils für alle Systeme innerhalb einer Domäne anwendbar."'\linebreak \emph{\citep[S. 358]{handbuch_der_software_architektur}}
   \end{definition}
   
   Da mit dem COSIMA-Projekt Multimediaanwendungen realisiert werden sollen, wird an dieser Stelle ergänzend noch der Terminus der \emph{Multimedia-Architektur} definiert:
@@ -401,13 +401,13 @@
 \subsubsection{Persistenz} % (fold)
 \label{ssub:persistenz}
 
-  Um Daten dauerhaft ablegen zu können, ist innerhalb von COSIMA ein weiterer Dienst vorgesehen, der \emph{Shared Persistence Service}. Allerdings kann nur eine \emph{Consumer}-Komponente über diesen Dienst Daten ablegen lassen. Umgekehrt kann nur eine \emph{Producer}-Komponente Daten über diesen Dienst wieder einlesen. Eine \emph{Transformer}-Komponente, kann nach dem Quelle-Komponente-Senke Prinzip keinen Zugriff auf dauerhaft abgelegte Daten erhalten.
+  Um Daten dauerhaft ablegen zu können, ist innerhalb von COSIMA ein weiterer Dienst vorgesehen, der \emph{Shared Persistence Service}. Allerdings kann nur eine \emph{Consumer}-Kompo\-nente über diesen Dienst Daten ablegen lassen. Umgekehrt kann nur eine \emph{Producer}-Kompo\-nente Daten über diesen Dienst wieder einlesen. Eine \emph{Transformer}-Komponente, kann nach dem Quelle-Komponente-Senke Prinzip keinen Zugriff auf dauerhaft abgelegte Daten erhalten.
   
   Innerhalb von COSIMA ist dieser Dienst noch sehr rudimentär modelliert. In der Literatur zu SOA findet sich keine dedizierte Komponente, um Daten persistent zu speichern; Diese Funktionalität kann durch jeden beliebigen Dienst bereitgestellt werden. Auf Grund dieser Tatsache und durch die Etablierung eines dedizierten Medienbrokers ($\to$ Abschnitt \ref{ssub:medienobjekt}), der die Vermittlung der Medienobjekte realisiert, ist die weitere Existenzberechtigung dieser Komponente jedoch eher zweifelhaft. Eine weitere Betrachtung dieser Zusammenhänge findet in Abschnitt \ref{sub:integration_von_medien} statt.
   
 % subsubsection persistenz (end)
 
-  Die bis hierher vorgestellten Komponenten der Architektur innerhalb des COSIMA-Projekts sind weitestgehend übertragbar auf Komponenten in anderen dienstorientierten Architekturen. Zur Umsetzung von Multimediaanwendungen sind aber noch weitere, medienspezifische Komponenten erforderlich. Auch wenn sie sich grundsätzlich dem Enterprise Service Bus zuordnen lassen, sollen sie dennoch dediziert im nächsten Abschnitt diskutiert werden.
+  Die bis hierher vorgestellten Komponenten der Architektur innerhalb des COSIMA-Pro\-jekts sind weitestgehend übertragbar auf Komponenten in anderen dienstorientierten Architekturen. Zur Umsetzung von Multimediaanwendungen sind aber noch weitere, medienspezifische Komponenten erforderlich. Auch wenn sie sich grundsätzlich dem Enterprise Service Bus zuordnen lassen, sollen sie dennoch dediziert im nächsten Abschnitt diskutiert werden.
 
 % subsection infrastruktur (end)
 
@@ -434,7 +434,7 @@
   Bei Steinmetz wird die genannte Definition dahingehend erweitert, dass ein Medium "`ein Mittel zur Verbreitung und Darstellung von Informationen"' \citep[S. 7]{multimedia_technologie} ist. Sie wird also explizit um die \emph{Darstellung} von Informationen ergänzt. Der Begriff \emph{Medium} lässt sich selbst dabei nach den folgenden Kriterien noch weiter differenzieren: Perzeptions"~, Repräsentations"~, Präsentations"~, Speicher"~, Übertragungs"~, und Informationsaustauschmedien. Dabei entsprechen die Perzeptionsmedien am nächsten dem, was in einer Multimediaanwendungen unter Medien verstanden wird: Die Informationen, die der Mensch mit seinen fünf Sinnen wahrnehmen kann \citep[S. 9]{multimedia_technologie}\footnote{Dies bedeutet im Umkehrschluss jedoch nicht, dass die anderen Arten von Medien keine Rolle spielen.}. Jedes Medium definiert dabei einen \emph{Darstellungsraum} mit entsprechenden \emph{Darstellungsdimensionen}. Neben den räumlichen Dimensionen dient vor allem die zeitlich Dimension dazu, eine weitere Einordnung von Medien vornehmen zu können \citep[S. 10]{multimedia_technologie}:
   
   \begin{description}
-    \item[Diskrete Medien] Medien, deren Informationen zeitunabhängig auftreten, etwa Text oder Grafik. Ihre Verarbeitung ist \emph{zeitunkritisch}.
+    \item[Diskrete Medien] Medien, deren Informationen zeitunabhängig auftreten, etwa Text\linebreak oder Grafik. Ihre Verarbeitung ist \emph{zeitunkritisch}.
     \item[Kontinuierliche Medien] Medien, deren Informationen sich über die Zeit hinweg ändern, etwa Ton oder Video. Ihre Verarbeitung ist \emph{zeitkritisch}.
   \end{description}
 
@@ -506,7 +506,7 @@
   \begin{description}
     \item[Intrastream] Die Intrastream-Synchronisation bezieht sich auf die einzelnen (Präsen\-tations"~) Einheiten innerhalb eines Objekts. Diese Einheiten werden auch als \emph{Logische Dateneinheiten} (\emph{Logical Data Units} (LDU\abk{LDU}{Logical Data Units})) bezeichnet \citep{steinmetz1990spm}.
     \item[Interstream] Die Interstream-Synchronisation bezieht sich auf verschiedene Ströme innerhalb einer Stromgruppe \citep{multimedia_technologie}, etwa die zeitliche Beziehung von einer Ton- und Videospur in einem A/V-Strom\footnote{Im MET++-Rahmenwerk werden für Intrastream und Interstream die Begriffe \emph{Intramedia (low-level)} und \emph{Intermedia (high-level)} verwendet \citep[S. 73]{ackermann1996doo}.}.
-    \item[Interobjekt] Im Zusammenhang mit der Referenzarchitektur nach Meyer und Steinmetz ($\to$ Abschnitt \ref{par:referenzmodelle}) ist es in Betracht zu ziehen, diese zusätzliche Granularitätsebene einzuführen \citep[S. 264]{wu2001svo}, die zwischen verschiedenen Medienobjekten zeitliche Beziehungen herstellt. In der Literatur lässt sich dazu jedoch keine einheitliche Aussage finden. In Bezug auf eine verteilte Architektur kann diese Unterscheidung allerdings von Vorteil sein. Eine abschließende Betrachtung dieser Ebene kann im Rahmen dieser Arbeit jedoch nicht erfolgen.
+    \item[Interobjekt] Im Zusammenhang mit der Referenzarchitektur nach Meyer und Steinmetz ($\to$ Abschnitt \ref{par:referenzmodelle}) ist es in Betracht zu ziehen, diese zusätzliche Granularitäts\-ebene einzuführen \citep[S. 264]{wu2001svo}, die zwischen verschiedenen Medienobjekten zeitliche Beziehungen herstellt. In der Literatur lässt sich dazu jedoch keine einheitliche Aussage finden. In Bezug auf eine verteilte Architektur kann diese Unterscheidung allerdings von Vorteil sein. Eine abschließende Betrachtung dieser Ebene kann im Rahmen dieser Arbeit jedoch nicht erfolgen.
   \end{description}
   
   Im Folgenden Abschnitt werden diese Ebenen in ein Referenzmodell zur Multimedia-Synchronisation eingeordnet.
@@ -531,7 +531,7 @@
     \item[Medienschicht] Sie stellt eine geräteunabhängige Schnittstelle auf einzelne kontinuierliche Medienströme bereit. Dieser Medienstrom wird dabei als eine sequentielle Abfolge von LDUs behandelt \citep[S. 603]{multimedia_technologie}.
     \item[Stromschicht] In dieser Schicht sind alle Medienströme aus der Medienschicht verfügbar und die LDUs sind dabei bereits nicht mehr sichtbar. Gleichzeitig wird eine Intra\-stream"~Synchronisation garantiert und eine Interstream"~Synchronisation zwischen allen Medienströmen realisiert. Die Stromschicht verarbeitet die einzelnen Ströme dabei in einer Echtzeitumgebung \citep[S. 604]{multimedia_technologie}.
     \item[Objektschicht] Diese Schicht kapselt die Unterschiede zwischen diskreten und kontinuierlichen Medien, wodurch sich \emph{playout sequences} exakt spezifizieren lassen \citep[S. 99]{meyer1993tms}. Darüber hinaus realisiert sie die konkrete Ausführung einer Spezifikation auf der Stromschicht \citep[S. 605]{multimedia_technologie}.
-    \item[Spezifikationsschicht] Hier wird eine offene Schnittstelle bereitgestellt, um deklarative Synchronisations-Spezifikationen für komplexe multistrom Multimediapräsentationen zu erstellen \citep[S. 13]{blakowski1996mss}. Diese können dann von der Objektschicht ausgeführt werden. Zu diesem Zweck stellt diese Schicht auch Editoren und andere Werkzeuge bereit. Des Weiteren werden in dieser Schicht Anforderungen an die Dienstgüte aus Sicht des Benutzers auf die Objektschicht abgebildet \citep[S. 607]{multimedia_technologie}.
+    \item[Spezifikationsschicht] Hier wird eine offene Schnittstelle bereitgestellt, um deklarative Synchronisations-Spezifikationen für komplexe multistrom Multimediapräsentati\-onen zu erstellen \citep[S. 13]{blakowski1996mss}. Diese können dann von der Objektschicht ausgeführt werden. Zu diesem Zweck stellt diese Schicht auch Editoren und andere Werkzeuge bereit. Des Weiteren werden in dieser Schicht Anforderungen an die Dienstgüte aus Sicht des Benutzers auf die Objektschicht abgebildet \citep[S. 607]{multimedia_technologie}.
   \end{description}
   
 % paragraph referenzmodelle (end)
@@ -631,7 +631,7 @@
   
 % minisec eigenschaften_des_medienobjekt (end)
 
-  Wie diese Medienobjekte innerhalb einer Multimediaanwendungen vermittelt und übertragen werden, stellt der folgende Abschnitt vor.
+  Wie diese Medienobjekte innerhalb einer Multimediaanwendungen vermittelt und übertra\-gen werden, stellt der folgende Abschnitt vor.
 
 % subsubsection medienobjekt (end)
 
@@ -650,7 +650,7 @@
   
   Da die Medienobjekte selbst Referenzen auf die eigentlichen Daten darstellen, würde der Medienbroker somit nur diese Referenzen vermitteln. Wie sich Abbildung \ref{fig:medienobjekt} jedoch entnehmen lässt besitzt eine \verb!MediaBroker!-Instanz eine Referenz auf ein \verb!MediaStore!-Objekt. Über diese Schnittstelle realisiert der Medienbroker die Persistenz der eigentlichen Daten. Die propagierte Trennung der Medienobjekte als Referenz und ihrer eigentlichen Mediendaten findet demnach auch bei der Speicherung statt.
   
-  Zu beachten ist allerdings, dass für den Einsatz in einer verteilte Umgebung die Implementierung der \verb!MediaStore!-Schnittstelle einen entsprechend verteilten Datenzugriff überhaupt erst erlauben muss. Eine sehr rudimentäre Realisierung könnte beispielsweise auf der Verwendung eines NFS basieren. Eine deutlich mächtigere Lösung stellt hingegen der \emph{MultiMonster}-Medienserver\footnote{\url{http://www6.informatik.uni-erlangen.de/research/projects/retavic/multimonster/index.html}} der Universität Erlangen dar. Er kann Medien in einer Echtzeitumgebung bereitstellen und dabei gleichzeitig Anforderungen an unterschiedliche Dienstgüten gerecht werden. Zusätzlich ist er in der Lage, Mediendaten in unterschiedliche Formate zu konvertieren, ist plattformunabhängig und lässt sich leicht erweitern \citep{suchomski2004oar}\footnote{Das M.e.T.t. Projekt hat sich bereits im Rahmen des COSIMA-Projekts prototypisch mit einer möglichen Integration beschäftigt: \url{https://mims01.gm.fh-koeln.de/twiki/bin/view/MIMaster/MeT}}.
+  Zu beachten ist allerdings, dass für den Einsatz in einer verteilte Umgebung die Implementierung der \verb!MediaStore!-Schnittstelle einen entsprechend verteilten Datenzugriff überhaupt erst erlauben muss. Eine sehr rudimentäre Realisierung könnte beispielsweise auf der Verwendung eines NFS basieren. Eine deutlich mächtigere Lösung stellt hingegen der \emph{MultiMonster}-Medienserver\footnote{\url{http://www6.informatik.uni-erlangen.de/research/projects/retavic/multimonster/index.html}} der Universität Erlangen dar. Er kann Medien in einer Echtzeitumgebung bereitstellen und dabei gleichzeitig Anforderungen an unterschiedliche Dienst\-güten gerecht werden. Zusätzlich ist er in der Lage, Mediendaten in unterschiedliche Formate zu konvertieren, ist plattformunabhängig und lässt sich leicht erweitern \citep{suchomski2004oar}\footnote{Das M.e.T.t. Projekt hat sich bereits im Rahmen des COSIMA-Projekts prototypisch mit einer möglichen Integration beschäftigt: \url{https://mims01.gm.fh-koeln.de/twiki/bin/view/MIMaster/MeT}}.
   
   Der Medienbroker lässt sich in die erweiterte SOA nach Papazoglou (siehe Abbildung \ref{fig:images_Extended_SOA} auf Seite \pageref{fig:images_Extended_SOA}) als einen weiteren Kanal, neben dem Daten- und Kontrollkanal sowie Synchronisationskanal auf der Ebene der komponierten Dienste einordnen.
   

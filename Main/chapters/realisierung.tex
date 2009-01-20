@@ -125,6 +125,8 @@
 
   Wie im Listing zu sehen ist, besteht die Ablaufbeschreibung aus vier Teilbereichen, die jeweils durch die Zeichenkette \verb!---! getrennt sind. Jeder Bereich steht dabei für ein Element, dass später im Workflow ausgeführt werden muss und beschreibt dementsprechend eine der vier medienverarbeitenden Komponenten innerhalb der Anwendung. Innerhalb jedem dieser Elemente sind die zur Ausführung des Workflows notwendigen Attribute einer Komponente definiert. Ein Attribut wird dabei durch ein \verb!key: value!-Paar markiert, wobei der Doppelpunkt (\verb!:!) den \verb!key! von dem \verb!value! trennt. Attribute können dabei verschachtelt werden, was durch eine Einrückung dargestellt wird\footnote{Eine genaue Spezifikation zu der aktuellen YAML Version 1.2 findet sich unter \url{http://yaml.org/spec/1.2}.}. Im Folgenden sind die wesentliche Attribute eines Elements zusammengefasst:
   
+  \pagebreak
+  
   \begin{description}
     \item[Beschreibung (\texttt{description})] Eine informelle Beschreibung der jeweiligen Komponente.
     \item[URI (\texttt{uri})] Die URI anhand derer später die entsprechende Komponente lokalisiert und ausgeführt werden kann.
@@ -134,23 +136,23 @@
     \item[Nachfolger (\texttt{successors})] Eine Liste von Komponenten, die \emph{nach} dieser Komponente ausgeführt werden müssen. Die Komponenten werden dazu durch ihre URI referenziert. Elemente ohne Nachfolger markieren das Ende des Workflows.
   \end{description}
 
-  Neben der eigentlichen Ablaufbeschreibung im YAML-Format ist darüber hinaus noch eine Klasse notwendig, die das \verb!WorkflowDefinition!-Interface implementiert und die in der Lage ist, die angegebene Ablaufbeschreibung einzulesen. Die einzelnen Elemente der abstrakten Ablaufbeschreibung werden auf Programmebene dabei durch Instanzen der Klasse \verb!WorkflowElement! repräsentiert. Die Klasse implementiert dabei die die einzelnen \verb!key: value!-Paar entsprechend als Attribute, die über \emph{Getter}-Methoden nach außen verfügbar gemacht werden. Die \verb!YamlWorkflowDefinition!-Klasse setzt dafür auf jeder Instanz eines \verb!WorkflowElement! die entsprechenden Werte über die gleichnamigen \emph{Setter}-Methoden automatisch. Die \verb!YamlWorkflowDefinition!-Implementierung findet sich in Listing \ref{lst:yaml_workflow_definition} und das vollständige Listing \ref{lst:workflow_element} zu der \verb!WorkflowElement!-Klasse findet sich im Anhang.
+  Neben der eigentlichen Ablaufbeschreibung im YAML-Format ist darüber hinaus noch eine Klasse notwendig, die das \verb!WorkflowDefinition!-Interface implementiert und die in der Lage ist, die angegebene Ablaufbeschreibung einzulesen. Die einzelnen Elemente der abstrakten Ablaufbeschreibung werden auf Programmebene dabei durch Instanzen der Klasse \verb!WorkflowElement! repräsentiert. Die Klasse implementiert dabei die die einzelnen \verb!key: value!-Paar entsprechend als Attribute, die über \emph{Getter}-Methoden nach außen verfüg\-bar gemacht werden. Die \verb!YamlWorkflowDefinition!-Klasse setzt dafür auf jeder Instanz eines \verb!WorkflowElement! die entsprechenden Werte über die gleichnamigen \emph{Setter}-Methoden automatisch. Die \verb!YamlWorkflowDefinition!-Implementierung findet sich in Listing \ref{lst:yaml_workflow_definition} und das vollständige Listing \ref{lst:workflow_element} zu der \verb!WorkflowElement!-Klasse findet sich im Anhang.
 
   \lstinputlisting[caption=Implementierung des \texttt{WorkflowDefinition}-Interface auf YAML-Basis,label=lst:yaml_workflow_definition,language=Java,linerange={12-13,35-76}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/YamlWorkflowDefinition.java}
 
   Die \verb!WorkflowDefinition! ist jedoch lediglich die programmatische Repräsentation der deklarativen Beschreibung, um diese auszuführen bedarf es einer weiteren Komponente, der \emph{Workflow Engine} \citep[S. 53]{hollingsworth1995wmc}. Sie wird in COSIMA durch die abstrakte \verb!WorkflowEngine!-Klasse realisiert ($\to$ Listing \ref{lst:workflow_engine}). Die jeweiligen Unterklassen müssen dabei entsprechend die \verb!execute()!-Methode überschreiben.
   
-  \lstinputlisting[caption=Abstrakte \texttt{WorkflowEngine}-Klasse,label=lst:workflow_engine,language=Java,linerange={12-13,16-38}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/WorkflowEngine.java}
+  \lstinputlisting[caption=Abstrakte \texttt{WorkflowEngine}-Klasse,label=lst:workflow_engine,language=Java,linerange={12-13,24-52}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/WorkflowEngine.java}
   
   Eine erste einfache Implementierung der abstrakten \verb!WorkflowEngine!-Klasse ist in Listing \ref{lst:simple_workflow_engine} dargestellt.
 
-  \lstinputlisting[caption=Implementierung einer einfachen Workflow Engine,label=lst:simple_workflow_engine,language=Java,linerange={12-13,23-60},morekeywords={[3]WorkflowDefinition,workflowStore,WorkflowElement}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/SimpleWorkflowEngine.java}
+  \lstinputlisting[caption=Implementierung einer einfachen Workflow Engine,label=lst:simple_workflow_engine,language=Java,linerange={12-13,30-67},morekeywords={[3]WorkflowDefinition,workflowStore,WorkflowElement}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/SimpleWorkflowEngine.java}
 
   Die Instanziierung der einzelnen Komponenten innerhalb der \verb!SimpleWorkflowEngine! geschieht dabei unter zur Hilfenahme der Java Reflection API\abk{API}{Application Programming Interface} (Zeile 49 und 50 in Listing \ref{lst:simple_workflow_engine}). Dies gelingt, da in der Ablaufbeschreibung als URI jeder Komponente der vollständig klassifizierende Java-Klassenname angegeben ist. Für den Einsatz in einer verteilten Umgebung ist diese Implementierung jedoch völlig ungeeignet. Später werden die einzelnen Komponenten daher als \emph{Web Services} implementiert werden ($\to$ Abschnitt \ref{sub:extraktion_der_komponenten_als_dienste}). Ein weiterer Punkt von Interesse in dieser Implementierung ist die Notwendigkeit, den aktuellen Fortschritt der Ausführung nachzuhalten. Dies wird über die Einführung des lokalen \verb!workflowStore!-Objekts erreicht. Für die Umsetzung komplexerer Abläufe scheint es jedoch sinnvoll zu sein, dass der ausführenden Komponente ein Zustandsautomat zu Grunde gelegt wird, wie es bei \citep{biornstad2006cfs} propagiert wird.
   
   Das Santiago Programm aus den bisherigen Listings lässt sich durch die in diesem Abschnitt eingeführten Erweiterungen allein auf die Instanziierung einer \verb!WorkflowDefinition! und die Ausführung der \verb!SimpleWorkflowEngine! mit dieser Definition reduzieren (Listing \ref{lst:santiago_plain_with_workflow_definition}).
   
-  \lstinputlisting[caption=Santiago Programm mit deklarativer Ablaufbeschreibung,label=lst:santiago_plain_with_workflow_definition,language=Java,firstline=19,lastline=34,morekeywords={[3]WorkflowDefinition,SimpleWorkflowEngine}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SantiagoPlainWithWorkflowDefinition.java}
+  \lstinputlisting[caption=Santiago Programm mit deklarativer Ablaufbeschreibung,label=lst:santiago_plain_with_workflow_definition,language=Java,firstline=19,lastline=32,morekeywords={[3]WorkflowDefinition,SimpleWorkflowEngine}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/SantiagoPlainWithWorkflowDefinition.java}
   
   Nachdem eine deklarative Ablaufbeschreibung eingeführt wurde und die grundsätzliche Möglichkeit geboten ist, diese Beschreibung auszuführen, ist der nächste Schritt die Umsetzung der Medienobjekte-Modellierung. Diese wird im nächsten Abschnitt behandelt.
   
@@ -167,19 +169,19 @@
   
   Diese Änderungen haben dabei keinerlei Auswirkungen auf das Santiago Programm selbst. Dieses stellt sich immer noch genauso dar wie in Listing \ref{lst:santiago_plain_with_workflow_definition}. Änderungen müssen nur, wie in Listing \ref{lst:simple_workflow_engine_with_io_descriptor} dargestellt, an der \verb!SimpleWorkflowEngine!-Klasse vorgenommen werden. Die Anpassungen an der \verb!AbstractComponent!-Klasse, dass die Methoden \verb!execute()! und \verb!setInput()! je eine \verb!IODescriptor!-Instanz zurückgeben beziehungsweise entgegennehmen, werden an dieser Stelle ausgespart.
   
-  \lstinputlisting[caption=Erweiterung der einfachen Workflow-Engine um den \texttt{IODescriptor},label=lst:simple_workflow_engine_with_io_descriptor,language=Java,firstline=28,lastline=57,morekeywords={[3]IODescriptor}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/SimpleWorkflowEngineWithIO.java}
+  \lstinputlisting[caption=Erweiterung der einfachen Workflow-Engine um den \texttt{IODescriptor},label=lst:simple_workflow_engine_with_io_descriptor,language=Java,linerange={12-13,30-66},morekeywords={[3]IODescriptor}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/SimpleWorkflowEngineWithIO.java}
   
   Wesentlich entscheidender für die Realisierung des Datenfluss ist jedoch die Implementierung des Medienobjekts, wie es in \ref{ssub:medienobjekt} konzeptioniert wurde. Diese Erweiterung hat dabei nur Auswirkungen auf die \verb!AbstractComponent!-Klasse und ihre Unterklassen, nicht jedoch auf die jeweiligen \verb!WorkflowEngine!-Implementierungen.
   
   Das Medienobjekt selbst ist wie bereits ausgeführt und in Abbildung \ref{fig:medienobjekt} zu erkennen, nach dem \emph{Composite}-Pattern implementiert. Bei der Umsetzung des Composite-Pattern sind in der Regel\footnote{Alternativ ließe sich die polymorphische Verwendung von \lstinline[basicstyle=\ttfamily\footnotesize]!Composite! und \lstinline[basicstyle=\ttfamily\footnotesize]!Leaf!-Objekten über die Einführung eines \lstinline[basicstyle=\ttfamily\footnotesize]!Component!-Interface erreichen.} drei Klassen zu implementieren:
   
   \begin{description}
-    \item[Component]   Die Klasse von der die anderen beiden jeweils vererben (hier die \verb!MediaComponent!-Klasse). In dieser Klasse werden auch die Methoden zum traversieren der Composite-Objekte definiert.
+    \item[Component]   Die Klasse von der die anderen beiden jeweils vererben (hier die\linebreak \verb!MediaComponent!-Klasse). In dieser Klasse werden auch die Methoden zum traversieren der Composite-Objekte definiert.
     \item[Composite]   Die Klasse, in der mehrere Component-Objekte zusammengefasst werden (hier die \verb!MediaContainer!-Klasse).
     \item[Leaf]   Die Klasse, die einen Endpunkt in der Hierarchie repräsentiert (hier die \verb!Media!-Klasse).
   \end{description}
   
-  Zur Realisierung der Santiago-Anwendung ist die Verwendung von \verb!MediaContainer!-Instanzen nicht notwendig, daher wird darauf auch nicht weiter eingegangen. Die Implementierungen der anderen beiden Klassen sind in Listing \ref{lst:abstract_media} und \ref{lst:media_data} zu sehen.
+  Zur Realisierung der Santiago-Anwendung ist die Verwendung von \verb!MediaContainer!-Instan\-zen nicht notwendig, daher wird darauf auch nicht weiter eingegangen. Die Implementierungen der anderen beiden Klassen sind in Listing \ref{lst:abstract_media} und \ref{lst:media_data} zu sehen.
 
   \lstinputlisting[caption=\texttt{MediaComponent}-Klasse als \emph{Component} im Composite-Pattern,label=lst:abstract_media,language=Java,linerange={12-13,31-149,157-158}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/MediaComponent.java}
 
@@ -193,7 +195,7 @@
   
   Des Weiteren hat jedes Medienobjekt eine Reihe von Metadaten assoziiert. Jede Metadata muss dabei das \verb!Metadata!-Interface implementieren. Es definiert dabei lediglich die Funktionalität, dass einem Schlüssel in einem definierten Namensraum ein beliebiger Wert zugewiesen wird (siehe Listing \ref{lst:metadata_interface}). Zusätzlich verfügt jedes \verb!Metadata!-Objekt über eine URI zur eindeutigen Identifikation. Zu diesem Zeitpunkt existiert jedoch noch keine Implementierung dieser Schnittstelle, denkbar wäre aber zum Beispiel eine Implementierung auf Basis des Dublin Core Metadaten Standards\footnote{Die \emph{Dublin Core Metadata Initiative} ist eine offene Organisation mit dem Ziel einen flexiblen und austauschbaren online Standard für Metadaten zu schaffen, der die unterschiedlichsten Anwendungen erlaubt (\url{http://dublincore.org/}).}.
   
-  \lstinputlisting[caption=\texttt{Metadata}-Interface als abstrakte Repräsentation von Metadaten,label=lst:metadata_interface,language=Java]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/Metadata.java}
+  \lstinputlisting[caption=\texttt{Metadata}-Interface als abstrakte Repräsentation von Metadaten,label=lst:metadata_interface,language=Java,linerange={2-2,12-28}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/Metadata.java}
   
   Medienobjekte sind weder "`abspielbar"' noch lassen sich auf ihnen medienverarbeitende Operationen durchführen, sie sind wie schon in Abschnitt \ref{ssub:medienobjekt} erwähnt, lediglich reichhaltige Referenzen auf die eigentlichen Daten. Der Zugriff auf eben diese Daten erfolgt über die \verb!getPlayableData()!-Methode. Die Methode ist nach dem \emph{Lazy-Load}-Pattern \citep[S. 200]{fowler03peaa} implementiert, so dass die potentiell sehr großen Mediendaten erst geladen werden, wenn sie tatsächlich benötigt werden. Wie das Laden uns Speichern von Medienobjekten an sich implementiert ist, stellt der nachfolgende Abschnitt im Detail vor.
  
@@ -219,7 +221,7 @@
 
   Die wesentlichen Methoden des \verb!MediaBroker!-Interface sind die Methoden \verb!store()! und \verb!retrieve()!. Die \verb!store()!-Methode nimmt dabei ein Medienobjekt entgegen, legt es in der Speicherlösung der jeweiligen \verb!MediaBroker!-Implementierung ab und reicht das Medienobjekt an die assoziierte \verb!MediaStore!-Instanz weiter. Am Ende wird die Referenz im übergebenen Medienobjekt auf \verb!null! gesetzt, damit im Anschluss diese Referenz nicht länger genutzt werden kann. Die Realisierung dieser Methode in der \verb!MemcachedMediaBroker!-Implementierung ist in Listing \ref{lst:store_method_in_memcached_media_broker} zu sehen.
 
-  \lstinputlisting[caption=Implementierung der \texttt{store()}-Methode im  \texttt{MemcachedMediaBroker},label=lst:store_method_in_memcached_media_broker,language=Java,firstline=74,lastline=87]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MemcachedMediaBroker.java}
+  \lstinputlisting[caption=Implementierung der \texttt{store()}-Methode im  \texttt{MemcachedMediaBroker},label=lst:store_method_in_memcached_media_broker,language=Java,firstline=72,lastline=85]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MemcachedMediaBroker.java}
   
   Zur besseren Veranschaulichung, wie die Speicherung von Medienobjekt abläuft, dient das in Abbildung \ref{fig:speichern_von_medienobjekten} dargestellte Sequenzdiagramm.
 
@@ -232,7 +234,7 @@
   
   Das Laden eines Medienobjekts wird durch die \verb!retrieve()!-Methode umgesetzt. Es wird dazu die URI eines Medienobjekts übergeben, anhand derer das entsprechende Objekt aus der implementierten Speicherlösung geholt wird. Um später über dieses Medienobjekt die eigentlichen Mediendaten über die die \verb!getPlayableData()!-Methode abrufen zu können, wird dem Medienobjekt noch die Referenz auf die \verb!MediaStore!-Instanz des Medienbrokers übergeben. Die Implementierung dieser Methode in der \verb!MemcachedMediaBroker!-Implementierung ist in Listing \ref{lst:retrieve_method_in_memcached_media_broker} zu sehen.
 
-  \lstinputlisting[caption=Implementierung der \texttt{retrieve()}-Methode im  \texttt{MemcachedMediaBroker},label=lst:retrieve_method_in_memcached_media_broker,language=Java,firstline=62,lastline=66]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MemcachedMediaBroker.java}
+  \lstinputlisting[caption=Implementierung der \texttt{retrieve()}-Methode im  \texttt{MemcachedMediaBroker},label=lst:retrieve_method_in_memcached_media_broker,language=Java,firstline=61,lastline=65]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/media/mediabroker/MemcachedMediaBroker.java}
 
   Das Sequenzdiagramm aus Abbildung \ref{fig:lesen_von_medienobjekten} verdeutlicht noch einmal die notwendigen Schritte, die beim lesen eines Medienobjekts notwendig sind.
 
@@ -245,7 +247,7 @@
 
 % subsubsection speichern_und_laden_von_medienobjekten (end)
 
-  Stellvertretend für die anderen medienverarbeitenden Komponenten der Santiago-Anwendung ist in Listing \ref{lst:music_o_mat_with_media_object} die Implementierung der \verb!MusicOMat!-Klasse zur Integration des Medienobjekts dargestellt.
+  Stellvertretend für die anderen medienverarbeitenden Komponenten der Santiago-Anwen\-dung ist in Listing \ref{lst:music_o_mat_with_media_object} die Implementierung der \verb!MusicOMat!-Klasse zur Integration des Medienobjekts dargestellt.
 
   \lstinputlisting[caption=Die \texttt{MusicOMat}-Klasse unter Verwendung des Medienobjektes,label=lst:music_o_mat_with_media_object,language=Java,firstline=26,lastline=42,morekeywords={[3]MediaComponent,getBroker,Media}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/codesamples/MusicOMatWithMediaObject.java}
   
@@ -263,7 +265,7 @@
 
   Der erste Schritt bei der Umsetzung der Komponenten als Dienste war die Etablierung einer Schnittstelle, die die wesentlichen Methoden eines Dienstes definiert. Bei genauerer Betrachtung lässt sich schnell feststellen, dass nur die Methoden \verb!execute()! und \verb!setInput()! der \verb!AbstractComponent!-Klasse auch für die Veröffentlichung als Dienst von Relevanz sind. Das so entstandene \verb!CoreService!-Interface ist in Listing \ref{lst:core_service_interface} dargestellt.
 
-  \lstinputlisting[caption=Das \texttt{CoreService}-Interface von COSIMA,label=lst:core_service_interface,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/services/CoreService.java}
+  \lstinputlisting[caption=Das \texttt{CoreService}-Interface von COSIMA,label=lst:core_service_interface,language=Java,linerange={12-13,27-49}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/services/CoreService.java}
   
   Die beiden Konstanten \verb!SERVICE_SET_INPUT_OPERATION! und \verb!SERVICE_EXECUTE_OPERATION! dienen dazu, die Informationen über die tatsächlichen Methoden an einer zentralen Stelle im \verb!CoreService!-Interface vorzuhalten. Zusätzlich wurden in dem Interface die beiden Methoden \verb!getUri()! und \verb!getDescription()! definiert, die zur Lokalisierung eines Dienstes über die Service Registry von Bedeutung sind. Diese wird im nächste Abschnitt genauer vorgestellt.
 
@@ -285,17 +287,19 @@
 
   Bevor die Inbetriebsetzung der Komponenten als Dienste begonnen werden kann, muss zuvor eine \verb!WorkflowEngine!-Implementierung umgesetzt werden, die in der Lage ist, diese Komponenten via SOAP aufzurufen und die die Verwendung der Reflection API obsolet macht. Zu diesem Zwecke ist die \verb!RemoteWorkflowEngine! implementiert worden, deren vollständiges Listing \ref{lst:remote_workflow_engine} im Anhang zu finden ist. Die hier wesentliche Funktionalität für das Aufrufen eines Web Services findet sich in Listing \ref{lst:invoke_service} wieder.
   
-  \lstinputlisting[caption=Aufruf eines Web Service aus der \texttt{RemoteWorkflowEngine} heraus,label=lst:invoke_service,language=Java,linerange={161-171,173-175,185-205}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/RemoteWorkflowEngine.java}
+  \lstinputlisting[caption=Aufruf eines Web Service aus der \texttt{RemoteWorkflowEngine} heraus,label=lst:invoke_service,language=Java,linerange={161-201}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/RemoteWorkflowEngine.java}
   
   Im Zuge dessen wurde auch das \verb!ProcessStore!-Interface aus Listing \ref{lst:process_store_interface} eingeführt, dass die Speicherung des Workflow-Fortschritts kapselt. Über dieses Interface lassen sich in späteren Versionen leichter verteilte Speicherstrategien verwenden, die somit auch eine verteilte Implementierung der \verb!WorkflowEngine! ermöglicht.
   
-  \lstinputlisting[caption=Das \texttt{ProcessStore}-Interface,label=lst:process_store_interface,language=Java,firstline=12]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/storage/ProcessStore.java}
+  \pagebreak
+  
+  \lstinputlisting[caption=Das \texttt{ProcessStore}-Interface,label=lst:process_store_interface,language=Java,linerange={12-13,22-39}]{../code/COSIMA/src/main/java/de/fhkoeln/cosima/workflow/storage/ProcessStore.java}
   
   Zum Abschluss ist der Prozess der Ausführung in Abbildung \ref{fig:images_WorkflowEngine_Flowchart} noch einmal schematisch dargestellt.
   
-  \begin{figure}[!ht]
+  \begin{figure}[!hb]
     \centering
-      \includegraphics[width=.7\textwidth]{images/WorkflowEngine_Flowchart.pdf}
+      \includegraphics[height=.4\textheight]{images/WorkflowEngine_Flowchart.pdf}
     \caption{Abalaufdiagramm für die \texttt{RemoteWorkflowEngine}}
     \label{fig:images_WorkflowEngine_Flowchart}
   \end{figure}
@@ -309,7 +313,7 @@
   
   Die Implementierung des \verb!MusicOMatService! in Listing \ref{lst:music_o_mat_service} steht exemplarisch für die Umsetzung der anderen Komponenten als Dienste. Zu beachten ist, dass die Klasse selbst die Adresse und Beschreibung des Dienstes definiert. Diese Informationen werden über den \verb!super()!-Konstruktor in der Service Registry veröffentlicht, so dass sich später der Dienst darüber wieder finden lässt.
 
-  \lstinputlisting[caption=\texttt{MusicOMatService}-Klasse in der finalen Version,label=lst:music_o_mat_service,language=Java,linerange={12-13,26-61,86-87}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/services/MusicOMatService.java}
+  \lstinputlisting[caption=\texttt{MusicOMatService}-Klasse in der finalen Version,label=lst:music_o_mat_service,language=Java,linerange={12-13,26-30,38-61,86-87}]{../code/Santiago/src/main/java/de/fhkoeln/santiago/services/MusicOMatService.java}
 
   Die Dienste werden anschließen auf einem Tomcat Servlet Container\footnote{\url{http://tomcat.apache.org/}} über ein dort befindliches Axis2-Servlet verfügbar gemacht. Die Instanziierung der Dienste und die Auflösung der notwendigen Abhängigkeiten werden im Prototypen durch das Spring Framework\footnote{\url{http://www.springsource.org/}} auf Basis des \emph{Dependency Injection}-Pattern realisiert \citep[S. 130]{johnson2004eoo} und \citep{fowler04di}. In Listing \ref{lst:application_context} ist dabei die entsprechende Spring Konfigurationsdatei zu sehen.
 
@@ -322,7 +326,7 @@
 
   Nachdem nun auch die Komponenten als Dienste realisiert sind und über Web Services auf einem Server zur Ausführung bereitstehen, muss nur noch das Santiago-Hauptprogramm wie in Listing \ref{lst:santiago_final_app} angepasst werden, so dass die \verb!RemoteWorkflowEngine! verwendet wird. Das Ergebnis ist die Erstellung und Wiedergabe einer Diashow mit Hintergrundmusik in einer verteilten und dienstorientierten Umgebung unter Verwendung des COSIMA-Projekts, wie es im vorherigen Kapitel beschrieben wurde.
 
-  \lstinputlisting[caption=Die finale Version der Santiago Anwendung,label=lst:santiago_final_app,language=Java]{../code/Santiago/src/main/java/de/fhkoeln/santiago/SantiagoApp.java}
+  \lstinputlisting[caption=Die finale Version der Santiago Anwendung,label=lst:santiago_final_app,language=Java,firstline=8]{../code/Santiago/src/main/java/de/fhkoeln/santiago/SantiagoApp.java}
   
 % subsubsection die_fertige_anwendung (end)
 

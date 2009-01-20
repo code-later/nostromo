@@ -17,10 +17,8 @@ import de.fhkoeln.cosima.workflow.YamlWorkflowDefinition;
 public class SantiagoPlainWithWorkflowDefinition {
 
   public static void main(String[] args) throws Exception {
-    String pathToWorkflowDefinition;
-
     if (args.length == 1) {
-      pathToWorkflowDefinition = args[0];
+      String pathToWorkflowDefinition = args[0];
       WorkflowDefinition definition = new YamlWorkflowDefinition(pathToWorkflowDefinition);
       
       WorkflowEngine workflowInstance = new SimpleWorkflowEngine();

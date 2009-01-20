@@ -96,8 +96,8 @@
 
   Die Implementierungen des Medienbroker sowie der Medienobjekte ist zu diesem Zeitpunkt als ausreichend zu betrachten. Alle Anforderungen ließen sich damit leicht umsetzen. Jedoch wurde bisher nicht von der \verb!MediaContainer!-Klasse Gebrauch gemacht. Zur Zeit sind aber keine Anzeichen erkennbar, dass die Implementierungen des Medienobjekts nicht ausreichend ist.
   
-  Für eine weitere Entwicklung des Medienbroker ist es erstrebenswert, ihn stärker als eigene Anwendung herauszuarbeiten. Dienste sollten die Möglichkeit erhalten, mit dem Medienbroker über ein eigenes Protokoll zu kommunizieren. Aufrufe von Medienobjekten sollten sich dabei an ein URI-Schema der Form \verb!cosima://santiago.fh-koeln.de/media/Slideshow! halten.
-
+  Für eine weitere Entwicklung des Medienbroker ist es erstrebenswert, ihn stärker als eigene Anwendung herauszuarbeiten. Dienste sollten die Möglichkeit erhalten, mit dem Medienbroker über ein eigenes Protokoll zu kommunizieren. Ein URI-Schema der Form \verb!cosima://santiago.fh-koeln.de/media/Slideshow! wäre in diesem Fall eine denkbare\linebreak Möglichkeit.
+  
 % subsection verwendung_des_medienbroker (end)
 
 \subsection{Nicht-funktionale Aspekte} % (fold)
@@ -125,7 +125,7 @@
   Ein letzter Punkt, der bei der Umsetzung des Anwendungsszenario auffiel, war, dass es durchaus sinnvoll wäre, wenn sich die Operation eines einzelnen Dienstes wieder stoppen ließe. In der Nerstrand Anwendung stellt der \verb!WebcamStreamingService! solange den Stream bereit, bis der Thread in dem die eigentliche Operation ausgeführt wird, unterbrochen wird.
 
 % section ergebnisse_aus_der_nerstrand_anwendung (end)
-
+  
   Insgesamt lässt sich sagen, dass der Grad der Umsetzbarkeit der beiden Anwendung sehr hoch war. Vor allem wurde deutlich, dass es durch COSIMA sehr leicht wird, unterschiedliche Strategien zur Medienverarbeitung einzusetzen. So ist fast in jedem Dienst eine andere technologische Grundlage verwendet worden, um seine jeweilige Funktionalität bereitzustellen. Die meisten davon basieren zudem noch nicht einmal auf der Java Plattform. Somit kann also festgehalten werden, dass die konzipierte Architektur hinter COSIMA als valide im Rahmen der hier festgelegten Kriterien zu bezeichnen ist.
 
 % chapter validierung_der_architektur (end)

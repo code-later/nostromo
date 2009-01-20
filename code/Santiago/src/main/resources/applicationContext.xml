@@ -19,8 +19,7 @@
 
 <beans>
 
-	<bean id="applicationContext"
-		class="org.apache.axis2.extensions.spring.receivers.ApplicationContextHolder" />
+	<bean id="applicationContext" class="org.apache.axis2.extensions.spring.receivers.ApplicationContextHolder" />
 
 	<bean id="slideshowGeneratorService"
 		class="de.fhkoeln.santiago.services.SlideshowGeneratorService">

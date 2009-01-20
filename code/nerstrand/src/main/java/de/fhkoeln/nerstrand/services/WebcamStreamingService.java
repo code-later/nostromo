@@ -20,7 +20,6 @@ import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
 import de.fhkoeln.cosima.services.IODescriptor;
 import de.fhkoeln.cosima.services.registry.ServiceRegistry;
-import de.fhkoeln.cosima.util.Logger;
 import de.fhkoeln.nerstrand.operations.MediaOperation;
 import de.fhkoeln.nerstrand.operations.VLCStreamingOperation;
 

@@ -75,8 +75,7 @@ public class MemcachedMediaBroker implements MediaBroker {
     try {
       client.set(realUri.toString(), 0, media);
       mediaStore.write(media);
-      // Ensure that the reference is no longer available, because it is not
-      // intended to be
+      // Ensure that the reference is no longer available, because it is not intended to be
       // used by some one else then the MediaStore instances
       media.setReferenceToRealData(null);
     } catch (IOException e) {

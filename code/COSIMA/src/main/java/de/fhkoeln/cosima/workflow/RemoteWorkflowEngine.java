@@ -159,8 +159,8 @@ public class RemoteWorkflowEngine extends WorkflowEngine {
    *         invocation.
    */
   @SuppressWarnings("unchecked")
-  private IODescriptor invokeServiceForElementWithInputDescriptor(
-      WorkflowElement element, IODescriptor inputDescriptor) {
+  private IODescriptor invokeServiceForElementWithInputDescriptor(WorkflowElement element,
+                                                                  IODescriptor inputDescriptor) {
 
     IODescriptor output = new OutputDescriptor();
 
@@ -170,33 +170,27 @@ public class RemoteWorkflowEngine extends WorkflowEngine {
       Options options = client.getOptions();
 
       String serviceUri = registry.query(element.getDescription());
-      System.out.println("Setting EPR to: " + serviceUri);
+      Logger.info("Setting EPR to: " + serviceUri);
       EndpointReference targetEPR = new EndpointReference(serviceUri);
-
       options.setTo(targetEPR);
+
       // We want to set the timeout a bit higher to handle long running remote services.
       options.setTimeOutInMilliSeconds(500000);
 
       // Setting input arguments first
-      QName setInputOperation =
-          new QName(element.getNamespace(),
-                    CoreService.SERVICE_SET_INPUT_OPERATION);
+      QName setInputOperation = new QName(element.getNamespace(), CoreService.SERVICE_SET_INPUT_OPERATION);
 
       Object[] setInputOperationArgs = new Object[] { inputDescriptor };
 
       client.invokeRobust(setInputOperation, setInputOperationArgs);
 
       // Run the service action and get back the output value
-      QName executeOperation =
-          new QName(element.getNamespace(),
-                    CoreService.SERVICE_EXECUTE_OPERATION);
+      QName executeOperation = new QName(element.getNamespace(), CoreService.SERVICE_EXECUTE_OPERATION);
 
       Object[] executeOperationArgs = new Object[] {};
       Class[] returnTypes = new Class[] { IODescriptor.class };
 
-      Object[] response =
-          client.invokeBlocking(executeOperation, executeOperationArgs,
-              returnTypes);
+      Object[] response = client.invokeBlocking(executeOperation, executeOperationArgs, returnTypes);
 
       output = (IODescriptor) response[0];
     } catch (AxisFault e) {

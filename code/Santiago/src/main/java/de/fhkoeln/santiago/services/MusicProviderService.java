@@ -13,10 +13,9 @@ package de.fhkoeln.santiago.services;
 
 import java.net.URI;
 
-import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.Media;
+import de.fhkoeln.cosima.media.MediaComponent;
 import de.fhkoeln.cosima.media.mediabroker.MediaBroker;
-import de.fhkoeln.cosima.media.mediabroker.MemcachedMediaBroker;
 import de.fhkoeln.cosima.services.CoreService;
 import de.fhkoeln.cosima.services.IODescriptor;
 import de.fhkoeln.cosima.services.registry.ServiceRegistry;
